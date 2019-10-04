@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="liblua" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="lua" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="objs-debug/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="lua" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option object_output="objs-release/" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-O3" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c++17" />
+			<Add option="-U__STRICT_ANSI__" />
+			<Add option="-include ../../src/wesnoth_lua_config.h" />
+			<Add directory="../../src" />
+		</Compiler>
+		<Unit filename="../../src/lua/lapi.cpp" />
+		<Unit filename="../../src/lua/lapi.h" />
+		<Unit filename="../../src/lua/lauxlib.cpp" />
+		<Unit filename="../../src/lua/lauxlib.h" />
+		<Unit filename="../../src/lua/lbaselib.cpp" />
+		<Unit filename="../../src/lua/lbitlib.cpp" />
+		<Unit filename="../../src/lua/lcode.cpp" />
+		<Unit filename="../../src/lua/lcode.h" />
+		<Unit filename="../../src/lua/lcorolib.cpp" />
+		<Unit filename="../../src/lua/lctype.cpp" />
+		<Unit filename="../../src/lua/lctype.h" />
+		<Unit filename="../../src/lua/ldblib.cpp" />
+		<Unit filename="../../src/lua/ldebug.cpp" />
+		<Unit filename="../../src/lua/ldebug.h" />
+		<Unit filename="../../src/lua/ldo.cpp" />
+		<Unit filename="../../src/lua/ldo.h" />
+		<Unit filename="../../src/lua/ldump.cpp" />
+		<Unit filename="../../src/lua/lfunc.cpp" />
+		<Unit filename="../../src/lua/lfunc.h" />
+		<Unit filename="../../src/lua/lgc.cpp" />
+		<Unit filename="../../src/lua/lgc.h" />
+		<Unit filename="../../src/lua/liolib.cpp" />
+		<Unit filename="../../src/lua/llex.cpp" />
+		<Unit filename="../../src/lua/llex.h" />
+		<Unit filename="../../src/lua/llimits.h" />
+		<Unit filename="../../src/lua/lmathlib.cpp" />
+		<Unit filename="../../src/lua/lmem.cpp" />
+		<Unit filename="../../src/lua/lmem.h" />
+		<Unit filename="../../src/lua/loadlib.cpp" />
+		<Unit filename="../../src/lua/lobject.cpp" />
+		<Unit filename="../../src/lua/lobject.h" />
+		<Unit filename="../../src/lua/lopcodes.cpp" />
+		<Unit filename="../../src/lua/lopcodes.h" />
+		<Unit filename="../../src/lua/loslib.cpp" />
+		<Unit filename="../../src/lua/lparser.cpp" />
+		<Unit filename="../../src/lua/lparser.h" />
+		<Unit filename="../../src/lua/lprefix.h" />
+		<Unit filename="../../src/lua/lstate.cpp" />
+		<Unit filename="../../src/lua/lstate.h" />
+		<Unit filename="../../src/lua/lstring.cpp" />
+		<Unit filename="../../src/lua/lstring.h" />
+		<Unit filename="../../src/lua/lstrlib.cpp" />
+		<Unit filename="../../src/lua/ltable.cpp" />
+		<Unit filename="../../src/lua/ltable.h" />
+		<Unit filename="../../src/lua/ltablib.cpp" />
+		<Unit filename="../../src/lua/ltm.cpp" />
+		<Unit filename="../../src/lua/ltm.h" />
+		<Unit filename="../../src/lua/lua.h" />
+		<Unit filename="../../src/lua/luaconf.h" />
+		<Unit filename="../../src/lua/lualib.h" />
+		<Unit filename="../../src/lua/lundump.cpp" />
+		<Unit filename="../../src/lua/lundump.h" />
+		<Unit filename="../../src/lua/lutf8lib.cpp" />
+		<Unit filename="../../src/lua/lvm.cpp" />
+		<Unit filename="../../src/lua/lvm.h" />
+		<Unit filename="../../src/lua/lzio.cpp" />
+		<Unit filename="../../src/lua/lzio.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
