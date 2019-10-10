@@ -26,7 +26,7 @@ function ca_return_unit:execution(cfg)
   local targetY = (height - height % 2) / 2
   local unit = get_unit(cfg)
 
-  -- If targt hex is occupied find a vacant hex
+  -- If targt hex is occupied find a vacant hex, if not set to x and y
   if(unit.x ~= targetX) or (unit.x ~= targetY) then
     targetX,targetY = wesnoth.find_vacant_tile(targetX,targetY, unit)
   end
