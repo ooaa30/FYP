@@ -14,7 +14,7 @@ Rule:
 ;
 
 Behaviour:
-	'behaviour' Goal | Candidate_Action
+	Goal | Candidate_Action
 ;
 
 Goal:
