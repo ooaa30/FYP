@@ -3,7 +3,31 @@ grammar fyp.xtext.wesnoth.mydsl.WesnothDSL with org.eclipse.xtext.common.Termina
 generate wesnothDSL "http://www.xtext.fyp/wesnoth/mydsl/WesnothDSL"
 
 Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+	(elements+=Rule)*
+;	
+		
+Rule:
+	'rule' name = ID
+	'{'
+		(behaviours+=Behaviour)*
+		'}'
+;
+
+Behaviour:
+	'behaviour' Goal | Candidate_Action
+;
+
+Goal:
+	'goal'
+;
+
+Candidate_Action:
+	New_CA | Defualt_CA
+;
+
+New_CA:
+	'newCA';
+
+Defualt_CA:
+	'CA'
+;
