@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: fyp.xtext.wesnoth.mydsl
+Bundle-ManifestVersion: 2
+Bundle-Name: fyp.xtext.wesnoth.mydsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fyp.xtext.wesnoth.mydsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-11

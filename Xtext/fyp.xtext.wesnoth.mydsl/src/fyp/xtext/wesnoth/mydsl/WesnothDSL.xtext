@@ -1,0 +1,9 @@
+grammar fyp.xtext.wesnoth.mydsl.WesnothDSL with org.eclipse.xtext.common.Terminals
+
+generate wesnothDSL "http://www.xtext.fyp/wesnoth/mydsl/WesnothDSL"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
