@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.xtext.fyp/wesnoth/mydsl/WesnothDSL"
+			class = "fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage"
+			genModel = "model/generated/WesnothDSL.genmodel" />
+	</extension>
+</plugin>

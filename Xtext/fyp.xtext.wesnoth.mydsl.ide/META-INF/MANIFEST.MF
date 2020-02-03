@@ -8,5 +8,8 @@ Bundle-SymbolicName: fyp.xtext.wesnoth.mydsl.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: fyp.xtext.wesnoth.mydsl,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: fyp.xtext.wesnoth.mydsl.ide.contentassist.antlr,
+ fyp.xtext.wesnoth.mydsl.ide.contentassist.antlr.internal
