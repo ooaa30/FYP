@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'rule'", "'{'", "'}'", "'unitID'", "'goal'", "'newCA'", "'movement'", "'retreat'", "'move_to_target'", "'combat'", "'recruit'", "'focus_high_xp'", "'move_to_enemy'", "'capture_villages'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'rule'", "'{'", "'}'", "'unitID'", "'movement'", "'retreat'", "'move_to_target'", "'combat'", "'recruit'", "'focus_high_XP'", "'move_to_enemy'", "'capture_villages'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -41,8 +41,6 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
     public static final int RULE_INT=5;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__23=23;
-    public static final int T__24=24;
     public static final int T__20=20;
     public static final int T__21=21;
 
@@ -241,7 +239,7 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRule"
-    // InternalWesnothDSL.g:107:1: ruleRule returns [EObject current=null] : (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_unitID_3_0= ruleUnitID ) ) ( (lv_behaviours_4_0= ruleBehaviour ) )* otherlv_5= '}' ) ;
+    // InternalWesnothDSL.g:107:1: ruleRule returns [EObject current=null] : (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_unitID_3_0= ruleUnitID ) ) ( (lv_defualt_cas_4_0= ruleDefualt_CA ) )* otherlv_5= '}' ) ;
     public final EObject ruleRule() throws RecognitionException {
         EObject current = null;
 
@@ -251,18 +249,18 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
         Token otherlv_5=null;
         EObject lv_unitID_3_0 = null;
 
-        AntlrDatatypeRuleToken lv_behaviours_4_0 = null;
+        EObject lv_defualt_cas_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalWesnothDSL.g:113:2: ( (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_unitID_3_0= ruleUnitID ) ) ( (lv_behaviours_4_0= ruleBehaviour ) )* otherlv_5= '}' ) )
-            // InternalWesnothDSL.g:114:2: (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_unitID_3_0= ruleUnitID ) ) ( (lv_behaviours_4_0= ruleBehaviour ) )* otherlv_5= '}' )
+            // InternalWesnothDSL.g:113:2: ( (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_unitID_3_0= ruleUnitID ) ) ( (lv_defualt_cas_4_0= ruleDefualt_CA ) )* otherlv_5= '}' ) )
+            // InternalWesnothDSL.g:114:2: (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_unitID_3_0= ruleUnitID ) ) ( (lv_defualt_cas_4_0= ruleDefualt_CA ) )* otherlv_5= '}' )
             {
-            // InternalWesnothDSL.g:114:2: (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_unitID_3_0= ruleUnitID ) ) ( (lv_behaviours_4_0= ruleBehaviour ) )* otherlv_5= '}' )
-            // InternalWesnothDSL.g:115:3: otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_unitID_3_0= ruleUnitID ) ) ( (lv_behaviours_4_0= ruleBehaviour ) )* otherlv_5= '}'
+            // InternalWesnothDSL.g:114:2: (otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_unitID_3_0= ruleUnitID ) ) ( (lv_defualt_cas_4_0= ruleDefualt_CA ) )* otherlv_5= '}' )
+            // InternalWesnothDSL.g:115:3: otherlv_0= 'rule' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' ( (lv_unitID_3_0= ruleUnitID ) ) ( (lv_defualt_cas_4_0= ruleDefualt_CA ) )* otherlv_5= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
@@ -329,29 +327,29 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalWesnothDSL.g:160:3: ( (lv_behaviours_4_0= ruleBehaviour ) )*
+            // InternalWesnothDSL.g:160:3: ( (lv_defualt_cas_4_0= ruleDefualt_CA ) )*
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( ((LA2_0>=15 && LA2_0<=24)) ) {
+                if ( ((LA2_0>=15 && LA2_0<=22)) ) {
                     alt2=1;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalWesnothDSL.g:161:4: (lv_behaviours_4_0= ruleBehaviour )
+            	    // InternalWesnothDSL.g:161:4: (lv_defualt_cas_4_0= ruleDefualt_CA )
             	    {
-            	    // InternalWesnothDSL.g:161:4: (lv_behaviours_4_0= ruleBehaviour )
-            	    // InternalWesnothDSL.g:162:5: lv_behaviours_4_0= ruleBehaviour
+            	    // InternalWesnothDSL.g:161:4: (lv_defualt_cas_4_0= ruleDefualt_CA )
+            	    // InternalWesnothDSL.g:162:5: lv_defualt_cas_4_0= ruleDefualt_CA
             	    {
 
-            	    					newCompositeNode(grammarAccess.getRuleAccess().getBehavioursBehaviourParserRuleCall_4_0());
+            	    					newCompositeNode(grammarAccess.getRuleAccess().getDefualt_casDefualt_CAParserRuleCall_4_0());
             	    				
             	    pushFollow(FOLLOW_7);
-            	    lv_behaviours_4_0=ruleBehaviour();
+            	    lv_defualt_cas_4_0=ruleDefualt_CA();
 
             	    state._fsp--;
 
@@ -361,9 +359,9 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
             	    					}
             	    					add(
             	    						current,
-            	    						"behaviours",
-            	    						lv_behaviours_4_0,
-            	    						"fyp.xtext.wesnoth.mydsl.WesnothDSL.Behaviour");
+            	    						"defualt_cas",
+            	    						lv_defualt_cas_4_0,
+            	    						"fyp.xtext.wesnoth.mydsl.WesnothDSL.Defualt_CA");
             	    					afterParserOrEnumRuleCall();
             	    				
 
@@ -510,429 +508,17 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleUnitID"
 
 
-    // $ANTLR start "entryRuleBehaviour"
-    // InternalWesnothDSL.g:228:1: entryRuleBehaviour returns [String current=null] : iv_ruleBehaviour= ruleBehaviour EOF ;
-    public final String entryRuleBehaviour() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleBehaviour = null;
-
-
-        try {
-            // InternalWesnothDSL.g:228:49: (iv_ruleBehaviour= ruleBehaviour EOF )
-            // InternalWesnothDSL.g:229:2: iv_ruleBehaviour= ruleBehaviour EOF
-            {
-             newCompositeNode(grammarAccess.getBehaviourRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleBehaviour=ruleBehaviour();
-
-            state._fsp--;
-
-             current =iv_ruleBehaviour.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleBehaviour"
-
-
-    // $ANTLR start "ruleBehaviour"
-    // InternalWesnothDSL.g:235:1: ruleBehaviour returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Goal_0= ruleGoal | this_Candidate_Action_1= ruleCandidate_Action ) ;
-    public final AntlrDatatypeRuleToken ruleBehaviour() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        AntlrDatatypeRuleToken this_Goal_0 = null;
-
-        AntlrDatatypeRuleToken this_Candidate_Action_1 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalWesnothDSL.g:241:2: ( (this_Goal_0= ruleGoal | this_Candidate_Action_1= ruleCandidate_Action ) )
-            // InternalWesnothDSL.g:242:2: (this_Goal_0= ruleGoal | this_Candidate_Action_1= ruleCandidate_Action )
-            {
-            // InternalWesnothDSL.g:242:2: (this_Goal_0= ruleGoal | this_Candidate_Action_1= ruleCandidate_Action )
-            int alt3=2;
-            int LA3_0 = input.LA(1);
-
-            if ( (LA3_0==15) ) {
-                alt3=1;
-            }
-            else if ( ((LA3_0>=16 && LA3_0<=24)) ) {
-                alt3=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
-
-                throw nvae;
-            }
-            switch (alt3) {
-                case 1 :
-                    // InternalWesnothDSL.g:243:3: this_Goal_0= ruleGoal
-                    {
-
-                    			newCompositeNode(grammarAccess.getBehaviourAccess().getGoalParserRuleCall_0());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Goal_0=ruleGoal();
-
-                    state._fsp--;
-
-
-                    			current.merge(this_Goal_0);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-                case 2 :
-                    // InternalWesnothDSL.g:254:3: this_Candidate_Action_1= ruleCandidate_Action
-                    {
-
-                    			newCompositeNode(grammarAccess.getBehaviourAccess().getCandidate_ActionParserRuleCall_1());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Candidate_Action_1=ruleCandidate_Action();
-
-                    state._fsp--;
-
-
-                    			current.merge(this_Candidate_Action_1);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleBehaviour"
-
-
-    // $ANTLR start "entryRuleGoal"
-    // InternalWesnothDSL.g:268:1: entryRuleGoal returns [String current=null] : iv_ruleGoal= ruleGoal EOF ;
-    public final String entryRuleGoal() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleGoal = null;
-
-
-        try {
-            // InternalWesnothDSL.g:268:44: (iv_ruleGoal= ruleGoal EOF )
-            // InternalWesnothDSL.g:269:2: iv_ruleGoal= ruleGoal EOF
-            {
-             newCompositeNode(grammarAccess.getGoalRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleGoal=ruleGoal();
-
-            state._fsp--;
-
-             current =iv_ruleGoal.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleGoal"
-
-
-    // $ANTLR start "ruleGoal"
-    // InternalWesnothDSL.g:275:1: ruleGoal returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'goal' ;
-    public final AntlrDatatypeRuleToken ruleGoal() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalWesnothDSL.g:281:2: (kw= 'goal' )
-            // InternalWesnothDSL.g:282:2: kw= 'goal'
-            {
-            kw=(Token)match(input,15,FOLLOW_2); 
-
-            		current.merge(kw);
-            		newLeafNode(kw, grammarAccess.getGoalAccess().getGoalKeyword());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleGoal"
-
-
-    // $ANTLR start "entryRuleCandidate_Action"
-    // InternalWesnothDSL.g:290:1: entryRuleCandidate_Action returns [String current=null] : iv_ruleCandidate_Action= ruleCandidate_Action EOF ;
-    public final String entryRuleCandidate_Action() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleCandidate_Action = null;
-
-
-        try {
-            // InternalWesnothDSL.g:290:56: (iv_ruleCandidate_Action= ruleCandidate_Action EOF )
-            // InternalWesnothDSL.g:291:2: iv_ruleCandidate_Action= ruleCandidate_Action EOF
-            {
-             newCompositeNode(grammarAccess.getCandidate_ActionRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleCandidate_Action=ruleCandidate_Action();
-
-            state._fsp--;
-
-             current =iv_ruleCandidate_Action.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleCandidate_Action"
-
-
-    // $ANTLR start "ruleCandidate_Action"
-    // InternalWesnothDSL.g:297:1: ruleCandidate_Action returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_New_CA_0= ruleNew_CA | this_Defualt_CA_1= ruleDefualt_CA ) ;
-    public final AntlrDatatypeRuleToken ruleCandidate_Action() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        AntlrDatatypeRuleToken this_New_CA_0 = null;
-
-        AntlrDatatypeRuleToken this_Defualt_CA_1 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalWesnothDSL.g:303:2: ( (this_New_CA_0= ruleNew_CA | this_Defualt_CA_1= ruleDefualt_CA ) )
-            // InternalWesnothDSL.g:304:2: (this_New_CA_0= ruleNew_CA | this_Defualt_CA_1= ruleDefualt_CA )
-            {
-            // InternalWesnothDSL.g:304:2: (this_New_CA_0= ruleNew_CA | this_Defualt_CA_1= ruleDefualt_CA )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==16) ) {
-                alt4=1;
-            }
-            else if ( ((LA4_0>=17 && LA4_0<=24)) ) {
-                alt4=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
-
-                throw nvae;
-            }
-            switch (alt4) {
-                case 1 :
-                    // InternalWesnothDSL.g:305:3: this_New_CA_0= ruleNew_CA
-                    {
-
-                    			newCompositeNode(grammarAccess.getCandidate_ActionAccess().getNew_CAParserRuleCall_0());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_New_CA_0=ruleNew_CA();
-
-                    state._fsp--;
-
-
-                    			current.merge(this_New_CA_0);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-                case 2 :
-                    // InternalWesnothDSL.g:316:3: this_Defualt_CA_1= ruleDefualt_CA
-                    {
-
-                    			newCompositeNode(grammarAccess.getCandidate_ActionAccess().getDefualt_CAParserRuleCall_1());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Defualt_CA_1=ruleDefualt_CA();
-
-                    state._fsp--;
-
-
-                    			current.merge(this_Defualt_CA_1);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleCandidate_Action"
-
-
-    // $ANTLR start "entryRuleNew_CA"
-    // InternalWesnothDSL.g:330:1: entryRuleNew_CA returns [String current=null] : iv_ruleNew_CA= ruleNew_CA EOF ;
-    public final String entryRuleNew_CA() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleNew_CA = null;
-
-
-        try {
-            // InternalWesnothDSL.g:330:46: (iv_ruleNew_CA= ruleNew_CA EOF )
-            // InternalWesnothDSL.g:331:2: iv_ruleNew_CA= ruleNew_CA EOF
-            {
-             newCompositeNode(grammarAccess.getNew_CARule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleNew_CA=ruleNew_CA();
-
-            state._fsp--;
-
-             current =iv_ruleNew_CA.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleNew_CA"
-
-
-    // $ANTLR start "ruleNew_CA"
-    // InternalWesnothDSL.g:337:1: ruleNew_CA returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'newCA' ;
-    public final AntlrDatatypeRuleToken ruleNew_CA() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalWesnothDSL.g:343:2: (kw= 'newCA' )
-            // InternalWesnothDSL.g:344:2: kw= 'newCA'
-            {
-            kw=(Token)match(input,16,FOLLOW_2); 
-
-            		current.merge(kw);
-            		newLeafNode(kw, grammarAccess.getNew_CAAccess().getNewCAKeyword());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleNew_CA"
-
-
     // $ANTLR start "entryRuleDefualt_CA"
-    // InternalWesnothDSL.g:352:1: entryRuleDefualt_CA returns [String current=null] : iv_ruleDefualt_CA= ruleDefualt_CA EOF ;
-    public final String entryRuleDefualt_CA() throws RecognitionException {
-        String current = null;
+    // InternalWesnothDSL.g:228:1: entryRuleDefualt_CA returns [EObject current=null] : iv_ruleDefualt_CA= ruleDefualt_CA EOF ;
+    public final EObject entryRuleDefualt_CA() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken iv_ruleDefualt_CA = null;
+        EObject iv_ruleDefualt_CA = null;
 
 
         try {
-            // InternalWesnothDSL.g:352:50: (iv_ruleDefualt_CA= ruleDefualt_CA EOF )
-            // InternalWesnothDSL.g:353:2: iv_ruleDefualt_CA= ruleDefualt_CA EOF
+            // InternalWesnothDSL.g:228:51: (iv_ruleDefualt_CA= ruleDefualt_CA EOF )
+            // InternalWesnothDSL.g:229:2: iv_ruleDefualt_CA= ruleDefualt_CA EOF
             {
              newCompositeNode(grammarAccess.getDefualt_CARule()); 
             pushFollow(FOLLOW_1);
@@ -940,7 +526,7 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
 
             state._fsp--;
 
-             current =iv_ruleDefualt_CA.getText(); 
+             current =iv_ruleDefualt_CA; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -959,245 +545,217 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefualt_CA"
-    // InternalWesnothDSL.g:359:1: ruleDefualt_CA returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_Movement_0= ruleMovement | this_Retreat_1= ruleRetreat | this_Move_To_Target_2= ruleMove_To_Target | this_Combat_3= ruleCombat | this_Recruit_4= ruleRecruit | this_Focus_High_XP_5= ruleFocus_High_XP | this_Move_To_Enemy_6= ruleMove_To_Enemy | this_Capture_Villages_7= ruleCapture_Villages ) ;
-    public final AntlrDatatypeRuleToken ruleDefualt_CA() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+    // InternalWesnothDSL.g:235:1: ruleDefualt_CA returns [EObject current=null] : ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'retreat' | lv_caType_0_3= 'move_to_target' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'focus_high_XP' | lv_caType_0_7= 'move_to_enemy' | lv_caType_0_8= 'capture_villages' ) ) ) ;
+    public final EObject ruleDefualt_CA() throws RecognitionException {
+        EObject current = null;
 
-        AntlrDatatypeRuleToken this_Movement_0 = null;
-
-        AntlrDatatypeRuleToken this_Retreat_1 = null;
-
-        AntlrDatatypeRuleToken this_Move_To_Target_2 = null;
-
-        AntlrDatatypeRuleToken this_Combat_3 = null;
-
-        AntlrDatatypeRuleToken this_Recruit_4 = null;
-
-        AntlrDatatypeRuleToken this_Focus_High_XP_5 = null;
-
-        AntlrDatatypeRuleToken this_Move_To_Enemy_6 = null;
-
-        AntlrDatatypeRuleToken this_Capture_Villages_7 = null;
-
+        Token lv_caType_0_1=null;
+        Token lv_caType_0_2=null;
+        Token lv_caType_0_3=null;
+        Token lv_caType_0_4=null;
+        Token lv_caType_0_5=null;
+        Token lv_caType_0_6=null;
+        Token lv_caType_0_7=null;
+        Token lv_caType_0_8=null;
 
 
         	enterRule();
 
         try {
-            // InternalWesnothDSL.g:365:2: ( (this_Movement_0= ruleMovement | this_Retreat_1= ruleRetreat | this_Move_To_Target_2= ruleMove_To_Target | this_Combat_3= ruleCombat | this_Recruit_4= ruleRecruit | this_Focus_High_XP_5= ruleFocus_High_XP | this_Move_To_Enemy_6= ruleMove_To_Enemy | this_Capture_Villages_7= ruleCapture_Villages ) )
-            // InternalWesnothDSL.g:366:2: (this_Movement_0= ruleMovement | this_Retreat_1= ruleRetreat | this_Move_To_Target_2= ruleMove_To_Target | this_Combat_3= ruleCombat | this_Recruit_4= ruleRecruit | this_Focus_High_XP_5= ruleFocus_High_XP | this_Move_To_Enemy_6= ruleMove_To_Enemy | this_Capture_Villages_7= ruleCapture_Villages )
+            // InternalWesnothDSL.g:241:2: ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'retreat' | lv_caType_0_3= 'move_to_target' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'focus_high_XP' | lv_caType_0_7= 'move_to_enemy' | lv_caType_0_8= 'capture_villages' ) ) ) )
+            // InternalWesnothDSL.g:242:2: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'retreat' | lv_caType_0_3= 'move_to_target' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'focus_high_XP' | lv_caType_0_7= 'move_to_enemy' | lv_caType_0_8= 'capture_villages' ) ) )
             {
-            // InternalWesnothDSL.g:366:2: (this_Movement_0= ruleMovement | this_Retreat_1= ruleRetreat | this_Move_To_Target_2= ruleMove_To_Target | this_Combat_3= ruleCombat | this_Recruit_4= ruleRecruit | this_Focus_High_XP_5= ruleFocus_High_XP | this_Move_To_Enemy_6= ruleMove_To_Enemy | this_Capture_Villages_7= ruleCapture_Villages )
-            int alt5=8;
+            // InternalWesnothDSL.g:242:2: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'retreat' | lv_caType_0_3= 'move_to_target' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'focus_high_XP' | lv_caType_0_7= 'move_to_enemy' | lv_caType_0_8= 'capture_villages' ) ) )
+            // InternalWesnothDSL.g:243:3: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'retreat' | lv_caType_0_3= 'move_to_target' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'focus_high_XP' | lv_caType_0_7= 'move_to_enemy' | lv_caType_0_8= 'capture_villages' ) )
+            {
+            // InternalWesnothDSL.g:243:3: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'retreat' | lv_caType_0_3= 'move_to_target' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'focus_high_XP' | lv_caType_0_7= 'move_to_enemy' | lv_caType_0_8= 'capture_villages' ) )
+            // InternalWesnothDSL.g:244:4: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'retreat' | lv_caType_0_3= 'move_to_target' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'focus_high_XP' | lv_caType_0_7= 'move_to_enemy' | lv_caType_0_8= 'capture_villages' )
+            {
+            // InternalWesnothDSL.g:244:4: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'retreat' | lv_caType_0_3= 'move_to_target' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'focus_high_XP' | lv_caType_0_7= 'move_to_enemy' | lv_caType_0_8= 'capture_villages' )
+            int alt3=8;
             switch ( input.LA(1) ) {
+            case 15:
+                {
+                alt3=1;
+                }
+                break;
+            case 16:
+                {
+                alt3=2;
+                }
+                break;
             case 17:
                 {
-                alt5=1;
+                alt3=3;
                 }
                 break;
             case 18:
                 {
-                alt5=2;
+                alt3=4;
                 }
                 break;
             case 19:
                 {
-                alt5=3;
+                alt3=5;
                 }
                 break;
             case 20:
                 {
-                alt5=4;
+                alt3=6;
                 }
                 break;
             case 21:
                 {
-                alt5=5;
+                alt3=7;
                 }
                 break;
             case 22:
                 {
-                alt5=6;
-                }
-                break;
-            case 23:
-                {
-                alt5=7;
-                }
-                break;
-            case 24:
-                {
-                alt5=8;
+                alt3=8;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt5) {
+            switch (alt3) {
                 case 1 :
-                    // InternalWesnothDSL.g:367:3: this_Movement_0= ruleMovement
+                    // InternalWesnothDSL.g:245:5: lv_caType_0_1= 'movement'
                     {
+                    lv_caType_0_1=(Token)match(input,15,FOLLOW_2); 
 
-                    			newCompositeNode(grammarAccess.getDefualt_CAAccess().getMovementParserRuleCall_0());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Movement_0=ruleMovement();
+                    					newLeafNode(lv_caType_0_1, grammarAccess.getDefualt_CAAccess().getCaTypeMovementKeyword_0_0());
+                    				
 
-                    state._fsp--;
-
-
-                    			current.merge(this_Movement_0);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getDefualt_CARule());
+                    					}
+                    					setWithLastConsumed(current, "caType", lv_caType_0_1, null);
+                    				
 
                     }
                     break;
                 case 2 :
-                    // InternalWesnothDSL.g:378:3: this_Retreat_1= ruleRetreat
+                    // InternalWesnothDSL.g:256:5: lv_caType_0_2= 'retreat'
                     {
+                    lv_caType_0_2=(Token)match(input,16,FOLLOW_2); 
 
-                    			newCompositeNode(grammarAccess.getDefualt_CAAccess().getRetreatParserRuleCall_1());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Retreat_1=ruleRetreat();
+                    					newLeafNode(lv_caType_0_2, grammarAccess.getDefualt_CAAccess().getCaTypeRetreatKeyword_0_1());
+                    				
 
-                    state._fsp--;
-
-
-                    			current.merge(this_Retreat_1);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getDefualt_CARule());
+                    					}
+                    					setWithLastConsumed(current, "caType", lv_caType_0_2, null);
+                    				
 
                     }
                     break;
                 case 3 :
-                    // InternalWesnothDSL.g:389:3: this_Move_To_Target_2= ruleMove_To_Target
+                    // InternalWesnothDSL.g:267:5: lv_caType_0_3= 'move_to_target'
                     {
+                    lv_caType_0_3=(Token)match(input,17,FOLLOW_2); 
 
-                    			newCompositeNode(grammarAccess.getDefualt_CAAccess().getMove_To_TargetParserRuleCall_2());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Move_To_Target_2=ruleMove_To_Target();
+                    					newLeafNode(lv_caType_0_3, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetKeyword_0_2());
+                    				
 
-                    state._fsp--;
-
-
-                    			current.merge(this_Move_To_Target_2);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getDefualt_CARule());
+                    					}
+                    					setWithLastConsumed(current, "caType", lv_caType_0_3, null);
+                    				
 
                     }
                     break;
                 case 4 :
-                    // InternalWesnothDSL.g:400:3: this_Combat_3= ruleCombat
+                    // InternalWesnothDSL.g:278:5: lv_caType_0_4= 'combat'
                     {
+                    lv_caType_0_4=(Token)match(input,18,FOLLOW_2); 
 
-                    			newCompositeNode(grammarAccess.getDefualt_CAAccess().getCombatParserRuleCall_3());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Combat_3=ruleCombat();
+                    					newLeafNode(lv_caType_0_4, grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_3());
+                    				
 
-                    state._fsp--;
-
-
-                    			current.merge(this_Combat_3);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getDefualt_CARule());
+                    					}
+                    					setWithLastConsumed(current, "caType", lv_caType_0_4, null);
+                    				
 
                     }
                     break;
                 case 5 :
-                    // InternalWesnothDSL.g:411:3: this_Recruit_4= ruleRecruit
+                    // InternalWesnothDSL.g:289:5: lv_caType_0_5= 'recruit'
                     {
+                    lv_caType_0_5=(Token)match(input,19,FOLLOW_2); 
 
-                    			newCompositeNode(grammarAccess.getDefualt_CAAccess().getRecruitParserRuleCall_4());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Recruit_4=ruleRecruit();
+                    					newLeafNode(lv_caType_0_5, grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_4());
+                    				
 
-                    state._fsp--;
-
-
-                    			current.merge(this_Recruit_4);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getDefualt_CARule());
+                    					}
+                    					setWithLastConsumed(current, "caType", lv_caType_0_5, null);
+                    				
 
                     }
                     break;
                 case 6 :
-                    // InternalWesnothDSL.g:422:3: this_Focus_High_XP_5= ruleFocus_High_XP
+                    // InternalWesnothDSL.g:300:5: lv_caType_0_6= 'focus_high_XP'
                     {
+                    lv_caType_0_6=(Token)match(input,20,FOLLOW_2); 
 
-                    			newCompositeNode(grammarAccess.getDefualt_CAAccess().getFocus_High_XPParserRuleCall_5());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Focus_High_XP_5=ruleFocus_High_XP();
+                    					newLeafNode(lv_caType_0_6, grammarAccess.getDefualt_CAAccess().getCaTypeFocus_high_XPKeyword_0_5());
+                    				
 
-                    state._fsp--;
-
-
-                    			current.merge(this_Focus_High_XP_5);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getDefualt_CARule());
+                    					}
+                    					setWithLastConsumed(current, "caType", lv_caType_0_6, null);
+                    				
 
                     }
                     break;
                 case 7 :
-                    // InternalWesnothDSL.g:433:3: this_Move_To_Enemy_6= ruleMove_To_Enemy
+                    // InternalWesnothDSL.g:311:5: lv_caType_0_7= 'move_to_enemy'
                     {
+                    lv_caType_0_7=(Token)match(input,21,FOLLOW_2); 
 
-                    			newCompositeNode(grammarAccess.getDefualt_CAAccess().getMove_To_EnemyParserRuleCall_6());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Move_To_Enemy_6=ruleMove_To_Enemy();
+                    					newLeafNode(lv_caType_0_7, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_enemyKeyword_0_6());
+                    				
 
-                    state._fsp--;
-
-
-                    			current.merge(this_Move_To_Enemy_6);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getDefualt_CARule());
+                    					}
+                    					setWithLastConsumed(current, "caType", lv_caType_0_7, null);
+                    				
 
                     }
                     break;
                 case 8 :
-                    // InternalWesnothDSL.g:444:3: this_Capture_Villages_7= ruleCapture_Villages
+                    // InternalWesnothDSL.g:322:5: lv_caType_0_8= 'capture_villages'
                     {
+                    lv_caType_0_8=(Token)match(input,22,FOLLOW_2); 
 
-                    			newCompositeNode(grammarAccess.getDefualt_CAAccess().getCapture_VillagesParserRuleCall_7());
-                    		
-                    pushFollow(FOLLOW_2);
-                    this_Capture_Villages_7=ruleCapture_Villages();
+                    					newLeafNode(lv_caType_0_8, grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_7());
+                    				
 
-                    state._fsp--;
-
-
-                    			current.merge(this_Capture_Villages_7);
-                    		
-
-                    			afterParserOrEnumRuleCall();
-                    		
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getDefualt_CARule());
+                    					}
+                    					setWithLastConsumed(current, "caType", lv_caType_0_8, null);
+                    				
 
                     }
                     break;
+
+            }
+
+
+            }
+
 
             }
 
@@ -1219,598 +777,6 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleDefualt_CA"
 
-
-    // $ANTLR start "entryRuleMovement"
-    // InternalWesnothDSL.g:458:1: entryRuleMovement returns [String current=null] : iv_ruleMovement= ruleMovement EOF ;
-    public final String entryRuleMovement() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleMovement = null;
-
-
-        try {
-            // InternalWesnothDSL.g:458:48: (iv_ruleMovement= ruleMovement EOF )
-            // InternalWesnothDSL.g:459:2: iv_ruleMovement= ruleMovement EOF
-            {
-             newCompositeNode(grammarAccess.getMovementRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleMovement=ruleMovement();
-
-            state._fsp--;
-
-             current =iv_ruleMovement.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleMovement"
-
-
-    // $ANTLR start "ruleMovement"
-    // InternalWesnothDSL.g:465:1: ruleMovement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'movement' ;
-    public final AntlrDatatypeRuleToken ruleMovement() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalWesnothDSL.g:471:2: (kw= 'movement' )
-            // InternalWesnothDSL.g:472:2: kw= 'movement'
-            {
-            kw=(Token)match(input,17,FOLLOW_2); 
-
-            		current.merge(kw);
-            		newLeafNode(kw, grammarAccess.getMovementAccess().getMovementKeyword());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleMovement"
-
-
-    // $ANTLR start "entryRuleRetreat"
-    // InternalWesnothDSL.g:480:1: entryRuleRetreat returns [String current=null] : iv_ruleRetreat= ruleRetreat EOF ;
-    public final String entryRuleRetreat() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleRetreat = null;
-
-
-        try {
-            // InternalWesnothDSL.g:480:47: (iv_ruleRetreat= ruleRetreat EOF )
-            // InternalWesnothDSL.g:481:2: iv_ruleRetreat= ruleRetreat EOF
-            {
-             newCompositeNode(grammarAccess.getRetreatRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleRetreat=ruleRetreat();
-
-            state._fsp--;
-
-             current =iv_ruleRetreat.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleRetreat"
-
-
-    // $ANTLR start "ruleRetreat"
-    // InternalWesnothDSL.g:487:1: ruleRetreat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'retreat' ;
-    public final AntlrDatatypeRuleToken ruleRetreat() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalWesnothDSL.g:493:2: (kw= 'retreat' )
-            // InternalWesnothDSL.g:494:2: kw= 'retreat'
-            {
-            kw=(Token)match(input,18,FOLLOW_2); 
-
-            		current.merge(kw);
-            		newLeafNode(kw, grammarAccess.getRetreatAccess().getRetreatKeyword());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleRetreat"
-
-
-    // $ANTLR start "entryRuleMove_To_Target"
-    // InternalWesnothDSL.g:502:1: entryRuleMove_To_Target returns [String current=null] : iv_ruleMove_To_Target= ruleMove_To_Target EOF ;
-    public final String entryRuleMove_To_Target() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleMove_To_Target = null;
-
-
-        try {
-            // InternalWesnothDSL.g:502:54: (iv_ruleMove_To_Target= ruleMove_To_Target EOF )
-            // InternalWesnothDSL.g:503:2: iv_ruleMove_To_Target= ruleMove_To_Target EOF
-            {
-             newCompositeNode(grammarAccess.getMove_To_TargetRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleMove_To_Target=ruleMove_To_Target();
-
-            state._fsp--;
-
-             current =iv_ruleMove_To_Target.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleMove_To_Target"
-
-
-    // $ANTLR start "ruleMove_To_Target"
-    // InternalWesnothDSL.g:509:1: ruleMove_To_Target returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'move_to_target' ;
-    public final AntlrDatatypeRuleToken ruleMove_To_Target() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalWesnothDSL.g:515:2: (kw= 'move_to_target' )
-            // InternalWesnothDSL.g:516:2: kw= 'move_to_target'
-            {
-            kw=(Token)match(input,19,FOLLOW_2); 
-
-            		current.merge(kw);
-            		newLeafNode(kw, grammarAccess.getMove_To_TargetAccess().getMove_to_targetKeyword());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleMove_To_Target"
-
-
-    // $ANTLR start "entryRuleCombat"
-    // InternalWesnothDSL.g:524:1: entryRuleCombat returns [String current=null] : iv_ruleCombat= ruleCombat EOF ;
-    public final String entryRuleCombat() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleCombat = null;
-
-
-        try {
-            // InternalWesnothDSL.g:524:46: (iv_ruleCombat= ruleCombat EOF )
-            // InternalWesnothDSL.g:525:2: iv_ruleCombat= ruleCombat EOF
-            {
-             newCompositeNode(grammarAccess.getCombatRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleCombat=ruleCombat();
-
-            state._fsp--;
-
-             current =iv_ruleCombat.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleCombat"
-
-
-    // $ANTLR start "ruleCombat"
-    // InternalWesnothDSL.g:531:1: ruleCombat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'combat' ;
-    public final AntlrDatatypeRuleToken ruleCombat() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalWesnothDSL.g:537:2: (kw= 'combat' )
-            // InternalWesnothDSL.g:538:2: kw= 'combat'
-            {
-            kw=(Token)match(input,20,FOLLOW_2); 
-
-            		current.merge(kw);
-            		newLeafNode(kw, grammarAccess.getCombatAccess().getCombatKeyword());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleCombat"
-
-
-    // $ANTLR start "entryRuleRecruit"
-    // InternalWesnothDSL.g:546:1: entryRuleRecruit returns [String current=null] : iv_ruleRecruit= ruleRecruit EOF ;
-    public final String entryRuleRecruit() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleRecruit = null;
-
-
-        try {
-            // InternalWesnothDSL.g:546:47: (iv_ruleRecruit= ruleRecruit EOF )
-            // InternalWesnothDSL.g:547:2: iv_ruleRecruit= ruleRecruit EOF
-            {
-             newCompositeNode(grammarAccess.getRecruitRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleRecruit=ruleRecruit();
-
-            state._fsp--;
-
-             current =iv_ruleRecruit.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleRecruit"
-
-
-    // $ANTLR start "ruleRecruit"
-    // InternalWesnothDSL.g:553:1: ruleRecruit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'recruit' ;
-    public final AntlrDatatypeRuleToken ruleRecruit() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalWesnothDSL.g:559:2: (kw= 'recruit' )
-            // InternalWesnothDSL.g:560:2: kw= 'recruit'
-            {
-            kw=(Token)match(input,21,FOLLOW_2); 
-
-            		current.merge(kw);
-            		newLeafNode(kw, grammarAccess.getRecruitAccess().getRecruitKeyword());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleRecruit"
-
-
-    // $ANTLR start "entryRuleFocus_High_XP"
-    // InternalWesnothDSL.g:568:1: entryRuleFocus_High_XP returns [String current=null] : iv_ruleFocus_High_XP= ruleFocus_High_XP EOF ;
-    public final String entryRuleFocus_High_XP() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleFocus_High_XP = null;
-
-
-        try {
-            // InternalWesnothDSL.g:568:53: (iv_ruleFocus_High_XP= ruleFocus_High_XP EOF )
-            // InternalWesnothDSL.g:569:2: iv_ruleFocus_High_XP= ruleFocus_High_XP EOF
-            {
-             newCompositeNode(grammarAccess.getFocus_High_XPRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleFocus_High_XP=ruleFocus_High_XP();
-
-            state._fsp--;
-
-             current =iv_ruleFocus_High_XP.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleFocus_High_XP"
-
-
-    // $ANTLR start "ruleFocus_High_XP"
-    // InternalWesnothDSL.g:575:1: ruleFocus_High_XP returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'focus_high_xp' ;
-    public final AntlrDatatypeRuleToken ruleFocus_High_XP() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalWesnothDSL.g:581:2: (kw= 'focus_high_xp' )
-            // InternalWesnothDSL.g:582:2: kw= 'focus_high_xp'
-            {
-            kw=(Token)match(input,22,FOLLOW_2); 
-
-            		current.merge(kw);
-            		newLeafNode(kw, grammarAccess.getFocus_High_XPAccess().getFocus_high_xpKeyword());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleFocus_High_XP"
-
-
-    // $ANTLR start "entryRuleMove_To_Enemy"
-    // InternalWesnothDSL.g:590:1: entryRuleMove_To_Enemy returns [String current=null] : iv_ruleMove_To_Enemy= ruleMove_To_Enemy EOF ;
-    public final String entryRuleMove_To_Enemy() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleMove_To_Enemy = null;
-
-
-        try {
-            // InternalWesnothDSL.g:590:53: (iv_ruleMove_To_Enemy= ruleMove_To_Enemy EOF )
-            // InternalWesnothDSL.g:591:2: iv_ruleMove_To_Enemy= ruleMove_To_Enemy EOF
-            {
-             newCompositeNode(grammarAccess.getMove_To_EnemyRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleMove_To_Enemy=ruleMove_To_Enemy();
-
-            state._fsp--;
-
-             current =iv_ruleMove_To_Enemy.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleMove_To_Enemy"
-
-
-    // $ANTLR start "ruleMove_To_Enemy"
-    // InternalWesnothDSL.g:597:1: ruleMove_To_Enemy returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'move_to_enemy' ;
-    public final AntlrDatatypeRuleToken ruleMove_To_Enemy() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalWesnothDSL.g:603:2: (kw= 'move_to_enemy' )
-            // InternalWesnothDSL.g:604:2: kw= 'move_to_enemy'
-            {
-            kw=(Token)match(input,23,FOLLOW_2); 
-
-            		current.merge(kw);
-            		newLeafNode(kw, grammarAccess.getMove_To_EnemyAccess().getMove_to_enemyKeyword());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleMove_To_Enemy"
-
-
-    // $ANTLR start "entryRuleCapture_Villages"
-    // InternalWesnothDSL.g:612:1: entryRuleCapture_Villages returns [String current=null] : iv_ruleCapture_Villages= ruleCapture_Villages EOF ;
-    public final String entryRuleCapture_Villages() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleCapture_Villages = null;
-
-
-        try {
-            // InternalWesnothDSL.g:612:56: (iv_ruleCapture_Villages= ruleCapture_Villages EOF )
-            // InternalWesnothDSL.g:613:2: iv_ruleCapture_Villages= ruleCapture_Villages EOF
-            {
-             newCompositeNode(grammarAccess.getCapture_VillagesRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleCapture_Villages=ruleCapture_Villages();
-
-            state._fsp--;
-
-             current =iv_ruleCapture_Villages.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleCapture_Villages"
-
-
-    // $ANTLR start "ruleCapture_Villages"
-    // InternalWesnothDSL.g:619:1: ruleCapture_Villages returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= 'capture_villages' ;
-    public final AntlrDatatypeRuleToken ruleCapture_Villages() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalWesnothDSL.g:625:2: (kw= 'capture_villages' )
-            // InternalWesnothDSL.g:626:2: kw= 'capture_villages'
-            {
-            kw=(Token)match(input,24,FOLLOW_2); 
-
-            		current.merge(kw);
-            		newLeafNode(kw, grammarAccess.getCapture_VillagesAccess().getCapture_villagesKeyword());
-            	
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleCapture_Villages"
-
     // Delegated rules
 
 
@@ -1822,6 +788,6 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000001FFA000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x00000000007FA000L});
 
 }

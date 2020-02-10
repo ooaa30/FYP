@@ -114,13 +114,13 @@ public interface WesnothDSLPackage extends EPackage
   int RULE__UNIT_ID = 1;
 
   /**
-   * The feature id for the '<em><b>Behaviours</b></em>' attribute list.
+   * The feature id for the '<em><b>Defualt cas</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RULE__BEHAVIOURS = 2;
+  int RULE__DEFUALT_CAS = 2;
 
   /**
    * The number of structural features of the '<em>Rule</em>' class.
@@ -158,6 +158,34 @@ public interface WesnothDSLPackage extends EPackage
    * @ordered
    */
   int UNIT_ID_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.Defualt_CAImpl <em>Defualt CA</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.Defualt_CAImpl
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getDefualt_CA()
+   * @generated
+   */
+  int DEFUALT_CA = 3;
+
+  /**
+   * The feature id for the '<em><b>Ca Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFUALT_CA__CA_TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>Defualt CA</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFUALT_CA_FEATURE_COUNT = 1;
 
 
   /**
@@ -214,15 +242,15 @@ public interface WesnothDSLPackage extends EPackage
   EReference getRule_UnitID();
 
   /**
-   * Returns the meta object for the attribute list '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getBehaviours <em>Behaviours</em>}'.
+   * Returns the meta object for the containment reference list '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getDefualt_cas <em>Defualt cas</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Behaviours</em>'.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getBehaviours()
+   * @return the meta object for the containment reference list '<em>Defualt cas</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getDefualt_cas()
    * @see #getRule()
    * @generated
    */
-  EAttribute getRule_Behaviours();
+  EReference getRule_Defualt_cas();
 
   /**
    * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitID <em>Unit ID</em>}'.
@@ -244,6 +272,27 @@ public interface WesnothDSLPackage extends EPackage
    * @generated
    */
   EAttribute getUnitID_Name();
+
+  /**
+   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA <em>Defualt CA</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Defualt CA</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA
+   * @generated
+   */
+  EClass getDefualt_CA();
+
+  /**
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA#getCaType <em>Ca Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Ca Type</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA#getCaType()
+   * @see #getDefualt_CA()
+   * @generated
+   */
+  EAttribute getDefualt_CA_CaType();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -313,12 +362,12 @@ public interface WesnothDSLPackage extends EPackage
     EReference RULE__UNIT_ID = eINSTANCE.getRule_UnitID();
 
     /**
-     * The meta object literal for the '<em><b>Behaviours</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Defualt cas</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RULE__BEHAVIOURS = eINSTANCE.getRule_Behaviours();
+    EReference RULE__DEFUALT_CAS = eINSTANCE.getRule_Defualt_cas();
 
     /**
      * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.UnitIDImpl <em>Unit ID</em>}' class.
@@ -337,6 +386,24 @@ public interface WesnothDSLPackage extends EPackage
      * @generated
      */
     EAttribute UNIT_ID__NAME = eINSTANCE.getUnitID_Name();
+
+    /**
+     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.Defualt_CAImpl <em>Defualt CA</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.Defualt_CAImpl
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getDefualt_CA()
+     * @generated
+     */
+    EClass DEFUALT_CA = eINSTANCE.getDefualt_CA();
+
+    /**
+     * The meta object literal for the '<em><b>Ca Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DEFUALT_CA__CA_TYPE = eINSTANCE.getDefualt_CA_CaType();
 
   }
 

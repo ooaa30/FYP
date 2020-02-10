@@ -46,19 +46,19 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cUnitIDAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cUnitIDUnitIDParserRuleCall_3_0 = (RuleCall)cUnitIDAssignment_3.eContents().get(0);
-		private final Assignment cBehavioursAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cBehavioursBehaviourParserRuleCall_4_0 = (RuleCall)cBehavioursAssignment_4.eContents().get(0);
+		private final Assignment cDefualt_casAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDefualt_casDefualt_CAParserRuleCall_4_0 = (RuleCall)cDefualt_casAssignment_4.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Rule:
 		//	'rule' name=ID
 		//	'{'
 		//	unitID=UnitID
-		//	behaviours+=Behaviour*
+		//	defualt_cas+=Defualt_CA*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'rule' name=ID '{' unitID=UnitID behaviours+=Behaviour* '}'
+		//'rule' name=ID '{' unitID=UnitID defualt_cas+=Defualt_CA* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'rule'
@@ -79,11 +79,11 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//UnitID
 		public RuleCall getUnitIDUnitIDParserRuleCall_3_0() { return cUnitIDUnitIDParserRuleCall_3_0; }
 		
-		//behaviours+=Behaviour*
-		public Assignment getBehavioursAssignment_4() { return cBehavioursAssignment_4; }
+		//defualt_cas+=Defualt_CA*
+		public Assignment getDefualt_casAssignment_4() { return cDefualt_casAssignment_4; }
 		
-		//Behaviour
-		public RuleCall getBehavioursBehaviourParserRuleCall_4_0() { return cBehavioursBehaviourParserRuleCall_4_0; }
+		//Defualt_CA
+		public RuleCall getDefualt_casDefualt_CAParserRuleCall_4_0() { return cDefualt_casDefualt_CAParserRuleCall_4_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
@@ -111,25 +111,6 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
-	public class BehaviourElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Behaviour");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cGoalParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cCandidate_ActionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//Behaviour:
-		//	Goal | Candidate_Action;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Goal | Candidate_Action
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Goal
-		public RuleCall getGoalParserRuleCall_0() { return cGoalParserRuleCall_0; }
-		
-		//Candidate_Action
-		public RuleCall getCandidate_ActionParserRuleCall_1() { return cCandidate_ActionParserRuleCall_1; }
-	}
 	public class GoalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Goal");
 		private final Keyword cGoalKeyword = (Keyword)rule.eContents().get(1);
@@ -142,25 +123,6 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//'goal'
 		public Keyword getGoalKeyword() { return cGoalKeyword; }
-	}
-	public class Candidate_ActionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Candidate_Action");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cNew_CAParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cDefualt_CAParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//Candidate_Action:
-		//	New_CA | Defualt_CA;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//New_CA | Defualt_CA
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//New_CA
-		public RuleCall getNew_CAParserRuleCall_0() { return cNew_CAParserRuleCall_0; }
-		
-		//Defualt_CA
-		public RuleCall getDefualt_CAParserRuleCall_1() { return cDefualt_CAParserRuleCall_1; }
 	}
 	public class New_CAElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.New_CA");
@@ -175,153 +137,62 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class Defualt_CAElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Defualt_CA");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cMovementParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cRetreatParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cMove_To_TargetParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cCombatParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cRecruitParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cFocus_High_XPParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cMove_To_EnemyParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cCapture_VillagesParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final Assignment cCaTypeAssignment = (Assignment)rule.eContents().get(1);
+		private final Alternatives cCaTypeAlternatives_0 = (Alternatives)cCaTypeAssignment.eContents().get(0);
+		private final Keyword cCaTypeMovementKeyword_0_0 = (Keyword)cCaTypeAlternatives_0.eContents().get(0);
+		private final Keyword cCaTypeRetreatKeyword_0_1 = (Keyword)cCaTypeAlternatives_0.eContents().get(1);
+		private final Keyword cCaTypeMove_to_targetKeyword_0_2 = (Keyword)cCaTypeAlternatives_0.eContents().get(2);
+		private final Keyword cCaTypeCombatKeyword_0_3 = (Keyword)cCaTypeAlternatives_0.eContents().get(3);
+		private final Keyword cCaTypeRecruitKeyword_0_4 = (Keyword)cCaTypeAlternatives_0.eContents().get(4);
+		private final Keyword cCaTypeFocus_high_XPKeyword_0_5 = (Keyword)cCaTypeAlternatives_0.eContents().get(5);
+		private final Keyword cCaTypeMove_to_enemyKeyword_0_6 = (Keyword)cCaTypeAlternatives_0.eContents().get(6);
+		private final Keyword cCaTypeCapture_villagesKeyword_0_7 = (Keyword)cCaTypeAlternatives_0.eContents().get(7);
 		
 		//Defualt_CA:
-		//	Movement | Retreat | Move_To_Target | Combat | Recruit | Focus_High_XP | Move_To_Enemy | Capture_Villages;
+		//	caType=("movement" | "retreat" | "move_to_target" | "combat" | "recruit" | "focus_high_XP" | "move_to_enemy" |
+		//	"capture_villages");
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Movement | Retreat | Move_To_Target | Combat | Recruit | Focus_High_XP | Move_To_Enemy | Capture_Villages
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//caType=("movement" | "retreat" | "move_to_target" | "combat" | "recruit" | "focus_high_XP" | "move_to_enemy" |
+		//"capture_villages")
+		public Assignment getCaTypeAssignment() { return cCaTypeAssignment; }
 		
-		//Movement
-		public RuleCall getMovementParserRuleCall_0() { return cMovementParserRuleCall_0; }
+		//("movement" | "retreat" | "move_to_target" | "combat" | "recruit" | "focus_high_XP" | "move_to_enemy" |
+		//"capture_villages")
+		public Alternatives getCaTypeAlternatives_0() { return cCaTypeAlternatives_0; }
 		
-		//Retreat
-		public RuleCall getRetreatParserRuleCall_1() { return cRetreatParserRuleCall_1; }
+		//"movement"
+		public Keyword getCaTypeMovementKeyword_0_0() { return cCaTypeMovementKeyword_0_0; }
 		
-		//Move_To_Target
-		public RuleCall getMove_To_TargetParserRuleCall_2() { return cMove_To_TargetParserRuleCall_2; }
+		//"retreat"
+		public Keyword getCaTypeRetreatKeyword_0_1() { return cCaTypeRetreatKeyword_0_1; }
 		
-		//Combat
-		public RuleCall getCombatParserRuleCall_3() { return cCombatParserRuleCall_3; }
+		//"move_to_target"
+		public Keyword getCaTypeMove_to_targetKeyword_0_2() { return cCaTypeMove_to_targetKeyword_0_2; }
 		
-		//Recruit
-		public RuleCall getRecruitParserRuleCall_4() { return cRecruitParserRuleCall_4; }
+		//"combat"
+		public Keyword getCaTypeCombatKeyword_0_3() { return cCaTypeCombatKeyword_0_3; }
 		
-		//Focus_High_XP
-		public RuleCall getFocus_High_XPParserRuleCall_5() { return cFocus_High_XPParserRuleCall_5; }
+		//"recruit"
+		public Keyword getCaTypeRecruitKeyword_0_4() { return cCaTypeRecruitKeyword_0_4; }
 		
-		//Move_To_Enemy
-		public RuleCall getMove_To_EnemyParserRuleCall_6() { return cMove_To_EnemyParserRuleCall_6; }
+		//"focus_high_XP"
+		public Keyword getCaTypeFocus_high_XPKeyword_0_5() { return cCaTypeFocus_high_XPKeyword_0_5; }
 		
-		//Capture_Villages
-		public RuleCall getCapture_VillagesParserRuleCall_7() { return cCapture_VillagesParserRuleCall_7; }
-	}
-	public class MovementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Movement");
-		private final Keyword cMovementKeyword = (Keyword)rule.eContents().get(1);
+		//"move_to_enemy"
+		public Keyword getCaTypeMove_to_enemyKeyword_0_6() { return cCaTypeMove_to_enemyKeyword_0_6; }
 		
-		//Movement:
-		//	'movement';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'movement'
-		public Keyword getMovementKeyword() { return cMovementKeyword; }
-	}
-	public class RetreatElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Retreat");
-		private final Keyword cRetreatKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Retreat:
-		//	'retreat';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'retreat'
-		public Keyword getRetreatKeyword() { return cRetreatKeyword; }
-	}
-	public class Move_To_TargetElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Move_To_Target");
-		private final Keyword cMove_to_targetKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Move_To_Target:
-		//	'move_to_target';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'move_to_target'
-		public Keyword getMove_to_targetKeyword() { return cMove_to_targetKeyword; }
-	}
-	public class CombatElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Combat");
-		private final Keyword cCombatKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Combat:
-		//	'combat';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'combat'
-		public Keyword getCombatKeyword() { return cCombatKeyword; }
-	}
-	public class RecruitElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Recruit");
-		private final Keyword cRecruitKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Recruit:
-		//	'recruit';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'recruit'
-		public Keyword getRecruitKeyword() { return cRecruitKeyword; }
-	}
-	public class Focus_High_XPElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Focus_High_XP");
-		private final Keyword cFocus_high_xpKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Focus_High_XP:
-		//	'focus_high_xp';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'focus_high_xp'
-		public Keyword getFocus_high_xpKeyword() { return cFocus_high_xpKeyword; }
-	}
-	public class Move_To_EnemyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Move_To_Enemy");
-		private final Keyword cMove_to_enemyKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Move_To_Enemy:
-		//	'move_to_enemy';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'move_to_enemy'
-		public Keyword getMove_to_enemyKeyword() { return cMove_to_enemyKeyword; }
-	}
-	public class Capture_VillagesElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Capture_Villages");
-		private final Keyword cCapture_villagesKeyword = (Keyword)rule.eContents().get(1);
-		
-		//Capture_Villages:
-		//	'capture_villages';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'capture_villages'
-		public Keyword getCapture_villagesKeyword() { return cCapture_villagesKeyword; }
+		//"capture_villages"
+		public Keyword getCaTypeCapture_villagesKeyword_0_7() { return cCaTypeCapture_villagesKeyword_0_7; }
 	}
 	
 	
 	private final ModelElements pModel;
 	private final RuleElements pRule;
 	private final UnitIDElements pUnitID;
-	private final BehaviourElements pBehaviour;
 	private final GoalElements pGoal;
-	private final Candidate_ActionElements pCandidate_Action;
 	private final New_CAElements pNew_CA;
 	private final Defualt_CAElements pDefualt_CA;
-	private final MovementElements pMovement;
-	private final RetreatElements pRetreat;
-	private final Move_To_TargetElements pMove_To_Target;
-	private final CombatElements pCombat;
-	private final RecruitElements pRecruit;
-	private final Focus_High_XPElements pFocus_High_XP;
-	private final Move_To_EnemyElements pMove_To_Enemy;
-	private final Capture_VillagesElements pCapture_Villages;
 	
 	private final Grammar grammar;
 	
@@ -335,19 +206,9 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pModel = new ModelElements();
 		this.pRule = new RuleElements();
 		this.pUnitID = new UnitIDElements();
-		this.pBehaviour = new BehaviourElements();
 		this.pGoal = new GoalElements();
-		this.pCandidate_Action = new Candidate_ActionElements();
 		this.pNew_CA = new New_CAElements();
 		this.pDefualt_CA = new Defualt_CAElements();
-		this.pMovement = new MovementElements();
-		this.pRetreat = new RetreatElements();
-		this.pMove_To_Target = new Move_To_TargetElements();
-		this.pCombat = new CombatElements();
-		this.pRecruit = new RecruitElements();
-		this.pFocus_High_XP = new Focus_High_XPElements();
-		this.pMove_To_Enemy = new Move_To_EnemyElements();
-		this.pCapture_Villages = new Capture_VillagesElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -391,7 +252,7 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//	'rule' name=ID
 	//	'{'
 	//	unitID=UnitID
-	//	behaviours+=Behaviour*
+	//	defualt_cas+=Defualt_CA*
 	//	'}';
 	public RuleElements getRuleAccess() {
 		return pRule;
@@ -411,16 +272,6 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getUnitIDAccess().getRule();
 	}
 	
-	//Behaviour:
-	//	Goal | Candidate_Action;
-	public BehaviourElements getBehaviourAccess() {
-		return pBehaviour;
-	}
-	
-	public ParserRule getBehaviourRule() {
-		return getBehaviourAccess().getRule();
-	}
-	
 	////TODO research and implement "Attributes" Like aggressiveness and stuff
 	////TODO add in options for the existing goals, sub rules?
 	//Goal:
@@ -431,16 +282,6 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getGoalRule() {
 		return getGoalAccess().getRule();
-	}
-	
-	//Candidate_Action:
-	//	New_CA | Defualt_CA;
-	public Candidate_ActionElements getCandidate_ActionAccess() {
-		return pCandidate_Action;
-	}
-	
-	public ParserRule getCandidate_ActionRule() {
-		return getCandidate_ActionAccess().getRule();
 	}
 	
 	//New_CA:
@@ -454,93 +295,14 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Defualt_CA:
-	//	Movement | Retreat | Move_To_Target | Combat | Recruit | Focus_High_XP | Move_To_Enemy | Capture_Villages;
+	//	caType=("movement" | "retreat" | "move_to_target" | "combat" | "recruit" | "focus_high_XP" | "move_to_enemy" |
+	//	"capture_villages");
 	public Defualt_CAElements getDefualt_CAAccess() {
 		return pDefualt_CA;
 	}
 	
 	public ParserRule getDefualt_CARule() {
 		return getDefualt_CAAccess().getRule();
-	}
-	
-	//Movement:
-	//	'movement';
-	public MovementElements getMovementAccess() {
-		return pMovement;
-	}
-	
-	public ParserRule getMovementRule() {
-		return getMovementAccess().getRule();
-	}
-	
-	//Retreat:
-	//	'retreat';
-	public RetreatElements getRetreatAccess() {
-		return pRetreat;
-	}
-	
-	public ParserRule getRetreatRule() {
-		return getRetreatAccess().getRule();
-	}
-	
-	//Move_To_Target:
-	//	'move_to_target';
-	public Move_To_TargetElements getMove_To_TargetAccess() {
-		return pMove_To_Target;
-	}
-	
-	public ParserRule getMove_To_TargetRule() {
-		return getMove_To_TargetAccess().getRule();
-	}
-	
-	//Combat:
-	//	'combat';
-	public CombatElements getCombatAccess() {
-		return pCombat;
-	}
-	
-	public ParserRule getCombatRule() {
-		return getCombatAccess().getRule();
-	}
-	
-	//Recruit:
-	//	'recruit';
-	public RecruitElements getRecruitAccess() {
-		return pRecruit;
-	}
-	
-	public ParserRule getRecruitRule() {
-		return getRecruitAccess().getRule();
-	}
-	
-	//Focus_High_XP:
-	//	'focus_high_xp';
-	public Focus_High_XPElements getFocus_High_XPAccess() {
-		return pFocus_High_XP;
-	}
-	
-	public ParserRule getFocus_High_XPRule() {
-		return getFocus_High_XPAccess().getRule();
-	}
-	
-	//Move_To_Enemy:
-	//	'move_to_enemy';
-	public Move_To_EnemyElements getMove_To_EnemyAccess() {
-		return pMove_To_Enemy;
-	}
-	
-	public ParserRule getMove_To_EnemyRule() {
-		return getMove_To_EnemyAccess().getRule();
-	}
-	
-	//Capture_Villages:
-	//	'capture_villages';
-	public Capture_VillagesElements getCapture_VillagesAccess() {
-		return pCapture_Villages;
-	}
-	
-	public ParserRule getCapture_VillagesRule() {
-		return getCapture_VillagesAccess().getRule();
 	}
 	
 	//terminal ID:

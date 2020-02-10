@@ -5,6 +5,7 @@ package fyp.xtext.wesnoth.mydsl.serializer;
 
 import com.google.inject.Inject;
 import fyp.xtext.wesnoth.mydsl.services.WesnothDSLGrammarAccess;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Model;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitID;
@@ -34,6 +35,9 @@ public class WesnothDSLSemanticSequencer extends AbstractDelegatingSemanticSeque
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == WesnothDSLPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case WesnothDSLPackage.DEFUALT_CA:
+				sequence_Defualt_CA(context, (Defualt_CA) semanticObject); 
+				return; 
 			case WesnothDSLPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
@@ -47,6 +51,27 @@ public class WesnothDSLSemanticSequencer extends AbstractDelegatingSemanticSeque
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Defualt_CA returns Defualt_CA
+	 *
+	 * Constraint:
+	 *     (
+	 *         caType='movement' | 
+	 *         caType='retreat' | 
+	 *         caType='move_to_target' | 
+	 *         caType='combat' | 
+	 *         caType='recruit' | 
+	 *         caType='focus_high_XP' | 
+	 *         caType='move_to_enemy' | 
+	 *         caType='capture_villages'
+	 *     )
+	 */
+	protected void sequence_Defualt_CA(ISerializationContext context, Defualt_CA semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -65,7 +90,7 @@ public class WesnothDSLSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     (name=ID unitID=UnitID behaviours+=Behaviour*)
+	 *     (name=ID unitID=UnitID defualt_cas+=Defualt_CA*)
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

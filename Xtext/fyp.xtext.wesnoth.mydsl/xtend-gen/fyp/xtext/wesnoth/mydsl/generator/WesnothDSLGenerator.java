@@ -3,10 +3,18 @@
  */
 package fyp.xtext.wesnoth.mydsl.generator;
 
+import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -16,6 +24,102 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 @SuppressWarnings("all")
 public class WesnothDSLGenerator extends AbstractGenerator {
   @Override
-  public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+  public void doGenerate(final Resource res, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    Iterable<Rule> _filter = Iterables.<Rule>filter(IteratorExtensions.<EObject>toIterable(res.getAllContents()), Rule.class);
+    for (final Rule r : _filter) {
+      fsa.generateFile("userRules.cfb", this.compile(r));
+    }
+  }
+  
+  public CharSequence compile(final Rule rule) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("[ai]");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("[stage]");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("id=main_loop");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("name=ai_default_rca::candidate_action_evaluation_loop");
+    _builder.newLine();
+    {
+      EList<Defualt_CA> _defualt_cas = rule.getDefualt_cas();
+      for(final Defualt_CA D_CA : _defualt_cas) {
+        _builder.append("\t\t");
+        CharSequence _compile = this.compile(D_CA);
+        _builder.append(_compile, "\t\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t");
+    _builder.append("[/stage]");
+    _builder.newLine();
+    _builder.append("[/ai]");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence compile(final Defualt_CA ca) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      String _caType = ca.getCaType();
+      boolean _equals = Objects.equal(_caType, "movement");
+      if (_equals) {
+        _builder.append("{AI_CA_GOTO}");
+        _builder.newLine();
+      } else {
+        String _caType_1 = ca.getCaType();
+        boolean _equals_1 = Objects.equal(_caType_1, "retreat");
+        if (_equals_1) {
+          _builder.append("{AI_CA_RETREAT_INJURED}");
+          _builder.newLine();
+        } else {
+          String _caType_2 = ca.getCaType();
+          boolean _equals_2 = Objects.equal(_caType_2, "move_to_target");
+          if (_equals_2) {
+            _builder.append("{AI_CA_MOVE_TO_TARGETS}");
+            _builder.newLine();
+          } else {
+            String _caType_3 = ca.getCaType();
+            boolean _equals_3 = Objects.equal(_caType_3, "combat");
+            if (_equals_3) {
+              _builder.append("{AI_CA_COMBAT}");
+              _builder.newLine();
+            } else {
+              String _caType_4 = ca.getCaType();
+              boolean _equals_4 = Objects.equal(_caType_4, "recruit");
+              if (_equals_4) {
+                _builder.append("{AI_CA_RECRUITMENT}");
+                _builder.newLine();
+              } else {
+                String _caType_5 = ca.getCaType();
+                boolean _equals_5 = Objects.equal(_caType_5, "focus_high_XP");
+                if (_equals_5) {
+                  _builder.append("{AI_CA_HIGH_XP_ATTACK}");
+                  _builder.newLine();
+                } else {
+                  String _caType_6 = ca.getCaType();
+                  boolean _equals_6 = Objects.equal(_caType_6, "move_to_enemy");
+                  if (_equals_6) {
+                    _builder.append("{AI_CA_MOVE_TO_ANY_ENEMY}");
+                    _builder.newLine();
+                  } else {
+                    String _caType_7 = ca.getCaType();
+                    boolean _equals_7 = Objects.equal(_caType_7, "capture_villages");
+                    if (_equals_7) {
+                      _builder.append("{AI_CA_VILLAGES}");
+                      _builder.newLine();
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    return _builder;
   }
 }

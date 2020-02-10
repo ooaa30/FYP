@@ -3,6 +3,7 @@
  */
 package fyp.xtext.wesnoth.mydsl.wesnothDSL.impl;
 
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Model;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitID;
@@ -44,6 +45,13 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * @generated
    */
   private EClass unitIDEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass defualt_CAEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -169,9 +177,9 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * @generated
    */
   @Override
-  public EAttribute getRule_Behaviours()
+  public EReference getRule_Defualt_cas()
   {
-    return (EAttribute)ruleEClass.getEStructuralFeatures().get(2);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -194,6 +202,28 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
   public EAttribute getUnitID_Name()
   {
     return (EAttribute)unitIDEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDefualt_CA()
+  {
+    return defualt_CAEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDefualt_CA_CaType()
+  {
+    return (EAttribute)defualt_CAEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -233,10 +263,13 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
     ruleEClass = createEClass(RULE);
     createEAttribute(ruleEClass, RULE__NAME);
     createEReference(ruleEClass, RULE__UNIT_ID);
-    createEAttribute(ruleEClass, RULE__BEHAVIOURS);
+    createEReference(ruleEClass, RULE__DEFUALT_CAS);
 
     unitIDEClass = createEClass(UNIT_ID);
     createEAttribute(unitIDEClass, UNIT_ID__NAME);
+
+    defualt_CAEClass = createEClass(DEFUALT_CA);
+    createEAttribute(defualt_CAEClass, DEFUALT_CA__CA_TYPE);
   }
 
   /**
@@ -276,10 +309,13 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_UnitID(), this.getUnitID(), null, "unitID", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRule_Behaviours(), ecorePackage.getEString(), "behaviours", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_Defualt_cas(), this.getDefualt_CA(), null, "defualt_cas", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unitIDEClass, UnitID.class, "UnitID", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUnitID_Name(), ecorePackage.getEString(), "name", null, 0, 1, UnitID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(defualt_CAEClass, Defualt_CA.class, "Defualt_CA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDefualt_CA_CaType(), ecorePackage.getEString(), "caType", null, 0, 1, Defualt_CA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -94,6 +94,13 @@ public class WesnothDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case WesnothDSLPackage.DEFUALT_CA:
+      {
+        Defualt_CA defualt_CA = (Defualt_CA)theEObject;
+        T result = caseDefualt_CA(defualt_CA);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -142,6 +149,22 @@ public class WesnothDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUnitID(UnitID object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Defualt CA</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Defualt CA</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDefualt_CA(Defualt_CA object)
   {
     return null;
   }

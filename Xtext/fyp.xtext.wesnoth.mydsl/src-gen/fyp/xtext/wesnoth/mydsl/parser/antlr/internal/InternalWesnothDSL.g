@@ -160,18 +160,18 @@ ruleRule returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRuleAccess().getBehavioursBehaviourParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getRuleAccess().getDefualt_casDefualt_CAParserRuleCall_4_0());
 				}
-				lv_behaviours_4_0=ruleBehaviour
+				lv_defualt_cas_4_0=ruleDefualt_CA
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRuleRule());
 					}
 					add(
 						$current,
-						"behaviours",
-						lv_behaviours_4_0,
-						"fyp.xtext.wesnoth.mydsl.WesnothDSL.Behaviour");
+						"defualt_cas",
+						lv_defualt_cas_4_0,
+						"fyp.xtext.wesnoth.mydsl.WesnothDSL.Defualt_CA");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -224,139 +224,15 @@ ruleUnitID returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleBehaviour
-entryRuleBehaviour returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getBehaviourRule()); }
-	iv_ruleBehaviour=ruleBehaviour
-	{ $current=$iv_ruleBehaviour.current.getText(); }
-	EOF;
-
-// Rule Behaviour
-ruleBehaviour returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getBehaviourAccess().getGoalParserRuleCall_0());
-		}
-		this_Goal_0=ruleGoal
-		{
-			$current.merge(this_Goal_0);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getBehaviourAccess().getCandidate_ActionParserRuleCall_1());
-		}
-		this_Candidate_Action_1=ruleCandidate_Action
-		{
-			$current.merge(this_Candidate_Action_1);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleGoal
-entryRuleGoal returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getGoalRule()); }
-	iv_ruleGoal=ruleGoal
-	{ $current=$iv_ruleGoal.current.getText(); }
-	EOF;
-
-// Rule Goal
-ruleGoal returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='goal'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getGoalAccess().getGoalKeyword());
-	}
-;
-
-// Entry rule entryRuleCandidate_Action
-entryRuleCandidate_Action returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getCandidate_ActionRule()); }
-	iv_ruleCandidate_Action=ruleCandidate_Action
-	{ $current=$iv_ruleCandidate_Action.current.getText(); }
-	EOF;
-
-// Rule Candidate_Action
-ruleCandidate_Action returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getCandidate_ActionAccess().getNew_CAParserRuleCall_0());
-		}
-		this_New_CA_0=ruleNew_CA
-		{
-			$current.merge(this_New_CA_0);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getCandidate_ActionAccess().getDefualt_CAParserRuleCall_1());
-		}
-		this_Defualt_CA_1=ruleDefualt_CA
-		{
-			$current.merge(this_Defualt_CA_1);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleNew_CA
-entryRuleNew_CA returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getNew_CARule()); }
-	iv_ruleNew_CA=ruleNew_CA
-	{ $current=$iv_ruleNew_CA.current.getText(); }
-	EOF;
-
-// Rule New_CA
-ruleNew_CA returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='newCA'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getNew_CAAccess().getNewCAKeyword());
-	}
-;
-
 // Entry rule entryRuleDefualt_CA
-entryRuleDefualt_CA returns [String current=null]:
+entryRuleDefualt_CA returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getDefualt_CARule()); }
 	iv_ruleDefualt_CA=ruleDefualt_CA
-	{ $current=$iv_ruleDefualt_CA.current.getText(); }
+	{ $current=$iv_ruleDefualt_CA.current; }
 	EOF;
 
 // Rule Defualt_CA
-ruleDefualt_CA returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleDefualt_CA returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -364,270 +240,98 @@ ruleDefualt_CA returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToke
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getDefualt_CAAccess().getMovementParserRuleCall_0());
-		}
-		this_Movement_0=ruleMovement
-		{
-			$current.merge(this_Movement_0);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDefualt_CAAccess().getRetreatParserRuleCall_1());
-		}
-		this_Retreat_1=ruleRetreat
-		{
-			$current.merge(this_Retreat_1);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDefualt_CAAccess().getMove_To_TargetParserRuleCall_2());
-		}
-		this_Move_To_Target_2=ruleMove_To_Target
-		{
-			$current.merge(this_Move_To_Target_2);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDefualt_CAAccess().getCombatParserRuleCall_3());
-		}
-		this_Combat_3=ruleCombat
-		{
-			$current.merge(this_Combat_3);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDefualt_CAAccess().getRecruitParserRuleCall_4());
-		}
-		this_Recruit_4=ruleRecruit
-		{
-			$current.merge(this_Recruit_4);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDefualt_CAAccess().getFocus_High_XPParserRuleCall_5());
-		}
-		this_Focus_High_XP_5=ruleFocus_High_XP
-		{
-			$current.merge(this_Focus_High_XP_5);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDefualt_CAAccess().getMove_To_EnemyParserRuleCall_6());
-		}
-		this_Move_To_Enemy_6=ruleMove_To_Enemy
-		{
-			$current.merge(this_Move_To_Enemy_6);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getDefualt_CAAccess().getCapture_VillagesParserRuleCall_7());
-		}
-		this_Capture_Villages_7=ruleCapture_Villages
-		{
-			$current.merge(this_Capture_Villages_7);
-		}
-		{
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				lv_caType_0_1='movement'
+				{
+					newLeafNode(lv_caType_0_1, grammarAccess.getDefualt_CAAccess().getCaTypeMovementKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					}
+					setWithLastConsumed($current, "caType", lv_caType_0_1, null);
+				}
+				    |
+				lv_caType_0_2='retreat'
+				{
+					newLeafNode(lv_caType_0_2, grammarAccess.getDefualt_CAAccess().getCaTypeRetreatKeyword_0_1());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					}
+					setWithLastConsumed($current, "caType", lv_caType_0_2, null);
+				}
+				    |
+				lv_caType_0_3='move_to_target'
+				{
+					newLeafNode(lv_caType_0_3, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetKeyword_0_2());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					}
+					setWithLastConsumed($current, "caType", lv_caType_0_3, null);
+				}
+				    |
+				lv_caType_0_4='combat'
+				{
+					newLeafNode(lv_caType_0_4, grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_3());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					}
+					setWithLastConsumed($current, "caType", lv_caType_0_4, null);
+				}
+				    |
+				lv_caType_0_5='recruit'
+				{
+					newLeafNode(lv_caType_0_5, grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_4());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					}
+					setWithLastConsumed($current, "caType", lv_caType_0_5, null);
+				}
+				    |
+				lv_caType_0_6='focus_high_XP'
+				{
+					newLeafNode(lv_caType_0_6, grammarAccess.getDefualt_CAAccess().getCaTypeFocus_high_XPKeyword_0_5());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					}
+					setWithLastConsumed($current, "caType", lv_caType_0_6, null);
+				}
+				    |
+				lv_caType_0_7='move_to_enemy'
+				{
+					newLeafNode(lv_caType_0_7, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_enemyKeyword_0_6());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					}
+					setWithLastConsumed($current, "caType", lv_caType_0_7, null);
+				}
+				    |
+				lv_caType_0_8='capture_villages'
+				{
+					newLeafNode(lv_caType_0_8, grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_7());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					}
+					setWithLastConsumed($current, "caType", lv_caType_0_8, null);
+				}
+			)
+		)
 	)
-;
-
-// Entry rule entryRuleMovement
-entryRuleMovement returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getMovementRule()); }
-	iv_ruleMovement=ruleMovement
-	{ $current=$iv_ruleMovement.current.getText(); }
-	EOF;
-
-// Rule Movement
-ruleMovement returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='movement'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getMovementAccess().getMovementKeyword());
-	}
-;
-
-// Entry rule entryRuleRetreat
-entryRuleRetreat returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getRetreatRule()); }
-	iv_ruleRetreat=ruleRetreat
-	{ $current=$iv_ruleRetreat.current.getText(); }
-	EOF;
-
-// Rule Retreat
-ruleRetreat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='retreat'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getRetreatAccess().getRetreatKeyword());
-	}
-;
-
-// Entry rule entryRuleMove_To_Target
-entryRuleMove_To_Target returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getMove_To_TargetRule()); }
-	iv_ruleMove_To_Target=ruleMove_To_Target
-	{ $current=$iv_ruleMove_To_Target.current.getText(); }
-	EOF;
-
-// Rule Move_To_Target
-ruleMove_To_Target returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='move_to_target'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getMove_To_TargetAccess().getMove_to_targetKeyword());
-	}
-;
-
-// Entry rule entryRuleCombat
-entryRuleCombat returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getCombatRule()); }
-	iv_ruleCombat=ruleCombat
-	{ $current=$iv_ruleCombat.current.getText(); }
-	EOF;
-
-// Rule Combat
-ruleCombat returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='combat'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getCombatAccess().getCombatKeyword());
-	}
-;
-
-// Entry rule entryRuleRecruit
-entryRuleRecruit returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getRecruitRule()); }
-	iv_ruleRecruit=ruleRecruit
-	{ $current=$iv_ruleRecruit.current.getText(); }
-	EOF;
-
-// Rule Recruit
-ruleRecruit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='recruit'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getRecruitAccess().getRecruitKeyword());
-	}
-;
-
-// Entry rule entryRuleFocus_High_XP
-entryRuleFocus_High_XP returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getFocus_High_XPRule()); }
-	iv_ruleFocus_High_XP=ruleFocus_High_XP
-	{ $current=$iv_ruleFocus_High_XP.current.getText(); }
-	EOF;
-
-// Rule Focus_High_XP
-ruleFocus_High_XP returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='focus_high_xp'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getFocus_High_XPAccess().getFocus_high_xpKeyword());
-	}
-;
-
-// Entry rule entryRuleMove_To_Enemy
-entryRuleMove_To_Enemy returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getMove_To_EnemyRule()); }
-	iv_ruleMove_To_Enemy=ruleMove_To_Enemy
-	{ $current=$iv_ruleMove_To_Enemy.current.getText(); }
-	EOF;
-
-// Rule Move_To_Enemy
-ruleMove_To_Enemy returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='move_to_enemy'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getMove_To_EnemyAccess().getMove_to_enemyKeyword());
-	}
-;
-
-// Entry rule entryRuleCapture_Villages
-entryRuleCapture_Villages returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getCapture_VillagesRule()); }
-	iv_ruleCapture_Villages=ruleCapture_Villages
-	{ $current=$iv_ruleCapture_Villages.current.getText(); }
-	EOF;
-
-// Rule Capture_Villages
-ruleCapture_Villages returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	kw='capture_villages'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getCapture_VillagesAccess().getCapture_villagesKeyword());
-	}
 ;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

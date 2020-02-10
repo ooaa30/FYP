@@ -31,16 +31,15 @@ public class WesnothDSLParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, WesnothDSLGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getBehaviourAccess().getAlternatives(), "rule__Behaviour__Alternatives");
-			builder.put(grammarAccess.getCandidate_ActionAccess().getAlternatives(), "rule__Candidate_Action__Alternatives");
-			builder.put(grammarAccess.getDefualt_CAAccess().getAlternatives(), "rule__Defualt_CA__Alternatives");
+			builder.put(grammarAccess.getDefualt_CAAccess().getCaTypeAlternatives_0(), "rule__Defualt_CA__CaTypeAlternatives_0");
 			builder.put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 			builder.put(grammarAccess.getUnitIDAccess().getGroup(), "rule__UnitID__Group__0");
 			builder.put(grammarAccess.getModelAccess().getElementsAssignment(), "rule__Model__ElementsAssignment");
 			builder.put(grammarAccess.getRuleAccess().getNameAssignment_1(), "rule__Rule__NameAssignment_1");
 			builder.put(grammarAccess.getRuleAccess().getUnitIDAssignment_3(), "rule__Rule__UnitIDAssignment_3");
-			builder.put(grammarAccess.getRuleAccess().getBehavioursAssignment_4(), "rule__Rule__BehavioursAssignment_4");
+			builder.put(grammarAccess.getRuleAccess().getDefualt_casAssignment_4(), "rule__Rule__Defualt_casAssignment_4");
 			builder.put(grammarAccess.getUnitIDAccess().getNameAssignment_1(), "rule__UnitID__NameAssignment_1");
+			builder.put(grammarAccess.getDefualt_CAAccess().getCaTypeAssignment(), "rule__Defualt_CA__CaTypeAssignment");
 		}
 	}
 	

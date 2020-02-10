@@ -1,0 +1,7 @@
+rule test{
+	unitID testerino
+	movement
+	combat 
+	move_to_enemy
+	recruit 
+}

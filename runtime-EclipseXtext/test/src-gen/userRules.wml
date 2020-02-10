@@ -1,0 +1,10 @@
+[ai]
+	[stage]
+		id=main_loop
+		name=ai_default_rca::candidate_action_evaluation_loop
+		{AI_CA_GOTO}
+		{AI_CA_COMBAT}
+		{AI_CA_MOVE_TO_ANY_ENEMY}
+		{AI_CA_RECRUITMENT}
+	[/stage]
+[/ai]

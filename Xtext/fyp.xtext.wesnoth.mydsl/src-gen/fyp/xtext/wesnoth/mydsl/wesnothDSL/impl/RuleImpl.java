@@ -3,6 +3,7 @@
  */
 package fyp.xtext.wesnoth.mydsl.wesnothDSL.impl;
 
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitID;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage;
@@ -20,7 +21,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +34,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <ul>
  *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.RuleImpl#getName <em>Name</em>}</li>
  *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.RuleImpl#getUnitID <em>Unit ID</em>}</li>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.RuleImpl#getBehaviours <em>Behaviours</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.RuleImpl#getDefualt_cas <em>Defualt cas</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,14 +72,14 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   protected UnitID unitID;
 
   /**
-   * The cached value of the '{@link #getBehaviours() <em>Behaviours</em>}' attribute list.
+   * The cached value of the '{@link #getDefualt_cas() <em>Defualt cas</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getBehaviours()
+   * @see #getDefualt_cas()
    * @generated
    * @ordered
    */
-  protected EList<String> behaviours;
+  protected EList<Defualt_CA> defualt_cas;
 
   /**
    * <!-- begin-user-doc -->
@@ -181,13 +183,13 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
    * @generated
    */
   @Override
-  public EList<String> getBehaviours()
+  public EList<Defualt_CA> getDefualt_cas()
   {
-    if (behaviours == null)
+    if (defualt_cas == null)
     {
-      behaviours = new EDataTypeEList<String>(String.class, this, WesnothDSLPackage.RULE__BEHAVIOURS);
+      defualt_cas = new EObjectContainmentEList<Defualt_CA>(Defualt_CA.class, this, WesnothDSLPackage.RULE__DEFUALT_CAS);
     }
-    return behaviours;
+    return defualt_cas;
   }
 
   /**
@@ -202,6 +204,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
     {
       case WesnothDSLPackage.RULE__UNIT_ID:
         return basicSetUnitID(null, msgs);
+      case WesnothDSLPackage.RULE__DEFUALT_CAS:
+        return ((InternalEList<?>)getDefualt_cas()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -220,8 +224,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
         return getName();
       case WesnothDSLPackage.RULE__UNIT_ID:
         return getUnitID();
-      case WesnothDSLPackage.RULE__BEHAVIOURS:
-        return getBehaviours();
+      case WesnothDSLPackage.RULE__DEFUALT_CAS:
+        return getDefualt_cas();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -243,9 +247,9 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
       case WesnothDSLPackage.RULE__UNIT_ID:
         setUnitID((UnitID)newValue);
         return;
-      case WesnothDSLPackage.RULE__BEHAVIOURS:
-        getBehaviours().clear();
-        getBehaviours().addAll((Collection<? extends String>)newValue);
+      case WesnothDSLPackage.RULE__DEFUALT_CAS:
+        getDefualt_cas().clear();
+        getDefualt_cas().addAll((Collection<? extends Defualt_CA>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -267,8 +271,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
       case WesnothDSLPackage.RULE__UNIT_ID:
         setUnitID((UnitID)null);
         return;
-      case WesnothDSLPackage.RULE__BEHAVIOURS:
-        getBehaviours().clear();
+      case WesnothDSLPackage.RULE__DEFUALT_CAS:
+        getDefualt_cas().clear();
         return;
     }
     super.eUnset(featureID);
@@ -288,8 +292,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case WesnothDSLPackage.RULE__UNIT_ID:
         return unitID != null;
-      case WesnothDSLPackage.RULE__BEHAVIOURS:
-        return behaviours != null && !behaviours.isEmpty();
+      case WesnothDSLPackage.RULE__DEFUALT_CAS:
+        return defualt_cas != null && !defualt_cas.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -307,8 +311,6 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", behaviours: ");
-    result.append(behaviours);
     result.append(')');
     return result.toString();
   }

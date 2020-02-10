@@ -12,10 +12,13 @@
     <genClasses ecoreClass="WesnothDSL.ecore#//Rule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//Rule/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//Rule/unitID"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//Rule/behaviours"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//Rule/defualt_cas"/>
     </genClasses>
     <genClasses ecoreClass="WesnothDSL.ecore#//UnitID">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//UnitID/name"/>
+    </genClasses>
+    <genClasses ecoreClass="WesnothDSL.ecore#//Defualt_CA">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//Defualt_CA/caType"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

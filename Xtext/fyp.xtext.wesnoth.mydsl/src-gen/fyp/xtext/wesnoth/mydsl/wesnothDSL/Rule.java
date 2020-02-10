@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getName <em>Name</em>}</li>
  *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getUnitID <em>Unit ID</em>}</li>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getBehaviours <em>Behaviours</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getDefualt_cas <em>Defualt cas</em>}</li>
  * </ul>
  *
  * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getRule()
@@ -72,15 +72,15 @@ public interface Rule extends EObject
   void setUnitID(UnitID value);
 
   /**
-   * Returns the value of the '<em><b>Behaviours</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Defualt cas</b></em>' containment reference list.
+   * The list contents are of type {@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Behaviours</em>' attribute list.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getRule_Behaviours()
-   * @model unique="false"
+   * @return the value of the '<em>Defualt cas</em>' containment reference list.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getRule_Defualt_cas()
+   * @model containment="true"
    * @generated
    */
-  EList<String> getBehaviours();
+  EList<Defualt_CA> getDefualt_cas();
 
 } // Rule

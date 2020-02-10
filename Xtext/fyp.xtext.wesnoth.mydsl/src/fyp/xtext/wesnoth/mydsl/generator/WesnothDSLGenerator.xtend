@@ -8,6 +8,9 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA
+
 /**
  * Generates code from your model files on save.
  * 
@@ -15,11 +18,43 @@ import org.eclipse.xtext.generator.IGeneratorContext
  */
 class WesnothDSLGenerator extends AbstractGenerator {
 
-	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+	override void doGenerate(Resource res, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		for (r : res.allContents.toIterable.filter(typeof(Rule))){
+			fsa.generateFile("userRules.cfb",r.compile())
+		}
 	}
+		
+		def compile(Rule rule)'''
+			[ai]
+				[stage]
+					id=main_loop
+					name=ai_default_rca::candidate_action_evaluation_loop
+					«FOR D_CA : rule.defualt_cas»
+					«D_CA.compile»
+					«ENDFOR»
+				[/stage]
+			[/ai]
+		'''
+		
+		
+		def compile(Defualt_CA ca)'''
+			«IF ca.caType == "movement"»
+			{AI_CA_GOTO}
+			«ELSEIF ca.caType=="retreat"»
+			{AI_CA_RETREAT_INJURED}
+			«ELSEIF ca.caType=="move_to_target"»
+			{AI_CA_MOVE_TO_TARGETS}
+			«ELSEIF ca.caType == "combat"»
+			{AI_CA_COMBAT}
+			«ELSEIF ca.caType=="recruit"»
+			{AI_CA_RECRUITMENT}
+			«ELSEIF ca.caType == "focus_high_XP"»
+			{AI_CA_HIGH_XP_ATTACK}
+			«ELSEIF ca.caType == "move_to_enemy"»
+			{AI_CA_MOVE_TO_ANY_ENEMY}
+			«ELSEIF ca.caType == "capture_villages"»
+			{AI_CA_VILLAGES}
+			«ENDIF»
+		'''
+		
 }

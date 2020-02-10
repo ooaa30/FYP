@@ -10,16 +10,12 @@ Rule:
 	'rule' name = ID
 	'{'
 		unitID=UnitID
-		(behaviours+=Behaviour)*
+		(defualt_cas+=Defualt_CA)*
 		'}'
 ;
 
 UnitID:
 	'unitID' name = ID
-;
-
-Behaviour:
-	Goal | Candidate_Action
 ;
 
 //TODO research and implement "Attributes" Like aggressiveness and stuff
@@ -29,46 +25,10 @@ Goal:
 	'goal'
 ;
 
-Candidate_Action:
-	New_CA | Defualt_CA
-;
-
 New_CA:
-	'newCA'
+	'newCA' 
 ;
 
 Defualt_CA:
-	Movement | Retreat | Move_To_Target | Combat | Recruit | Focus_High_XP | Move_To_Enemy | Capture_Villages
-;
-
-Movement:
-	'movement'
-;
-
-Retreat:
-	'retreat'
-;
-
-Move_To_Target:
-	'move_to_target'
-;
-
-Combat:
-	'combat'
-;
-
-Recruit:
-	'recruit'
-;
-
-Focus_High_XP:
-	'focus_high_xp'
-;
-
-Move_To_Enemy:
-	'move_to_enemy'
-;
-
-Capture_Villages:
-	'capture_villages'
+	caType = ("movement" | "retreat" | "move_to_target" | "combat" | "recruit" | "focus_high_XP" | "move_to_enemy" | "capture_villages")
 ;

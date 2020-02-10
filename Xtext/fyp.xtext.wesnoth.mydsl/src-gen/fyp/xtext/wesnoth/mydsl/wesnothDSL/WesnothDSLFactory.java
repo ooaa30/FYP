@@ -51,6 +51,15 @@ public interface WesnothDSLFactory extends EFactory
   UnitID createUnitID();
 
   /**
+   * Returns a new object of class '<em>Defualt CA</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Defualt CA</em>'.
+   * @generated
+   */
+  Defualt_CA createDefualt_CA();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -68,6 +68,7 @@ public class WesnothDSLFactoryImpl extends EFactoryImpl implements WesnothDSLFac
       case WesnothDSLPackage.MODEL: return createModel();
       case WesnothDSLPackage.RULE: return createRule();
       case WesnothDSLPackage.UNIT_ID: return createUnitID();
+      case WesnothDSLPackage.DEFUALT_CA: return createDefualt_CA();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -107,6 +108,18 @@ public class WesnothDSLFactoryImpl extends EFactoryImpl implements WesnothDSLFac
   {
     UnitIDImpl unitID = new UnitIDImpl();
     return unitID;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Defualt_CA createDefualt_CA()
+  {
+    Defualt_CAImpl defualt_CA = new Defualt_CAImpl();
+    return defualt_CA;
   }
 
   /**
