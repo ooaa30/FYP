@@ -86,6 +86,46 @@ public class WesnothDSLAdapterFactory extends AdapterFactoryImpl
         return createRuleAdapter();
       }
       @Override
+      public Adapter caseFragment(Fragment object)
+      {
+        return createFragmentAdapter();
+      }
+      @Override
+      public Adapter caseConditional(Conditional object)
+      {
+        return createConditionalAdapter();
+      }
+      @Override
+      public Adapter caseDamage(Damage object)
+      {
+        return createDamageAdapter();
+      }
+      @Override
+      public Adapter caseHealthLevelLess(HealthLevelLess object)
+      {
+        return createHealthLevelLessAdapter();
+      }
+      @Override
+      public Adapter caseHeathLevelEquals(HeathLevelEquals object)
+      {
+        return createHeathLevelEqualsAdapter();
+      }
+      @Override
+      public Adapter caseHealthLevelGreater(HealthLevelGreater object)
+      {
+        return createHealthLevelGreaterAdapter();
+      }
+      @Override
+      public Adapter caseAtLocation(AtLocation object)
+      {
+        return createAtLocationAdapter();
+      }
+      @Override
+      public Adapter caseUnitEquals(UnitEquals object)
+      {
+        return createUnitEqualsAdapter();
+      }
+      @Override
       public Adapter caseUnitID(UnitID object)
       {
         return createUnitIDAdapter();
@@ -143,6 +183,126 @@ public class WesnothDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment <em>Fragment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment
+   * @generated
+   */
+  public Adapter createFragmentAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional <em>Conditional</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional
+   * @generated
+   */
+  public Adapter createConditionalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage <em>Damage</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage
+   * @generated
+   */
+  public Adapter createDamageAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelLess <em>Health Level Less</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelLess
+   * @generated
+   */
+  public Adapter createHealthLevelLessAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.HeathLevelEquals <em>Heath Level Equals</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.HeathLevelEquals
+   * @generated
+   */
+  public Adapter createHeathLevelEqualsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelGreater <em>Health Level Greater</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelGreater
+   * @generated
+   */
+  public Adapter createHealthLevelGreaterAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation <em>At Location</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation
+   * @generated
+   */
+  public Adapter createAtLocationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals <em>Unit Equals</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals
+   * @generated
+   */
+  public Adapter createUnitEqualsAdapter()
   {
     return null;
   }

@@ -17,8 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getName <em>Name</em>}</li>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getUnitID <em>Unit ID</em>}</li>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getDefualt_cas <em>Defualt cas</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getFragments <em>Fragments</em>}</li>
  * </ul>
  *
  * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getRule()
@@ -50,37 +49,15 @@ public interface Rule extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Unit ID</b></em>' containment reference.
+   * Returns the value of the '<em><b>Fragments</b></em>' containment reference list.
+   * The list contents are of type {@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Unit ID</em>' containment reference.
-   * @see #setUnitID(UnitID)
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getRule_UnitID()
+   * @return the value of the '<em>Fragments</em>' containment reference list.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getRule_Fragments()
    * @model containment="true"
    * @generated
    */
-  UnitID getUnitID();
-
-  /**
-   * Sets the value of the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getUnitID <em>Unit ID</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Unit ID</em>' containment reference.
-   * @see #getUnitID()
-   * @generated
-   */
-  void setUnitID(UnitID value);
-
-  /**
-   * Returns the value of the '<em><b>Defualt cas</b></em>' containment reference list.
-   * The list contents are of type {@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Defualt cas</em>' containment reference list.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getRule_Defualt_cas()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Defualt_CA> getDefualt_cas();
+  EList<Fragment> getFragments();
 
 } // Rule

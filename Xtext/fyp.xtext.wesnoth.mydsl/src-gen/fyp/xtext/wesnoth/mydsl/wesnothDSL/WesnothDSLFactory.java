@@ -42,6 +42,78 @@ public interface WesnothDSLFactory extends EFactory
   Rule createRule();
 
   /**
+   * Returns a new object of class '<em>Fragment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Fragment</em>'.
+   * @generated
+   */
+  Fragment createFragment();
+
+  /**
+   * Returns a new object of class '<em>Conditional</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Conditional</em>'.
+   * @generated
+   */
+  Conditional createConditional();
+
+  /**
+   * Returns a new object of class '<em>Damage</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Damage</em>'.
+   * @generated
+   */
+  Damage createDamage();
+
+  /**
+   * Returns a new object of class '<em>Health Level Less</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Health Level Less</em>'.
+   * @generated
+   */
+  HealthLevelLess createHealthLevelLess();
+
+  /**
+   * Returns a new object of class '<em>Heath Level Equals</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Heath Level Equals</em>'.
+   * @generated
+   */
+  HeathLevelEquals createHeathLevelEquals();
+
+  /**
+   * Returns a new object of class '<em>Health Level Greater</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Health Level Greater</em>'.
+   * @generated
+   */
+  HealthLevelGreater createHealthLevelGreater();
+
+  /**
+   * Returns a new object of class '<em>At Location</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>At Location</em>'.
+   * @generated
+   */
+  AtLocation createAtLocation();
+
+  /**
+   * Returns a new object of class '<em>Unit Equals</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Unit Equals</em>'.
+   * @generated
+   */
+  UnitEquals createUnitEquals();
+
+  /**
    * Returns a new object of class '<em>Unit ID</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

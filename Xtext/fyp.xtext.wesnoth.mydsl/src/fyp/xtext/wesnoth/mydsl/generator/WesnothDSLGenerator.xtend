@@ -10,6 +10,14 @@ import org.eclipse.xtext.generator.IGeneratorContext
 
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelGreater
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.HeathLevelEquals
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelLess
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage
 
 /**
  * Generates code from your model files on save.
@@ -25,36 +33,141 @@ class WesnothDSLGenerator extends AbstractGenerator {
 	}
 		
 		def compile(Rule rule)'''
-			[ai]
-				[stage]
-					id=main_loop
-					name=ai_default_rca::candidate_action_evaluation_loop
-					«FOR D_CA : rule.defualt_cas»
-					«D_CA.compile»
-					«ENDFOR»
-				[/stage]
-			[/ai]
+			
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[combat]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[goto]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[recruit_rushers]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[castle_switch]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[retreat_injured]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[grab_villages]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[spread_poison]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[recruitment]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[move_leader_to_goals]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[move_leader_to_keep]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[high_xp_attack]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[place_healers]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[healing]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[villages]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[retreat]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[village_hunt]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[move_to_tagets]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[leader_shares_keep]
+			[/modify_ai]
+			[modify_ai]
+			    side=1
+			    action=delete
+			    path=stage[main_loop].candidate_action[move_to_any_enemy]
+			[/modify_ai]
+			
+			«FOR frag : rule.fragments»
+			«frag.compile»
+			«ENDFOR»
 		'''
 		
+		def compile(Fragment frag)'''
+		«FOR cas:frag.defualt_cas»
+			[modify_ai]
+				side =1
+				action = add
+				path = stage[main_loop].candidate_action[]
+					[candidate_action]
+					
+					[filter_own]
+					«cas.compile»
+					«frag.condition.compile»
+					[/filter_own]
+					[/candidate_action
+			[/modify_ai]
+		«ENDFOR»
+		'''
 		
 		def compile(Defualt_CA ca)'''
-			«IF ca.caType == "movement"»
-			{AI_CA_GOTO}
-			«ELSEIF ca.caType=="retreat"»
-			{AI_CA_RETREAT_INJURED}
-			«ELSEIF ca.caType=="move_to_target"»
-			{AI_CA_MOVE_TO_TARGETS}
-			«ELSEIF ca.caType == "combat"»
-			{AI_CA_COMBAT}
-			«ELSEIF ca.caType=="recruit"»
-			{AI_CA_RECRUITMENT}
-			«ELSEIF ca.caType == "focus_high_XP"»
-			{AI_CA_HIGH_XP_ATTACK}
-			«ELSEIF ca.caType == "move_to_enemy"»
-			{AI_CA_MOVE_TO_ANY_ENEMY}
-			«ELSEIF ca.caType == "capture_villages"»
-			{AI_CA_VILLAGES}
-			«ENDIF»
 		'''
+		def compile(Conditional con)'''
+		«con.condition.compile»
+		'''
+		def compile(AtLocation x)'''
+		x,y=«x.x»,«x.y»
+		'''
+		def compile(Damage x)'''
+		[filter_wml]
+			hitpoints=($this_unit.max_hitpoints-«x.health»)
+		[/filter_wml]
+		'''
+		def compile(UnitEquals x)'''
+		type = «x.unit»
+		'''
+	
 		
 }

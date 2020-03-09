@@ -67,6 +67,14 @@ public class WesnothDSLFactoryImpl extends EFactoryImpl implements WesnothDSLFac
     {
       case WesnothDSLPackage.MODEL: return createModel();
       case WesnothDSLPackage.RULE: return createRule();
+      case WesnothDSLPackage.FRAGMENT: return createFragment();
+      case WesnothDSLPackage.CONDITIONAL: return createConditional();
+      case WesnothDSLPackage.DAMAGE: return createDamage();
+      case WesnothDSLPackage.HEALTH_LEVEL_LESS: return createHealthLevelLess();
+      case WesnothDSLPackage.HEATH_LEVEL_EQUALS: return createHeathLevelEquals();
+      case WesnothDSLPackage.HEALTH_LEVEL_GREATER: return createHealthLevelGreater();
+      case WesnothDSLPackage.AT_LOCATION: return createAtLocation();
+      case WesnothDSLPackage.UNIT_EQUALS: return createUnitEquals();
       case WesnothDSLPackage.UNIT_ID: return createUnitID();
       case WesnothDSLPackage.DEFUALT_CA: return createDefualt_CA();
       default:
@@ -96,6 +104,102 @@ public class WesnothDSLFactoryImpl extends EFactoryImpl implements WesnothDSLFac
   {
     RuleImpl rule = new RuleImpl();
     return rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Fragment createFragment()
+  {
+    FragmentImpl fragment = new FragmentImpl();
+    return fragment;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Conditional createConditional()
+  {
+    ConditionalImpl conditional = new ConditionalImpl();
+    return conditional;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Damage createDamage()
+  {
+    DamageImpl damage = new DamageImpl();
+    return damage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public HealthLevelLess createHealthLevelLess()
+  {
+    HealthLevelLessImpl healthLevelLess = new HealthLevelLessImpl();
+    return healthLevelLess;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public HeathLevelEquals createHeathLevelEquals()
+  {
+    HeathLevelEqualsImpl heathLevelEquals = new HeathLevelEqualsImpl();
+    return heathLevelEquals;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public HealthLevelGreater createHealthLevelGreater()
+  {
+    HealthLevelGreaterImpl healthLevelGreater = new HealthLevelGreaterImpl();
+    return healthLevelGreater;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public AtLocation createAtLocation()
+  {
+    AtLocationImpl atLocation = new AtLocationImpl();
+    return atLocation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public UnitEquals createUnitEquals()
+  {
+    UnitEqualsImpl unitEquals = new UnitEqualsImpl();
+    return unitEquals;
   }
 
   /**

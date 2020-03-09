@@ -31,13 +31,31 @@ public class WesnothDSLParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, WesnothDSLGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getConditionalAccess().getAlternatives(), "rule__Conditional__Alternatives");
 			builder.put(grammarAccess.getDefualt_CAAccess().getCaTypeAlternatives_0(), "rule__Defualt_CA__CaTypeAlternatives_0");
 			builder.put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
+			builder.put(grammarAccess.getFragmentAccess().getGroup(), "rule__Fragment__Group__0");
+			builder.put(grammarAccess.getConditionalAccess().getGroup_0(), "rule__Conditional__Group_0__0");
+			builder.put(grammarAccess.getDamageAccess().getGroup(), "rule__Damage__Group__0");
+			builder.put(grammarAccess.getHealthLevelLessAccess().getGroup(), "rule__HealthLevelLess__Group__0");
+			builder.put(grammarAccess.getHeathLevelEqualsAccess().getGroup(), "rule__HeathLevelEquals__Group__0");
+			builder.put(grammarAccess.getHealthLevelGreaterAccess().getGroup(), "rule__HealthLevelGreater__Group__0");
+			builder.put(grammarAccess.getAtLocationAccess().getGroup(), "rule__AtLocation__Group__0");
+			builder.put(grammarAccess.getUnitEqualsAccess().getGroup(), "rule__UnitEquals__Group__0");
 			builder.put(grammarAccess.getUnitIDAccess().getGroup(), "rule__UnitID__Group__0");
 			builder.put(grammarAccess.getModelAccess().getElementsAssignment(), "rule__Model__ElementsAssignment");
 			builder.put(grammarAccess.getRuleAccess().getNameAssignment_1(), "rule__Rule__NameAssignment_1");
-			builder.put(grammarAccess.getRuleAccess().getUnitIDAssignment_3(), "rule__Rule__UnitIDAssignment_3");
-			builder.put(grammarAccess.getRuleAccess().getDefualt_casAssignment_4(), "rule__Rule__Defualt_casAssignment_4");
+			builder.put(grammarAccess.getRuleAccess().getFragmentsAssignment_3(), "rule__Rule__FragmentsAssignment_3");
+			builder.put(grammarAccess.getFragmentAccess().getConditionAssignment_0(), "rule__Fragment__ConditionAssignment_0");
+			builder.put(grammarAccess.getFragmentAccess().getDefualt_casAssignment_2(), "rule__Fragment__Defualt_casAssignment_2");
+			builder.put(grammarAccess.getConditionalAccess().getConditionAssignment_0_1(), "rule__Conditional__ConditionAssignment_0_1");
+			builder.put(grammarAccess.getDamageAccess().getHealthAssignment_2(), "rule__Damage__HealthAssignment_2");
+			builder.put(grammarAccess.getHealthLevelLessAccess().getHealthAssignment_3(), "rule__HealthLevelLess__HealthAssignment_3");
+			builder.put(grammarAccess.getHeathLevelEqualsAccess().getHealthAssignment_2(), "rule__HeathLevelEquals__HealthAssignment_2");
+			builder.put(grammarAccess.getHealthLevelGreaterAccess().getHealthAssignment_3(), "rule__HealthLevelGreater__HealthAssignment_3");
+			builder.put(grammarAccess.getAtLocationAccess().getXAssignment_1(), "rule__AtLocation__XAssignment_1");
+			builder.put(grammarAccess.getAtLocationAccess().getYAssignment_3(), "rule__AtLocation__YAssignment_3");
+			builder.put(grammarAccess.getUnitEqualsAccess().getUnitAssignment_2(), "rule__UnitEquals__UnitAssignment_2");
 			builder.put(grammarAccess.getUnitIDAccess().getNameAssignment_1(), "rule__UnitID__NameAssignment_1");
 			builder.put(grammarAccess.getDefualt_CAAccess().getCaTypeAssignment(), "rule__Defualt_CA__CaTypeAssignment");
 		}

@@ -3,9 +3,17 @@
  */
 package fyp.xtext.wesnoth.mydsl.wesnothDSL.impl;
 
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelGreater;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelLess;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.HeathLevelEquals;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Model;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitID;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLFactory;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage;
@@ -38,6 +46,62 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * @generated
    */
   private EClass ruleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass fragmentEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass conditionalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass damageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass healthLevelLessEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass heathLevelEqualsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass healthLevelGreaterEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass atLocationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass unitEqualsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -166,7 +230,7 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * @generated
    */
   @Override
-  public EReference getRule_UnitID()
+  public EReference getRule_Fragments()
   {
     return (EReference)ruleEClass.getEStructuralFeatures().get(1);
   }
@@ -177,9 +241,196 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * @generated
    */
   @Override
-  public EReference getRule_Defualt_cas()
+  public EClass getFragment()
   {
-    return (EReference)ruleEClass.getEStructuralFeatures().get(2);
+    return fragmentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFragment_Condition()
+  {
+    return (EReference)fragmentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getFragment_Defualt_cas()
+  {
+    return (EReference)fragmentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getConditional()
+  {
+    return conditionalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getConditional_Condition()
+  {
+    return (EReference)conditionalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getDamage()
+  {
+    return damageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getDamage_Health()
+  {
+    return (EAttribute)damageEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getHealthLevelLess()
+  {
+    return healthLevelLessEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getHealthLevelLess_Health()
+  {
+    return (EAttribute)healthLevelLessEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getHeathLevelEquals()
+  {
+    return heathLevelEqualsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getHeathLevelEquals_Health()
+  {
+    return (EAttribute)heathLevelEqualsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getHealthLevelGreater()
+  {
+    return healthLevelGreaterEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getHealthLevelGreater_Health()
+  {
+    return (EAttribute)healthLevelGreaterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAtLocation()
+  {
+    return atLocationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAtLocation_X()
+  {
+    return (EAttribute)atLocationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAtLocation_Y()
+  {
+    return (EAttribute)atLocationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getUnitEquals()
+  {
+    return unitEqualsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getUnitEquals_Unit()
+  {
+    return (EAttribute)unitEqualsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -262,8 +513,33 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
 
     ruleEClass = createEClass(RULE);
     createEAttribute(ruleEClass, RULE__NAME);
-    createEReference(ruleEClass, RULE__UNIT_ID);
-    createEReference(ruleEClass, RULE__DEFUALT_CAS);
+    createEReference(ruleEClass, RULE__FRAGMENTS);
+
+    fragmentEClass = createEClass(FRAGMENT);
+    createEReference(fragmentEClass, FRAGMENT__CONDITION);
+    createEReference(fragmentEClass, FRAGMENT__DEFUALT_CAS);
+
+    conditionalEClass = createEClass(CONDITIONAL);
+    createEReference(conditionalEClass, CONDITIONAL__CONDITION);
+
+    damageEClass = createEClass(DAMAGE);
+    createEAttribute(damageEClass, DAMAGE__HEALTH);
+
+    healthLevelLessEClass = createEClass(HEALTH_LEVEL_LESS);
+    createEAttribute(healthLevelLessEClass, HEALTH_LEVEL_LESS__HEALTH);
+
+    heathLevelEqualsEClass = createEClass(HEATH_LEVEL_EQUALS);
+    createEAttribute(heathLevelEqualsEClass, HEATH_LEVEL_EQUALS__HEALTH);
+
+    healthLevelGreaterEClass = createEClass(HEALTH_LEVEL_GREATER);
+    createEAttribute(healthLevelGreaterEClass, HEALTH_LEVEL_GREATER__HEALTH);
+
+    atLocationEClass = createEClass(AT_LOCATION);
+    createEAttribute(atLocationEClass, AT_LOCATION__X);
+    createEAttribute(atLocationEClass, AT_LOCATION__Y);
+
+    unitEqualsEClass = createEClass(UNIT_EQUALS);
+    createEAttribute(unitEqualsEClass, UNIT_EQUALS__UNIT);
 
     unitIDEClass = createEClass(UNIT_ID);
     createEAttribute(unitIDEClass, UNIT_ID__NAME);
@@ -301,6 +577,8 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    damageEClass.getESuperTypes().add(this.getConditional());
+    unitEqualsEClass.getESuperTypes().add(this.getConditional());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -308,8 +586,33 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
 
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRule_UnitID(), this.getUnitID(), null, "unitID", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRule_Defualt_cas(), this.getDefualt_CA(), null, "defualt_cas", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_Fragments(), this.getFragment(), null, "fragments", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(fragmentEClass, Fragment.class, "Fragment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFragment_Condition(), this.getConditional(), null, "condition", null, 0, 1, Fragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFragment_Defualt_cas(), this.getDefualt_CA(), null, "defualt_cas", null, 0, -1, Fragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(conditionalEClass, Conditional.class, "Conditional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConditional_Condition(), this.getAtLocation(), null, "condition", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(damageEClass, Damage.class, "Damage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDamage_Health(), ecorePackage.getEInt(), "health", null, 0, 1, Damage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(healthLevelLessEClass, HealthLevelLess.class, "HealthLevelLess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getHealthLevelLess_Health(), ecorePackage.getEInt(), "health", null, 0, 1, HealthLevelLess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(heathLevelEqualsEClass, HeathLevelEquals.class, "HeathLevelEquals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getHeathLevelEquals_Health(), ecorePackage.getEInt(), "health", null, 0, 1, HeathLevelEquals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(healthLevelGreaterEClass, HealthLevelGreater.class, "HealthLevelGreater", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getHealthLevelGreater_Health(), ecorePackage.getEInt(), "health", null, 0, 1, HealthLevelGreater.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(atLocationEClass, AtLocation.class, "AtLocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAtLocation_X(), ecorePackage.getEInt(), "x", null, 0, 1, AtLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtLocation_Y(), ecorePackage.getEInt(), "y", null, 0, 1, AtLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(unitEqualsEClass, UnitEquals.class, "UnitEquals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getUnitEquals_Unit(), ecorePackage.getEString(), "unit", null, 0, 1, UnitEquals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unitIDEClass, UnitID.class, "UnitID", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUnitID_Name(), ecorePackage.getEString(), "name", null, 0, 1, UnitID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

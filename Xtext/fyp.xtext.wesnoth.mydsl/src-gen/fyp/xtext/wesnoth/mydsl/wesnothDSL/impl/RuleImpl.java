@@ -3,9 +3,8 @@
  */
 package fyp.xtext.wesnoth.mydsl.wesnothDSL.impl;
 
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule;
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitID;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage;
 
 import java.util.Collection;
@@ -33,8 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.RuleImpl#getName <em>Name</em>}</li>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.RuleImpl#getUnitID <em>Unit ID</em>}</li>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.RuleImpl#getDefualt_cas <em>Defualt cas</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.RuleImpl#getFragments <em>Fragments</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,24 +60,14 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getUnitID() <em>Unit ID</em>}' containment reference.
+   * The cached value of the '{@link #getFragments() <em>Fragments</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUnitID()
+   * @see #getFragments()
    * @generated
    * @ordered
    */
-  protected UnitID unitID;
-
-  /**
-   * The cached value of the '{@link #getDefualt_cas() <em>Defualt cas</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDefualt_cas()
-   * @generated
-   * @ordered
-   */
-  protected EList<Defualt_CA> defualt_cas;
+  protected EList<Fragment> fragments;
 
   /**
    * <!-- begin-user-doc -->
@@ -133,63 +121,13 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
    * @generated
    */
   @Override
-  public UnitID getUnitID()
+  public EList<Fragment> getFragments()
   {
-    return unitID;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetUnitID(UnitID newUnitID, NotificationChain msgs)
-  {
-    UnitID oldUnitID = unitID;
-    unitID = newUnitID;
-    if (eNotificationRequired())
+    if (fragments == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.RULE__UNIT_ID, oldUnitID, newUnitID);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      fragments = new EObjectContainmentEList<Fragment>(Fragment.class, this, WesnothDSLPackage.RULE__FRAGMENTS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setUnitID(UnitID newUnitID)
-  {
-    if (newUnitID != unitID)
-    {
-      NotificationChain msgs = null;
-      if (unitID != null)
-        msgs = ((InternalEObject)unitID).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WesnothDSLPackage.RULE__UNIT_ID, null, msgs);
-      if (newUnitID != null)
-        msgs = ((InternalEObject)newUnitID).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WesnothDSLPackage.RULE__UNIT_ID, null, msgs);
-      msgs = basicSetUnitID(newUnitID, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.RULE__UNIT_ID, newUnitID, newUnitID));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Defualt_CA> getDefualt_cas()
-  {
-    if (defualt_cas == null)
-    {
-      defualt_cas = new EObjectContainmentEList<Defualt_CA>(Defualt_CA.class, this, WesnothDSLPackage.RULE__DEFUALT_CAS);
-    }
-    return defualt_cas;
+    return fragments;
   }
 
   /**
@@ -202,10 +140,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.RULE__UNIT_ID:
-        return basicSetUnitID(null, msgs);
-      case WesnothDSLPackage.RULE__DEFUALT_CAS:
-        return ((InternalEList<?>)getDefualt_cas()).basicRemove(otherEnd, msgs);
+      case WesnothDSLPackage.RULE__FRAGMENTS:
+        return ((InternalEList<?>)getFragments()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -222,10 +158,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
     {
       case WesnothDSLPackage.RULE__NAME:
         return getName();
-      case WesnothDSLPackage.RULE__UNIT_ID:
-        return getUnitID();
-      case WesnothDSLPackage.RULE__DEFUALT_CAS:
-        return getDefualt_cas();
+      case WesnothDSLPackage.RULE__FRAGMENTS:
+        return getFragments();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -244,12 +178,9 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
       case WesnothDSLPackage.RULE__NAME:
         setName((String)newValue);
         return;
-      case WesnothDSLPackage.RULE__UNIT_ID:
-        setUnitID((UnitID)newValue);
-        return;
-      case WesnothDSLPackage.RULE__DEFUALT_CAS:
-        getDefualt_cas().clear();
-        getDefualt_cas().addAll((Collection<? extends Defualt_CA>)newValue);
+      case WesnothDSLPackage.RULE__FRAGMENTS:
+        getFragments().clear();
+        getFragments().addAll((Collection<? extends Fragment>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -268,11 +199,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
       case WesnothDSLPackage.RULE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case WesnothDSLPackage.RULE__UNIT_ID:
-        setUnitID((UnitID)null);
-        return;
-      case WesnothDSLPackage.RULE__DEFUALT_CAS:
-        getDefualt_cas().clear();
+      case WesnothDSLPackage.RULE__FRAGMENTS:
+        getFragments().clear();
         return;
     }
     super.eUnset(featureID);
@@ -290,10 +218,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
     {
       case WesnothDSLPackage.RULE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case WesnothDSLPackage.RULE__UNIT_ID:
-        return unitID != null;
-      case WesnothDSLPackage.RULE__DEFUALT_CAS:
-        return defualt_cas != null && !defualt_cas.isEmpty();
+      case WesnothDSLPackage.RULE__FRAGMENTS:
+        return fragments != null && !fragments.isEmpty();
     }
     return super.eIsSet(featureID);
   }

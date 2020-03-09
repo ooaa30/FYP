@@ -3,10 +3,14 @@
  */
 package fyp.xtext.wesnoth.mydsl.generator;
 
-import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -33,93 +37,357 @@ public class WesnothDSLGenerator extends AbstractGenerator {
   
   public CharSequence compile(final Rule rule) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("[ai]");
     _builder.newLine();
-    _builder.append("\t");
-    _builder.append("[stage]");
+    _builder.append("[modify_ai]");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("id=main_loop");
+    _builder.append("    ");
+    _builder.append("side=1");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("name=ai_default_rca::candidate_action_evaluation_loop");
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[combat]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[goto]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[recruit_rushers]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[castle_switch]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[retreat_injured]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[grab_villages]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[spread_poison]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[recruitment]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[move_leader_to_goals]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[move_leader_to_keep]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[high_xp_attack]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[place_healers]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[healing]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[villages]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[retreat]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[village_hunt]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[move_to_tagets]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[leader_shares_keep]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("side=1");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("action=delete");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("path=stage[main_loop].candidate_action[move_to_any_enemy]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
     _builder.newLine();
     {
-      EList<Defualt_CA> _defualt_cas = rule.getDefualt_cas();
-      for(final Defualt_CA D_CA : _defualt_cas) {
-        _builder.append("\t\t");
-        CharSequence _compile = this.compile(D_CA);
-        _builder.append(_compile, "\t\t");
+      EList<Fragment> _fragments = rule.getFragments();
+      for(final Fragment frag : _fragments) {
+        CharSequence _compile = this.compile(frag);
+        _builder.append(_compile);
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("\t");
-    _builder.append("[/stage]");
-    _builder.newLine();
-    _builder.append("[/ai]");
-    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence compile(final Fragment frag) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<Defualt_CA> _defualt_cas = frag.getDefualt_cas();
+      for(final Defualt_CA cas : _defualt_cas) {
+        _builder.append("[modify_ai]");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("side =1");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("action = add");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("path = stage[main_loop].candidate_action[]");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("[candidate_action]");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("[filter_own]");
+        _builder.newLine();
+        _builder.append("\t\t");
+        CharSequence _compile = this.compile(cas);
+        _builder.append(_compile, "\t\t");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t");
+        CharSequence _compile_1 = this.compile(frag.getCondition());
+        _builder.append(_compile_1, "\t\t");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t");
+        _builder.append("[/filter_own]");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("[/candidate_action");
+        _builder.newLine();
+        _builder.append("[/modify_ai]");
+        _builder.newLine();
+      }
+    }
     return _builder;
   }
   
   public CharSequence compile(final Defualt_CA ca) {
     StringConcatenation _builder = new StringConcatenation();
-    {
-      String _caType = ca.getCaType();
-      boolean _equals = Objects.equal(_caType, "movement");
-      if (_equals) {
-        _builder.append("{AI_CA_GOTO}");
-        _builder.newLine();
-      } else {
-        String _caType_1 = ca.getCaType();
-        boolean _equals_1 = Objects.equal(_caType_1, "retreat");
-        if (_equals_1) {
-          _builder.append("{AI_CA_RETREAT_INJURED}");
-          _builder.newLine();
-        } else {
-          String _caType_2 = ca.getCaType();
-          boolean _equals_2 = Objects.equal(_caType_2, "move_to_target");
-          if (_equals_2) {
-            _builder.append("{AI_CA_MOVE_TO_TARGETS}");
-            _builder.newLine();
-          } else {
-            String _caType_3 = ca.getCaType();
-            boolean _equals_3 = Objects.equal(_caType_3, "combat");
-            if (_equals_3) {
-              _builder.append("{AI_CA_COMBAT}");
-              _builder.newLine();
-            } else {
-              String _caType_4 = ca.getCaType();
-              boolean _equals_4 = Objects.equal(_caType_4, "recruit");
-              if (_equals_4) {
-                _builder.append("{AI_CA_RECRUITMENT}");
-                _builder.newLine();
-              } else {
-                String _caType_5 = ca.getCaType();
-                boolean _equals_5 = Objects.equal(_caType_5, "focus_high_XP");
-                if (_equals_5) {
-                  _builder.append("{AI_CA_HIGH_XP_ATTACK}");
-                  _builder.newLine();
-                } else {
-                  String _caType_6 = ca.getCaType();
-                  boolean _equals_6 = Objects.equal(_caType_6, "move_to_enemy");
-                  if (_equals_6) {
-                    _builder.append("{AI_CA_MOVE_TO_ANY_ENEMY}");
-                    _builder.newLine();
-                  } else {
-                    String _caType_7 = ca.getCaType();
-                    boolean _equals_7 = Objects.equal(_caType_7, "capture_villages");
-                    if (_equals_7) {
-                      _builder.append("{AI_CA_VILLAGES}");
-                      _builder.newLine();
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    return _builder;
+  }
+  
+  public CharSequence compile(final Conditional con) {
+    StringConcatenation _builder = new StringConcatenation();
+    CharSequence _compile = this.compile(con.getCondition());
+    _builder.append(_compile);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence compile(final AtLocation x) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("x,y=");
+    int _x = x.getX();
+    _builder.append(_x);
+    _builder.append(",");
+    int _y = x.getY();
+    _builder.append(_y);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence compile(final Damage x) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("[filter_wml]");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("hitpoints=($this_unit.max_hitpoints-");
+    int _health = x.getHealth();
+    _builder.append(_health, "\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("[/filter_wml]");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence compile(final UnitEquals x) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("type = ");
+    String _unit = x.getUnit();
+    _builder.append(_unit);
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
 }

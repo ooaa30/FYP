@@ -105,22 +105,13 @@ public interface WesnothDSLPackage extends EPackage
   int RULE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Unit ID</b></em>' containment reference.
+   * The feature id for the '<em><b>Fragments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RULE__UNIT_ID = 1;
-
-  /**
-   * The feature id for the '<em><b>Defualt cas</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int RULE__DEFUALT_CAS = 2;
+  int RULE__FRAGMENTS = 1;
 
   /**
    * The number of structural features of the '<em>Rule</em>' class.
@@ -129,7 +120,267 @@ public interface WesnothDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RULE_FEATURE_COUNT = 3;
+  int RULE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.FragmentImpl <em>Fragment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.FragmentImpl
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getFragment()
+   * @generated
+   */
+  int FRAGMENT = 2;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FRAGMENT__CONDITION = 0;
+
+  /**
+   * The feature id for the '<em><b>Defualt cas</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FRAGMENT__DEFUALT_CAS = 1;
+
+  /**
+   * The number of structural features of the '<em>Fragment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FRAGMENT_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.ConditionalImpl <em>Conditional</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.ConditionalImpl
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getConditional()
+   * @generated
+   */
+  int CONDITIONAL = 3;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITIONAL__CONDITION = 0;
+
+  /**
+   * The number of structural features of the '<em>Conditional</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONDITIONAL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.DamageImpl <em>Damage</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.DamageImpl
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getDamage()
+   * @generated
+   */
+  int DAMAGE = 4;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DAMAGE__CONDITION = CONDITIONAL__CONDITION;
+
+  /**
+   * The feature id for the '<em><b>Health</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DAMAGE__HEALTH = CONDITIONAL_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Damage</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DAMAGE_FEATURE_COUNT = CONDITIONAL_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HealthLevelLessImpl <em>Health Level Less</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HealthLevelLessImpl
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getHealthLevelLess()
+   * @generated
+   */
+  int HEALTH_LEVEL_LESS = 5;
+
+  /**
+   * The feature id for the '<em><b>Health</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEALTH_LEVEL_LESS__HEALTH = 0;
+
+  /**
+   * The number of structural features of the '<em>Health Level Less</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEALTH_LEVEL_LESS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HeathLevelEqualsImpl <em>Heath Level Equals</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HeathLevelEqualsImpl
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getHeathLevelEquals()
+   * @generated
+   */
+  int HEATH_LEVEL_EQUALS = 6;
+
+  /**
+   * The feature id for the '<em><b>Health</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEATH_LEVEL_EQUALS__HEALTH = 0;
+
+  /**
+   * The number of structural features of the '<em>Heath Level Equals</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEATH_LEVEL_EQUALS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HealthLevelGreaterImpl <em>Health Level Greater</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HealthLevelGreaterImpl
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getHealthLevelGreater()
+   * @generated
+   */
+  int HEALTH_LEVEL_GREATER = 7;
+
+  /**
+   * The feature id for the '<em><b>Health</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEALTH_LEVEL_GREATER__HEALTH = 0;
+
+  /**
+   * The number of structural features of the '<em>Health Level Greater</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int HEALTH_LEVEL_GREATER_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.AtLocationImpl <em>At Location</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.AtLocationImpl
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getAtLocation()
+   * @generated
+   */
+  int AT_LOCATION = 8;
+
+  /**
+   * The feature id for the '<em><b>X</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_LOCATION__X = 0;
+
+  /**
+   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_LOCATION__Y = 1;
+
+  /**
+   * The number of structural features of the '<em>At Location</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AT_LOCATION_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.UnitEqualsImpl <em>Unit Equals</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.UnitEqualsImpl
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getUnitEquals()
+   * @generated
+   */
+  int UNIT_EQUALS = 9;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIT_EQUALS__CONDITION = CONDITIONAL__CONDITION;
+
+  /**
+   * The feature id for the '<em><b>Unit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIT_EQUALS__UNIT = CONDITIONAL_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Unit Equals</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNIT_EQUALS_FEATURE_COUNT = CONDITIONAL_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.UnitIDImpl <em>Unit ID</em>}' class.
@@ -139,7 +390,7 @@ public interface WesnothDSLPackage extends EPackage
    * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getUnitID()
    * @generated
    */
-  int UNIT_ID = 2;
+  int UNIT_ID = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -167,7 +418,7 @@ public interface WesnothDSLPackage extends EPackage
    * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getDefualt_CA()
    * @generated
    */
-  int DEFUALT_CA = 3;
+  int DEFUALT_CA = 11;
 
   /**
    * The feature id for the '<em><b>Ca Type</b></em>' attribute.
@@ -231,26 +482,205 @@ public interface WesnothDSLPackage extends EPackage
   EAttribute getRule_Name();
 
   /**
-   * Returns the meta object for the containment reference '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getUnitID <em>Unit ID</em>}'.
+   * Returns the meta object for the containment reference list '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getFragments <em>Fragments</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Unit ID</em>'.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getUnitID()
+   * @return the meta object for the containment reference list '<em>Fragments</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getFragments()
    * @see #getRule()
    * @generated
    */
-  EReference getRule_UnitID();
+  EReference getRule_Fragments();
 
   /**
-   * Returns the meta object for the containment reference list '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getDefualt_cas <em>Defualt cas</em>}'.
+   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment <em>Fragment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Fragment</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment
+   * @generated
+   */
+  EClass getFragment();
+
+  /**
+   * Returns the meta object for the containment reference '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Condition</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment#getCondition()
+   * @see #getFragment()
+   * @generated
+   */
+  EReference getFragment_Condition();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment#getDefualt_cas <em>Defualt cas</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Defualt cas</em>'.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getDefualt_cas()
-   * @see #getRule()
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment#getDefualt_cas()
+   * @see #getFragment()
    * @generated
    */
-  EReference getRule_Defualt_cas();
+  EReference getFragment_Defualt_cas();
+
+  /**
+   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional <em>Conditional</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Conditional</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional
+   * @generated
+   */
+  EClass getConditional();
+
+  /**
+   * Returns the meta object for the containment reference '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Condition</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional#getCondition()
+   * @see #getConditional()
+   * @generated
+   */
+  EReference getConditional_Condition();
+
+  /**
+   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage <em>Damage</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Damage</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage
+   * @generated
+   */
+  EClass getDamage();
+
+  /**
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage#getHealth <em>Health</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Health</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage#getHealth()
+   * @see #getDamage()
+   * @generated
+   */
+  EAttribute getDamage_Health();
+
+  /**
+   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelLess <em>Health Level Less</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Health Level Less</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelLess
+   * @generated
+   */
+  EClass getHealthLevelLess();
+
+  /**
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelLess#getHealth <em>Health</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Health</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelLess#getHealth()
+   * @see #getHealthLevelLess()
+   * @generated
+   */
+  EAttribute getHealthLevelLess_Health();
+
+  /**
+   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.HeathLevelEquals <em>Heath Level Equals</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Heath Level Equals</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.HeathLevelEquals
+   * @generated
+   */
+  EClass getHeathLevelEquals();
+
+  /**
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.HeathLevelEquals#getHealth <em>Health</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Health</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.HeathLevelEquals#getHealth()
+   * @see #getHeathLevelEquals()
+   * @generated
+   */
+  EAttribute getHeathLevelEquals_Health();
+
+  /**
+   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelGreater <em>Health Level Greater</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Health Level Greater</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelGreater
+   * @generated
+   */
+  EClass getHealthLevelGreater();
+
+  /**
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelGreater#getHealth <em>Health</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Health</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelGreater#getHealth()
+   * @see #getHealthLevelGreater()
+   * @generated
+   */
+  EAttribute getHealthLevelGreater_Health();
+
+  /**
+   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation <em>At Location</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>At Location</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation
+   * @generated
+   */
+  EClass getAtLocation();
+
+  /**
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>X</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getX()
+   * @see #getAtLocation()
+   * @generated
+   */
+  EAttribute getAtLocation_X();
+
+  /**
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getY <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Y</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getY()
+   * @see #getAtLocation()
+   * @generated
+   */
+  EAttribute getAtLocation_Y();
+
+  /**
+   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals <em>Unit Equals</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unit Equals</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals
+   * @generated
+   */
+  EClass getUnitEquals();
+
+  /**
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals#getUnit <em>Unit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unit</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals#getUnit()
+   * @see #getUnitEquals()
+   * @generated
+   */
+  EAttribute getUnitEquals_Unit();
 
   /**
    * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitID <em>Unit ID</em>}'.
@@ -354,12 +784,30 @@ public interface WesnothDSLPackage extends EPackage
     EAttribute RULE__NAME = eINSTANCE.getRule_Name();
 
     /**
-     * The meta object literal for the '<em><b>Unit ID</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Fragments</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RULE__UNIT_ID = eINSTANCE.getRule_UnitID();
+    EReference RULE__FRAGMENTS = eINSTANCE.getRule_Fragments();
+
+    /**
+     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.FragmentImpl <em>Fragment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.FragmentImpl
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getFragment()
+     * @generated
+     */
+    EClass FRAGMENT = eINSTANCE.getFragment();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FRAGMENT__CONDITION = eINSTANCE.getFragment_Condition();
 
     /**
      * The meta object literal for the '<em><b>Defualt cas</b></em>' containment reference list feature.
@@ -367,7 +815,141 @@ public interface WesnothDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RULE__DEFUALT_CAS = eINSTANCE.getRule_Defualt_cas();
+    EReference FRAGMENT__DEFUALT_CAS = eINSTANCE.getFragment_Defualt_cas();
+
+    /**
+     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.ConditionalImpl <em>Conditional</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.ConditionalImpl
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getConditional()
+     * @generated
+     */
+    EClass CONDITIONAL = eINSTANCE.getConditional();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONDITIONAL__CONDITION = eINSTANCE.getConditional_Condition();
+
+    /**
+     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.DamageImpl <em>Damage</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.DamageImpl
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getDamage()
+     * @generated
+     */
+    EClass DAMAGE = eINSTANCE.getDamage();
+
+    /**
+     * The meta object literal for the '<em><b>Health</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DAMAGE__HEALTH = eINSTANCE.getDamage_Health();
+
+    /**
+     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HealthLevelLessImpl <em>Health Level Less</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HealthLevelLessImpl
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getHealthLevelLess()
+     * @generated
+     */
+    EClass HEALTH_LEVEL_LESS = eINSTANCE.getHealthLevelLess();
+
+    /**
+     * The meta object literal for the '<em><b>Health</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HEALTH_LEVEL_LESS__HEALTH = eINSTANCE.getHealthLevelLess_Health();
+
+    /**
+     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HeathLevelEqualsImpl <em>Heath Level Equals</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HeathLevelEqualsImpl
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getHeathLevelEquals()
+     * @generated
+     */
+    EClass HEATH_LEVEL_EQUALS = eINSTANCE.getHeathLevelEquals();
+
+    /**
+     * The meta object literal for the '<em><b>Health</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HEATH_LEVEL_EQUALS__HEALTH = eINSTANCE.getHeathLevelEquals_Health();
+
+    /**
+     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HealthLevelGreaterImpl <em>Health Level Greater</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HealthLevelGreaterImpl
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getHealthLevelGreater()
+     * @generated
+     */
+    EClass HEALTH_LEVEL_GREATER = eINSTANCE.getHealthLevelGreater();
+
+    /**
+     * The meta object literal for the '<em><b>Health</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute HEALTH_LEVEL_GREATER__HEALTH = eINSTANCE.getHealthLevelGreater_Health();
+
+    /**
+     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.AtLocationImpl <em>At Location</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.AtLocationImpl
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getAtLocation()
+     * @generated
+     */
+    EClass AT_LOCATION = eINSTANCE.getAtLocation();
+
+    /**
+     * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AT_LOCATION__X = eINSTANCE.getAtLocation_X();
+
+    /**
+     * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AT_LOCATION__Y = eINSTANCE.getAtLocation_Y();
+
+    /**
+     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.UnitEqualsImpl <em>Unit Equals</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.UnitEqualsImpl
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getUnitEquals()
+     * @generated
+     */
+    EClass UNIT_EQUALS = eINSTANCE.getUnitEquals();
+
+    /**
+     * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UNIT_EQUALS__UNIT = eINSTANCE.getUnitEquals_Unit();
 
     /**
      * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.UnitIDImpl <em>Unit ID</em>}' class.

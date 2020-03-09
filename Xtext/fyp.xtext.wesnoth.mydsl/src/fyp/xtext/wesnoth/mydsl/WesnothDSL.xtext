@@ -7,15 +7,53 @@ Model:
 ;	
 		
 Rule:
-	'rule' name = ID
+	'rule' name = STRING
 	'{'
-		unitID=UnitID
-		(defualt_cas+=Defualt_CA)*
+		fragments+=Fragment
 		'}'
 ;
 
+Fragment:
+	condition=Conditional
+	'{'
+		(defualt_cas+=Defualt_CA)*
+		'}'
+;
+// filters don't seem to work in the [AI} tag, may need to make the code generation subtractive rather than additive
+// could use [Modify_AI] tag to do this, need investigation
+// might be worth deleting all existing candidate actions then adding them back in via the use of macros
+// can use filter own for unit types 100%, may be able to filter other things too
+// will need to add them in from scratch with wml, no extra code but need to refferenc them again
+Conditional:
+	'when:' condition=AtLocation|Damage|UnitEquals
+;
+
+Damage:
+	'health' '-' health=INT
+;
+
+HealthLevelLess:
+	'health' 'less' 'than' health=INT
+;
+
+HeathLevelEquals:
+	'health' 'is' health=INT
+;
+
+HealthLevelGreater:
+	'health' 'greater' 'than' health=INT
+;
+
+AtLocation:
+	'x' x=INT 'y' y=INT
+;
+
+UnitEquals:
+	'unit' 'is' unit = STRING
+;
+
 UnitID:
-	'unitID' name = ID
+	'unitID' name = STRING
 ;
 
 //TODO research and implement "Attributes" Like aggressiveness and stuff

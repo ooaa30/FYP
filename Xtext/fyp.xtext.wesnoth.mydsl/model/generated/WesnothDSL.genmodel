@@ -11,8 +11,33 @@
     </genClasses>
     <genClasses ecoreClass="WesnothDSL.ecore#//Rule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//Rule/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//Rule/unitID"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//Rule/defualt_cas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//Rule/fragments"/>
+    </genClasses>
+    <genClasses ecoreClass="WesnothDSL.ecore#//Fragment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//Fragment/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//Fragment/defualt_cas"/>
+    </genClasses>
+    <genClasses ecoreClass="WesnothDSL.ecore#//Conditional">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//Conditional/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="WesnothDSL.ecore#//Damage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//Damage/health"/>
+    </genClasses>
+    <genClasses ecoreClass="WesnothDSL.ecore#//HealthLevelLess">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//HealthLevelLess/health"/>
+    </genClasses>
+    <genClasses ecoreClass="WesnothDSL.ecore#//HeathLevelEquals">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//HeathLevelEquals/health"/>
+    </genClasses>
+    <genClasses ecoreClass="WesnothDSL.ecore#//HealthLevelGreater">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//HealthLevelGreater/health"/>
+    </genClasses>
+    <genClasses ecoreClass="WesnothDSL.ecore#//AtLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//AtLocation/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//AtLocation/y"/>
+    </genClasses>
+    <genClasses ecoreClass="WesnothDSL.ecore#//UnitEquals">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//UnitEquals/unit"/>
     </genClasses>
     <genClasses ecoreClass="WesnothDSL.ecore#//UnitID">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//UnitID/name"/>

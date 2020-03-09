@@ -42,74 +42,321 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cRuleKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cUnitIDAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cUnitIDUnitIDParserRuleCall_3_0 = (RuleCall)cUnitIDAssignment_3.eContents().get(0);
-		private final Assignment cDefualt_casAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cDefualt_casDefualt_CAParserRuleCall_4_0 = (RuleCall)cDefualt_casAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cFragmentsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cFragmentsFragmentParserRuleCall_3_0 = (RuleCall)cFragmentsAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Rule:
-		//	'rule' name=ID
+		//	'rule' name=STRING
 		//	'{'
-		//	unitID=UnitID
-		//	defualt_cas+=Defualt_CA*
+		//	fragments+=Fragment
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'rule' name=ID '{' unitID=UnitID defualt_cas+=Defualt_CA* '}'
+		//'rule' name=STRING '{' fragments+=Fragment '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'rule'
 		public Keyword getRuleKeyword_0() { return cRuleKeyword_0; }
 		
-		//name=ID
+		//name=STRING
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//unitID=UnitID
-		public Assignment getUnitIDAssignment_3() { return cUnitIDAssignment_3; }
+		//fragments+=Fragment
+		public Assignment getFragmentsAssignment_3() { return cFragmentsAssignment_3; }
 		
-		//UnitID
-		public RuleCall getUnitIDUnitIDParserRuleCall_3_0() { return cUnitIDUnitIDParserRuleCall_3_0; }
-		
-		//defualt_cas+=Defualt_CA*
-		public Assignment getDefualt_casAssignment_4() { return cDefualt_casAssignment_4; }
-		
-		//Defualt_CA
-		public RuleCall getDefualt_casDefualt_CAParserRuleCall_4_0() { return cDefualt_casDefualt_CAParserRuleCall_4_0; }
+		//Fragment
+		public RuleCall getFragmentsFragmentParserRuleCall_3_0() { return cFragmentsFragmentParserRuleCall_3_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+	}
+	public class FragmentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Fragment");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cConditionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cConditionConditionalParserRuleCall_0_0 = (RuleCall)cConditionAssignment_0.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cDefualt_casAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cDefualt_casDefualt_CAParserRuleCall_2_0 = (RuleCall)cDefualt_casAssignment_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Fragment:
+		//	condition=Conditional
+		//	'{'
+		//	defualt_cas+=Defualt_CA*
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//condition=Conditional '{' defualt_cas+=Defualt_CA* '}'
+		public Group getGroup() { return cGroup; }
+		
+		//condition=Conditional
+		public Assignment getConditionAssignment_0() { return cConditionAssignment_0; }
+		
+		//Conditional
+		public RuleCall getConditionConditionalParserRuleCall_0_0() { return cConditionConditionalParserRuleCall_0_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		
+		//defualt_cas+=Defualt_CA*
+		public Assignment getDefualt_casAssignment_2() { return cDefualt_casAssignment_2; }
+		
+		//Defualt_CA
+		public RuleCall getDefualt_casDefualt_CAParserRuleCall_2_0() { return cDefualt_casDefualt_CAParserRuleCall_2_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
+	}
+	public class ConditionalElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Conditional");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cWhenKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Assignment cConditionAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cConditionAtLocationParserRuleCall_0_1_0 = (RuleCall)cConditionAssignment_0_1.eContents().get(0);
+		private final RuleCall cDamageParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cUnitEqualsParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		
+		//// filters don't seem to work in the [AI} tag, may need to make the code generation subtractive rather than additive
+		//// could use [Modify_AI] tag to do this, need investigation
+		//// might be worth deleting all existing candidate actions then adding them back in via the use of macros
+		//// can use filter own for unit types 100%, may be able to filter other things too
+		//// will need to add them in from scratch with wml, no extra code but need to refferenc them again
+		//Conditional:
+		//	'when:' condition=AtLocation | Damage | UnitEquals;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'when:' condition=AtLocation | Damage | UnitEquals
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'when:' condition=AtLocation
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'when:'
+		public Keyword getWhenKeyword_0_0() { return cWhenKeyword_0_0; }
+		
+		//condition=AtLocation
+		public Assignment getConditionAssignment_0_1() { return cConditionAssignment_0_1; }
+		
+		//AtLocation
+		public RuleCall getConditionAtLocationParserRuleCall_0_1_0() { return cConditionAtLocationParserRuleCall_0_1_0; }
+		
+		//Damage
+		public RuleCall getDamageParserRuleCall_1() { return cDamageParserRuleCall_1; }
+		
+		//UnitEquals
+		public RuleCall getUnitEqualsParserRuleCall_2() { return cUnitEqualsParserRuleCall_2; }
+	}
+	public class DamageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Damage");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHealthKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cHealthAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cHealthINTTerminalRuleCall_2_0 = (RuleCall)cHealthAssignment_2.eContents().get(0);
+		
+		//Damage:
+		//	'health' '-' health=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'health' '-' health=INT
+		public Group getGroup() { return cGroup; }
+		
+		//'health'
+		public Keyword getHealthKeyword_0() { return cHealthKeyword_0; }
+		
+		//'-'
+		public Keyword getHyphenMinusKeyword_1() { return cHyphenMinusKeyword_1; }
+		
+		//health=INT
+		public Assignment getHealthAssignment_2() { return cHealthAssignment_2; }
+		
+		//INT
+		public RuleCall getHealthINTTerminalRuleCall_2_0() { return cHealthINTTerminalRuleCall_2_0; }
+	}
+	public class HealthLevelLessElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.HealthLevelLess");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHealthKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLessKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cThanKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cHealthAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cHealthINTTerminalRuleCall_3_0 = (RuleCall)cHealthAssignment_3.eContents().get(0);
+		
+		//HealthLevelLess:
+		//	'health' 'less' 'than' health=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'health' 'less' 'than' health=INT
+		public Group getGroup() { return cGroup; }
+		
+		//'health'
+		public Keyword getHealthKeyword_0() { return cHealthKeyword_0; }
+		
+		//'less'
+		public Keyword getLessKeyword_1() { return cLessKeyword_1; }
+		
+		//'than'
+		public Keyword getThanKeyword_2() { return cThanKeyword_2; }
+		
+		//health=INT
+		public Assignment getHealthAssignment_3() { return cHealthAssignment_3; }
+		
+		//INT
+		public RuleCall getHealthINTTerminalRuleCall_3_0() { return cHealthINTTerminalRuleCall_3_0; }
+	}
+	public class HeathLevelEqualsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.HeathLevelEquals");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHealthKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cHealthAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cHealthINTTerminalRuleCall_2_0 = (RuleCall)cHealthAssignment_2.eContents().get(0);
+		
+		//HeathLevelEquals:
+		//	'health' 'is' health=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'health' 'is' health=INT
+		public Group getGroup() { return cGroup; }
+		
+		//'health'
+		public Keyword getHealthKeyword_0() { return cHealthKeyword_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
+		
+		//health=INT
+		public Assignment getHealthAssignment_2() { return cHealthAssignment_2; }
+		
+		//INT
+		public RuleCall getHealthINTTerminalRuleCall_2_0() { return cHealthINTTerminalRuleCall_2_0; }
+	}
+	public class HealthLevelGreaterElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.HealthLevelGreater");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cHealthKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cGreaterKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cThanKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cHealthAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cHealthINTTerminalRuleCall_3_0 = (RuleCall)cHealthAssignment_3.eContents().get(0);
+		
+		//HealthLevelGreater:
+		//	'health' 'greater' 'than' health=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'health' 'greater' 'than' health=INT
+		public Group getGroup() { return cGroup; }
+		
+		//'health'
+		public Keyword getHealthKeyword_0() { return cHealthKeyword_0; }
+		
+		//'greater'
+		public Keyword getGreaterKeyword_1() { return cGreaterKeyword_1; }
+		
+		//'than'
+		public Keyword getThanKeyword_2() { return cThanKeyword_2; }
+		
+		//health=INT
+		public Assignment getHealthAssignment_3() { return cHealthAssignment_3; }
+		
+		//INT
+		public RuleCall getHealthINTTerminalRuleCall_3_0() { return cHealthINTTerminalRuleCall_3_0; }
+	}
+	public class AtLocationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.AtLocation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cXKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cXAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cXINTTerminalRuleCall_1_0 = (RuleCall)cXAssignment_1.eContents().get(0);
+		private final Keyword cYKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cYAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cYINTTerminalRuleCall_3_0 = (RuleCall)cYAssignment_3.eContents().get(0);
+		
+		//AtLocation:
+		//	'x' x=INT 'y' y=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'x' x=INT 'y' y=INT
+		public Group getGroup() { return cGroup; }
+		
+		//'x'
+		public Keyword getXKeyword_0() { return cXKeyword_0; }
+		
+		//x=INT
+		public Assignment getXAssignment_1() { return cXAssignment_1; }
+		
+		//INT
+		public RuleCall getXINTTerminalRuleCall_1_0() { return cXINTTerminalRuleCall_1_0; }
+		
+		//'y'
+		public Keyword getYKeyword_2() { return cYKeyword_2; }
+		
+		//y=INT
+		public Assignment getYAssignment_3() { return cYAssignment_3; }
+		
+		//INT
+		public RuleCall getYINTTerminalRuleCall_3_0() { return cYINTTerminalRuleCall_3_0; }
+	}
+	public class UnitEqualsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.UnitEquals");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cUnitKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cUnitAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cUnitSTRINGTerminalRuleCall_2_0 = (RuleCall)cUnitAssignment_2.eContents().get(0);
+		
+		//UnitEquals:
+		//	'unit' 'is' unit=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'unit' 'is' unit=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'unit'
+		public Keyword getUnitKeyword_0() { return cUnitKeyword_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
+		
+		//unit=STRING
+		public Assignment getUnitAssignment_2() { return cUnitAssignment_2; }
+		
+		//STRING
+		public RuleCall getUnitSTRINGTerminalRuleCall_2_0() { return cUnitSTRINGTerminalRuleCall_2_0; }
 	}
 	public class UnitIDElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.UnitID");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cUnitIDKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//UnitID:
-		//	'unitID' name=ID;
+		//	'unitID' name=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'unitID' name=ID
+		//'unitID' name=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//'unitID'
 		public Keyword getUnitIDKeyword_0() { return cUnitIDKeyword_0; }
 		
-		//name=ID
+		//name=STRING
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		//STRING
+		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
 	}
 	public class GoalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Goal");
@@ -189,6 +436,14 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final ModelElements pModel;
 	private final RuleElements pRule;
+	private final FragmentElements pFragment;
+	private final ConditionalElements pConditional;
+	private final DamageElements pDamage;
+	private final HealthLevelLessElements pHealthLevelLess;
+	private final HeathLevelEqualsElements pHeathLevelEquals;
+	private final HealthLevelGreaterElements pHealthLevelGreater;
+	private final AtLocationElements pAtLocation;
+	private final UnitEqualsElements pUnitEquals;
 	private final UnitIDElements pUnitID;
 	private final GoalElements pGoal;
 	private final New_CAElements pNew_CA;
@@ -205,6 +460,14 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pRule = new RuleElements();
+		this.pFragment = new FragmentElements();
+		this.pConditional = new ConditionalElements();
+		this.pDamage = new DamageElements();
+		this.pHealthLevelLess = new HealthLevelLessElements();
+		this.pHeathLevelEquals = new HeathLevelEqualsElements();
+		this.pHealthLevelGreater = new HealthLevelGreaterElements();
+		this.pAtLocation = new AtLocationElements();
+		this.pUnitEquals = new UnitEqualsElements();
 		this.pUnitID = new UnitIDElements();
 		this.pGoal = new GoalElements();
 		this.pNew_CA = new New_CAElements();
@@ -249,10 +512,9 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Rule:
-	//	'rule' name=ID
+	//	'rule' name=STRING
 	//	'{'
-	//	unitID=UnitID
-	//	defualt_cas+=Defualt_CA*
+	//	fragments+=Fragment
 	//	'}';
 	public RuleElements getRuleAccess() {
 		return pRule;
@@ -262,8 +524,96 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getRuleAccess().getRule();
 	}
 	
+	//Fragment:
+	//	condition=Conditional
+	//	'{'
+	//	defualt_cas+=Defualt_CA*
+	//	'}';
+	public FragmentElements getFragmentAccess() {
+		return pFragment;
+	}
+	
+	public ParserRule getFragmentRule() {
+		return getFragmentAccess().getRule();
+	}
+	
+	//// filters don't seem to work in the [AI} tag, may need to make the code generation subtractive rather than additive
+	//// could use [Modify_AI] tag to do this, need investigation
+	//// might be worth deleting all existing candidate actions then adding them back in via the use of macros
+	//// can use filter own for unit types 100%, may be able to filter other things too
+	//// will need to add them in from scratch with wml, no extra code but need to refferenc them again
+	//Conditional:
+	//	'when:' condition=AtLocation | Damage | UnitEquals;
+	public ConditionalElements getConditionalAccess() {
+		return pConditional;
+	}
+	
+	public ParserRule getConditionalRule() {
+		return getConditionalAccess().getRule();
+	}
+	
+	//Damage:
+	//	'health' '-' health=INT;
+	public DamageElements getDamageAccess() {
+		return pDamage;
+	}
+	
+	public ParserRule getDamageRule() {
+		return getDamageAccess().getRule();
+	}
+	
+	//HealthLevelLess:
+	//	'health' 'less' 'than' health=INT;
+	public HealthLevelLessElements getHealthLevelLessAccess() {
+		return pHealthLevelLess;
+	}
+	
+	public ParserRule getHealthLevelLessRule() {
+		return getHealthLevelLessAccess().getRule();
+	}
+	
+	//HeathLevelEquals:
+	//	'health' 'is' health=INT;
+	public HeathLevelEqualsElements getHeathLevelEqualsAccess() {
+		return pHeathLevelEquals;
+	}
+	
+	public ParserRule getHeathLevelEqualsRule() {
+		return getHeathLevelEqualsAccess().getRule();
+	}
+	
+	//HealthLevelGreater:
+	//	'health' 'greater' 'than' health=INT;
+	public HealthLevelGreaterElements getHealthLevelGreaterAccess() {
+		return pHealthLevelGreater;
+	}
+	
+	public ParserRule getHealthLevelGreaterRule() {
+		return getHealthLevelGreaterAccess().getRule();
+	}
+	
+	//AtLocation:
+	//	'x' x=INT 'y' y=INT;
+	public AtLocationElements getAtLocationAccess() {
+		return pAtLocation;
+	}
+	
+	public ParserRule getAtLocationRule() {
+		return getAtLocationAccess().getRule();
+	}
+	
+	//UnitEquals:
+	//	'unit' 'is' unit=STRING;
+	public UnitEqualsElements getUnitEqualsAccess() {
+		return pUnitEquals;
+	}
+	
+	public ParserRule getUnitEqualsRule() {
+		return getUnitEqualsAccess().getRule();
+	}
+	
 	//UnitID:
-	//	'unitID' name=ID;
+	//	'unitID' name=STRING;
 	public UnitIDElements getUnitIDAccess() {
 		return pUnitID;
 	}

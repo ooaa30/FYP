@@ -87,6 +87,64 @@ public class WesnothDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case WesnothDSLPackage.FRAGMENT:
+      {
+        Fragment fragment = (Fragment)theEObject;
+        T result = caseFragment(fragment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WesnothDSLPackage.CONDITIONAL:
+      {
+        Conditional conditional = (Conditional)theEObject;
+        T result = caseConditional(conditional);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WesnothDSLPackage.DAMAGE:
+      {
+        Damage damage = (Damage)theEObject;
+        T result = caseDamage(damage);
+        if (result == null) result = caseConditional(damage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WesnothDSLPackage.HEALTH_LEVEL_LESS:
+      {
+        HealthLevelLess healthLevelLess = (HealthLevelLess)theEObject;
+        T result = caseHealthLevelLess(healthLevelLess);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WesnothDSLPackage.HEATH_LEVEL_EQUALS:
+      {
+        HeathLevelEquals heathLevelEquals = (HeathLevelEquals)theEObject;
+        T result = caseHeathLevelEquals(heathLevelEquals);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WesnothDSLPackage.HEALTH_LEVEL_GREATER:
+      {
+        HealthLevelGreater healthLevelGreater = (HealthLevelGreater)theEObject;
+        T result = caseHealthLevelGreater(healthLevelGreater);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WesnothDSLPackage.AT_LOCATION:
+      {
+        AtLocation atLocation = (AtLocation)theEObject;
+        T result = caseAtLocation(atLocation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WesnothDSLPackage.UNIT_EQUALS:
+      {
+        UnitEquals unitEquals = (UnitEquals)theEObject;
+        T result = caseUnitEquals(unitEquals);
+        if (result == null) result = caseConditional(unitEquals);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case WesnothDSLPackage.UNIT_ID:
       {
         UnitID unitID = (UnitID)theEObject;
@@ -133,6 +191,134 @@ public class WesnothDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRule(Rule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Fragment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Fragment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFragment(Fragment object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Conditional</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Conditional</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConditional(Conditional object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Damage</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Damage</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDamage(Damage object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Health Level Less</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Health Level Less</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHealthLevelLess(HealthLevelLess object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Heath Level Equals</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Heath Level Equals</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHeathLevelEquals(HeathLevelEquals object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Health Level Greater</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Health Level Greater</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHealthLevelGreater(HealthLevelGreater object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>At Location</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>At Location</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAtLocation(AtLocation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Unit Equals</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Unit Equals</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnitEquals(UnitEquals object)
   {
     return null;
   }
