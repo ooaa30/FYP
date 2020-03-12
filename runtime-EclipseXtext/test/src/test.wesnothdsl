@@ -1,7 +1,5 @@
-rule test{
-	unitID testerino
-	movement
-	combat 
-	move_to_enemy
-	recruit 
+rule "test"{
+	when: health-8{
+		movement 
+	}
 }

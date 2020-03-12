@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class BaselineImpl extends ConditionalImpl implements Baseline
+public class BaselineImpl extends whenRulesImpl implements Baseline
 {
   /**
    * The default value of the '{@link #getAlways() <em>Always</em>}' attribute.

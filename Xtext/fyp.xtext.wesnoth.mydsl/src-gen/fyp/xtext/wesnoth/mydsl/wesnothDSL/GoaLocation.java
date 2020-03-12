@@ -3,25 +3,26 @@
  */
 package fyp.xtext.wesnoth.mydsl.wesnothDSL;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>At Location</b></em>'.
+ * A representation of the model object '<em><b>Goa Location</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getXAxis <em>XAxis</em>}</li>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getYAxis <em>YAxis</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation#getXAxis <em>XAxis</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation#getYAxis <em>YAxis</em>}</li>
  * </ul>
  *
- * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getAtLocation()
+ * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getGoaLocation()
  * @model
  * @generated
  */
-public interface AtLocation extends whenRules
+public interface GoaLocation extends EObject
 {
   /**
    * Returns the value of the '<em><b>XAxis</b></em>' attribute.
@@ -29,14 +30,14 @@ public interface AtLocation extends whenRules
    * <!-- end-user-doc -->
    * @return the value of the '<em>XAxis</em>' attribute.
    * @see #setXAxis(int)
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getAtLocation_XAxis()
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getGoaLocation_XAxis()
    * @model
    * @generated
    */
   int getXAxis();
 
   /**
-   * Sets the value of the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getXAxis <em>XAxis</em>}' attribute.
+   * Sets the value of the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation#getXAxis <em>XAxis</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>XAxis</em>' attribute.
@@ -51,14 +52,14 @@ public interface AtLocation extends whenRules
    * <!-- end-user-doc -->
    * @return the value of the '<em>YAxis</em>' attribute.
    * @see #setYAxis(int)
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getAtLocation_YAxis()
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getGoaLocation_YAxis()
    * @model
    * @generated
    */
   int getYAxis();
 
   /**
-   * Sets the value of the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getYAxis <em>YAxis</em>}' attribute.
+   * Sets the value of the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation#getYAxis <em>YAxis</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>YAxis</em>' attribute.
@@ -67,4 +68,4 @@ public interface AtLocation extends whenRules
    */
   void setYAxis(int value);
 
-} // AtLocation
+} // GoaLocation

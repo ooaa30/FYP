@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class UnitEqualsImpl extends ConditionalImpl implements UnitEquals
+public class UnitEqualsImpl extends whenRulesImpl implements UnitEquals
 {
   /**
    * The default value of the '{@link #getUnit() <em>Unit</em>}' attribute.

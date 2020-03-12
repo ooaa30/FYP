@@ -11,8 +11,12 @@ import fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.whenRules;
+import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -296,6 +300,15 @@ public class WesnothDSLGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
+    _builder.newLine();
+    {
+      EList<Goal> _goals = rule.getGoals();
+      for(final Goal goal : _goals) {
+        CharSequence _compile_1 = this.compile(goal);
+        _builder.append(_compile_1);
+        _builder.newLineIfNotEmpty();
+      }
+    }
     return _builder;
   }
   
@@ -489,36 +502,36 @@ public class WesnothDSLGenerator extends AbstractGenerator {
         }
       }
     }
-    _builder.newLine();
     return _builder;
   }
   
   public CharSequence compile(final Conditional con) {
     StringConcatenation _builder = new StringConcatenation();
-    CharSequence _compile = this.compile(con.getCondition());
-    _builder.append(_compile);
+    CharSequence _resolve = this.resolve(con.getX());
+    _builder.append(_resolve);
+    _builder.append(" ");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  public CharSequence compile(final AtLocation x) {
+  protected CharSequence _resolve(final AtLocation x) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("[filter_own]");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("x,y=");
-    int _x = x.getX();
-    _builder.append(_x, "\t");
+    int _xAxis = x.getXAxis();
+    _builder.append(_xAxis, "\t");
     _builder.append(",");
-    int _y = x.getY();
-    _builder.append(_y, "\t");
+    int _yAxis = x.getYAxis();
+    _builder.append(_yAxis, "\t");
     _builder.newLineIfNotEmpty();
     _builder.append("[/filter_own}]");
     _builder.newLine();
     return _builder;
   }
   
-  public CharSequence compile(final Damage x) {
+  protected CharSequence _resolve(final Damage x) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("[filter_own]");
     _builder.newLine();
@@ -539,7 +552,7 @@ public class WesnothDSLGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  public CharSequence compile(final UnitEquals x) {
+  protected CharSequence _resolve(final UnitEquals x) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("[filter_own]");
     _builder.newLine();
@@ -553,8 +566,75 @@ public class WesnothDSLGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  public CharSequence compile(final Baseline x) {
+  protected CharSequence _resolve(final Baseline x) {
     StringConcatenation _builder = new StringConcatenation();
     return _builder;
+  }
+  
+  public CharSequence compile(final Goal x) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("[modify_ai]");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("side =1");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("action = add");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("path=goal[]");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("[goal] ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    CharSequence _compile = this.compile(x.getGoal());
+    _builder.append(_compile, "\t\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("value=");
+    int _locValue = x.getLocValue();
+    _builder.append(_locValue, "\t\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("[/goal]");
+    _builder.newLine();
+    _builder.append("[/modify_ai]");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence compile(final GoaLocation x) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("name=target_location");
+    _builder.newLine();
+    _builder.append("[criteria]");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("x,y=");
+    int _xAxis = x.getXAxis();
+    _builder.append(_xAxis, "\t");
+    _builder.append(",");
+    int _yAxis = x.getYAxis();
+    _builder.append(_yAxis, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("[/criteria]\t\t");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence resolve(final whenRules x) {
+    if (x instanceof AtLocation) {
+      return _resolve((AtLocation)x);
+    } else if (x instanceof Baseline) {
+      return _resolve((Baseline)x);
+    } else if (x instanceof Damage) {
+      return _resolve((Damage)x);
+    } else if (x instanceof UnitEquals) {
+      return _resolve((UnitEquals)x);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(x).toString());
+    }
   }
 }

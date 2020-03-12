@@ -9,14 +9,14 @@ import fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal;
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.GoalCondition;
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.Location;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Model;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLFactory;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.whenRules;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -66,6 +66,13 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass whenRulesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass baselineEClass = null;
 
   /**
@@ -101,14 +108,7 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass goalConditionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass locationEClass = null;
+  private EClass goaLocationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -296,9 +296,20 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * @generated
    */
   @Override
-  public EReference getConditional_Condition()
+  public EReference getConditional_X()
   {
     return (EReference)conditionalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getwhenRules()
+  {
+    return whenRulesEClass;
   }
 
   /**
@@ -362,7 +373,7 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * @generated
    */
   @Override
-  public EAttribute getAtLocation_X()
+  public EAttribute getAtLocation_XAxis()
   {
     return (EAttribute)atLocationEClass.getEStructuralFeatures().get(0);
   }
@@ -373,7 +384,7 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * @generated
    */
   @Override
-  public EAttribute getAtLocation_Y()
+  public EAttribute getAtLocation_YAxis()
   {
     return (EAttribute)atLocationEClass.getEStructuralFeatures().get(1);
   }
@@ -428,9 +439,9 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * @generated
    */
   @Override
-  public EClass getGoalCondition()
+  public EAttribute getGoal_LocValue()
   {
-    return goalConditionEClass;
+    return (EAttribute)goalEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -439,9 +450,9 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * @generated
    */
   @Override
-  public EReference getGoalCondition_Goal()
+  public EClass getGoaLocation()
   {
-    return (EReference)goalConditionEClass.getEStructuralFeatures().get(0);
+    return goaLocationEClass;
   }
 
   /**
@@ -450,9 +461,9 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * @generated
    */
   @Override
-  public EClass getLocation()
+  public EAttribute getGoaLocation_XAxis()
   {
-    return locationEClass;
+    return (EAttribute)goaLocationEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -461,20 +472,9 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
    * @generated
    */
   @Override
-  public EAttribute getLocation_X()
+  public EAttribute getGoaLocation_YAxis()
   {
-    return (EAttribute)locationEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getLocation_Y()
-  {
-    return (EAttribute)locationEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)goaLocationEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -543,7 +543,9 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
     createEReference(fragmentEClass, FRAGMENT__DEFUALT_CAS);
 
     conditionalEClass = createEClass(CONDITIONAL);
-    createEReference(conditionalEClass, CONDITIONAL__CONDITION);
+    createEReference(conditionalEClass, CONDITIONAL__X);
+
+    whenRulesEClass = createEClass(WHEN_RULES);
 
     baselineEClass = createEClass(BASELINE);
     createEAttribute(baselineEClass, BASELINE__ALWAYS);
@@ -552,21 +554,19 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
     createEAttribute(damageEClass, DAMAGE__HEALTH);
 
     atLocationEClass = createEClass(AT_LOCATION);
-    createEAttribute(atLocationEClass, AT_LOCATION__X);
-    createEAttribute(atLocationEClass, AT_LOCATION__Y);
+    createEAttribute(atLocationEClass, AT_LOCATION__XAXIS);
+    createEAttribute(atLocationEClass, AT_LOCATION__YAXIS);
 
     unitEqualsEClass = createEClass(UNIT_EQUALS);
     createEAttribute(unitEqualsEClass, UNIT_EQUALS__UNIT);
 
     goalEClass = createEClass(GOAL);
     createEReference(goalEClass, GOAL__GOAL);
+    createEAttribute(goalEClass, GOAL__LOC_VALUE);
 
-    goalConditionEClass = createEClass(GOAL_CONDITION);
-    createEReference(goalConditionEClass, GOAL_CONDITION__GOAL);
-
-    locationEClass = createEClass(LOCATION);
-    createEAttribute(locationEClass, LOCATION__X);
-    createEAttribute(locationEClass, LOCATION__Y);
+    goaLocationEClass = createEClass(GOA_LOCATION);
+    createEAttribute(goaLocationEClass, GOA_LOCATION__XAXIS);
+    createEAttribute(goaLocationEClass, GOA_LOCATION__YAXIS);
 
     defualt_CAEClass = createEClass(DEFUALT_CA);
     createEAttribute(defualt_CAEClass, DEFUALT_CA__CA_TYPE);
@@ -601,9 +601,10 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    baselineEClass.getESuperTypes().add(this.getConditional());
-    damageEClass.getESuperTypes().add(this.getConditional());
-    unitEqualsEClass.getESuperTypes().add(this.getConditional());
+    baselineEClass.getESuperTypes().add(this.getwhenRules());
+    damageEClass.getESuperTypes().add(this.getwhenRules());
+    atLocationEClass.getESuperTypes().add(this.getwhenRules());
+    unitEqualsEClass.getESuperTypes().add(this.getwhenRules());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -619,7 +620,9 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
     initEReference(getFragment_Defualt_cas(), this.getDefualt_CA(), null, "defualt_cas", null, 0, -1, Fragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(conditionalEClass, Conditional.class, "Conditional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConditional_Condition(), this.getAtLocation(), null, "condition", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConditional_X(), this.getwhenRules(), null, "x", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(whenRulesEClass, whenRules.class, "whenRules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(baselineEClass, Baseline.class, "Baseline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBaseline_Always(), ecorePackage.getEString(), "always", null, 0, 1, Baseline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -628,21 +631,19 @@ public class WesnothDSLPackageImpl extends EPackageImpl implements WesnothDSLPac
     initEAttribute(getDamage_Health(), ecorePackage.getEInt(), "health", null, 0, 1, Damage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(atLocationEClass, AtLocation.class, "AtLocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAtLocation_X(), ecorePackage.getEInt(), "x", null, 0, 1, AtLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAtLocation_Y(), ecorePackage.getEInt(), "y", null, 0, 1, AtLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtLocation_XAxis(), ecorePackage.getEInt(), "XAxis", null, 0, 1, AtLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAtLocation_YAxis(), ecorePackage.getEInt(), "YAxis", null, 0, 1, AtLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(unitEqualsEClass, UnitEquals.class, "UnitEquals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getUnitEquals_Unit(), ecorePackage.getEString(), "unit", null, 0, 1, UnitEquals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGoal_Goal(), this.getGoalCondition(), null, "goal", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGoal_Goal(), this.getGoaLocation(), null, "goal", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGoal_LocValue(), ecorePackage.getEInt(), "locValue", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(goalConditionEClass, GoalCondition.class, "GoalCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGoalCondition_Goal(), this.getLocation(), null, "goal", null, 0, 1, GoalCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(locationEClass, Location.class, "Location", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLocation_X(), ecorePackage.getEInt(), "x", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLocation_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(goaLocationEClass, GoaLocation.class, "GoaLocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGoaLocation_XAxis(), ecorePackage.getEInt(), "XAxis", null, 0, 1, GoaLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGoaLocation_YAxis(), ecorePackage.getEInt(), "YAxis", null, 0, 1, GoaLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(defualt_CAEClass, Defualt_CA.class, "Defualt_CA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefualt_CA_CaType(), ecorePackage.getEString(), "caType", null, 0, 1, Defualt_CA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

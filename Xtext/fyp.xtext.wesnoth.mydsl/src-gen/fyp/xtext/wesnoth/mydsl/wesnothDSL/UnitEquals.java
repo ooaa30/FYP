@@ -20,7 +20,7 @@ package fyp.xtext.wesnoth.mydsl.wesnothDSL;
  * @model
  * @generated
  */
-public interface UnitEquals extends Conditional
+public interface UnitEquals extends whenRules
 {
   /**
    * Returns the value of the '<em><b>Unit</b></em>' attribute.

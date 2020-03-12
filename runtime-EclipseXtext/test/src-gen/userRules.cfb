@@ -1,0 +1,115 @@
+
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[combat]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[goto]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[recruit_rushers]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[castle_switch]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[retreat_injured]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[grab_villages]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[spread_poison]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[recruitment]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[move_leader_to_goals]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[move_leader_to_keep]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[high_xp_attack]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[place_healers]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[healing]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[villages]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[retreat]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[village_hunt]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[move_to_tagets]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[leader_shares_keep]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[move_to_any_enemy]
+[/modify_ai]
+
+[modify_ai]
+	side =1
+	action = add
+	path = stage[main_loop].candidate_action[]
+		[candidate_action]
+		id=goto
+		engine=cpp
+		name=ai_default_rca::goto_phase
+		max_score=200000
+		score=200000
+			[filter_own]
+				[filter_wml]
+					hitpoints=<($this_unit.max_hitpoints-8)
+				[/filter_wml]
+			[/filter_own]
+		[/candidate_action
+[/modify_ai]
+

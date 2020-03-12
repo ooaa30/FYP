@@ -3,9 +3,9 @@
  */
 package fyp.xtext.wesnoth.mydsl.wesnothDSL.impl;
 
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.whenRules;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.ConditionalImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.ConditionalImpl#getX <em>X</em>}</li>
  * </ul>
  *
  * @generated
@@ -32,14 +32,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class ConditionalImpl extends MinimalEObjectImpl.Container implements Conditional
 {
   /**
-   * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
+   * The cached value of the '{@link #getX() <em>X</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCondition()
+   * @see #getX()
    * @generated
    * @ordered
    */
-  protected AtLocation condition;
+  protected whenRules x;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,9 +68,9 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
    * @generated
    */
   @Override
-  public AtLocation getCondition()
+  public whenRules getX()
   {
-    return condition;
+    return x;
   }
 
   /**
@@ -78,13 +78,13 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCondition(AtLocation newCondition, NotificationChain msgs)
+  public NotificationChain basicSetX(whenRules newX, NotificationChain msgs)
   {
-    AtLocation oldCondition = condition;
-    condition = newCondition;
+    whenRules oldX = x;
+    x = newX;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.CONDITIONAL__CONDITION, oldCondition, newCondition);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.CONDITIONAL__X, oldX, newX);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -96,20 +96,20 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
    * @generated
    */
   @Override
-  public void setCondition(AtLocation newCondition)
+  public void setX(whenRules newX)
   {
-    if (newCondition != condition)
+    if (newX != x)
     {
       NotificationChain msgs = null;
-      if (condition != null)
-        msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WesnothDSLPackage.CONDITIONAL__CONDITION, null, msgs);
-      if (newCondition != null)
-        msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WesnothDSLPackage.CONDITIONAL__CONDITION, null, msgs);
-      msgs = basicSetCondition(newCondition, msgs);
+      if (x != null)
+        msgs = ((InternalEObject)x).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WesnothDSLPackage.CONDITIONAL__X, null, msgs);
+      if (newX != null)
+        msgs = ((InternalEObject)newX).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WesnothDSLPackage.CONDITIONAL__X, null, msgs);
+      msgs = basicSetX(newX, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.CONDITIONAL__CONDITION, newCondition, newCondition));
+      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.CONDITIONAL__X, newX, newX));
   }
 
   /**
@@ -122,8 +122,8 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.CONDITIONAL__CONDITION:
-        return basicSetCondition(null, msgs);
+      case WesnothDSLPackage.CONDITIONAL__X:
+        return basicSetX(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -138,8 +138,8 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.CONDITIONAL__CONDITION:
-        return getCondition();
+      case WesnothDSLPackage.CONDITIONAL__X:
+        return getX();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -154,8 +154,8 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.CONDITIONAL__CONDITION:
-        setCondition((AtLocation)newValue);
+      case WesnothDSLPackage.CONDITIONAL__X:
+        setX((whenRules)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -171,8 +171,8 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.CONDITIONAL__CONDITION:
-        setCondition((AtLocation)null);
+      case WesnothDSLPackage.CONDITIONAL__X:
+        setX((whenRules)null);
         return;
     }
     super.eUnset(featureID);
@@ -188,8 +188,8 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.CONDITIONAL__CONDITION:
-        return condition != null;
+      case WesnothDSLPackage.CONDITIONAL__X:
+        return x != null;
     }
     return super.eIsSet(featureID);
   }

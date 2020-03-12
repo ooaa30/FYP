@@ -19,8 +19,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//Fragment/defualt_cas"/>
     </genClasses>
     <genClasses ecoreClass="WesnothDSL.ecore#//Conditional">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//Conditional/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//Conditional/x"/>
     </genClasses>
+    <genClasses ecoreClass="WesnothDSL.ecore#//whenRules"/>
     <genClasses ecoreClass="WesnothDSL.ecore#//Baseline">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//Baseline/always"/>
     </genClasses>
@@ -28,21 +29,19 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//Damage/health"/>
     </genClasses>
     <genClasses ecoreClass="WesnothDSL.ecore#//AtLocation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//AtLocation/x"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//AtLocation/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//AtLocation/XAxis"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//AtLocation/YAxis"/>
     </genClasses>
     <genClasses ecoreClass="WesnothDSL.ecore#//UnitEquals">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//UnitEquals/unit"/>
     </genClasses>
     <genClasses ecoreClass="WesnothDSL.ecore#//Goal">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//Goal/goal"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//Goal/locValue"/>
     </genClasses>
-    <genClasses ecoreClass="WesnothDSL.ecore#//GoalCondition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WesnothDSL.ecore#//GoalCondition/goal"/>
-    </genClasses>
-    <genClasses ecoreClass="WesnothDSL.ecore#//Location">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//Location/x"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//Location/y"/>
+    <genClasses ecoreClass="WesnothDSL.ecore#//GoaLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//GoaLocation/XAxis"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//GoaLocation/YAxis"/>
     </genClasses>
     <genClasses ecoreClass="WesnothDSL.ecore#//Defualt_CA">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WesnothDSL.ecore#//Defualt_CA/caType"/>

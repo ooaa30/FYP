@@ -31,32 +31,32 @@ public class WesnothDSLParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, WesnothDSLGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getConditionalAccess().getAlternatives(), "rule__Conditional__Alternatives");
+			builder.put(grammarAccess.getWhenRulesAccess().getAlternatives(), "rule__WhenRules__Alternatives");
 			builder.put(grammarAccess.getDefualt_CAAccess().getCaTypeAlternatives_0(), "rule__Defualt_CA__CaTypeAlternatives_0");
 			builder.put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 			builder.put(grammarAccess.getFragmentAccess().getGroup(), "rule__Fragment__Group__0");
-			builder.put(grammarAccess.getConditionalAccess().getGroup_0(), "rule__Conditional__Group_0__0");
+			builder.put(grammarAccess.getConditionalAccess().getGroup(), "rule__Conditional__Group__0");
 			builder.put(grammarAccess.getDamageAccess().getGroup(), "rule__Damage__Group__0");
 			builder.put(grammarAccess.getAtLocationAccess().getGroup(), "rule__AtLocation__Group__0");
 			builder.put(grammarAccess.getUnitEqualsAccess().getGroup(), "rule__UnitEquals__Group__0");
 			builder.put(grammarAccess.getGoalAccess().getGroup(), "rule__Goal__Group__0");
-			builder.put(grammarAccess.getLocationAccess().getGroup(), "rule__Location__Group__0");
+			builder.put(grammarAccess.getGoaLocationAccess().getGroup(), "rule__GoaLocation__Group__0");
 			builder.put(grammarAccess.getModelAccess().getElementsAssignment(), "rule__Model__ElementsAssignment");
 			builder.put(grammarAccess.getRuleAccess().getNameAssignment_1(), "rule__Rule__NameAssignment_1");
 			builder.put(grammarAccess.getRuleAccess().getFragmentsAssignment_3(), "rule__Rule__FragmentsAssignment_3");
 			builder.put(grammarAccess.getRuleAccess().getGoalsAssignment_4(), "rule__Rule__GoalsAssignment_4");
 			builder.put(grammarAccess.getFragmentAccess().getConditionAssignment_0(), "rule__Fragment__ConditionAssignment_0");
 			builder.put(grammarAccess.getFragmentAccess().getDefualt_casAssignment_2(), "rule__Fragment__Defualt_casAssignment_2");
-			builder.put(grammarAccess.getConditionalAccess().getConditionAssignment_0_1(), "rule__Conditional__ConditionAssignment_0_1");
+			builder.put(grammarAccess.getConditionalAccess().getXAssignment_1(), "rule__Conditional__XAssignment_1");
 			builder.put(grammarAccess.getBaselineAccess().getAlwaysAssignment(), "rule__Baseline__AlwaysAssignment");
 			builder.put(grammarAccess.getDamageAccess().getHealthAssignment_2(), "rule__Damage__HealthAssignment_2");
-			builder.put(grammarAccess.getAtLocationAccess().getXAssignment_1(), "rule__AtLocation__XAssignment_1");
-			builder.put(grammarAccess.getAtLocationAccess().getYAssignment_3(), "rule__AtLocation__YAssignment_3");
+			builder.put(grammarAccess.getAtLocationAccess().getXAxisAssignment_1(), "rule__AtLocation__XAxisAssignment_1");
+			builder.put(grammarAccess.getAtLocationAccess().getYAxisAssignment_3(), "rule__AtLocation__YAxisAssignment_3");
 			builder.put(grammarAccess.getUnitEqualsAccess().getUnitAssignment_2(), "rule__UnitEquals__UnitAssignment_2");
 			builder.put(grammarAccess.getGoalAccess().getGoalAssignment_2(), "rule__Goal__GoalAssignment_2");
-			builder.put(grammarAccess.getGoalConditionAccess().getGoalAssignment(), "rule__GoalCondition__GoalAssignment");
-			builder.put(grammarAccess.getLocationAccess().getXAssignment_1(), "rule__Location__XAssignment_1");
-			builder.put(grammarAccess.getLocationAccess().getYAssignment_3(), "rule__Location__YAssignment_3");
+			builder.put(grammarAccess.getGoalAccess().getLocValueAssignment_5(), "rule__Goal__LocValueAssignment_5");
+			builder.put(grammarAccess.getGoaLocationAccess().getXAxisAssignment_1(), "rule__GoaLocation__XAxisAssignment_1");
+			builder.put(grammarAccess.getGoaLocationAccess().getYAxisAssignment_3(), "rule__GoaLocation__YAxisAssignment_3");
 			builder.put(grammarAccess.getDefualt_CAAccess().getCaTypeAssignment(), "rule__Defualt_CA__CaTypeAssignment");
 		}
 	}

@@ -69,13 +69,13 @@ public class WesnothDSLFactoryImpl extends EFactoryImpl implements WesnothDSLFac
       case WesnothDSLPackage.RULE: return createRule();
       case WesnothDSLPackage.FRAGMENT: return createFragment();
       case WesnothDSLPackage.CONDITIONAL: return createConditional();
+      case WesnothDSLPackage.WHEN_RULES: return createwhenRules();
       case WesnothDSLPackage.BASELINE: return createBaseline();
       case WesnothDSLPackage.DAMAGE: return createDamage();
       case WesnothDSLPackage.AT_LOCATION: return createAtLocation();
       case WesnothDSLPackage.UNIT_EQUALS: return createUnitEquals();
       case WesnothDSLPackage.GOAL: return createGoal();
-      case WesnothDSLPackage.GOAL_CONDITION: return createGoalCondition();
-      case WesnothDSLPackage.LOCATION: return createLocation();
+      case WesnothDSLPackage.GOA_LOCATION: return createGoaLocation();
       case WesnothDSLPackage.DEFUALT_CA: return createDefualt_CA();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -128,6 +128,18 @@ public class WesnothDSLFactoryImpl extends EFactoryImpl implements WesnothDSLFac
   {
     ConditionalImpl conditional = new ConditionalImpl();
     return conditional;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public whenRules createwhenRules()
+  {
+    whenRulesImpl whenRules = new whenRulesImpl();
+    return whenRules;
   }
 
   /**
@@ -196,22 +208,10 @@ public class WesnothDSLFactoryImpl extends EFactoryImpl implements WesnothDSLFac
    * @generated
    */
   @Override
-  public GoalCondition createGoalCondition()
+  public GoaLocation createGoaLocation()
   {
-    GoalConditionImpl goalCondition = new GoalConditionImpl();
-    return goalCondition;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Location createLocation()
-  {
-    LocationImpl location = new LocationImpl();
-    return location;
+    GoaLocationImpl goaLocation = new GoaLocationImpl();
+    return goaLocation;
   }
 
   /**

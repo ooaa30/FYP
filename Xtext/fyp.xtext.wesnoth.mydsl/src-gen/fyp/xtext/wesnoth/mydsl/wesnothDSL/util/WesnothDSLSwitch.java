@@ -101,11 +101,18 @@ public class WesnothDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case WesnothDSLPackage.WHEN_RULES:
+      {
+        whenRules whenRules = (whenRules)theEObject;
+        T result = casewhenRules(whenRules);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case WesnothDSLPackage.BASELINE:
       {
         Baseline baseline = (Baseline)theEObject;
         T result = caseBaseline(baseline);
-        if (result == null) result = caseConditional(baseline);
+        if (result == null) result = casewhenRules(baseline);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -113,7 +120,7 @@ public class WesnothDSLSwitch<T> extends Switch<T>
       {
         Damage damage = (Damage)theEObject;
         T result = caseDamage(damage);
-        if (result == null) result = caseConditional(damage);
+        if (result == null) result = casewhenRules(damage);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -121,6 +128,7 @@ public class WesnothDSLSwitch<T> extends Switch<T>
       {
         AtLocation atLocation = (AtLocation)theEObject;
         T result = caseAtLocation(atLocation);
+        if (result == null) result = casewhenRules(atLocation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -128,7 +136,7 @@ public class WesnothDSLSwitch<T> extends Switch<T>
       {
         UnitEquals unitEquals = (UnitEquals)theEObject;
         T result = caseUnitEquals(unitEquals);
-        if (result == null) result = caseConditional(unitEquals);
+        if (result == null) result = casewhenRules(unitEquals);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -139,17 +147,10 @@ public class WesnothDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case WesnothDSLPackage.GOAL_CONDITION:
+      case WesnothDSLPackage.GOA_LOCATION:
       {
-        GoalCondition goalCondition = (GoalCondition)theEObject;
-        T result = caseGoalCondition(goalCondition);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case WesnothDSLPackage.LOCATION:
-      {
-        Location location = (Location)theEObject;
-        T result = caseLocation(location);
+        GoaLocation goaLocation = (GoaLocation)theEObject;
+        T result = caseGoaLocation(goaLocation);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -224,6 +225,22 @@ public class WesnothDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConditional(Conditional object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>when Rules</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>when Rules</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casewhenRules(whenRules object)
   {
     return null;
   }
@@ -309,33 +326,17 @@ public class WesnothDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Goal Condition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Goa Location</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Goal Condition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Goa Location</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGoalCondition(GoalCondition object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Location</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Location</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseLocation(Location object)
+  public T caseGoaLocation(GoaLocation object)
   {
     return null;
   }

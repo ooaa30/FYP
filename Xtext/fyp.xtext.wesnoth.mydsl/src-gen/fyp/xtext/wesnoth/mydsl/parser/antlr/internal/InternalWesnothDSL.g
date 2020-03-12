@@ -264,34 +264,68 @@ ruleConditional returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='when:'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getConditionalAccess().getWhenKeyword_0());
+		}
 		(
-			otherlv_0='when:'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getConditionalAccess().getWhenKeyword_0_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getConditionalAccess().getConditionAtLocationParserRuleCall_0_1_0());
+				{
+					newCompositeNode(grammarAccess.getConditionalAccess().getXWhenRulesParserRuleCall_1_0());
+				}
+				lv_x_1_0=rulewhenRules
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConditionalRule());
 					}
-					lv_condition_1_0=ruleAtLocation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConditionalRule());
-						}
-						set(
-							$current,
-							"condition",
-							lv_condition_1_0,
-							"fyp.xtext.wesnoth.mydsl.WesnothDSL.AtLocation");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"x",
+						lv_x_1_0,
+						"fyp.xtext.wesnoth.mydsl.WesnothDSL.whenRules");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRulewhenRules
+entryRulewhenRules returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getWhenRulesRule()); }
+	iv_rulewhenRules=rulewhenRules
+	{ $current=$iv_rulewhenRules.current; }
+	EOF;
+
+// Rule whenRules
+rulewhenRules returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getWhenRulesAccess().getUnitEqualsParserRuleCall_0());
+		}
+		this_UnitEquals_0=ruleUnitEquals
+		{
+			$current = $this_UnitEquals_0.current;
+			afterParserOrEnumRuleCall();
+		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getConditionalAccess().getDamageParserRuleCall_1());
+			newCompositeNode(grammarAccess.getWhenRulesAccess().getAtLocationParserRuleCall_1());
+		}
+		this_AtLocation_1=ruleAtLocation
+		{
+			$current = $this_AtLocation_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getWhenRulesAccess().getDamageParserRuleCall_2());
 		}
 		this_Damage_2=ruleDamage
 		{
@@ -300,20 +334,11 @@ ruleConditional returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getConditionalAccess().getUnitEqualsParserRuleCall_2());
+			newCompositeNode(grammarAccess.getWhenRulesAccess().getBaselineParserRuleCall_3());
 		}
-		this_UnitEquals_3=ruleUnitEquals
+		this_Baseline_3=ruleBaseline
 		{
-			$current = $this_UnitEquals_3.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getConditionalAccess().getBaselineParserRuleCall_3());
-		}
-		this_Baseline_4=ruleBaseline
-		{
-			$current = $this_Baseline_4.current;
+			$current = $this_Baseline_3.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -411,15 +436,15 @@ ruleAtLocation returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='x'
+		otherlv_0='x:'
 		{
 			newLeafNode(otherlv_0, grammarAccess.getAtLocationAccess().getXKeyword_0());
 		}
 		(
 			(
-				lv_x_1_0=RULE_INT
+				lv_XAxis_1_0=RULE_INT
 				{
-					newLeafNode(lv_x_1_0, grammarAccess.getAtLocationAccess().getXINTTerminalRuleCall_1_0());
+					newLeafNode(lv_XAxis_1_0, grammarAccess.getAtLocationAccess().getXAxisINTTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -427,21 +452,21 @@ ruleAtLocation returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"x",
-						lv_x_1_0,
+						"XAxis",
+						lv_XAxis_1_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_2='y'
+		otherlv_2='y:'
 		{
 			newLeafNode(otherlv_2, grammarAccess.getAtLocationAccess().getYKeyword_2());
 		}
 		(
 			(
-				lv_y_3_0=RULE_INT
+				lv_YAxis_3_0=RULE_INT
 				{
-					newLeafNode(lv_y_3_0, grammarAccess.getAtLocationAccess().getYINTTerminalRuleCall_3_0());
+					newLeafNode(lv_YAxis_3_0, grammarAccess.getAtLocationAccess().getYAxisINTTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
@@ -449,8 +474,8 @@ ruleAtLocation returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"y",
-						lv_y_3_0,
+						"YAxis",
+						lv_YAxis_3_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -523,16 +548,16 @@ ruleGoal returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getGoalAccess().getGoalKeyword_0());
 		}
-		otherlv_1='='
+		otherlv_1='is'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getGoalAccess().getEqualsSignKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getGoalAccess().getIsKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getGoalAccess().getGoalGoalConditionParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getGoalAccess().getGoalGoaLocationParserRuleCall_2_0());
 				}
-				lv_goal_2_0=ruleGoalCondition
+				lv_goal_2_0=ruleGoaLocation
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getGoalRule());
@@ -541,59 +566,49 @@ ruleGoal returns [EObject current=null]
 						$current,
 						"goal",
 						lv_goal_2_0,
-						"fyp.xtext.wesnoth.mydsl.WesnothDSL.GoalCondition");
+						"fyp.xtext.wesnoth.mydsl.WesnothDSL.GoaLocation");
 					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='value'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getGoalAccess().getValueKeyword_3());
+		}
+		otherlv_4='is'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getGoalAccess().getIsKeyword_4());
+		}
+		(
+			(
+				lv_locValue_5_0=RULE_INT
+				{
+					newLeafNode(lv_locValue_5_0, grammarAccess.getGoalAccess().getLocValueINTTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGoalRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"locValue",
+						lv_locValue_5_0,
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
 	)
 ;
 
-// Entry rule entryRuleGoalCondition
-entryRuleGoalCondition returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getGoalConditionRule()); }
-	iv_ruleGoalCondition=ruleGoalCondition
-	{ $current=$iv_ruleGoalCondition.current; }
+// Entry rule entryRuleGoaLocation
+entryRuleGoaLocation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGoaLocationRule()); }
+	iv_ruleGoaLocation=ruleGoaLocation
+	{ $current=$iv_ruleGoaLocation.current; }
 	EOF;
 
-// Rule GoalCondition
-ruleGoalCondition returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				newCompositeNode(grammarAccess.getGoalConditionAccess().getGoalLocationParserRuleCall_0());
-			}
-			lv_goal_0_0=ruleLocation
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getGoalConditionRule());
-				}
-				set(
-					$current,
-					"goal",
-					lv_goal_0_0,
-					"fyp.xtext.wesnoth.mydsl.WesnothDSL.Location");
-				afterParserOrEnumRuleCall();
-			}
-		)
-	)
-;
-
-// Entry rule entryRuleLocation
-entryRuleLocation returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getLocationRule()); }
-	iv_ruleLocation=ruleLocation
-	{ $current=$iv_ruleLocation.current; }
-	EOF;
-
-// Rule Location
-ruleLocation returns [EObject current=null]
+// Rule GoaLocation
+ruleGoaLocation returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -603,44 +618,44 @@ ruleLocation returns [EObject current=null]
 	(
 		otherlv_0='x'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getLocationAccess().getXKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getGoaLocationAccess().getXKeyword_0());
 		}
 		(
 			(
-				lv_x_1_0=RULE_INT
+				lv_XAxis_1_0=RULE_INT
 				{
-					newLeafNode(lv_x_1_0, grammarAccess.getLocationAccess().getXINTTerminalRuleCall_1_0());
+					newLeafNode(lv_XAxis_1_0, grammarAccess.getGoaLocationAccess().getXAxisINTTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLocationRule());
+						$current = createModelElement(grammarAccess.getGoaLocationRule());
 					}
 					setWithLastConsumed(
 						$current,
-						"x",
-						lv_x_1_0,
+						"XAxis",
+						lv_XAxis_1_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
 		otherlv_2='y'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getLocationAccess().getYKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getGoaLocationAccess().getYKeyword_2());
 		}
 		(
 			(
-				lv_y_3_0=RULE_INT
+				lv_YAxis_3_0=RULE_INT
 				{
-					newLeafNode(lv_y_3_0, grammarAccess.getLocationAccess().getYINTTerminalRuleCall_3_0());
+					newLeafNode(lv_YAxis_3_0, grammarAccess.getGoaLocationAccess().getYAxisINTTerminalRuleCall_3_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLocationRule());
+						$current = createModelElement(grammarAccess.getGoaLocationRule());
 					}
 					setWithLastConsumed(
 						$current,
-						"y",
-						lv_y_3_0,
+						"YAxis",
+						lv_YAxis_3_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)

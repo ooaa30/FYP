@@ -128,14 +128,10 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ConditionalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Conditional");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cWhenKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cConditionAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cConditionAtLocationParserRuleCall_0_1_0 = (RuleCall)cConditionAssignment_0_1.eContents().get(0);
-		private final RuleCall cDamageParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cUnitEqualsParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cBaselineParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cWhenKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cXAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cXWhenRulesParserRuleCall_1_0 = (RuleCall)cXAssignment_1.eContents().get(0);
 		
 		//// filters don't seem to work in the [AI} tag, may need to make the code generation subtractive rather than additive
 		//// could use [Modify_AI] tag to do this, need investigation
@@ -143,29 +139,44 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//// can use filter own for unit types 100%, may be able to filter other things too
 		//// will need to add them in from scratch with wml, no extra code but need to refferenc them again
 		//Conditional:
-		//	'when:' condition=AtLocation | Damage | UnitEquals | Baseline;
+		//	'when:' x=whenRules;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'when:' condition=AtLocation | Damage | UnitEquals | Baseline
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'when:' condition=AtLocation
-		public Group getGroup_0() { return cGroup_0; }
+		//'when:' x=whenRules
+		public Group getGroup() { return cGroup; }
 		
 		//'when:'
-		public Keyword getWhenKeyword_0_0() { return cWhenKeyword_0_0; }
+		public Keyword getWhenKeyword_0() { return cWhenKeyword_0; }
 		
-		//condition=AtLocation
-		public Assignment getConditionAssignment_0_1() { return cConditionAssignment_0_1; }
+		//x=whenRules
+		public Assignment getXAssignment_1() { return cXAssignment_1; }
 		
-		//AtLocation
-		public RuleCall getConditionAtLocationParserRuleCall_0_1_0() { return cConditionAtLocationParserRuleCall_0_1_0; }
+		//whenRules
+		public RuleCall getXWhenRulesParserRuleCall_1_0() { return cXWhenRulesParserRuleCall_1_0; }
+	}
+	public class WhenRulesElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.whenRules");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cUnitEqualsParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cAtLocationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cDamageParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cBaselineParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
-		//Damage
-		public RuleCall getDamageParserRuleCall_1() { return cDamageParserRuleCall_1; }
+		//whenRules:
+		//	UnitEquals | AtLocation | Damage | Baseline;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//UnitEquals | AtLocation | Damage | Baseline
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//UnitEquals
-		public RuleCall getUnitEqualsParserRuleCall_2() { return cUnitEqualsParserRuleCall_2; }
+		public RuleCall getUnitEqualsParserRuleCall_0() { return cUnitEqualsParserRuleCall_0; }
+		
+		//AtLocation
+		public RuleCall getAtLocationParserRuleCall_1() { return cAtLocationParserRuleCall_1; }
+		
+		//Damage
+		public RuleCall getDamageParserRuleCall_2() { return cDamageParserRuleCall_2; }
 		
 		//Baseline
 		public RuleCall getBaselineParserRuleCall_3() { return cBaselineParserRuleCall_3; }
@@ -216,36 +227,36 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.AtLocation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cXKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cXAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cXINTTerminalRuleCall_1_0 = (RuleCall)cXAssignment_1.eContents().get(0);
+		private final Assignment cXAxisAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cXAxisINTTerminalRuleCall_1_0 = (RuleCall)cXAxisAssignment_1.eContents().get(0);
 		private final Keyword cYKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cYAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cYINTTerminalRuleCall_3_0 = (RuleCall)cYAssignment_3.eContents().get(0);
+		private final Assignment cYAxisAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cYAxisINTTerminalRuleCall_3_0 = (RuleCall)cYAxisAssignment_3.eContents().get(0);
 		
 		//AtLocation:
-		//	'x' x=INT 'y' y=INT;
+		//	'x:' XAxis=INT 'y:' YAxis=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'x' x=INT 'y' y=INT
+		//'x:' XAxis=INT 'y:' YAxis=INT
 		public Group getGroup() { return cGroup; }
 		
-		//'x'
+		//'x:'
 		public Keyword getXKeyword_0() { return cXKeyword_0; }
 		
-		//x=INT
-		public Assignment getXAssignment_1() { return cXAssignment_1; }
+		//XAxis=INT
+		public Assignment getXAxisAssignment_1() { return cXAxisAssignment_1; }
 		
 		//INT
-		public RuleCall getXINTTerminalRuleCall_1_0() { return cXINTTerminalRuleCall_1_0; }
+		public RuleCall getXAxisINTTerminalRuleCall_1_0() { return cXAxisINTTerminalRuleCall_1_0; }
 		
-		//'y'
+		//'y:'
 		public Keyword getYKeyword_2() { return cYKeyword_2; }
 		
-		//y=INT
-		public Assignment getYAssignment_3() { return cYAssignment_3; }
+		//YAxis=INT
+		public Assignment getYAxisAssignment_3() { return cYAxisAssignment_3; }
 		
 		//INT
-		public RuleCall getYINTTerminalRuleCall_3_0() { return cYINTTerminalRuleCall_3_0; }
+		public RuleCall getYAxisINTTerminalRuleCall_3_0() { return cYAxisINTTerminalRuleCall_3_0; }
 	}
 	public class UnitEqualsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.UnitEquals");
@@ -278,78 +289,79 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Goal");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cGoalKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cGoalAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cGoalGoalConditionParserRuleCall_2_0 = (RuleCall)cGoalAssignment_2.eContents().get(0);
+		private final RuleCall cGoalGoaLocationParserRuleCall_2_0 = (RuleCall)cGoalAssignment_2.eContents().get(0);
+		private final Keyword cValueKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cIsKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cLocValueAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cLocValueINTTerminalRuleCall_5_0 = (RuleCall)cLocValueAssignment_5.eContents().get(0);
 		
 		//Goal:
-		//	'goal' '=' goal=GoalCondition;
+		//	'goal' 'is' goal=GoaLocation 'value' 'is' locValue=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'goal' '=' goal=GoalCondition
+		//'goal' 'is' goal=GoaLocation 'value' 'is' locValue=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'goal'
 		public Keyword getGoalKeyword_0() { return cGoalKeyword_0; }
 		
-		//'='
-		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		//'is'
+		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
 		
-		//goal=GoalCondition
+		//goal=GoaLocation
 		public Assignment getGoalAssignment_2() { return cGoalAssignment_2; }
 		
-		//GoalCondition
-		public RuleCall getGoalGoalConditionParserRuleCall_2_0() { return cGoalGoalConditionParserRuleCall_2_0; }
+		//GoaLocation
+		public RuleCall getGoalGoaLocationParserRuleCall_2_0() { return cGoalGoaLocationParserRuleCall_2_0; }
+		
+		//'value'
+		public Keyword getValueKeyword_3() { return cValueKeyword_3; }
+		
+		//'is'
+		public Keyword getIsKeyword_4() { return cIsKeyword_4; }
+		
+		//locValue=INT
+		public Assignment getLocValueAssignment_5() { return cLocValueAssignment_5; }
+		
+		//INT
+		public RuleCall getLocValueINTTerminalRuleCall_5_0() { return cLocValueINTTerminalRuleCall_5_0; }
 	}
-	public class GoalConditionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.GoalCondition");
-		private final Assignment cGoalAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cGoalLocationParserRuleCall_0 = (RuleCall)cGoalAssignment.eContents().get(0);
-		
-		//GoalCondition:
-		//	goal=Location;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//goal=Location
-		public Assignment getGoalAssignment() { return cGoalAssignment; }
-		
-		//Location
-		public RuleCall getGoalLocationParserRuleCall_0() { return cGoalLocationParserRuleCall_0; }
-	}
-	public class LocationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Location");
+	public class GoaLocationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.GoaLocation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cXKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cXAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cXINTTerminalRuleCall_1_0 = (RuleCall)cXAssignment_1.eContents().get(0);
+		private final Assignment cXAxisAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cXAxisINTTerminalRuleCall_1_0 = (RuleCall)cXAxisAssignment_1.eContents().get(0);
 		private final Keyword cYKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cYAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cYINTTerminalRuleCall_3_0 = (RuleCall)cYAssignment_3.eContents().get(0);
+		private final Assignment cYAxisAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cYAxisINTTerminalRuleCall_3_0 = (RuleCall)cYAxisAssignment_3.eContents().get(0);
 		
-		//Location:
-		//	'x' x=INT 'y' y=INT;
+		//GoaLocation:
+		//	'x' XAxis=INT 'y' YAxis=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'x' x=INT 'y' y=INT
+		//'x' XAxis=INT 'y' YAxis=INT
 		public Group getGroup() { return cGroup; }
 		
 		//'x'
 		public Keyword getXKeyword_0() { return cXKeyword_0; }
 		
-		//x=INT
-		public Assignment getXAssignment_1() { return cXAssignment_1; }
+		//XAxis=INT
+		public Assignment getXAxisAssignment_1() { return cXAxisAssignment_1; }
 		
 		//INT
-		public RuleCall getXINTTerminalRuleCall_1_0() { return cXINTTerminalRuleCall_1_0; }
+		public RuleCall getXAxisINTTerminalRuleCall_1_0() { return cXAxisINTTerminalRuleCall_1_0; }
 		
 		//'y'
 		public Keyword getYKeyword_2() { return cYKeyword_2; }
 		
-		//y=INT
-		public Assignment getYAssignment_3() { return cYAssignment_3; }
+		//YAxis=INT
+		public Assignment getYAxisAssignment_3() { return cYAxisAssignment_3; }
 		
 		//INT
-		public RuleCall getYINTTerminalRuleCall_3_0() { return cYINTTerminalRuleCall_3_0; }
+		public RuleCall getYAxisINTTerminalRuleCall_3_0() { return cYAxisINTTerminalRuleCall_3_0; }
 	}
 	public class New_CAElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.New_CA");
@@ -426,13 +438,13 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final RuleElements pRule;
 	private final FragmentElements pFragment;
 	private final ConditionalElements pConditional;
+	private final WhenRulesElements pWhenRules;
 	private final BaselineElements pBaseline;
 	private final DamageElements pDamage;
 	private final AtLocationElements pAtLocation;
 	private final UnitEqualsElements pUnitEquals;
 	private final GoalElements pGoal;
-	private final GoalConditionElements pGoalCondition;
-	private final LocationElements pLocation;
+	private final GoaLocationElements pGoaLocation;
 	private final New_CAElements pNew_CA;
 	private final Defualt_CAElements pDefualt_CA;
 	
@@ -449,13 +461,13 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pRule = new RuleElements();
 		this.pFragment = new FragmentElements();
 		this.pConditional = new ConditionalElements();
+		this.pWhenRules = new WhenRulesElements();
 		this.pBaseline = new BaselineElements();
 		this.pDamage = new DamageElements();
 		this.pAtLocation = new AtLocationElements();
 		this.pUnitEquals = new UnitEqualsElements();
 		this.pGoal = new GoalElements();
-		this.pGoalCondition = new GoalConditionElements();
-		this.pLocation = new LocationElements();
+		this.pGoaLocation = new GoaLocationElements();
 		this.pNew_CA = new New_CAElements();
 		this.pDefualt_CA = new Defualt_CAElements();
 	}
@@ -530,13 +542,23 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//// can use filter own for unit types 100%, may be able to filter other things too
 	//// will need to add them in from scratch with wml, no extra code but need to refferenc them again
 	//Conditional:
-	//	'when:' condition=AtLocation | Damage | UnitEquals | Baseline;
+	//	'when:' x=whenRules;
 	public ConditionalElements getConditionalAccess() {
 		return pConditional;
 	}
 	
 	public ParserRule getConditionalRule() {
 		return getConditionalAccess().getRule();
+	}
+	
+	//whenRules:
+	//	UnitEquals | AtLocation | Damage | Baseline;
+	public WhenRulesElements getWhenRulesAccess() {
+		return pWhenRules;
+	}
+	
+	public ParserRule getWhenRulesRule() {
+		return getWhenRulesAccess().getRule();
 	}
 	
 	//Baseline:
@@ -560,7 +582,7 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AtLocation:
-	//	'x' x=INT 'y' y=INT;
+	//	'x:' XAxis=INT 'y:' YAxis=INT;
 	public AtLocationElements getAtLocationAccess() {
 		return pAtLocation;
 	}
@@ -580,7 +602,7 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Goal:
-	//	'goal' '=' goal=GoalCondition;
+	//	'goal' 'is' goal=GoaLocation 'value' 'is' locValue=INT;
 	public GoalElements getGoalAccess() {
 		return pGoal;
 	}
@@ -589,24 +611,14 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getGoalAccess().getRule();
 	}
 	
-	//GoalCondition:
-	//	goal=Location;
-	public GoalConditionElements getGoalConditionAccess() {
-		return pGoalCondition;
+	//GoaLocation:
+	//	'x' XAxis=INT 'y' YAxis=INT;
+	public GoaLocationElements getGoaLocationAccess() {
+		return pGoaLocation;
 	}
 	
-	public ParserRule getGoalConditionRule() {
-		return getGoalConditionAccess().getRule();
-	}
-	
-	//Location:
-	//	'x' x=INT 'y' y=INT;
-	public LocationElements getLocationAccess() {
-		return pLocation;
-	}
-	
-	public ParserRule getLocationRule() {
-		return getLocationAccess().getRule();
+	public ParserRule getGoaLocationRule() {
+		return getGoaLocationAccess().getRule();
 	}
 	
 	//New_CA:

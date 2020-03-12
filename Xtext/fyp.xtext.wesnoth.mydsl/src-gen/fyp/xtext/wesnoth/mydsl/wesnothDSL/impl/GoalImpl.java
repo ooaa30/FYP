@@ -3,8 +3,8 @@
  */
 package fyp.xtext.wesnoth.mydsl.wesnothDSL.impl;
 
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal;
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.GoalCondition;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoalImpl#getGoal <em>Goal</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoalImpl#getLocValue <em>Loc Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,7 +40,27 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * @generated
    * @ordered
    */
-  protected GoalCondition goal;
+  protected GoaLocation goal;
+
+  /**
+   * The default value of the '{@link #getLocValue() <em>Loc Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLocValue()
+   * @generated
+   * @ordered
+   */
+  protected static final int LOC_VALUE_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getLocValue() <em>Loc Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLocValue()
+   * @generated
+   * @ordered
+   */
+  protected int locValue = LOC_VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,7 +89,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * @generated
    */
   @Override
-  public GoalCondition getGoal()
+  public GoaLocation getGoal()
   {
     return goal;
   }
@@ -78,9 +99,9 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetGoal(GoalCondition newGoal, NotificationChain msgs)
+  public NotificationChain basicSetGoal(GoaLocation newGoal, NotificationChain msgs)
   {
-    GoalCondition oldGoal = goal;
+    GoaLocation oldGoal = goal;
     goal = newGoal;
     if (eNotificationRequired())
     {
@@ -96,7 +117,7 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * @generated
    */
   @Override
-  public void setGoal(GoalCondition newGoal)
+  public void setGoal(GoaLocation newGoal)
   {
     if (newGoal != goal)
     {
@@ -110,6 +131,31 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.GOAL__GOAL, newGoal, newGoal));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int getLocValue()
+  {
+    return locValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setLocValue(int newLocValue)
+  {
+    int oldLocValue = locValue;
+    locValue = newLocValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.GOAL__LOC_VALUE, oldLocValue, locValue));
   }
 
   /**
@@ -140,6 +186,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
     {
       case WesnothDSLPackage.GOAL__GOAL:
         return getGoal();
+      case WesnothDSLPackage.GOAL__LOC_VALUE:
+        return getLocValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -155,7 +203,10 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
     switch (featureID)
     {
       case WesnothDSLPackage.GOAL__GOAL:
-        setGoal((GoalCondition)newValue);
+        setGoal((GoaLocation)newValue);
+        return;
+      case WesnothDSLPackage.GOAL__LOC_VALUE:
+        setLocValue((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -172,7 +223,10 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
     switch (featureID)
     {
       case WesnothDSLPackage.GOAL__GOAL:
-        setGoal((GoalCondition)null);
+        setGoal((GoaLocation)null);
+        return;
+      case WesnothDSLPackage.GOAL__LOC_VALUE:
+        setLocValue(LOC_VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -190,8 +244,27 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
     {
       case WesnothDSLPackage.GOAL__GOAL:
         return goal != null;
+      case WesnothDSLPackage.GOAL__LOC_VALUE:
+        return locValue != LOC_VALUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (locValue: ");
+    result.append(locValue);
+    result.append(')');
+    return result.toString();
   }
 
 } //GoalImpl

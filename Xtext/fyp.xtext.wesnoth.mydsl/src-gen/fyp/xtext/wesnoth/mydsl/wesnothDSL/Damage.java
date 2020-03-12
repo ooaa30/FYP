@@ -20,7 +20,7 @@ package fyp.xtext.wesnoth.mydsl.wesnothDSL;
  * @model
  * @generated
  */
-public interface Damage extends Conditional
+public interface Damage extends whenRules
 {
   /**
    * Returns the value of the '<em><b>Health</b></em>' attribute.

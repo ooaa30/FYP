@@ -3,7 +3,7 @@
  */
 package fyp.xtext.wesnoth.mydsl.wesnothDSL.impl;
 
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.Location;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,66 +15,66 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Location</b></em>'.
+ * An implementation of the model object '<em><b>Goa Location</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.LocationImpl#getX <em>X</em>}</li>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.LocationImpl#getY <em>Y</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoaLocationImpl#getXAxis <em>XAxis</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoaLocationImpl#getYAxis <em>YAxis</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class LocationImpl extends MinimalEObjectImpl.Container implements Location
+public class GoaLocationImpl extends MinimalEObjectImpl.Container implements GoaLocation
 {
   /**
-   * The default value of the '{@link #getX() <em>X</em>}' attribute.
+   * The default value of the '{@link #getXAxis() <em>XAxis</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getX()
+   * @see #getXAxis()
    * @generated
    * @ordered
    */
-  protected static final int X_EDEFAULT = 0;
+  protected static final int XAXIS_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getX() <em>X</em>}' attribute.
+   * The cached value of the '{@link #getXAxis() <em>XAxis</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getX()
+   * @see #getXAxis()
    * @generated
    * @ordered
    */
-  protected int x = X_EDEFAULT;
+  protected int xAxis = XAXIS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getY() <em>Y</em>}' attribute.
+   * The default value of the '{@link #getYAxis() <em>YAxis</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getY()
+   * @see #getYAxis()
    * @generated
    * @ordered
    */
-  protected static final int Y_EDEFAULT = 0;
+  protected static final int YAXIS_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
+   * The cached value of the '{@link #getYAxis() <em>YAxis</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getY()
+   * @see #getYAxis()
    * @generated
    * @ordered
    */
-  protected int y = Y_EDEFAULT;
+  protected int yAxis = YAXIS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected LocationImpl()
+  protected GoaLocationImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
   @Override
   protected EClass eStaticClass()
   {
-    return WesnothDSLPackage.Literals.LOCATION;
+    return WesnothDSLPackage.Literals.GOA_LOCATION;
   }
 
   /**
@@ -96,9 +96,9 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
    * @generated
    */
   @Override
-  public int getX()
+  public int getXAxis()
   {
-    return x;
+    return xAxis;
   }
 
   /**
@@ -107,12 +107,12 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
    * @generated
    */
   @Override
-  public void setX(int newX)
+  public void setXAxis(int newXAxis)
   {
-    int oldX = x;
-    x = newX;
+    int oldXAxis = xAxis;
+    xAxis = newXAxis;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.LOCATION__X, oldX, x));
+      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.GOA_LOCATION__XAXIS, oldXAxis, xAxis));
   }
 
   /**
@@ -121,9 +121,9 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
    * @generated
    */
   @Override
-  public int getY()
+  public int getYAxis()
   {
-    return y;
+    return yAxis;
   }
 
   /**
@@ -132,12 +132,12 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
    * @generated
    */
   @Override
-  public void setY(int newY)
+  public void setYAxis(int newYAxis)
   {
-    int oldY = y;
-    y = newY;
+    int oldYAxis = yAxis;
+    yAxis = newYAxis;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.LOCATION__Y, oldY, y));
+      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.GOA_LOCATION__YAXIS, oldYAxis, yAxis));
   }
 
   /**
@@ -150,10 +150,10 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.LOCATION__X:
-        return getX();
-      case WesnothDSLPackage.LOCATION__Y:
-        return getY();
+      case WesnothDSLPackage.GOA_LOCATION__XAXIS:
+        return getXAxis();
+      case WesnothDSLPackage.GOA_LOCATION__YAXIS:
+        return getYAxis();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,11 +168,11 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.LOCATION__X:
-        setX((Integer)newValue);
+      case WesnothDSLPackage.GOA_LOCATION__XAXIS:
+        setXAxis((Integer)newValue);
         return;
-      case WesnothDSLPackage.LOCATION__Y:
-        setY((Integer)newValue);
+      case WesnothDSLPackage.GOA_LOCATION__YAXIS:
+        setYAxis((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,11 +188,11 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.LOCATION__X:
-        setX(X_EDEFAULT);
+      case WesnothDSLPackage.GOA_LOCATION__XAXIS:
+        setXAxis(XAXIS_EDEFAULT);
         return;
-      case WesnothDSLPackage.LOCATION__Y:
-        setY(Y_EDEFAULT);
+      case WesnothDSLPackage.GOA_LOCATION__YAXIS:
+        setYAxis(YAXIS_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -208,10 +208,10 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.LOCATION__X:
-        return x != X_EDEFAULT;
-      case WesnothDSLPackage.LOCATION__Y:
-        return y != Y_EDEFAULT;
+      case WesnothDSLPackage.GOA_LOCATION__XAXIS:
+        return xAxis != XAXIS_EDEFAULT;
+      case WesnothDSLPackage.GOA_LOCATION__YAXIS:
+        return yAxis != YAXIS_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -227,12 +227,12 @@ public class LocationImpl extends MinimalEObjectImpl.Container implements Locati
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (x: ");
-    result.append(x);
-    result.append(", y: ");
-    result.append(y);
+    result.append(" (XAxis: ");
+    result.append(xAxis);
+    result.append(", YAxis: ");
+    result.append(yAxis);
     result.append(')');
     return result.toString();
   }
 
-} //LocationImpl
+} //GoaLocationImpl

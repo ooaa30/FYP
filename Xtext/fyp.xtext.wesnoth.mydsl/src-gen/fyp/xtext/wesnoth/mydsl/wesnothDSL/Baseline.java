@@ -20,7 +20,7 @@ package fyp.xtext.wesnoth.mydsl.wesnothDSL;
  * @model
  * @generated
  */
-public interface Baseline extends Conditional
+public interface Baseline extends whenRules
 {
   /**
    * Returns the value of the '<em><b>Always</b></em>' attribute.

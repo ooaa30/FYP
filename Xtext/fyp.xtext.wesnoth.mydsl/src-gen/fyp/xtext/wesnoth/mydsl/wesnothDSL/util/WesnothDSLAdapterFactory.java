@@ -96,6 +96,11 @@ public class WesnothDSLAdapterFactory extends AdapterFactoryImpl
         return createConditionalAdapter();
       }
       @Override
+      public Adapter casewhenRules(whenRules object)
+      {
+        return createwhenRulesAdapter();
+      }
+      @Override
       public Adapter caseBaseline(Baseline object)
       {
         return createBaselineAdapter();
@@ -121,14 +126,9 @@ public class WesnothDSLAdapterFactory extends AdapterFactoryImpl
         return createGoalAdapter();
       }
       @Override
-      public Adapter caseGoalCondition(GoalCondition object)
+      public Adapter caseGoaLocation(GoaLocation object)
       {
-        return createGoalConditionAdapter();
-      }
-      @Override
-      public Adapter caseLocation(Location object)
-      {
-        return createLocationAdapter();
+        return createGoaLocationAdapter();
       }
       @Override
       public Adapter caseDefualt_CA(Defualt_CA object)
@@ -218,6 +218,21 @@ public class WesnothDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.whenRules <em>when Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.whenRules
+   * @generated
+   */
+  public Adapter createwhenRulesAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Baseline <em>Baseline</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -293,31 +308,16 @@ public class WesnothDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.GoalCondition <em>Goal Condition</em>}'.
+   * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation <em>Goa Location</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.GoalCondition
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation
    * @generated
    */
-  public Adapter createGoalConditionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Location <em>Location</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Location
-   * @generated
-   */
-  public Adapter createLocationAdapter()
+  public Adapter createGoaLocationAdapter()
   {
     return null;
   }

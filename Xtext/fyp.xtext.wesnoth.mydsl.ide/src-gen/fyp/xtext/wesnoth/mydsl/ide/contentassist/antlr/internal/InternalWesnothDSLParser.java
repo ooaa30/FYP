@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalWesnothDSLParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'movement'", "'heal'", "'retreat'", "'move_to_targets'", "'basic_movement'", "'combat'", "'recruit'", "'combat_value_targets'", "'capture_villages'", "'leader_to_keep'", "'rule'", "'{'", "'}'", "'when:'", "'health'", "'-'", "'x'", "'y'", "'unit'", "'is'", "'goal'", "'='", "'always'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'movement'", "'heal'", "'retreat'", "'move_to_targets'", "'basic_movement'", "'combat'", "'recruit'", "'combat_value_targets'", "'capture_villages'", "'leader_to_keep'", "'rule'", "'{'", "'}'", "'when:'", "'health'", "'-'", "'x:'", "'y:'", "'unit'", "'is'", "'goal'", "'value'", "'x'", "'y'", "'always'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -34,7 +34,9 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
     public static final int T__11=11;
     public static final int T__33=33;
     public static final int T__12=12;
+    public static final int T__34=34;
     public static final int T__13=13;
+    public static final int T__35=35;
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int T__30=30;
@@ -371,31 +373,31 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "ruleConditional"
-    // InternalWesnothDSL.g:137:1: ruleConditional : ( ( rule__Conditional__Alternatives ) ) ;
+    // InternalWesnothDSL.g:137:1: ruleConditional : ( ( rule__Conditional__Group__0 ) ) ;
     public final void ruleConditional() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:141:2: ( ( ( rule__Conditional__Alternatives ) ) )
-            // InternalWesnothDSL.g:142:2: ( ( rule__Conditional__Alternatives ) )
+            // InternalWesnothDSL.g:141:2: ( ( ( rule__Conditional__Group__0 ) ) )
+            // InternalWesnothDSL.g:142:2: ( ( rule__Conditional__Group__0 ) )
             {
-            // InternalWesnothDSL.g:142:2: ( ( rule__Conditional__Alternatives ) )
-            // InternalWesnothDSL.g:143:3: ( rule__Conditional__Alternatives )
+            // InternalWesnothDSL.g:142:2: ( ( rule__Conditional__Group__0 ) )
+            // InternalWesnothDSL.g:143:3: ( rule__Conditional__Group__0 )
             {
-             before(grammarAccess.getConditionalAccess().getAlternatives()); 
-            // InternalWesnothDSL.g:144:3: ( rule__Conditional__Alternatives )
-            // InternalWesnothDSL.g:144:4: rule__Conditional__Alternatives
+             before(grammarAccess.getConditionalAccess().getGroup()); 
+            // InternalWesnothDSL.g:144:3: ( rule__Conditional__Group__0 )
+            // InternalWesnothDSL.g:144:4: rule__Conditional__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Conditional__Alternatives();
+            rule__Conditional__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getConditionalAccess().getAlternatives()); 
+             after(grammarAccess.getConditionalAccess().getGroup()); 
 
             }
 
@@ -417,12 +419,89 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
     // $ANTLR end "ruleConditional"
 
 
+    // $ANTLR start "entryRulewhenRules"
+    // InternalWesnothDSL.g:153:1: entryRulewhenRules : rulewhenRules EOF ;
+    public final void entryRulewhenRules() throws RecognitionException {
+        try {
+            // InternalWesnothDSL.g:154:1: ( rulewhenRules EOF )
+            // InternalWesnothDSL.g:155:1: rulewhenRules EOF
+            {
+             before(grammarAccess.getWhenRulesRule()); 
+            pushFollow(FOLLOW_1);
+            rulewhenRules();
+
+            state._fsp--;
+
+             after(grammarAccess.getWhenRulesRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRulewhenRules"
+
+
+    // $ANTLR start "rulewhenRules"
+    // InternalWesnothDSL.g:162:1: rulewhenRules : ( ( rule__WhenRules__Alternatives ) ) ;
+    public final void rulewhenRules() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWesnothDSL.g:166:2: ( ( ( rule__WhenRules__Alternatives ) ) )
+            // InternalWesnothDSL.g:167:2: ( ( rule__WhenRules__Alternatives ) )
+            {
+            // InternalWesnothDSL.g:167:2: ( ( rule__WhenRules__Alternatives ) )
+            // InternalWesnothDSL.g:168:3: ( rule__WhenRules__Alternatives )
+            {
+             before(grammarAccess.getWhenRulesAccess().getAlternatives()); 
+            // InternalWesnothDSL.g:169:3: ( rule__WhenRules__Alternatives )
+            // InternalWesnothDSL.g:169:4: rule__WhenRules__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__WhenRules__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getWhenRulesAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rulewhenRules"
+
+
     // $ANTLR start "entryRuleBaseline"
-    // InternalWesnothDSL.g:153:1: entryRuleBaseline : ruleBaseline EOF ;
+    // InternalWesnothDSL.g:178:1: entryRuleBaseline : ruleBaseline EOF ;
     public final void entryRuleBaseline() throws RecognitionException {
         try {
-            // InternalWesnothDSL.g:154:1: ( ruleBaseline EOF )
-            // InternalWesnothDSL.g:155:1: ruleBaseline EOF
+            // InternalWesnothDSL.g:179:1: ( ruleBaseline EOF )
+            // InternalWesnothDSL.g:180:1: ruleBaseline EOF
             {
              before(grammarAccess.getBaselineRule()); 
             pushFollow(FOLLOW_1);
@@ -448,21 +527,21 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "ruleBaseline"
-    // InternalWesnothDSL.g:162:1: ruleBaseline : ( ( rule__Baseline__AlwaysAssignment ) ) ;
+    // InternalWesnothDSL.g:187:1: ruleBaseline : ( ( rule__Baseline__AlwaysAssignment ) ) ;
     public final void ruleBaseline() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:166:2: ( ( ( rule__Baseline__AlwaysAssignment ) ) )
-            // InternalWesnothDSL.g:167:2: ( ( rule__Baseline__AlwaysAssignment ) )
+            // InternalWesnothDSL.g:191:2: ( ( ( rule__Baseline__AlwaysAssignment ) ) )
+            // InternalWesnothDSL.g:192:2: ( ( rule__Baseline__AlwaysAssignment ) )
             {
-            // InternalWesnothDSL.g:167:2: ( ( rule__Baseline__AlwaysAssignment ) )
-            // InternalWesnothDSL.g:168:3: ( rule__Baseline__AlwaysAssignment )
+            // InternalWesnothDSL.g:192:2: ( ( rule__Baseline__AlwaysAssignment ) )
+            // InternalWesnothDSL.g:193:3: ( rule__Baseline__AlwaysAssignment )
             {
              before(grammarAccess.getBaselineAccess().getAlwaysAssignment()); 
-            // InternalWesnothDSL.g:169:3: ( rule__Baseline__AlwaysAssignment )
-            // InternalWesnothDSL.g:169:4: rule__Baseline__AlwaysAssignment
+            // InternalWesnothDSL.g:194:3: ( rule__Baseline__AlwaysAssignment )
+            // InternalWesnothDSL.g:194:4: rule__Baseline__AlwaysAssignment
             {
             pushFollow(FOLLOW_2);
             rule__Baseline__AlwaysAssignment();
@@ -495,11 +574,11 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "entryRuleDamage"
-    // InternalWesnothDSL.g:178:1: entryRuleDamage : ruleDamage EOF ;
+    // InternalWesnothDSL.g:203:1: entryRuleDamage : ruleDamage EOF ;
     public final void entryRuleDamage() throws RecognitionException {
         try {
-            // InternalWesnothDSL.g:179:1: ( ruleDamage EOF )
-            // InternalWesnothDSL.g:180:1: ruleDamage EOF
+            // InternalWesnothDSL.g:204:1: ( ruleDamage EOF )
+            // InternalWesnothDSL.g:205:1: ruleDamage EOF
             {
              before(grammarAccess.getDamageRule()); 
             pushFollow(FOLLOW_1);
@@ -525,21 +604,21 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "ruleDamage"
-    // InternalWesnothDSL.g:187:1: ruleDamage : ( ( rule__Damage__Group__0 ) ) ;
+    // InternalWesnothDSL.g:212:1: ruleDamage : ( ( rule__Damage__Group__0 ) ) ;
     public final void ruleDamage() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:191:2: ( ( ( rule__Damage__Group__0 ) ) )
-            // InternalWesnothDSL.g:192:2: ( ( rule__Damage__Group__0 ) )
+            // InternalWesnothDSL.g:216:2: ( ( ( rule__Damage__Group__0 ) ) )
+            // InternalWesnothDSL.g:217:2: ( ( rule__Damage__Group__0 ) )
             {
-            // InternalWesnothDSL.g:192:2: ( ( rule__Damage__Group__0 ) )
-            // InternalWesnothDSL.g:193:3: ( rule__Damage__Group__0 )
+            // InternalWesnothDSL.g:217:2: ( ( rule__Damage__Group__0 ) )
+            // InternalWesnothDSL.g:218:3: ( rule__Damage__Group__0 )
             {
              before(grammarAccess.getDamageAccess().getGroup()); 
-            // InternalWesnothDSL.g:194:3: ( rule__Damage__Group__0 )
-            // InternalWesnothDSL.g:194:4: rule__Damage__Group__0
+            // InternalWesnothDSL.g:219:3: ( rule__Damage__Group__0 )
+            // InternalWesnothDSL.g:219:4: rule__Damage__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Damage__Group__0();
@@ -572,11 +651,11 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "entryRuleAtLocation"
-    // InternalWesnothDSL.g:203:1: entryRuleAtLocation : ruleAtLocation EOF ;
+    // InternalWesnothDSL.g:228:1: entryRuleAtLocation : ruleAtLocation EOF ;
     public final void entryRuleAtLocation() throws RecognitionException {
         try {
-            // InternalWesnothDSL.g:204:1: ( ruleAtLocation EOF )
-            // InternalWesnothDSL.g:205:1: ruleAtLocation EOF
+            // InternalWesnothDSL.g:229:1: ( ruleAtLocation EOF )
+            // InternalWesnothDSL.g:230:1: ruleAtLocation EOF
             {
              before(grammarAccess.getAtLocationRule()); 
             pushFollow(FOLLOW_1);
@@ -602,21 +681,21 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "ruleAtLocation"
-    // InternalWesnothDSL.g:212:1: ruleAtLocation : ( ( rule__AtLocation__Group__0 ) ) ;
+    // InternalWesnothDSL.g:237:1: ruleAtLocation : ( ( rule__AtLocation__Group__0 ) ) ;
     public final void ruleAtLocation() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:216:2: ( ( ( rule__AtLocation__Group__0 ) ) )
-            // InternalWesnothDSL.g:217:2: ( ( rule__AtLocation__Group__0 ) )
+            // InternalWesnothDSL.g:241:2: ( ( ( rule__AtLocation__Group__0 ) ) )
+            // InternalWesnothDSL.g:242:2: ( ( rule__AtLocation__Group__0 ) )
             {
-            // InternalWesnothDSL.g:217:2: ( ( rule__AtLocation__Group__0 ) )
-            // InternalWesnothDSL.g:218:3: ( rule__AtLocation__Group__0 )
+            // InternalWesnothDSL.g:242:2: ( ( rule__AtLocation__Group__0 ) )
+            // InternalWesnothDSL.g:243:3: ( rule__AtLocation__Group__0 )
             {
              before(grammarAccess.getAtLocationAccess().getGroup()); 
-            // InternalWesnothDSL.g:219:3: ( rule__AtLocation__Group__0 )
-            // InternalWesnothDSL.g:219:4: rule__AtLocation__Group__0
+            // InternalWesnothDSL.g:244:3: ( rule__AtLocation__Group__0 )
+            // InternalWesnothDSL.g:244:4: rule__AtLocation__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__AtLocation__Group__0();
@@ -649,11 +728,11 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "entryRuleUnitEquals"
-    // InternalWesnothDSL.g:228:1: entryRuleUnitEquals : ruleUnitEquals EOF ;
+    // InternalWesnothDSL.g:253:1: entryRuleUnitEquals : ruleUnitEquals EOF ;
     public final void entryRuleUnitEquals() throws RecognitionException {
         try {
-            // InternalWesnothDSL.g:229:1: ( ruleUnitEquals EOF )
-            // InternalWesnothDSL.g:230:1: ruleUnitEquals EOF
+            // InternalWesnothDSL.g:254:1: ( ruleUnitEquals EOF )
+            // InternalWesnothDSL.g:255:1: ruleUnitEquals EOF
             {
              before(grammarAccess.getUnitEqualsRule()); 
             pushFollow(FOLLOW_1);
@@ -679,21 +758,21 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "ruleUnitEquals"
-    // InternalWesnothDSL.g:237:1: ruleUnitEquals : ( ( rule__UnitEquals__Group__0 ) ) ;
+    // InternalWesnothDSL.g:262:1: ruleUnitEquals : ( ( rule__UnitEquals__Group__0 ) ) ;
     public final void ruleUnitEquals() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:241:2: ( ( ( rule__UnitEquals__Group__0 ) ) )
-            // InternalWesnothDSL.g:242:2: ( ( rule__UnitEquals__Group__0 ) )
+            // InternalWesnothDSL.g:266:2: ( ( ( rule__UnitEquals__Group__0 ) ) )
+            // InternalWesnothDSL.g:267:2: ( ( rule__UnitEquals__Group__0 ) )
             {
-            // InternalWesnothDSL.g:242:2: ( ( rule__UnitEquals__Group__0 ) )
-            // InternalWesnothDSL.g:243:3: ( rule__UnitEquals__Group__0 )
+            // InternalWesnothDSL.g:267:2: ( ( rule__UnitEquals__Group__0 ) )
+            // InternalWesnothDSL.g:268:3: ( rule__UnitEquals__Group__0 )
             {
              before(grammarAccess.getUnitEqualsAccess().getGroup()); 
-            // InternalWesnothDSL.g:244:3: ( rule__UnitEquals__Group__0 )
-            // InternalWesnothDSL.g:244:4: rule__UnitEquals__Group__0
+            // InternalWesnothDSL.g:269:3: ( rule__UnitEquals__Group__0 )
+            // InternalWesnothDSL.g:269:4: rule__UnitEquals__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__UnitEquals__Group__0();
@@ -726,11 +805,11 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "entryRuleGoal"
-    // InternalWesnothDSL.g:253:1: entryRuleGoal : ruleGoal EOF ;
+    // InternalWesnothDSL.g:278:1: entryRuleGoal : ruleGoal EOF ;
     public final void entryRuleGoal() throws RecognitionException {
         try {
-            // InternalWesnothDSL.g:254:1: ( ruleGoal EOF )
-            // InternalWesnothDSL.g:255:1: ruleGoal EOF
+            // InternalWesnothDSL.g:279:1: ( ruleGoal EOF )
+            // InternalWesnothDSL.g:280:1: ruleGoal EOF
             {
              before(grammarAccess.getGoalRule()); 
             pushFollow(FOLLOW_1);
@@ -756,21 +835,21 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "ruleGoal"
-    // InternalWesnothDSL.g:262:1: ruleGoal : ( ( rule__Goal__Group__0 ) ) ;
+    // InternalWesnothDSL.g:287:1: ruleGoal : ( ( rule__Goal__Group__0 ) ) ;
     public final void ruleGoal() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:266:2: ( ( ( rule__Goal__Group__0 ) ) )
-            // InternalWesnothDSL.g:267:2: ( ( rule__Goal__Group__0 ) )
+            // InternalWesnothDSL.g:291:2: ( ( ( rule__Goal__Group__0 ) ) )
+            // InternalWesnothDSL.g:292:2: ( ( rule__Goal__Group__0 ) )
             {
-            // InternalWesnothDSL.g:267:2: ( ( rule__Goal__Group__0 ) )
-            // InternalWesnothDSL.g:268:3: ( rule__Goal__Group__0 )
+            // InternalWesnothDSL.g:292:2: ( ( rule__Goal__Group__0 ) )
+            // InternalWesnothDSL.g:293:3: ( rule__Goal__Group__0 )
             {
              before(grammarAccess.getGoalAccess().getGroup()); 
-            // InternalWesnothDSL.g:269:3: ( rule__Goal__Group__0 )
-            // InternalWesnothDSL.g:269:4: rule__Goal__Group__0
+            // InternalWesnothDSL.g:294:3: ( rule__Goal__Group__0 )
+            // InternalWesnothDSL.g:294:4: rule__Goal__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Goal__Group__0();
@@ -802,20 +881,20 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
     // $ANTLR end "ruleGoal"
 
 
-    // $ANTLR start "entryRuleGoalCondition"
-    // InternalWesnothDSL.g:278:1: entryRuleGoalCondition : ruleGoalCondition EOF ;
-    public final void entryRuleGoalCondition() throws RecognitionException {
+    // $ANTLR start "entryRuleGoaLocation"
+    // InternalWesnothDSL.g:303:1: entryRuleGoaLocation : ruleGoaLocation EOF ;
+    public final void entryRuleGoaLocation() throws RecognitionException {
         try {
-            // InternalWesnothDSL.g:279:1: ( ruleGoalCondition EOF )
-            // InternalWesnothDSL.g:280:1: ruleGoalCondition EOF
+            // InternalWesnothDSL.g:304:1: ( ruleGoaLocation EOF )
+            // InternalWesnothDSL.g:305:1: ruleGoaLocation EOF
             {
-             before(grammarAccess.getGoalConditionRule()); 
+             before(grammarAccess.getGoaLocationRule()); 
             pushFollow(FOLLOW_1);
-            ruleGoalCondition();
+            ruleGoaLocation();
 
             state._fsp--;
 
-             after(grammarAccess.getGoalConditionRule()); 
+             after(grammarAccess.getGoaLocationRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -829,35 +908,35 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "entryRuleGoalCondition"
+    // $ANTLR end "entryRuleGoaLocation"
 
 
-    // $ANTLR start "ruleGoalCondition"
-    // InternalWesnothDSL.g:287:1: ruleGoalCondition : ( ( rule__GoalCondition__GoalAssignment ) ) ;
-    public final void ruleGoalCondition() throws RecognitionException {
+    // $ANTLR start "ruleGoaLocation"
+    // InternalWesnothDSL.g:312:1: ruleGoaLocation : ( ( rule__GoaLocation__Group__0 ) ) ;
+    public final void ruleGoaLocation() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:291:2: ( ( ( rule__GoalCondition__GoalAssignment ) ) )
-            // InternalWesnothDSL.g:292:2: ( ( rule__GoalCondition__GoalAssignment ) )
+            // InternalWesnothDSL.g:316:2: ( ( ( rule__GoaLocation__Group__0 ) ) )
+            // InternalWesnothDSL.g:317:2: ( ( rule__GoaLocation__Group__0 ) )
             {
-            // InternalWesnothDSL.g:292:2: ( ( rule__GoalCondition__GoalAssignment ) )
-            // InternalWesnothDSL.g:293:3: ( rule__GoalCondition__GoalAssignment )
+            // InternalWesnothDSL.g:317:2: ( ( rule__GoaLocation__Group__0 ) )
+            // InternalWesnothDSL.g:318:3: ( rule__GoaLocation__Group__0 )
             {
-             before(grammarAccess.getGoalConditionAccess().getGoalAssignment()); 
-            // InternalWesnothDSL.g:294:3: ( rule__GoalCondition__GoalAssignment )
-            // InternalWesnothDSL.g:294:4: rule__GoalCondition__GoalAssignment
+             before(grammarAccess.getGoaLocationAccess().getGroup()); 
+            // InternalWesnothDSL.g:319:3: ( rule__GoaLocation__Group__0 )
+            // InternalWesnothDSL.g:319:4: rule__GoaLocation__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__GoalCondition__GoalAssignment();
+            rule__GoaLocation__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGoalConditionAccess().getGoalAssignment()); 
+             after(grammarAccess.getGoaLocationAccess().getGroup()); 
 
             }
 
@@ -876,84 +955,7 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "ruleGoalCondition"
-
-
-    // $ANTLR start "entryRuleLocation"
-    // InternalWesnothDSL.g:303:1: entryRuleLocation : ruleLocation EOF ;
-    public final void entryRuleLocation() throws RecognitionException {
-        try {
-            // InternalWesnothDSL.g:304:1: ( ruleLocation EOF )
-            // InternalWesnothDSL.g:305:1: ruleLocation EOF
-            {
-             before(grammarAccess.getLocationRule()); 
-            pushFollow(FOLLOW_1);
-            ruleLocation();
-
-            state._fsp--;
-
-             after(grammarAccess.getLocationRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleLocation"
-
-
-    // $ANTLR start "ruleLocation"
-    // InternalWesnothDSL.g:312:1: ruleLocation : ( ( rule__Location__Group__0 ) ) ;
-    public final void ruleLocation() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWesnothDSL.g:316:2: ( ( ( rule__Location__Group__0 ) ) )
-            // InternalWesnothDSL.g:317:2: ( ( rule__Location__Group__0 ) )
-            {
-            // InternalWesnothDSL.g:317:2: ( ( rule__Location__Group__0 ) )
-            // InternalWesnothDSL.g:318:3: ( rule__Location__Group__0 )
-            {
-             before(grammarAccess.getLocationAccess().getGroup()); 
-            // InternalWesnothDSL.g:319:3: ( rule__Location__Group__0 )
-            // InternalWesnothDSL.g:319:4: rule__Location__Group__0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Location__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getLocationAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleLocation"
+    // $ANTLR end "ruleGoaLocation"
 
 
     // $ANTLR start "entryRuleDefualt_CA"
@@ -1033,32 +1035,32 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
     // $ANTLR end "ruleDefualt_CA"
 
 
-    // $ANTLR start "rule__Conditional__Alternatives"
-    // InternalWesnothDSL.g:352:1: rule__Conditional__Alternatives : ( ( ( rule__Conditional__Group_0__0 ) ) | ( ruleDamage ) | ( ruleUnitEquals ) | ( ruleBaseline ) );
-    public final void rule__Conditional__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__WhenRules__Alternatives"
+    // InternalWesnothDSL.g:352:1: rule__WhenRules__Alternatives : ( ( ruleUnitEquals ) | ( ruleAtLocation ) | ( ruleDamage ) | ( ruleBaseline ) );
+    public final void rule__WhenRules__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:356:1: ( ( ( rule__Conditional__Group_0__0 ) ) | ( ruleDamage ) | ( ruleUnitEquals ) | ( ruleBaseline ) )
+            // InternalWesnothDSL.g:356:1: ( ( ruleUnitEquals ) | ( ruleAtLocation ) | ( ruleDamage ) | ( ruleBaseline ) )
             int alt2=4;
             switch ( input.LA(1) ) {
-            case 24:
+            case 29:
                 {
                 alt2=1;
                 }
                 break;
-            case 25:
+            case 27:
                 {
                 alt2=2;
                 }
                 break;
-            case 29:
+            case 25:
                 {
                 alt2=3;
                 }
                 break;
-            case 33:
+            case 35:
                 {
                 alt2=4;
                 }
@@ -1072,24 +1074,18 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
             switch (alt2) {
                 case 1 :
-                    // InternalWesnothDSL.g:357:2: ( ( rule__Conditional__Group_0__0 ) )
+                    // InternalWesnothDSL.g:357:2: ( ruleUnitEquals )
                     {
-                    // InternalWesnothDSL.g:357:2: ( ( rule__Conditional__Group_0__0 ) )
-                    // InternalWesnothDSL.g:358:3: ( rule__Conditional__Group_0__0 )
+                    // InternalWesnothDSL.g:357:2: ( ruleUnitEquals )
+                    // InternalWesnothDSL.g:358:3: ruleUnitEquals
                     {
-                     before(grammarAccess.getConditionalAccess().getGroup_0()); 
-                    // InternalWesnothDSL.g:359:3: ( rule__Conditional__Group_0__0 )
-                    // InternalWesnothDSL.g:359:4: rule__Conditional__Group_0__0
-                    {
+                     before(grammarAccess.getWhenRulesAccess().getUnitEqualsParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
-                    rule__Conditional__Group_0__0();
+                    ruleUnitEquals();
 
                     state._fsp--;
 
-
-                    }
-
-                     after(grammarAccess.getConditionalAccess().getGroup_0()); 
+                     after(grammarAccess.getWhenRulesAccess().getUnitEqualsParserRuleCall_0()); 
 
                     }
 
@@ -1097,18 +1093,18 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 2 :
-                    // InternalWesnothDSL.g:363:2: ( ruleDamage )
+                    // InternalWesnothDSL.g:363:2: ( ruleAtLocation )
                     {
-                    // InternalWesnothDSL.g:363:2: ( ruleDamage )
-                    // InternalWesnothDSL.g:364:3: ruleDamage
+                    // InternalWesnothDSL.g:363:2: ( ruleAtLocation )
+                    // InternalWesnothDSL.g:364:3: ruleAtLocation
                     {
-                     before(grammarAccess.getConditionalAccess().getDamageParserRuleCall_1()); 
+                     before(grammarAccess.getWhenRulesAccess().getAtLocationParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
-                    ruleDamage();
+                    ruleAtLocation();
 
                     state._fsp--;
 
-                     after(grammarAccess.getConditionalAccess().getDamageParserRuleCall_1()); 
+                     after(grammarAccess.getWhenRulesAccess().getAtLocationParserRuleCall_1()); 
 
                     }
 
@@ -1116,18 +1112,18 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
                     }
                     break;
                 case 3 :
-                    // InternalWesnothDSL.g:369:2: ( ruleUnitEquals )
+                    // InternalWesnothDSL.g:369:2: ( ruleDamage )
                     {
-                    // InternalWesnothDSL.g:369:2: ( ruleUnitEquals )
-                    // InternalWesnothDSL.g:370:3: ruleUnitEquals
+                    // InternalWesnothDSL.g:369:2: ( ruleDamage )
+                    // InternalWesnothDSL.g:370:3: ruleDamage
                     {
-                     before(grammarAccess.getConditionalAccess().getUnitEqualsParserRuleCall_2()); 
+                     before(grammarAccess.getWhenRulesAccess().getDamageParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
-                    ruleUnitEquals();
+                    ruleDamage();
 
                     state._fsp--;
 
-                     after(grammarAccess.getConditionalAccess().getUnitEqualsParserRuleCall_2()); 
+                     after(grammarAccess.getWhenRulesAccess().getDamageParserRuleCall_2()); 
 
                     }
 
@@ -1140,13 +1136,13 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
                     // InternalWesnothDSL.g:375:2: ( ruleBaseline )
                     // InternalWesnothDSL.g:376:3: ruleBaseline
                     {
-                     before(grammarAccess.getConditionalAccess().getBaselineParserRuleCall_3()); 
+                     before(grammarAccess.getWhenRulesAccess().getBaselineParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
                     ruleBaseline();
 
                     state._fsp--;
 
-                     after(grammarAccess.getConditionalAccess().getBaselineParserRuleCall_3()); 
+                     after(grammarAccess.getWhenRulesAccess().getBaselineParserRuleCall_3()); 
 
                     }
 
@@ -1167,7 +1163,7 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Conditional__Alternatives"
+    // $ANTLR end "rule__WhenRules__Alternatives"
 
 
     // $ANTLR start "rule__Defualt_CA__CaTypeAlternatives_0"
@@ -2231,23 +2227,23 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Fragment__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Conditional__Group_0__0"
-    // InternalWesnothDSL.g:724:1: rule__Conditional__Group_0__0 : rule__Conditional__Group_0__0__Impl rule__Conditional__Group_0__1 ;
-    public final void rule__Conditional__Group_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Conditional__Group__0"
+    // InternalWesnothDSL.g:724:1: rule__Conditional__Group__0 : rule__Conditional__Group__0__Impl rule__Conditional__Group__1 ;
+    public final void rule__Conditional__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:728:1: ( rule__Conditional__Group_0__0__Impl rule__Conditional__Group_0__1 )
-            // InternalWesnothDSL.g:729:2: rule__Conditional__Group_0__0__Impl rule__Conditional__Group_0__1
+            // InternalWesnothDSL.g:728:1: ( rule__Conditional__Group__0__Impl rule__Conditional__Group__1 )
+            // InternalWesnothDSL.g:729:2: rule__Conditional__Group__0__Impl rule__Conditional__Group__1
             {
             pushFollow(FOLLOW_11);
-            rule__Conditional__Group_0__0__Impl();
+            rule__Conditional__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Conditional__Group_0__1();
+            rule__Conditional__Group__1();
 
             state._fsp--;
 
@@ -2266,12 +2262,12 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Conditional__Group_0__0"
+    // $ANTLR end "rule__Conditional__Group__0"
 
 
-    // $ANTLR start "rule__Conditional__Group_0__0__Impl"
-    // InternalWesnothDSL.g:736:1: rule__Conditional__Group_0__0__Impl : ( 'when:' ) ;
-    public final void rule__Conditional__Group_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Conditional__Group__0__Impl"
+    // InternalWesnothDSL.g:736:1: rule__Conditional__Group__0__Impl : ( 'when:' ) ;
+    public final void rule__Conditional__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -2282,9 +2278,9 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
             // InternalWesnothDSL.g:741:1: ( 'when:' )
             // InternalWesnothDSL.g:742:2: 'when:'
             {
-             before(grammarAccess.getConditionalAccess().getWhenKeyword_0_0()); 
+             before(grammarAccess.getConditionalAccess().getWhenKeyword_0()); 
             match(input,24,FOLLOW_2); 
-             after(grammarAccess.getConditionalAccess().getWhenKeyword_0_0()); 
+             after(grammarAccess.getConditionalAccess().getWhenKeyword_0()); 
 
             }
 
@@ -2303,21 +2299,21 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Conditional__Group_0__0__Impl"
+    // $ANTLR end "rule__Conditional__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Conditional__Group_0__1"
-    // InternalWesnothDSL.g:751:1: rule__Conditional__Group_0__1 : rule__Conditional__Group_0__1__Impl ;
-    public final void rule__Conditional__Group_0__1() throws RecognitionException {
+    // $ANTLR start "rule__Conditional__Group__1"
+    // InternalWesnothDSL.g:751:1: rule__Conditional__Group__1 : rule__Conditional__Group__1__Impl ;
+    public final void rule__Conditional__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:755:1: ( rule__Conditional__Group_0__1__Impl )
-            // InternalWesnothDSL.g:756:2: rule__Conditional__Group_0__1__Impl
+            // InternalWesnothDSL.g:755:1: ( rule__Conditional__Group__1__Impl )
+            // InternalWesnothDSL.g:756:2: rule__Conditional__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Conditional__Group_0__1__Impl();
+            rule__Conditional__Group__1__Impl();
 
             state._fsp--;
 
@@ -2336,35 +2332,35 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Conditional__Group_0__1"
+    // $ANTLR end "rule__Conditional__Group__1"
 
 
-    // $ANTLR start "rule__Conditional__Group_0__1__Impl"
-    // InternalWesnothDSL.g:762:1: rule__Conditional__Group_0__1__Impl : ( ( rule__Conditional__ConditionAssignment_0_1 ) ) ;
-    public final void rule__Conditional__Group_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Conditional__Group__1__Impl"
+    // InternalWesnothDSL.g:762:1: rule__Conditional__Group__1__Impl : ( ( rule__Conditional__XAssignment_1 ) ) ;
+    public final void rule__Conditional__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:766:1: ( ( ( rule__Conditional__ConditionAssignment_0_1 ) ) )
-            // InternalWesnothDSL.g:767:1: ( ( rule__Conditional__ConditionAssignment_0_1 ) )
+            // InternalWesnothDSL.g:766:1: ( ( ( rule__Conditional__XAssignment_1 ) ) )
+            // InternalWesnothDSL.g:767:1: ( ( rule__Conditional__XAssignment_1 ) )
             {
-            // InternalWesnothDSL.g:767:1: ( ( rule__Conditional__ConditionAssignment_0_1 ) )
-            // InternalWesnothDSL.g:768:2: ( rule__Conditional__ConditionAssignment_0_1 )
+            // InternalWesnothDSL.g:767:1: ( ( rule__Conditional__XAssignment_1 ) )
+            // InternalWesnothDSL.g:768:2: ( rule__Conditional__XAssignment_1 )
             {
-             before(grammarAccess.getConditionalAccess().getConditionAssignment_0_1()); 
-            // InternalWesnothDSL.g:769:2: ( rule__Conditional__ConditionAssignment_0_1 )
-            // InternalWesnothDSL.g:769:3: rule__Conditional__ConditionAssignment_0_1
+             before(grammarAccess.getConditionalAccess().getXAssignment_1()); 
+            // InternalWesnothDSL.g:769:2: ( rule__Conditional__XAssignment_1 )
+            // InternalWesnothDSL.g:769:3: rule__Conditional__XAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Conditional__ConditionAssignment_0_1();
+            rule__Conditional__XAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getConditionalAccess().getConditionAssignment_0_1()); 
+             after(grammarAccess.getConditionalAccess().getXAssignment_1()); 
 
             }
 
@@ -2383,7 +2379,7 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Conditional__Group_0__1__Impl"
+    // $ANTLR end "rule__Conditional__Group__1__Impl"
 
 
     // $ANTLR start "rule__Damage__Group__0"
@@ -2655,17 +2651,17 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__AtLocation__Group__0__Impl"
-    // InternalWesnothDSL.g:871:1: rule__AtLocation__Group__0__Impl : ( 'x' ) ;
+    // InternalWesnothDSL.g:871:1: rule__AtLocation__Group__0__Impl : ( 'x:' ) ;
     public final void rule__AtLocation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:875:1: ( ( 'x' ) )
-            // InternalWesnothDSL.g:876:1: ( 'x' )
+            // InternalWesnothDSL.g:875:1: ( ( 'x:' ) )
+            // InternalWesnothDSL.g:876:1: ( 'x:' )
             {
-            // InternalWesnothDSL.g:876:1: ( 'x' )
-            // InternalWesnothDSL.g:877:2: 'x'
+            // InternalWesnothDSL.g:876:1: ( 'x:' )
+            // InternalWesnothDSL.g:877:2: 'x:'
             {
              before(grammarAccess.getAtLocationAccess().getXKeyword_0()); 
             match(input,27,FOLLOW_2); 
@@ -2730,31 +2726,31 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__AtLocation__Group__1__Impl"
-    // InternalWesnothDSL.g:898:1: rule__AtLocation__Group__1__Impl : ( ( rule__AtLocation__XAssignment_1 ) ) ;
+    // InternalWesnothDSL.g:898:1: rule__AtLocation__Group__1__Impl : ( ( rule__AtLocation__XAxisAssignment_1 ) ) ;
     public final void rule__AtLocation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:902:1: ( ( ( rule__AtLocation__XAssignment_1 ) ) )
-            // InternalWesnothDSL.g:903:1: ( ( rule__AtLocation__XAssignment_1 ) )
+            // InternalWesnothDSL.g:902:1: ( ( ( rule__AtLocation__XAxisAssignment_1 ) ) )
+            // InternalWesnothDSL.g:903:1: ( ( rule__AtLocation__XAxisAssignment_1 ) )
             {
-            // InternalWesnothDSL.g:903:1: ( ( rule__AtLocation__XAssignment_1 ) )
-            // InternalWesnothDSL.g:904:2: ( rule__AtLocation__XAssignment_1 )
+            // InternalWesnothDSL.g:903:1: ( ( rule__AtLocation__XAxisAssignment_1 ) )
+            // InternalWesnothDSL.g:904:2: ( rule__AtLocation__XAxisAssignment_1 )
             {
-             before(grammarAccess.getAtLocationAccess().getXAssignment_1()); 
-            // InternalWesnothDSL.g:905:2: ( rule__AtLocation__XAssignment_1 )
-            // InternalWesnothDSL.g:905:3: rule__AtLocation__XAssignment_1
+             before(grammarAccess.getAtLocationAccess().getXAxisAssignment_1()); 
+            // InternalWesnothDSL.g:905:2: ( rule__AtLocation__XAxisAssignment_1 )
+            // InternalWesnothDSL.g:905:3: rule__AtLocation__XAxisAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__AtLocation__XAssignment_1();
+            rule__AtLocation__XAxisAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAtLocationAccess().getXAssignment_1()); 
+             after(grammarAccess.getAtLocationAccess().getXAxisAssignment_1()); 
 
             }
 
@@ -2815,17 +2811,17 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__AtLocation__Group__2__Impl"
-    // InternalWesnothDSL.g:925:1: rule__AtLocation__Group__2__Impl : ( 'y' ) ;
+    // InternalWesnothDSL.g:925:1: rule__AtLocation__Group__2__Impl : ( 'y:' ) ;
     public final void rule__AtLocation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:929:1: ( ( 'y' ) )
-            // InternalWesnothDSL.g:930:1: ( 'y' )
+            // InternalWesnothDSL.g:929:1: ( ( 'y:' ) )
+            // InternalWesnothDSL.g:930:1: ( 'y:' )
             {
-            // InternalWesnothDSL.g:930:1: ( 'y' )
-            // InternalWesnothDSL.g:931:2: 'y'
+            // InternalWesnothDSL.g:930:1: ( 'y:' )
+            // InternalWesnothDSL.g:931:2: 'y:'
             {
              before(grammarAccess.getAtLocationAccess().getYKeyword_2()); 
             match(input,28,FOLLOW_2); 
@@ -2885,31 +2881,31 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__AtLocation__Group__3__Impl"
-    // InternalWesnothDSL.g:951:1: rule__AtLocation__Group__3__Impl : ( ( rule__AtLocation__YAssignment_3 ) ) ;
+    // InternalWesnothDSL.g:951:1: rule__AtLocation__Group__3__Impl : ( ( rule__AtLocation__YAxisAssignment_3 ) ) ;
     public final void rule__AtLocation__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:955:1: ( ( ( rule__AtLocation__YAssignment_3 ) ) )
-            // InternalWesnothDSL.g:956:1: ( ( rule__AtLocation__YAssignment_3 ) )
+            // InternalWesnothDSL.g:955:1: ( ( ( rule__AtLocation__YAxisAssignment_3 ) ) )
+            // InternalWesnothDSL.g:956:1: ( ( rule__AtLocation__YAxisAssignment_3 ) )
             {
-            // InternalWesnothDSL.g:956:1: ( ( rule__AtLocation__YAssignment_3 ) )
-            // InternalWesnothDSL.g:957:2: ( rule__AtLocation__YAssignment_3 )
+            // InternalWesnothDSL.g:956:1: ( ( rule__AtLocation__YAxisAssignment_3 ) )
+            // InternalWesnothDSL.g:957:2: ( rule__AtLocation__YAxisAssignment_3 )
             {
-             before(grammarAccess.getAtLocationAccess().getYAssignment_3()); 
-            // InternalWesnothDSL.g:958:2: ( rule__AtLocation__YAssignment_3 )
-            // InternalWesnothDSL.g:958:3: rule__AtLocation__YAssignment_3
+             before(grammarAccess.getAtLocationAccess().getYAxisAssignment_3()); 
+            // InternalWesnothDSL.g:958:2: ( rule__AtLocation__YAxisAssignment_3 )
+            // InternalWesnothDSL.g:958:3: rule__AtLocation__YAxisAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__AtLocation__YAssignment_3();
+            rule__AtLocation__YAxisAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getAtLocationAccess().getYAssignment_3()); 
+             after(grammarAccess.getAtLocationAccess().getYAxisAssignment_3()); 
 
             }
 
@@ -3171,7 +3167,7 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
             // InternalWesnothDSL.g:1052:1: ( rule__Goal__Group__0__Impl rule__Goal__Group__1 )
             // InternalWesnothDSL.g:1053:2: rule__Goal__Group__0__Impl rule__Goal__Group__1
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_15);
             rule__Goal__Group__0__Impl();
 
             state._fsp--;
@@ -3246,7 +3242,7 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
             // InternalWesnothDSL.g:1079:1: ( rule__Goal__Group__1__Impl rule__Goal__Group__2 )
             // InternalWesnothDSL.g:1080:2: rule__Goal__Group__1__Impl rule__Goal__Group__2
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_16);
             rule__Goal__Group__1__Impl();
 
             state._fsp--;
@@ -3275,21 +3271,21 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Goal__Group__1__Impl"
-    // InternalWesnothDSL.g:1087:1: rule__Goal__Group__1__Impl : ( '=' ) ;
+    // InternalWesnothDSL.g:1087:1: rule__Goal__Group__1__Impl : ( 'is' ) ;
     public final void rule__Goal__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1091:1: ( ( '=' ) )
-            // InternalWesnothDSL.g:1092:1: ( '=' )
+            // InternalWesnothDSL.g:1091:1: ( ( 'is' ) )
+            // InternalWesnothDSL.g:1092:1: ( 'is' )
             {
-            // InternalWesnothDSL.g:1092:1: ( '=' )
-            // InternalWesnothDSL.g:1093:2: '='
+            // InternalWesnothDSL.g:1092:1: ( 'is' )
+            // InternalWesnothDSL.g:1093:2: 'is'
             {
-             before(grammarAccess.getGoalAccess().getEqualsSignKeyword_1()); 
-            match(input,32,FOLLOW_2); 
-             after(grammarAccess.getGoalAccess().getEqualsSignKeyword_1()); 
+             before(grammarAccess.getGoalAccess().getIsKeyword_1()); 
+            match(input,30,FOLLOW_2); 
+             after(grammarAccess.getGoalAccess().getIsKeyword_1()); 
 
             }
 
@@ -3312,17 +3308,22 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Goal__Group__2"
-    // InternalWesnothDSL.g:1102:1: rule__Goal__Group__2 : rule__Goal__Group__2__Impl ;
+    // InternalWesnothDSL.g:1102:1: rule__Goal__Group__2 : rule__Goal__Group__2__Impl rule__Goal__Group__3 ;
     public final void rule__Goal__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1106:1: ( rule__Goal__Group__2__Impl )
-            // InternalWesnothDSL.g:1107:2: rule__Goal__Group__2__Impl
+            // InternalWesnothDSL.g:1106:1: ( rule__Goal__Group__2__Impl rule__Goal__Group__3 )
+            // InternalWesnothDSL.g:1107:2: rule__Goal__Group__2__Impl rule__Goal__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_17);
             rule__Goal__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Goal__Group__3();
 
             state._fsp--;
 
@@ -3345,21 +3346,21 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Goal__Group__2__Impl"
-    // InternalWesnothDSL.g:1113:1: rule__Goal__Group__2__Impl : ( ( rule__Goal__GoalAssignment_2 ) ) ;
+    // InternalWesnothDSL.g:1114:1: rule__Goal__Group__2__Impl : ( ( rule__Goal__GoalAssignment_2 ) ) ;
     public final void rule__Goal__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1117:1: ( ( ( rule__Goal__GoalAssignment_2 ) ) )
-            // InternalWesnothDSL.g:1118:1: ( ( rule__Goal__GoalAssignment_2 ) )
+            // InternalWesnothDSL.g:1118:1: ( ( ( rule__Goal__GoalAssignment_2 ) ) )
+            // InternalWesnothDSL.g:1119:1: ( ( rule__Goal__GoalAssignment_2 ) )
             {
-            // InternalWesnothDSL.g:1118:1: ( ( rule__Goal__GoalAssignment_2 ) )
-            // InternalWesnothDSL.g:1119:2: ( rule__Goal__GoalAssignment_2 )
+            // InternalWesnothDSL.g:1119:1: ( ( rule__Goal__GoalAssignment_2 ) )
+            // InternalWesnothDSL.g:1120:2: ( rule__Goal__GoalAssignment_2 )
             {
              before(grammarAccess.getGoalAccess().getGoalAssignment_2()); 
-            // InternalWesnothDSL.g:1120:2: ( rule__Goal__GoalAssignment_2 )
-            // InternalWesnothDSL.g:1120:3: rule__Goal__GoalAssignment_2
+            // InternalWesnothDSL.g:1121:2: ( rule__Goal__GoalAssignment_2 )
+            // InternalWesnothDSL.g:1121:3: rule__Goal__GoalAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Goal__GoalAssignment_2();
@@ -3391,23 +3392,98 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Goal__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Location__Group__0"
-    // InternalWesnothDSL.g:1129:1: rule__Location__Group__0 : rule__Location__Group__0__Impl rule__Location__Group__1 ;
-    public final void rule__Location__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Goal__Group__3"
+    // InternalWesnothDSL.g:1129:1: rule__Goal__Group__3 : rule__Goal__Group__3__Impl rule__Goal__Group__4 ;
+    public final void rule__Goal__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1133:1: ( rule__Location__Group__0__Impl rule__Location__Group__1 )
-            // InternalWesnothDSL.g:1134:2: rule__Location__Group__0__Impl rule__Location__Group__1
+            // InternalWesnothDSL.g:1133:1: ( rule__Goal__Group__3__Impl rule__Goal__Group__4 )
+            // InternalWesnothDSL.g:1134:2: rule__Goal__Group__3__Impl rule__Goal__Group__4
+            {
+            pushFollow(FOLLOW_15);
+            rule__Goal__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Goal__Group__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Goal__Group__3"
+
+
+    // $ANTLR start "rule__Goal__Group__3__Impl"
+    // InternalWesnothDSL.g:1141:1: rule__Goal__Group__3__Impl : ( 'value' ) ;
+    public final void rule__Goal__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWesnothDSL.g:1145:1: ( ( 'value' ) )
+            // InternalWesnothDSL.g:1146:1: ( 'value' )
+            {
+            // InternalWesnothDSL.g:1146:1: ( 'value' )
+            // InternalWesnothDSL.g:1147:2: 'value'
+            {
+             before(grammarAccess.getGoalAccess().getValueKeyword_3()); 
+            match(input,32,FOLLOW_2); 
+             after(grammarAccess.getGoalAccess().getValueKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Goal__Group__3__Impl"
+
+
+    // $ANTLR start "rule__Goal__Group__4"
+    // InternalWesnothDSL.g:1156:1: rule__Goal__Group__4 : rule__Goal__Group__4__Impl rule__Goal__Group__5 ;
+    public final void rule__Goal__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWesnothDSL.g:1160:1: ( rule__Goal__Group__4__Impl rule__Goal__Group__5 )
+            // InternalWesnothDSL.g:1161:2: rule__Goal__Group__4__Impl rule__Goal__Group__5
             {
             pushFollow(FOLLOW_13);
-            rule__Location__Group__0__Impl();
+            rule__Goal__Group__4__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Location__Group__1();
+            rule__Goal__Group__5();
 
             state._fsp--;
 
@@ -3426,25 +3502,25 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Location__Group__0"
+    // $ANTLR end "rule__Goal__Group__4"
 
 
-    // $ANTLR start "rule__Location__Group__0__Impl"
-    // InternalWesnothDSL.g:1141:1: rule__Location__Group__0__Impl : ( 'x' ) ;
-    public final void rule__Location__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Goal__Group__4__Impl"
+    // InternalWesnothDSL.g:1168:1: rule__Goal__Group__4__Impl : ( 'is' ) ;
+    public final void rule__Goal__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1145:1: ( ( 'x' ) )
-            // InternalWesnothDSL.g:1146:1: ( 'x' )
+            // InternalWesnothDSL.g:1172:1: ( ( 'is' ) )
+            // InternalWesnothDSL.g:1173:1: ( 'is' )
             {
-            // InternalWesnothDSL.g:1146:1: ( 'x' )
-            // InternalWesnothDSL.g:1147:2: 'x'
+            // InternalWesnothDSL.g:1173:1: ( 'is' )
+            // InternalWesnothDSL.g:1174:2: 'is'
             {
-             before(grammarAccess.getLocationAccess().getXKeyword_0()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getLocationAccess().getXKeyword_0()); 
+             before(grammarAccess.getGoalAccess().getIsKeyword_4()); 
+            match(input,30,FOLLOW_2); 
+             after(grammarAccess.getGoalAccess().getIsKeyword_4()); 
 
             }
 
@@ -3463,73 +3539,68 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Location__Group__0__Impl"
+    // $ANTLR end "rule__Goal__Group__4__Impl"
 
 
-    // $ANTLR start "rule__Location__Group__1"
-    // InternalWesnothDSL.g:1156:1: rule__Location__Group__1 : rule__Location__Group__1__Impl rule__Location__Group__2 ;
-    public final void rule__Location__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWesnothDSL.g:1160:1: ( rule__Location__Group__1__Impl rule__Location__Group__2 )
-            // InternalWesnothDSL.g:1161:2: rule__Location__Group__1__Impl rule__Location__Group__2
-            {
-            pushFollow(FOLLOW_14);
-            rule__Location__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Location__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Location__Group__1"
-
-
-    // $ANTLR start "rule__Location__Group__1__Impl"
-    // InternalWesnothDSL.g:1168:1: rule__Location__Group__1__Impl : ( ( rule__Location__XAssignment_1 ) ) ;
-    public final void rule__Location__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Goal__Group__5"
+    // InternalWesnothDSL.g:1183:1: rule__Goal__Group__5 : rule__Goal__Group__5__Impl ;
+    public final void rule__Goal__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1172:1: ( ( ( rule__Location__XAssignment_1 ) ) )
-            // InternalWesnothDSL.g:1173:1: ( ( rule__Location__XAssignment_1 ) )
-            {
-            // InternalWesnothDSL.g:1173:1: ( ( rule__Location__XAssignment_1 ) )
-            // InternalWesnothDSL.g:1174:2: ( rule__Location__XAssignment_1 )
-            {
-             before(grammarAccess.getLocationAccess().getXAssignment_1()); 
-            // InternalWesnothDSL.g:1175:2: ( rule__Location__XAssignment_1 )
-            // InternalWesnothDSL.g:1175:3: rule__Location__XAssignment_1
+            // InternalWesnothDSL.g:1187:1: ( rule__Goal__Group__5__Impl )
+            // InternalWesnothDSL.g:1188:2: rule__Goal__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Location__XAssignment_1();
+            rule__Goal__Group__5__Impl();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getLocationAccess().getXAssignment_1()); 
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Goal__Group__5"
+
+
+    // $ANTLR start "rule__Goal__Group__5__Impl"
+    // InternalWesnothDSL.g:1194:1: rule__Goal__Group__5__Impl : ( ( rule__Goal__LocValueAssignment_5 ) ) ;
+    public final void rule__Goal__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWesnothDSL.g:1198:1: ( ( ( rule__Goal__LocValueAssignment_5 ) ) )
+            // InternalWesnothDSL.g:1199:1: ( ( rule__Goal__LocValueAssignment_5 ) )
+            {
+            // InternalWesnothDSL.g:1199:1: ( ( rule__Goal__LocValueAssignment_5 ) )
+            // InternalWesnothDSL.g:1200:2: ( rule__Goal__LocValueAssignment_5 )
+            {
+             before(grammarAccess.getGoalAccess().getLocValueAssignment_5()); 
+            // InternalWesnothDSL.g:1201:2: ( rule__Goal__LocValueAssignment_5 )
+            // InternalWesnothDSL.g:1201:3: rule__Goal__LocValueAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__Goal__LocValueAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getGoalAccess().getLocValueAssignment_5()); 
 
             }
 
@@ -3548,26 +3619,26 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Location__Group__1__Impl"
+    // $ANTLR end "rule__Goal__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Location__Group__2"
-    // InternalWesnothDSL.g:1183:1: rule__Location__Group__2 : rule__Location__Group__2__Impl rule__Location__Group__3 ;
-    public final void rule__Location__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__GoaLocation__Group__0"
+    // InternalWesnothDSL.g:1210:1: rule__GoaLocation__Group__0 : rule__GoaLocation__Group__0__Impl rule__GoaLocation__Group__1 ;
+    public final void rule__GoaLocation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1187:1: ( rule__Location__Group__2__Impl rule__Location__Group__3 )
-            // InternalWesnothDSL.g:1188:2: rule__Location__Group__2__Impl rule__Location__Group__3
+            // InternalWesnothDSL.g:1214:1: ( rule__GoaLocation__Group__0__Impl rule__GoaLocation__Group__1 )
+            // InternalWesnothDSL.g:1215:2: rule__GoaLocation__Group__0__Impl rule__GoaLocation__Group__1
             {
             pushFollow(FOLLOW_13);
-            rule__Location__Group__2__Impl();
+            rule__GoaLocation__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Location__Group__3();
+            rule__GoaLocation__Group__1();
 
             state._fsp--;
 
@@ -3586,25 +3657,25 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Location__Group__2"
+    // $ANTLR end "rule__GoaLocation__Group__0"
 
 
-    // $ANTLR start "rule__Location__Group__2__Impl"
-    // InternalWesnothDSL.g:1195:1: rule__Location__Group__2__Impl : ( 'y' ) ;
-    public final void rule__Location__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__GoaLocation__Group__0__Impl"
+    // InternalWesnothDSL.g:1222:1: rule__GoaLocation__Group__0__Impl : ( 'x' ) ;
+    public final void rule__GoaLocation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1199:1: ( ( 'y' ) )
-            // InternalWesnothDSL.g:1200:1: ( 'y' )
+            // InternalWesnothDSL.g:1226:1: ( ( 'x' ) )
+            // InternalWesnothDSL.g:1227:1: ( 'x' )
             {
-            // InternalWesnothDSL.g:1200:1: ( 'y' )
-            // InternalWesnothDSL.g:1201:2: 'y'
+            // InternalWesnothDSL.g:1227:1: ( 'x' )
+            // InternalWesnothDSL.g:1228:2: 'x'
             {
-             before(grammarAccess.getLocationAccess().getYKeyword_2()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getLocationAccess().getYKeyword_2()); 
+             before(grammarAccess.getGoaLocationAccess().getXKeyword_0()); 
+            match(input,33,FOLLOW_2); 
+             after(grammarAccess.getGoaLocationAccess().getXKeyword_0()); 
 
             }
 
@@ -3623,23 +3694,75 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Location__Group__2__Impl"
+    // $ANTLR end "rule__GoaLocation__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Location__Group__3"
-    // InternalWesnothDSL.g:1210:1: rule__Location__Group__3 : rule__Location__Group__3__Impl ;
-    public final void rule__Location__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__GoaLocation__Group__1"
+    // InternalWesnothDSL.g:1237:1: rule__GoaLocation__Group__1 : rule__GoaLocation__Group__1__Impl rule__GoaLocation__Group__2 ;
+    public final void rule__GoaLocation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1214:1: ( rule__Location__Group__3__Impl )
-            // InternalWesnothDSL.g:1215:2: rule__Location__Group__3__Impl
+            // InternalWesnothDSL.g:1241:1: ( rule__GoaLocation__Group__1__Impl rule__GoaLocation__Group__2 )
+            // InternalWesnothDSL.g:1242:2: rule__GoaLocation__Group__1__Impl rule__GoaLocation__Group__2
+            {
+            pushFollow(FOLLOW_18);
+            rule__GoaLocation__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__GoaLocation__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__GoaLocation__Group__1"
+
+
+    // $ANTLR start "rule__GoaLocation__Group__1__Impl"
+    // InternalWesnothDSL.g:1249:1: rule__GoaLocation__Group__1__Impl : ( ( rule__GoaLocation__XAxisAssignment_1 ) ) ;
+    public final void rule__GoaLocation__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWesnothDSL.g:1253:1: ( ( ( rule__GoaLocation__XAxisAssignment_1 ) ) )
+            // InternalWesnothDSL.g:1254:1: ( ( rule__GoaLocation__XAxisAssignment_1 ) )
+            {
+            // InternalWesnothDSL.g:1254:1: ( ( rule__GoaLocation__XAxisAssignment_1 ) )
+            // InternalWesnothDSL.g:1255:2: ( rule__GoaLocation__XAxisAssignment_1 )
+            {
+             before(grammarAccess.getGoaLocationAccess().getXAxisAssignment_1()); 
+            // InternalWesnothDSL.g:1256:2: ( rule__GoaLocation__XAxisAssignment_1 )
+            // InternalWesnothDSL.g:1256:3: rule__GoaLocation__XAxisAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Location__Group__3__Impl();
+            rule__GoaLocation__XAxisAssignment_1();
 
             state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getGoaLocationAccess().getXAxisAssignment_1()); 
+
+            }
 
 
             }
@@ -3656,35 +3779,63 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Location__Group__3"
+    // $ANTLR end "rule__GoaLocation__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Location__Group__3__Impl"
-    // InternalWesnothDSL.g:1221:1: rule__Location__Group__3__Impl : ( ( rule__Location__YAssignment_3 ) ) ;
-    public final void rule__Location__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__GoaLocation__Group__2"
+    // InternalWesnothDSL.g:1264:1: rule__GoaLocation__Group__2 : rule__GoaLocation__Group__2__Impl rule__GoaLocation__Group__3 ;
+    public final void rule__GoaLocation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1225:1: ( ( ( rule__Location__YAssignment_3 ) ) )
-            // InternalWesnothDSL.g:1226:1: ( ( rule__Location__YAssignment_3 ) )
+            // InternalWesnothDSL.g:1268:1: ( rule__GoaLocation__Group__2__Impl rule__GoaLocation__Group__3 )
+            // InternalWesnothDSL.g:1269:2: rule__GoaLocation__Group__2__Impl rule__GoaLocation__Group__3
             {
-            // InternalWesnothDSL.g:1226:1: ( ( rule__Location__YAssignment_3 ) )
-            // InternalWesnothDSL.g:1227:2: ( rule__Location__YAssignment_3 )
-            {
-             before(grammarAccess.getLocationAccess().getYAssignment_3()); 
-            // InternalWesnothDSL.g:1228:2: ( rule__Location__YAssignment_3 )
-            // InternalWesnothDSL.g:1228:3: rule__Location__YAssignment_3
-            {
+            pushFollow(FOLLOW_13);
+            rule__GoaLocation__Group__2__Impl();
+
+            state._fsp--;
+
             pushFollow(FOLLOW_2);
-            rule__Location__YAssignment_3();
+            rule__GoaLocation__Group__3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getLocationAccess().getYAssignment_3()); 
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__GoaLocation__Group__2"
+
+
+    // $ANTLR start "rule__GoaLocation__Group__2__Impl"
+    // InternalWesnothDSL.g:1276:1: rule__GoaLocation__Group__2__Impl : ( 'y' ) ;
+    public final void rule__GoaLocation__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWesnothDSL.g:1280:1: ( ( 'y' ) )
+            // InternalWesnothDSL.g:1281:1: ( 'y' )
+            {
+            // InternalWesnothDSL.g:1281:1: ( 'y' )
+            // InternalWesnothDSL.g:1282:2: 'y'
+            {
+             before(grammarAccess.getGoaLocationAccess().getYKeyword_2()); 
+            match(input,34,FOLLOW_2); 
+             after(grammarAccess.getGoaLocationAccess().getYKeyword_2()); 
 
             }
 
@@ -3703,21 +3854,101 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Location__Group__3__Impl"
+    // $ANTLR end "rule__GoaLocation__Group__2__Impl"
+
+
+    // $ANTLR start "rule__GoaLocation__Group__3"
+    // InternalWesnothDSL.g:1291:1: rule__GoaLocation__Group__3 : rule__GoaLocation__Group__3__Impl ;
+    public final void rule__GoaLocation__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWesnothDSL.g:1295:1: ( rule__GoaLocation__Group__3__Impl )
+            // InternalWesnothDSL.g:1296:2: rule__GoaLocation__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__GoaLocation__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__GoaLocation__Group__3"
+
+
+    // $ANTLR start "rule__GoaLocation__Group__3__Impl"
+    // InternalWesnothDSL.g:1302:1: rule__GoaLocation__Group__3__Impl : ( ( rule__GoaLocation__YAxisAssignment_3 ) ) ;
+    public final void rule__GoaLocation__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWesnothDSL.g:1306:1: ( ( ( rule__GoaLocation__YAxisAssignment_3 ) ) )
+            // InternalWesnothDSL.g:1307:1: ( ( rule__GoaLocation__YAxisAssignment_3 ) )
+            {
+            // InternalWesnothDSL.g:1307:1: ( ( rule__GoaLocation__YAxisAssignment_3 ) )
+            // InternalWesnothDSL.g:1308:2: ( rule__GoaLocation__YAxisAssignment_3 )
+            {
+             before(grammarAccess.getGoaLocationAccess().getYAxisAssignment_3()); 
+            // InternalWesnothDSL.g:1309:2: ( rule__GoaLocation__YAxisAssignment_3 )
+            // InternalWesnothDSL.g:1309:3: rule__GoaLocation__YAxisAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__GoaLocation__YAxisAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getGoaLocationAccess().getYAxisAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__GoaLocation__Group__3__Impl"
 
 
     // $ANTLR start "rule__Model__ElementsAssignment"
-    // InternalWesnothDSL.g:1237:1: rule__Model__ElementsAssignment : ( ruleRule ) ;
+    // InternalWesnothDSL.g:1318:1: rule__Model__ElementsAssignment : ( ruleRule ) ;
     public final void rule__Model__ElementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1241:1: ( ( ruleRule ) )
-            // InternalWesnothDSL.g:1242:2: ( ruleRule )
+            // InternalWesnothDSL.g:1322:1: ( ( ruleRule ) )
+            // InternalWesnothDSL.g:1323:2: ( ruleRule )
             {
-            // InternalWesnothDSL.g:1242:2: ( ruleRule )
-            // InternalWesnothDSL.g:1243:3: ruleRule
+            // InternalWesnothDSL.g:1323:2: ( ruleRule )
+            // InternalWesnothDSL.g:1324:3: ruleRule
             {
              before(grammarAccess.getModelAccess().getElementsRuleParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -3748,17 +3979,17 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Rule__NameAssignment_1"
-    // InternalWesnothDSL.g:1252:1: rule__Rule__NameAssignment_1 : ( RULE_STRING ) ;
+    // InternalWesnothDSL.g:1333:1: rule__Rule__NameAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Rule__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1256:1: ( ( RULE_STRING ) )
-            // InternalWesnothDSL.g:1257:2: ( RULE_STRING )
+            // InternalWesnothDSL.g:1337:1: ( ( RULE_STRING ) )
+            // InternalWesnothDSL.g:1338:2: ( RULE_STRING )
             {
-            // InternalWesnothDSL.g:1257:2: ( RULE_STRING )
-            // InternalWesnothDSL.g:1258:3: RULE_STRING
+            // InternalWesnothDSL.g:1338:2: ( RULE_STRING )
+            // InternalWesnothDSL.g:1339:3: RULE_STRING
             {
              before(grammarAccess.getRuleAccess().getNameSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -3785,17 +4016,17 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Rule__FragmentsAssignment_3"
-    // InternalWesnothDSL.g:1267:1: rule__Rule__FragmentsAssignment_3 : ( ruleFragment ) ;
+    // InternalWesnothDSL.g:1348:1: rule__Rule__FragmentsAssignment_3 : ( ruleFragment ) ;
     public final void rule__Rule__FragmentsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1271:1: ( ( ruleFragment ) )
-            // InternalWesnothDSL.g:1272:2: ( ruleFragment )
+            // InternalWesnothDSL.g:1352:1: ( ( ruleFragment ) )
+            // InternalWesnothDSL.g:1353:2: ( ruleFragment )
             {
-            // InternalWesnothDSL.g:1272:2: ( ruleFragment )
-            // InternalWesnothDSL.g:1273:3: ruleFragment
+            // InternalWesnothDSL.g:1353:2: ( ruleFragment )
+            // InternalWesnothDSL.g:1354:3: ruleFragment
             {
              before(grammarAccess.getRuleAccess().getFragmentsFragmentParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -3826,17 +4057,17 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Rule__GoalsAssignment_4"
-    // InternalWesnothDSL.g:1282:1: rule__Rule__GoalsAssignment_4 : ( ruleGoal ) ;
+    // InternalWesnothDSL.g:1363:1: rule__Rule__GoalsAssignment_4 : ( ruleGoal ) ;
     public final void rule__Rule__GoalsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1286:1: ( ( ruleGoal ) )
-            // InternalWesnothDSL.g:1287:2: ( ruleGoal )
+            // InternalWesnothDSL.g:1367:1: ( ( ruleGoal ) )
+            // InternalWesnothDSL.g:1368:2: ( ruleGoal )
             {
-            // InternalWesnothDSL.g:1287:2: ( ruleGoal )
-            // InternalWesnothDSL.g:1288:3: ruleGoal
+            // InternalWesnothDSL.g:1368:2: ( ruleGoal )
+            // InternalWesnothDSL.g:1369:3: ruleGoal
             {
              before(grammarAccess.getRuleAccess().getGoalsGoalParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -3867,17 +4098,17 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Fragment__ConditionAssignment_0"
-    // InternalWesnothDSL.g:1297:1: rule__Fragment__ConditionAssignment_0 : ( ruleConditional ) ;
+    // InternalWesnothDSL.g:1378:1: rule__Fragment__ConditionAssignment_0 : ( ruleConditional ) ;
     public final void rule__Fragment__ConditionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1301:1: ( ( ruleConditional ) )
-            // InternalWesnothDSL.g:1302:2: ( ruleConditional )
+            // InternalWesnothDSL.g:1382:1: ( ( ruleConditional ) )
+            // InternalWesnothDSL.g:1383:2: ( ruleConditional )
             {
-            // InternalWesnothDSL.g:1302:2: ( ruleConditional )
-            // InternalWesnothDSL.g:1303:3: ruleConditional
+            // InternalWesnothDSL.g:1383:2: ( ruleConditional )
+            // InternalWesnothDSL.g:1384:3: ruleConditional
             {
              before(grammarAccess.getFragmentAccess().getConditionConditionalParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -3908,17 +4139,17 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Fragment__Defualt_casAssignment_2"
-    // InternalWesnothDSL.g:1312:1: rule__Fragment__Defualt_casAssignment_2 : ( ruleDefualt_CA ) ;
+    // InternalWesnothDSL.g:1393:1: rule__Fragment__Defualt_casAssignment_2 : ( ruleDefualt_CA ) ;
     public final void rule__Fragment__Defualt_casAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1316:1: ( ( ruleDefualt_CA ) )
-            // InternalWesnothDSL.g:1317:2: ( ruleDefualt_CA )
+            // InternalWesnothDSL.g:1397:1: ( ( ruleDefualt_CA ) )
+            // InternalWesnothDSL.g:1398:2: ( ruleDefualt_CA )
             {
-            // InternalWesnothDSL.g:1317:2: ( ruleDefualt_CA )
-            // InternalWesnothDSL.g:1318:3: ruleDefualt_CA
+            // InternalWesnothDSL.g:1398:2: ( ruleDefualt_CA )
+            // InternalWesnothDSL.g:1399:3: ruleDefualt_CA
             {
              before(grammarAccess.getFragmentAccess().getDefualt_casDefualt_CAParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -3948,26 +4179,26 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Fragment__Defualt_casAssignment_2"
 
 
-    // $ANTLR start "rule__Conditional__ConditionAssignment_0_1"
-    // InternalWesnothDSL.g:1327:1: rule__Conditional__ConditionAssignment_0_1 : ( ruleAtLocation ) ;
-    public final void rule__Conditional__ConditionAssignment_0_1() throws RecognitionException {
+    // $ANTLR start "rule__Conditional__XAssignment_1"
+    // InternalWesnothDSL.g:1408:1: rule__Conditional__XAssignment_1 : ( rulewhenRules ) ;
+    public final void rule__Conditional__XAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1331:1: ( ( ruleAtLocation ) )
-            // InternalWesnothDSL.g:1332:2: ( ruleAtLocation )
+            // InternalWesnothDSL.g:1412:1: ( ( rulewhenRules ) )
+            // InternalWesnothDSL.g:1413:2: ( rulewhenRules )
             {
-            // InternalWesnothDSL.g:1332:2: ( ruleAtLocation )
-            // InternalWesnothDSL.g:1333:3: ruleAtLocation
+            // InternalWesnothDSL.g:1413:2: ( rulewhenRules )
+            // InternalWesnothDSL.g:1414:3: rulewhenRules
             {
-             before(grammarAccess.getConditionalAccess().getConditionAtLocationParserRuleCall_0_1_0()); 
+             before(grammarAccess.getConditionalAccess().getXWhenRulesParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleAtLocation();
+            rulewhenRules();
 
             state._fsp--;
 
-             after(grammarAccess.getConditionalAccess().getConditionAtLocationParserRuleCall_0_1_0()); 
+             after(grammarAccess.getConditionalAccess().getXWhenRulesParserRuleCall_1_0()); 
 
             }
 
@@ -3986,28 +4217,28 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Conditional__ConditionAssignment_0_1"
+    // $ANTLR end "rule__Conditional__XAssignment_1"
 
 
     // $ANTLR start "rule__Baseline__AlwaysAssignment"
-    // InternalWesnothDSL.g:1342:1: rule__Baseline__AlwaysAssignment : ( ( 'always' ) ) ;
+    // InternalWesnothDSL.g:1423:1: rule__Baseline__AlwaysAssignment : ( ( 'always' ) ) ;
     public final void rule__Baseline__AlwaysAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1346:1: ( ( ( 'always' ) ) )
-            // InternalWesnothDSL.g:1347:2: ( ( 'always' ) )
+            // InternalWesnothDSL.g:1427:1: ( ( ( 'always' ) ) )
+            // InternalWesnothDSL.g:1428:2: ( ( 'always' ) )
             {
-            // InternalWesnothDSL.g:1347:2: ( ( 'always' ) )
-            // InternalWesnothDSL.g:1348:3: ( 'always' )
-            {
-             before(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0()); 
-            // InternalWesnothDSL.g:1349:3: ( 'always' )
-            // InternalWesnothDSL.g:1350:4: 'always'
+            // InternalWesnothDSL.g:1428:2: ( ( 'always' ) )
+            // InternalWesnothDSL.g:1429:3: ( 'always' )
             {
              before(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0()); 
-            match(input,33,FOLLOW_2); 
+            // InternalWesnothDSL.g:1430:3: ( 'always' )
+            // InternalWesnothDSL.g:1431:4: 'always'
+            {
+             before(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0()); 
+            match(input,35,FOLLOW_2); 
              after(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0()); 
 
             }
@@ -4035,17 +4266,17 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Damage__HealthAssignment_2"
-    // InternalWesnothDSL.g:1361:1: rule__Damage__HealthAssignment_2 : ( RULE_INT ) ;
+    // InternalWesnothDSL.g:1442:1: rule__Damage__HealthAssignment_2 : ( RULE_INT ) ;
     public final void rule__Damage__HealthAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1365:1: ( ( RULE_INT ) )
-            // InternalWesnothDSL.g:1366:2: ( RULE_INT )
+            // InternalWesnothDSL.g:1446:1: ( ( RULE_INT ) )
+            // InternalWesnothDSL.g:1447:2: ( RULE_INT )
             {
-            // InternalWesnothDSL.g:1366:2: ( RULE_INT )
-            // InternalWesnothDSL.g:1367:3: RULE_INT
+            // InternalWesnothDSL.g:1447:2: ( RULE_INT )
+            // InternalWesnothDSL.g:1448:3: RULE_INT
             {
              before(grammarAccess.getDamageAccess().getHealthINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4071,22 +4302,22 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Damage__HealthAssignment_2"
 
 
-    // $ANTLR start "rule__AtLocation__XAssignment_1"
-    // InternalWesnothDSL.g:1376:1: rule__AtLocation__XAssignment_1 : ( RULE_INT ) ;
-    public final void rule__AtLocation__XAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__AtLocation__XAxisAssignment_1"
+    // InternalWesnothDSL.g:1457:1: rule__AtLocation__XAxisAssignment_1 : ( RULE_INT ) ;
+    public final void rule__AtLocation__XAxisAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1380:1: ( ( RULE_INT ) )
-            // InternalWesnothDSL.g:1381:2: ( RULE_INT )
+            // InternalWesnothDSL.g:1461:1: ( ( RULE_INT ) )
+            // InternalWesnothDSL.g:1462:2: ( RULE_INT )
             {
-            // InternalWesnothDSL.g:1381:2: ( RULE_INT )
-            // InternalWesnothDSL.g:1382:3: RULE_INT
+            // InternalWesnothDSL.g:1462:2: ( RULE_INT )
+            // InternalWesnothDSL.g:1463:3: RULE_INT
             {
-             before(grammarAccess.getAtLocationAccess().getXINTTerminalRuleCall_1_0()); 
+             before(grammarAccess.getAtLocationAccess().getXAxisINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getAtLocationAccess().getXINTTerminalRuleCall_1_0()); 
+             after(grammarAccess.getAtLocationAccess().getXAxisINTTerminalRuleCall_1_0()); 
 
             }
 
@@ -4105,25 +4336,25 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__AtLocation__XAssignment_1"
+    // $ANTLR end "rule__AtLocation__XAxisAssignment_1"
 
 
-    // $ANTLR start "rule__AtLocation__YAssignment_3"
-    // InternalWesnothDSL.g:1391:1: rule__AtLocation__YAssignment_3 : ( RULE_INT ) ;
-    public final void rule__AtLocation__YAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__AtLocation__YAxisAssignment_3"
+    // InternalWesnothDSL.g:1472:1: rule__AtLocation__YAxisAssignment_3 : ( RULE_INT ) ;
+    public final void rule__AtLocation__YAxisAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1395:1: ( ( RULE_INT ) )
-            // InternalWesnothDSL.g:1396:2: ( RULE_INT )
+            // InternalWesnothDSL.g:1476:1: ( ( RULE_INT ) )
+            // InternalWesnothDSL.g:1477:2: ( RULE_INT )
             {
-            // InternalWesnothDSL.g:1396:2: ( RULE_INT )
-            // InternalWesnothDSL.g:1397:3: RULE_INT
+            // InternalWesnothDSL.g:1477:2: ( RULE_INT )
+            // InternalWesnothDSL.g:1478:3: RULE_INT
             {
-             before(grammarAccess.getAtLocationAccess().getYINTTerminalRuleCall_3_0()); 
+             before(grammarAccess.getAtLocationAccess().getYAxisINTTerminalRuleCall_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getAtLocationAccess().getYINTTerminalRuleCall_3_0()); 
+             after(grammarAccess.getAtLocationAccess().getYAxisINTTerminalRuleCall_3_0()); 
 
             }
 
@@ -4142,21 +4373,21 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__AtLocation__YAssignment_3"
+    // $ANTLR end "rule__AtLocation__YAxisAssignment_3"
 
 
     // $ANTLR start "rule__UnitEquals__UnitAssignment_2"
-    // InternalWesnothDSL.g:1406:1: rule__UnitEquals__UnitAssignment_2 : ( RULE_STRING ) ;
+    // InternalWesnothDSL.g:1487:1: rule__UnitEquals__UnitAssignment_2 : ( RULE_STRING ) ;
     public final void rule__UnitEquals__UnitAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1410:1: ( ( RULE_STRING ) )
-            // InternalWesnothDSL.g:1411:2: ( RULE_STRING )
+            // InternalWesnothDSL.g:1491:1: ( ( RULE_STRING ) )
+            // InternalWesnothDSL.g:1492:2: ( RULE_STRING )
             {
-            // InternalWesnothDSL.g:1411:2: ( RULE_STRING )
-            // InternalWesnothDSL.g:1412:3: RULE_STRING
+            // InternalWesnothDSL.g:1492:2: ( RULE_STRING )
+            // InternalWesnothDSL.g:1493:3: RULE_STRING
             {
              before(grammarAccess.getUnitEqualsAccess().getUnitSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -4183,25 +4414,25 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Goal__GoalAssignment_2"
-    // InternalWesnothDSL.g:1421:1: rule__Goal__GoalAssignment_2 : ( ruleGoalCondition ) ;
+    // InternalWesnothDSL.g:1502:1: rule__Goal__GoalAssignment_2 : ( ruleGoaLocation ) ;
     public final void rule__Goal__GoalAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1425:1: ( ( ruleGoalCondition ) )
-            // InternalWesnothDSL.g:1426:2: ( ruleGoalCondition )
+            // InternalWesnothDSL.g:1506:1: ( ( ruleGoaLocation ) )
+            // InternalWesnothDSL.g:1507:2: ( ruleGoaLocation )
             {
-            // InternalWesnothDSL.g:1426:2: ( ruleGoalCondition )
-            // InternalWesnothDSL.g:1427:3: ruleGoalCondition
+            // InternalWesnothDSL.g:1507:2: ( ruleGoaLocation )
+            // InternalWesnothDSL.g:1508:3: ruleGoaLocation
             {
-             before(grammarAccess.getGoalAccess().getGoalGoalConditionParserRuleCall_2_0()); 
+             before(grammarAccess.getGoalAccess().getGoalGoaLocationParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
-            ruleGoalCondition();
+            ruleGoaLocation();
 
             state._fsp--;
 
-             after(grammarAccess.getGoalAccess().getGoalGoalConditionParserRuleCall_2_0()); 
+             after(grammarAccess.getGoalAccess().getGoalGoaLocationParserRuleCall_2_0()); 
 
             }
 
@@ -4223,63 +4454,22 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Goal__GoalAssignment_2"
 
 
-    // $ANTLR start "rule__GoalCondition__GoalAssignment"
-    // InternalWesnothDSL.g:1436:1: rule__GoalCondition__GoalAssignment : ( ruleLocation ) ;
-    public final void rule__GoalCondition__GoalAssignment() throws RecognitionException {
+    // $ANTLR start "rule__Goal__LocValueAssignment_5"
+    // InternalWesnothDSL.g:1517:1: rule__Goal__LocValueAssignment_5 : ( RULE_INT ) ;
+    public final void rule__Goal__LocValueAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1440:1: ( ( ruleLocation ) )
-            // InternalWesnothDSL.g:1441:2: ( ruleLocation )
+            // InternalWesnothDSL.g:1521:1: ( ( RULE_INT ) )
+            // InternalWesnothDSL.g:1522:2: ( RULE_INT )
             {
-            // InternalWesnothDSL.g:1441:2: ( ruleLocation )
-            // InternalWesnothDSL.g:1442:3: ruleLocation
+            // InternalWesnothDSL.g:1522:2: ( RULE_INT )
+            // InternalWesnothDSL.g:1523:3: RULE_INT
             {
-             before(grammarAccess.getGoalConditionAccess().getGoalLocationParserRuleCall_0()); 
-            pushFollow(FOLLOW_2);
-            ruleLocation();
-
-            state._fsp--;
-
-             after(grammarAccess.getGoalConditionAccess().getGoalLocationParserRuleCall_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__GoalCondition__GoalAssignment"
-
-
-    // $ANTLR start "rule__Location__XAssignment_1"
-    // InternalWesnothDSL.g:1451:1: rule__Location__XAssignment_1 : ( RULE_INT ) ;
-    public final void rule__Location__XAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalWesnothDSL.g:1455:1: ( ( RULE_INT ) )
-            // InternalWesnothDSL.g:1456:2: ( RULE_INT )
-            {
-            // InternalWesnothDSL.g:1456:2: ( RULE_INT )
-            // InternalWesnothDSL.g:1457:3: RULE_INT
-            {
-             before(grammarAccess.getLocationAccess().getXINTTerminalRuleCall_1_0()); 
+             before(grammarAccess.getGoalAccess().getLocValueINTTerminalRuleCall_5_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getLocationAccess().getXINTTerminalRuleCall_1_0()); 
+             after(grammarAccess.getGoalAccess().getLocValueINTTerminalRuleCall_5_0()); 
 
             }
 
@@ -4298,25 +4488,25 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Location__XAssignment_1"
+    // $ANTLR end "rule__Goal__LocValueAssignment_5"
 
 
-    // $ANTLR start "rule__Location__YAssignment_3"
-    // InternalWesnothDSL.g:1466:1: rule__Location__YAssignment_3 : ( RULE_INT ) ;
-    public final void rule__Location__YAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__GoaLocation__XAxisAssignment_1"
+    // InternalWesnothDSL.g:1532:1: rule__GoaLocation__XAxisAssignment_1 : ( RULE_INT ) ;
+    public final void rule__GoaLocation__XAxisAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1470:1: ( ( RULE_INT ) )
-            // InternalWesnothDSL.g:1471:2: ( RULE_INT )
+            // InternalWesnothDSL.g:1536:1: ( ( RULE_INT ) )
+            // InternalWesnothDSL.g:1537:2: ( RULE_INT )
             {
-            // InternalWesnothDSL.g:1471:2: ( RULE_INT )
-            // InternalWesnothDSL.g:1472:3: RULE_INT
+            // InternalWesnothDSL.g:1537:2: ( RULE_INT )
+            // InternalWesnothDSL.g:1538:3: RULE_INT
             {
-             before(grammarAccess.getLocationAccess().getYINTTerminalRuleCall_3_0()); 
+             before(grammarAccess.getGoaLocationAccess().getXAxisINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getLocationAccess().getYINTTerminalRuleCall_3_0()); 
+             after(grammarAccess.getGoaLocationAccess().getXAxisINTTerminalRuleCall_1_0()); 
 
             }
 
@@ -4335,25 +4525,62 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Location__YAssignment_3"
+    // $ANTLR end "rule__GoaLocation__XAxisAssignment_1"
+
+
+    // $ANTLR start "rule__GoaLocation__YAxisAssignment_3"
+    // InternalWesnothDSL.g:1547:1: rule__GoaLocation__YAxisAssignment_3 : ( RULE_INT ) ;
+    public final void rule__GoaLocation__YAxisAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWesnothDSL.g:1551:1: ( ( RULE_INT ) )
+            // InternalWesnothDSL.g:1552:2: ( RULE_INT )
+            {
+            // InternalWesnothDSL.g:1552:2: ( RULE_INT )
+            // InternalWesnothDSL.g:1553:3: RULE_INT
+            {
+             before(grammarAccess.getGoaLocationAccess().getYAxisINTTerminalRuleCall_3_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getGoaLocationAccess().getYAxisINTTerminalRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__GoaLocation__YAxisAssignment_3"
 
 
     // $ANTLR start "rule__Defualt_CA__CaTypeAssignment"
-    // InternalWesnothDSL.g:1481:1: rule__Defualt_CA__CaTypeAssignment : ( ( rule__Defualt_CA__CaTypeAlternatives_0 ) ) ;
+    // InternalWesnothDSL.g:1562:1: rule__Defualt_CA__CaTypeAssignment : ( ( rule__Defualt_CA__CaTypeAlternatives_0 ) ) ;
     public final void rule__Defualt_CA__CaTypeAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:1485:1: ( ( ( rule__Defualt_CA__CaTypeAlternatives_0 ) ) )
-            // InternalWesnothDSL.g:1486:2: ( ( rule__Defualt_CA__CaTypeAlternatives_0 ) )
+            // InternalWesnothDSL.g:1566:1: ( ( ( rule__Defualt_CA__CaTypeAlternatives_0 ) ) )
+            // InternalWesnothDSL.g:1567:2: ( ( rule__Defualt_CA__CaTypeAlternatives_0 ) )
             {
-            // InternalWesnothDSL.g:1486:2: ( ( rule__Defualt_CA__CaTypeAlternatives_0 ) )
-            // InternalWesnothDSL.g:1487:3: ( rule__Defualt_CA__CaTypeAlternatives_0 )
+            // InternalWesnothDSL.g:1567:2: ( ( rule__Defualt_CA__CaTypeAlternatives_0 ) )
+            // InternalWesnothDSL.g:1568:3: ( rule__Defualt_CA__CaTypeAlternatives_0 )
             {
              before(grammarAccess.getDefualt_CAAccess().getCaTypeAlternatives_0()); 
-            // InternalWesnothDSL.g:1488:3: ( rule__Defualt_CA__CaTypeAlternatives_0 )
-            // InternalWesnothDSL.g:1488:4: rule__Defualt_CA__CaTypeAlternatives_0
+            // InternalWesnothDSL.g:1569:3: ( rule__Defualt_CA__CaTypeAlternatives_0 )
+            // InternalWesnothDSL.g:1569:4: rule__Defualt_CA__CaTypeAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__Defualt_CA__CaTypeAlternatives_0();
@@ -4394,16 +4621,18 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000200002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000223000000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000080800000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000080000002L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000009FF800L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000001FF802L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000082A000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000400000000L});
 
 }

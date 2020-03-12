@@ -26,7 +26,11 @@ Fragment:
 // can use filter own for unit types 100%, may be able to filter other things too
 // will need to add them in from scratch with wml, no extra code but need to refferenc them again
 Conditional:
-	'when:' condition=AtLocation|Damage|UnitEquals|Baseline
+	'when:' x = whenRules
+;
+
+whenRules:
+	UnitEquals|AtLocation|Damage|Baseline
 ;
 
 Baseline:
@@ -38,7 +42,7 @@ Damage:
 ;
 
 AtLocation:
-	'x' x=INT 'y' y=INT
+	'x:' XAxis=INT 'y:' YAxis=INT
 ;
 
 UnitEquals:
@@ -46,15 +50,11 @@ UnitEquals:
 ;
 
 Goal:
-	'goal' '=' goal=GoalCondition
+	'goal' 'is' goal= GoaLocation 'value' 'is' locValue=INT
 ;
 
-GoalCondition:
-	goal= Location
-;
-
-Location:
-	'x' x=INT 'y' y=INT
+GoaLocation:
+	'x' XAxis=INT 'y' YAxis=INT
 ;
 
 New_CA:

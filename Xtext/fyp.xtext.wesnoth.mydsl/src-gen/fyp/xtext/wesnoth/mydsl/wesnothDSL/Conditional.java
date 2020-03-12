@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional#getCondition <em>Condition</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional#getX <em>X</em>}</li>
  * </ul>
  *
  * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getConditional()
@@ -24,25 +24,25 @@ import org.eclipse.emf.ecore.EObject;
 public interface Conditional extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Condition</b></em>' containment reference.
+   * Returns the value of the '<em><b>X</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Condition</em>' containment reference.
-   * @see #setCondition(AtLocation)
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getConditional_Condition()
+   * @return the value of the '<em>X</em>' containment reference.
+   * @see #setX(whenRules)
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getConditional_X()
    * @model containment="true"
    * @generated
    */
-  AtLocation getCondition();
+  whenRules getX();
 
   /**
-   * Sets the value of the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional#getCondition <em>Condition</em>}' containment reference.
+   * Sets the value of the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional#getX <em>X</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Condition</em>' containment reference.
-   * @see #getCondition()
+   * @param value the new value of the '<em>X</em>' containment reference.
+   * @see #getX()
    * @generated
    */
-  void setCondition(AtLocation value);
+  void setX(whenRules value);
 
 } // Conditional

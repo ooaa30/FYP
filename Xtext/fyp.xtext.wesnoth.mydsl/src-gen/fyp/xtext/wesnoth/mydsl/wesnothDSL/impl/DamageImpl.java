@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class DamageImpl extends ConditionalImpl implements Damage
+public class DamageImpl extends whenRulesImpl implements Damage
 {
   /**
    * The default value of the '{@link #getHealth() <em>Health</em>}' attribute.

@@ -60,6 +60,15 @@ public interface WesnothDSLFactory extends EFactory
   Conditional createConditional();
 
   /**
+   * Returns a new object of class '<em>when Rules</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>when Rules</em>'.
+   * @generated
+   */
+  whenRules createwhenRules();
+
+  /**
    * Returns a new object of class '<em>Baseline</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -105,22 +114,13 @@ public interface WesnothDSLFactory extends EFactory
   Goal createGoal();
 
   /**
-   * Returns a new object of class '<em>Goal Condition</em>'.
+   * Returns a new object of class '<em>Goa Location</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Goal Condition</em>'.
+   * @return a new object of class '<em>Goa Location</em>'.
    * @generated
    */
-  GoalCondition createGoalCondition();
-
-  /**
-   * Returns a new object of class '<em>Location</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Location</em>'.
-   * @generated
-   */
-  Location createLocation();
+  GoaLocation createGoaLocation();
 
   /**
    * Returns a new object of class '<em>Defualt CA</em>'.

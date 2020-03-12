@@ -11,7 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,53 +20,53 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.AtLocationImpl#getX <em>X</em>}</li>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.AtLocationImpl#getY <em>Y</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.AtLocationImpl#getXAxis <em>XAxis</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.AtLocationImpl#getYAxis <em>YAxis</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AtLocationImpl extends MinimalEObjectImpl.Container implements AtLocation
+public class AtLocationImpl extends whenRulesImpl implements AtLocation
 {
   /**
-   * The default value of the '{@link #getX() <em>X</em>}' attribute.
+   * The default value of the '{@link #getXAxis() <em>XAxis</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getX()
+   * @see #getXAxis()
    * @generated
    * @ordered
    */
-  protected static final int X_EDEFAULT = 0;
+  protected static final int XAXIS_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getX() <em>X</em>}' attribute.
+   * The cached value of the '{@link #getXAxis() <em>XAxis</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getX()
+   * @see #getXAxis()
    * @generated
    * @ordered
    */
-  protected int x = X_EDEFAULT;
+  protected int xAxis = XAXIS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getY() <em>Y</em>}' attribute.
+   * The default value of the '{@link #getYAxis() <em>YAxis</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getY()
+   * @see #getYAxis()
    * @generated
    * @ordered
    */
-  protected static final int Y_EDEFAULT = 0;
+  protected static final int YAXIS_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
+   * The cached value of the '{@link #getYAxis() <em>YAxis</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getY()
+   * @see #getYAxis()
    * @generated
    * @ordered
    */
-  protected int y = Y_EDEFAULT;
+  protected int yAxis = YAXIS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,9 +95,9 @@ public class AtLocationImpl extends MinimalEObjectImpl.Container implements AtLo
    * @generated
    */
   @Override
-  public int getX()
+  public int getXAxis()
   {
-    return x;
+    return xAxis;
   }
 
   /**
@@ -107,12 +106,12 @@ public class AtLocationImpl extends MinimalEObjectImpl.Container implements AtLo
    * @generated
    */
   @Override
-  public void setX(int newX)
+  public void setXAxis(int newXAxis)
   {
-    int oldX = x;
-    x = newX;
+    int oldXAxis = xAxis;
+    xAxis = newXAxis;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.AT_LOCATION__X, oldX, x));
+      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.AT_LOCATION__XAXIS, oldXAxis, xAxis));
   }
 
   /**
@@ -121,9 +120,9 @@ public class AtLocationImpl extends MinimalEObjectImpl.Container implements AtLo
    * @generated
    */
   @Override
-  public int getY()
+  public int getYAxis()
   {
-    return y;
+    return yAxis;
   }
 
   /**
@@ -132,12 +131,12 @@ public class AtLocationImpl extends MinimalEObjectImpl.Container implements AtLo
    * @generated
    */
   @Override
-  public void setY(int newY)
+  public void setYAxis(int newYAxis)
   {
-    int oldY = y;
-    y = newY;
+    int oldYAxis = yAxis;
+    yAxis = newYAxis;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.AT_LOCATION__Y, oldY, y));
+      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.AT_LOCATION__YAXIS, oldYAxis, yAxis));
   }
 
   /**
@@ -150,10 +149,10 @@ public class AtLocationImpl extends MinimalEObjectImpl.Container implements AtLo
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.AT_LOCATION__X:
-        return getX();
-      case WesnothDSLPackage.AT_LOCATION__Y:
-        return getY();
+      case WesnothDSLPackage.AT_LOCATION__XAXIS:
+        return getXAxis();
+      case WesnothDSLPackage.AT_LOCATION__YAXIS:
+        return getYAxis();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,11 +167,11 @@ public class AtLocationImpl extends MinimalEObjectImpl.Container implements AtLo
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.AT_LOCATION__X:
-        setX((Integer)newValue);
+      case WesnothDSLPackage.AT_LOCATION__XAXIS:
+        setXAxis((Integer)newValue);
         return;
-      case WesnothDSLPackage.AT_LOCATION__Y:
-        setY((Integer)newValue);
+      case WesnothDSLPackage.AT_LOCATION__YAXIS:
+        setYAxis((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,11 +187,11 @@ public class AtLocationImpl extends MinimalEObjectImpl.Container implements AtLo
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.AT_LOCATION__X:
-        setX(X_EDEFAULT);
+      case WesnothDSLPackage.AT_LOCATION__XAXIS:
+        setXAxis(XAXIS_EDEFAULT);
         return;
-      case WesnothDSLPackage.AT_LOCATION__Y:
-        setY(Y_EDEFAULT);
+      case WesnothDSLPackage.AT_LOCATION__YAXIS:
+        setYAxis(YAXIS_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -208,10 +207,10 @@ public class AtLocationImpl extends MinimalEObjectImpl.Container implements AtLo
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.AT_LOCATION__X:
-        return x != X_EDEFAULT;
-      case WesnothDSLPackage.AT_LOCATION__Y:
-        return y != Y_EDEFAULT;
+      case WesnothDSLPackage.AT_LOCATION__XAXIS:
+        return xAxis != XAXIS_EDEFAULT;
+      case WesnothDSLPackage.AT_LOCATION__YAXIS:
+        return yAxis != YAXIS_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -227,10 +226,10 @@ public class AtLocationImpl extends MinimalEObjectImpl.Container implements AtLo
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (x: ");
-    result.append(x);
-    result.append(", y: ");
-    result.append(y);
+    result.append(" (XAxis: ");
+    result.append(xAxis);
+    result.append(", YAxis: ");
+    result.append(yAxis);
     result.append(')');
     return result.toString();
   }

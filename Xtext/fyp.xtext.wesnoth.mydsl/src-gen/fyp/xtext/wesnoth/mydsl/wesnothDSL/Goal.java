@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal#getGoal <em>Goal</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal#getLocValue <em>Loc Value</em>}</li>
  * </ul>
  *
  * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getGoal()
@@ -28,12 +29,12 @@ public interface Goal extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Goal</em>' containment reference.
-   * @see #setGoal(GoalCondition)
+   * @see #setGoal(GoaLocation)
    * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getGoal_Goal()
    * @model containment="true"
    * @generated
    */
-  GoalCondition getGoal();
+  GoaLocation getGoal();
 
   /**
    * Sets the value of the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal#getGoal <em>Goal</em>}' containment reference.
@@ -43,6 +44,28 @@ public interface Goal extends EObject
    * @see #getGoal()
    * @generated
    */
-  void setGoal(GoalCondition value);
+  void setGoal(GoaLocation value);
+
+  /**
+   * Returns the value of the '<em><b>Loc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Loc Value</em>' attribute.
+   * @see #setLocValue(int)
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getGoal_LocValue()
+   * @model
+   * @generated
+   */
+  int getLocValue();
+
+  /**
+   * Sets the value of the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal#getLocValue <em>Loc Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Loc Value</em>' attribute.
+   * @see #getLocValue()
+   * @generated
+   */
+  void setLocValue(int value);
 
 } // Goal

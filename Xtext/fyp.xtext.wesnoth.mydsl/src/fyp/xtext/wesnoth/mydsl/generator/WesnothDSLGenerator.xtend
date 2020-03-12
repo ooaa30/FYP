@@ -4,6 +4,7 @@
 package fyp.xtext.wesnoth.mydsl.generator
 
 import org.eclipse.emf.ecore.resource.Resource
+
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
@@ -16,6 +17,9 @@ import fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Baseline
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.whenRules
 
 /**
  * Generates code from your model files on save.
@@ -131,6 +135,10 @@ class WesnothDSLGenerator extends AbstractGenerator {
 			«FOR frag : rule.fragments»
 			«frag.compile»
 			«ENDFOR»
+			
+			«FOR goal:rule.goals»
+			«goal.compile»
+			«ENDFOR»
 		'''
 		
 		def compile(Fragment frag)'''
@@ -210,29 +218,46 @@ class WesnothDSLGenerator extends AbstractGenerator {
 			max_score=80000
 			score=80000
 		«ENDIF»
-		
 		'''
 		def compile(Conditional con)'''
-		«con.condition.compile»
+		«con.x.resolve» 
 		'''
-		def compile(AtLocation x)'''
+
+		def dispatch resolve(AtLocation x)'''
 		[filter_own]
-			x,y=«x.x»,«x.y»
+			x,y=«x.XAxis»,«x.YAxis»
 		[/filter_own}]
 		'''
-		def compile(Damage x)'''
+		def dispatch resolve(Damage x)'''
 		[filter_own]
 			[filter_wml]
 				hitpoints=<($this_unit.max_hitpoints-«x.health»)
 			[/filter_wml]
 		[/filter_own]
 		'''
-		def compile(UnitEquals x)'''
+		def dispatch resolve(UnitEquals x)'''
 		[filter_own]
 			type = «x.unit»
 		[/filter_own]
 		'''
-		def compile(Baseline x)'''
+		def dispatch resolve(Baseline x)'''
+		'''
+		def compile(Goal x)'''
+		[modify_ai]
+			side =1
+			action = add
+			path=goal[]
+			[goal] 
+				«x.goal.compile»
+				value=«x.locValue»
+			[/goal]
+		[/modify_ai]
+		'''
+		def compile(GoaLocation x)'''
+		name=target_location
+		[criteria]
+			x,y=«x.XAxis»,«x.YAxis»
+		[/criteria]		
 		'''
 	
 		

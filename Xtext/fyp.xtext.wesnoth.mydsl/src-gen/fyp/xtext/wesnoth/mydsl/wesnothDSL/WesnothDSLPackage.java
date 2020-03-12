@@ -179,13 +179,13 @@ public interface WesnothDSLPackage extends EPackage
   int CONDITIONAL = 3;
 
   /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
+   * The feature id for the '<em><b>X</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONDITIONAL__CONDITION = 0;
+  int CONDITIONAL__X = 0;
 
   /**
    * The number of structural features of the '<em>Conditional</em>' class.
@@ -197,6 +197,25 @@ public interface WesnothDSLPackage extends EPackage
   int CONDITIONAL_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.whenRulesImpl <em>when Rules</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.whenRulesImpl
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getwhenRules()
+   * @generated
+   */
+  int WHEN_RULES = 4;
+
+  /**
+   * The number of structural features of the '<em>when Rules</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WHEN_RULES_FEATURE_COUNT = 0;
+
+  /**
    * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.BaselineImpl <em>Baseline</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -204,16 +223,7 @@ public interface WesnothDSLPackage extends EPackage
    * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getBaseline()
    * @generated
    */
-  int BASELINE = 4;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BASELINE__CONDITION = CONDITIONAL__CONDITION;
+  int BASELINE = 5;
 
   /**
    * The feature id for the '<em><b>Always</b></em>' attribute.
@@ -222,7 +232,7 @@ public interface WesnothDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BASELINE__ALWAYS = CONDITIONAL_FEATURE_COUNT + 0;
+  int BASELINE__ALWAYS = WHEN_RULES_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Baseline</em>' class.
@@ -231,7 +241,7 @@ public interface WesnothDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BASELINE_FEATURE_COUNT = CONDITIONAL_FEATURE_COUNT + 1;
+  int BASELINE_FEATURE_COUNT = WHEN_RULES_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.DamageImpl <em>Damage</em>}' class.
@@ -241,16 +251,7 @@ public interface WesnothDSLPackage extends EPackage
    * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getDamage()
    * @generated
    */
-  int DAMAGE = 5;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DAMAGE__CONDITION = CONDITIONAL__CONDITION;
+  int DAMAGE = 6;
 
   /**
    * The feature id for the '<em><b>Health</b></em>' attribute.
@@ -259,7 +260,7 @@ public interface WesnothDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DAMAGE__HEALTH = CONDITIONAL_FEATURE_COUNT + 0;
+  int DAMAGE__HEALTH = WHEN_RULES_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Damage</em>' class.
@@ -268,7 +269,7 @@ public interface WesnothDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DAMAGE_FEATURE_COUNT = CONDITIONAL_FEATURE_COUNT + 1;
+  int DAMAGE_FEATURE_COUNT = WHEN_RULES_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.AtLocationImpl <em>At Location</em>}' class.
@@ -278,25 +279,25 @@ public interface WesnothDSLPackage extends EPackage
    * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getAtLocation()
    * @generated
    */
-  int AT_LOCATION = 6;
+  int AT_LOCATION = 7;
 
   /**
-   * The feature id for the '<em><b>X</b></em>' attribute.
+   * The feature id for the '<em><b>XAxis</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AT_LOCATION__X = 0;
+  int AT_LOCATION__XAXIS = WHEN_RULES_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * The feature id for the '<em><b>YAxis</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AT_LOCATION__Y = 1;
+  int AT_LOCATION__YAXIS = WHEN_RULES_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>At Location</em>' class.
@@ -305,7 +306,7 @@ public interface WesnothDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AT_LOCATION_FEATURE_COUNT = 2;
+  int AT_LOCATION_FEATURE_COUNT = WHEN_RULES_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.UnitEqualsImpl <em>Unit Equals</em>}' class.
@@ -315,16 +316,7 @@ public interface WesnothDSLPackage extends EPackage
    * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getUnitEquals()
    * @generated
    */
-  int UNIT_EQUALS = 7;
-
-  /**
-   * The feature id for the '<em><b>Condition</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNIT_EQUALS__CONDITION = CONDITIONAL__CONDITION;
+  int UNIT_EQUALS = 8;
 
   /**
    * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -333,7 +325,7 @@ public interface WesnothDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNIT_EQUALS__UNIT = CONDITIONAL_FEATURE_COUNT + 0;
+  int UNIT_EQUALS__UNIT = WHEN_RULES_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Unit Equals</em>' class.
@@ -342,7 +334,7 @@ public interface WesnothDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UNIT_EQUALS_FEATURE_COUNT = CONDITIONAL_FEATURE_COUNT + 1;
+  int UNIT_EQUALS_FEATURE_COUNT = WHEN_RULES_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoalImpl <em>Goal</em>}' class.
@@ -352,7 +344,7 @@ public interface WesnothDSLPackage extends EPackage
    * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getGoal()
    * @generated
    */
-  int GOAL = 8;
+  int GOAL = 9;
 
   /**
    * The feature id for the '<em><b>Goal</b></em>' containment reference.
@@ -364,78 +356,59 @@ public interface WesnothDSLPackage extends EPackage
   int GOAL__GOAL = 0;
 
   /**
+   * The feature id for the '<em><b>Loc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOAL__LOC_VALUE = 1;
+
+  /**
    * The number of structural features of the '<em>Goal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOAL_FEATURE_COUNT = 1;
+  int GOAL_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoalConditionImpl <em>Goal Condition</em>}' class.
+   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoaLocationImpl <em>Goa Location</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoalConditionImpl
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getGoalCondition()
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoaLocationImpl
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getGoaLocation()
    * @generated
    */
-  int GOAL_CONDITION = 9;
+  int GOA_LOCATION = 10;
 
   /**
-   * The feature id for the '<em><b>Goal</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOAL_CONDITION__GOAL = 0;
-
-  /**
-   * The number of structural features of the '<em>Goal Condition</em>' class.
+   * The feature id for the '<em><b>XAxis</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOAL_CONDITION_FEATURE_COUNT = 1;
+  int GOA_LOCATION__XAXIS = 0;
 
   /**
-   * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.LocationImpl <em>Location</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.LocationImpl
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getLocation()
-   * @generated
-   */
-  int LOCATION = 10;
-
-  /**
-   * The feature id for the '<em><b>X</b></em>' attribute.
+   * The feature id for the '<em><b>YAxis</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LOCATION__X = 0;
+  int GOA_LOCATION__YAXIS = 1;
 
   /**
-   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * The number of structural features of the '<em>Goa Location</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LOCATION__Y = 1;
-
-  /**
-   * The number of structural features of the '<em>Location</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCATION_FEATURE_COUNT = 2;
+  int GOA_LOCATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.Defualt_CAImpl <em>Defualt CA</em>}' class.
@@ -573,15 +546,25 @@ public interface WesnothDSLPackage extends EPackage
   EClass getConditional();
 
   /**
-   * Returns the meta object for the containment reference '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional#getCondition <em>Condition</em>}'.
+   * Returns the meta object for the containment reference '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional#getX <em>X</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Condition</em>'.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional#getCondition()
+   * @return the meta object for the containment reference '<em>X</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional#getX()
    * @see #getConditional()
    * @generated
    */
-  EReference getConditional_Condition();
+  EReference getConditional_X();
+
+  /**
+   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.whenRules <em>when Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>when Rules</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.whenRules
+   * @generated
+   */
+  EClass getwhenRules();
 
   /**
    * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Baseline <em>Baseline</em>}'.
@@ -636,26 +619,26 @@ public interface WesnothDSLPackage extends EPackage
   EClass getAtLocation();
 
   /**
-   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getX <em>X</em>}'.
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getXAxis <em>XAxis</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>X</em>'.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getX()
+   * @return the meta object for the attribute '<em>XAxis</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getXAxis()
    * @see #getAtLocation()
    * @generated
    */
-  EAttribute getAtLocation_X();
+  EAttribute getAtLocation_XAxis();
 
   /**
-   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getY <em>Y</em>}'.
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getYAxis <em>YAxis</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Y</em>'.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getY()
+   * @return the meta object for the attribute '<em>YAxis</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation#getYAxis()
    * @see #getAtLocation()
    * @generated
    */
-  EAttribute getAtLocation_Y();
+  EAttribute getAtLocation_YAxis();
 
   /**
    * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals <em>Unit Equals</em>}'.
@@ -700,57 +683,47 @@ public interface WesnothDSLPackage extends EPackage
   EReference getGoal_Goal();
 
   /**
-   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.GoalCondition <em>Goal Condition</em>}'.
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal#getLocValue <em>Loc Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Goal Condition</em>'.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.GoalCondition
+   * @return the meta object for the attribute '<em>Loc Value</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal#getLocValue()
+   * @see #getGoal()
    * @generated
    */
-  EClass getGoalCondition();
+  EAttribute getGoal_LocValue();
 
   /**
-   * Returns the meta object for the containment reference '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.GoalCondition#getGoal <em>Goal</em>}'.
+   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation <em>Goa Location</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Goal</em>'.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.GoalCondition#getGoal()
-   * @see #getGoalCondition()
+   * @return the meta object for class '<em>Goa Location</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation
    * @generated
    */
-  EReference getGoalCondition_Goal();
+  EClass getGoaLocation();
 
   /**
-   * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Location <em>Location</em>}'.
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation#getXAxis <em>XAxis</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Location</em>'.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Location
+   * @return the meta object for the attribute '<em>XAxis</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation#getXAxis()
+   * @see #getGoaLocation()
    * @generated
    */
-  EClass getLocation();
+  EAttribute getGoaLocation_XAxis();
 
   /**
-   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Location#getX <em>X</em>}'.
+   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation#getYAxis <em>YAxis</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>X</em>'.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Location#getX()
-   * @see #getLocation()
+   * @return the meta object for the attribute '<em>YAxis</em>'.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.GoaLocation#getYAxis()
+   * @see #getGoaLocation()
    * @generated
    */
-  EAttribute getLocation_X();
-
-  /**
-   * Returns the meta object for the attribute '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Location#getY <em>Y</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Y</em>'.
-   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.Location#getY()
-   * @see #getLocation()
-   * @generated
-   */
-  EAttribute getLocation_Y();
+  EAttribute getGoaLocation_YAxis();
 
   /**
    * Returns the meta object for class '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA <em>Defualt CA</em>}'.
@@ -885,12 +858,22 @@ public interface WesnothDSLPackage extends EPackage
     EClass CONDITIONAL = eINSTANCE.getConditional();
 
     /**
-     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>X</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONDITIONAL__CONDITION = eINSTANCE.getConditional_Condition();
+    EReference CONDITIONAL__X = eINSTANCE.getConditional_X();
+
+    /**
+     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.whenRulesImpl <em>when Rules</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.whenRulesImpl
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getwhenRules()
+     * @generated
+     */
+    EClass WHEN_RULES = eINSTANCE.getwhenRules();
 
     /**
      * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.BaselineImpl <em>Baseline</em>}' class.
@@ -939,20 +922,20 @@ public interface WesnothDSLPackage extends EPackage
     EClass AT_LOCATION = eINSTANCE.getAtLocation();
 
     /**
-     * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>XAxis</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute AT_LOCATION__X = eINSTANCE.getAtLocation_X();
+    EAttribute AT_LOCATION__XAXIS = eINSTANCE.getAtLocation_XAxis();
 
     /**
-     * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>YAxis</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute AT_LOCATION__Y = eINSTANCE.getAtLocation_Y();
+    EAttribute AT_LOCATION__YAXIS = eINSTANCE.getAtLocation_YAxis();
 
     /**
      * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.UnitEqualsImpl <em>Unit Equals</em>}' class.
@@ -991,48 +974,38 @@ public interface WesnothDSLPackage extends EPackage
     EReference GOAL__GOAL = eINSTANCE.getGoal_Goal();
 
     /**
-     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoalConditionImpl <em>Goal Condition</em>}' class.
+     * The meta object literal for the '<em><b>Loc Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoalConditionImpl
-     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getGoalCondition()
      * @generated
      */
-    EClass GOAL_CONDITION = eINSTANCE.getGoalCondition();
+    EAttribute GOAL__LOC_VALUE = eINSTANCE.getGoal_LocValue();
 
     /**
-     * The meta object literal for the '<em><b>Goal</b></em>' containment reference feature.
+     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoaLocationImpl <em>Goa Location</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.GoaLocationImpl
+     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getGoaLocation()
      * @generated
      */
-    EReference GOAL_CONDITION__GOAL = eINSTANCE.getGoalCondition_Goal();
+    EClass GOA_LOCATION = eINSTANCE.getGoaLocation();
 
     /**
-     * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.LocationImpl <em>Location</em>}' class.
+     * The meta object literal for the '<em><b>XAxis</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.LocationImpl
-     * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.WesnothDSLPackageImpl#getLocation()
      * @generated
      */
-    EClass LOCATION = eINSTANCE.getLocation();
+    EAttribute GOA_LOCATION__XAXIS = eINSTANCE.getGoaLocation_XAxis();
 
     /**
-     * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>YAxis</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute LOCATION__X = eINSTANCE.getLocation_X();
-
-    /**
-     * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute LOCATION__Y = eINSTANCE.getLocation_Y();
+    EAttribute GOA_LOCATION__YAXIS = eINSTANCE.getGoaLocation_YAxis();
 
     /**
      * The meta object literal for the '{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.Defualt_CAImpl <em>Defualt CA</em>}' class.
