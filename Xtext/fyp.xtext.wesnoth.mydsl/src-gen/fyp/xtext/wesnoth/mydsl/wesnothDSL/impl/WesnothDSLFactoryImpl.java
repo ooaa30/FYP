@@ -69,13 +69,13 @@ public class WesnothDSLFactoryImpl extends EFactoryImpl implements WesnothDSLFac
       case WesnothDSLPackage.RULE: return createRule();
       case WesnothDSLPackage.FRAGMENT: return createFragment();
       case WesnothDSLPackage.CONDITIONAL: return createConditional();
+      case WesnothDSLPackage.BASELINE: return createBaseline();
       case WesnothDSLPackage.DAMAGE: return createDamage();
-      case WesnothDSLPackage.HEALTH_LEVEL_LESS: return createHealthLevelLess();
-      case WesnothDSLPackage.HEATH_LEVEL_EQUALS: return createHeathLevelEquals();
-      case WesnothDSLPackage.HEALTH_LEVEL_GREATER: return createHealthLevelGreater();
       case WesnothDSLPackage.AT_LOCATION: return createAtLocation();
       case WesnothDSLPackage.UNIT_EQUALS: return createUnitEquals();
-      case WesnothDSLPackage.UNIT_ID: return createUnitID();
+      case WesnothDSLPackage.GOAL: return createGoal();
+      case WesnothDSLPackage.GOAL_CONDITION: return createGoalCondition();
+      case WesnothDSLPackage.LOCATION: return createLocation();
       case WesnothDSLPackage.DEFUALT_CA: return createDefualt_CA();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -136,46 +136,22 @@ public class WesnothDSLFactoryImpl extends EFactoryImpl implements WesnothDSLFac
    * @generated
    */
   @Override
+  public Baseline createBaseline()
+  {
+    BaselineImpl baseline = new BaselineImpl();
+    return baseline;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Damage createDamage()
   {
     DamageImpl damage = new DamageImpl();
     return damage;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public HealthLevelLess createHealthLevelLess()
-  {
-    HealthLevelLessImpl healthLevelLess = new HealthLevelLessImpl();
-    return healthLevelLess;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public HeathLevelEquals createHeathLevelEquals()
-  {
-    HeathLevelEqualsImpl heathLevelEquals = new HeathLevelEqualsImpl();
-    return heathLevelEquals;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public HealthLevelGreater createHealthLevelGreater()
-  {
-    HealthLevelGreaterImpl healthLevelGreater = new HealthLevelGreaterImpl();
-    return healthLevelGreater;
   }
 
   /**
@@ -208,10 +184,34 @@ public class WesnothDSLFactoryImpl extends EFactoryImpl implements WesnothDSLFac
    * @generated
    */
   @Override
-  public UnitID createUnitID()
+  public Goal createGoal()
   {
-    UnitIDImpl unitID = new UnitIDImpl();
-    return unitID;
+    GoalImpl goal = new GoalImpl();
+    return goal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public GoalCondition createGoalCondition()
+  {
+    GoalConditionImpl goalCondition = new GoalConditionImpl();
+    return goalCondition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Location createLocation()
+  {
+    LocationImpl location = new LocationImpl();
+    return location;
   }
 
   /**

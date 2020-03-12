@@ -10,6 +10,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fragments" upperBound="-1"
         eType="#//Fragment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goals" upperBound="-1"
+        eType="#//Goal" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fragment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Conditional"
@@ -21,16 +23,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//AtLocation"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Baseline" eSuperTypes="#//Conditional">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="always" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Damage" eSuperTypes="#//Conditional">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="health" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HealthLevelLess">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="health" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HeathLevelEquals">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="health" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HealthLevelGreater">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="health" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtLocation">
@@ -40,8 +36,17 @@
   <eClassifiers xsi:type="ecore:EClass" name="UnitEquals" eSuperTypes="#//Conditional">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnitID">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Goal">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" eType="#//GoalCondition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GoalCondition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="goal" eType="#//Location"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Location">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Defualt_CA">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="caType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

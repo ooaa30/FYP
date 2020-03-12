@@ -157,9 +157,28 @@ ruleRule returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_4='}'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRuleAccess().getGoalsGoalParserRuleCall_4_0());
+				}
+				lv_goals_4_0=ruleGoal
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRuleRule());
+					}
+					add(
+						$current,
+						"goals",
+						lv_goals_4_0,
+						"fyp.xtext.wesnoth.mydsl.WesnothDSL.Goal");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_5='}'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_4());
+			newLeafNode(otherlv_5, grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_5());
 		}
 	)
 ;
@@ -288,6 +307,46 @@ ruleConditional returns [EObject current=null]
 			$current = $this_UnitEquals_3.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getConditionalAccess().getBaselineParserRuleCall_3());
+		}
+		this_Baseline_4=ruleBaseline
+		{
+			$current = $this_Baseline_4.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleBaseline
+entryRuleBaseline returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBaselineRule()); }
+	iv_ruleBaseline=ruleBaseline
+	{ $current=$iv_ruleBaseline.current; }
+	EOF;
+
+// Rule Baseline
+ruleBaseline returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			lv_always_0_0='always'
+			{
+				newLeafNode(lv_always_0_0, grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getBaselineRule());
+				}
+				setWithLastConsumed($current, "always", lv_always_0_0, "always");
+			}
+		)
 	)
 ;
 
@@ -444,6 +503,151 @@ ruleUnitEquals returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleGoal
+entryRuleGoal returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGoalRule()); }
+	iv_ruleGoal=ruleGoal
+	{ $current=$iv_ruleGoal.current; }
+	EOF;
+
+// Rule Goal
+ruleGoal returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='goal'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getGoalAccess().getGoalKeyword_0());
+		}
+		otherlv_1='='
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGoalAccess().getEqualsSignKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getGoalAccess().getGoalGoalConditionParserRuleCall_2_0());
+				}
+				lv_goal_2_0=ruleGoalCondition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getGoalRule());
+					}
+					set(
+						$current,
+						"goal",
+						lv_goal_2_0,
+						"fyp.xtext.wesnoth.mydsl.WesnothDSL.GoalCondition");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleGoalCondition
+entryRuleGoalCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGoalConditionRule()); }
+	iv_ruleGoalCondition=ruleGoalCondition
+	{ $current=$iv_ruleGoalCondition.current; }
+	EOF;
+
+// Rule GoalCondition
+ruleGoalCondition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getGoalConditionAccess().getGoalLocationParserRuleCall_0());
+			}
+			lv_goal_0_0=ruleLocation
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getGoalConditionRule());
+				}
+				set(
+					$current,
+					"goal",
+					lv_goal_0_0,
+					"fyp.xtext.wesnoth.mydsl.WesnothDSL.Location");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleLocation
+entryRuleLocation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLocationRule()); }
+	iv_ruleLocation=ruleLocation
+	{ $current=$iv_ruleLocation.current; }
+	EOF;
+
+// Rule Location
+ruleLocation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='x'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getLocationAccess().getXKeyword_0());
+		}
+		(
+			(
+				lv_x_1_0=RULE_INT
+				{
+					newLeafNode(lv_x_1_0, grammarAccess.getLocationAccess().getXINTTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLocationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"x",
+						lv_x_1_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_2='y'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getLocationAccess().getYKeyword_2());
+		}
+		(
+			(
+				lv_y_3_0=RULE_INT
+				{
+					newLeafNode(lv_y_3_0, grammarAccess.getLocationAccess().getYINTTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLocationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"y",
+						lv_y_3_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleDefualt_CA
 entryRuleDefualt_CA returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getDefualt_CARule()); }
@@ -473,9 +677,9 @@ ruleDefualt_CA returns [EObject current=null]
 					setWithLastConsumed($current, "caType", lv_caType_0_1, null);
 				}
 				    |
-				lv_caType_0_2='retreat'
+				lv_caType_0_2='heal'
 				{
-					newLeafNode(lv_caType_0_2, grammarAccess.getDefualt_CAAccess().getCaTypeRetreatKeyword_0_1());
+					newLeafNode(lv_caType_0_2, grammarAccess.getDefualt_CAAccess().getCaTypeHealKeyword_0_1());
 				}
 				{
 					if ($current==null) {
@@ -484,9 +688,9 @@ ruleDefualt_CA returns [EObject current=null]
 					setWithLastConsumed($current, "caType", lv_caType_0_2, null);
 				}
 				    |
-				lv_caType_0_3='move_to_target'
+				lv_caType_0_3='retreat'
 				{
-					newLeafNode(lv_caType_0_3, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetKeyword_0_2());
+					newLeafNode(lv_caType_0_3, grammarAccess.getDefualt_CAAccess().getCaTypeRetreatKeyword_0_2());
 				}
 				{
 					if ($current==null) {
@@ -495,9 +699,9 @@ ruleDefualt_CA returns [EObject current=null]
 					setWithLastConsumed($current, "caType", lv_caType_0_3, null);
 				}
 				    |
-				lv_caType_0_4='combat'
+				lv_caType_0_4='move_to_targets'
 				{
-					newLeafNode(lv_caType_0_4, grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_3());
+					newLeafNode(lv_caType_0_4, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_3());
 				}
 				{
 					if ($current==null) {
@@ -506,9 +710,9 @@ ruleDefualt_CA returns [EObject current=null]
 					setWithLastConsumed($current, "caType", lv_caType_0_4, null);
 				}
 				    |
-				lv_caType_0_5='recruit'
+				lv_caType_0_5='basic_movement'
 				{
-					newLeafNode(lv_caType_0_5, grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_4());
+					newLeafNode(lv_caType_0_5, grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_4());
 				}
 				{
 					if ($current==null) {
@@ -517,9 +721,9 @@ ruleDefualt_CA returns [EObject current=null]
 					setWithLastConsumed($current, "caType", lv_caType_0_5, null);
 				}
 				    |
-				lv_caType_0_6='focus_high_XP'
+				lv_caType_0_6='combat'
 				{
-					newLeafNode(lv_caType_0_6, grammarAccess.getDefualt_CAAccess().getCaTypeFocus_high_XPKeyword_0_5());
+					newLeafNode(lv_caType_0_6, grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_5());
 				}
 				{
 					if ($current==null) {
@@ -528,9 +732,9 @@ ruleDefualt_CA returns [EObject current=null]
 					setWithLastConsumed($current, "caType", lv_caType_0_6, null);
 				}
 				    |
-				lv_caType_0_7='move_to_enemy'
+				lv_caType_0_7='recruit'
 				{
-					newLeafNode(lv_caType_0_7, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_enemyKeyword_0_6());
+					newLeafNode(lv_caType_0_7, grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_6());
 				}
 				{
 					if ($current==null) {
@@ -539,15 +743,37 @@ ruleDefualt_CA returns [EObject current=null]
 					setWithLastConsumed($current, "caType", lv_caType_0_7, null);
 				}
 				    |
-				lv_caType_0_8='capture_villages'
+				lv_caType_0_8='combat_value_targets'
 				{
-					newLeafNode(lv_caType_0_8, grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_7());
+					newLeafNode(lv_caType_0_8, grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_7());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getDefualt_CARule());
 					}
 					setWithLastConsumed($current, "caType", lv_caType_0_8, null);
+				}
+				    |
+				lv_caType_0_9='capture_villages'
+				{
+					newLeafNode(lv_caType_0_9, grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_8());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					}
+					setWithLastConsumed($current, "caType", lv_caType_0_9, null);
+				}
+				    |
+				lv_caType_0_10='leader_to_keep'
+				{
+					newLeafNode(lv_caType_0_10, grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_9());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					}
+					setWithLastConsumed($current, "caType", lv_caType_0_10, null);
 				}
 			)
 		)

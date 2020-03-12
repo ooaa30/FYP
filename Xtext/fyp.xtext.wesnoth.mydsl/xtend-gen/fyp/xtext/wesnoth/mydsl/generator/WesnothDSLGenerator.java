@@ -3,8 +3,10 @@
  */
 package fyp.xtext.wesnoth.mydsl.generator;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Baseline;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA;
@@ -317,21 +319,13 @@ public class WesnothDSLGenerator extends AbstractGenerator {
         _builder.append("[candidate_action]");
         _builder.newLine();
         _builder.append("\t\t");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("[filter_own]");
-        _builder.newLine();
-        _builder.append("\t\t");
         CharSequence _compile = this.compile(cas);
         _builder.append(_compile, "\t\t");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
+        _builder.append("\t\t\t");
         CharSequence _compile_1 = this.compile(frag.getCondition());
-        _builder.append(_compile_1, "\t\t");
+        _builder.append(_compile_1, "\t\t\t");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
-        _builder.append("[/filter_own]");
-        _builder.newLine();
         _builder.append("\t\t");
         _builder.append("[/candidate_action");
         _builder.newLine();
@@ -344,6 +338,158 @@ public class WesnothDSLGenerator extends AbstractGenerator {
   
   public CharSequence compile(final Defualt_CA ca) {
     StringConcatenation _builder = new StringConcatenation();
+    {
+      String _caType = ca.getCaType();
+      boolean _equals = Objects.equal(_caType, "movement");
+      if (_equals) {
+        _builder.append("id=goto");
+        _builder.newLine();
+        _builder.append("engine=cpp");
+        _builder.newLine();
+        _builder.append("name=ai_default_rca::goto_phase");
+        _builder.newLine();
+        _builder.append("max_score=200000");
+        _builder.newLine();
+        _builder.append("score=200000");
+        _builder.newLine();
+      } else {
+        String _caType_1 = ca.getCaType();
+        boolean _equals_1 = Objects.equal(_caType_1, "retreat");
+        if (_equals_1) {
+          _builder.append("id=retreat_injured");
+          _builder.newLine();
+          _builder.append("engine=lua");
+          _builder.newLine();
+          _builder.append("name=ai_default_rca::retreat_injured");
+          _builder.newLine();
+          _builder.append("max_score=192000");
+          _builder.newLine();
+          _builder.append("location=\"ai/lua/ca_retreat_injured.lua\"");
+          _builder.newLine();
+        } else {
+          String _caType_2 = ca.getCaType();
+          boolean _equals_2 = Objects.equal(_caType_2, "move_to_target");
+          if (_equals_2) {
+            _builder.append("id=move_to_targets");
+            _builder.newLine();
+            _builder.append("engine=cpp");
+            _builder.newLine();
+            _builder.append("name=ai_default_rca::move_to_targets_phase");
+            _builder.newLine();
+            _builder.append("max_score=20000");
+            _builder.newLine();
+            _builder.append("score=20000");
+            _builder.newLine();
+          } else {
+            String _caType_3 = ca.getCaType();
+            boolean _equals_3 = Objects.equal(_caType_3, "basic_movement");
+            if (_equals_3) {
+              _builder.append("id=move_to_any_enemy");
+              _builder.newLine();
+              _builder.append("engine=lua");
+              _builder.newLine();
+              _builder.append("name=ai_default_rca::move_to_any_enemy");
+              _builder.newLine();
+              _builder.append("max_score=1000");
+              _builder.newLine();
+              _builder.append("location=\"ai/lua/ca_move_to_any_enemy.lua\"\t");
+              _builder.newLine();
+            } else {
+              String _caType_4 = ca.getCaType();
+              boolean _equals_4 = Objects.equal(_caType_4, "combat");
+              if (_equals_4) {
+                _builder.append("id=combat");
+                _builder.newLine();
+                _builder.append("engine=cpp");
+                _builder.newLine();
+                _builder.append("name=ai_default_rca::combat_phase");
+                _builder.newLine();
+                _builder.append("max_score=100000");
+                _builder.newLine();
+                _builder.append("score=100000");
+                _builder.newLine();
+              } else {
+                String _caType_5 = ca.getCaType();
+                boolean _equals_5 = Objects.equal(_caType_5, "recruit");
+                if (_equals_5) {
+                  _builder.append("id=recruitment");
+                  _builder.newLine();
+                  _builder.append("engine=cpp");
+                  _builder.newLine();
+                  _builder.append("name=default_recruitment::recruitment");
+                  _builder.newLine();
+                  _builder.append("max_score=180000");
+                  _builder.newLine();
+                  _builder.append("score=180000");
+                  _builder.newLine();
+                } else {
+                  String _caType_6 = ca.getCaType();
+                  boolean _equals_6 = Objects.equal(_caType_6, "combat_value_targets");
+                  if (_equals_6) {
+                    _builder.append("id=high_xp_attack");
+                    _builder.newLine();
+                    _builder.append("engine=lua");
+                    _builder.newLine();
+                    _builder.append("name=ai_default_rca::high_xp_attack");
+                    _builder.newLine();
+                    _builder.append("location=\"ai/lua/ca_high_xp_attack.lua\"");
+                    _builder.newLine();
+                    _builder.append("max_score=100010");
+                    _builder.newLine();
+                  } else {
+                    String _caType_7 = ca.getCaType();
+                    boolean _equals_7 = Objects.equal(_caType_7, "capture_villages");
+                    if (_equals_7) {
+                      _builder.append("id=villages");
+                      _builder.newLine();
+                      _builder.append("engine=cpp");
+                      _builder.newLine();
+                      _builder.append("name=ai_default_rca::get_villages_phase");
+                      _builder.newLine();
+                      _builder.append("max_score=60000");
+                      _builder.newLine();
+                      _builder.append("score=60000");
+                      _builder.newLine();
+                    } else {
+                      String _caType_8 = ca.getCaType();
+                      boolean _equals_8 = Objects.equal(_caType_8, "leader_to_keep");
+                      if (_equals_8) {
+                        _builder.append("id=move_leader_to_keep");
+                        _builder.newLine();
+                        _builder.append("engine=cpp");
+                        _builder.newLine();
+                        _builder.append("name=ai_default_rca::move_leader_to_keep_phase");
+                        _builder.newLine();
+                        _builder.append("max_score=120000");
+                        _builder.newLine();
+                        _builder.append("score=120000");
+                        _builder.newLine();
+                      } else {
+                        String _caType_9 = ca.getCaType();
+                        boolean _equals_9 = Objects.equal(_caType_9, "heal");
+                        if (_equals_9) {
+                          _builder.append("id=healing");
+                          _builder.newLine();
+                          _builder.append("engine=cpp");
+                          _builder.newLine();
+                          _builder.append("name=ai_default_rca::get_healing_phase");
+                          _builder.newLine();
+                          _builder.append("max_score=80000");
+                          _builder.newLine();
+                          _builder.append("score=80000");
+                          _builder.newLine();
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    _builder.newLine();
     return _builder;
   }
   
@@ -357,37 +503,58 @@ public class WesnothDSLGenerator extends AbstractGenerator {
   
   public CharSequence compile(final AtLocation x) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("[filter_own]");
+    _builder.newLine();
+    _builder.append("\t");
     _builder.append("x,y=");
     int _x = x.getX();
-    _builder.append(_x);
+    _builder.append(_x, "\t");
     _builder.append(",");
     int _y = x.getY();
-    _builder.append(_y);
+    _builder.append(_y, "\t");
     _builder.newLineIfNotEmpty();
+    _builder.append("[/filter_own}]");
+    _builder.newLine();
     return _builder;
   }
   
   public CharSequence compile(final Damage x) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("[filter_wml]");
+    _builder.append("[filter_own]");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("hitpoints=($this_unit.max_hitpoints-");
+    _builder.append("[filter_wml]");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("hitpoints=<($this_unit.max_hitpoints-");
     int _health = x.getHealth();
-    _builder.append(_health, "\t");
+    _builder.append(_health, "\t\t");
     _builder.append(")");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t");
     _builder.append("[/filter_wml]");
+    _builder.newLine();
+    _builder.append("[/filter_own]");
     _builder.newLine();
     return _builder;
   }
   
   public CharSequence compile(final UnitEquals x) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("[filter_own]");
+    _builder.newLine();
+    _builder.append("\t");
     _builder.append("type = ");
     String _unit = x.getUnit();
-    _builder.append(_unit);
+    _builder.append(_unit, "\t");
     _builder.newLineIfNotEmpty();
+    _builder.append("[/filter_own]");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public CharSequence compile(final Baseline x) {
+    StringConcatenation _builder = new StringConcatenation();
     return _builder;
   }
 }

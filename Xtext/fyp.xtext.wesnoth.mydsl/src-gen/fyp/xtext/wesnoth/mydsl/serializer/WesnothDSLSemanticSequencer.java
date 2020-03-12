@@ -6,17 +6,17 @@ package fyp.xtext.wesnoth.mydsl.serializer;
 import com.google.inject.Inject;
 import fyp.xtext.wesnoth.mydsl.services.WesnothDSLGrammarAccess;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Baseline;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment;
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelGreater;
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelLess;
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.HeathLevelEquals;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.GoalCondition;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Location;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Model;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals;
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitID;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -46,6 +46,9 @@ public class WesnothDSLSemanticSequencer extends AbstractDelegatingSemanticSeque
 			case WesnothDSLPackage.AT_LOCATION:
 				sequence_AtLocation(context, (AtLocation) semanticObject); 
 				return; 
+			case WesnothDSLPackage.BASELINE:
+				sequence_Baseline(context, (Baseline) semanticObject); 
+				return; 
 			case WesnothDSLPackage.CONDITIONAL:
 				sequence_Conditional(context, (Conditional) semanticObject); 
 				return; 
@@ -58,14 +61,14 @@ public class WesnothDSLSemanticSequencer extends AbstractDelegatingSemanticSeque
 			case WesnothDSLPackage.FRAGMENT:
 				sequence_Fragment(context, (Fragment) semanticObject); 
 				return; 
-			case WesnothDSLPackage.HEALTH_LEVEL_GREATER:
-				sequence_HealthLevelGreater(context, (HealthLevelGreater) semanticObject); 
+			case WesnothDSLPackage.GOAL:
+				sequence_Goal(context, (Goal) semanticObject); 
 				return; 
-			case WesnothDSLPackage.HEALTH_LEVEL_LESS:
-				sequence_HealthLevelLess(context, (HealthLevelLess) semanticObject); 
+			case WesnothDSLPackage.GOAL_CONDITION:
+				sequence_GoalCondition(context, (GoalCondition) semanticObject); 
 				return; 
-			case WesnothDSLPackage.HEATH_LEVEL_EQUALS:
-				sequence_HeathLevelEquals(context, (HeathLevelEquals) semanticObject); 
+			case WesnothDSLPackage.LOCATION:
+				sequence_Location(context, (Location) semanticObject); 
 				return; 
 			case WesnothDSLPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -75,9 +78,6 @@ public class WesnothDSLSemanticSequencer extends AbstractDelegatingSemanticSeque
 				return; 
 			case WesnothDSLPackage.UNIT_EQUALS:
 				sequence_UnitEquals(context, (UnitEquals) semanticObject); 
-				return; 
-			case WesnothDSLPackage.UNIT_ID:
-				sequence_UnitID(context, (UnitID) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -101,6 +101,25 @@ public class WesnothDSLSemanticSequencer extends AbstractDelegatingSemanticSeque
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getAtLocationAccess().getXINTTerminalRuleCall_1_0(), semanticObject.getX());
 		feeder.accept(grammarAccess.getAtLocationAccess().getYINTTerminalRuleCall_3_0(), semanticObject.getY());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Conditional returns Baseline
+	 *     Baseline returns Baseline
+	 *
+	 * Constraint:
+	 *     always='always'
+	 */
+	protected void sequence_Baseline(ISerializationContext context, Baseline semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WesnothDSLPackage.Literals.BASELINE__ALWAYS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WesnothDSLPackage.Literals.BASELINE__ALWAYS));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0(), semanticObject.getAlways());
 		feeder.finish();
 	}
 	
@@ -149,13 +168,15 @@ public class WesnothDSLSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 * Constraint:
 	 *     (
 	 *         caType='movement' | 
+	 *         caType='heal' | 
 	 *         caType='retreat' | 
-	 *         caType='move_to_target' | 
+	 *         caType='move_to_targets' | 
+	 *         caType='basic_movement' | 
 	 *         caType='combat' | 
 	 *         caType='recruit' | 
-	 *         caType='focus_high_XP' | 
-	 *         caType='move_to_enemy' | 
-	 *         caType='capture_villages'
+	 *         caType='combat_value_targets' | 
+	 *         caType='capture_villages' | 
+	 *         caType='leader_to_keep'
 	 *     )
 	 */
 	protected void sequence_Defualt_CA(ISerializationContext context, Defualt_CA semanticObject) {
@@ -177,54 +198,57 @@ public class WesnothDSLSemanticSequencer extends AbstractDelegatingSemanticSeque
 	
 	/**
 	 * Contexts:
-	 *     HealthLevelGreater returns HealthLevelGreater
+	 *     GoalCondition returns GoalCondition
 	 *
 	 * Constraint:
-	 *     health=INT
+	 *     goal=Location
 	 */
-	protected void sequence_HealthLevelGreater(ISerializationContext context, HealthLevelGreater semanticObject) {
+	protected void sequence_GoalCondition(ISerializationContext context, GoalCondition semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WesnothDSLPackage.Literals.HEALTH_LEVEL_GREATER__HEALTH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WesnothDSLPackage.Literals.HEALTH_LEVEL_GREATER__HEALTH));
+			if (transientValues.isValueTransient(semanticObject, WesnothDSLPackage.Literals.GOAL_CONDITION__GOAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WesnothDSLPackage.Literals.GOAL_CONDITION__GOAL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getHealthLevelGreaterAccess().getHealthINTTerminalRuleCall_3_0(), semanticObject.getHealth());
+		feeder.accept(grammarAccess.getGoalConditionAccess().getGoalLocationParserRuleCall_0(), semanticObject.getGoal());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     HealthLevelLess returns HealthLevelLess
+	 *     Goal returns Goal
 	 *
 	 * Constraint:
-	 *     health=INT
+	 *     goal=GoalCondition
 	 */
-	protected void sequence_HealthLevelLess(ISerializationContext context, HealthLevelLess semanticObject) {
+	protected void sequence_Goal(ISerializationContext context, Goal semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WesnothDSLPackage.Literals.HEALTH_LEVEL_LESS__HEALTH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WesnothDSLPackage.Literals.HEALTH_LEVEL_LESS__HEALTH));
+			if (transientValues.isValueTransient(semanticObject, WesnothDSLPackage.Literals.GOAL__GOAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WesnothDSLPackage.Literals.GOAL__GOAL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getHealthLevelLessAccess().getHealthINTTerminalRuleCall_3_0(), semanticObject.getHealth());
+		feeder.accept(grammarAccess.getGoalAccess().getGoalGoalConditionParserRuleCall_2_0(), semanticObject.getGoal());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     HeathLevelEquals returns HeathLevelEquals
+	 *     Location returns Location
 	 *
 	 * Constraint:
-	 *     health=INT
+	 *     (x=INT y=INT)
 	 */
-	protected void sequence_HeathLevelEquals(ISerializationContext context, HeathLevelEquals semanticObject) {
+	protected void sequence_Location(ISerializationContext context, Location semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WesnothDSLPackage.Literals.HEATH_LEVEL_EQUALS__HEALTH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WesnothDSLPackage.Literals.HEATH_LEVEL_EQUALS__HEALTH));
+			if (transientValues.isValueTransient(semanticObject, WesnothDSLPackage.Literals.LOCATION__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WesnothDSLPackage.Literals.LOCATION__X));
+			if (transientValues.isValueTransient(semanticObject, WesnothDSLPackage.Literals.LOCATION__Y) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WesnothDSLPackage.Literals.LOCATION__Y));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getHeathLevelEqualsAccess().getHealthINTTerminalRuleCall_2_0(), semanticObject.getHealth());
+		feeder.accept(grammarAccess.getLocationAccess().getXINTTerminalRuleCall_1_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getLocationAccess().getYINTTerminalRuleCall_3_0(), semanticObject.getY());
 		feeder.finish();
 	}
 	
@@ -246,7 +270,7 @@ public class WesnothDSLSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     (name=STRING fragments+=Fragment)
+	 *     (name=STRING fragments+=Fragment goals+=Goal*)
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -268,24 +292,6 @@ public class WesnothDSLSemanticSequencer extends AbstractDelegatingSemanticSeque
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getUnitEqualsAccess().getUnitSTRINGTerminalRuleCall_2_0(), semanticObject.getUnit());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     UnitID returns UnitID
-	 *
-	 * Constraint:
-	 *     name=STRING
-	 */
-	protected void sequence_UnitID(ISerializationContext context, UnitID semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WesnothDSLPackage.Literals.UNIT_ID__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WesnothDSLPackage.Literals.UNIT_ID__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getUnitIDAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	

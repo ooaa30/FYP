@@ -101,32 +101,19 @@ public class WesnothDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case WesnothDSLPackage.BASELINE:
+      {
+        Baseline baseline = (Baseline)theEObject;
+        T result = caseBaseline(baseline);
+        if (result == null) result = caseConditional(baseline);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case WesnothDSLPackage.DAMAGE:
       {
         Damage damage = (Damage)theEObject;
         T result = caseDamage(damage);
         if (result == null) result = caseConditional(damage);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case WesnothDSLPackage.HEALTH_LEVEL_LESS:
-      {
-        HealthLevelLess healthLevelLess = (HealthLevelLess)theEObject;
-        T result = caseHealthLevelLess(healthLevelLess);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case WesnothDSLPackage.HEATH_LEVEL_EQUALS:
-      {
-        HeathLevelEquals heathLevelEquals = (HeathLevelEquals)theEObject;
-        T result = caseHeathLevelEquals(heathLevelEquals);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case WesnothDSLPackage.HEALTH_LEVEL_GREATER:
-      {
-        HealthLevelGreater healthLevelGreater = (HealthLevelGreater)theEObject;
-        T result = caseHealthLevelGreater(healthLevelGreater);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -145,10 +132,24 @@ public class WesnothDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case WesnothDSLPackage.UNIT_ID:
+      case WesnothDSLPackage.GOAL:
       {
-        UnitID unitID = (UnitID)theEObject;
-        T result = caseUnitID(unitID);
+        Goal goal = (Goal)theEObject;
+        T result = caseGoal(goal);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WesnothDSLPackage.GOAL_CONDITION:
+      {
+        GoalCondition goalCondition = (GoalCondition)theEObject;
+        T result = caseGoalCondition(goalCondition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WesnothDSLPackage.LOCATION:
+      {
+        Location location = (Location)theEObject;
+        T result = caseLocation(location);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -228,6 +229,22 @@ public class WesnothDSLSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Baseline</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Baseline</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBaseline(Baseline object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Damage</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -239,54 +256,6 @@ public class WesnothDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseDamage(Damage object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Health Level Less</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Health Level Less</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseHealthLevelLess(HealthLevelLess object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Heath Level Equals</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Heath Level Equals</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseHeathLevelEquals(HeathLevelEquals object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Health Level Greater</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Health Level Greater</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseHealthLevelGreater(HealthLevelGreater object)
   {
     return null;
   }
@@ -324,17 +293,49 @@ public class WesnothDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Unit ID</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Goal</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Unit ID</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Goal</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUnitID(UnitID object)
+  public T caseGoal(Goal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Goal Condition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Goal Condition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGoalCondition(GoalCondition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Location</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Location</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLocation(Location object)
   {
     return null;
   }

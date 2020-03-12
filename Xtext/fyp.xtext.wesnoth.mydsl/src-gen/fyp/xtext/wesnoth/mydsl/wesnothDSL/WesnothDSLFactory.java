@@ -60,6 +60,15 @@ public interface WesnothDSLFactory extends EFactory
   Conditional createConditional();
 
   /**
+   * Returns a new object of class '<em>Baseline</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Baseline</em>'.
+   * @generated
+   */
+  Baseline createBaseline();
+
+  /**
    * Returns a new object of class '<em>Damage</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -67,33 +76,6 @@ public interface WesnothDSLFactory extends EFactory
    * @generated
    */
   Damage createDamage();
-
-  /**
-   * Returns a new object of class '<em>Health Level Less</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Health Level Less</em>'.
-   * @generated
-   */
-  HealthLevelLess createHealthLevelLess();
-
-  /**
-   * Returns a new object of class '<em>Heath Level Equals</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Heath Level Equals</em>'.
-   * @generated
-   */
-  HeathLevelEquals createHeathLevelEquals();
-
-  /**
-   * Returns a new object of class '<em>Health Level Greater</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Health Level Greater</em>'.
-   * @generated
-   */
-  HealthLevelGreater createHealthLevelGreater();
 
   /**
    * Returns a new object of class '<em>At Location</em>'.
@@ -114,13 +96,31 @@ public interface WesnothDSLFactory extends EFactory
   UnitEquals createUnitEquals();
 
   /**
-   * Returns a new object of class '<em>Unit ID</em>'.
+   * Returns a new object of class '<em>Goal</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unit ID</em>'.
+   * @return a new object of class '<em>Goal</em>'.
    * @generated
    */
-  UnitID createUnitID();
+  Goal createGoal();
+
+  /**
+   * Returns a new object of class '<em>Goal Condition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Goal Condition</em>'.
+   * @generated
+   */
+  GoalCondition createGoalCondition();
+
+  /**
+   * Returns a new object of class '<em>Location</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Location</em>'.
+   * @generated
+   */
+  Location createLocation();
 
   /**
    * Returns a new object of class '<em>Defualt CA</em>'.

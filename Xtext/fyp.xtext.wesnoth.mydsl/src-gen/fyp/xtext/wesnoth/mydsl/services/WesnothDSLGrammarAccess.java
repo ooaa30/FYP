@@ -46,16 +46,19 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cFragmentsAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cFragmentsFragmentParserRuleCall_3_0 = (RuleCall)cFragmentsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cGoalsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cGoalsGoalParserRuleCall_4_0 = (RuleCall)cGoalsAssignment_4.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Rule:
 		//	'rule' name=STRING
 		//	'{'
 		//	fragments+=Fragment
+		//	goals+=Goal*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'rule' name=STRING '{' fragments+=Fragment '}'
+		//'rule' name=STRING '{' fragments+=Fragment goals+=Goal* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'rule'
@@ -76,8 +79,14 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//Fragment
 		public RuleCall getFragmentsFragmentParserRuleCall_3_0() { return cFragmentsFragmentParserRuleCall_3_0; }
 		
+		//goals+=Goal*
+		public Assignment getGoalsAssignment_4() { return cGoalsAssignment_4; }
+		
+		//Goal
+		public RuleCall getGoalsGoalParserRuleCall_4_0() { return cGoalsGoalParserRuleCall_4_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class FragmentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Fragment");
@@ -126,6 +135,7 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cConditionAtLocationParserRuleCall_0_1_0 = (RuleCall)cConditionAssignment_0_1.eContents().get(0);
 		private final RuleCall cDamageParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cUnitEqualsParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cBaselineParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//// filters don't seem to work in the [AI} tag, may need to make the code generation subtractive rather than additive
 		//// could use [Modify_AI] tag to do this, need investigation
@@ -133,10 +143,10 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//// can use filter own for unit types 100%, may be able to filter other things too
 		//// will need to add them in from scratch with wml, no extra code but need to refferenc them again
 		//Conditional:
-		//	'when:' condition=AtLocation | Damage | UnitEquals;
+		//	'when:' condition=AtLocation | Damage | UnitEquals | Baseline;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'when:' condition=AtLocation | Damage | UnitEquals
+		//'when:' condition=AtLocation | Damage | UnitEquals | Baseline
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'when:' condition=AtLocation
@@ -156,6 +166,24 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//UnitEquals
 		public RuleCall getUnitEqualsParserRuleCall_2() { return cUnitEqualsParserRuleCall_2; }
+		
+		//Baseline
+		public RuleCall getBaselineParserRuleCall_3() { return cBaselineParserRuleCall_3; }
+	}
+	public class BaselineElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Baseline");
+		private final Assignment cAlwaysAssignment = (Assignment)rule.eContents().get(1);
+		private final Keyword cAlwaysAlwaysKeyword_0 = (Keyword)cAlwaysAssignment.eContents().get(0);
+		
+		//Baseline:
+		//	always='always';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//always='always'
+		public Assignment getAlwaysAssignment() { return cAlwaysAssignment; }
+		
+		//'always'
+		public Keyword getAlwaysAlwaysKeyword_0() { return cAlwaysAlwaysKeyword_0; }
 	}
 	public class DamageElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Damage");
@@ -183,95 +211,6 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//INT
 		public RuleCall getHealthINTTerminalRuleCall_2_0() { return cHealthINTTerminalRuleCall_2_0; }
-	}
-	public class HealthLevelLessElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.HealthLevelLess");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHealthKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLessKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cThanKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cHealthAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cHealthINTTerminalRuleCall_3_0 = (RuleCall)cHealthAssignment_3.eContents().get(0);
-		
-		//HealthLevelLess:
-		//	'health' 'less' 'than' health=INT;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'health' 'less' 'than' health=INT
-		public Group getGroup() { return cGroup; }
-		
-		//'health'
-		public Keyword getHealthKeyword_0() { return cHealthKeyword_0; }
-		
-		//'less'
-		public Keyword getLessKeyword_1() { return cLessKeyword_1; }
-		
-		//'than'
-		public Keyword getThanKeyword_2() { return cThanKeyword_2; }
-		
-		//health=INT
-		public Assignment getHealthAssignment_3() { return cHealthAssignment_3; }
-		
-		//INT
-		public RuleCall getHealthINTTerminalRuleCall_3_0() { return cHealthINTTerminalRuleCall_3_0; }
-	}
-	public class HeathLevelEqualsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.HeathLevelEquals");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHealthKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cHealthAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cHealthINTTerminalRuleCall_2_0 = (RuleCall)cHealthAssignment_2.eContents().get(0);
-		
-		//HeathLevelEquals:
-		//	'health' 'is' health=INT;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'health' 'is' health=INT
-		public Group getGroup() { return cGroup; }
-		
-		//'health'
-		public Keyword getHealthKeyword_0() { return cHealthKeyword_0; }
-		
-		//'is'
-		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
-		
-		//health=INT
-		public Assignment getHealthAssignment_2() { return cHealthAssignment_2; }
-		
-		//INT
-		public RuleCall getHealthINTTerminalRuleCall_2_0() { return cHealthINTTerminalRuleCall_2_0; }
-	}
-	public class HealthLevelGreaterElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.HealthLevelGreater");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHealthKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cGreaterKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cThanKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cHealthAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cHealthINTTerminalRuleCall_3_0 = (RuleCall)cHealthAssignment_3.eContents().get(0);
-		
-		//HealthLevelGreater:
-		//	'health' 'greater' 'than' health=INT;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'health' 'greater' 'than' health=INT
-		public Group getGroup() { return cGroup; }
-		
-		//'health'
-		public Keyword getHealthKeyword_0() { return cHealthKeyword_0; }
-		
-		//'greater'
-		public Keyword getGreaterKeyword_1() { return cGreaterKeyword_1; }
-		
-		//'than'
-		public Keyword getThanKeyword_2() { return cThanKeyword_2; }
-		
-		//health=INT
-		public Assignment getHealthAssignment_3() { return cHealthAssignment_3; }
-		
-		//INT
-		public RuleCall getHealthINTTerminalRuleCall_3_0() { return cHealthINTTerminalRuleCall_3_0; }
 	}
 	public class AtLocationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.AtLocation");
@@ -335,41 +274,82 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getUnitSTRINGTerminalRuleCall_2_0() { return cUnitSTRINGTerminalRuleCall_2_0; }
 	}
-	public class UnitIDElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.UnitID");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cUnitIDKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		
-		//UnitID:
-		//	'unitID' name=STRING;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'unitID' name=STRING
-		public Group getGroup() { return cGroup; }
-		
-		//'unitID'
-		public Keyword getUnitIDKeyword_0() { return cUnitIDKeyword_0; }
-		
-		//name=STRING
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
-	}
 	public class GoalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Goal");
-		private final Keyword cGoalKeyword = (Keyword)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cGoalKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cGoalAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cGoalGoalConditionParserRuleCall_2_0 = (RuleCall)cGoalAssignment_2.eContents().get(0);
 		
-		////TODO research and implement "Attributes" Like aggressiveness and stuff
-		////TODO add in options for the existing goals, sub rules?
 		//Goal:
-		//	'goal';
+		//	'goal' '=' goal=GoalCondition;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//'goal' '=' goal=GoalCondition
+		public Group getGroup() { return cGroup; }
+		
 		//'goal'
-		public Keyword getGoalKeyword() { return cGoalKeyword; }
+		public Keyword getGoalKeyword_0() { return cGoalKeyword_0; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_1() { return cEqualsSignKeyword_1; }
+		
+		//goal=GoalCondition
+		public Assignment getGoalAssignment_2() { return cGoalAssignment_2; }
+		
+		//GoalCondition
+		public RuleCall getGoalGoalConditionParserRuleCall_2_0() { return cGoalGoalConditionParserRuleCall_2_0; }
+	}
+	public class GoalConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.GoalCondition");
+		private final Assignment cGoalAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cGoalLocationParserRuleCall_0 = (RuleCall)cGoalAssignment.eContents().get(0);
+		
+		//GoalCondition:
+		//	goal=Location;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//goal=Location
+		public Assignment getGoalAssignment() { return cGoalAssignment; }
+		
+		//Location
+		public RuleCall getGoalLocationParserRuleCall_0() { return cGoalLocationParserRuleCall_0; }
+	}
+	public class LocationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.Location");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cXKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cXAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cXINTTerminalRuleCall_1_0 = (RuleCall)cXAssignment_1.eContents().get(0);
+		private final Keyword cYKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cYAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cYINTTerminalRuleCall_3_0 = (RuleCall)cYAssignment_3.eContents().get(0);
+		
+		//Location:
+		//	'x' x=INT 'y' y=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'x' x=INT 'y' y=INT
+		public Group getGroup() { return cGroup; }
+		
+		//'x'
+		public Keyword getXKeyword_0() { return cXKeyword_0; }
+		
+		//x=INT
+		public Assignment getXAssignment_1() { return cXAssignment_1; }
+		
+		//INT
+		public RuleCall getXINTTerminalRuleCall_1_0() { return cXINTTerminalRuleCall_1_0; }
+		
+		//'y'
+		public Keyword getYKeyword_2() { return cYKeyword_2; }
+		
+		//y=INT
+		public Assignment getYAssignment_3() { return cYAssignment_3; }
+		
+		//INT
+		public RuleCall getYINTTerminalRuleCall_3_0() { return cYINTTerminalRuleCall_3_0; }
 	}
 	public class New_CAElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fyp.xtext.wesnoth.mydsl.WesnothDSL.New_CA");
@@ -387,50 +367,58 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cCaTypeAssignment = (Assignment)rule.eContents().get(1);
 		private final Alternatives cCaTypeAlternatives_0 = (Alternatives)cCaTypeAssignment.eContents().get(0);
 		private final Keyword cCaTypeMovementKeyword_0_0 = (Keyword)cCaTypeAlternatives_0.eContents().get(0);
-		private final Keyword cCaTypeRetreatKeyword_0_1 = (Keyword)cCaTypeAlternatives_0.eContents().get(1);
-		private final Keyword cCaTypeMove_to_targetKeyword_0_2 = (Keyword)cCaTypeAlternatives_0.eContents().get(2);
-		private final Keyword cCaTypeCombatKeyword_0_3 = (Keyword)cCaTypeAlternatives_0.eContents().get(3);
-		private final Keyword cCaTypeRecruitKeyword_0_4 = (Keyword)cCaTypeAlternatives_0.eContents().get(4);
-		private final Keyword cCaTypeFocus_high_XPKeyword_0_5 = (Keyword)cCaTypeAlternatives_0.eContents().get(5);
-		private final Keyword cCaTypeMove_to_enemyKeyword_0_6 = (Keyword)cCaTypeAlternatives_0.eContents().get(6);
-		private final Keyword cCaTypeCapture_villagesKeyword_0_7 = (Keyword)cCaTypeAlternatives_0.eContents().get(7);
+		private final Keyword cCaTypeHealKeyword_0_1 = (Keyword)cCaTypeAlternatives_0.eContents().get(1);
+		private final Keyword cCaTypeRetreatKeyword_0_2 = (Keyword)cCaTypeAlternatives_0.eContents().get(2);
+		private final Keyword cCaTypeMove_to_targetsKeyword_0_3 = (Keyword)cCaTypeAlternatives_0.eContents().get(3);
+		private final Keyword cCaTypeBasic_movementKeyword_0_4 = (Keyword)cCaTypeAlternatives_0.eContents().get(4);
+		private final Keyword cCaTypeCombatKeyword_0_5 = (Keyword)cCaTypeAlternatives_0.eContents().get(5);
+		private final Keyword cCaTypeRecruitKeyword_0_6 = (Keyword)cCaTypeAlternatives_0.eContents().get(6);
+		private final Keyword cCaTypeCombat_value_targetsKeyword_0_7 = (Keyword)cCaTypeAlternatives_0.eContents().get(7);
+		private final Keyword cCaTypeCapture_villagesKeyword_0_8 = (Keyword)cCaTypeAlternatives_0.eContents().get(8);
+		private final Keyword cCaTypeLeader_to_keepKeyword_0_9 = (Keyword)cCaTypeAlternatives_0.eContents().get(9);
 		
 		//Defualt_CA:
-		//	caType=("movement" | "retreat" | "move_to_target" | "combat" | "recruit" | "focus_high_XP" | "move_to_enemy" |
-		//	"capture_villages");
+		//	caType=("movement" | "heal" | "retreat" | "move_to_targets" | "basic_movement" | "combat" | "recruit" |
+		//	"combat_value_targets" | "capture_villages" | "leader_to_keep");
 		@Override public ParserRule getRule() { return rule; }
 		
-		//caType=("movement" | "retreat" | "move_to_target" | "combat" | "recruit" | "focus_high_XP" | "move_to_enemy" |
-		//"capture_villages")
+		//caType=("movement" | "heal" | "retreat" | "move_to_targets" | "basic_movement" | "combat" | "recruit" |
+		//"combat_value_targets" | "capture_villages" | "leader_to_keep")
 		public Assignment getCaTypeAssignment() { return cCaTypeAssignment; }
 		
-		//("movement" | "retreat" | "move_to_target" | "combat" | "recruit" | "focus_high_XP" | "move_to_enemy" |
-		//"capture_villages")
+		//("movement" | "heal" | "retreat" | "move_to_targets" | "basic_movement" | "combat" | "recruit" | "combat_value_targets"
+		//| "capture_villages" | "leader_to_keep")
 		public Alternatives getCaTypeAlternatives_0() { return cCaTypeAlternatives_0; }
 		
 		//"movement"
 		public Keyword getCaTypeMovementKeyword_0_0() { return cCaTypeMovementKeyword_0_0; }
 		
-		//"retreat"
-		public Keyword getCaTypeRetreatKeyword_0_1() { return cCaTypeRetreatKeyword_0_1; }
+		//"heal"
+		public Keyword getCaTypeHealKeyword_0_1() { return cCaTypeHealKeyword_0_1; }
 		
-		//"move_to_target"
-		public Keyword getCaTypeMove_to_targetKeyword_0_2() { return cCaTypeMove_to_targetKeyword_0_2; }
+		//"retreat"
+		public Keyword getCaTypeRetreatKeyword_0_2() { return cCaTypeRetreatKeyword_0_2; }
+		
+		//"move_to_targets"
+		public Keyword getCaTypeMove_to_targetsKeyword_0_3() { return cCaTypeMove_to_targetsKeyword_0_3; }
+		
+		//"basic_movement"
+		public Keyword getCaTypeBasic_movementKeyword_0_4() { return cCaTypeBasic_movementKeyword_0_4; }
 		
 		//"combat"
-		public Keyword getCaTypeCombatKeyword_0_3() { return cCaTypeCombatKeyword_0_3; }
+		public Keyword getCaTypeCombatKeyword_0_5() { return cCaTypeCombatKeyword_0_5; }
 		
 		//"recruit"
-		public Keyword getCaTypeRecruitKeyword_0_4() { return cCaTypeRecruitKeyword_0_4; }
+		public Keyword getCaTypeRecruitKeyword_0_6() { return cCaTypeRecruitKeyword_0_6; }
 		
-		//"focus_high_XP"
-		public Keyword getCaTypeFocus_high_XPKeyword_0_5() { return cCaTypeFocus_high_XPKeyword_0_5; }
-		
-		//"move_to_enemy"
-		public Keyword getCaTypeMove_to_enemyKeyword_0_6() { return cCaTypeMove_to_enemyKeyword_0_6; }
+		//"combat_value_targets"
+		public Keyword getCaTypeCombat_value_targetsKeyword_0_7() { return cCaTypeCombat_value_targetsKeyword_0_7; }
 		
 		//"capture_villages"
-		public Keyword getCaTypeCapture_villagesKeyword_0_7() { return cCaTypeCapture_villagesKeyword_0_7; }
+		public Keyword getCaTypeCapture_villagesKeyword_0_8() { return cCaTypeCapture_villagesKeyword_0_8; }
+		
+		//"leader_to_keep"
+		public Keyword getCaTypeLeader_to_keepKeyword_0_9() { return cCaTypeLeader_to_keepKeyword_0_9; }
 	}
 	
 	
@@ -438,14 +426,13 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	private final RuleElements pRule;
 	private final FragmentElements pFragment;
 	private final ConditionalElements pConditional;
+	private final BaselineElements pBaseline;
 	private final DamageElements pDamage;
-	private final HealthLevelLessElements pHealthLevelLess;
-	private final HeathLevelEqualsElements pHeathLevelEquals;
-	private final HealthLevelGreaterElements pHealthLevelGreater;
 	private final AtLocationElements pAtLocation;
 	private final UnitEqualsElements pUnitEquals;
-	private final UnitIDElements pUnitID;
 	private final GoalElements pGoal;
+	private final GoalConditionElements pGoalCondition;
+	private final LocationElements pLocation;
 	private final New_CAElements pNew_CA;
 	private final Defualt_CAElements pDefualt_CA;
 	
@@ -462,14 +449,13 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pRule = new RuleElements();
 		this.pFragment = new FragmentElements();
 		this.pConditional = new ConditionalElements();
+		this.pBaseline = new BaselineElements();
 		this.pDamage = new DamageElements();
-		this.pHealthLevelLess = new HealthLevelLessElements();
-		this.pHeathLevelEquals = new HeathLevelEqualsElements();
-		this.pHealthLevelGreater = new HealthLevelGreaterElements();
 		this.pAtLocation = new AtLocationElements();
 		this.pUnitEquals = new UnitEqualsElements();
-		this.pUnitID = new UnitIDElements();
 		this.pGoal = new GoalElements();
+		this.pGoalCondition = new GoalConditionElements();
+		this.pLocation = new LocationElements();
 		this.pNew_CA = new New_CAElements();
 		this.pDefualt_CA = new Defualt_CAElements();
 	}
@@ -515,6 +501,7 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//	'rule' name=STRING
 	//	'{'
 	//	fragments+=Fragment
+	//	goals+=Goal*
 	//	'}';
 	public RuleElements getRuleAccess() {
 		return pRule;
@@ -543,13 +530,23 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//// can use filter own for unit types 100%, may be able to filter other things too
 	//// will need to add them in from scratch with wml, no extra code but need to refferenc them again
 	//Conditional:
-	//	'when:' condition=AtLocation | Damage | UnitEquals;
+	//	'when:' condition=AtLocation | Damage | UnitEquals | Baseline;
 	public ConditionalElements getConditionalAccess() {
 		return pConditional;
 	}
 	
 	public ParserRule getConditionalRule() {
 		return getConditionalAccess().getRule();
+	}
+	
+	//Baseline:
+	//	always='always';
+	public BaselineElements getBaselineAccess() {
+		return pBaseline;
+	}
+	
+	public ParserRule getBaselineRule() {
+		return getBaselineAccess().getRule();
 	}
 	
 	//Damage:
@@ -560,36 +557,6 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getDamageRule() {
 		return getDamageAccess().getRule();
-	}
-	
-	//HealthLevelLess:
-	//	'health' 'less' 'than' health=INT;
-	public HealthLevelLessElements getHealthLevelLessAccess() {
-		return pHealthLevelLess;
-	}
-	
-	public ParserRule getHealthLevelLessRule() {
-		return getHealthLevelLessAccess().getRule();
-	}
-	
-	//HeathLevelEquals:
-	//	'health' 'is' health=INT;
-	public HeathLevelEqualsElements getHeathLevelEqualsAccess() {
-		return pHeathLevelEquals;
-	}
-	
-	public ParserRule getHeathLevelEqualsRule() {
-		return getHeathLevelEqualsAccess().getRule();
-	}
-	
-	//HealthLevelGreater:
-	//	'health' 'greater' 'than' health=INT;
-	public HealthLevelGreaterElements getHealthLevelGreaterAccess() {
-		return pHealthLevelGreater;
-	}
-	
-	public ParserRule getHealthLevelGreaterRule() {
-		return getHealthLevelGreaterAccess().getRule();
 	}
 	
 	//AtLocation:
@@ -612,26 +579,34 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		return getUnitEqualsAccess().getRule();
 	}
 	
-	//UnitID:
-	//	'unitID' name=STRING;
-	public UnitIDElements getUnitIDAccess() {
-		return pUnitID;
-	}
-	
-	public ParserRule getUnitIDRule() {
-		return getUnitIDAccess().getRule();
-	}
-	
-	////TODO research and implement "Attributes" Like aggressiveness and stuff
-	////TODO add in options for the existing goals, sub rules?
 	//Goal:
-	//	'goal';
+	//	'goal' '=' goal=GoalCondition;
 	public GoalElements getGoalAccess() {
 		return pGoal;
 	}
 	
 	public ParserRule getGoalRule() {
 		return getGoalAccess().getRule();
+	}
+	
+	//GoalCondition:
+	//	goal=Location;
+	public GoalConditionElements getGoalConditionAccess() {
+		return pGoalCondition;
+	}
+	
+	public ParserRule getGoalConditionRule() {
+		return getGoalConditionAccess().getRule();
+	}
+	
+	//Location:
+	//	'x' x=INT 'y' y=INT;
+	public LocationElements getLocationAccess() {
+		return pLocation;
+	}
+	
+	public ParserRule getLocationRule() {
+		return getLocationAccess().getRule();
 	}
 	
 	//New_CA:
@@ -645,8 +620,8 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Defualt_CA:
-	//	caType=("movement" | "retreat" | "move_to_target" | "combat" | "recruit" | "focus_high_XP" | "move_to_enemy" |
-	//	"capture_villages");
+	//	caType=("movement" | "heal" | "retreat" | "move_to_targets" | "basic_movement" | "combat" | "recruit" |
+	//	"combat_value_targets" | "capture_villages" | "leader_to_keep");
 	public Defualt_CAElements getDefualt_CAAccess() {
 		return pDefualt_CA;
 	}

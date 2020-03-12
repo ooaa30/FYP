@@ -13,11 +13,9 @@ import fyp.xtext.wesnoth.mydsl.wesnothDSL.Defualt_CA
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Conditional
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.AtLocation
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelGreater
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.HeathLevelEquals
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelLess
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.UnitEquals
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Damage
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Baseline
 
 /**
  * Generates code from your model files on save.
@@ -142,31 +140,99 @@ class WesnothDSLGenerator extends AbstractGenerator {
 				action = add
 				path = stage[main_loop].candidate_action[]
 					[candidate_action]
-					
-					[filter_own]
 					«cas.compile»
-					«frag.condition.compile»
-					[/filter_own]
+						«frag.condition.compile»
 					[/candidate_action
 			[/modify_ai]
 		«ENDFOR»
 		'''
-		
+		//go through and add the candidate actions back in by hand
+		// look at AiWML page for details under [filter_own]
 		def compile(Defualt_CA ca)'''
+		«IF ca.caType =="movement"»
+			id=goto
+			engine=cpp
+			name=ai_default_rca::goto_phase
+			max_score=200000
+			score=200000
+		«ELSEIF ca.caType=="retreat"»
+			id=retreat_injured
+			engine=lua
+			name=ai_default_rca::retreat_injured
+			max_score=192000
+			location="ai/lua/ca_retreat_injured.lua"
+		«ELSEIF ca.caType =="move_to_target"»
+			id=move_to_targets
+			engine=cpp
+			name=ai_default_rca::move_to_targets_phase
+			max_score=20000
+			score=20000
+		«ELSEIF ca.caType == "basic_movement"»
+			id=move_to_any_enemy
+			engine=lua
+			name=ai_default_rca::move_to_any_enemy
+			max_score=1000
+			location="ai/lua/ca_move_to_any_enemy.lua"	
+		«ELSEIF ca.caType == "combat"»
+			id=combat
+			engine=cpp
+			name=ai_default_rca::combat_phase
+			max_score=100000
+			score=100000
+		«ELSEIF ca.caType =="recruit"»
+			id=recruitment
+			engine=cpp
+			name=default_recruitment::recruitment
+			max_score=180000
+			score=180000
+		«ELSEIF ca.caType =="combat_value_targets"»
+			id=high_xp_attack
+			engine=lua
+			name=ai_default_rca::high_xp_attack
+			location="ai/lua/ca_high_xp_attack.lua"
+			max_score=100010
+		«ELSEIF ca.caType == "capture_villages"»
+			id=villages
+			engine=cpp
+			name=ai_default_rca::get_villages_phase
+			max_score=60000
+			score=60000
+		«ELSEIF ca.caType =="leader_to_keep"»
+			id=move_leader_to_keep
+			engine=cpp
+			name=ai_default_rca::move_leader_to_keep_phase
+			max_score=120000
+			score=120000
+		«ELSEIF ca.caType =="heal"»
+			id=healing
+			engine=cpp
+			name=ai_default_rca::get_healing_phase
+			max_score=80000
+			score=80000
+		«ENDIF»
+		
 		'''
 		def compile(Conditional con)'''
 		«con.condition.compile»
 		'''
 		def compile(AtLocation x)'''
-		x,y=«x.x»,«x.y»
+		[filter_own]
+			x,y=«x.x»,«x.y»
+		[/filter_own}]
 		'''
 		def compile(Damage x)'''
-		[filter_wml]
-			hitpoints=($this_unit.max_hitpoints-«x.health»)
-		[/filter_wml]
+		[filter_own]
+			[filter_wml]
+				hitpoints=<($this_unit.max_hitpoints-«x.health»)
+			[/filter_wml]
+		[/filter_own]
 		'''
 		def compile(UnitEquals x)'''
-		type = «x.unit»
+		[filter_own]
+			type = «x.unit»
+		[/filter_own]
+		'''
+		def compile(Baseline x)'''
 		'''
 	
 		

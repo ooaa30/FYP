@@ -3,7 +3,7 @@
  */
 package fyp.xtext.wesnoth.mydsl.wesnothDSL.impl;
 
-import fyp.xtext.wesnoth.mydsl.wesnothDSL.HealthLevelLess;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Baseline;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -11,49 +11,48 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Health Level Less</b></em>'.
+ * An implementation of the model object '<em><b>Baseline</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.HealthLevelLessImpl#getHealth <em>Health</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.BaselineImpl#getAlways <em>Always</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class HealthLevelLessImpl extends MinimalEObjectImpl.Container implements HealthLevelLess
+public class BaselineImpl extends ConditionalImpl implements Baseline
 {
   /**
-   * The default value of the '{@link #getHealth() <em>Health</em>}' attribute.
+   * The default value of the '{@link #getAlways() <em>Always</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHealth()
+   * @see #getAlways()
    * @generated
    * @ordered
    */
-  protected static final int HEALTH_EDEFAULT = 0;
+  protected static final String ALWAYS_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getHealth() <em>Health</em>}' attribute.
+   * The cached value of the '{@link #getAlways() <em>Always</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getHealth()
+   * @see #getAlways()
    * @generated
    * @ordered
    */
-  protected int health = HEALTH_EDEFAULT;
+  protected String always = ALWAYS_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected HealthLevelLessImpl()
+  protected BaselineImpl()
   {
     super();
   }
@@ -66,7 +65,7 @@ public class HealthLevelLessImpl extends MinimalEObjectImpl.Container implements
   @Override
   protected EClass eStaticClass()
   {
-    return WesnothDSLPackage.Literals.HEALTH_LEVEL_LESS;
+    return WesnothDSLPackage.Literals.BASELINE;
   }
 
   /**
@@ -75,9 +74,9 @@ public class HealthLevelLessImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public int getHealth()
+  public String getAlways()
   {
-    return health;
+    return always;
   }
 
   /**
@@ -86,12 +85,12 @@ public class HealthLevelLessImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
-  public void setHealth(int newHealth)
+  public void setAlways(String newAlways)
   {
-    int oldHealth = health;
-    health = newHealth;
+    String oldAlways = always;
+    always = newAlways;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.HEALTH_LEVEL_LESS__HEALTH, oldHealth, health));
+      eNotify(new ENotificationImpl(this, Notification.SET, WesnothDSLPackage.BASELINE__ALWAYS, oldAlways, always));
   }
 
   /**
@@ -104,8 +103,8 @@ public class HealthLevelLessImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.HEALTH_LEVEL_LESS__HEALTH:
-        return getHealth();
+      case WesnothDSLPackage.BASELINE__ALWAYS:
+        return getAlways();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +119,8 @@ public class HealthLevelLessImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.HEALTH_LEVEL_LESS__HEALTH:
-        setHealth((Integer)newValue);
+      case WesnothDSLPackage.BASELINE__ALWAYS:
+        setAlways((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +136,8 @@ public class HealthLevelLessImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.HEALTH_LEVEL_LESS__HEALTH:
-        setHealth(HEALTH_EDEFAULT);
+      case WesnothDSLPackage.BASELINE__ALWAYS:
+        setAlways(ALWAYS_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +153,8 @@ public class HealthLevelLessImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
-      case WesnothDSLPackage.HEALTH_LEVEL_LESS__HEALTH:
-        return health != HEALTH_EDEFAULT;
+      case WesnothDSLPackage.BASELINE__ALWAYS:
+        return ALWAYS_EDEFAULT == null ? always != null : !ALWAYS_EDEFAULT.equals(always);
     }
     return super.eIsSet(featureID);
   }
@@ -171,10 +170,10 @@ public class HealthLevelLessImpl extends MinimalEObjectImpl.Container implements
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (health: ");
-    result.append(health);
+    result.append(" (always: ");
+    result.append(always);
     result.append(')');
     return result.toString();
   }
 
-} //HealthLevelLessImpl
+} //BaselineImpl

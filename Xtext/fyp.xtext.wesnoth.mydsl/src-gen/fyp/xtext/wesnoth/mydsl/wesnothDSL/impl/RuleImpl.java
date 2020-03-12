@@ -4,6 +4,7 @@
 package fyp.xtext.wesnoth.mydsl.wesnothDSL.impl;
 
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Fragment;
+import fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule;
 import fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage;
 
@@ -33,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.RuleImpl#getName <em>Name</em>}</li>
  *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.RuleImpl#getFragments <em>Fragments</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.impl.RuleImpl#getGoals <em>Goals</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,6 +70,16 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
    * @ordered
    */
   protected EList<Fragment> fragments;
+
+  /**
+   * The cached value of the '{@link #getGoals() <em>Goals</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getGoals()
+   * @generated
+   * @ordered
+   */
+  protected EList<Goal> goals;
 
   /**
    * <!-- begin-user-doc -->
@@ -136,12 +148,29 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
    * @generated
    */
   @Override
+  public EList<Goal> getGoals()
+  {
+    if (goals == null)
+    {
+      goals = new EObjectContainmentEList<Goal>(Goal.class, this, WesnothDSLPackage.RULE__GOALS);
+    }
+    return goals;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case WesnothDSLPackage.RULE__FRAGMENTS:
         return ((InternalEList<?>)getFragments()).basicRemove(otherEnd, msgs);
+      case WesnothDSLPackage.RULE__GOALS:
+        return ((InternalEList<?>)getGoals()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -160,6 +189,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
         return getName();
       case WesnothDSLPackage.RULE__FRAGMENTS:
         return getFragments();
+      case WesnothDSLPackage.RULE__GOALS:
+        return getGoals();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -182,6 +213,10 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
         getFragments().clear();
         getFragments().addAll((Collection<? extends Fragment>)newValue);
         return;
+      case WesnothDSLPackage.RULE__GOALS:
+        getGoals().clear();
+        getGoals().addAll((Collection<? extends Goal>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -202,6 +237,9 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
       case WesnothDSLPackage.RULE__FRAGMENTS:
         getFragments().clear();
         return;
+      case WesnothDSLPackage.RULE__GOALS:
+        getGoals().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -220,6 +258,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case WesnothDSLPackage.RULE__FRAGMENTS:
         return fragments != null && !fragments.isEmpty();
+      case WesnothDSLPackage.RULE__GOALS:
+        return goals != null && !goals.isEmpty();
     }
     return super.eIsSet(featureID);
   }

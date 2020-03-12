@@ -10,13 +10,14 @@ Rule:
 	'rule' name = STRING
 	'{'
 		fragments+=Fragment
+		goals+=Goal*
 		'}'
 ;
 
 Fragment:
 	condition=Conditional
 	'{'
-		(defualt_cas+=Defualt_CA)*
+		defualt_cas+=Defualt_CA*
 		'}'
 ;
 // filters don't seem to work in the [AI} tag, may need to make the code generation subtractive rather than additive
@@ -25,23 +26,15 @@ Fragment:
 // can use filter own for unit types 100%, may be able to filter other things too
 // will need to add them in from scratch with wml, no extra code but need to refferenc them again
 Conditional:
-	'when:' condition=AtLocation|Damage|UnitEquals
+	'when:' condition=AtLocation|Damage|UnitEquals|Baseline
+;
+
+Baseline:
+	always='always'
 ;
 
 Damage:
 	'health' '-' health=INT
-;
-
-HealthLevelLess:
-	'health' 'less' 'than' health=INT
-;
-
-HeathLevelEquals:
-	'health' 'is' health=INT
-;
-
-HealthLevelGreater:
-	'health' 'greater' 'than' health=INT
 ;
 
 AtLocation:
@@ -52,15 +45,16 @@ UnitEquals:
 	'unit' 'is' unit = STRING
 ;
 
-UnitID:
-	'unitID' name = STRING
+Goal:
+	'goal' '=' goal=GoalCondition
 ;
 
-//TODO research and implement "Attributes" Like aggressiveness and stuff
+GoalCondition:
+	goal= Location
+;
 
-//TODO add in options for the existing goals, sub rules?
-Goal:
-	'goal'
+Location:
+	'x' x=INT 'y' y=INT
 ;
 
 New_CA:
@@ -68,5 +62,5 @@ New_CA:
 ;
 
 Defualt_CA:
-	caType = ("movement" | "retreat" | "move_to_target" | "combat" | "recruit" | "focus_high_XP" | "move_to_enemy" | "capture_villages")
+	caType = ("movement" |"heal"| "retreat" | "move_to_targets"| "basic_movement" | "combat" | "recruit" | "combat_value_targets" | "capture_villages"|"leader_to_keep")
 ;

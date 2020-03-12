@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getName <em>Name</em>}</li>
  *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getFragments <em>Fragments</em>}</li>
+ *   <li>{@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Rule#getGoals <em>Goals</em>}</li>
  * </ul>
  *
  * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getRule()
@@ -59,5 +60,17 @@ public interface Rule extends EObject
    * @generated
    */
   EList<Fragment> getFragments();
+
+  /**
+   * Returns the value of the '<em><b>Goals</b></em>' containment reference list.
+   * The list contents are of type {@link fyp.xtext.wesnoth.mydsl.wesnothDSL.Goal}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Goals</em>' containment reference list.
+   * @see fyp.xtext.wesnoth.mydsl.wesnothDSL.WesnothDSLPackage#getRule_Goals()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Goal> getGoals();
 
 } // Rule
