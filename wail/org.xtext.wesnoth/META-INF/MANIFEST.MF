@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.wesnoth
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.wesnoth
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.wesnoth; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.xtext.wesnoth.wail.impl,
+ org.xtext.wesnoth.wail,
+ org.xtext.wesnoth.parser.antlr,
+ org.xtext.wesnoth,
+ org.xtext.wesnoth.serializer,
+ org.xtext.wesnoth.scoping,
+ org.xtext.wesnoth.services,
+ org.xtext.wesnoth.wail.util,
+ org.xtext.wesnoth.parser.antlr.internal,
+ org.xtext.wesnoth.validation,
+ org.xtext.wesnoth.generator
+Import-Package: org.apache.log4j
