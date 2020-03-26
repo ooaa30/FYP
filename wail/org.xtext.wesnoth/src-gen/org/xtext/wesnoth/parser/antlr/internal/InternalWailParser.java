@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalWailParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'rule'", "'{'", "'}'", "'when:'", "'always'", "'health'", "'-'", "'x:'", "'y:'", "'unit'", "'is'", "'goal'", "'value'", "'x'", "'y'", "'movement'", "'heal'", "'retreat'", "'move_to_targets'", "'basic_movement'", "'combat'", "'recruit'", "'combat_value_targets'", "'capture_villages'", "'leader_to_keep'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'rule'", "'{'", "'}'", "'when:'", "'always'", "'health'", "'-'", "'x:'", "'y:'", "'unit'", "'is'", "'goal'", "'value'", "'x'", "'y'", "'movement'", "'heal'", "'retreat'", "'move_to_targets'", "'basic_movement'", "'combat'", "'recruit'", "'combat_value_targets'", "'capture_villages'", "'leader_to_keep'", "'cost'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -37,6 +37,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
     public static final int T__13=13;
     public static final int T__35=35;
     public static final int T__14=14;
+    public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -1675,7 +1676,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefualt_CA"
-    // InternalWail.g:674:1: ruleDefualt_CA returns [EObject current=null] : ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) ) ;
+    // InternalWail.g:674:1: ruleDefualt_CA returns [EObject current=null] : ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? ) ;
     public final EObject ruleDefualt_CA() throws RecognitionException {
         EObject current = null;
 
@@ -1689,21 +1690,26 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         Token lv_caType_0_8=null;
         Token lv_caType_0_9=null;
         Token lv_caType_0_10=null;
+        Token otherlv_1=null;
+        Token lv_cost_2_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalWail.g:680:2: ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) ) )
-            // InternalWail.g:681:2: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) )
+            // InternalWail.g:680:2: ( ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? ) )
+            // InternalWail.g:681:2: ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? )
             {
-            // InternalWail.g:681:2: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) )
-            // InternalWail.g:682:3: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) )
+            // InternalWail.g:681:2: ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? )
+            // InternalWail.g:682:3: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )?
             {
-            // InternalWail.g:682:3: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) )
-            // InternalWail.g:683:4: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' )
+            // InternalWail.g:682:3: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) )
+            // InternalWail.g:683:4: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) )
             {
-            // InternalWail.g:683:4: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' )
+            // InternalWail.g:683:4: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) )
+            // InternalWail.g:684:5: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' )
+            {
+            // InternalWail.g:684:5: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' )
             int alt6=10;
             switch ( input.LA(1) ) {
             case 26:
@@ -1765,168 +1771,218 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             switch (alt6) {
                 case 1 :
-                    // InternalWail.g:684:5: lv_caType_0_1= 'movement'
+                    // InternalWail.g:685:6: lv_caType_0_1= 'movement'
                     {
-                    lv_caType_0_1=(Token)match(input,26,FOLLOW_2); 
+                    lv_caType_0_1=(Token)match(input,26,FOLLOW_17); 
 
-                    					newLeafNode(lv_caType_0_1, grammarAccess.getDefualt_CAAccess().getCaTypeMovementKeyword_0_0());
-                    				
+                    						newLeafNode(lv_caType_0_1, grammarAccess.getDefualt_CAAccess().getCaTypeMovementKeyword_0_0_0());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getDefualt_CARule());
-                    					}
-                    					setWithLastConsumed(current, "caType", lv_caType_0_1, null);
-                    				
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getDefualt_CARule());
+                    						}
+                    						setWithLastConsumed(current, "caType", lv_caType_0_1, null);
+                    					
 
                     }
                     break;
                 case 2 :
-                    // InternalWail.g:695:5: lv_caType_0_2= 'heal'
+                    // InternalWail.g:696:6: lv_caType_0_2= 'heal'
                     {
-                    lv_caType_0_2=(Token)match(input,27,FOLLOW_2); 
+                    lv_caType_0_2=(Token)match(input,27,FOLLOW_17); 
 
-                    					newLeafNode(lv_caType_0_2, grammarAccess.getDefualt_CAAccess().getCaTypeHealKeyword_0_1());
-                    				
+                    						newLeafNode(lv_caType_0_2, grammarAccess.getDefualt_CAAccess().getCaTypeHealKeyword_0_0_1());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getDefualt_CARule());
-                    					}
-                    					setWithLastConsumed(current, "caType", lv_caType_0_2, null);
-                    				
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getDefualt_CARule());
+                    						}
+                    						setWithLastConsumed(current, "caType", lv_caType_0_2, null);
+                    					
 
                     }
                     break;
                 case 3 :
-                    // InternalWail.g:706:5: lv_caType_0_3= 'retreat'
+                    // InternalWail.g:707:6: lv_caType_0_3= 'retreat'
                     {
-                    lv_caType_0_3=(Token)match(input,28,FOLLOW_2); 
+                    lv_caType_0_3=(Token)match(input,28,FOLLOW_17); 
 
-                    					newLeafNode(lv_caType_0_3, grammarAccess.getDefualt_CAAccess().getCaTypeRetreatKeyword_0_2());
-                    				
+                    						newLeafNode(lv_caType_0_3, grammarAccess.getDefualt_CAAccess().getCaTypeRetreatKeyword_0_0_2());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getDefualt_CARule());
-                    					}
-                    					setWithLastConsumed(current, "caType", lv_caType_0_3, null);
-                    				
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getDefualt_CARule());
+                    						}
+                    						setWithLastConsumed(current, "caType", lv_caType_0_3, null);
+                    					
 
                     }
                     break;
                 case 4 :
-                    // InternalWail.g:717:5: lv_caType_0_4= 'move_to_targets'
+                    // InternalWail.g:718:6: lv_caType_0_4= 'move_to_targets'
                     {
-                    lv_caType_0_4=(Token)match(input,29,FOLLOW_2); 
+                    lv_caType_0_4=(Token)match(input,29,FOLLOW_17); 
 
-                    					newLeafNode(lv_caType_0_4, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_3());
-                    				
+                    						newLeafNode(lv_caType_0_4, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_0_3());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getDefualt_CARule());
-                    					}
-                    					setWithLastConsumed(current, "caType", lv_caType_0_4, null);
-                    				
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getDefualt_CARule());
+                    						}
+                    						setWithLastConsumed(current, "caType", lv_caType_0_4, null);
+                    					
 
                     }
                     break;
                 case 5 :
-                    // InternalWail.g:728:5: lv_caType_0_5= 'basic_movement'
+                    // InternalWail.g:729:6: lv_caType_0_5= 'basic_movement'
                     {
-                    lv_caType_0_5=(Token)match(input,30,FOLLOW_2); 
+                    lv_caType_0_5=(Token)match(input,30,FOLLOW_17); 
 
-                    					newLeafNode(lv_caType_0_5, grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_4());
-                    				
+                    						newLeafNode(lv_caType_0_5, grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_0_4());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getDefualt_CARule());
-                    					}
-                    					setWithLastConsumed(current, "caType", lv_caType_0_5, null);
-                    				
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getDefualt_CARule());
+                    						}
+                    						setWithLastConsumed(current, "caType", lv_caType_0_5, null);
+                    					
 
                     }
                     break;
                 case 6 :
-                    // InternalWail.g:739:5: lv_caType_0_6= 'combat'
+                    // InternalWail.g:740:6: lv_caType_0_6= 'combat'
                     {
-                    lv_caType_0_6=(Token)match(input,31,FOLLOW_2); 
+                    lv_caType_0_6=(Token)match(input,31,FOLLOW_17); 
 
-                    					newLeafNode(lv_caType_0_6, grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_5());
-                    				
+                    						newLeafNode(lv_caType_0_6, grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_5());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getDefualt_CARule());
-                    					}
-                    					setWithLastConsumed(current, "caType", lv_caType_0_6, null);
-                    				
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getDefualt_CARule());
+                    						}
+                    						setWithLastConsumed(current, "caType", lv_caType_0_6, null);
+                    					
 
                     }
                     break;
                 case 7 :
-                    // InternalWail.g:750:5: lv_caType_0_7= 'recruit'
+                    // InternalWail.g:751:6: lv_caType_0_7= 'recruit'
                     {
-                    lv_caType_0_7=(Token)match(input,32,FOLLOW_2); 
+                    lv_caType_0_7=(Token)match(input,32,FOLLOW_17); 
 
-                    					newLeafNode(lv_caType_0_7, grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_6());
-                    				
+                    						newLeafNode(lv_caType_0_7, grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_6());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getDefualt_CARule());
-                    					}
-                    					setWithLastConsumed(current, "caType", lv_caType_0_7, null);
-                    				
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getDefualt_CARule());
+                    						}
+                    						setWithLastConsumed(current, "caType", lv_caType_0_7, null);
+                    					
 
                     }
                     break;
                 case 8 :
-                    // InternalWail.g:761:5: lv_caType_0_8= 'combat_value_targets'
+                    // InternalWail.g:762:6: lv_caType_0_8= 'combat_value_targets'
                     {
-                    lv_caType_0_8=(Token)match(input,33,FOLLOW_2); 
+                    lv_caType_0_8=(Token)match(input,33,FOLLOW_17); 
 
-                    					newLeafNode(lv_caType_0_8, grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_7());
-                    				
+                    						newLeafNode(lv_caType_0_8, grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_7());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getDefualt_CARule());
-                    					}
-                    					setWithLastConsumed(current, "caType", lv_caType_0_8, null);
-                    				
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getDefualt_CARule());
+                    						}
+                    						setWithLastConsumed(current, "caType", lv_caType_0_8, null);
+                    					
 
                     }
                     break;
                 case 9 :
-                    // InternalWail.g:772:5: lv_caType_0_9= 'capture_villages'
+                    // InternalWail.g:773:6: lv_caType_0_9= 'capture_villages'
                     {
-                    lv_caType_0_9=(Token)match(input,34,FOLLOW_2); 
+                    lv_caType_0_9=(Token)match(input,34,FOLLOW_17); 
 
-                    					newLeafNode(lv_caType_0_9, grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_8());
-                    				
+                    						newLeafNode(lv_caType_0_9, grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_8());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getDefualt_CARule());
-                    					}
-                    					setWithLastConsumed(current, "caType", lv_caType_0_9, null);
-                    				
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getDefualt_CARule());
+                    						}
+                    						setWithLastConsumed(current, "caType", lv_caType_0_9, null);
+                    					
 
                     }
                     break;
                 case 10 :
-                    // InternalWail.g:783:5: lv_caType_0_10= 'leader_to_keep'
+                    // InternalWail.g:784:6: lv_caType_0_10= 'leader_to_keep'
                     {
-                    lv_caType_0_10=(Token)match(input,35,FOLLOW_2); 
+                    lv_caType_0_10=(Token)match(input,35,FOLLOW_17); 
 
-                    					newLeafNode(lv_caType_0_10, grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_9());
-                    				
+                    						newLeafNode(lv_caType_0_10, grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_9());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getDefualt_CARule());
-                    					}
-                    					setWithLastConsumed(current, "caType", lv_caType_0_10, null);
-                    				
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getDefualt_CARule());
+                    						}
+                    						setWithLastConsumed(current, "caType", lv_caType_0_10, null);
+                    					
 
                     }
                     break;
 
             }
 
+
+            }
+
+
+            }
+
+            // InternalWail.g:797:3: (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==36) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // InternalWail.g:798:4: otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) )
+                    {
+                    otherlv_1=(Token)match(input,36,FOLLOW_11); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getDefualt_CAAccess().getCostKeyword_1_0());
+                    			
+                    // InternalWail.g:802:4: ( (lv_cost_2_0= RULE_INT ) )
+                    // InternalWail.g:803:5: (lv_cost_2_0= RULE_INT )
+                    {
+                    // InternalWail.g:803:5: (lv_cost_2_0= RULE_INT )
+                    // InternalWail.g:804:6: lv_cost_2_0= RULE_INT
+                    {
+                    lv_cost_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+                    						newLeafNode(lv_cost_2_0, grammarAccess.getDefualt_CAAccess().getCostINTTerminalRuleCall_1_1_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getDefualt_CARule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"cost",
+                    							lv_cost_2_0,
+                    							"org.eclipse.xtext.common.Terminals.INT");
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -1972,5 +2028,6 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000001000000002L});
 
 }

@@ -164,16 +164,19 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *
 	 * Constraint:
 	 *     (
-	 *         caType='movement' | 
-	 *         caType='heal' | 
-	 *         caType='retreat' | 
-	 *         caType='move_to_targets' | 
-	 *         caType='basic_movement' | 
-	 *         caType='combat' | 
-	 *         caType='recruit' | 
-	 *         caType='combat_value_targets' | 
-	 *         caType='capture_villages' | 
-	 *         caType='leader_to_keep'
+	 *         (
+	 *             caType='movement' | 
+	 *             caType='heal' | 
+	 *             caType='retreat' | 
+	 *             caType='move_to_targets' | 
+	 *             caType='basic_movement' | 
+	 *             caType='combat' | 
+	 *             caType='recruit' | 
+	 *             caType='combat_value_targets' | 
+	 *             caType='capture_villages' | 
+	 *             caType='leader_to_keep'
+	 *         ) 
+	 *         cost=INT?
 	 *     )
 	 */
 	protected void sequence_Defualt_CA(ISerializationContext context, Defualt_CA semanticObject) {

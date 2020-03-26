@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalWailParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'movement'", "'heal'", "'retreat'", "'move_to_targets'", "'basic_movement'", "'combat'", "'recruit'", "'combat_value_targets'", "'capture_villages'", "'leader_to_keep'", "'rule'", "'{'", "'}'", "'when:'", "'health'", "'-'", "'x:'", "'y:'", "'unit'", "'is'", "'goal'", "'value'", "'x'", "'y'", "'always'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'movement'", "'heal'", "'retreat'", "'move_to_targets'", "'basic_movement'", "'combat'", "'recruit'", "'combat_value_targets'", "'capture_villages'", "'leader_to_keep'", "'rule'", "'{'", "'}'", "'when:'", "'health'", "'-'", "'x:'", "'y:'", "'unit'", "'is'", "'goal'", "'value'", "'x'", "'y'", "'cost'", "'always'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -38,6 +38,7 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
     public static final int T__13=13;
     public static final int T__35=35;
     public static final int T__14=14;
+    public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -989,31 +990,31 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleDefualt_CA"
-    // InternalWail.g:337:1: ruleDefualt_CA : ( ( rule__Defualt_CA__CaTypeAssignment ) ) ;
+    // InternalWail.g:337:1: ruleDefualt_CA : ( ( rule__Defualt_CA__Group__0 ) ) ;
     public final void ruleDefualt_CA() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:341:2: ( ( ( rule__Defualt_CA__CaTypeAssignment ) ) )
-            // InternalWail.g:342:2: ( ( rule__Defualt_CA__CaTypeAssignment ) )
+            // InternalWail.g:341:2: ( ( ( rule__Defualt_CA__Group__0 ) ) )
+            // InternalWail.g:342:2: ( ( rule__Defualt_CA__Group__0 ) )
             {
-            // InternalWail.g:342:2: ( ( rule__Defualt_CA__CaTypeAssignment ) )
-            // InternalWail.g:343:3: ( rule__Defualt_CA__CaTypeAssignment )
+            // InternalWail.g:342:2: ( ( rule__Defualt_CA__Group__0 ) )
+            // InternalWail.g:343:3: ( rule__Defualt_CA__Group__0 )
             {
-             before(grammarAccess.getDefualt_CAAccess().getCaTypeAssignment()); 
-            // InternalWail.g:344:3: ( rule__Defualt_CA__CaTypeAssignment )
-            // InternalWail.g:344:4: rule__Defualt_CA__CaTypeAssignment
+             before(grammarAccess.getDefualt_CAAccess().getGroup()); 
+            // InternalWail.g:344:3: ( rule__Defualt_CA__Group__0 )
+            // InternalWail.g:344:4: rule__Defualt_CA__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Defualt_CA__CaTypeAssignment();
+            rule__Defualt_CA__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDefualt_CAAccess().getCaTypeAssignment()); 
+             after(grammarAccess.getDefualt_CAAccess().getGroup()); 
 
             }
 
@@ -1060,7 +1061,7 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                 alt2=3;
                 }
                 break;
-            case 35:
+            case 36:
                 {
                 alt2=4;
                 }
@@ -1166,9 +1167,9 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__WhenRules__Alternatives"
 
 
-    // $ANTLR start "rule__Defualt_CA__CaTypeAlternatives_0"
-    // InternalWail.g:385:1: rule__Defualt_CA__CaTypeAlternatives_0 : ( ( 'movement' ) | ( 'heal' ) | ( 'retreat' ) | ( 'move_to_targets' ) | ( 'basic_movement' ) | ( 'combat' ) | ( 'recruit' ) | ( 'combat_value_targets' ) | ( 'capture_villages' ) | ( 'leader_to_keep' ) );
-    public final void rule__Defualt_CA__CaTypeAlternatives_0() throws RecognitionException {
+    // $ANTLR start "rule__Defualt_CA__CaTypeAlternatives_0_0"
+    // InternalWail.g:385:1: rule__Defualt_CA__CaTypeAlternatives_0_0 : ( ( 'movement' ) | ( 'heal' ) | ( 'retreat' ) | ( 'move_to_targets' ) | ( 'basic_movement' ) | ( 'combat' ) | ( 'recruit' ) | ( 'combat_value_targets' ) | ( 'capture_villages' ) | ( 'leader_to_keep' ) );
+    public final void rule__Defualt_CA__CaTypeAlternatives_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -1240,9 +1241,9 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     // InternalWail.g:390:2: ( 'movement' )
                     // InternalWail.g:391:3: 'movement'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeMovementKeyword_0_0()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeMovementKeyword_0_0_0()); 
                     match(input,11,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeMovementKeyword_0_0()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeMovementKeyword_0_0_0()); 
 
                     }
 
@@ -1255,9 +1256,9 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     // InternalWail.g:396:2: ( 'heal' )
                     // InternalWail.g:397:3: 'heal'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeHealKeyword_0_1()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeHealKeyword_0_0_1()); 
                     match(input,12,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeHealKeyword_0_1()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeHealKeyword_0_0_1()); 
 
                     }
 
@@ -1270,9 +1271,9 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     // InternalWail.g:402:2: ( 'retreat' )
                     // InternalWail.g:403:3: 'retreat'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeRetreatKeyword_0_2()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeRetreatKeyword_0_0_2()); 
                     match(input,13,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeRetreatKeyword_0_2()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeRetreatKeyword_0_0_2()); 
 
                     }
 
@@ -1285,9 +1286,9 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     // InternalWail.g:408:2: ( 'move_to_targets' )
                     // InternalWail.g:409:3: 'move_to_targets'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_3()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_0_3()); 
                     match(input,14,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_3()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_0_3()); 
 
                     }
 
@@ -1300,9 +1301,9 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     // InternalWail.g:414:2: ( 'basic_movement' )
                     // InternalWail.g:415:3: 'basic_movement'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_4()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_0_4()); 
                     match(input,15,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_4()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_0_4()); 
 
                     }
 
@@ -1315,9 +1316,9 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     // InternalWail.g:420:2: ( 'combat' )
                     // InternalWail.g:421:3: 'combat'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_5()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_5()); 
                     match(input,16,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_5()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_5()); 
 
                     }
 
@@ -1330,9 +1331,9 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     // InternalWail.g:426:2: ( 'recruit' )
                     // InternalWail.g:427:3: 'recruit'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_6()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_6()); 
                     match(input,17,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_6()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_6()); 
 
                     }
 
@@ -1345,9 +1346,9 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     // InternalWail.g:432:2: ( 'combat_value_targets' )
                     // InternalWail.g:433:3: 'combat_value_targets'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_7()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_7()); 
                     match(input,18,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_7()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_7()); 
 
                     }
 
@@ -1360,9 +1361,9 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     // InternalWail.g:438:2: ( 'capture_villages' )
                     // InternalWail.g:439:3: 'capture_villages'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_8()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_8()); 
                     match(input,19,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_8()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_8()); 
 
                     }
 
@@ -1375,9 +1376,9 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     // InternalWail.g:444:2: ( 'leader_to_keep' )
                     // InternalWail.g:445:3: 'leader_to_keep'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_9()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_9()); 
                     match(input,20,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_9()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_9()); 
 
                     }
 
@@ -1398,7 +1399,7 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Defualt_CA__CaTypeAlternatives_0"
+    // $ANTLR end "rule__Defualt_CA__CaTypeAlternatives_0_0"
 
 
     // $ANTLR start "rule__Rule__Group__0"
@@ -3955,18 +3956,349 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__GoaLocation__Group__3__Impl"
 
 
+    // $ANTLR start "rule__Defualt_CA__Group__0"
+    // InternalWail.g:1318:1: rule__Defualt_CA__Group__0 : rule__Defualt_CA__Group__0__Impl rule__Defualt_CA__Group__1 ;
+    public final void rule__Defualt_CA__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWail.g:1322:1: ( rule__Defualt_CA__Group__0__Impl rule__Defualt_CA__Group__1 )
+            // InternalWail.g:1323:2: rule__Defualt_CA__Group__0__Impl rule__Defualt_CA__Group__1
+            {
+            pushFollow(FOLLOW_19);
+            rule__Defualt_CA__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Defualt_CA__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Defualt_CA__Group__0"
+
+
+    // $ANTLR start "rule__Defualt_CA__Group__0__Impl"
+    // InternalWail.g:1330:1: rule__Defualt_CA__Group__0__Impl : ( ( rule__Defualt_CA__CaTypeAssignment_0 ) ) ;
+    public final void rule__Defualt_CA__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWail.g:1334:1: ( ( ( rule__Defualt_CA__CaTypeAssignment_0 ) ) )
+            // InternalWail.g:1335:1: ( ( rule__Defualt_CA__CaTypeAssignment_0 ) )
+            {
+            // InternalWail.g:1335:1: ( ( rule__Defualt_CA__CaTypeAssignment_0 ) )
+            // InternalWail.g:1336:2: ( rule__Defualt_CA__CaTypeAssignment_0 )
+            {
+             before(grammarAccess.getDefualt_CAAccess().getCaTypeAssignment_0()); 
+            // InternalWail.g:1337:2: ( rule__Defualt_CA__CaTypeAssignment_0 )
+            // InternalWail.g:1337:3: rule__Defualt_CA__CaTypeAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Defualt_CA__CaTypeAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDefualt_CAAccess().getCaTypeAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Defualt_CA__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Defualt_CA__Group__1"
+    // InternalWail.g:1345:1: rule__Defualt_CA__Group__1 : rule__Defualt_CA__Group__1__Impl ;
+    public final void rule__Defualt_CA__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWail.g:1349:1: ( rule__Defualt_CA__Group__1__Impl )
+            // InternalWail.g:1350:2: rule__Defualt_CA__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Defualt_CA__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Defualt_CA__Group__1"
+
+
+    // $ANTLR start "rule__Defualt_CA__Group__1__Impl"
+    // InternalWail.g:1356:1: rule__Defualt_CA__Group__1__Impl : ( ( rule__Defualt_CA__Group_1__0 )? ) ;
+    public final void rule__Defualt_CA__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWail.g:1360:1: ( ( ( rule__Defualt_CA__Group_1__0 )? ) )
+            // InternalWail.g:1361:1: ( ( rule__Defualt_CA__Group_1__0 )? )
+            {
+            // InternalWail.g:1361:1: ( ( rule__Defualt_CA__Group_1__0 )? )
+            // InternalWail.g:1362:2: ( rule__Defualt_CA__Group_1__0 )?
+            {
+             before(grammarAccess.getDefualt_CAAccess().getGroup_1()); 
+            // InternalWail.g:1363:2: ( rule__Defualt_CA__Group_1__0 )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==35) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // InternalWail.g:1363:3: rule__Defualt_CA__Group_1__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Defualt_CA__Group_1__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getDefualt_CAAccess().getGroup_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Defualt_CA__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Defualt_CA__Group_1__0"
+    // InternalWail.g:1372:1: rule__Defualt_CA__Group_1__0 : rule__Defualt_CA__Group_1__0__Impl rule__Defualt_CA__Group_1__1 ;
+    public final void rule__Defualt_CA__Group_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWail.g:1376:1: ( rule__Defualt_CA__Group_1__0__Impl rule__Defualt_CA__Group_1__1 )
+            // InternalWail.g:1377:2: rule__Defualt_CA__Group_1__0__Impl rule__Defualt_CA__Group_1__1
+            {
+            pushFollow(FOLLOW_13);
+            rule__Defualt_CA__Group_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Defualt_CA__Group_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Defualt_CA__Group_1__0"
+
+
+    // $ANTLR start "rule__Defualt_CA__Group_1__0__Impl"
+    // InternalWail.g:1384:1: rule__Defualt_CA__Group_1__0__Impl : ( 'cost' ) ;
+    public final void rule__Defualt_CA__Group_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWail.g:1388:1: ( ( 'cost' ) )
+            // InternalWail.g:1389:1: ( 'cost' )
+            {
+            // InternalWail.g:1389:1: ( 'cost' )
+            // InternalWail.g:1390:2: 'cost'
+            {
+             before(grammarAccess.getDefualt_CAAccess().getCostKeyword_1_0()); 
+            match(input,35,FOLLOW_2); 
+             after(grammarAccess.getDefualt_CAAccess().getCostKeyword_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Defualt_CA__Group_1__0__Impl"
+
+
+    // $ANTLR start "rule__Defualt_CA__Group_1__1"
+    // InternalWail.g:1399:1: rule__Defualt_CA__Group_1__1 : rule__Defualt_CA__Group_1__1__Impl ;
+    public final void rule__Defualt_CA__Group_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWail.g:1403:1: ( rule__Defualt_CA__Group_1__1__Impl )
+            // InternalWail.g:1404:2: rule__Defualt_CA__Group_1__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Defualt_CA__Group_1__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Defualt_CA__Group_1__1"
+
+
+    // $ANTLR start "rule__Defualt_CA__Group_1__1__Impl"
+    // InternalWail.g:1410:1: rule__Defualt_CA__Group_1__1__Impl : ( ( rule__Defualt_CA__CostAssignment_1_1 ) ) ;
+    public final void rule__Defualt_CA__Group_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWail.g:1414:1: ( ( ( rule__Defualt_CA__CostAssignment_1_1 ) ) )
+            // InternalWail.g:1415:1: ( ( rule__Defualt_CA__CostAssignment_1_1 ) )
+            {
+            // InternalWail.g:1415:1: ( ( rule__Defualt_CA__CostAssignment_1_1 ) )
+            // InternalWail.g:1416:2: ( rule__Defualt_CA__CostAssignment_1_1 )
+            {
+             before(grammarAccess.getDefualt_CAAccess().getCostAssignment_1_1()); 
+            // InternalWail.g:1417:2: ( rule__Defualt_CA__CostAssignment_1_1 )
+            // InternalWail.g:1417:3: rule__Defualt_CA__CostAssignment_1_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Defualt_CA__CostAssignment_1_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getDefualt_CAAccess().getCostAssignment_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Defualt_CA__Group_1__1__Impl"
+
+
     // $ANTLR start "rule__Model__ElementsAssignment"
-    // InternalWail.g:1318:1: rule__Model__ElementsAssignment : ( ruleRule ) ;
+    // InternalWail.g:1426:1: rule__Model__ElementsAssignment : ( ruleRule ) ;
     public final void rule__Model__ElementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1322:1: ( ( ruleRule ) )
-            // InternalWail.g:1323:2: ( ruleRule )
+            // InternalWail.g:1430:1: ( ( ruleRule ) )
+            // InternalWail.g:1431:2: ( ruleRule )
             {
-            // InternalWail.g:1323:2: ( ruleRule )
-            // InternalWail.g:1324:3: ruleRule
+            // InternalWail.g:1431:2: ( ruleRule )
+            // InternalWail.g:1432:3: ruleRule
             {
              before(grammarAccess.getModelAccess().getElementsRuleParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -3997,17 +4329,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__NameAssignment_1"
-    // InternalWail.g:1333:1: rule__Rule__NameAssignment_1 : ( RULE_STRING ) ;
+    // InternalWail.g:1441:1: rule__Rule__NameAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Rule__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1337:1: ( ( RULE_STRING ) )
-            // InternalWail.g:1338:2: ( RULE_STRING )
+            // InternalWail.g:1445:1: ( ( RULE_STRING ) )
+            // InternalWail.g:1446:2: ( RULE_STRING )
             {
-            // InternalWail.g:1338:2: ( RULE_STRING )
-            // InternalWail.g:1339:3: RULE_STRING
+            // InternalWail.g:1446:2: ( RULE_STRING )
+            // InternalWail.g:1447:3: RULE_STRING
             {
              before(grammarAccess.getRuleAccess().getNameSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -4034,17 +4366,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__FragmentsAssignment_3"
-    // InternalWail.g:1348:1: rule__Rule__FragmentsAssignment_3 : ( ruleFragment ) ;
+    // InternalWail.g:1456:1: rule__Rule__FragmentsAssignment_3 : ( ruleFragment ) ;
     public final void rule__Rule__FragmentsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1352:1: ( ( ruleFragment ) )
-            // InternalWail.g:1353:2: ( ruleFragment )
+            // InternalWail.g:1460:1: ( ( ruleFragment ) )
+            // InternalWail.g:1461:2: ( ruleFragment )
             {
-            // InternalWail.g:1353:2: ( ruleFragment )
-            // InternalWail.g:1354:3: ruleFragment
+            // InternalWail.g:1461:2: ( ruleFragment )
+            // InternalWail.g:1462:3: ruleFragment
             {
              before(grammarAccess.getRuleAccess().getFragmentsFragmentParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -4075,17 +4407,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__GoalsAssignment_4"
-    // InternalWail.g:1363:1: rule__Rule__GoalsAssignment_4 : ( ruleGoal ) ;
+    // InternalWail.g:1471:1: rule__Rule__GoalsAssignment_4 : ( ruleGoal ) ;
     public final void rule__Rule__GoalsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1367:1: ( ( ruleGoal ) )
-            // InternalWail.g:1368:2: ( ruleGoal )
+            // InternalWail.g:1475:1: ( ( ruleGoal ) )
+            // InternalWail.g:1476:2: ( ruleGoal )
             {
-            // InternalWail.g:1368:2: ( ruleGoal )
-            // InternalWail.g:1369:3: ruleGoal
+            // InternalWail.g:1476:2: ( ruleGoal )
+            // InternalWail.g:1477:3: ruleGoal
             {
              before(grammarAccess.getRuleAccess().getGoalsGoalParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -4116,17 +4448,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fragment__ConditionAssignment_0"
-    // InternalWail.g:1378:1: rule__Fragment__ConditionAssignment_0 : ( ruleConditional ) ;
+    // InternalWail.g:1486:1: rule__Fragment__ConditionAssignment_0 : ( ruleConditional ) ;
     public final void rule__Fragment__ConditionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1382:1: ( ( ruleConditional ) )
-            // InternalWail.g:1383:2: ( ruleConditional )
+            // InternalWail.g:1490:1: ( ( ruleConditional ) )
+            // InternalWail.g:1491:2: ( ruleConditional )
             {
-            // InternalWail.g:1383:2: ( ruleConditional )
-            // InternalWail.g:1384:3: ruleConditional
+            // InternalWail.g:1491:2: ( ruleConditional )
+            // InternalWail.g:1492:3: ruleConditional
             {
              before(grammarAccess.getFragmentAccess().getConditionConditionalParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -4157,17 +4489,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fragment__Defualt_casAssignment_2"
-    // InternalWail.g:1393:1: rule__Fragment__Defualt_casAssignment_2 : ( ruleDefualt_CA ) ;
+    // InternalWail.g:1501:1: rule__Fragment__Defualt_casAssignment_2 : ( ruleDefualt_CA ) ;
     public final void rule__Fragment__Defualt_casAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1397:1: ( ( ruleDefualt_CA ) )
-            // InternalWail.g:1398:2: ( ruleDefualt_CA )
+            // InternalWail.g:1505:1: ( ( ruleDefualt_CA ) )
+            // InternalWail.g:1506:2: ( ruleDefualt_CA )
             {
-            // InternalWail.g:1398:2: ( ruleDefualt_CA )
-            // InternalWail.g:1399:3: ruleDefualt_CA
+            // InternalWail.g:1506:2: ( ruleDefualt_CA )
+            // InternalWail.g:1507:3: ruleDefualt_CA
             {
              before(grammarAccess.getFragmentAccess().getDefualt_casDefualt_CAParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4198,17 +4530,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Conditional__XAssignment_1"
-    // InternalWail.g:1408:1: rule__Conditional__XAssignment_1 : ( rulewhenRules ) ;
+    // InternalWail.g:1516:1: rule__Conditional__XAssignment_1 : ( rulewhenRules ) ;
     public final void rule__Conditional__XAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1412:1: ( ( rulewhenRules ) )
-            // InternalWail.g:1413:2: ( rulewhenRules )
+            // InternalWail.g:1520:1: ( ( rulewhenRules ) )
+            // InternalWail.g:1521:2: ( rulewhenRules )
             {
-            // InternalWail.g:1413:2: ( rulewhenRules )
-            // InternalWail.g:1414:3: rulewhenRules
+            // InternalWail.g:1521:2: ( rulewhenRules )
+            // InternalWail.g:1522:3: rulewhenRules
             {
              before(grammarAccess.getConditionalAccess().getXWhenRulesParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4239,24 +4571,24 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Baseline__AlwaysAssignment"
-    // InternalWail.g:1423:1: rule__Baseline__AlwaysAssignment : ( ( 'always' ) ) ;
+    // InternalWail.g:1531:1: rule__Baseline__AlwaysAssignment : ( ( 'always' ) ) ;
     public final void rule__Baseline__AlwaysAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1427:1: ( ( ( 'always' ) ) )
-            // InternalWail.g:1428:2: ( ( 'always' ) )
+            // InternalWail.g:1535:1: ( ( ( 'always' ) ) )
+            // InternalWail.g:1536:2: ( ( 'always' ) )
             {
-            // InternalWail.g:1428:2: ( ( 'always' ) )
-            // InternalWail.g:1429:3: ( 'always' )
-            {
-             before(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0()); 
-            // InternalWail.g:1430:3: ( 'always' )
-            // InternalWail.g:1431:4: 'always'
+            // InternalWail.g:1536:2: ( ( 'always' ) )
+            // InternalWail.g:1537:3: ( 'always' )
             {
              before(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0()); 
-            match(input,35,FOLLOW_2); 
+            // InternalWail.g:1538:3: ( 'always' )
+            // InternalWail.g:1539:4: 'always'
+            {
+             before(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0()); 
+            match(input,36,FOLLOW_2); 
              after(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0()); 
 
             }
@@ -4284,17 +4616,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Damage__HealthAssignment_2"
-    // InternalWail.g:1442:1: rule__Damage__HealthAssignment_2 : ( RULE_INT ) ;
+    // InternalWail.g:1550:1: rule__Damage__HealthAssignment_2 : ( RULE_INT ) ;
     public final void rule__Damage__HealthAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1446:1: ( ( RULE_INT ) )
-            // InternalWail.g:1447:2: ( RULE_INT )
+            // InternalWail.g:1554:1: ( ( RULE_INT ) )
+            // InternalWail.g:1555:2: ( RULE_INT )
             {
-            // InternalWail.g:1447:2: ( RULE_INT )
-            // InternalWail.g:1448:3: RULE_INT
+            // InternalWail.g:1555:2: ( RULE_INT )
+            // InternalWail.g:1556:3: RULE_INT
             {
              before(grammarAccess.getDamageAccess().getHealthINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4321,17 +4653,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtLocation__XAxisAssignment_1"
-    // InternalWail.g:1457:1: rule__AtLocation__XAxisAssignment_1 : ( RULE_INT ) ;
+    // InternalWail.g:1565:1: rule__AtLocation__XAxisAssignment_1 : ( RULE_INT ) ;
     public final void rule__AtLocation__XAxisAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1461:1: ( ( RULE_INT ) )
-            // InternalWail.g:1462:2: ( RULE_INT )
+            // InternalWail.g:1569:1: ( ( RULE_INT ) )
+            // InternalWail.g:1570:2: ( RULE_INT )
             {
-            // InternalWail.g:1462:2: ( RULE_INT )
-            // InternalWail.g:1463:3: RULE_INT
+            // InternalWail.g:1570:2: ( RULE_INT )
+            // InternalWail.g:1571:3: RULE_INT
             {
              before(grammarAccess.getAtLocationAccess().getXAxisINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4358,17 +4690,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtLocation__YAxisAssignment_3"
-    // InternalWail.g:1472:1: rule__AtLocation__YAxisAssignment_3 : ( RULE_INT ) ;
+    // InternalWail.g:1580:1: rule__AtLocation__YAxisAssignment_3 : ( RULE_INT ) ;
     public final void rule__AtLocation__YAxisAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1476:1: ( ( RULE_INT ) )
-            // InternalWail.g:1477:2: ( RULE_INT )
+            // InternalWail.g:1584:1: ( ( RULE_INT ) )
+            // InternalWail.g:1585:2: ( RULE_INT )
             {
-            // InternalWail.g:1477:2: ( RULE_INT )
-            // InternalWail.g:1478:3: RULE_INT
+            // InternalWail.g:1585:2: ( RULE_INT )
+            // InternalWail.g:1586:3: RULE_INT
             {
              before(grammarAccess.getAtLocationAccess().getYAxisINTTerminalRuleCall_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4395,17 +4727,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnitEquals__UnitAssignment_2"
-    // InternalWail.g:1487:1: rule__UnitEquals__UnitAssignment_2 : ( RULE_STRING ) ;
+    // InternalWail.g:1595:1: rule__UnitEquals__UnitAssignment_2 : ( RULE_STRING ) ;
     public final void rule__UnitEquals__UnitAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1491:1: ( ( RULE_STRING ) )
-            // InternalWail.g:1492:2: ( RULE_STRING )
+            // InternalWail.g:1599:1: ( ( RULE_STRING ) )
+            // InternalWail.g:1600:2: ( RULE_STRING )
             {
-            // InternalWail.g:1492:2: ( RULE_STRING )
-            // InternalWail.g:1493:3: RULE_STRING
+            // InternalWail.g:1600:2: ( RULE_STRING )
+            // InternalWail.g:1601:3: RULE_STRING
             {
              before(grammarAccess.getUnitEqualsAccess().getUnitSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -4432,17 +4764,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__GoalAssignment_2"
-    // InternalWail.g:1502:1: rule__Goal__GoalAssignment_2 : ( ruleGoaLocation ) ;
+    // InternalWail.g:1610:1: rule__Goal__GoalAssignment_2 : ( ruleGoaLocation ) ;
     public final void rule__Goal__GoalAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1506:1: ( ( ruleGoaLocation ) )
-            // InternalWail.g:1507:2: ( ruleGoaLocation )
+            // InternalWail.g:1614:1: ( ( ruleGoaLocation ) )
+            // InternalWail.g:1615:2: ( ruleGoaLocation )
             {
-            // InternalWail.g:1507:2: ( ruleGoaLocation )
-            // InternalWail.g:1508:3: ruleGoaLocation
+            // InternalWail.g:1615:2: ( ruleGoaLocation )
+            // InternalWail.g:1616:3: ruleGoaLocation
             {
              before(grammarAccess.getGoalAccess().getGoalGoaLocationParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4473,17 +4805,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__LocValueAssignment_5"
-    // InternalWail.g:1517:1: rule__Goal__LocValueAssignment_5 : ( RULE_INT ) ;
+    // InternalWail.g:1625:1: rule__Goal__LocValueAssignment_5 : ( RULE_INT ) ;
     public final void rule__Goal__LocValueAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1521:1: ( ( RULE_INT ) )
-            // InternalWail.g:1522:2: ( RULE_INT )
+            // InternalWail.g:1629:1: ( ( RULE_INT ) )
+            // InternalWail.g:1630:2: ( RULE_INT )
             {
-            // InternalWail.g:1522:2: ( RULE_INT )
-            // InternalWail.g:1523:3: RULE_INT
+            // InternalWail.g:1630:2: ( RULE_INT )
+            // InternalWail.g:1631:3: RULE_INT
             {
              before(grammarAccess.getGoalAccess().getLocValueINTTerminalRuleCall_5_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4510,17 +4842,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GoaLocation__XAxisAssignment_1"
-    // InternalWail.g:1532:1: rule__GoaLocation__XAxisAssignment_1 : ( RULE_INT ) ;
+    // InternalWail.g:1640:1: rule__GoaLocation__XAxisAssignment_1 : ( RULE_INT ) ;
     public final void rule__GoaLocation__XAxisAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1536:1: ( ( RULE_INT ) )
-            // InternalWail.g:1537:2: ( RULE_INT )
+            // InternalWail.g:1644:1: ( ( RULE_INT ) )
+            // InternalWail.g:1645:2: ( RULE_INT )
             {
-            // InternalWail.g:1537:2: ( RULE_INT )
-            // InternalWail.g:1538:3: RULE_INT
+            // InternalWail.g:1645:2: ( RULE_INT )
+            // InternalWail.g:1646:3: RULE_INT
             {
              before(grammarAccess.getGoaLocationAccess().getXAxisINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4547,17 +4879,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GoaLocation__YAxisAssignment_3"
-    // InternalWail.g:1547:1: rule__GoaLocation__YAxisAssignment_3 : ( RULE_INT ) ;
+    // InternalWail.g:1655:1: rule__GoaLocation__YAxisAssignment_3 : ( RULE_INT ) ;
     public final void rule__GoaLocation__YAxisAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1551:1: ( ( RULE_INT ) )
-            // InternalWail.g:1552:2: ( RULE_INT )
+            // InternalWail.g:1659:1: ( ( RULE_INT ) )
+            // InternalWail.g:1660:2: ( RULE_INT )
             {
-            // InternalWail.g:1552:2: ( RULE_INT )
-            // InternalWail.g:1553:3: RULE_INT
+            // InternalWail.g:1660:2: ( RULE_INT )
+            // InternalWail.g:1661:3: RULE_INT
             {
              before(grammarAccess.getGoaLocationAccess().getYAxisINTTerminalRuleCall_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4583,32 +4915,32 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__GoaLocation__YAxisAssignment_3"
 
 
-    // $ANTLR start "rule__Defualt_CA__CaTypeAssignment"
-    // InternalWail.g:1562:1: rule__Defualt_CA__CaTypeAssignment : ( ( rule__Defualt_CA__CaTypeAlternatives_0 ) ) ;
-    public final void rule__Defualt_CA__CaTypeAssignment() throws RecognitionException {
+    // $ANTLR start "rule__Defualt_CA__CaTypeAssignment_0"
+    // InternalWail.g:1670:1: rule__Defualt_CA__CaTypeAssignment_0 : ( ( rule__Defualt_CA__CaTypeAlternatives_0_0 ) ) ;
+    public final void rule__Defualt_CA__CaTypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1566:1: ( ( ( rule__Defualt_CA__CaTypeAlternatives_0 ) ) )
-            // InternalWail.g:1567:2: ( ( rule__Defualt_CA__CaTypeAlternatives_0 ) )
+            // InternalWail.g:1674:1: ( ( ( rule__Defualt_CA__CaTypeAlternatives_0_0 ) ) )
+            // InternalWail.g:1675:2: ( ( rule__Defualt_CA__CaTypeAlternatives_0_0 ) )
             {
-            // InternalWail.g:1567:2: ( ( rule__Defualt_CA__CaTypeAlternatives_0 ) )
-            // InternalWail.g:1568:3: ( rule__Defualt_CA__CaTypeAlternatives_0 )
+            // InternalWail.g:1675:2: ( ( rule__Defualt_CA__CaTypeAlternatives_0_0 ) )
+            // InternalWail.g:1676:3: ( rule__Defualt_CA__CaTypeAlternatives_0_0 )
             {
-             before(grammarAccess.getDefualt_CAAccess().getCaTypeAlternatives_0()); 
-            // InternalWail.g:1569:3: ( rule__Defualt_CA__CaTypeAlternatives_0 )
-            // InternalWail.g:1569:4: rule__Defualt_CA__CaTypeAlternatives_0
+             before(grammarAccess.getDefualt_CAAccess().getCaTypeAlternatives_0_0()); 
+            // InternalWail.g:1677:3: ( rule__Defualt_CA__CaTypeAlternatives_0_0 )
+            // InternalWail.g:1677:4: rule__Defualt_CA__CaTypeAlternatives_0_0
             {
             pushFollow(FOLLOW_2);
-            rule__Defualt_CA__CaTypeAlternatives_0();
+            rule__Defualt_CA__CaTypeAlternatives_0_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getDefualt_CAAccess().getCaTypeAlternatives_0()); 
+             after(grammarAccess.getDefualt_CAAccess().getCaTypeAlternatives_0_0()); 
 
             }
 
@@ -4627,7 +4959,44 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Defualt_CA__CaTypeAssignment"
+    // $ANTLR end "rule__Defualt_CA__CaTypeAssignment_0"
+
+
+    // $ANTLR start "rule__Defualt_CA__CostAssignment_1_1"
+    // InternalWail.g:1685:1: rule__Defualt_CA__CostAssignment_1_1 : ( RULE_INT ) ;
+    public final void rule__Defualt_CA__CostAssignment_1_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalWail.g:1689:1: ( ( RULE_INT ) )
+            // InternalWail.g:1690:2: ( RULE_INT )
+            {
+            // InternalWail.g:1690:2: ( RULE_INT )
+            // InternalWail.g:1691:3: RULE_INT
+            {
+             before(grammarAccess.getDefualt_CAAccess().getCostINTTerminalRuleCall_1_1_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getDefualt_CAAccess().getCostINTTerminalRuleCall_1_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Defualt_CA__CostAssignment_1_1"
 
     // Delegated rules
 
@@ -4644,7 +5013,7 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000080000002L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000009FF800L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000001FF802L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000082A000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000102A000000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000010000000L});
@@ -4652,5 +5021,6 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000800000000L});
 
 }

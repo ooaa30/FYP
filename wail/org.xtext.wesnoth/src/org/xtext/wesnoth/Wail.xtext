@@ -63,4 +63,5 @@ New_CA:
 
 Defualt_CA:
 	caType = ("movement" |"heal"| "retreat" | "move_to_targets"| "basic_movement" | "combat" | "recruit" | "combat_value_targets" | "capture_villages"|"leader_to_keep")
+	('cost' cost=INT)?
 ;

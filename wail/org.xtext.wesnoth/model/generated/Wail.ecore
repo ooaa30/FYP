@@ -47,5 +47,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Defualt_CA">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="caType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cost" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

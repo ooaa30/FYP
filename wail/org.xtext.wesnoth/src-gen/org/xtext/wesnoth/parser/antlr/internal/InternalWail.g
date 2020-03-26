@@ -681,117 +681,143 @@ ruleDefualt_CA returns [EObject current=null]
 	(
 		(
 			(
-				lv_caType_0_1='movement'
-				{
-					newLeafNode(lv_caType_0_1, grammarAccess.getDefualt_CAAccess().getCaTypeMovementKeyword_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDefualt_CARule());
+				(
+					lv_caType_0_1='movement'
+					{
+						newLeafNode(lv_caType_0_1, grammarAccess.getDefualt_CAAccess().getCaTypeMovementKeyword_0_0_0());
 					}
-					setWithLastConsumed($current, "caType", lv_caType_0_1, null);
-				}
-				    |
-				lv_caType_0_2='heal'
-				{
-					newLeafNode(lv_caType_0_2, grammarAccess.getDefualt_CAAccess().getCaTypeHealKeyword_0_1());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefualt_CARule());
+						}
+						setWithLastConsumed($current, "caType", lv_caType_0_1, null);
 					}
-					setWithLastConsumed($current, "caType", lv_caType_0_2, null);
-				}
-				    |
-				lv_caType_0_3='retreat'
-				{
-					newLeafNode(lv_caType_0_3, grammarAccess.getDefualt_CAAccess().getCaTypeRetreatKeyword_0_2());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					    |
+					lv_caType_0_2='heal'
+					{
+						newLeafNode(lv_caType_0_2, grammarAccess.getDefualt_CAAccess().getCaTypeHealKeyword_0_0_1());
 					}
-					setWithLastConsumed($current, "caType", lv_caType_0_3, null);
-				}
-				    |
-				lv_caType_0_4='move_to_targets'
-				{
-					newLeafNode(lv_caType_0_4, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_3());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefualt_CARule());
+						}
+						setWithLastConsumed($current, "caType", lv_caType_0_2, null);
 					}
-					setWithLastConsumed($current, "caType", lv_caType_0_4, null);
-				}
-				    |
-				lv_caType_0_5='basic_movement'
-				{
-					newLeafNode(lv_caType_0_5, grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_4());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					    |
+					lv_caType_0_3='retreat'
+					{
+						newLeafNode(lv_caType_0_3, grammarAccess.getDefualt_CAAccess().getCaTypeRetreatKeyword_0_0_2());
 					}
-					setWithLastConsumed($current, "caType", lv_caType_0_5, null);
-				}
-				    |
-				lv_caType_0_6='combat'
-				{
-					newLeafNode(lv_caType_0_6, grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_5());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefualt_CARule());
+						}
+						setWithLastConsumed($current, "caType", lv_caType_0_3, null);
 					}
-					setWithLastConsumed($current, "caType", lv_caType_0_6, null);
-				}
-				    |
-				lv_caType_0_7='recruit'
-				{
-					newLeafNode(lv_caType_0_7, grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_6());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					    |
+					lv_caType_0_4='move_to_targets'
+					{
+						newLeafNode(lv_caType_0_4, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_0_3());
 					}
-					setWithLastConsumed($current, "caType", lv_caType_0_7, null);
-				}
-				    |
-				lv_caType_0_8='combat_value_targets'
-				{
-					newLeafNode(lv_caType_0_8, grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_7());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefualt_CARule());
+						}
+						setWithLastConsumed($current, "caType", lv_caType_0_4, null);
 					}
-					setWithLastConsumed($current, "caType", lv_caType_0_8, null);
-				}
-				    |
-				lv_caType_0_9='capture_villages'
-				{
-					newLeafNode(lv_caType_0_9, grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_8());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					    |
+					lv_caType_0_5='basic_movement'
+					{
+						newLeafNode(lv_caType_0_5, grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_0_4());
 					}
-					setWithLastConsumed($current, "caType", lv_caType_0_9, null);
-				}
-				    |
-				lv_caType_0_10='leader_to_keep'
-				{
-					newLeafNode(lv_caType_0_10, grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_9());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDefualt_CARule());
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefualt_CARule());
+						}
+						setWithLastConsumed($current, "caType", lv_caType_0_5, null);
 					}
-					setWithLastConsumed($current, "caType", lv_caType_0_10, null);
-				}
+					    |
+					lv_caType_0_6='combat'
+					{
+						newLeafNode(lv_caType_0_6, grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_5());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefualt_CARule());
+						}
+						setWithLastConsumed($current, "caType", lv_caType_0_6, null);
+					}
+					    |
+					lv_caType_0_7='recruit'
+					{
+						newLeafNode(lv_caType_0_7, grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_6());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefualt_CARule());
+						}
+						setWithLastConsumed($current, "caType", lv_caType_0_7, null);
+					}
+					    |
+					lv_caType_0_8='combat_value_targets'
+					{
+						newLeafNode(lv_caType_0_8, grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_7());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefualt_CARule());
+						}
+						setWithLastConsumed($current, "caType", lv_caType_0_8, null);
+					}
+					    |
+					lv_caType_0_9='capture_villages'
+					{
+						newLeafNode(lv_caType_0_9, grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_8());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefualt_CARule());
+						}
+						setWithLastConsumed($current, "caType", lv_caType_0_9, null);
+					}
+					    |
+					lv_caType_0_10='leader_to_keep'
+					{
+						newLeafNode(lv_caType_0_10, grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_9());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefualt_CARule());
+						}
+						setWithLastConsumed($current, "caType", lv_caType_0_10, null);
+					}
+				)
 			)
 		)
+		(
+			otherlv_1='cost'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getDefualt_CAAccess().getCostKeyword_1_0());
+			}
+			(
+				(
+					lv_cost_2_0=RULE_INT
+					{
+						newLeafNode(lv_cost_2_0, grammarAccess.getDefualt_CAAccess().getCostINTTerminalRuleCall_1_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDefualt_CARule());
+						}
+						setWithLastConsumed(
+							$current,
+							"cost",
+							lv_cost_2_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+		)?
 	)
 ;
 

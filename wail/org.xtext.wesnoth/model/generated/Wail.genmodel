@@ -45,6 +45,7 @@
     </genClasses>
     <genClasses ecoreClass="Wail.ecore#//Defualt_CA">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//Defualt_CA/caType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//Defualt_CA/cost"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

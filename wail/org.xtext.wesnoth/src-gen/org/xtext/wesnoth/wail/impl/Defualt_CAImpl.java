@@ -22,6 +22,7 @@ import org.xtext.wesnoth.wail.WailPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.wesnoth.wail.impl.Defualt_CAImpl#getCaType <em>Ca Type</em>}</li>
+ *   <li>{@link org.xtext.wesnoth.wail.impl.Defualt_CAImpl#getCost <em>Cost</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +48,26 @@ public class Defualt_CAImpl extends MinimalEObjectImpl.Container implements Defu
    * @ordered
    */
   protected String caType = CA_TYPE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCost() <em>Cost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCost()
+   * @generated
+   * @ordered
+   */
+  protected static final int COST_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getCost() <em>Cost</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCost()
+   * @generated
+   * @ordered
+   */
+  protected int cost = COST_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,12 +121,39 @@ public class Defualt_CAImpl extends MinimalEObjectImpl.Container implements Defu
    * @generated
    */
   @Override
+  public int getCost()
+  {
+    return cost;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setCost(int newCost)
+  {
+    int oldCost = cost;
+    cost = newCost;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WailPackage.DEFUALT_CA__COST, oldCost, cost));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case WailPackage.DEFUALT_CA__CA_TYPE:
         return getCaType();
+      case WailPackage.DEFUALT_CA__COST:
+        return getCost();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -122,6 +170,9 @@ public class Defualt_CAImpl extends MinimalEObjectImpl.Container implements Defu
     {
       case WailPackage.DEFUALT_CA__CA_TYPE:
         setCaType((String)newValue);
+        return;
+      case WailPackage.DEFUALT_CA__COST:
+        setCost((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -140,6 +191,9 @@ public class Defualt_CAImpl extends MinimalEObjectImpl.Container implements Defu
       case WailPackage.DEFUALT_CA__CA_TYPE:
         setCaType(CA_TYPE_EDEFAULT);
         return;
+      case WailPackage.DEFUALT_CA__COST:
+        setCost(COST_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -156,6 +210,8 @@ public class Defualt_CAImpl extends MinimalEObjectImpl.Container implements Defu
     {
       case WailPackage.DEFUALT_CA__CA_TYPE:
         return CA_TYPE_EDEFAULT == null ? caType != null : !CA_TYPE_EDEFAULT.equals(caType);
+      case WailPackage.DEFUALT_CA__COST:
+        return cost != COST_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -173,6 +229,8 @@ public class Defualt_CAImpl extends MinimalEObjectImpl.Container implements Defu
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (caType: ");
     result.append(caType);
+    result.append(", cost: ");
+    result.append(cost);
     result.append(')');
     return result.toString();
   }

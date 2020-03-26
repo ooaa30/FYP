@@ -505,6 +505,17 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
    * @generated
    */
   @Override
+  public EAttribute getDefualt_CA_Cost()
+  {
+    return (EAttribute)defualt_CAEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public WailFactory getWailFactory()
   {
     return (WailFactory)getEFactoryInstance();
@@ -570,6 +581,7 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
 
     defualt_CAEClass = createEClass(DEFUALT_CA);
     createEAttribute(defualt_CAEClass, DEFUALT_CA__CA_TYPE);
+    createEAttribute(defualt_CAEClass, DEFUALT_CA__COST);
   }
 
   /**
@@ -647,6 +659,7 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
 
     initEClass(defualt_CAEClass, Defualt_CA.class, "Defualt_CA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefualt_CA_CaType(), ecorePackage.getEString(), "caType", null, 0, 1, Defualt_CA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDefualt_CA_Cost(), ecorePackage.getEInt(), "cost", null, 0, 1, Defualt_CA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

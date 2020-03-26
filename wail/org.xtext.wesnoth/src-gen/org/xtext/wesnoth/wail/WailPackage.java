@@ -430,13 +430,22 @@ public interface WailPackage extends EPackage
   int DEFUALT_CA__CA_TYPE = 0;
 
   /**
+   * The feature id for the '<em><b>Cost</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DEFUALT_CA__COST = 1;
+
+  /**
    * The number of structural features of the '<em>Defualt CA</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEFUALT_CA_FEATURE_COUNT = 1;
+  int DEFUALT_CA_FEATURE_COUNT = 2;
 
 
   /**
@@ -747,6 +756,17 @@ public interface WailPackage extends EPackage
   EAttribute getDefualt_CA_CaType();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.Defualt_CA#getCost <em>Cost</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Cost</em>'.
+   * @see org.xtext.wesnoth.wail.Defualt_CA#getCost()
+   * @see #getDefualt_CA()
+   * @generated
+   */
+  EAttribute getDefualt_CA_Cost();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1024,6 +1044,14 @@ public interface WailPackage extends EPackage
      * @generated
      */
     EAttribute DEFUALT_CA__CA_TYPE = eINSTANCE.getDefualt_CA_CaType();
+
+    /**
+     * The meta object literal for the '<em><b>Cost</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DEFUALT_CA__COST = eINSTANCE.getDefualt_CA_Cost();
 
   }
 

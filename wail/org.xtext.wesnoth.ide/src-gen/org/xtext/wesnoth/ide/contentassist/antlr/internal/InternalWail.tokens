@@ -1,9 +1,10 @@
 '-'=26
-'always'=35
+'always'=36
 'basic_movement'=15
 'capture_villages'=19
 'combat'=16
 'combat_value_targets'=18
+'cost'=35
 'goal'=31
 'heal'=12
 'health'=25
@@ -55,3 +56,4 @@ T__32=32
 T__33=33
 T__34=34
 T__35=35
+T__36=36

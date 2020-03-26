@@ -4,6 +4,7 @@
 'capture_villages'=34
 'combat'=31
 'combat_value_targets'=33
+'cost'=36
 'goal'=22
 'heal'=27
 'health'=16
@@ -55,3 +56,4 @@ T__32=32
 T__33=33
 T__34=34
 T__35=35
+T__36=36

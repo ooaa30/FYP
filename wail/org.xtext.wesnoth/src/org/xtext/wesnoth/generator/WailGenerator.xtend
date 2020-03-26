@@ -158,62 +158,109 @@ class WailGenerator extends AbstractGenerator {
 			id=goto
 			engine=cpp
 			name=ai_default_rca::goto_phase
+			«IF ca.cost != 0»
+			max_score=«ca.cost»
+			score=«ca.cost»
+			«ELSE»
 			max_score=200000
 			score=200000
+			«ENDIF»
 		«ELSEIF ca.caType=="retreat"»
 			id=retreat_injured
 			engine=lua
 			name=ai_default_rca::retreat_injured
+			«IF ca.cost != 0»
+			max_score=«ca.cost»
+			«ELSE»
 			max_score=192000
+			«ENDIF»
 			location="ai/lua/ca_retreat_injured.lua"
 		«ELSEIF ca.caType =="move_to_target"»
 			id=move_to_targets
 			engine=cpp
 			name=ai_default_rca::move_to_targets_phase
+			«IF ca.cost != 0»
+			max_score=«ca.cost»
+			score=«ca.cost»
+			«ELSE»
 			max_score=20000
 			score=20000
+			«ENDIF»
 		«ELSEIF ca.caType == "basic_movement"»
 			id=move_to_any_enemy
 			engine=lua
 			name=ai_default_rca::move_to_any_enemy
+			«IF ca.cost != 0»
+			max_score=«ca.cost»
+			«ELSE»
 			max_score=1000
+			«ENDIF»
 			location="ai/lua/ca_move_to_any_enemy.lua"	
 		«ELSEIF ca.caType == "combat"»
 			id=combat
 			engine=cpp
 			name=ai_default_rca::combat_phase
+			«IF ca.cost != 0»
+			max_score=«ca.cost»
+			score=«ca.cost»
+			«ELSE»
 			max_score=100000
 			score=100000
+			«ENDIF»
 		«ELSEIF ca.caType =="recruit"»
 			id=recruitment
 			engine=cpp
 			name=default_recruitment::recruitment
+			«IF ca.cost != 0»
+			max_score=«ca.cost»
+			score=«ca.cost»
+			«ELSE»
 			max_score=180000
 			score=180000
+			«ENDIF»
 		«ELSEIF ca.caType =="combat_value_targets"»
 			id=high_xp_attack
 			engine=lua
 			name=ai_default_rca::high_xp_attack
 			location="ai/lua/ca_high_xp_attack.lua"
+			«IF ca.cost != 0»
+			max_score=«ca.cost»
+			«ELSE»
 			max_score=100010
+			«ENDIF»
 		«ELSEIF ca.caType == "capture_villages"»
 			id=villages
 			engine=cpp
 			name=ai_default_rca::get_villages_phase
+			«IF ca.cost != 0»
+			max_score=«ca.cost»
+			score=«ca.cost»
+			«ELSE»
 			max_score=60000
 			score=60000
+			«ENDIF»
 		«ELSEIF ca.caType =="leader_to_keep"»
 			id=move_leader_to_keep
 			engine=cpp
 			name=ai_default_rca::move_leader_to_keep_phase
+			«IF ca.cost != 0»
+			max_score=«ca.cost»
+			score=«ca.cost»
+			«ELSE»
 			max_score=120000
 			score=120000
+			«ENDIF»
 		«ELSEIF ca.caType =="heal"»
 			id=healing
 			engine=cpp
 			name=ai_default_rca::get_healing_phase
+			«IF ca.cost != 0»
+			max_score=«ca.cost»
+			score=«ca.cost»
+			«ELSE»
 			max_score=80000
 			score=80000
+			«ENDIF»
 		«ENDIF»
 		'''
 		def compile(Conditional con)'''

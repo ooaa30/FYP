@@ -32,7 +32,7 @@ public class WailParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, WailGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getWhenRulesAccess().getAlternatives(), "rule__WhenRules__Alternatives");
-			builder.put(grammarAccess.getDefualt_CAAccess().getCaTypeAlternatives_0(), "rule__Defualt_CA__CaTypeAlternatives_0");
+			builder.put(grammarAccess.getDefualt_CAAccess().getCaTypeAlternatives_0_0(), "rule__Defualt_CA__CaTypeAlternatives_0_0");
 			builder.put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 			builder.put(grammarAccess.getFragmentAccess().getGroup(), "rule__Fragment__Group__0");
 			builder.put(grammarAccess.getConditionalAccess().getGroup(), "rule__Conditional__Group__0");
@@ -41,6 +41,8 @@ public class WailParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getUnitEqualsAccess().getGroup(), "rule__UnitEquals__Group__0");
 			builder.put(grammarAccess.getGoalAccess().getGroup(), "rule__Goal__Group__0");
 			builder.put(grammarAccess.getGoaLocationAccess().getGroup(), "rule__GoaLocation__Group__0");
+			builder.put(grammarAccess.getDefualt_CAAccess().getGroup(), "rule__Defualt_CA__Group__0");
+			builder.put(grammarAccess.getDefualt_CAAccess().getGroup_1(), "rule__Defualt_CA__Group_1__0");
 			builder.put(grammarAccess.getModelAccess().getElementsAssignment(), "rule__Model__ElementsAssignment");
 			builder.put(grammarAccess.getRuleAccess().getNameAssignment_1(), "rule__Rule__NameAssignment_1");
 			builder.put(grammarAccess.getRuleAccess().getFragmentsAssignment_3(), "rule__Rule__FragmentsAssignment_3");
@@ -57,7 +59,8 @@ public class WailParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGoalAccess().getLocValueAssignment_5(), "rule__Goal__LocValueAssignment_5");
 			builder.put(grammarAccess.getGoaLocationAccess().getXAxisAssignment_1(), "rule__GoaLocation__XAxisAssignment_1");
 			builder.put(grammarAccess.getGoaLocationAccess().getYAxisAssignment_3(), "rule__GoaLocation__YAxisAssignment_3");
-			builder.put(grammarAccess.getDefualt_CAAccess().getCaTypeAssignment(), "rule__Defualt_CA__CaTypeAssignment");
+			builder.put(grammarAccess.getDefualt_CAAccess().getCaTypeAssignment_0(), "rule__Defualt_CA__CaTypeAssignment_0");
+			builder.put(grammarAccess.getDefualt_CAAccess().getCostAssignment_1_1(), "rule__Defualt_CA__CostAssignment_1_1");
 		}
 	}
 	
