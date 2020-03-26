@@ -1646,7 +1646,7 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
             // InternalWesnothDSL.g:539:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
             // InternalWesnothDSL.g:540:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_6);
             rule__Rule__Group__3__Impl();
 
             state._fsp--;
@@ -1675,29 +1675,47 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Rule__Group__3__Impl"
-    // InternalWesnothDSL.g:547:1: rule__Rule__Group__3__Impl : ( ( rule__Rule__FragmentsAssignment_3 ) ) ;
+    // InternalWesnothDSL.g:547:1: rule__Rule__Group__3__Impl : ( ( rule__Rule__FragmentsAssignment_3 )* ) ;
     public final void rule__Rule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWesnothDSL.g:551:1: ( ( ( rule__Rule__FragmentsAssignment_3 ) ) )
-            // InternalWesnothDSL.g:552:1: ( ( rule__Rule__FragmentsAssignment_3 ) )
+            // InternalWesnothDSL.g:551:1: ( ( ( rule__Rule__FragmentsAssignment_3 )* ) )
+            // InternalWesnothDSL.g:552:1: ( ( rule__Rule__FragmentsAssignment_3 )* )
             {
-            // InternalWesnothDSL.g:552:1: ( ( rule__Rule__FragmentsAssignment_3 ) )
-            // InternalWesnothDSL.g:553:2: ( rule__Rule__FragmentsAssignment_3 )
+            // InternalWesnothDSL.g:552:1: ( ( rule__Rule__FragmentsAssignment_3 )* )
+            // InternalWesnothDSL.g:553:2: ( rule__Rule__FragmentsAssignment_3 )*
             {
              before(grammarAccess.getRuleAccess().getFragmentsAssignment_3()); 
-            // InternalWesnothDSL.g:554:2: ( rule__Rule__FragmentsAssignment_3 )
-            // InternalWesnothDSL.g:554:3: rule__Rule__FragmentsAssignment_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__Rule__FragmentsAssignment_3();
+            // InternalWesnothDSL.g:554:2: ( rule__Rule__FragmentsAssignment_3 )*
+            loop4:
+            do {
+                int alt4=2;
+                int LA4_0 = input.LA(1);
 
-            state._fsp--;
+                if ( (LA4_0==24) ) {
+                    alt4=1;
+                }
 
 
-            }
+                switch (alt4) {
+            	case 1 :
+            	    // InternalWesnothDSL.g:554:3: rule__Rule__FragmentsAssignment_3
+            	    {
+            	    pushFollow(FOLLOW_7);
+            	    rule__Rule__FragmentsAssignment_3();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop4;
+                }
+            } while (true);
 
              after(grammarAccess.getRuleAccess().getFragmentsAssignment_3()); 
 
@@ -1731,7 +1749,7 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
             // InternalWesnothDSL.g:566:1: ( rule__Rule__Group__4__Impl rule__Rule__Group__5 )
             // InternalWesnothDSL.g:567:2: rule__Rule__Group__4__Impl rule__Rule__Group__5
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_6);
             rule__Rule__Group__4__Impl();
 
             state._fsp--;
@@ -1774,17 +1792,17 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
             {
              before(grammarAccess.getRuleAccess().getGoalsAssignment_4()); 
             // InternalWesnothDSL.g:581:2: ( rule__Rule__GoalsAssignment_4 )*
-            loop4:
+            loop5:
             do {
-                int alt4=2;
-                int LA4_0 = input.LA(1);
+                int alt5=2;
+                int LA5_0 = input.LA(1);
 
-                if ( (LA4_0==31) ) {
-                    alt4=1;
+                if ( (LA5_0==31) ) {
+                    alt5=1;
                 }
 
 
-                switch (alt4) {
+                switch (alt5) {
             	case 1 :
             	    // InternalWesnothDSL.g:581:3: rule__Rule__GoalsAssignment_4
             	    {
@@ -1798,7 +1816,7 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
             	    break;
 
             	default :
-            	    break loop4;
+            	    break loop5;
                 }
             } while (true);
 
@@ -2107,17 +2125,17 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
             {
              before(grammarAccess.getFragmentAccess().getDefualt_casAssignment_2()); 
             // InternalWesnothDSL.g:689:2: ( rule__Fragment__Defualt_casAssignment_2 )*
-            loop5:
+            loop6:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( ((LA5_0>=11 && LA5_0<=20)) ) {
-                    alt5=1;
+                if ( ((LA6_0>=11 && LA6_0<=20)) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt6) {
             	case 1 :
             	    // InternalWesnothDSL.g:689:3: rule__Fragment__Defualt_casAssignment_2
             	    {
@@ -2131,7 +2149,7 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
             	    break;
 
             	default :
-            	    break loop5;
+            	    break loop6;
                 }
             } while (true);
 
@@ -4621,8 +4639,8 @@ public class InternalWesnothDSLParser extends AbstractInternalContentAssistParse
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000200002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000080800000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000081800000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000001000002L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000080000002L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000009FF800L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000001FF802L});

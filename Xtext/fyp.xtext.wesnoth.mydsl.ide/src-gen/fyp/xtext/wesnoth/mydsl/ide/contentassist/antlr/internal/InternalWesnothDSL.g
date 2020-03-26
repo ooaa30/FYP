@@ -551,7 +551,7 @@ rule__Rule__Group__3__Impl
 :
 (
 	{ before(grammarAccess.getRuleAccess().getFragmentsAssignment_3()); }
-	(rule__Rule__FragmentsAssignment_3)
+	(rule__Rule__FragmentsAssignment_3)*
 	{ after(grammarAccess.getRuleAccess().getFragmentsAssignment_3()); }
 )
 ;

@@ -1,5 +1,13 @@
 rule "test"{
-	when: health-8{
-		movement 
+	when: unit is "human swordsman"{
+		movement
+		combat
+		retreat
+		heal
+		combat_value_targets
 	}
+	when:always{
+		basic_movement
+	}
+	goal is x 12 y 15 value is 6
 }

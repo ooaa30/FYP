@@ -53,12 +53,12 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//Rule:
 		//	'rule' name=STRING
 		//	'{'
-		//	fragments+=Fragment
+		//	fragments+=Fragment*
 		//	goals+=Goal*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'rule' name=STRING '{' fragments+=Fragment goals+=Goal* '}'
+		//'rule' name=STRING '{' fragments+=Fragment* goals+=Goal* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'rule'
@@ -73,7 +73,7 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//fragments+=Fragment
+		//fragments+=Fragment*
 		public Assignment getFragmentsAssignment_3() { return cFragmentsAssignment_3; }
 		
 		//Fragment
@@ -512,7 +512,7 @@ public class WesnothDSLGrammarAccess extends AbstractGrammarElementFinder {
 	//Rule:
 	//	'rule' name=STRING
 	//	'{'
-	//	fragments+=Fragment
+	//	fragments+=Fragment*
 	//	goals+=Goal*
 	//	'}';
 	public RuleElements getRuleAccess() {

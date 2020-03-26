@@ -252,7 +252,7 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRule"
-    // InternalWesnothDSL.g:107:1: ruleRule returns [EObject current=null] : (otherlv_0= 'rule' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_fragments_3_0= ruleFragment ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= '}' ) ;
+    // InternalWesnothDSL.g:107:1: ruleRule returns [EObject current=null] : (otherlv_0= 'rule' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_fragments_3_0= ruleFragment ) )* ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= '}' ) ;
     public final EObject ruleRule() throws RecognitionException {
         EObject current = null;
 
@@ -269,11 +269,11 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWesnothDSL.g:113:2: ( (otherlv_0= 'rule' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_fragments_3_0= ruleFragment ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= '}' ) )
-            // InternalWesnothDSL.g:114:2: (otherlv_0= 'rule' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_fragments_3_0= ruleFragment ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= '}' )
+            // InternalWesnothDSL.g:113:2: ( (otherlv_0= 'rule' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_fragments_3_0= ruleFragment ) )* ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= '}' ) )
+            // InternalWesnothDSL.g:114:2: (otherlv_0= 'rule' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_fragments_3_0= ruleFragment ) )* ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= '}' )
             {
-            // InternalWesnothDSL.g:114:2: (otherlv_0= 'rule' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_fragments_3_0= ruleFragment ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= '}' )
-            // InternalWesnothDSL.g:115:3: otherlv_0= 'rule' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_fragments_3_0= ruleFragment ) ) ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= '}'
+            // InternalWesnothDSL.g:114:2: (otherlv_0= 'rule' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_fragments_3_0= ruleFragment ) )* ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= '}' )
+            // InternalWesnothDSL.g:115:3: otherlv_0= 'rule' ( (lv_name_1_0= RULE_STRING ) ) otherlv_2= '{' ( (lv_fragments_3_0= ruleFragment ) )* ( (lv_goals_4_0= ruleGoal ) )* otherlv_5= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
@@ -309,49 +309,67 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalWesnothDSL.g:141:3: ( (lv_fragments_3_0= ruleFragment ) )
-            // InternalWesnothDSL.g:142:4: (lv_fragments_3_0= ruleFragment )
-            {
-            // InternalWesnothDSL.g:142:4: (lv_fragments_3_0= ruleFragment )
-            // InternalWesnothDSL.g:143:5: lv_fragments_3_0= ruleFragment
-            {
-
-            					newCompositeNode(grammarAccess.getRuleAccess().getFragmentsFragmentParserRuleCall_3_0());
-            				
-            pushFollow(FOLLOW_7);
-            lv_fragments_3_0=ruleFragment();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getRuleRule());
-            					}
-            					add(
-            						current,
-            						"fragments",
-            						lv_fragments_3_0,
-            						"fyp.xtext.wesnoth.mydsl.WesnothDSL.Fragment");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            // InternalWesnothDSL.g:160:3: ( (lv_goals_4_0= ruleGoal ) )*
+            // InternalWesnothDSL.g:141:3: ( (lv_fragments_3_0= ruleFragment ) )*
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==22) ) {
+                if ( (LA2_0==14) ) {
                     alt2=1;
                 }
 
 
                 switch (alt2) {
+            	case 1 :
+            	    // InternalWesnothDSL.g:142:4: (lv_fragments_3_0= ruleFragment )
+            	    {
+            	    // InternalWesnothDSL.g:142:4: (lv_fragments_3_0= ruleFragment )
+            	    // InternalWesnothDSL.g:143:5: lv_fragments_3_0= ruleFragment
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getRuleAccess().getFragmentsFragmentParserRuleCall_3_0());
+            	    				
+            	    pushFollow(FOLLOW_6);
+            	    lv_fragments_3_0=ruleFragment();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getRuleRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"fragments",
+            	    						lv_fragments_3_0,
+            	    						"fyp.xtext.wesnoth.mydsl.WesnothDSL.Fragment");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop2;
+                }
+            } while (true);
+
+            // InternalWesnothDSL.g:160:3: ( (lv_goals_4_0= ruleGoal ) )*
+            loop3:
+            do {
+                int alt3=2;
+                int LA3_0 = input.LA(1);
+
+                if ( (LA3_0==22) ) {
+                    alt3=1;
+                }
+
+
+                switch (alt3) {
             	case 1 :
             	    // InternalWesnothDSL.g:161:4: (lv_goals_4_0= ruleGoal )
             	    {
@@ -385,7 +403,7 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop2;
+            	    break loop3;
                 }
             } while (true);
 
@@ -509,17 +527,17 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
             			newLeafNode(otherlv_1, grammarAccess.getFragmentAccess().getLeftCurlyBracketKeyword_1());
             		
             // InternalWesnothDSL.g:225:3: ( (lv_defualt_cas_2_0= ruleDefualt_CA ) )*
-            loop3:
+            loop4:
             do {
-                int alt3=2;
-                int LA3_0 = input.LA(1);
+                int alt4=2;
+                int LA4_0 = input.LA(1);
 
-                if ( ((LA3_0>=26 && LA3_0<=35)) ) {
-                    alt3=1;
+                if ( ((LA4_0>=26 && LA4_0<=35)) ) {
+                    alt4=1;
                 }
 
 
-                switch (alt3) {
+                switch (alt4) {
             	case 1 :
             	    // InternalWesnothDSL.g:226:4: (lv_defualt_cas_2_0= ruleDefualt_CA )
             	    {
@@ -553,7 +571,7 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop3;
+            	    break loop4;
                 }
             } while (true);
 
@@ -753,36 +771,36 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
             // InternalWesnothDSL.g:308:2: (this_UnitEquals_0= ruleUnitEquals | this_AtLocation_1= ruleAtLocation | this_Damage_2= ruleDamage | this_Baseline_3= ruleBaseline )
             {
             // InternalWesnothDSL.g:308:2: (this_UnitEquals_0= ruleUnitEquals | this_AtLocation_1= ruleAtLocation | this_Damage_2= ruleDamage | this_Baseline_3= ruleBaseline )
-            int alt4=4;
+            int alt5=4;
             switch ( input.LA(1) ) {
             case 20:
                 {
-                alt4=1;
+                alt5=1;
                 }
                 break;
             case 18:
                 {
-                alt4=2;
+                alt5=2;
                 }
                 break;
             case 16:
                 {
-                alt4=3;
+                alt5=3;
                 }
                 break;
             case 15:
                 {
-                alt4=4;
+                alt5=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt4) {
+            switch (alt5) {
                 case 1 :
                     // InternalWesnothDSL.g:309:3: this_UnitEquals_0= ruleUnitEquals
                     {
@@ -1686,66 +1704,66 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
             // InternalWesnothDSL.g:683:4: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' )
             {
             // InternalWesnothDSL.g:683:4: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' )
-            int alt5=10;
+            int alt6=10;
             switch ( input.LA(1) ) {
             case 26:
                 {
-                alt5=1;
+                alt6=1;
                 }
                 break;
             case 27:
                 {
-                alt5=2;
+                alt6=2;
                 }
                 break;
             case 28:
                 {
-                alt5=3;
+                alt6=3;
                 }
                 break;
             case 29:
                 {
-                alt5=4;
+                alt6=4;
                 }
                 break;
             case 30:
                 {
-                alt5=5;
+                alt6=5;
                 }
                 break;
             case 31:
                 {
-                alt5=6;
+                alt6=6;
                 }
                 break;
             case 32:
                 {
-                alt5=7;
+                alt6=7;
                 }
                 break;
             case 33:
                 {
-                alt5=8;
+                alt6=8;
                 }
                 break;
             case 34:
                 {
-                alt5=9;
+                alt6=9;
                 }
                 break;
             case 35:
                 {
-                alt5=10;
+                alt6=10;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt5) {
+            switch (alt6) {
                 case 1 :
                     // InternalWesnothDSL.g:684:5: lv_caType_0_1= 'movement'
                     {
@@ -1943,7 +1961,7 @@ public class InternalWesnothDSLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000406000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000402000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000FFC002000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000158000L});

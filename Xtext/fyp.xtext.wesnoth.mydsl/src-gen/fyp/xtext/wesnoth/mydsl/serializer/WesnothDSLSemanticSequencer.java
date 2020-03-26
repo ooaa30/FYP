@@ -252,7 +252,7 @@ public class WesnothDSLSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     (name=STRING fragments+=Fragment goals+=Goal*)
+	 *     (name=STRING fragments+=Fragment* goals+=Goal*)
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
