@@ -168,8 +168,6 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *             caType='movement' | 
 	 *             caType='heal' | 
 	 *             caType='retreat' | 
-	 *             caType='move_to_targets' | 
-	 *             caType='basic_movement' | 
 	 *             caType='combat' | 
 	 *             caType='recruit' | 
 	 *             caType='combat_value_targets' | 

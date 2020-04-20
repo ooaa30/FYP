@@ -116,7 +116,7 @@ class WailGenerator extends AbstractGenerator {
 			[modify_ai]
 			    side=1
 			    action=delete
-			    path=stage[main_loop].candidate_action[move_to_tagets]
+			    path=stage[main_loop].candidate_action[move_to_targets]
 			[/modify_ai]
 			[modify_ai]
 			    side=1
@@ -147,7 +147,7 @@ class WailGenerator extends AbstractGenerator {
 					[candidate_action]
 					«cas.compile»
 						«frag.condition.compile»
-					[/candidate_action
+					[/candidate_action]
 			[/modify_ai]
 		«ENDFOR»
 		'''
@@ -157,13 +157,13 @@ class WailGenerator extends AbstractGenerator {
 		«IF ca.caType =="movement"»
 			id=goto
 			engine=cpp
-			name=ai_default_rca::goto_phase
+			name=ai_default_rca::move_to_targets_phase
 			«IF ca.cost != 0»
 			max_score=«ca.cost»
 			score=«ca.cost»
 			«ELSE»
-			max_score=200000
-			score=200000
+			max_score=20000
+			score=20000
 			«ENDIF»
 		«ELSEIF ca.caType=="retreat"»
 			id=retreat_injured
@@ -174,28 +174,7 @@ class WailGenerator extends AbstractGenerator {
 			«ELSE»
 			max_score=192000
 			«ENDIF»
-			location="ai/lua/ca_retreat_injured.lua"
-		«ELSEIF ca.caType =="move_to_target"»
-			id=move_to_targets
-			engine=cpp
-			name=ai_default_rca::move_to_targets_phase
-			«IF ca.cost != 0»
-			max_score=«ca.cost»
-			score=«ca.cost»
-			«ELSE»
-			max_score=20000
-			score=20000
-			«ENDIF»
-		«ELSEIF ca.caType == "basic_movement"»
-			id=move_to_any_enemy
-			engine=lua
-			name=ai_default_rca::move_to_any_enemy
-			«IF ca.cost != 0»
-			max_score=«ca.cost»
-			«ELSE»
-			max_score=1000
-			«ENDIF»
-			location="ai/lua/ca_move_to_any_enemy.lua"	
+			location="ai/lua/retreat.lua"
 		«ELSEIF ca.caType == "combat"»
 			id=combat
 			engine=cpp

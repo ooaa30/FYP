@@ -74,8 +74,6 @@ public abstract class AbstractWailProposalProvider extends TerminalsProposalProv
 		// subclasses may override
 		// subclasses may override
 		// subclasses may override
-		// subclasses may override
-		// subclasses may override
 	}
 	public void completeDefualt_CA_Cost(EObject model, Assignment assignment, ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
 		completeRuleCall(((RuleCall)assignment.getTerminal()), context, acceptor);

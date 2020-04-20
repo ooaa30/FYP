@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalWailParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'movement'", "'heal'", "'retreat'", "'move_to_targets'", "'basic_movement'", "'combat'", "'recruit'", "'combat_value_targets'", "'capture_villages'", "'leader_to_keep'", "'rule'", "'{'", "'}'", "'when:'", "'health'", "'-'", "'x:'", "'y:'", "'unit'", "'is'", "'goal'", "'value'", "'x'", "'y'", "'cost'", "'always'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'movement'", "'heal'", "'retreat'", "'combat'", "'recruit'", "'combat_value_targets'", "'capture_villages'", "'leader_to_keep'", "'rule'", "'{'", "'}'", "'when:'", "'health'", "'-'", "'x:'", "'y:'", "'unit'", "'is'", "'goal'", "'value'", "'x'", "'y'", "'cost'", "'always'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -36,9 +36,7 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
     public static final int T__12=12;
     public static final int T__34=34;
     public static final int T__13=13;
-    public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -144,7 +142,7 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==21) ) {
+                if ( (LA1_0==19) ) {
                     alt1=1;
                 }
 
@@ -1046,22 +1044,22 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
             // InternalWail.g:356:1: ( ( ruleUnitEquals ) | ( ruleAtLocation ) | ( ruleDamage ) | ( ruleBaseline ) )
             int alt2=4;
             switch ( input.LA(1) ) {
-            case 29:
+            case 27:
                 {
                 alt2=1;
                 }
                 break;
-            case 27:
+            case 25:
                 {
                 alt2=2;
                 }
                 break;
-            case 25:
+            case 23:
                 {
                 alt2=3;
                 }
                 break;
-            case 36:
+            case 34:
                 {
                 alt2=4;
                 }
@@ -1168,14 +1166,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Defualt_CA__CaTypeAlternatives_0_0"
-    // InternalWail.g:385:1: rule__Defualt_CA__CaTypeAlternatives_0_0 : ( ( 'movement' ) | ( 'heal' ) | ( 'retreat' ) | ( 'move_to_targets' ) | ( 'basic_movement' ) | ( 'combat' ) | ( 'recruit' ) | ( 'combat_value_targets' ) | ( 'capture_villages' ) | ( 'leader_to_keep' ) );
+    // InternalWail.g:385:1: rule__Defualt_CA__CaTypeAlternatives_0_0 : ( ( 'movement' ) | ( 'heal' ) | ( 'retreat' ) | ( 'combat' ) | ( 'recruit' ) | ( 'combat_value_targets' ) | ( 'capture_villages' ) | ( 'leader_to_keep' ) );
     public final void rule__Defualt_CA__CaTypeAlternatives_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:389:1: ( ( 'movement' ) | ( 'heal' ) | ( 'retreat' ) | ( 'move_to_targets' ) | ( 'basic_movement' ) | ( 'combat' ) | ( 'recruit' ) | ( 'combat_value_targets' ) | ( 'capture_villages' ) | ( 'leader_to_keep' ) )
-            int alt3=10;
+            // InternalWail.g:389:1: ( ( 'movement' ) | ( 'heal' ) | ( 'retreat' ) | ( 'combat' ) | ( 'recruit' ) | ( 'combat_value_targets' ) | ( 'capture_villages' ) | ( 'leader_to_keep' ) )
+            int alt3=8;
             switch ( input.LA(1) ) {
             case 11:
                 {
@@ -1215,16 +1213,6 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
             case 18:
                 {
                 alt3=8;
-                }
-                break;
-            case 19:
-                {
-                alt3=9;
-                }
-                break;
-            case 20:
-                {
-                alt3=10;
                 }
                 break;
             default:
@@ -1281,14 +1269,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalWail.g:408:2: ( 'move_to_targets' )
+                    // InternalWail.g:408:2: ( 'combat' )
                     {
-                    // InternalWail.g:408:2: ( 'move_to_targets' )
-                    // InternalWail.g:409:3: 'move_to_targets'
+                    // InternalWail.g:408:2: ( 'combat' )
+                    // InternalWail.g:409:3: 'combat'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_0_3()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_3()); 
                     match(input,14,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_0_3()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_3()); 
 
                     }
 
@@ -1296,14 +1284,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalWail.g:414:2: ( 'basic_movement' )
+                    // InternalWail.g:414:2: ( 'recruit' )
                     {
-                    // InternalWail.g:414:2: ( 'basic_movement' )
-                    // InternalWail.g:415:3: 'basic_movement'
+                    // InternalWail.g:414:2: ( 'recruit' )
+                    // InternalWail.g:415:3: 'recruit'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_0_4()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_4()); 
                     match(input,15,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_0_4()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_4()); 
 
                     }
 
@@ -1311,14 +1299,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalWail.g:420:2: ( 'combat' )
+                    // InternalWail.g:420:2: ( 'combat_value_targets' )
                     {
-                    // InternalWail.g:420:2: ( 'combat' )
-                    // InternalWail.g:421:3: 'combat'
+                    // InternalWail.g:420:2: ( 'combat_value_targets' )
+                    // InternalWail.g:421:3: 'combat_value_targets'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_5()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_5()); 
                     match(input,16,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_5()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_5()); 
 
                     }
 
@@ -1326,14 +1314,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // InternalWail.g:426:2: ( 'recruit' )
+                    // InternalWail.g:426:2: ( 'capture_villages' )
                     {
-                    // InternalWail.g:426:2: ( 'recruit' )
-                    // InternalWail.g:427:3: 'recruit'
+                    // InternalWail.g:426:2: ( 'capture_villages' )
+                    // InternalWail.g:427:3: 'capture_villages'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_6()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_6()); 
                     match(input,17,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_6()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_6()); 
 
                     }
 
@@ -1341,44 +1329,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 8 :
-                    // InternalWail.g:432:2: ( 'combat_value_targets' )
+                    // InternalWail.g:432:2: ( 'leader_to_keep' )
                     {
-                    // InternalWail.g:432:2: ( 'combat_value_targets' )
-                    // InternalWail.g:433:3: 'combat_value_targets'
+                    // InternalWail.g:432:2: ( 'leader_to_keep' )
+                    // InternalWail.g:433:3: 'leader_to_keep'
                     {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_7()); 
+                     before(grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_7()); 
                     match(input,18,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_7()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 9 :
-                    // InternalWail.g:438:2: ( 'capture_villages' )
-                    {
-                    // InternalWail.g:438:2: ( 'capture_villages' )
-                    // InternalWail.g:439:3: 'capture_villages'
-                    {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_8()); 
-                    match(input,19,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_8()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 10 :
-                    // InternalWail.g:444:2: ( 'leader_to_keep' )
-                    {
-                    // InternalWail.g:444:2: ( 'leader_to_keep' )
-                    // InternalWail.g:445:3: 'leader_to_keep'
-                    {
-                     before(grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_9()); 
-                    match(input,20,FOLLOW_2); 
-                     after(grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_9()); 
+                     after(grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_7()); 
 
                     }
 
@@ -1403,14 +1361,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__0"
-    // InternalWail.g:454:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
+    // InternalWail.g:442:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
     public final void rule__Rule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:458:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
-            // InternalWail.g:459:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
+            // InternalWail.g:446:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
+            // InternalWail.g:447:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__Rule__Group__0__Impl();
@@ -1441,20 +1399,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__0__Impl"
-    // InternalWail.g:466:1: rule__Rule__Group__0__Impl : ( 'rule' ) ;
+    // InternalWail.g:454:1: rule__Rule__Group__0__Impl : ( 'rule' ) ;
     public final void rule__Rule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:470:1: ( ( 'rule' ) )
-            // InternalWail.g:471:1: ( 'rule' )
+            // InternalWail.g:458:1: ( ( 'rule' ) )
+            // InternalWail.g:459:1: ( 'rule' )
             {
-            // InternalWail.g:471:1: ( 'rule' )
-            // InternalWail.g:472:2: 'rule'
+            // InternalWail.g:459:1: ( 'rule' )
+            // InternalWail.g:460:2: 'rule'
             {
              before(grammarAccess.getRuleAccess().getRuleKeyword_0()); 
-            match(input,21,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getRuleAccess().getRuleKeyword_0()); 
 
             }
@@ -1478,14 +1436,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1"
-    // InternalWail.g:481:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
+    // InternalWail.g:469:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
     public final void rule__Rule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:485:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
-            // InternalWail.g:486:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
+            // InternalWail.g:473:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
+            // InternalWail.g:474:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__Rule__Group__1__Impl();
@@ -1516,21 +1474,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__1__Impl"
-    // InternalWail.g:493:1: rule__Rule__Group__1__Impl : ( ( rule__Rule__NameAssignment_1 ) ) ;
+    // InternalWail.g:481:1: rule__Rule__Group__1__Impl : ( ( rule__Rule__NameAssignment_1 ) ) ;
     public final void rule__Rule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:497:1: ( ( ( rule__Rule__NameAssignment_1 ) ) )
-            // InternalWail.g:498:1: ( ( rule__Rule__NameAssignment_1 ) )
+            // InternalWail.g:485:1: ( ( ( rule__Rule__NameAssignment_1 ) ) )
+            // InternalWail.g:486:1: ( ( rule__Rule__NameAssignment_1 ) )
             {
-            // InternalWail.g:498:1: ( ( rule__Rule__NameAssignment_1 ) )
-            // InternalWail.g:499:2: ( rule__Rule__NameAssignment_1 )
+            // InternalWail.g:486:1: ( ( rule__Rule__NameAssignment_1 ) )
+            // InternalWail.g:487:2: ( rule__Rule__NameAssignment_1 )
             {
              before(grammarAccess.getRuleAccess().getNameAssignment_1()); 
-            // InternalWail.g:500:2: ( rule__Rule__NameAssignment_1 )
-            // InternalWail.g:500:3: rule__Rule__NameAssignment_1
+            // InternalWail.g:488:2: ( rule__Rule__NameAssignment_1 )
+            // InternalWail.g:488:3: rule__Rule__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Rule__NameAssignment_1();
@@ -1563,14 +1521,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__2"
-    // InternalWail.g:508:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl rule__Rule__Group__3 ;
+    // InternalWail.g:496:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl rule__Rule__Group__3 ;
     public final void rule__Rule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:512:1: ( rule__Rule__Group__2__Impl rule__Rule__Group__3 )
-            // InternalWail.g:513:2: rule__Rule__Group__2__Impl rule__Rule__Group__3
+            // InternalWail.g:500:1: ( rule__Rule__Group__2__Impl rule__Rule__Group__3 )
+            // InternalWail.g:501:2: rule__Rule__Group__2__Impl rule__Rule__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__Rule__Group__2__Impl();
@@ -1601,20 +1559,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__2__Impl"
-    // InternalWail.g:520:1: rule__Rule__Group__2__Impl : ( '{' ) ;
+    // InternalWail.g:508:1: rule__Rule__Group__2__Impl : ( '{' ) ;
     public final void rule__Rule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:524:1: ( ( '{' ) )
-            // InternalWail.g:525:1: ( '{' )
+            // InternalWail.g:512:1: ( ( '{' ) )
+            // InternalWail.g:513:1: ( '{' )
             {
-            // InternalWail.g:525:1: ( '{' )
-            // InternalWail.g:526:2: '{'
+            // InternalWail.g:513:1: ( '{' )
+            // InternalWail.g:514:2: '{'
             {
              before(grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,22,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getRuleAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -1638,14 +1596,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__3"
-    // InternalWail.g:535:1: rule__Rule__Group__3 : rule__Rule__Group__3__Impl rule__Rule__Group__4 ;
+    // InternalWail.g:523:1: rule__Rule__Group__3 : rule__Rule__Group__3__Impl rule__Rule__Group__4 ;
     public final void rule__Rule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:539:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
-            // InternalWail.g:540:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
+            // InternalWail.g:527:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
+            // InternalWail.g:528:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
             {
             pushFollow(FOLLOW_6);
             rule__Rule__Group__3__Impl();
@@ -1676,33 +1634,33 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__3__Impl"
-    // InternalWail.g:547:1: rule__Rule__Group__3__Impl : ( ( rule__Rule__FragmentsAssignment_3 )* ) ;
+    // InternalWail.g:535:1: rule__Rule__Group__3__Impl : ( ( rule__Rule__FragmentsAssignment_3 )* ) ;
     public final void rule__Rule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:551:1: ( ( ( rule__Rule__FragmentsAssignment_3 )* ) )
-            // InternalWail.g:552:1: ( ( rule__Rule__FragmentsAssignment_3 )* )
+            // InternalWail.g:539:1: ( ( ( rule__Rule__FragmentsAssignment_3 )* ) )
+            // InternalWail.g:540:1: ( ( rule__Rule__FragmentsAssignment_3 )* )
             {
-            // InternalWail.g:552:1: ( ( rule__Rule__FragmentsAssignment_3 )* )
-            // InternalWail.g:553:2: ( rule__Rule__FragmentsAssignment_3 )*
+            // InternalWail.g:540:1: ( ( rule__Rule__FragmentsAssignment_3 )* )
+            // InternalWail.g:541:2: ( rule__Rule__FragmentsAssignment_3 )*
             {
              before(grammarAccess.getRuleAccess().getFragmentsAssignment_3()); 
-            // InternalWail.g:554:2: ( rule__Rule__FragmentsAssignment_3 )*
+            // InternalWail.g:542:2: ( rule__Rule__FragmentsAssignment_3 )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==24) ) {
+                if ( (LA4_0==22) ) {
                     alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalWail.g:554:3: rule__Rule__FragmentsAssignment_3
+            	    // InternalWail.g:542:3: rule__Rule__FragmentsAssignment_3
             	    {
             	    pushFollow(FOLLOW_7);
             	    rule__Rule__FragmentsAssignment_3();
@@ -1741,14 +1699,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__4"
-    // InternalWail.g:562:1: rule__Rule__Group__4 : rule__Rule__Group__4__Impl rule__Rule__Group__5 ;
+    // InternalWail.g:550:1: rule__Rule__Group__4 : rule__Rule__Group__4__Impl rule__Rule__Group__5 ;
     public final void rule__Rule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:566:1: ( rule__Rule__Group__4__Impl rule__Rule__Group__5 )
-            // InternalWail.g:567:2: rule__Rule__Group__4__Impl rule__Rule__Group__5
+            // InternalWail.g:554:1: ( rule__Rule__Group__4__Impl rule__Rule__Group__5 )
+            // InternalWail.g:555:2: rule__Rule__Group__4__Impl rule__Rule__Group__5
             {
             pushFollow(FOLLOW_6);
             rule__Rule__Group__4__Impl();
@@ -1779,33 +1737,33 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__4__Impl"
-    // InternalWail.g:574:1: rule__Rule__Group__4__Impl : ( ( rule__Rule__GoalsAssignment_4 )* ) ;
+    // InternalWail.g:562:1: rule__Rule__Group__4__Impl : ( ( rule__Rule__GoalsAssignment_4 )* ) ;
     public final void rule__Rule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:578:1: ( ( ( rule__Rule__GoalsAssignment_4 )* ) )
-            // InternalWail.g:579:1: ( ( rule__Rule__GoalsAssignment_4 )* )
+            // InternalWail.g:566:1: ( ( ( rule__Rule__GoalsAssignment_4 )* ) )
+            // InternalWail.g:567:1: ( ( rule__Rule__GoalsAssignment_4 )* )
             {
-            // InternalWail.g:579:1: ( ( rule__Rule__GoalsAssignment_4 )* )
-            // InternalWail.g:580:2: ( rule__Rule__GoalsAssignment_4 )*
+            // InternalWail.g:567:1: ( ( rule__Rule__GoalsAssignment_4 )* )
+            // InternalWail.g:568:2: ( rule__Rule__GoalsAssignment_4 )*
             {
              before(grammarAccess.getRuleAccess().getGoalsAssignment_4()); 
-            // InternalWail.g:581:2: ( rule__Rule__GoalsAssignment_4 )*
+            // InternalWail.g:569:2: ( rule__Rule__GoalsAssignment_4 )*
             loop5:
             do {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==31) ) {
+                if ( (LA5_0==29) ) {
                     alt5=1;
                 }
 
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalWail.g:581:3: rule__Rule__GoalsAssignment_4
+            	    // InternalWail.g:569:3: rule__Rule__GoalsAssignment_4
             	    {
             	    pushFollow(FOLLOW_8);
             	    rule__Rule__GoalsAssignment_4();
@@ -1844,14 +1802,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__5"
-    // InternalWail.g:589:1: rule__Rule__Group__5 : rule__Rule__Group__5__Impl ;
+    // InternalWail.g:577:1: rule__Rule__Group__5 : rule__Rule__Group__5__Impl ;
     public final void rule__Rule__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:593:1: ( rule__Rule__Group__5__Impl )
-            // InternalWail.g:594:2: rule__Rule__Group__5__Impl
+            // InternalWail.g:581:1: ( rule__Rule__Group__5__Impl )
+            // InternalWail.g:582:2: rule__Rule__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Rule__Group__5__Impl();
@@ -1877,20 +1835,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__Group__5__Impl"
-    // InternalWail.g:600:1: rule__Rule__Group__5__Impl : ( '}' ) ;
+    // InternalWail.g:588:1: rule__Rule__Group__5__Impl : ( '}' ) ;
     public final void rule__Rule__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:604:1: ( ( '}' ) )
-            // InternalWail.g:605:1: ( '}' )
+            // InternalWail.g:592:1: ( ( '}' ) )
+            // InternalWail.g:593:1: ( '}' )
             {
-            // InternalWail.g:605:1: ( '}' )
-            // InternalWail.g:606:2: '}'
+            // InternalWail.g:593:1: ( '}' )
+            // InternalWail.g:594:2: '}'
             {
              before(grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,23,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -1914,14 +1872,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fragment__Group__0"
-    // InternalWail.g:616:1: rule__Fragment__Group__0 : rule__Fragment__Group__0__Impl rule__Fragment__Group__1 ;
+    // InternalWail.g:604:1: rule__Fragment__Group__0 : rule__Fragment__Group__0__Impl rule__Fragment__Group__1 ;
     public final void rule__Fragment__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:620:1: ( rule__Fragment__Group__0__Impl rule__Fragment__Group__1 )
-            // InternalWail.g:621:2: rule__Fragment__Group__0__Impl rule__Fragment__Group__1
+            // InternalWail.g:608:1: ( rule__Fragment__Group__0__Impl rule__Fragment__Group__1 )
+            // InternalWail.g:609:2: rule__Fragment__Group__0__Impl rule__Fragment__Group__1
             {
             pushFollow(FOLLOW_5);
             rule__Fragment__Group__0__Impl();
@@ -1952,21 +1910,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fragment__Group__0__Impl"
-    // InternalWail.g:628:1: rule__Fragment__Group__0__Impl : ( ( rule__Fragment__ConditionAssignment_0 ) ) ;
+    // InternalWail.g:616:1: rule__Fragment__Group__0__Impl : ( ( rule__Fragment__ConditionAssignment_0 ) ) ;
     public final void rule__Fragment__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:632:1: ( ( ( rule__Fragment__ConditionAssignment_0 ) ) )
-            // InternalWail.g:633:1: ( ( rule__Fragment__ConditionAssignment_0 ) )
+            // InternalWail.g:620:1: ( ( ( rule__Fragment__ConditionAssignment_0 ) ) )
+            // InternalWail.g:621:1: ( ( rule__Fragment__ConditionAssignment_0 ) )
             {
-            // InternalWail.g:633:1: ( ( rule__Fragment__ConditionAssignment_0 ) )
-            // InternalWail.g:634:2: ( rule__Fragment__ConditionAssignment_0 )
+            // InternalWail.g:621:1: ( ( rule__Fragment__ConditionAssignment_0 ) )
+            // InternalWail.g:622:2: ( rule__Fragment__ConditionAssignment_0 )
             {
              before(grammarAccess.getFragmentAccess().getConditionAssignment_0()); 
-            // InternalWail.g:635:2: ( rule__Fragment__ConditionAssignment_0 )
-            // InternalWail.g:635:3: rule__Fragment__ConditionAssignment_0
+            // InternalWail.g:623:2: ( rule__Fragment__ConditionAssignment_0 )
+            // InternalWail.g:623:3: rule__Fragment__ConditionAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Fragment__ConditionAssignment_0();
@@ -1999,14 +1957,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fragment__Group__1"
-    // InternalWail.g:643:1: rule__Fragment__Group__1 : rule__Fragment__Group__1__Impl rule__Fragment__Group__2 ;
+    // InternalWail.g:631:1: rule__Fragment__Group__1 : rule__Fragment__Group__1__Impl rule__Fragment__Group__2 ;
     public final void rule__Fragment__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:647:1: ( rule__Fragment__Group__1__Impl rule__Fragment__Group__2 )
-            // InternalWail.g:648:2: rule__Fragment__Group__1__Impl rule__Fragment__Group__2
+            // InternalWail.g:635:1: ( rule__Fragment__Group__1__Impl rule__Fragment__Group__2 )
+            // InternalWail.g:636:2: rule__Fragment__Group__1__Impl rule__Fragment__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__Fragment__Group__1__Impl();
@@ -2037,20 +1995,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fragment__Group__1__Impl"
-    // InternalWail.g:655:1: rule__Fragment__Group__1__Impl : ( '{' ) ;
+    // InternalWail.g:643:1: rule__Fragment__Group__1__Impl : ( '{' ) ;
     public final void rule__Fragment__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:659:1: ( ( '{' ) )
-            // InternalWail.g:660:1: ( '{' )
+            // InternalWail.g:647:1: ( ( '{' ) )
+            // InternalWail.g:648:1: ( '{' )
             {
-            // InternalWail.g:660:1: ( '{' )
-            // InternalWail.g:661:2: '{'
+            // InternalWail.g:648:1: ( '{' )
+            // InternalWail.g:649:2: '{'
             {
              before(grammarAccess.getFragmentAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,22,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getFragmentAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -2074,14 +2032,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fragment__Group__2"
-    // InternalWail.g:670:1: rule__Fragment__Group__2 : rule__Fragment__Group__2__Impl rule__Fragment__Group__3 ;
+    // InternalWail.g:658:1: rule__Fragment__Group__2 : rule__Fragment__Group__2__Impl rule__Fragment__Group__3 ;
     public final void rule__Fragment__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:674:1: ( rule__Fragment__Group__2__Impl rule__Fragment__Group__3 )
-            // InternalWail.g:675:2: rule__Fragment__Group__2__Impl rule__Fragment__Group__3
+            // InternalWail.g:662:1: ( rule__Fragment__Group__2__Impl rule__Fragment__Group__3 )
+            // InternalWail.g:663:2: rule__Fragment__Group__2__Impl rule__Fragment__Group__3
             {
             pushFollow(FOLLOW_9);
             rule__Fragment__Group__2__Impl();
@@ -2112,33 +2070,33 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fragment__Group__2__Impl"
-    // InternalWail.g:682:1: rule__Fragment__Group__2__Impl : ( ( rule__Fragment__Defualt_casAssignment_2 )* ) ;
+    // InternalWail.g:670:1: rule__Fragment__Group__2__Impl : ( ( rule__Fragment__Defualt_casAssignment_2 )* ) ;
     public final void rule__Fragment__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:686:1: ( ( ( rule__Fragment__Defualt_casAssignment_2 )* ) )
-            // InternalWail.g:687:1: ( ( rule__Fragment__Defualt_casAssignment_2 )* )
+            // InternalWail.g:674:1: ( ( ( rule__Fragment__Defualt_casAssignment_2 )* ) )
+            // InternalWail.g:675:1: ( ( rule__Fragment__Defualt_casAssignment_2 )* )
             {
-            // InternalWail.g:687:1: ( ( rule__Fragment__Defualt_casAssignment_2 )* )
-            // InternalWail.g:688:2: ( rule__Fragment__Defualt_casAssignment_2 )*
+            // InternalWail.g:675:1: ( ( rule__Fragment__Defualt_casAssignment_2 )* )
+            // InternalWail.g:676:2: ( rule__Fragment__Defualt_casAssignment_2 )*
             {
              before(grammarAccess.getFragmentAccess().getDefualt_casAssignment_2()); 
-            // InternalWail.g:689:2: ( rule__Fragment__Defualt_casAssignment_2 )*
+            // InternalWail.g:677:2: ( rule__Fragment__Defualt_casAssignment_2 )*
             loop6:
             do {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( ((LA6_0>=11 && LA6_0<=20)) ) {
+                if ( ((LA6_0>=11 && LA6_0<=18)) ) {
                     alt6=1;
                 }
 
 
                 switch (alt6) {
             	case 1 :
-            	    // InternalWail.g:689:3: rule__Fragment__Defualt_casAssignment_2
+            	    // InternalWail.g:677:3: rule__Fragment__Defualt_casAssignment_2
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__Fragment__Defualt_casAssignment_2();
@@ -2177,14 +2135,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fragment__Group__3"
-    // InternalWail.g:697:1: rule__Fragment__Group__3 : rule__Fragment__Group__3__Impl ;
+    // InternalWail.g:685:1: rule__Fragment__Group__3 : rule__Fragment__Group__3__Impl ;
     public final void rule__Fragment__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:701:1: ( rule__Fragment__Group__3__Impl )
-            // InternalWail.g:702:2: rule__Fragment__Group__3__Impl
+            // InternalWail.g:689:1: ( rule__Fragment__Group__3__Impl )
+            // InternalWail.g:690:2: rule__Fragment__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Fragment__Group__3__Impl();
@@ -2210,20 +2168,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fragment__Group__3__Impl"
-    // InternalWail.g:708:1: rule__Fragment__Group__3__Impl : ( '}' ) ;
+    // InternalWail.g:696:1: rule__Fragment__Group__3__Impl : ( '}' ) ;
     public final void rule__Fragment__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:712:1: ( ( '}' ) )
-            // InternalWail.g:713:1: ( '}' )
+            // InternalWail.g:700:1: ( ( '}' ) )
+            // InternalWail.g:701:1: ( '}' )
             {
-            // InternalWail.g:713:1: ( '}' )
-            // InternalWail.g:714:2: '}'
+            // InternalWail.g:701:1: ( '}' )
+            // InternalWail.g:702:2: '}'
             {
              before(grammarAccess.getFragmentAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,23,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getFragmentAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -2247,14 +2205,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Conditional__Group__0"
-    // InternalWail.g:724:1: rule__Conditional__Group__0 : rule__Conditional__Group__0__Impl rule__Conditional__Group__1 ;
+    // InternalWail.g:712:1: rule__Conditional__Group__0 : rule__Conditional__Group__0__Impl rule__Conditional__Group__1 ;
     public final void rule__Conditional__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:728:1: ( rule__Conditional__Group__0__Impl rule__Conditional__Group__1 )
-            // InternalWail.g:729:2: rule__Conditional__Group__0__Impl rule__Conditional__Group__1
+            // InternalWail.g:716:1: ( rule__Conditional__Group__0__Impl rule__Conditional__Group__1 )
+            // InternalWail.g:717:2: rule__Conditional__Group__0__Impl rule__Conditional__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__Conditional__Group__0__Impl();
@@ -2285,20 +2243,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Conditional__Group__0__Impl"
-    // InternalWail.g:736:1: rule__Conditional__Group__0__Impl : ( 'when:' ) ;
+    // InternalWail.g:724:1: rule__Conditional__Group__0__Impl : ( 'when:' ) ;
     public final void rule__Conditional__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:740:1: ( ( 'when:' ) )
-            // InternalWail.g:741:1: ( 'when:' )
+            // InternalWail.g:728:1: ( ( 'when:' ) )
+            // InternalWail.g:729:1: ( 'when:' )
             {
-            // InternalWail.g:741:1: ( 'when:' )
-            // InternalWail.g:742:2: 'when:'
+            // InternalWail.g:729:1: ( 'when:' )
+            // InternalWail.g:730:2: 'when:'
             {
              before(grammarAccess.getConditionalAccess().getWhenKeyword_0()); 
-            match(input,24,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getConditionalAccess().getWhenKeyword_0()); 
 
             }
@@ -2322,14 +2280,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Conditional__Group__1"
-    // InternalWail.g:751:1: rule__Conditional__Group__1 : rule__Conditional__Group__1__Impl ;
+    // InternalWail.g:739:1: rule__Conditional__Group__1 : rule__Conditional__Group__1__Impl ;
     public final void rule__Conditional__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:755:1: ( rule__Conditional__Group__1__Impl )
-            // InternalWail.g:756:2: rule__Conditional__Group__1__Impl
+            // InternalWail.g:743:1: ( rule__Conditional__Group__1__Impl )
+            // InternalWail.g:744:2: rule__Conditional__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Conditional__Group__1__Impl();
@@ -2355,21 +2313,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Conditional__Group__1__Impl"
-    // InternalWail.g:762:1: rule__Conditional__Group__1__Impl : ( ( rule__Conditional__XAssignment_1 ) ) ;
+    // InternalWail.g:750:1: rule__Conditional__Group__1__Impl : ( ( rule__Conditional__XAssignment_1 ) ) ;
     public final void rule__Conditional__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:766:1: ( ( ( rule__Conditional__XAssignment_1 ) ) )
-            // InternalWail.g:767:1: ( ( rule__Conditional__XAssignment_1 ) )
+            // InternalWail.g:754:1: ( ( ( rule__Conditional__XAssignment_1 ) ) )
+            // InternalWail.g:755:1: ( ( rule__Conditional__XAssignment_1 ) )
             {
-            // InternalWail.g:767:1: ( ( rule__Conditional__XAssignment_1 ) )
-            // InternalWail.g:768:2: ( rule__Conditional__XAssignment_1 )
+            // InternalWail.g:755:1: ( ( rule__Conditional__XAssignment_1 ) )
+            // InternalWail.g:756:2: ( rule__Conditional__XAssignment_1 )
             {
              before(grammarAccess.getConditionalAccess().getXAssignment_1()); 
-            // InternalWail.g:769:2: ( rule__Conditional__XAssignment_1 )
-            // InternalWail.g:769:3: rule__Conditional__XAssignment_1
+            // InternalWail.g:757:2: ( rule__Conditional__XAssignment_1 )
+            // InternalWail.g:757:3: rule__Conditional__XAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Conditional__XAssignment_1();
@@ -2402,14 +2360,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Damage__Group__0"
-    // InternalWail.g:778:1: rule__Damage__Group__0 : rule__Damage__Group__0__Impl rule__Damage__Group__1 ;
+    // InternalWail.g:766:1: rule__Damage__Group__0 : rule__Damage__Group__0__Impl rule__Damage__Group__1 ;
     public final void rule__Damage__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:782:1: ( rule__Damage__Group__0__Impl rule__Damage__Group__1 )
-            // InternalWail.g:783:2: rule__Damage__Group__0__Impl rule__Damage__Group__1
+            // InternalWail.g:770:1: ( rule__Damage__Group__0__Impl rule__Damage__Group__1 )
+            // InternalWail.g:771:2: rule__Damage__Group__0__Impl rule__Damage__Group__1
             {
             pushFollow(FOLLOW_12);
             rule__Damage__Group__0__Impl();
@@ -2440,20 +2398,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Damage__Group__0__Impl"
-    // InternalWail.g:790:1: rule__Damage__Group__0__Impl : ( 'health' ) ;
+    // InternalWail.g:778:1: rule__Damage__Group__0__Impl : ( 'health' ) ;
     public final void rule__Damage__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:794:1: ( ( 'health' ) )
-            // InternalWail.g:795:1: ( 'health' )
+            // InternalWail.g:782:1: ( ( 'health' ) )
+            // InternalWail.g:783:1: ( 'health' )
             {
-            // InternalWail.g:795:1: ( 'health' )
-            // InternalWail.g:796:2: 'health'
+            // InternalWail.g:783:1: ( 'health' )
+            // InternalWail.g:784:2: 'health'
             {
              before(grammarAccess.getDamageAccess().getHealthKeyword_0()); 
-            match(input,25,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getDamageAccess().getHealthKeyword_0()); 
 
             }
@@ -2477,14 +2435,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Damage__Group__1"
-    // InternalWail.g:805:1: rule__Damage__Group__1 : rule__Damage__Group__1__Impl rule__Damage__Group__2 ;
+    // InternalWail.g:793:1: rule__Damage__Group__1 : rule__Damage__Group__1__Impl rule__Damage__Group__2 ;
     public final void rule__Damage__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:809:1: ( rule__Damage__Group__1__Impl rule__Damage__Group__2 )
-            // InternalWail.g:810:2: rule__Damage__Group__1__Impl rule__Damage__Group__2
+            // InternalWail.g:797:1: ( rule__Damage__Group__1__Impl rule__Damage__Group__2 )
+            // InternalWail.g:798:2: rule__Damage__Group__1__Impl rule__Damage__Group__2
             {
             pushFollow(FOLLOW_13);
             rule__Damage__Group__1__Impl();
@@ -2515,20 +2473,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Damage__Group__1__Impl"
-    // InternalWail.g:817:1: rule__Damage__Group__1__Impl : ( '-' ) ;
+    // InternalWail.g:805:1: rule__Damage__Group__1__Impl : ( '-' ) ;
     public final void rule__Damage__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:821:1: ( ( '-' ) )
-            // InternalWail.g:822:1: ( '-' )
+            // InternalWail.g:809:1: ( ( '-' ) )
+            // InternalWail.g:810:1: ( '-' )
             {
-            // InternalWail.g:822:1: ( '-' )
-            // InternalWail.g:823:2: '-'
+            // InternalWail.g:810:1: ( '-' )
+            // InternalWail.g:811:2: '-'
             {
              before(grammarAccess.getDamageAccess().getHyphenMinusKeyword_1()); 
-            match(input,26,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getDamageAccess().getHyphenMinusKeyword_1()); 
 
             }
@@ -2552,14 +2510,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Damage__Group__2"
-    // InternalWail.g:832:1: rule__Damage__Group__2 : rule__Damage__Group__2__Impl ;
+    // InternalWail.g:820:1: rule__Damage__Group__2 : rule__Damage__Group__2__Impl ;
     public final void rule__Damage__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:836:1: ( rule__Damage__Group__2__Impl )
-            // InternalWail.g:837:2: rule__Damage__Group__2__Impl
+            // InternalWail.g:824:1: ( rule__Damage__Group__2__Impl )
+            // InternalWail.g:825:2: rule__Damage__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Damage__Group__2__Impl();
@@ -2585,21 +2543,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Damage__Group__2__Impl"
-    // InternalWail.g:843:1: rule__Damage__Group__2__Impl : ( ( rule__Damage__HealthAssignment_2 ) ) ;
+    // InternalWail.g:831:1: rule__Damage__Group__2__Impl : ( ( rule__Damage__HealthAssignment_2 ) ) ;
     public final void rule__Damage__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:847:1: ( ( ( rule__Damage__HealthAssignment_2 ) ) )
-            // InternalWail.g:848:1: ( ( rule__Damage__HealthAssignment_2 ) )
+            // InternalWail.g:835:1: ( ( ( rule__Damage__HealthAssignment_2 ) ) )
+            // InternalWail.g:836:1: ( ( rule__Damage__HealthAssignment_2 ) )
             {
-            // InternalWail.g:848:1: ( ( rule__Damage__HealthAssignment_2 ) )
-            // InternalWail.g:849:2: ( rule__Damage__HealthAssignment_2 )
+            // InternalWail.g:836:1: ( ( rule__Damage__HealthAssignment_2 ) )
+            // InternalWail.g:837:2: ( rule__Damage__HealthAssignment_2 )
             {
              before(grammarAccess.getDamageAccess().getHealthAssignment_2()); 
-            // InternalWail.g:850:2: ( rule__Damage__HealthAssignment_2 )
-            // InternalWail.g:850:3: rule__Damage__HealthAssignment_2
+            // InternalWail.g:838:2: ( rule__Damage__HealthAssignment_2 )
+            // InternalWail.g:838:3: rule__Damage__HealthAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Damage__HealthAssignment_2();
@@ -2632,14 +2590,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtLocation__Group__0"
-    // InternalWail.g:859:1: rule__AtLocation__Group__0 : rule__AtLocation__Group__0__Impl rule__AtLocation__Group__1 ;
+    // InternalWail.g:847:1: rule__AtLocation__Group__0 : rule__AtLocation__Group__0__Impl rule__AtLocation__Group__1 ;
     public final void rule__AtLocation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:863:1: ( rule__AtLocation__Group__0__Impl rule__AtLocation__Group__1 )
-            // InternalWail.g:864:2: rule__AtLocation__Group__0__Impl rule__AtLocation__Group__1
+            // InternalWail.g:851:1: ( rule__AtLocation__Group__0__Impl rule__AtLocation__Group__1 )
+            // InternalWail.g:852:2: rule__AtLocation__Group__0__Impl rule__AtLocation__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__AtLocation__Group__0__Impl();
@@ -2670,20 +2628,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtLocation__Group__0__Impl"
-    // InternalWail.g:871:1: rule__AtLocation__Group__0__Impl : ( 'x:' ) ;
+    // InternalWail.g:859:1: rule__AtLocation__Group__0__Impl : ( 'x:' ) ;
     public final void rule__AtLocation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:875:1: ( ( 'x:' ) )
-            // InternalWail.g:876:1: ( 'x:' )
+            // InternalWail.g:863:1: ( ( 'x:' ) )
+            // InternalWail.g:864:1: ( 'x:' )
             {
-            // InternalWail.g:876:1: ( 'x:' )
-            // InternalWail.g:877:2: 'x:'
+            // InternalWail.g:864:1: ( 'x:' )
+            // InternalWail.g:865:2: 'x:'
             {
              before(grammarAccess.getAtLocationAccess().getXKeyword_0()); 
-            match(input,27,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getAtLocationAccess().getXKeyword_0()); 
 
             }
@@ -2707,14 +2665,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtLocation__Group__1"
-    // InternalWail.g:886:1: rule__AtLocation__Group__1 : rule__AtLocation__Group__1__Impl rule__AtLocation__Group__2 ;
+    // InternalWail.g:874:1: rule__AtLocation__Group__1 : rule__AtLocation__Group__1__Impl rule__AtLocation__Group__2 ;
     public final void rule__AtLocation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:890:1: ( rule__AtLocation__Group__1__Impl rule__AtLocation__Group__2 )
-            // InternalWail.g:891:2: rule__AtLocation__Group__1__Impl rule__AtLocation__Group__2
+            // InternalWail.g:878:1: ( rule__AtLocation__Group__1__Impl rule__AtLocation__Group__2 )
+            // InternalWail.g:879:2: rule__AtLocation__Group__1__Impl rule__AtLocation__Group__2
             {
             pushFollow(FOLLOW_14);
             rule__AtLocation__Group__1__Impl();
@@ -2745,21 +2703,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtLocation__Group__1__Impl"
-    // InternalWail.g:898:1: rule__AtLocation__Group__1__Impl : ( ( rule__AtLocation__XAxisAssignment_1 ) ) ;
+    // InternalWail.g:886:1: rule__AtLocation__Group__1__Impl : ( ( rule__AtLocation__XAxisAssignment_1 ) ) ;
     public final void rule__AtLocation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:902:1: ( ( ( rule__AtLocation__XAxisAssignment_1 ) ) )
-            // InternalWail.g:903:1: ( ( rule__AtLocation__XAxisAssignment_1 ) )
+            // InternalWail.g:890:1: ( ( ( rule__AtLocation__XAxisAssignment_1 ) ) )
+            // InternalWail.g:891:1: ( ( rule__AtLocation__XAxisAssignment_1 ) )
             {
-            // InternalWail.g:903:1: ( ( rule__AtLocation__XAxisAssignment_1 ) )
-            // InternalWail.g:904:2: ( rule__AtLocation__XAxisAssignment_1 )
+            // InternalWail.g:891:1: ( ( rule__AtLocation__XAxisAssignment_1 ) )
+            // InternalWail.g:892:2: ( rule__AtLocation__XAxisAssignment_1 )
             {
              before(grammarAccess.getAtLocationAccess().getXAxisAssignment_1()); 
-            // InternalWail.g:905:2: ( rule__AtLocation__XAxisAssignment_1 )
-            // InternalWail.g:905:3: rule__AtLocation__XAxisAssignment_1
+            // InternalWail.g:893:2: ( rule__AtLocation__XAxisAssignment_1 )
+            // InternalWail.g:893:3: rule__AtLocation__XAxisAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__AtLocation__XAxisAssignment_1();
@@ -2792,14 +2750,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtLocation__Group__2"
-    // InternalWail.g:913:1: rule__AtLocation__Group__2 : rule__AtLocation__Group__2__Impl rule__AtLocation__Group__3 ;
+    // InternalWail.g:901:1: rule__AtLocation__Group__2 : rule__AtLocation__Group__2__Impl rule__AtLocation__Group__3 ;
     public final void rule__AtLocation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:917:1: ( rule__AtLocation__Group__2__Impl rule__AtLocation__Group__3 )
-            // InternalWail.g:918:2: rule__AtLocation__Group__2__Impl rule__AtLocation__Group__3
+            // InternalWail.g:905:1: ( rule__AtLocation__Group__2__Impl rule__AtLocation__Group__3 )
+            // InternalWail.g:906:2: rule__AtLocation__Group__2__Impl rule__AtLocation__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__AtLocation__Group__2__Impl();
@@ -2830,20 +2788,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtLocation__Group__2__Impl"
-    // InternalWail.g:925:1: rule__AtLocation__Group__2__Impl : ( 'y:' ) ;
+    // InternalWail.g:913:1: rule__AtLocation__Group__2__Impl : ( 'y:' ) ;
     public final void rule__AtLocation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:929:1: ( ( 'y:' ) )
-            // InternalWail.g:930:1: ( 'y:' )
+            // InternalWail.g:917:1: ( ( 'y:' ) )
+            // InternalWail.g:918:1: ( 'y:' )
             {
-            // InternalWail.g:930:1: ( 'y:' )
-            // InternalWail.g:931:2: 'y:'
+            // InternalWail.g:918:1: ( 'y:' )
+            // InternalWail.g:919:2: 'y:'
             {
              before(grammarAccess.getAtLocationAccess().getYKeyword_2()); 
-            match(input,28,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getAtLocationAccess().getYKeyword_2()); 
 
             }
@@ -2867,14 +2825,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtLocation__Group__3"
-    // InternalWail.g:940:1: rule__AtLocation__Group__3 : rule__AtLocation__Group__3__Impl ;
+    // InternalWail.g:928:1: rule__AtLocation__Group__3 : rule__AtLocation__Group__3__Impl ;
     public final void rule__AtLocation__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:944:1: ( rule__AtLocation__Group__3__Impl )
-            // InternalWail.g:945:2: rule__AtLocation__Group__3__Impl
+            // InternalWail.g:932:1: ( rule__AtLocation__Group__3__Impl )
+            // InternalWail.g:933:2: rule__AtLocation__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AtLocation__Group__3__Impl();
@@ -2900,21 +2858,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtLocation__Group__3__Impl"
-    // InternalWail.g:951:1: rule__AtLocation__Group__3__Impl : ( ( rule__AtLocation__YAxisAssignment_3 ) ) ;
+    // InternalWail.g:939:1: rule__AtLocation__Group__3__Impl : ( ( rule__AtLocation__YAxisAssignment_3 ) ) ;
     public final void rule__AtLocation__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:955:1: ( ( ( rule__AtLocation__YAxisAssignment_3 ) ) )
-            // InternalWail.g:956:1: ( ( rule__AtLocation__YAxisAssignment_3 ) )
+            // InternalWail.g:943:1: ( ( ( rule__AtLocation__YAxisAssignment_3 ) ) )
+            // InternalWail.g:944:1: ( ( rule__AtLocation__YAxisAssignment_3 ) )
             {
-            // InternalWail.g:956:1: ( ( rule__AtLocation__YAxisAssignment_3 ) )
-            // InternalWail.g:957:2: ( rule__AtLocation__YAxisAssignment_3 )
+            // InternalWail.g:944:1: ( ( rule__AtLocation__YAxisAssignment_3 ) )
+            // InternalWail.g:945:2: ( rule__AtLocation__YAxisAssignment_3 )
             {
              before(grammarAccess.getAtLocationAccess().getYAxisAssignment_3()); 
-            // InternalWail.g:958:2: ( rule__AtLocation__YAxisAssignment_3 )
-            // InternalWail.g:958:3: rule__AtLocation__YAxisAssignment_3
+            // InternalWail.g:946:2: ( rule__AtLocation__YAxisAssignment_3 )
+            // InternalWail.g:946:3: rule__AtLocation__YAxisAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__AtLocation__YAxisAssignment_3();
@@ -2947,14 +2905,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnitEquals__Group__0"
-    // InternalWail.g:967:1: rule__UnitEquals__Group__0 : rule__UnitEquals__Group__0__Impl rule__UnitEquals__Group__1 ;
+    // InternalWail.g:955:1: rule__UnitEquals__Group__0 : rule__UnitEquals__Group__0__Impl rule__UnitEquals__Group__1 ;
     public final void rule__UnitEquals__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:971:1: ( rule__UnitEquals__Group__0__Impl rule__UnitEquals__Group__1 )
-            // InternalWail.g:972:2: rule__UnitEquals__Group__0__Impl rule__UnitEquals__Group__1
+            // InternalWail.g:959:1: ( rule__UnitEquals__Group__0__Impl rule__UnitEquals__Group__1 )
+            // InternalWail.g:960:2: rule__UnitEquals__Group__0__Impl rule__UnitEquals__Group__1
             {
             pushFollow(FOLLOW_15);
             rule__UnitEquals__Group__0__Impl();
@@ -2985,20 +2943,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnitEquals__Group__0__Impl"
-    // InternalWail.g:979:1: rule__UnitEquals__Group__0__Impl : ( 'unit' ) ;
+    // InternalWail.g:967:1: rule__UnitEquals__Group__0__Impl : ( 'unit' ) ;
     public final void rule__UnitEquals__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:983:1: ( ( 'unit' ) )
-            // InternalWail.g:984:1: ( 'unit' )
+            // InternalWail.g:971:1: ( ( 'unit' ) )
+            // InternalWail.g:972:1: ( 'unit' )
             {
-            // InternalWail.g:984:1: ( 'unit' )
-            // InternalWail.g:985:2: 'unit'
+            // InternalWail.g:972:1: ( 'unit' )
+            // InternalWail.g:973:2: 'unit'
             {
              before(grammarAccess.getUnitEqualsAccess().getUnitKeyword_0()); 
-            match(input,29,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getUnitEqualsAccess().getUnitKeyword_0()); 
 
             }
@@ -3022,14 +2980,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnitEquals__Group__1"
-    // InternalWail.g:994:1: rule__UnitEquals__Group__1 : rule__UnitEquals__Group__1__Impl rule__UnitEquals__Group__2 ;
+    // InternalWail.g:982:1: rule__UnitEquals__Group__1 : rule__UnitEquals__Group__1__Impl rule__UnitEquals__Group__2 ;
     public final void rule__UnitEquals__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:998:1: ( rule__UnitEquals__Group__1__Impl rule__UnitEquals__Group__2 )
-            // InternalWail.g:999:2: rule__UnitEquals__Group__1__Impl rule__UnitEquals__Group__2
+            // InternalWail.g:986:1: ( rule__UnitEquals__Group__1__Impl rule__UnitEquals__Group__2 )
+            // InternalWail.g:987:2: rule__UnitEquals__Group__1__Impl rule__UnitEquals__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__UnitEquals__Group__1__Impl();
@@ -3060,20 +3018,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnitEquals__Group__1__Impl"
-    // InternalWail.g:1006:1: rule__UnitEquals__Group__1__Impl : ( 'is' ) ;
+    // InternalWail.g:994:1: rule__UnitEquals__Group__1__Impl : ( 'is' ) ;
     public final void rule__UnitEquals__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1010:1: ( ( 'is' ) )
-            // InternalWail.g:1011:1: ( 'is' )
+            // InternalWail.g:998:1: ( ( 'is' ) )
+            // InternalWail.g:999:1: ( 'is' )
             {
-            // InternalWail.g:1011:1: ( 'is' )
-            // InternalWail.g:1012:2: 'is'
+            // InternalWail.g:999:1: ( 'is' )
+            // InternalWail.g:1000:2: 'is'
             {
              before(grammarAccess.getUnitEqualsAccess().getIsKeyword_1()); 
-            match(input,30,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getUnitEqualsAccess().getIsKeyword_1()); 
 
             }
@@ -3097,14 +3055,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnitEquals__Group__2"
-    // InternalWail.g:1021:1: rule__UnitEquals__Group__2 : rule__UnitEquals__Group__2__Impl ;
+    // InternalWail.g:1009:1: rule__UnitEquals__Group__2 : rule__UnitEquals__Group__2__Impl ;
     public final void rule__UnitEquals__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1025:1: ( rule__UnitEquals__Group__2__Impl )
-            // InternalWail.g:1026:2: rule__UnitEquals__Group__2__Impl
+            // InternalWail.g:1013:1: ( rule__UnitEquals__Group__2__Impl )
+            // InternalWail.g:1014:2: rule__UnitEquals__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__UnitEquals__Group__2__Impl();
@@ -3130,21 +3088,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnitEquals__Group__2__Impl"
-    // InternalWail.g:1032:1: rule__UnitEquals__Group__2__Impl : ( ( rule__UnitEquals__UnitAssignment_2 ) ) ;
+    // InternalWail.g:1020:1: rule__UnitEquals__Group__2__Impl : ( ( rule__UnitEquals__UnitAssignment_2 ) ) ;
     public final void rule__UnitEquals__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1036:1: ( ( ( rule__UnitEquals__UnitAssignment_2 ) ) )
-            // InternalWail.g:1037:1: ( ( rule__UnitEquals__UnitAssignment_2 ) )
+            // InternalWail.g:1024:1: ( ( ( rule__UnitEquals__UnitAssignment_2 ) ) )
+            // InternalWail.g:1025:1: ( ( rule__UnitEquals__UnitAssignment_2 ) )
             {
-            // InternalWail.g:1037:1: ( ( rule__UnitEquals__UnitAssignment_2 ) )
-            // InternalWail.g:1038:2: ( rule__UnitEquals__UnitAssignment_2 )
+            // InternalWail.g:1025:1: ( ( rule__UnitEquals__UnitAssignment_2 ) )
+            // InternalWail.g:1026:2: ( rule__UnitEquals__UnitAssignment_2 )
             {
              before(grammarAccess.getUnitEqualsAccess().getUnitAssignment_2()); 
-            // InternalWail.g:1039:2: ( rule__UnitEquals__UnitAssignment_2 )
-            // InternalWail.g:1039:3: rule__UnitEquals__UnitAssignment_2
+            // InternalWail.g:1027:2: ( rule__UnitEquals__UnitAssignment_2 )
+            // InternalWail.g:1027:3: rule__UnitEquals__UnitAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__UnitEquals__UnitAssignment_2();
@@ -3177,14 +3135,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__0"
-    // InternalWail.g:1048:1: rule__Goal__Group__0 : rule__Goal__Group__0__Impl rule__Goal__Group__1 ;
+    // InternalWail.g:1036:1: rule__Goal__Group__0 : rule__Goal__Group__0__Impl rule__Goal__Group__1 ;
     public final void rule__Goal__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1052:1: ( rule__Goal__Group__0__Impl rule__Goal__Group__1 )
-            // InternalWail.g:1053:2: rule__Goal__Group__0__Impl rule__Goal__Group__1
+            // InternalWail.g:1040:1: ( rule__Goal__Group__0__Impl rule__Goal__Group__1 )
+            // InternalWail.g:1041:2: rule__Goal__Group__0__Impl rule__Goal__Group__1
             {
             pushFollow(FOLLOW_15);
             rule__Goal__Group__0__Impl();
@@ -3215,20 +3173,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__0__Impl"
-    // InternalWail.g:1060:1: rule__Goal__Group__0__Impl : ( 'goal' ) ;
+    // InternalWail.g:1048:1: rule__Goal__Group__0__Impl : ( 'goal' ) ;
     public final void rule__Goal__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1064:1: ( ( 'goal' ) )
-            // InternalWail.g:1065:1: ( 'goal' )
+            // InternalWail.g:1052:1: ( ( 'goal' ) )
+            // InternalWail.g:1053:1: ( 'goal' )
             {
-            // InternalWail.g:1065:1: ( 'goal' )
-            // InternalWail.g:1066:2: 'goal'
+            // InternalWail.g:1053:1: ( 'goal' )
+            // InternalWail.g:1054:2: 'goal'
             {
              before(grammarAccess.getGoalAccess().getGoalKeyword_0()); 
-            match(input,31,FOLLOW_2); 
+            match(input,29,FOLLOW_2); 
              after(grammarAccess.getGoalAccess().getGoalKeyword_0()); 
 
             }
@@ -3252,14 +3210,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__1"
-    // InternalWail.g:1075:1: rule__Goal__Group__1 : rule__Goal__Group__1__Impl rule__Goal__Group__2 ;
+    // InternalWail.g:1063:1: rule__Goal__Group__1 : rule__Goal__Group__1__Impl rule__Goal__Group__2 ;
     public final void rule__Goal__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1079:1: ( rule__Goal__Group__1__Impl rule__Goal__Group__2 )
-            // InternalWail.g:1080:2: rule__Goal__Group__1__Impl rule__Goal__Group__2
+            // InternalWail.g:1067:1: ( rule__Goal__Group__1__Impl rule__Goal__Group__2 )
+            // InternalWail.g:1068:2: rule__Goal__Group__1__Impl rule__Goal__Group__2
             {
             pushFollow(FOLLOW_16);
             rule__Goal__Group__1__Impl();
@@ -3290,20 +3248,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__1__Impl"
-    // InternalWail.g:1087:1: rule__Goal__Group__1__Impl : ( 'is' ) ;
+    // InternalWail.g:1075:1: rule__Goal__Group__1__Impl : ( 'is' ) ;
     public final void rule__Goal__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1091:1: ( ( 'is' ) )
-            // InternalWail.g:1092:1: ( 'is' )
+            // InternalWail.g:1079:1: ( ( 'is' ) )
+            // InternalWail.g:1080:1: ( 'is' )
             {
-            // InternalWail.g:1092:1: ( 'is' )
-            // InternalWail.g:1093:2: 'is'
+            // InternalWail.g:1080:1: ( 'is' )
+            // InternalWail.g:1081:2: 'is'
             {
              before(grammarAccess.getGoalAccess().getIsKeyword_1()); 
-            match(input,30,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getGoalAccess().getIsKeyword_1()); 
 
             }
@@ -3327,14 +3285,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__2"
-    // InternalWail.g:1102:1: rule__Goal__Group__2 : rule__Goal__Group__2__Impl rule__Goal__Group__3 ;
+    // InternalWail.g:1090:1: rule__Goal__Group__2 : rule__Goal__Group__2__Impl rule__Goal__Group__3 ;
     public final void rule__Goal__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1106:1: ( rule__Goal__Group__2__Impl rule__Goal__Group__3 )
-            // InternalWail.g:1107:2: rule__Goal__Group__2__Impl rule__Goal__Group__3
+            // InternalWail.g:1094:1: ( rule__Goal__Group__2__Impl rule__Goal__Group__3 )
+            // InternalWail.g:1095:2: rule__Goal__Group__2__Impl rule__Goal__Group__3
             {
             pushFollow(FOLLOW_17);
             rule__Goal__Group__2__Impl();
@@ -3365,21 +3323,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__2__Impl"
-    // InternalWail.g:1114:1: rule__Goal__Group__2__Impl : ( ( rule__Goal__GoalAssignment_2 ) ) ;
+    // InternalWail.g:1102:1: rule__Goal__Group__2__Impl : ( ( rule__Goal__GoalAssignment_2 ) ) ;
     public final void rule__Goal__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1118:1: ( ( ( rule__Goal__GoalAssignment_2 ) ) )
-            // InternalWail.g:1119:1: ( ( rule__Goal__GoalAssignment_2 ) )
+            // InternalWail.g:1106:1: ( ( ( rule__Goal__GoalAssignment_2 ) ) )
+            // InternalWail.g:1107:1: ( ( rule__Goal__GoalAssignment_2 ) )
             {
-            // InternalWail.g:1119:1: ( ( rule__Goal__GoalAssignment_2 ) )
-            // InternalWail.g:1120:2: ( rule__Goal__GoalAssignment_2 )
+            // InternalWail.g:1107:1: ( ( rule__Goal__GoalAssignment_2 ) )
+            // InternalWail.g:1108:2: ( rule__Goal__GoalAssignment_2 )
             {
              before(grammarAccess.getGoalAccess().getGoalAssignment_2()); 
-            // InternalWail.g:1121:2: ( rule__Goal__GoalAssignment_2 )
-            // InternalWail.g:1121:3: rule__Goal__GoalAssignment_2
+            // InternalWail.g:1109:2: ( rule__Goal__GoalAssignment_2 )
+            // InternalWail.g:1109:3: rule__Goal__GoalAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Goal__GoalAssignment_2();
@@ -3412,14 +3370,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__3"
-    // InternalWail.g:1129:1: rule__Goal__Group__3 : rule__Goal__Group__3__Impl rule__Goal__Group__4 ;
+    // InternalWail.g:1117:1: rule__Goal__Group__3 : rule__Goal__Group__3__Impl rule__Goal__Group__4 ;
     public final void rule__Goal__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1133:1: ( rule__Goal__Group__3__Impl rule__Goal__Group__4 )
-            // InternalWail.g:1134:2: rule__Goal__Group__3__Impl rule__Goal__Group__4
+            // InternalWail.g:1121:1: ( rule__Goal__Group__3__Impl rule__Goal__Group__4 )
+            // InternalWail.g:1122:2: rule__Goal__Group__3__Impl rule__Goal__Group__4
             {
             pushFollow(FOLLOW_15);
             rule__Goal__Group__3__Impl();
@@ -3450,20 +3408,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__3__Impl"
-    // InternalWail.g:1141:1: rule__Goal__Group__3__Impl : ( 'value' ) ;
+    // InternalWail.g:1129:1: rule__Goal__Group__3__Impl : ( 'value' ) ;
     public final void rule__Goal__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1145:1: ( ( 'value' ) )
-            // InternalWail.g:1146:1: ( 'value' )
+            // InternalWail.g:1133:1: ( ( 'value' ) )
+            // InternalWail.g:1134:1: ( 'value' )
             {
-            // InternalWail.g:1146:1: ( 'value' )
-            // InternalWail.g:1147:2: 'value'
+            // InternalWail.g:1134:1: ( 'value' )
+            // InternalWail.g:1135:2: 'value'
             {
              before(grammarAccess.getGoalAccess().getValueKeyword_3()); 
-            match(input,32,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getGoalAccess().getValueKeyword_3()); 
 
             }
@@ -3487,14 +3445,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__4"
-    // InternalWail.g:1156:1: rule__Goal__Group__4 : rule__Goal__Group__4__Impl rule__Goal__Group__5 ;
+    // InternalWail.g:1144:1: rule__Goal__Group__4 : rule__Goal__Group__4__Impl rule__Goal__Group__5 ;
     public final void rule__Goal__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1160:1: ( rule__Goal__Group__4__Impl rule__Goal__Group__5 )
-            // InternalWail.g:1161:2: rule__Goal__Group__4__Impl rule__Goal__Group__5
+            // InternalWail.g:1148:1: ( rule__Goal__Group__4__Impl rule__Goal__Group__5 )
+            // InternalWail.g:1149:2: rule__Goal__Group__4__Impl rule__Goal__Group__5
             {
             pushFollow(FOLLOW_13);
             rule__Goal__Group__4__Impl();
@@ -3525,20 +3483,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__4__Impl"
-    // InternalWail.g:1168:1: rule__Goal__Group__4__Impl : ( 'is' ) ;
+    // InternalWail.g:1156:1: rule__Goal__Group__4__Impl : ( 'is' ) ;
     public final void rule__Goal__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1172:1: ( ( 'is' ) )
-            // InternalWail.g:1173:1: ( 'is' )
+            // InternalWail.g:1160:1: ( ( 'is' ) )
+            // InternalWail.g:1161:1: ( 'is' )
             {
-            // InternalWail.g:1173:1: ( 'is' )
-            // InternalWail.g:1174:2: 'is'
+            // InternalWail.g:1161:1: ( 'is' )
+            // InternalWail.g:1162:2: 'is'
             {
              before(grammarAccess.getGoalAccess().getIsKeyword_4()); 
-            match(input,30,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getGoalAccess().getIsKeyword_4()); 
 
             }
@@ -3562,14 +3520,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__5"
-    // InternalWail.g:1183:1: rule__Goal__Group__5 : rule__Goal__Group__5__Impl ;
+    // InternalWail.g:1171:1: rule__Goal__Group__5 : rule__Goal__Group__5__Impl ;
     public final void rule__Goal__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1187:1: ( rule__Goal__Group__5__Impl )
-            // InternalWail.g:1188:2: rule__Goal__Group__5__Impl
+            // InternalWail.g:1175:1: ( rule__Goal__Group__5__Impl )
+            // InternalWail.g:1176:2: rule__Goal__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Goal__Group__5__Impl();
@@ -3595,21 +3553,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__Group__5__Impl"
-    // InternalWail.g:1194:1: rule__Goal__Group__5__Impl : ( ( rule__Goal__LocValueAssignment_5 ) ) ;
+    // InternalWail.g:1182:1: rule__Goal__Group__5__Impl : ( ( rule__Goal__LocValueAssignment_5 ) ) ;
     public final void rule__Goal__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1198:1: ( ( ( rule__Goal__LocValueAssignment_5 ) ) )
-            // InternalWail.g:1199:1: ( ( rule__Goal__LocValueAssignment_5 ) )
+            // InternalWail.g:1186:1: ( ( ( rule__Goal__LocValueAssignment_5 ) ) )
+            // InternalWail.g:1187:1: ( ( rule__Goal__LocValueAssignment_5 ) )
             {
-            // InternalWail.g:1199:1: ( ( rule__Goal__LocValueAssignment_5 ) )
-            // InternalWail.g:1200:2: ( rule__Goal__LocValueAssignment_5 )
+            // InternalWail.g:1187:1: ( ( rule__Goal__LocValueAssignment_5 ) )
+            // InternalWail.g:1188:2: ( rule__Goal__LocValueAssignment_5 )
             {
              before(grammarAccess.getGoalAccess().getLocValueAssignment_5()); 
-            // InternalWail.g:1201:2: ( rule__Goal__LocValueAssignment_5 )
-            // InternalWail.g:1201:3: rule__Goal__LocValueAssignment_5
+            // InternalWail.g:1189:2: ( rule__Goal__LocValueAssignment_5 )
+            // InternalWail.g:1189:3: rule__Goal__LocValueAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__Goal__LocValueAssignment_5();
@@ -3642,14 +3600,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GoaLocation__Group__0"
-    // InternalWail.g:1210:1: rule__GoaLocation__Group__0 : rule__GoaLocation__Group__0__Impl rule__GoaLocation__Group__1 ;
+    // InternalWail.g:1198:1: rule__GoaLocation__Group__0 : rule__GoaLocation__Group__0__Impl rule__GoaLocation__Group__1 ;
     public final void rule__GoaLocation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1214:1: ( rule__GoaLocation__Group__0__Impl rule__GoaLocation__Group__1 )
-            // InternalWail.g:1215:2: rule__GoaLocation__Group__0__Impl rule__GoaLocation__Group__1
+            // InternalWail.g:1202:1: ( rule__GoaLocation__Group__0__Impl rule__GoaLocation__Group__1 )
+            // InternalWail.g:1203:2: rule__GoaLocation__Group__0__Impl rule__GoaLocation__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__GoaLocation__Group__0__Impl();
@@ -3680,20 +3638,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GoaLocation__Group__0__Impl"
-    // InternalWail.g:1222:1: rule__GoaLocation__Group__0__Impl : ( 'x' ) ;
+    // InternalWail.g:1210:1: rule__GoaLocation__Group__0__Impl : ( 'x' ) ;
     public final void rule__GoaLocation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1226:1: ( ( 'x' ) )
-            // InternalWail.g:1227:1: ( 'x' )
+            // InternalWail.g:1214:1: ( ( 'x' ) )
+            // InternalWail.g:1215:1: ( 'x' )
             {
-            // InternalWail.g:1227:1: ( 'x' )
-            // InternalWail.g:1228:2: 'x'
+            // InternalWail.g:1215:1: ( 'x' )
+            // InternalWail.g:1216:2: 'x'
             {
              before(grammarAccess.getGoaLocationAccess().getXKeyword_0()); 
-            match(input,33,FOLLOW_2); 
+            match(input,31,FOLLOW_2); 
              after(grammarAccess.getGoaLocationAccess().getXKeyword_0()); 
 
             }
@@ -3717,14 +3675,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GoaLocation__Group__1"
-    // InternalWail.g:1237:1: rule__GoaLocation__Group__1 : rule__GoaLocation__Group__1__Impl rule__GoaLocation__Group__2 ;
+    // InternalWail.g:1225:1: rule__GoaLocation__Group__1 : rule__GoaLocation__Group__1__Impl rule__GoaLocation__Group__2 ;
     public final void rule__GoaLocation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1241:1: ( rule__GoaLocation__Group__1__Impl rule__GoaLocation__Group__2 )
-            // InternalWail.g:1242:2: rule__GoaLocation__Group__1__Impl rule__GoaLocation__Group__2
+            // InternalWail.g:1229:1: ( rule__GoaLocation__Group__1__Impl rule__GoaLocation__Group__2 )
+            // InternalWail.g:1230:2: rule__GoaLocation__Group__1__Impl rule__GoaLocation__Group__2
             {
             pushFollow(FOLLOW_18);
             rule__GoaLocation__Group__1__Impl();
@@ -3755,21 +3713,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GoaLocation__Group__1__Impl"
-    // InternalWail.g:1249:1: rule__GoaLocation__Group__1__Impl : ( ( rule__GoaLocation__XAxisAssignment_1 ) ) ;
+    // InternalWail.g:1237:1: rule__GoaLocation__Group__1__Impl : ( ( rule__GoaLocation__XAxisAssignment_1 ) ) ;
     public final void rule__GoaLocation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1253:1: ( ( ( rule__GoaLocation__XAxisAssignment_1 ) ) )
-            // InternalWail.g:1254:1: ( ( rule__GoaLocation__XAxisAssignment_1 ) )
+            // InternalWail.g:1241:1: ( ( ( rule__GoaLocation__XAxisAssignment_1 ) ) )
+            // InternalWail.g:1242:1: ( ( rule__GoaLocation__XAxisAssignment_1 ) )
             {
-            // InternalWail.g:1254:1: ( ( rule__GoaLocation__XAxisAssignment_1 ) )
-            // InternalWail.g:1255:2: ( rule__GoaLocation__XAxisAssignment_1 )
+            // InternalWail.g:1242:1: ( ( rule__GoaLocation__XAxisAssignment_1 ) )
+            // InternalWail.g:1243:2: ( rule__GoaLocation__XAxisAssignment_1 )
             {
              before(grammarAccess.getGoaLocationAccess().getXAxisAssignment_1()); 
-            // InternalWail.g:1256:2: ( rule__GoaLocation__XAxisAssignment_1 )
-            // InternalWail.g:1256:3: rule__GoaLocation__XAxisAssignment_1
+            // InternalWail.g:1244:2: ( rule__GoaLocation__XAxisAssignment_1 )
+            // InternalWail.g:1244:3: rule__GoaLocation__XAxisAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__GoaLocation__XAxisAssignment_1();
@@ -3802,14 +3760,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GoaLocation__Group__2"
-    // InternalWail.g:1264:1: rule__GoaLocation__Group__2 : rule__GoaLocation__Group__2__Impl rule__GoaLocation__Group__3 ;
+    // InternalWail.g:1252:1: rule__GoaLocation__Group__2 : rule__GoaLocation__Group__2__Impl rule__GoaLocation__Group__3 ;
     public final void rule__GoaLocation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1268:1: ( rule__GoaLocation__Group__2__Impl rule__GoaLocation__Group__3 )
-            // InternalWail.g:1269:2: rule__GoaLocation__Group__2__Impl rule__GoaLocation__Group__3
+            // InternalWail.g:1256:1: ( rule__GoaLocation__Group__2__Impl rule__GoaLocation__Group__3 )
+            // InternalWail.g:1257:2: rule__GoaLocation__Group__2__Impl rule__GoaLocation__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__GoaLocation__Group__2__Impl();
@@ -3840,20 +3798,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GoaLocation__Group__2__Impl"
-    // InternalWail.g:1276:1: rule__GoaLocation__Group__2__Impl : ( 'y' ) ;
+    // InternalWail.g:1264:1: rule__GoaLocation__Group__2__Impl : ( 'y' ) ;
     public final void rule__GoaLocation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1280:1: ( ( 'y' ) )
-            // InternalWail.g:1281:1: ( 'y' )
+            // InternalWail.g:1268:1: ( ( 'y' ) )
+            // InternalWail.g:1269:1: ( 'y' )
             {
-            // InternalWail.g:1281:1: ( 'y' )
-            // InternalWail.g:1282:2: 'y'
+            // InternalWail.g:1269:1: ( 'y' )
+            // InternalWail.g:1270:2: 'y'
             {
              before(grammarAccess.getGoaLocationAccess().getYKeyword_2()); 
-            match(input,34,FOLLOW_2); 
+            match(input,32,FOLLOW_2); 
              after(grammarAccess.getGoaLocationAccess().getYKeyword_2()); 
 
             }
@@ -3877,14 +3835,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GoaLocation__Group__3"
-    // InternalWail.g:1291:1: rule__GoaLocation__Group__3 : rule__GoaLocation__Group__3__Impl ;
+    // InternalWail.g:1279:1: rule__GoaLocation__Group__3 : rule__GoaLocation__Group__3__Impl ;
     public final void rule__GoaLocation__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1295:1: ( rule__GoaLocation__Group__3__Impl )
-            // InternalWail.g:1296:2: rule__GoaLocation__Group__3__Impl
+            // InternalWail.g:1283:1: ( rule__GoaLocation__Group__3__Impl )
+            // InternalWail.g:1284:2: rule__GoaLocation__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__GoaLocation__Group__3__Impl();
@@ -3910,21 +3868,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GoaLocation__Group__3__Impl"
-    // InternalWail.g:1302:1: rule__GoaLocation__Group__3__Impl : ( ( rule__GoaLocation__YAxisAssignment_3 ) ) ;
+    // InternalWail.g:1290:1: rule__GoaLocation__Group__3__Impl : ( ( rule__GoaLocation__YAxisAssignment_3 ) ) ;
     public final void rule__GoaLocation__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1306:1: ( ( ( rule__GoaLocation__YAxisAssignment_3 ) ) )
-            // InternalWail.g:1307:1: ( ( rule__GoaLocation__YAxisAssignment_3 ) )
+            // InternalWail.g:1294:1: ( ( ( rule__GoaLocation__YAxisAssignment_3 ) ) )
+            // InternalWail.g:1295:1: ( ( rule__GoaLocation__YAxisAssignment_3 ) )
             {
-            // InternalWail.g:1307:1: ( ( rule__GoaLocation__YAxisAssignment_3 ) )
-            // InternalWail.g:1308:2: ( rule__GoaLocation__YAxisAssignment_3 )
+            // InternalWail.g:1295:1: ( ( rule__GoaLocation__YAxisAssignment_3 ) )
+            // InternalWail.g:1296:2: ( rule__GoaLocation__YAxisAssignment_3 )
             {
              before(grammarAccess.getGoaLocationAccess().getYAxisAssignment_3()); 
-            // InternalWail.g:1309:2: ( rule__GoaLocation__YAxisAssignment_3 )
-            // InternalWail.g:1309:3: rule__GoaLocation__YAxisAssignment_3
+            // InternalWail.g:1297:2: ( rule__GoaLocation__YAxisAssignment_3 )
+            // InternalWail.g:1297:3: rule__GoaLocation__YAxisAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__GoaLocation__YAxisAssignment_3();
@@ -3957,14 +3915,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Defualt_CA__Group__0"
-    // InternalWail.g:1318:1: rule__Defualt_CA__Group__0 : rule__Defualt_CA__Group__0__Impl rule__Defualt_CA__Group__1 ;
+    // InternalWail.g:1306:1: rule__Defualt_CA__Group__0 : rule__Defualt_CA__Group__0__Impl rule__Defualt_CA__Group__1 ;
     public final void rule__Defualt_CA__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1322:1: ( rule__Defualt_CA__Group__0__Impl rule__Defualt_CA__Group__1 )
-            // InternalWail.g:1323:2: rule__Defualt_CA__Group__0__Impl rule__Defualt_CA__Group__1
+            // InternalWail.g:1310:1: ( rule__Defualt_CA__Group__0__Impl rule__Defualt_CA__Group__1 )
+            // InternalWail.g:1311:2: rule__Defualt_CA__Group__0__Impl rule__Defualt_CA__Group__1
             {
             pushFollow(FOLLOW_19);
             rule__Defualt_CA__Group__0__Impl();
@@ -3995,21 +3953,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Defualt_CA__Group__0__Impl"
-    // InternalWail.g:1330:1: rule__Defualt_CA__Group__0__Impl : ( ( rule__Defualt_CA__CaTypeAssignment_0 ) ) ;
+    // InternalWail.g:1318:1: rule__Defualt_CA__Group__0__Impl : ( ( rule__Defualt_CA__CaTypeAssignment_0 ) ) ;
     public final void rule__Defualt_CA__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1334:1: ( ( ( rule__Defualt_CA__CaTypeAssignment_0 ) ) )
-            // InternalWail.g:1335:1: ( ( rule__Defualt_CA__CaTypeAssignment_0 ) )
+            // InternalWail.g:1322:1: ( ( ( rule__Defualt_CA__CaTypeAssignment_0 ) ) )
+            // InternalWail.g:1323:1: ( ( rule__Defualt_CA__CaTypeAssignment_0 ) )
             {
-            // InternalWail.g:1335:1: ( ( rule__Defualt_CA__CaTypeAssignment_0 ) )
-            // InternalWail.g:1336:2: ( rule__Defualt_CA__CaTypeAssignment_0 )
+            // InternalWail.g:1323:1: ( ( rule__Defualt_CA__CaTypeAssignment_0 ) )
+            // InternalWail.g:1324:2: ( rule__Defualt_CA__CaTypeAssignment_0 )
             {
              before(grammarAccess.getDefualt_CAAccess().getCaTypeAssignment_0()); 
-            // InternalWail.g:1337:2: ( rule__Defualt_CA__CaTypeAssignment_0 )
-            // InternalWail.g:1337:3: rule__Defualt_CA__CaTypeAssignment_0
+            // InternalWail.g:1325:2: ( rule__Defualt_CA__CaTypeAssignment_0 )
+            // InternalWail.g:1325:3: rule__Defualt_CA__CaTypeAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Defualt_CA__CaTypeAssignment_0();
@@ -4042,14 +4000,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Defualt_CA__Group__1"
-    // InternalWail.g:1345:1: rule__Defualt_CA__Group__1 : rule__Defualt_CA__Group__1__Impl ;
+    // InternalWail.g:1333:1: rule__Defualt_CA__Group__1 : rule__Defualt_CA__Group__1__Impl ;
     public final void rule__Defualt_CA__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1349:1: ( rule__Defualt_CA__Group__1__Impl )
-            // InternalWail.g:1350:2: rule__Defualt_CA__Group__1__Impl
+            // InternalWail.g:1337:1: ( rule__Defualt_CA__Group__1__Impl )
+            // InternalWail.g:1338:2: rule__Defualt_CA__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Defualt_CA__Group__1__Impl();
@@ -4075,29 +4033,29 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Defualt_CA__Group__1__Impl"
-    // InternalWail.g:1356:1: rule__Defualt_CA__Group__1__Impl : ( ( rule__Defualt_CA__Group_1__0 )? ) ;
+    // InternalWail.g:1344:1: rule__Defualt_CA__Group__1__Impl : ( ( rule__Defualt_CA__Group_1__0 )? ) ;
     public final void rule__Defualt_CA__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1360:1: ( ( ( rule__Defualt_CA__Group_1__0 )? ) )
-            // InternalWail.g:1361:1: ( ( rule__Defualt_CA__Group_1__0 )? )
+            // InternalWail.g:1348:1: ( ( ( rule__Defualt_CA__Group_1__0 )? ) )
+            // InternalWail.g:1349:1: ( ( rule__Defualt_CA__Group_1__0 )? )
             {
-            // InternalWail.g:1361:1: ( ( rule__Defualt_CA__Group_1__0 )? )
-            // InternalWail.g:1362:2: ( rule__Defualt_CA__Group_1__0 )?
+            // InternalWail.g:1349:1: ( ( rule__Defualt_CA__Group_1__0 )? )
+            // InternalWail.g:1350:2: ( rule__Defualt_CA__Group_1__0 )?
             {
              before(grammarAccess.getDefualt_CAAccess().getGroup_1()); 
-            // InternalWail.g:1363:2: ( rule__Defualt_CA__Group_1__0 )?
+            // InternalWail.g:1351:2: ( rule__Defualt_CA__Group_1__0 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==35) ) {
+            if ( (LA7_0==33) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
-                    // InternalWail.g:1363:3: rule__Defualt_CA__Group_1__0
+                    // InternalWail.g:1351:3: rule__Defualt_CA__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Defualt_CA__Group_1__0();
@@ -4133,14 +4091,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Defualt_CA__Group_1__0"
-    // InternalWail.g:1372:1: rule__Defualt_CA__Group_1__0 : rule__Defualt_CA__Group_1__0__Impl rule__Defualt_CA__Group_1__1 ;
+    // InternalWail.g:1360:1: rule__Defualt_CA__Group_1__0 : rule__Defualt_CA__Group_1__0__Impl rule__Defualt_CA__Group_1__1 ;
     public final void rule__Defualt_CA__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1376:1: ( rule__Defualt_CA__Group_1__0__Impl rule__Defualt_CA__Group_1__1 )
-            // InternalWail.g:1377:2: rule__Defualt_CA__Group_1__0__Impl rule__Defualt_CA__Group_1__1
+            // InternalWail.g:1364:1: ( rule__Defualt_CA__Group_1__0__Impl rule__Defualt_CA__Group_1__1 )
+            // InternalWail.g:1365:2: rule__Defualt_CA__Group_1__0__Impl rule__Defualt_CA__Group_1__1
             {
             pushFollow(FOLLOW_13);
             rule__Defualt_CA__Group_1__0__Impl();
@@ -4171,20 +4129,20 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Defualt_CA__Group_1__0__Impl"
-    // InternalWail.g:1384:1: rule__Defualt_CA__Group_1__0__Impl : ( 'cost' ) ;
+    // InternalWail.g:1372:1: rule__Defualt_CA__Group_1__0__Impl : ( 'cost' ) ;
     public final void rule__Defualt_CA__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1388:1: ( ( 'cost' ) )
-            // InternalWail.g:1389:1: ( 'cost' )
+            // InternalWail.g:1376:1: ( ( 'cost' ) )
+            // InternalWail.g:1377:1: ( 'cost' )
             {
-            // InternalWail.g:1389:1: ( 'cost' )
-            // InternalWail.g:1390:2: 'cost'
+            // InternalWail.g:1377:1: ( 'cost' )
+            // InternalWail.g:1378:2: 'cost'
             {
              before(grammarAccess.getDefualt_CAAccess().getCostKeyword_1_0()); 
-            match(input,35,FOLLOW_2); 
+            match(input,33,FOLLOW_2); 
              after(grammarAccess.getDefualt_CAAccess().getCostKeyword_1_0()); 
 
             }
@@ -4208,14 +4166,14 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Defualt_CA__Group_1__1"
-    // InternalWail.g:1399:1: rule__Defualt_CA__Group_1__1 : rule__Defualt_CA__Group_1__1__Impl ;
+    // InternalWail.g:1387:1: rule__Defualt_CA__Group_1__1 : rule__Defualt_CA__Group_1__1__Impl ;
     public final void rule__Defualt_CA__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1403:1: ( rule__Defualt_CA__Group_1__1__Impl )
-            // InternalWail.g:1404:2: rule__Defualt_CA__Group_1__1__Impl
+            // InternalWail.g:1391:1: ( rule__Defualt_CA__Group_1__1__Impl )
+            // InternalWail.g:1392:2: rule__Defualt_CA__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Defualt_CA__Group_1__1__Impl();
@@ -4241,21 +4199,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Defualt_CA__Group_1__1__Impl"
-    // InternalWail.g:1410:1: rule__Defualt_CA__Group_1__1__Impl : ( ( rule__Defualt_CA__CostAssignment_1_1 ) ) ;
+    // InternalWail.g:1398:1: rule__Defualt_CA__Group_1__1__Impl : ( ( rule__Defualt_CA__CostAssignment_1_1 ) ) ;
     public final void rule__Defualt_CA__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1414:1: ( ( ( rule__Defualt_CA__CostAssignment_1_1 ) ) )
-            // InternalWail.g:1415:1: ( ( rule__Defualt_CA__CostAssignment_1_1 ) )
+            // InternalWail.g:1402:1: ( ( ( rule__Defualt_CA__CostAssignment_1_1 ) ) )
+            // InternalWail.g:1403:1: ( ( rule__Defualt_CA__CostAssignment_1_1 ) )
             {
-            // InternalWail.g:1415:1: ( ( rule__Defualt_CA__CostAssignment_1_1 ) )
-            // InternalWail.g:1416:2: ( rule__Defualt_CA__CostAssignment_1_1 )
+            // InternalWail.g:1403:1: ( ( rule__Defualt_CA__CostAssignment_1_1 ) )
+            // InternalWail.g:1404:2: ( rule__Defualt_CA__CostAssignment_1_1 )
             {
              before(grammarAccess.getDefualt_CAAccess().getCostAssignment_1_1()); 
-            // InternalWail.g:1417:2: ( rule__Defualt_CA__CostAssignment_1_1 )
-            // InternalWail.g:1417:3: rule__Defualt_CA__CostAssignment_1_1
+            // InternalWail.g:1405:2: ( rule__Defualt_CA__CostAssignment_1_1 )
+            // InternalWail.g:1405:3: rule__Defualt_CA__CostAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Defualt_CA__CostAssignment_1_1();
@@ -4288,17 +4246,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ElementsAssignment"
-    // InternalWail.g:1426:1: rule__Model__ElementsAssignment : ( ruleRule ) ;
+    // InternalWail.g:1414:1: rule__Model__ElementsAssignment : ( ruleRule ) ;
     public final void rule__Model__ElementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1430:1: ( ( ruleRule ) )
-            // InternalWail.g:1431:2: ( ruleRule )
+            // InternalWail.g:1418:1: ( ( ruleRule ) )
+            // InternalWail.g:1419:2: ( ruleRule )
             {
-            // InternalWail.g:1431:2: ( ruleRule )
-            // InternalWail.g:1432:3: ruleRule
+            // InternalWail.g:1419:2: ( ruleRule )
+            // InternalWail.g:1420:3: ruleRule
             {
              before(grammarAccess.getModelAccess().getElementsRuleParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -4329,17 +4287,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__NameAssignment_1"
-    // InternalWail.g:1441:1: rule__Rule__NameAssignment_1 : ( RULE_STRING ) ;
+    // InternalWail.g:1429:1: rule__Rule__NameAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Rule__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1445:1: ( ( RULE_STRING ) )
-            // InternalWail.g:1446:2: ( RULE_STRING )
+            // InternalWail.g:1433:1: ( ( RULE_STRING ) )
+            // InternalWail.g:1434:2: ( RULE_STRING )
             {
-            // InternalWail.g:1446:2: ( RULE_STRING )
-            // InternalWail.g:1447:3: RULE_STRING
+            // InternalWail.g:1434:2: ( RULE_STRING )
+            // InternalWail.g:1435:3: RULE_STRING
             {
              before(grammarAccess.getRuleAccess().getNameSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -4366,17 +4324,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__FragmentsAssignment_3"
-    // InternalWail.g:1456:1: rule__Rule__FragmentsAssignment_3 : ( ruleFragment ) ;
+    // InternalWail.g:1444:1: rule__Rule__FragmentsAssignment_3 : ( ruleFragment ) ;
     public final void rule__Rule__FragmentsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1460:1: ( ( ruleFragment ) )
-            // InternalWail.g:1461:2: ( ruleFragment )
+            // InternalWail.g:1448:1: ( ( ruleFragment ) )
+            // InternalWail.g:1449:2: ( ruleFragment )
             {
-            // InternalWail.g:1461:2: ( ruleFragment )
-            // InternalWail.g:1462:3: ruleFragment
+            // InternalWail.g:1449:2: ( ruleFragment )
+            // InternalWail.g:1450:3: ruleFragment
             {
              before(grammarAccess.getRuleAccess().getFragmentsFragmentParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -4407,17 +4365,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Rule__GoalsAssignment_4"
-    // InternalWail.g:1471:1: rule__Rule__GoalsAssignment_4 : ( ruleGoal ) ;
+    // InternalWail.g:1459:1: rule__Rule__GoalsAssignment_4 : ( ruleGoal ) ;
     public final void rule__Rule__GoalsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1475:1: ( ( ruleGoal ) )
-            // InternalWail.g:1476:2: ( ruleGoal )
+            // InternalWail.g:1463:1: ( ( ruleGoal ) )
+            // InternalWail.g:1464:2: ( ruleGoal )
             {
-            // InternalWail.g:1476:2: ( ruleGoal )
-            // InternalWail.g:1477:3: ruleGoal
+            // InternalWail.g:1464:2: ( ruleGoal )
+            // InternalWail.g:1465:3: ruleGoal
             {
              before(grammarAccess.getRuleAccess().getGoalsGoalParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -4448,17 +4406,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fragment__ConditionAssignment_0"
-    // InternalWail.g:1486:1: rule__Fragment__ConditionAssignment_0 : ( ruleConditional ) ;
+    // InternalWail.g:1474:1: rule__Fragment__ConditionAssignment_0 : ( ruleConditional ) ;
     public final void rule__Fragment__ConditionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1490:1: ( ( ruleConditional ) )
-            // InternalWail.g:1491:2: ( ruleConditional )
+            // InternalWail.g:1478:1: ( ( ruleConditional ) )
+            // InternalWail.g:1479:2: ( ruleConditional )
             {
-            // InternalWail.g:1491:2: ( ruleConditional )
-            // InternalWail.g:1492:3: ruleConditional
+            // InternalWail.g:1479:2: ( ruleConditional )
+            // InternalWail.g:1480:3: ruleConditional
             {
              before(grammarAccess.getFragmentAccess().getConditionConditionalParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -4489,17 +4447,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Fragment__Defualt_casAssignment_2"
-    // InternalWail.g:1501:1: rule__Fragment__Defualt_casAssignment_2 : ( ruleDefualt_CA ) ;
+    // InternalWail.g:1489:1: rule__Fragment__Defualt_casAssignment_2 : ( ruleDefualt_CA ) ;
     public final void rule__Fragment__Defualt_casAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1505:1: ( ( ruleDefualt_CA ) )
-            // InternalWail.g:1506:2: ( ruleDefualt_CA )
+            // InternalWail.g:1493:1: ( ( ruleDefualt_CA ) )
+            // InternalWail.g:1494:2: ( ruleDefualt_CA )
             {
-            // InternalWail.g:1506:2: ( ruleDefualt_CA )
-            // InternalWail.g:1507:3: ruleDefualt_CA
+            // InternalWail.g:1494:2: ( ruleDefualt_CA )
+            // InternalWail.g:1495:3: ruleDefualt_CA
             {
              before(grammarAccess.getFragmentAccess().getDefualt_casDefualt_CAParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4530,17 +4488,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Conditional__XAssignment_1"
-    // InternalWail.g:1516:1: rule__Conditional__XAssignment_1 : ( rulewhenRules ) ;
+    // InternalWail.g:1504:1: rule__Conditional__XAssignment_1 : ( rulewhenRules ) ;
     public final void rule__Conditional__XAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1520:1: ( ( rulewhenRules ) )
-            // InternalWail.g:1521:2: ( rulewhenRules )
+            // InternalWail.g:1508:1: ( ( rulewhenRules ) )
+            // InternalWail.g:1509:2: ( rulewhenRules )
             {
-            // InternalWail.g:1521:2: ( rulewhenRules )
-            // InternalWail.g:1522:3: rulewhenRules
+            // InternalWail.g:1509:2: ( rulewhenRules )
+            // InternalWail.g:1510:3: rulewhenRules
             {
              before(grammarAccess.getConditionalAccess().getXWhenRulesParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4571,24 +4529,24 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Baseline__AlwaysAssignment"
-    // InternalWail.g:1531:1: rule__Baseline__AlwaysAssignment : ( ( 'always' ) ) ;
+    // InternalWail.g:1519:1: rule__Baseline__AlwaysAssignment : ( ( 'always' ) ) ;
     public final void rule__Baseline__AlwaysAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1535:1: ( ( ( 'always' ) ) )
-            // InternalWail.g:1536:2: ( ( 'always' ) )
+            // InternalWail.g:1523:1: ( ( ( 'always' ) ) )
+            // InternalWail.g:1524:2: ( ( 'always' ) )
             {
-            // InternalWail.g:1536:2: ( ( 'always' ) )
-            // InternalWail.g:1537:3: ( 'always' )
-            {
-             before(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0()); 
-            // InternalWail.g:1538:3: ( 'always' )
-            // InternalWail.g:1539:4: 'always'
+            // InternalWail.g:1524:2: ( ( 'always' ) )
+            // InternalWail.g:1525:3: ( 'always' )
             {
              before(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0()); 
-            match(input,36,FOLLOW_2); 
+            // InternalWail.g:1526:3: ( 'always' )
+            // InternalWail.g:1527:4: 'always'
+            {
+             before(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0()); 
+            match(input,34,FOLLOW_2); 
              after(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0()); 
 
             }
@@ -4616,17 +4574,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Damage__HealthAssignment_2"
-    // InternalWail.g:1550:1: rule__Damage__HealthAssignment_2 : ( RULE_INT ) ;
+    // InternalWail.g:1538:1: rule__Damage__HealthAssignment_2 : ( RULE_INT ) ;
     public final void rule__Damage__HealthAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1554:1: ( ( RULE_INT ) )
-            // InternalWail.g:1555:2: ( RULE_INT )
+            // InternalWail.g:1542:1: ( ( RULE_INT ) )
+            // InternalWail.g:1543:2: ( RULE_INT )
             {
-            // InternalWail.g:1555:2: ( RULE_INT )
-            // InternalWail.g:1556:3: RULE_INT
+            // InternalWail.g:1543:2: ( RULE_INT )
+            // InternalWail.g:1544:3: RULE_INT
             {
              before(grammarAccess.getDamageAccess().getHealthINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4653,17 +4611,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtLocation__XAxisAssignment_1"
-    // InternalWail.g:1565:1: rule__AtLocation__XAxisAssignment_1 : ( RULE_INT ) ;
+    // InternalWail.g:1553:1: rule__AtLocation__XAxisAssignment_1 : ( RULE_INT ) ;
     public final void rule__AtLocation__XAxisAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1569:1: ( ( RULE_INT ) )
-            // InternalWail.g:1570:2: ( RULE_INT )
+            // InternalWail.g:1557:1: ( ( RULE_INT ) )
+            // InternalWail.g:1558:2: ( RULE_INT )
             {
-            // InternalWail.g:1570:2: ( RULE_INT )
-            // InternalWail.g:1571:3: RULE_INT
+            // InternalWail.g:1558:2: ( RULE_INT )
+            // InternalWail.g:1559:3: RULE_INT
             {
              before(grammarAccess.getAtLocationAccess().getXAxisINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4690,17 +4648,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AtLocation__YAxisAssignment_3"
-    // InternalWail.g:1580:1: rule__AtLocation__YAxisAssignment_3 : ( RULE_INT ) ;
+    // InternalWail.g:1568:1: rule__AtLocation__YAxisAssignment_3 : ( RULE_INT ) ;
     public final void rule__AtLocation__YAxisAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1584:1: ( ( RULE_INT ) )
-            // InternalWail.g:1585:2: ( RULE_INT )
+            // InternalWail.g:1572:1: ( ( RULE_INT ) )
+            // InternalWail.g:1573:2: ( RULE_INT )
             {
-            // InternalWail.g:1585:2: ( RULE_INT )
-            // InternalWail.g:1586:3: RULE_INT
+            // InternalWail.g:1573:2: ( RULE_INT )
+            // InternalWail.g:1574:3: RULE_INT
             {
              before(grammarAccess.getAtLocationAccess().getYAxisINTTerminalRuleCall_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4727,17 +4685,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnitEquals__UnitAssignment_2"
-    // InternalWail.g:1595:1: rule__UnitEquals__UnitAssignment_2 : ( RULE_STRING ) ;
+    // InternalWail.g:1583:1: rule__UnitEquals__UnitAssignment_2 : ( RULE_STRING ) ;
     public final void rule__UnitEquals__UnitAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1599:1: ( ( RULE_STRING ) )
-            // InternalWail.g:1600:2: ( RULE_STRING )
+            // InternalWail.g:1587:1: ( ( RULE_STRING ) )
+            // InternalWail.g:1588:2: ( RULE_STRING )
             {
-            // InternalWail.g:1600:2: ( RULE_STRING )
-            // InternalWail.g:1601:3: RULE_STRING
+            // InternalWail.g:1588:2: ( RULE_STRING )
+            // InternalWail.g:1589:3: RULE_STRING
             {
              before(grammarAccess.getUnitEqualsAccess().getUnitSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -4764,17 +4722,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__GoalAssignment_2"
-    // InternalWail.g:1610:1: rule__Goal__GoalAssignment_2 : ( ruleGoaLocation ) ;
+    // InternalWail.g:1598:1: rule__Goal__GoalAssignment_2 : ( ruleGoaLocation ) ;
     public final void rule__Goal__GoalAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1614:1: ( ( ruleGoaLocation ) )
-            // InternalWail.g:1615:2: ( ruleGoaLocation )
+            // InternalWail.g:1602:1: ( ( ruleGoaLocation ) )
+            // InternalWail.g:1603:2: ( ruleGoaLocation )
             {
-            // InternalWail.g:1615:2: ( ruleGoaLocation )
-            // InternalWail.g:1616:3: ruleGoaLocation
+            // InternalWail.g:1603:2: ( ruleGoaLocation )
+            // InternalWail.g:1604:3: ruleGoaLocation
             {
              before(grammarAccess.getGoalAccess().getGoalGoaLocationParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4805,17 +4763,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Goal__LocValueAssignment_5"
-    // InternalWail.g:1625:1: rule__Goal__LocValueAssignment_5 : ( RULE_INT ) ;
+    // InternalWail.g:1613:1: rule__Goal__LocValueAssignment_5 : ( RULE_INT ) ;
     public final void rule__Goal__LocValueAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1629:1: ( ( RULE_INT ) )
-            // InternalWail.g:1630:2: ( RULE_INT )
+            // InternalWail.g:1617:1: ( ( RULE_INT ) )
+            // InternalWail.g:1618:2: ( RULE_INT )
             {
-            // InternalWail.g:1630:2: ( RULE_INT )
-            // InternalWail.g:1631:3: RULE_INT
+            // InternalWail.g:1618:2: ( RULE_INT )
+            // InternalWail.g:1619:3: RULE_INT
             {
              before(grammarAccess.getGoalAccess().getLocValueINTTerminalRuleCall_5_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4842,17 +4800,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GoaLocation__XAxisAssignment_1"
-    // InternalWail.g:1640:1: rule__GoaLocation__XAxisAssignment_1 : ( RULE_INT ) ;
+    // InternalWail.g:1628:1: rule__GoaLocation__XAxisAssignment_1 : ( RULE_INT ) ;
     public final void rule__GoaLocation__XAxisAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1644:1: ( ( RULE_INT ) )
-            // InternalWail.g:1645:2: ( RULE_INT )
+            // InternalWail.g:1632:1: ( ( RULE_INT ) )
+            // InternalWail.g:1633:2: ( RULE_INT )
             {
-            // InternalWail.g:1645:2: ( RULE_INT )
-            // InternalWail.g:1646:3: RULE_INT
+            // InternalWail.g:1633:2: ( RULE_INT )
+            // InternalWail.g:1634:3: RULE_INT
             {
              before(grammarAccess.getGoaLocationAccess().getXAxisINTTerminalRuleCall_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4879,17 +4837,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__GoaLocation__YAxisAssignment_3"
-    // InternalWail.g:1655:1: rule__GoaLocation__YAxisAssignment_3 : ( RULE_INT ) ;
+    // InternalWail.g:1643:1: rule__GoaLocation__YAxisAssignment_3 : ( RULE_INT ) ;
     public final void rule__GoaLocation__YAxisAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1659:1: ( ( RULE_INT ) )
-            // InternalWail.g:1660:2: ( RULE_INT )
+            // InternalWail.g:1647:1: ( ( RULE_INT ) )
+            // InternalWail.g:1648:2: ( RULE_INT )
             {
-            // InternalWail.g:1660:2: ( RULE_INT )
-            // InternalWail.g:1661:3: RULE_INT
+            // InternalWail.g:1648:2: ( RULE_INT )
+            // InternalWail.g:1649:3: RULE_INT
             {
              before(grammarAccess.getGoaLocationAccess().getYAxisINTTerminalRuleCall_3_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -4916,21 +4874,21 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Defualt_CA__CaTypeAssignment_0"
-    // InternalWail.g:1670:1: rule__Defualt_CA__CaTypeAssignment_0 : ( ( rule__Defualt_CA__CaTypeAlternatives_0_0 ) ) ;
+    // InternalWail.g:1658:1: rule__Defualt_CA__CaTypeAssignment_0 : ( ( rule__Defualt_CA__CaTypeAlternatives_0_0 ) ) ;
     public final void rule__Defualt_CA__CaTypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1674:1: ( ( ( rule__Defualt_CA__CaTypeAlternatives_0_0 ) ) )
-            // InternalWail.g:1675:2: ( ( rule__Defualt_CA__CaTypeAlternatives_0_0 ) )
+            // InternalWail.g:1662:1: ( ( ( rule__Defualt_CA__CaTypeAlternatives_0_0 ) ) )
+            // InternalWail.g:1663:2: ( ( rule__Defualt_CA__CaTypeAlternatives_0_0 ) )
             {
-            // InternalWail.g:1675:2: ( ( rule__Defualt_CA__CaTypeAlternatives_0_0 ) )
-            // InternalWail.g:1676:3: ( rule__Defualt_CA__CaTypeAlternatives_0_0 )
+            // InternalWail.g:1663:2: ( ( rule__Defualt_CA__CaTypeAlternatives_0_0 ) )
+            // InternalWail.g:1664:3: ( rule__Defualt_CA__CaTypeAlternatives_0_0 )
             {
              before(grammarAccess.getDefualt_CAAccess().getCaTypeAlternatives_0_0()); 
-            // InternalWail.g:1677:3: ( rule__Defualt_CA__CaTypeAlternatives_0_0 )
-            // InternalWail.g:1677:4: rule__Defualt_CA__CaTypeAlternatives_0_0
+            // InternalWail.g:1665:3: ( rule__Defualt_CA__CaTypeAlternatives_0_0 )
+            // InternalWail.g:1665:4: rule__Defualt_CA__CaTypeAlternatives_0_0
             {
             pushFollow(FOLLOW_2);
             rule__Defualt_CA__CaTypeAlternatives_0_0();
@@ -4963,17 +4921,17 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Defualt_CA__CostAssignment_1_1"
-    // InternalWail.g:1685:1: rule__Defualt_CA__CostAssignment_1_1 : ( RULE_INT ) ;
+    // InternalWail.g:1673:1: rule__Defualt_CA__CostAssignment_1_1 : ( RULE_INT ) ;
     public final void rule__Defualt_CA__CostAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalWail.g:1689:1: ( ( RULE_INT ) )
-            // InternalWail.g:1690:2: ( RULE_INT )
+            // InternalWail.g:1677:1: ( ( RULE_INT ) )
+            // InternalWail.g:1678:2: ( RULE_INT )
             {
-            // InternalWail.g:1690:2: ( RULE_INT )
-            // InternalWail.g:1691:3: RULE_INT
+            // InternalWail.g:1678:2: ( RULE_INT )
+            // InternalWail.g:1679:3: RULE_INT
             {
              before(grammarAccess.getDefualt_CAAccess().getCostINTTerminalRuleCall_1_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -5005,22 +4963,22 @@ public class InternalWailParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000080002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000081800000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000009FF800L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000001FF802L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000102A000000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000020600000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x000000000027F800L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x000000000007F802L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000040A800000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000200000000L});
 
 }

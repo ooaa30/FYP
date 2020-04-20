@@ -715,9 +715,9 @@ ruleDefualt_CA returns [EObject current=null]
 						setWithLastConsumed($current, "caType", lv_caType_0_3, null);
 					}
 					    |
-					lv_caType_0_4='move_to_targets'
+					lv_caType_0_4='combat'
 					{
-						newLeafNode(lv_caType_0_4, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_0_3());
+						newLeafNode(lv_caType_0_4, grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_3());
 					}
 					{
 						if ($current==null) {
@@ -726,9 +726,9 @@ ruleDefualt_CA returns [EObject current=null]
 						setWithLastConsumed($current, "caType", lv_caType_0_4, null);
 					}
 					    |
-					lv_caType_0_5='basic_movement'
+					lv_caType_0_5='recruit'
 					{
-						newLeafNode(lv_caType_0_5, grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_0_4());
+						newLeafNode(lv_caType_0_5, grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_4());
 					}
 					{
 						if ($current==null) {
@@ -737,9 +737,9 @@ ruleDefualt_CA returns [EObject current=null]
 						setWithLastConsumed($current, "caType", lv_caType_0_5, null);
 					}
 					    |
-					lv_caType_0_6='combat'
+					lv_caType_0_6='combat_value_targets'
 					{
-						newLeafNode(lv_caType_0_6, grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_5());
+						newLeafNode(lv_caType_0_6, grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_5());
 					}
 					{
 						if ($current==null) {
@@ -748,9 +748,9 @@ ruleDefualt_CA returns [EObject current=null]
 						setWithLastConsumed($current, "caType", lv_caType_0_6, null);
 					}
 					    |
-					lv_caType_0_7='recruit'
+					lv_caType_0_7='capture_villages'
 					{
-						newLeafNode(lv_caType_0_7, grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_6());
+						newLeafNode(lv_caType_0_7, grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_6());
 					}
 					{
 						if ($current==null) {
@@ -759,37 +759,15 @@ ruleDefualt_CA returns [EObject current=null]
 						setWithLastConsumed($current, "caType", lv_caType_0_7, null);
 					}
 					    |
-					lv_caType_0_8='combat_value_targets'
+					lv_caType_0_8='leader_to_keep'
 					{
-						newLeafNode(lv_caType_0_8, grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_7());
+						newLeafNode(lv_caType_0_8, grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_7());
 					}
 					{
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getDefualt_CARule());
 						}
 						setWithLastConsumed($current, "caType", lv_caType_0_8, null);
-					}
-					    |
-					lv_caType_0_9='capture_villages'
-					{
-						newLeafNode(lv_caType_0_9, grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_8());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getDefualt_CARule());
-						}
-						setWithLastConsumed($current, "caType", lv_caType_0_9, null);
-					}
-					    |
-					lv_caType_0_10='leader_to_keep'
-					{
-						newLeafNode(lv_caType_0_10, grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_9());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getDefualt_CARule());
-						}
-						setWithLastConsumed($current, "caType", lv_caType_0_10, null);
 					}
 				)
 			)

@@ -1,0 +1,170 @@
+
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[combat]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[goto]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[recruit_rushers]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[castle_switch]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[retreat_injured]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[grab_villages]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[spread_poison]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[recruitment]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[move_leader_to_goals]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[move_leader_to_keep]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[high_xp_attack]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[place_healers]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[healing]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[villages]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[retreat]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[village_hunt]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[move_to_targets]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[leader_shares_keep]
+[/modify_ai]
+[modify_ai]
+    side=1
+    action=delete
+    path=stage[main_loop].candidate_action[move_to_any_enemy]
+[/modify_ai]
+
+[modify_ai]
+	side =1
+	action = add
+	path = stage[main_loop].candidate_action[]
+		[candidate_action]
+		id=goto
+		engine=cpp
+		name=ai_default_rca::move_to_targets_phase
+		max_score=20000
+		score=20000
+		[/candidate_action]
+[/modify_ai]
+[modify_ai]
+	side =1
+	action = add
+	path = stage[main_loop].candidate_action[]
+		[candidate_action]
+		id=combat
+		engine=cpp
+		name=ai_default_rca::combat_phase
+		max_score=100000
+		score=100000
+		[/candidate_action]
+[/modify_ai]
+[modify_ai]
+	side =1
+	action = add
+	path = stage[main_loop].candidate_action[]
+		[candidate_action]
+		id=retreat_injured
+		engine=lua
+		name=ai_default_rca::retreat_injured
+		max_score=192000
+		location="ai/lua/retreat.lua"
+		[/candidate_action]
+[/modify_ai]
+[modify_ai]
+	side =1
+	action = add
+	path = stage[main_loop].candidate_action[]
+		[candidate_action]
+		id=healing
+		engine=cpp
+		name=ai_default_rca::get_healing_phase
+		max_score=80000
+		score=80000
+		[/candidate_action]
+[/modify_ai]
+[modify_ai]
+	side =1
+	action = add
+	path = stage[main_loop].candidate_action[]
+		[candidate_action]
+		id=high_xp_attack
+		engine=lua
+		name=ai_default_rca::high_xp_attack
+		location="ai/lua/ca_high_xp_attack.lua"
+		max_score=100010
+		[/candidate_action]
+[/modify_ai]
+
+[modify_ai]
+	side =1
+	action = add
+	path=goal[]
+	[goal] 
+		name=target_location
+		[criteria]
+			x,y=5,5
+		[/criteria]		
+		value=1
+	[/goal]
+[/modify_ai]

@@ -382,33 +382,31 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCaTypeMovementKeyword_0_0_0 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(0);
 		private final Keyword cCaTypeHealKeyword_0_0_1 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(1);
 		private final Keyword cCaTypeRetreatKeyword_0_0_2 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(2);
-		private final Keyword cCaTypeMove_to_targetsKeyword_0_0_3 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(3);
-		private final Keyword cCaTypeBasic_movementKeyword_0_0_4 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(4);
-		private final Keyword cCaTypeCombatKeyword_0_0_5 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(5);
-		private final Keyword cCaTypeRecruitKeyword_0_0_6 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(6);
-		private final Keyword cCaTypeCombat_value_targetsKeyword_0_0_7 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(7);
-		private final Keyword cCaTypeCapture_villagesKeyword_0_0_8 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(8);
-		private final Keyword cCaTypeLeader_to_keepKeyword_0_0_9 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(9);
+		private final Keyword cCaTypeCombatKeyword_0_0_3 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(3);
+		private final Keyword cCaTypeRecruitKeyword_0_0_4 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(4);
+		private final Keyword cCaTypeCombat_value_targetsKeyword_0_0_5 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(5);
+		private final Keyword cCaTypeCapture_villagesKeyword_0_0_6 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(6);
+		private final Keyword cCaTypeLeader_to_keepKeyword_0_0_7 = (Keyword)cCaTypeAlternatives_0_0.eContents().get(7);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cCostKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cCostAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cCostINTTerminalRuleCall_1_1_0 = (RuleCall)cCostAssignment_1_1.eContents().get(0);
 		
 		//Defualt_CA:
-		//	caType=("movement" | "heal" | "retreat" | "move_to_targets" | "basic_movement" | "combat" | "recruit" |
-		//	"combat_value_targets" | "capture_villages" | "leader_to_keep") ('cost' cost=INT)?;
+		//	caType=("movement" | "heal" | "retreat" | "combat" | "recruit" | "combat_value_targets" | "capture_villages" |
+		//	"leader_to_keep") ('cost' cost=INT)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//caType=("movement" | "heal" | "retreat" | "move_to_targets" | "basic_movement" | "combat" | "recruit" |
-		//"combat_value_targets" | "capture_villages" | "leader_to_keep") ('cost' cost=INT)?
+		//caType=("movement" | "heal" | "retreat" | "combat" | "recruit" | "combat_value_targets" | "capture_villages" |
+		//"leader_to_keep") ('cost' cost=INT)?
 		public Group getGroup() { return cGroup; }
 		
-		//caType=("movement" | "heal" | "retreat" | "move_to_targets" | "basic_movement" | "combat" | "recruit" |
-		//"combat_value_targets" | "capture_villages" | "leader_to_keep")
+		//caType=("movement" | "heal" | "retreat" | "combat" | "recruit" | "combat_value_targets" | "capture_villages" |
+		//"leader_to_keep")
 		public Assignment getCaTypeAssignment_0() { return cCaTypeAssignment_0; }
 		
-		//("movement" | "heal" | "retreat" | "move_to_targets" | "basic_movement" | "combat" | "recruit" | "combat_value_targets"
-		//| "capture_villages" | "leader_to_keep")
+		//("movement" | "heal" | "retreat" | "combat" | "recruit" | "combat_value_targets" | "capture_villages" |
+		//"leader_to_keep")
 		public Alternatives getCaTypeAlternatives_0_0() { return cCaTypeAlternatives_0_0; }
 		
 		//"movement"
@@ -420,26 +418,20 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		//"retreat"
 		public Keyword getCaTypeRetreatKeyword_0_0_2() { return cCaTypeRetreatKeyword_0_0_2; }
 		
-		//"move_to_targets"
-		public Keyword getCaTypeMove_to_targetsKeyword_0_0_3() { return cCaTypeMove_to_targetsKeyword_0_0_3; }
-		
-		//"basic_movement"
-		public Keyword getCaTypeBasic_movementKeyword_0_0_4() { return cCaTypeBasic_movementKeyword_0_0_4; }
-		
 		//"combat"
-		public Keyword getCaTypeCombatKeyword_0_0_5() { return cCaTypeCombatKeyword_0_0_5; }
+		public Keyword getCaTypeCombatKeyword_0_0_3() { return cCaTypeCombatKeyword_0_0_3; }
 		
 		//"recruit"
-		public Keyword getCaTypeRecruitKeyword_0_0_6() { return cCaTypeRecruitKeyword_0_0_6; }
+		public Keyword getCaTypeRecruitKeyword_0_0_4() { return cCaTypeRecruitKeyword_0_0_4; }
 		
 		//"combat_value_targets"
-		public Keyword getCaTypeCombat_value_targetsKeyword_0_0_7() { return cCaTypeCombat_value_targetsKeyword_0_0_7; }
+		public Keyword getCaTypeCombat_value_targetsKeyword_0_0_5() { return cCaTypeCombat_value_targetsKeyword_0_0_5; }
 		
 		//"capture_villages"
-		public Keyword getCaTypeCapture_villagesKeyword_0_0_8() { return cCaTypeCapture_villagesKeyword_0_0_8; }
+		public Keyword getCaTypeCapture_villagesKeyword_0_0_6() { return cCaTypeCapture_villagesKeyword_0_0_6; }
 		
 		//"leader_to_keep"
-		public Keyword getCaTypeLeader_to_keepKeyword_0_0_9() { return cCaTypeLeader_to_keepKeyword_0_0_9; }
+		public Keyword getCaTypeLeader_to_keepKeyword_0_0_7() { return cCaTypeLeader_to_keepKeyword_0_0_7; }
 		
 		//('cost' cost=INT)?
 		public Group getGroup_1() { return cGroup_1; }
@@ -653,8 +645,8 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Defualt_CA:
-	//	caType=("movement" | "heal" | "retreat" | "move_to_targets" | "basic_movement" | "combat" | "recruit" |
-	//	"combat_value_targets" | "capture_villages" | "leader_to_keep") ('cost' cost=INT)?;
+	//	caType=("movement" | "heal" | "retreat" | "combat" | "recruit" | "combat_value_targets" | "capture_villages" |
+	//	"leader_to_keep") ('cost' cost=INT)?;
 	public Defualt_CAElements getDefualt_CAAccess() {
 		return pDefualt_CA;
 	}

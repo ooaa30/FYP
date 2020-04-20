@@ -406,45 +406,33 @@ rule__Defualt_CA__CaTypeAlternatives_0_0
 	)
 	|
 	(
-		{ before(grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_0_3()); }
-		'move_to_targets'
-		{ after(grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_0_3()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_0_4()); }
-		'basic_movement'
-		{ after(grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_0_4()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_5()); }
+		{ before(grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_3()); }
 		'combat'
-		{ after(grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_5()); }
+		{ after(grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_3()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_6()); }
+		{ before(grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_4()); }
 		'recruit'
-		{ after(grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_6()); }
+		{ after(grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_4()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_7()); }
+		{ before(grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_5()); }
 		'combat_value_targets'
-		{ after(grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_7()); }
+		{ after(grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_5()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_8()); }
+		{ before(grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_6()); }
 		'capture_villages'
-		{ after(grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_8()); }
+		{ after(grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_6()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_9()); }
+		{ before(grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_7()); }
 		'leader_to_keep'
-		{ after(grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_9()); }
+		{ after(grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_7()); }
 	)
 ;
 finally {

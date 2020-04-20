@@ -1,0 +1,10 @@
+rule "test"{
+	when: always{
+		movement
+		combat
+		retreat
+		heal
+		combat_value_targets
+	}
+	goal is x 5 y 5 value is 1
+}

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalWailParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'rule'", "'{'", "'}'", "'when:'", "'always'", "'health'", "'-'", "'x:'", "'y:'", "'unit'", "'is'", "'goal'", "'value'", "'x'", "'y'", "'movement'", "'heal'", "'retreat'", "'move_to_targets'", "'basic_movement'", "'combat'", "'recruit'", "'combat_value_targets'", "'capture_villages'", "'leader_to_keep'", "'cost'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'rule'", "'{'", "'}'", "'when:'", "'always'", "'health'", "'-'", "'x:'", "'y:'", "'unit'", "'is'", "'goal'", "'value'", "'x'", "'y'", "'movement'", "'heal'", "'retreat'", "'combat'", "'recruit'", "'combat_value_targets'", "'capture_villages'", "'leader_to_keep'", "'cost'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -35,9 +35,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
     public static final int T__12=12;
     public static final int T__34=34;
     public static final int T__13=13;
-    public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
@@ -533,7 +531,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( ((LA4_0>=26 && LA4_0<=35)) ) {
+                if ( ((LA4_0>=26 && LA4_0<=33)) ) {
                     alt4=1;
                 }
 
@@ -1676,7 +1674,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefualt_CA"
-    // InternalWail.g:674:1: ruleDefualt_CA returns [EObject current=null] : ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? ) ;
+    // InternalWail.g:674:1: ruleDefualt_CA returns [EObject current=null] : ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? ) ;
     public final EObject ruleDefualt_CA() throws RecognitionException {
         EObject current = null;
 
@@ -1688,8 +1686,6 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         Token lv_caType_0_6=null;
         Token lv_caType_0_7=null;
         Token lv_caType_0_8=null;
-        Token lv_caType_0_9=null;
-        Token lv_caType_0_10=null;
         Token otherlv_1=null;
         Token lv_cost_2_0=null;
 
@@ -1697,20 +1693,20 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWail.g:680:2: ( ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? ) )
-            // InternalWail.g:681:2: ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? )
+            // InternalWail.g:680:2: ( ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? ) )
+            // InternalWail.g:681:2: ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? )
             {
-            // InternalWail.g:681:2: ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? )
-            // InternalWail.g:682:3: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )?
+            // InternalWail.g:681:2: ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? )
+            // InternalWail.g:682:3: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )?
             {
-            // InternalWail.g:682:3: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) ) )
-            // InternalWail.g:683:4: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) )
+            // InternalWail.g:682:3: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) )
+            // InternalWail.g:683:4: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) )
             {
-            // InternalWail.g:683:4: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' ) )
-            // InternalWail.g:684:5: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' )
+            // InternalWail.g:683:4: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) )
+            // InternalWail.g:684:5: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' )
             {
-            // InternalWail.g:684:5: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'move_to_targets' | lv_caType_0_5= 'basic_movement' | lv_caType_0_6= 'combat' | lv_caType_0_7= 'recruit' | lv_caType_0_8= 'combat_value_targets' | lv_caType_0_9= 'capture_villages' | lv_caType_0_10= 'leader_to_keep' )
-            int alt6=10;
+            // InternalWail.g:684:5: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' )
+            int alt6=8;
             switch ( input.LA(1) ) {
             case 26:
                 {
@@ -1750,16 +1746,6 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
             case 33:
                 {
                 alt6=8;
-                }
-                break;
-            case 34:
-                {
-                alt6=9;
-                }
-                break;
-            case 35:
-                {
-                alt6=10;
                 }
                 break;
             default:
@@ -1819,11 +1805,11 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalWail.g:718:6: lv_caType_0_4= 'move_to_targets'
+                    // InternalWail.g:718:6: lv_caType_0_4= 'combat'
                     {
                     lv_caType_0_4=(Token)match(input,29,FOLLOW_17); 
 
-                    						newLeafNode(lv_caType_0_4, grammarAccess.getDefualt_CAAccess().getCaTypeMove_to_targetsKeyword_0_0_3());
+                    						newLeafNode(lv_caType_0_4, grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_3());
                     					
 
                     						if (current==null) {
@@ -1835,11 +1821,11 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalWail.g:729:6: lv_caType_0_5= 'basic_movement'
+                    // InternalWail.g:729:6: lv_caType_0_5= 'recruit'
                     {
                     lv_caType_0_5=(Token)match(input,30,FOLLOW_17); 
 
-                    						newLeafNode(lv_caType_0_5, grammarAccess.getDefualt_CAAccess().getCaTypeBasic_movementKeyword_0_0_4());
+                    						newLeafNode(lv_caType_0_5, grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_4());
                     					
 
                     						if (current==null) {
@@ -1851,11 +1837,11 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalWail.g:740:6: lv_caType_0_6= 'combat'
+                    // InternalWail.g:740:6: lv_caType_0_6= 'combat_value_targets'
                     {
                     lv_caType_0_6=(Token)match(input,31,FOLLOW_17); 
 
-                    						newLeafNode(lv_caType_0_6, grammarAccess.getDefualt_CAAccess().getCaTypeCombatKeyword_0_0_5());
+                    						newLeafNode(lv_caType_0_6, grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_5());
                     					
 
                     						if (current==null) {
@@ -1867,11 +1853,11 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalWail.g:751:6: lv_caType_0_7= 'recruit'
+                    // InternalWail.g:751:6: lv_caType_0_7= 'capture_villages'
                     {
                     lv_caType_0_7=(Token)match(input,32,FOLLOW_17); 
 
-                    						newLeafNode(lv_caType_0_7, grammarAccess.getDefualt_CAAccess().getCaTypeRecruitKeyword_0_0_6());
+                    						newLeafNode(lv_caType_0_7, grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_6());
                     					
 
                     						if (current==null) {
@@ -1883,11 +1869,11 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalWail.g:762:6: lv_caType_0_8= 'combat_value_targets'
+                    // InternalWail.g:762:6: lv_caType_0_8= 'leader_to_keep'
                     {
                     lv_caType_0_8=(Token)match(input,33,FOLLOW_17); 
 
-                    						newLeafNode(lv_caType_0_8, grammarAccess.getDefualt_CAAccess().getCaTypeCombat_value_targetsKeyword_0_0_7());
+                    						newLeafNode(lv_caType_0_8, grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_7());
                     					
 
                     						if (current==null) {
@@ -1898,38 +1884,6 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
-                case 9 :
-                    // InternalWail.g:773:6: lv_caType_0_9= 'capture_villages'
-                    {
-                    lv_caType_0_9=(Token)match(input,34,FOLLOW_17); 
-
-                    						newLeafNode(lv_caType_0_9, grammarAccess.getDefualt_CAAccess().getCaTypeCapture_villagesKeyword_0_0_8());
-                    					
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getDefualt_CARule());
-                    						}
-                    						setWithLastConsumed(current, "caType", lv_caType_0_9, null);
-                    					
-
-                    }
-                    break;
-                case 10 :
-                    // InternalWail.g:784:6: lv_caType_0_10= 'leader_to_keep'
-                    {
-                    lv_caType_0_10=(Token)match(input,35,FOLLOW_17); 
-
-                    						newLeafNode(lv_caType_0_10, grammarAccess.getDefualt_CAAccess().getCaTypeLeader_to_keepKeyword_0_0_9());
-                    					
-
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getDefualt_CARule());
-                    						}
-                    						setWithLastConsumed(current, "caType", lv_caType_0_10, null);
-                    					
-
-                    }
-                    break;
 
             }
 
@@ -1939,26 +1893,26 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalWail.g:797:3: (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )?
+            // InternalWail.g:775:3: (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==36) ) {
+            if ( (LA7_0==34) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
-                    // InternalWail.g:798:4: otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) )
+                    // InternalWail.g:776:4: otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) )
                     {
-                    otherlv_1=(Token)match(input,36,FOLLOW_11); 
+                    otherlv_1=(Token)match(input,34,FOLLOW_11); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getDefualt_CAAccess().getCostKeyword_1_0());
                     			
-                    // InternalWail.g:802:4: ( (lv_cost_2_0= RULE_INT ) )
-                    // InternalWail.g:803:5: (lv_cost_2_0= RULE_INT )
+                    // InternalWail.g:780:4: ( (lv_cost_2_0= RULE_INT ) )
+                    // InternalWail.g:781:5: (lv_cost_2_0= RULE_INT )
                     {
-                    // InternalWail.g:803:5: (lv_cost_2_0= RULE_INT )
-                    // InternalWail.g:804:6: lv_cost_2_0= RULE_INT
+                    // InternalWail.g:781:5: (lv_cost_2_0= RULE_INT )
+                    // InternalWail.g:782:6: lv_cost_2_0= RULE_INT
                     {
                     lv_cost_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2019,7 +1973,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000406000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000402000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000FFC002000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000003FC002000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000158000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000020L});
@@ -2028,6 +1982,6 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000001000000002L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000400000002L});
 
 }

@@ -261,7 +261,7 @@ public class WailGenerator extends AbstractGenerator {
     _builder.append("action=delete");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("path=stage[main_loop].candidate_action[move_to_tagets]");
+    _builder.append("path=stage[main_loop].candidate_action[move_to_targets]");
     _builder.newLine();
     _builder.append("[/modify_ai]");
     _builder.newLine();
@@ -340,7 +340,7 @@ public class WailGenerator extends AbstractGenerator {
         _builder.append(_compile_1, "\t\t\t");
         _builder.newLineIfNotEmpty();
         _builder.append("\t\t");
-        _builder.append("[/candidate_action");
+        _builder.append("[/candidate_action]");
         _builder.newLine();
         _builder.append("[/modify_ai]");
         _builder.newLine();
@@ -359,7 +359,7 @@ public class WailGenerator extends AbstractGenerator {
         _builder.newLine();
         _builder.append("engine=cpp");
         _builder.newLine();
-        _builder.append("name=ai_default_rca::goto_phase");
+        _builder.append("name=ai_default_rca::move_to_targets_phase");
         _builder.newLine();
         {
           int _cost = ca.getCost();
@@ -374,9 +374,9 @@ public class WailGenerator extends AbstractGenerator {
             _builder.append(_cost_2);
             _builder.newLineIfNotEmpty();
           } else {
-            _builder.append("max_score=200000");
+            _builder.append("max_score=20000");
             _builder.newLine();
-            _builder.append("score=200000");
+            _builder.append("score=20000");
             _builder.newLine();
           }
         }
@@ -403,17 +403,17 @@ public class WailGenerator extends AbstractGenerator {
               _builder.newLine();
             }
           }
-          _builder.append("location=\"ai/lua/ca_retreat_injured.lua\"");
+          _builder.append("location=\"ai/lua/retreat.lua\"");
           _builder.newLine();
         } else {
           String _caType_2 = ca.getCaType();
-          boolean _equals_2 = Objects.equal(_caType_2, "move_to_target");
+          boolean _equals_2 = Objects.equal(_caType_2, "combat");
           if (_equals_2) {
-            _builder.append("id=move_to_targets");
+            _builder.append("id=combat");
             _builder.newLine();
             _builder.append("engine=cpp");
             _builder.newLine();
-            _builder.append("name=ai_default_rca::move_to_targets_phase");
+            _builder.append("name=ai_default_rca::combat_phase");
             _builder.newLine();
             {
               int _cost_5 = ca.getCost();
@@ -428,21 +428,21 @@ public class WailGenerator extends AbstractGenerator {
                 _builder.append(_cost_7);
                 _builder.newLineIfNotEmpty();
               } else {
-                _builder.append("max_score=20000");
+                _builder.append("max_score=100000");
                 _builder.newLine();
-                _builder.append("score=20000");
+                _builder.append("score=100000");
                 _builder.newLine();
               }
             }
           } else {
             String _caType_3 = ca.getCaType();
-            boolean _equals_3 = Objects.equal(_caType_3, "basic_movement");
+            boolean _equals_3 = Objects.equal(_caType_3, "recruit");
             if (_equals_3) {
-              _builder.append("id=move_to_any_enemy");
+              _builder.append("id=recruitment");
               _builder.newLine();
-              _builder.append("engine=lua");
+              _builder.append("engine=cpp");
               _builder.newLine();
-              _builder.append("name=ai_default_rca::move_to_any_enemy");
+              _builder.append("name=default_recruitment::recruitment");
               _builder.newLine();
               {
                 int _cost_8 = ca.getCost();
@@ -452,51 +452,51 @@ public class WailGenerator extends AbstractGenerator {
                   int _cost_9 = ca.getCost();
                   _builder.append(_cost_9);
                   _builder.newLineIfNotEmpty();
+                  _builder.append("score=");
+                  int _cost_10 = ca.getCost();
+                  _builder.append(_cost_10);
+                  _builder.newLineIfNotEmpty();
                 } else {
-                  _builder.append("max_score=1000");
+                  _builder.append("max_score=180000");
+                  _builder.newLine();
+                  _builder.append("score=180000");
                   _builder.newLine();
                 }
               }
-              _builder.append("location=\"ai/lua/ca_move_to_any_enemy.lua\"\t");
-              _builder.newLine();
             } else {
               String _caType_4 = ca.getCaType();
-              boolean _equals_4 = Objects.equal(_caType_4, "combat");
+              boolean _equals_4 = Objects.equal(_caType_4, "combat_value_targets");
               if (_equals_4) {
-                _builder.append("id=combat");
+                _builder.append("id=high_xp_attack");
                 _builder.newLine();
-                _builder.append("engine=cpp");
+                _builder.append("engine=lua");
                 _builder.newLine();
-                _builder.append("name=ai_default_rca::combat_phase");
+                _builder.append("name=ai_default_rca::high_xp_attack");
+                _builder.newLine();
+                _builder.append("location=\"ai/lua/ca_high_xp_attack.lua\"");
                 _builder.newLine();
                 {
-                  int _cost_10 = ca.getCost();
-                  boolean _notEquals_4 = (_cost_10 != 0);
+                  int _cost_11 = ca.getCost();
+                  boolean _notEquals_4 = (_cost_11 != 0);
                   if (_notEquals_4) {
                     _builder.append("max_score=");
-                    int _cost_11 = ca.getCost();
-                    _builder.append(_cost_11);
-                    _builder.newLineIfNotEmpty();
-                    _builder.append("score=");
                     int _cost_12 = ca.getCost();
                     _builder.append(_cost_12);
                     _builder.newLineIfNotEmpty();
                   } else {
-                    _builder.append("max_score=100000");
-                    _builder.newLine();
-                    _builder.append("score=100000");
+                    _builder.append("max_score=100010");
                     _builder.newLine();
                   }
                 }
               } else {
                 String _caType_5 = ca.getCaType();
-                boolean _equals_5 = Objects.equal(_caType_5, "recruit");
+                boolean _equals_5 = Objects.equal(_caType_5, "capture_villages");
                 if (_equals_5) {
-                  _builder.append("id=recruitment");
+                  _builder.append("id=villages");
                   _builder.newLine();
                   _builder.append("engine=cpp");
                   _builder.newLine();
-                  _builder.append("name=default_recruitment::recruitment");
+                  _builder.append("name=ai_default_rca::get_villages_phase");
                   _builder.newLine();
                   {
                     int _cost_13 = ca.getCost();
@@ -511,23 +511,21 @@ public class WailGenerator extends AbstractGenerator {
                       _builder.append(_cost_15);
                       _builder.newLineIfNotEmpty();
                     } else {
-                      _builder.append("max_score=180000");
+                      _builder.append("max_score=60000");
                       _builder.newLine();
-                      _builder.append("score=180000");
+                      _builder.append("score=60000");
                       _builder.newLine();
                     }
                   }
                 } else {
                   String _caType_6 = ca.getCaType();
-                  boolean _equals_6 = Objects.equal(_caType_6, "combat_value_targets");
+                  boolean _equals_6 = Objects.equal(_caType_6, "leader_to_keep");
                   if (_equals_6) {
-                    _builder.append("id=high_xp_attack");
+                    _builder.append("id=move_leader_to_keep");
                     _builder.newLine();
-                    _builder.append("engine=lua");
+                    _builder.append("engine=cpp");
                     _builder.newLine();
-                    _builder.append("name=ai_default_rca::high_xp_attack");
-                    _builder.newLine();
-                    _builder.append("location=\"ai/lua/ca_high_xp_attack.lua\"");
+                    _builder.append("name=ai_default_rca::move_leader_to_keep_phase");
                     _builder.newLine();
                     {
                       int _cost_16 = ca.getCost();
@@ -537,98 +535,44 @@ public class WailGenerator extends AbstractGenerator {
                         int _cost_17 = ca.getCost();
                         _builder.append(_cost_17);
                         _builder.newLineIfNotEmpty();
+                        _builder.append("score=");
+                        int _cost_18 = ca.getCost();
+                        _builder.append(_cost_18);
+                        _builder.newLineIfNotEmpty();
                       } else {
-                        _builder.append("max_score=100010");
+                        _builder.append("max_score=120000");
+                        _builder.newLine();
+                        _builder.append("score=120000");
                         _builder.newLine();
                       }
                     }
                   } else {
                     String _caType_7 = ca.getCaType();
-                    boolean _equals_7 = Objects.equal(_caType_7, "capture_villages");
+                    boolean _equals_7 = Objects.equal(_caType_7, "heal");
                     if (_equals_7) {
-                      _builder.append("id=villages");
+                      _builder.append("id=healing");
                       _builder.newLine();
                       _builder.append("engine=cpp");
                       _builder.newLine();
-                      _builder.append("name=ai_default_rca::get_villages_phase");
+                      _builder.append("name=ai_default_rca::get_healing_phase");
                       _builder.newLine();
                       {
-                        int _cost_18 = ca.getCost();
-                        boolean _notEquals_7 = (_cost_18 != 0);
+                        int _cost_19 = ca.getCost();
+                        boolean _notEquals_7 = (_cost_19 != 0);
                         if (_notEquals_7) {
                           _builder.append("max_score=");
-                          int _cost_19 = ca.getCost();
-                          _builder.append(_cost_19);
-                          _builder.newLineIfNotEmpty();
-                          _builder.append("score=");
                           int _cost_20 = ca.getCost();
                           _builder.append(_cost_20);
                           _builder.newLineIfNotEmpty();
-                        } else {
-                          _builder.append("max_score=60000");
-                          _builder.newLine();
-                          _builder.append("score=60000");
-                          _builder.newLine();
-                        }
-                      }
-                    } else {
-                      String _caType_8 = ca.getCaType();
-                      boolean _equals_8 = Objects.equal(_caType_8, "leader_to_keep");
-                      if (_equals_8) {
-                        _builder.append("id=move_leader_to_keep");
-                        _builder.newLine();
-                        _builder.append("engine=cpp");
-                        _builder.newLine();
-                        _builder.append("name=ai_default_rca::move_leader_to_keep_phase");
-                        _builder.newLine();
-                        {
+                          _builder.append("score=");
                           int _cost_21 = ca.getCost();
-                          boolean _notEquals_8 = (_cost_21 != 0);
-                          if (_notEquals_8) {
-                            _builder.append("max_score=");
-                            int _cost_22 = ca.getCost();
-                            _builder.append(_cost_22);
-                            _builder.newLineIfNotEmpty();
-                            _builder.append("score=");
-                            int _cost_23 = ca.getCost();
-                            _builder.append(_cost_23);
-                            _builder.newLineIfNotEmpty();
-                          } else {
-                            _builder.append("max_score=120000");
-                            _builder.newLine();
-                            _builder.append("score=120000");
-                            _builder.newLine();
-                          }
-                        }
-                      } else {
-                        String _caType_9 = ca.getCaType();
-                        boolean _equals_9 = Objects.equal(_caType_9, "heal");
-                        if (_equals_9) {
-                          _builder.append("id=healing");
+                          _builder.append(_cost_21);
+                          _builder.newLineIfNotEmpty();
+                        } else {
+                          _builder.append("max_score=80000");
                           _builder.newLine();
-                          _builder.append("engine=cpp");
+                          _builder.append("score=80000");
                           _builder.newLine();
-                          _builder.append("name=ai_default_rca::get_healing_phase");
-                          _builder.newLine();
-                          {
-                            int _cost_24 = ca.getCost();
-                            boolean _notEquals_9 = (_cost_24 != 0);
-                            if (_notEquals_9) {
-                              _builder.append("max_score=");
-                              int _cost_25 = ca.getCost();
-                              _builder.append(_cost_25);
-                              _builder.newLineIfNotEmpty();
-                              _builder.append("score=");
-                              int _cost_26 = ca.getCost();
-                              _builder.append(_cost_26);
-                              _builder.newLineIfNotEmpty();
-                            } else {
-                              _builder.append("max_score=80000");
-                              _builder.newLine();
-                              _builder.append("score=80000");
-                              _builder.newLine();
-                            }
-                          }
                         }
                       }
                     }
