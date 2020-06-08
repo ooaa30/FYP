@@ -356,22 +356,260 @@ public interface WailPackage extends EPackage
   int GOAL__GOAL = 0;
 
   /**
-   * The feature id for the '<em><b>Loc Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GOAL__LOC_VALUE = 1;
-
-  /**
    * The number of structural features of the '<em>Goal</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOAL_FEATURE_COUNT = 2;
+  int GOAL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.wesnoth.wail.impl.ProtectLeaderImpl <em>Protect Leader</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.wesnoth.wail.impl.ProtectLeaderImpl
+   * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectLeader()
+   * @generated
+   */
+  int PROTECT_LEADER = 10;
+
+  /**
+   * The feature id for the '<em><b>Goal</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_LEADER__GOAL = GOAL__GOAL;
+
+  /**
+   * The feature id for the '<em><b>Location Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_LEADER__LOCATION_VALUE = GOAL_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Protection Radius</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_LEADER__PROTECTION_RADIUS = GOAL_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Proc Side</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_LEADER__PROC_SIDE = GOAL_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Protect Leader</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_LEADER_FEATURE_COUNT = GOAL_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.wesnoth.wail.impl.ProtectUnitIDImpl <em>Protect Unit ID</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.wesnoth.wail.impl.ProtectUnitIDImpl
+   * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectUnitID()
+   * @generated
+   */
+  int PROTECT_UNIT_ID = 11;
+
+  /**
+   * The feature id for the '<em><b>Goal</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_UNIT_ID__GOAL = GOAL__GOAL;
+
+  /**
+   * The feature id for the '<em><b>Location Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_UNIT_ID__LOCATION_VALUE = GOAL_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Protection Radius</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_UNIT_ID__PROTECTION_RADIUS = GOAL_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Proc Side</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_UNIT_ID__PROC_SIDE = GOAL_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Proc ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_UNIT_ID__PROC_ID = GOAL_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Protect Unit ID</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_UNIT_ID_FEATURE_COUNT = GOAL_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.wesnoth.wail.impl.ProtectUnitTypeImpl <em>Protect Unit Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.wesnoth.wail.impl.ProtectUnitTypeImpl
+   * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectUnitType()
+   * @generated
+   */
+  int PROTECT_UNIT_TYPE = 12;
+
+  /**
+   * The feature id for the '<em><b>Goal</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_UNIT_TYPE__GOAL = GOAL__GOAL;
+
+  /**
+   * The feature id for the '<em><b>Location Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_UNIT_TYPE__LOCATION_VALUE = GOAL_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Protection Radius</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_UNIT_TYPE__PROTECTION_RADIUS = GOAL_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Proc Side</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_UNIT_TYPE__PROC_SIDE = GOAL_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Proc Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_UNIT_TYPE__PROC_TYPE = GOAL_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Protect Unit Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_UNIT_TYPE_FEATURE_COUNT = GOAL_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.wesnoth.wail.impl.ProtectLocationImpl <em>Protect Location</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.wesnoth.wail.impl.ProtectLocationImpl
+   * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectLocation()
+   * @generated
+   */
+  int PROTECT_LOCATION = 13;
+
+  /**
+   * The feature id for the '<em><b>Goal</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_LOCATION__GOAL = GOAL__GOAL;
+
+  /**
+   * The feature id for the '<em><b>XAxis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_LOCATION__XAXIS = GOAL_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>YAxis</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_LOCATION__YAXIS = GOAL_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Loc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_LOCATION__LOC_VALUE = GOAL_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Proc Rad</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_LOCATION__PROC_RAD = GOAL_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Protect Location</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROTECT_LOCATION_FEATURE_COUNT = GOAL_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.xtext.wesnoth.wail.impl.GoaLocationImpl <em>Goa Location</em>}' class.
@@ -381,7 +619,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getGoaLocation()
    * @generated
    */
-  int GOA_LOCATION = 10;
+  int GOA_LOCATION = 14;
 
   /**
    * The feature id for the '<em><b>XAxis</b></em>' attribute.
@@ -402,13 +640,22 @@ public interface WailPackage extends EPackage
   int GOA_LOCATION__YAXIS = 1;
 
   /**
+   * The feature id for the '<em><b>Loc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOA_LOCATION__LOC_VALUE = 2;
+
+  /**
    * The number of structural features of the '<em>Goa Location</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GOA_LOCATION_FEATURE_COUNT = 2;
+  int GOA_LOCATION_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.wesnoth.wail.impl.Defualt_CAImpl <em>Defualt CA</em>}' class.
@@ -418,7 +665,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getDefualt_CA()
    * @generated
    */
-  int DEFUALT_CA = 11;
+  int DEFUALT_CA = 15;
 
   /**
    * The feature id for the '<em><b>Ca Type</b></em>' attribute.
@@ -692,15 +939,209 @@ public interface WailPackage extends EPackage
   EReference getGoal_Goal();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.Goal#getLocValue <em>Loc Value</em>}'.
+   * Returns the meta object for class '{@link org.xtext.wesnoth.wail.ProtectLeader <em>Protect Leader</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Protect Leader</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectLeader
+   * @generated
+   */
+  EClass getProtectLeader();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectLeader#getLocationValue <em>Location Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Location Value</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectLeader#getLocationValue()
+   * @see #getProtectLeader()
+   * @generated
+   */
+  EAttribute getProtectLeader_LocationValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectLeader#getProtectionRadius <em>Protection Radius</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Protection Radius</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectLeader#getProtectionRadius()
+   * @see #getProtectLeader()
+   * @generated
+   */
+  EAttribute getProtectLeader_ProtectionRadius();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectLeader#getProcSide <em>Proc Side</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Proc Side</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectLeader#getProcSide()
+   * @see #getProtectLeader()
+   * @generated
+   */
+  EAttribute getProtectLeader_ProcSide();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.wesnoth.wail.ProtectUnitID <em>Protect Unit ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Protect Unit ID</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectUnitID
+   * @generated
+   */
+  EClass getProtectUnitID();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectUnitID#getLocationValue <em>Location Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Location Value</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectUnitID#getLocationValue()
+   * @see #getProtectUnitID()
+   * @generated
+   */
+  EAttribute getProtectUnitID_LocationValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectUnitID#getProtectionRadius <em>Protection Radius</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Protection Radius</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectUnitID#getProtectionRadius()
+   * @see #getProtectUnitID()
+   * @generated
+   */
+  EAttribute getProtectUnitID_ProtectionRadius();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectUnitID#getProcSide <em>Proc Side</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Proc Side</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectUnitID#getProcSide()
+   * @see #getProtectUnitID()
+   * @generated
+   */
+  EAttribute getProtectUnitID_ProcSide();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectUnitID#getProcID <em>Proc ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Proc ID</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectUnitID#getProcID()
+   * @see #getProtectUnitID()
+   * @generated
+   */
+  EAttribute getProtectUnitID_ProcID();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.wesnoth.wail.ProtectUnitType <em>Protect Unit Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Protect Unit Type</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectUnitType
+   * @generated
+   */
+  EClass getProtectUnitType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectUnitType#getLocationValue <em>Location Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Location Value</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectUnitType#getLocationValue()
+   * @see #getProtectUnitType()
+   * @generated
+   */
+  EAttribute getProtectUnitType_LocationValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectUnitType#getProtectionRadius <em>Protection Radius</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Protection Radius</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectUnitType#getProtectionRadius()
+   * @see #getProtectUnitType()
+   * @generated
+   */
+  EAttribute getProtectUnitType_ProtectionRadius();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectUnitType#getProcSide <em>Proc Side</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Proc Side</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectUnitType#getProcSide()
+   * @see #getProtectUnitType()
+   * @generated
+   */
+  EAttribute getProtectUnitType_ProcSide();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectUnitType#getProcType <em>Proc Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Proc Type</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectUnitType#getProcType()
+   * @see #getProtectUnitType()
+   * @generated
+   */
+  EAttribute getProtectUnitType_ProcType();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.wesnoth.wail.ProtectLocation <em>Protect Location</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Protect Location</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectLocation
+   * @generated
+   */
+  EClass getProtectLocation();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectLocation#getXAxis <em>XAxis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>XAxis</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectLocation#getXAxis()
+   * @see #getProtectLocation()
+   * @generated
+   */
+  EAttribute getProtectLocation_XAxis();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectLocation#getYAxis <em>YAxis</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>YAxis</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectLocation#getYAxis()
+   * @see #getProtectLocation()
+   * @generated
+   */
+  EAttribute getProtectLocation_YAxis();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectLocation#getLocValue <em>Loc Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Loc Value</em>'.
-   * @see org.xtext.wesnoth.wail.Goal#getLocValue()
-   * @see #getGoal()
+   * @see org.xtext.wesnoth.wail.ProtectLocation#getLocValue()
+   * @see #getProtectLocation()
    * @generated
    */
-  EAttribute getGoal_LocValue();
+  EAttribute getProtectLocation_LocValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.ProtectLocation#getProcRad <em>Proc Rad</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Proc Rad</em>'.
+   * @see org.xtext.wesnoth.wail.ProtectLocation#getProcRad()
+   * @see #getProtectLocation()
+   * @generated
+   */
+  EAttribute getProtectLocation_ProcRad();
 
   /**
    * Returns the meta object for class '{@link org.xtext.wesnoth.wail.GoaLocation <em>Goa Location</em>}'.
@@ -733,6 +1174,17 @@ public interface WailPackage extends EPackage
    * @generated
    */
   EAttribute getGoaLocation_YAxis();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.GoaLocation#getLocValue <em>Loc Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Loc Value</em>'.
+   * @see org.xtext.wesnoth.wail.GoaLocation#getLocValue()
+   * @see #getGoaLocation()
+   * @generated
+   */
+  EAttribute getGoaLocation_LocValue();
 
   /**
    * Returns the meta object for class '{@link org.xtext.wesnoth.wail.Defualt_CA <em>Defualt CA</em>}'.
@@ -994,12 +1446,164 @@ public interface WailPackage extends EPackage
     EReference GOAL__GOAL = eINSTANCE.getGoal_Goal();
 
     /**
+     * The meta object literal for the '{@link org.xtext.wesnoth.wail.impl.ProtectLeaderImpl <em>Protect Leader</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.wesnoth.wail.impl.ProtectLeaderImpl
+     * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectLeader()
+     * @generated
+     */
+    EClass PROTECT_LEADER = eINSTANCE.getProtectLeader();
+
+    /**
+     * The meta object literal for the '<em><b>Location Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_LEADER__LOCATION_VALUE = eINSTANCE.getProtectLeader_LocationValue();
+
+    /**
+     * The meta object literal for the '<em><b>Protection Radius</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_LEADER__PROTECTION_RADIUS = eINSTANCE.getProtectLeader_ProtectionRadius();
+
+    /**
+     * The meta object literal for the '<em><b>Proc Side</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_LEADER__PROC_SIDE = eINSTANCE.getProtectLeader_ProcSide();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.wesnoth.wail.impl.ProtectUnitIDImpl <em>Protect Unit ID</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.wesnoth.wail.impl.ProtectUnitIDImpl
+     * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectUnitID()
+     * @generated
+     */
+    EClass PROTECT_UNIT_ID = eINSTANCE.getProtectUnitID();
+
+    /**
+     * The meta object literal for the '<em><b>Location Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_UNIT_ID__LOCATION_VALUE = eINSTANCE.getProtectUnitID_LocationValue();
+
+    /**
+     * The meta object literal for the '<em><b>Protection Radius</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_UNIT_ID__PROTECTION_RADIUS = eINSTANCE.getProtectUnitID_ProtectionRadius();
+
+    /**
+     * The meta object literal for the '<em><b>Proc Side</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_UNIT_ID__PROC_SIDE = eINSTANCE.getProtectUnitID_ProcSide();
+
+    /**
+     * The meta object literal for the '<em><b>Proc ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_UNIT_ID__PROC_ID = eINSTANCE.getProtectUnitID_ProcID();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.wesnoth.wail.impl.ProtectUnitTypeImpl <em>Protect Unit Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.wesnoth.wail.impl.ProtectUnitTypeImpl
+     * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectUnitType()
+     * @generated
+     */
+    EClass PROTECT_UNIT_TYPE = eINSTANCE.getProtectUnitType();
+
+    /**
+     * The meta object literal for the '<em><b>Location Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_UNIT_TYPE__LOCATION_VALUE = eINSTANCE.getProtectUnitType_LocationValue();
+
+    /**
+     * The meta object literal for the '<em><b>Protection Radius</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_UNIT_TYPE__PROTECTION_RADIUS = eINSTANCE.getProtectUnitType_ProtectionRadius();
+
+    /**
+     * The meta object literal for the '<em><b>Proc Side</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_UNIT_TYPE__PROC_SIDE = eINSTANCE.getProtectUnitType_ProcSide();
+
+    /**
+     * The meta object literal for the '<em><b>Proc Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_UNIT_TYPE__PROC_TYPE = eINSTANCE.getProtectUnitType_ProcType();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.wesnoth.wail.impl.ProtectLocationImpl <em>Protect Location</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.wesnoth.wail.impl.ProtectLocationImpl
+     * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectLocation()
+     * @generated
+     */
+    EClass PROTECT_LOCATION = eINSTANCE.getProtectLocation();
+
+    /**
+     * The meta object literal for the '<em><b>XAxis</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_LOCATION__XAXIS = eINSTANCE.getProtectLocation_XAxis();
+
+    /**
+     * The meta object literal for the '<em><b>YAxis</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_LOCATION__YAXIS = eINSTANCE.getProtectLocation_YAxis();
+
+    /**
      * The meta object literal for the '<em><b>Loc Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GOAL__LOC_VALUE = eINSTANCE.getGoal_LocValue();
+    EAttribute PROTECT_LOCATION__LOC_VALUE = eINSTANCE.getProtectLocation_LocValue();
+
+    /**
+     * The meta object literal for the '<em><b>Proc Rad</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROTECT_LOCATION__PROC_RAD = eINSTANCE.getProtectLocation_ProcRad();
 
     /**
      * The meta object literal for the '{@link org.xtext.wesnoth.wail.impl.GoaLocationImpl <em>Goa Location</em>}' class.
@@ -1026,6 +1630,14 @@ public interface WailPackage extends EPackage
      * @generated
      */
     EAttribute GOA_LOCATION__YAXIS = eINSTANCE.getGoaLocation_YAxis();
+
+    /**
+     * The meta object literal for the '<em><b>Loc Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute GOA_LOCATION__LOC_VALUE = eINSTANCE.getGoaLocation_LocValue();
 
     /**
      * The meta object literal for the '{@link org.xtext.wesnoth.wail.impl.Defualt_CAImpl <em>Defualt CA</em>}' class.

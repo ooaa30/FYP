@@ -114,6 +114,42 @@ public interface WailFactory extends EFactory
   Goal createGoal();
 
   /**
+   * Returns a new object of class '<em>Protect Leader</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Protect Leader</em>'.
+   * @generated
+   */
+  ProtectLeader createProtectLeader();
+
+  /**
+   * Returns a new object of class '<em>Protect Unit ID</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Protect Unit ID</em>'.
+   * @generated
+   */
+  ProtectUnitID createProtectUnitID();
+
+  /**
+   * Returns a new object of class '<em>Protect Unit Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Protect Unit Type</em>'.
+   * @generated
+   */
+  ProtectUnitType createProtectUnitType();
+
+  /**
+   * Returns a new object of class '<em>Protect Location</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Protect Location</em>'.
+   * @generated
+   */
+  ProtectLocation createProtectLocation();
+
+  /**
    * Returns a new object of class '<em>Goa Location</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

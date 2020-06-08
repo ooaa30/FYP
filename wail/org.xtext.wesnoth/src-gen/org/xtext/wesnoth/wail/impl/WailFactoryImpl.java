@@ -75,6 +75,10 @@ public class WailFactoryImpl extends EFactoryImpl implements WailFactory
       case WailPackage.AT_LOCATION: return createAtLocation();
       case WailPackage.UNIT_EQUALS: return createUnitEquals();
       case WailPackage.GOAL: return createGoal();
+      case WailPackage.PROTECT_LEADER: return createProtectLeader();
+      case WailPackage.PROTECT_UNIT_ID: return createProtectUnitID();
+      case WailPackage.PROTECT_UNIT_TYPE: return createProtectUnitType();
+      case WailPackage.PROTECT_LOCATION: return createProtectLocation();
       case WailPackage.GOA_LOCATION: return createGoaLocation();
       case WailPackage.DEFUALT_CA: return createDefualt_CA();
       default:
@@ -200,6 +204,54 @@ public class WailFactoryImpl extends EFactoryImpl implements WailFactory
   {
     GoalImpl goal = new GoalImpl();
     return goal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ProtectLeader createProtectLeader()
+  {
+    ProtectLeaderImpl protectLeader = new ProtectLeaderImpl();
+    return protectLeader;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ProtectUnitID createProtectUnitID()
+  {
+    ProtectUnitIDImpl protectUnitID = new ProtectUnitIDImpl();
+    return protectUnitID;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ProtectUnitType createProtectUnitType()
+  {
+    ProtectUnitTypeImpl protectUnitType = new ProtectUnitTypeImpl();
+    return protectUnitType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ProtectLocation createProtectLocation()
+  {
+    ProtectLocationImpl protectLocation = new ProtectLocationImpl();
+    return protectLocation;
   }
 
   /**

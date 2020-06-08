@@ -126,6 +126,26 @@ public class WailAdapterFactory extends AdapterFactoryImpl
         return createGoalAdapter();
       }
       @Override
+      public Adapter caseProtectLeader(ProtectLeader object)
+      {
+        return createProtectLeaderAdapter();
+      }
+      @Override
+      public Adapter caseProtectUnitID(ProtectUnitID object)
+      {
+        return createProtectUnitIDAdapter();
+      }
+      @Override
+      public Adapter caseProtectUnitType(ProtectUnitType object)
+      {
+        return createProtectUnitTypeAdapter();
+      }
+      @Override
+      public Adapter caseProtectLocation(ProtectLocation object)
+      {
+        return createProtectLocationAdapter();
+      }
+      @Override
       public Adapter caseGoaLocation(GoaLocation object)
       {
         return createGoaLocationAdapter();
@@ -303,6 +323,66 @@ public class WailAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGoalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.wesnoth.wail.ProtectLeader <em>Protect Leader</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.wesnoth.wail.ProtectLeader
+   * @generated
+   */
+  public Adapter createProtectLeaderAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.wesnoth.wail.ProtectUnitID <em>Protect Unit ID</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.wesnoth.wail.ProtectUnitID
+   * @generated
+   */
+  public Adapter createProtectUnitIDAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.wesnoth.wail.ProtectUnitType <em>Protect Unit Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.wesnoth.wail.ProtectUnitType
+   * @generated
+   */
+  public Adapter createProtectUnitTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.wesnoth.wail.ProtectLocation <em>Protect Location</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.wesnoth.wail.ProtectLocation
+   * @generated
+   */
+  public Adapter createProtectLocationAdapter()
   {
     return null;
   }

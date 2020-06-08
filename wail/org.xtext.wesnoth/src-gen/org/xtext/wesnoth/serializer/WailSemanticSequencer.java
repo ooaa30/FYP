@@ -24,6 +24,10 @@ import org.xtext.wesnoth.wail.Fragment;
 import org.xtext.wesnoth.wail.GoaLocation;
 import org.xtext.wesnoth.wail.Goal;
 import org.xtext.wesnoth.wail.Model;
+import org.xtext.wesnoth.wail.ProtectLeader;
+import org.xtext.wesnoth.wail.ProtectLocation;
+import org.xtext.wesnoth.wail.ProtectUnitID;
+import org.xtext.wesnoth.wail.ProtectUnitType;
 import org.xtext.wesnoth.wail.Rule;
 import org.xtext.wesnoth.wail.UnitEquals;
 import org.xtext.wesnoth.wail.WailPackage;
@@ -68,6 +72,18 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case WailPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case WailPackage.PROTECT_LEADER:
+				sequence_ProtectLeader(context, (ProtectLeader) semanticObject); 
+				return; 
+			case WailPackage.PROTECT_LOCATION:
+				sequence_ProtectLocation(context, (ProtectLocation) semanticObject); 
+				return; 
+			case WailPackage.PROTECT_UNIT_ID:
+				sequence_ProtectUnitID(context, (ProtectUnitID) semanticObject); 
+				return; 
+			case WailPackage.PROTECT_UNIT_TYPE:
+				sequence_ProtectUnitType(context, (ProtectUnitType) semanticObject); 
 				return; 
 			case WailPackage.RULE:
 				sequence_Rule(context, (Rule) semanticObject); 
@@ -199,7 +215,7 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     GoaLocation returns GoaLocation
 	 *
 	 * Constraint:
-	 *     (XAxis=INT YAxis=INT)
+	 *     (XAxis=INT YAxis=INT locValue=INT)
 	 */
 	protected void sequence_GoaLocation(ISerializationContext context, GoaLocation semanticObject) {
 		if (errorAcceptor != null) {
@@ -207,10 +223,13 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.GOA_LOCATION__XAXIS));
 			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.GOA_LOCATION__YAXIS) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.GOA_LOCATION__YAXIS));
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.GOA_LOCATION__LOC_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.GOA_LOCATION__LOC_VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGoaLocationAccess().getXAxisINTTerminalRuleCall_1_0(), semanticObject.getXAxis());
-		feeder.accept(grammarAccess.getGoaLocationAccess().getYAxisINTTerminalRuleCall_3_0(), semanticObject.getYAxis());
+		feeder.accept(grammarAccess.getGoaLocationAccess().getXAxisINTTerminalRuleCall_2_0(), semanticObject.getXAxis());
+		feeder.accept(grammarAccess.getGoaLocationAccess().getYAxisINTTerminalRuleCall_4_0(), semanticObject.getYAxis());
+		feeder.accept(grammarAccess.getGoaLocationAccess().getLocValueINTTerminalRuleCall_7_0(), semanticObject.getLocValue());
 		feeder.finish();
 	}
 	
@@ -220,18 +239,15 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Goal returns Goal
 	 *
 	 * Constraint:
-	 *     (goal=GoaLocation locValue=INT)
+	 *     goal=GoaLocation
 	 */
 	protected void sequence_Goal(ISerializationContext context, Goal semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.GOAL__GOAL) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.GOAL__GOAL));
-			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.GOAL__LOC_VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.GOAL__LOC_VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGoalAccess().getGoalGoaLocationParserRuleCall_2_0(), semanticObject.getGoal());
-		feeder.accept(grammarAccess.getGoalAccess().getLocValueINTTerminalRuleCall_5_0(), semanticObject.getLocValue());
+		feeder.accept(grammarAccess.getGoalAccess().getGoalGoaLocationParserRuleCall_0_2_0(), semanticObject.getGoal());
 		feeder.finish();
 	}
 	
@@ -245,6 +261,115 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Goal returns ProtectLeader
+	 *     ProtectLeader returns ProtectLeader
+	 *
+	 * Constraint:
+	 *     (locationValue=INT protectionRadius=INT procSide=INT)
+	 */
+	protected void sequence_ProtectLeader(ISerializationContext context, ProtectLeader semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_LEADER__LOCATION_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_LEADER__LOCATION_VALUE));
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_LEADER__PROTECTION_RADIUS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_LEADER__PROTECTION_RADIUS));
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_LEADER__PROC_SIDE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_LEADER__PROC_SIDE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProtectLeaderAccess().getLocationValueINTTerminalRuleCall_4_0(), semanticObject.getLocationValue());
+		feeder.accept(grammarAccess.getProtectLeaderAccess().getProtectionRadiusINTTerminalRuleCall_7_0(), semanticObject.getProtectionRadius());
+		feeder.accept(grammarAccess.getProtectLeaderAccess().getProcSideINTTerminalRuleCall_10_0(), semanticObject.getProcSide());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Goal returns ProtectLocation
+	 *     ProtectLocation returns ProtectLocation
+	 *
+	 * Constraint:
+	 *     (XAxis=INT YAxis=INT locValue=INT procRad=INT)
+	 */
+	protected void sequence_ProtectLocation(ISerializationContext context, ProtectLocation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_LOCATION__XAXIS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_LOCATION__XAXIS));
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_LOCATION__YAXIS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_LOCATION__YAXIS));
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_LOCATION__LOC_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_LOCATION__LOC_VALUE));
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_LOCATION__PROC_RAD) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_LOCATION__PROC_RAD));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProtectLocationAccess().getXAxisINTTerminalRuleCall_2_0(), semanticObject.getXAxis());
+		feeder.accept(grammarAccess.getProtectLocationAccess().getYAxisINTTerminalRuleCall_4_0(), semanticObject.getYAxis());
+		feeder.accept(grammarAccess.getProtectLocationAccess().getLocValueINTTerminalRuleCall_7_0(), semanticObject.getLocValue());
+		feeder.accept(grammarAccess.getProtectLocationAccess().getProcRadINTTerminalRuleCall_10_0(), semanticObject.getProcRad());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Goal returns ProtectUnitID
+	 *     ProtectUnitID returns ProtectUnitID
+	 *
+	 * Constraint:
+	 *     (locationValue=INT protectionRadius=INT procSide=INT procID=STRING)
+	 */
+	protected void sequence_ProtectUnitID(ISerializationContext context, ProtectUnitID semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_UNIT_ID__LOCATION_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_UNIT_ID__LOCATION_VALUE));
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_UNIT_ID__PROTECTION_RADIUS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_UNIT_ID__PROTECTION_RADIUS));
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_UNIT_ID__PROC_SIDE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_UNIT_ID__PROC_SIDE));
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_UNIT_ID__PROC_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_UNIT_ID__PROC_ID));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProtectUnitIDAccess().getLocationValueINTTerminalRuleCall_4_0(), semanticObject.getLocationValue());
+		feeder.accept(grammarAccess.getProtectUnitIDAccess().getProtectionRadiusINTTerminalRuleCall_7_0(), semanticObject.getProtectionRadius());
+		feeder.accept(grammarAccess.getProtectUnitIDAccess().getProcSideINTTerminalRuleCall_10_0(), semanticObject.getProcSide());
+		feeder.accept(grammarAccess.getProtectUnitIDAccess().getProcIDSTRINGTerminalRuleCall_13_0(), semanticObject.getProcID());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Goal returns ProtectUnitType
+	 *     ProtectUnitType returns ProtectUnitType
+	 *
+	 * Constraint:
+	 *     (locationValue=INT protectionRadius=INT procSide=INT procType=STRING)
+	 */
+	protected void sequence_ProtectUnitType(ISerializationContext context, ProtectUnitType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_UNIT_TYPE__LOCATION_VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_UNIT_TYPE__LOCATION_VALUE));
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_UNIT_TYPE__PROTECTION_RADIUS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_UNIT_TYPE__PROTECTION_RADIUS));
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_UNIT_TYPE__PROC_SIDE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_UNIT_TYPE__PROC_SIDE));
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.PROTECT_UNIT_TYPE__PROC_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.PROTECT_UNIT_TYPE__PROC_TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProtectUnitTypeAccess().getLocationValueINTTerminalRuleCall_4_0(), semanticObject.getLocationValue());
+		feeder.accept(grammarAccess.getProtectUnitTypeAccess().getProtectionRadiusINTTerminalRuleCall_7_0(), semanticObject.getProtectionRadius());
+		feeder.accept(grammarAccess.getProtectUnitTypeAccess().getProcSideINTTerminalRuleCall_10_0(), semanticObject.getProcSide());
+		feeder.accept(grammarAccess.getProtectUnitTypeAccess().getProcTypeSTRINGTerminalRuleCall_13_0(), semanticObject.getProcType());
+		feeder.finish();
 	}
 	
 	

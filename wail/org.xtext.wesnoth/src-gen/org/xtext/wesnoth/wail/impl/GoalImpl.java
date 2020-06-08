@@ -25,7 +25,6 @@ import org.xtext.wesnoth.wail.WailPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.wesnoth.wail.impl.GoalImpl#getGoal <em>Goal</em>}</li>
- *   <li>{@link org.xtext.wesnoth.wail.impl.GoalImpl#getLocValue <em>Loc Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,26 +40,6 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * @ordered
    */
   protected GoaLocation goal;
-
-  /**
-   * The default value of the '{@link #getLocValue() <em>Loc Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLocValue()
-   * @generated
-   * @ordered
-   */
-  protected static final int LOC_VALUE_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getLocValue() <em>Loc Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLocValue()
-   * @generated
-   * @ordered
-   */
-  protected int locValue = LOC_VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -139,31 +118,6 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
    * @generated
    */
   @Override
-  public int getLocValue()
-  {
-    return locValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setLocValue(int newLocValue)
-  {
-    int oldLocValue = locValue;
-    locValue = newLocValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WailPackage.GOAL__LOC_VALUE, oldLocValue, locValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -186,8 +140,6 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
     {
       case WailPackage.GOAL__GOAL:
         return getGoal();
-      case WailPackage.GOAL__LOC_VALUE:
-        return getLocValue();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -204,9 +156,6 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
     {
       case WailPackage.GOAL__GOAL:
         setGoal((GoaLocation)newValue);
-        return;
-      case WailPackage.GOAL__LOC_VALUE:
-        setLocValue((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -225,9 +174,6 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
       case WailPackage.GOAL__GOAL:
         setGoal((GoaLocation)null);
         return;
-      case WailPackage.GOAL__LOC_VALUE:
-        setLocValue(LOC_VALUE_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -244,27 +190,8 @@ public class GoalImpl extends MinimalEObjectImpl.Container implements Goal
     {
       case WailPackage.GOAL__GOAL:
         return goal != null;
-      case WailPackage.GOAL__LOC_VALUE:
-        return locValue != LOC_VALUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (locValue: ");
-    result.append(locValue);
-    result.append(')');
-    return result.toString();
   }
 
 } //GoalImpl

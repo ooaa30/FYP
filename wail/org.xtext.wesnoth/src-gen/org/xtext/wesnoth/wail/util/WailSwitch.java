@@ -147,6 +147,38 @@ public class WailSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case WailPackage.PROTECT_LEADER:
+      {
+        ProtectLeader protectLeader = (ProtectLeader)theEObject;
+        T result = caseProtectLeader(protectLeader);
+        if (result == null) result = caseGoal(protectLeader);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WailPackage.PROTECT_UNIT_ID:
+      {
+        ProtectUnitID protectUnitID = (ProtectUnitID)theEObject;
+        T result = caseProtectUnitID(protectUnitID);
+        if (result == null) result = caseGoal(protectUnitID);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WailPackage.PROTECT_UNIT_TYPE:
+      {
+        ProtectUnitType protectUnitType = (ProtectUnitType)theEObject;
+        T result = caseProtectUnitType(protectUnitType);
+        if (result == null) result = caseGoal(protectUnitType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WailPackage.PROTECT_LOCATION:
+      {
+        ProtectLocation protectLocation = (ProtectLocation)theEObject;
+        T result = caseProtectLocation(protectLocation);
+        if (result == null) result = caseGoal(protectLocation);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case WailPackage.GOA_LOCATION:
       {
         GoaLocation goaLocation = (GoaLocation)theEObject;
@@ -321,6 +353,70 @@ public class WailSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGoal(Goal object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Protect Leader</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Protect Leader</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProtectLeader(ProtectLeader object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Protect Unit ID</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Protect Unit ID</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProtectUnitID(ProtectUnitID object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Protect Unit Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Protect Unit Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProtectUnitType(ProtectUnitType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Protect Location</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Protect Location</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseProtectLocation(ProtectLocation object)
   {
     return null;
   }

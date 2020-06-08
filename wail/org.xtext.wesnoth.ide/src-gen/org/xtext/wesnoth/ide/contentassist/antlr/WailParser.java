@@ -32,6 +32,7 @@ public class WailParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, WailGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getWhenRulesAccess().getAlternatives(), "rule__WhenRules__Alternatives");
+			builder.put(grammarAccess.getGoalAccess().getAlternatives(), "rule__Goal__Alternatives");
 			builder.put(grammarAccess.getDefualt_CAAccess().getCaTypeAlternatives_0_0(), "rule__Defualt_CA__CaTypeAlternatives_0_0");
 			builder.put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 			builder.put(grammarAccess.getFragmentAccess().getGroup(), "rule__Fragment__Group__0");
@@ -39,7 +40,11 @@ public class WailParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDamageAccess().getGroup(), "rule__Damage__Group__0");
 			builder.put(grammarAccess.getAtLocationAccess().getGroup(), "rule__AtLocation__Group__0");
 			builder.put(grammarAccess.getUnitEqualsAccess().getGroup(), "rule__UnitEquals__Group__0");
-			builder.put(grammarAccess.getGoalAccess().getGroup(), "rule__Goal__Group__0");
+			builder.put(grammarAccess.getGoalAccess().getGroup_0(), "rule__Goal__Group_0__0");
+			builder.put(grammarAccess.getProtectLeaderAccess().getGroup(), "rule__ProtectLeader__Group__0");
+			builder.put(grammarAccess.getProtectUnitIDAccess().getGroup(), "rule__ProtectUnitID__Group__0");
+			builder.put(grammarAccess.getProtectUnitTypeAccess().getGroup(), "rule__ProtectUnitType__Group__0");
+			builder.put(grammarAccess.getProtectLocationAccess().getGroup(), "rule__ProtectLocation__Group__0");
 			builder.put(grammarAccess.getGoaLocationAccess().getGroup(), "rule__GoaLocation__Group__0");
 			builder.put(grammarAccess.getDefualt_CAAccess().getGroup(), "rule__Defualt_CA__Group__0");
 			builder.put(grammarAccess.getDefualt_CAAccess().getGroup_1(), "rule__Defualt_CA__Group_1__0");
@@ -55,10 +60,25 @@ public class WailParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAtLocationAccess().getXAxisAssignment_1(), "rule__AtLocation__XAxisAssignment_1");
 			builder.put(grammarAccess.getAtLocationAccess().getYAxisAssignment_3(), "rule__AtLocation__YAxisAssignment_3");
 			builder.put(grammarAccess.getUnitEqualsAccess().getUnitAssignment_2(), "rule__UnitEquals__UnitAssignment_2");
-			builder.put(grammarAccess.getGoalAccess().getGoalAssignment_2(), "rule__Goal__GoalAssignment_2");
-			builder.put(grammarAccess.getGoalAccess().getLocValueAssignment_5(), "rule__Goal__LocValueAssignment_5");
-			builder.put(grammarAccess.getGoaLocationAccess().getXAxisAssignment_1(), "rule__GoaLocation__XAxisAssignment_1");
-			builder.put(grammarAccess.getGoaLocationAccess().getYAxisAssignment_3(), "rule__GoaLocation__YAxisAssignment_3");
+			builder.put(grammarAccess.getGoalAccess().getGoalAssignment_0_2(), "rule__Goal__GoalAssignment_0_2");
+			builder.put(grammarAccess.getProtectLeaderAccess().getLocationValueAssignment_4(), "rule__ProtectLeader__LocationValueAssignment_4");
+			builder.put(grammarAccess.getProtectLeaderAccess().getProtectionRadiusAssignment_7(), "rule__ProtectLeader__ProtectionRadiusAssignment_7");
+			builder.put(grammarAccess.getProtectLeaderAccess().getProcSideAssignment_10(), "rule__ProtectLeader__ProcSideAssignment_10");
+			builder.put(grammarAccess.getProtectUnitIDAccess().getLocationValueAssignment_4(), "rule__ProtectUnitID__LocationValueAssignment_4");
+			builder.put(grammarAccess.getProtectUnitIDAccess().getProtectionRadiusAssignment_7(), "rule__ProtectUnitID__ProtectionRadiusAssignment_7");
+			builder.put(grammarAccess.getProtectUnitIDAccess().getProcSideAssignment_10(), "rule__ProtectUnitID__ProcSideAssignment_10");
+			builder.put(grammarAccess.getProtectUnitIDAccess().getProcIDAssignment_13(), "rule__ProtectUnitID__ProcIDAssignment_13");
+			builder.put(grammarAccess.getProtectUnitTypeAccess().getLocationValueAssignment_4(), "rule__ProtectUnitType__LocationValueAssignment_4");
+			builder.put(grammarAccess.getProtectUnitTypeAccess().getProtectionRadiusAssignment_7(), "rule__ProtectUnitType__ProtectionRadiusAssignment_7");
+			builder.put(grammarAccess.getProtectUnitTypeAccess().getProcSideAssignment_10(), "rule__ProtectUnitType__ProcSideAssignment_10");
+			builder.put(grammarAccess.getProtectUnitTypeAccess().getProcTypeAssignment_13(), "rule__ProtectUnitType__ProcTypeAssignment_13");
+			builder.put(grammarAccess.getProtectLocationAccess().getXAxisAssignment_2(), "rule__ProtectLocation__XAxisAssignment_2");
+			builder.put(grammarAccess.getProtectLocationAccess().getYAxisAssignment_4(), "rule__ProtectLocation__YAxisAssignment_4");
+			builder.put(grammarAccess.getProtectLocationAccess().getLocValueAssignment_7(), "rule__ProtectLocation__LocValueAssignment_7");
+			builder.put(grammarAccess.getProtectLocationAccess().getProcRadAssignment_10(), "rule__ProtectLocation__ProcRadAssignment_10");
+			builder.put(grammarAccess.getGoaLocationAccess().getXAxisAssignment_2(), "rule__GoaLocation__XAxisAssignment_2");
+			builder.put(grammarAccess.getGoaLocationAccess().getYAxisAssignment_4(), "rule__GoaLocation__YAxisAssignment_4");
+			builder.put(grammarAccess.getGoaLocationAccess().getLocValueAssignment_7(), "rule__GoaLocation__LocValueAssignment_7");
 			builder.put(grammarAccess.getDefualt_CAAccess().getCaTypeAssignment_0(), "rule__Defualt_CA__CaTypeAssignment_0");
 			builder.put(grammarAccess.getDefualt_CAAccess().getCostAssignment_1_1(), "rule__Defualt_CA__CostAssignment_1_1");
 		}

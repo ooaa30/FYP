@@ -544,55 +544,553 @@ ruleGoal returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='goal'
+		(
+			otherlv_0='goal'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getGoalAccess().getGoalKeyword_0_0());
+			}
+			otherlv_1='is'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getGoalAccess().getIsKeyword_0_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getGoalAccess().getGoalGoaLocationParserRuleCall_0_2_0());
+					}
+					lv_goal_2_0=ruleGoaLocation
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getGoalRule());
+						}
+						set(
+							$current,
+							"goal",
+							lv_goal_2_0,
+							"org.xtext.wesnoth.Wail.GoaLocation");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
 		{
-			newLeafNode(otherlv_0, grammarAccess.getGoalAccess().getGoalKeyword_0());
+			newCompositeNode(grammarAccess.getGoalAccess().getProtectLocationParserRuleCall_1());
 		}
-		otherlv_1='is'
+		this_ProtectLocation_3=ruleProtectLocation
 		{
-			newLeafNode(otherlv_1, grammarAccess.getGoalAccess().getIsKeyword_1());
+			$current = $this_ProtectLocation_3.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getGoalAccess().getProtectLeaderParserRuleCall_2());
+		}
+		this_ProtectLeader_4=ruleProtectLeader
+		{
+			$current = $this_ProtectLeader_4.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getGoalAccess().getProtectUnitIDParserRuleCall_3());
+		}
+		this_ProtectUnitID_5=ruleProtectUnitID
+		{
+			$current = $this_ProtectUnitID_5.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getGoalAccess().getProtectUnitTypeParserRuleCall_4());
+		}
+		this_ProtectUnitType_6=ruleProtectUnitType
+		{
+			$current = $this_ProtectUnitType_6.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleProtectLeader
+entryRuleProtectLeader returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getProtectLeaderRule()); }
+	iv_ruleProtectLeader=ruleProtectLeader
+	{ $current=$iv_ruleProtectLeader.current; }
+	EOF;
+
+// Rule ProtectLeader
+ruleProtectLeader returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='protect'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getProtectLeaderAccess().getProtectKeyword_0());
+		}
+		otherlv_1='leader'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getProtectLeaderAccess().getLeaderKeyword_1());
+		}
+		otherlv_2='value'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getProtectLeaderAccess().getValueKeyword_2());
+		}
+		otherlv_3='is'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getProtectLeaderAccess().getIsKeyword_3());
 		}
 		(
 			(
+				lv_locationValue_4_0=RULE_INT
 				{
-					newCompositeNode(grammarAccess.getGoalAccess().getGoalGoaLocationParserRuleCall_2_0());
+					newLeafNode(lv_locationValue_4_0, grammarAccess.getProtectLeaderAccess().getLocationValueINTTerminalRuleCall_4_0());
 				}
-				lv_goal_2_0=ruleGoaLocation
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getGoalRule());
+						$current = createModelElement(grammarAccess.getProtectLeaderRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
-						"goal",
-						lv_goal_2_0,
-						"org.xtext.wesnoth.Wail.GoaLocation");
-					afterParserOrEnumRuleCall();
+						"locationValue",
+						lv_locationValue_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_3='value'
+		otherlv_5='radius'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getGoalAccess().getValueKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getProtectLeaderAccess().getRadiusKeyword_5());
 		}
-		otherlv_4='is'
+		otherlv_6='is'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getGoalAccess().getIsKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getProtectLeaderAccess().getIsKeyword_6());
 		}
 		(
 			(
-				lv_locValue_5_0=RULE_INT
+				lv_protectionRadius_7_0=RULE_INT
 				{
-					newLeafNode(lv_locValue_5_0, grammarAccess.getGoalAccess().getLocValueINTTerminalRuleCall_5_0());
+					newLeafNode(lv_protectionRadius_7_0, grammarAccess.getProtectLeaderAccess().getProtectionRadiusINTTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getGoalRule());
+						$current = createModelElement(grammarAccess.getProtectLeaderRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"protectionRadius",
+						lv_protectionRadius_7_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_8='side'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getProtectLeaderAccess().getSideKeyword_8());
+		}
+		otherlv_9='is'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getProtectLeaderAccess().getIsKeyword_9());
+		}
+		(
+			(
+				lv_procSide_10_0=RULE_INT
+				{
+					newLeafNode(lv_procSide_10_0, grammarAccess.getProtectLeaderAccess().getProcSideINTTerminalRuleCall_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectLeaderRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"procSide",
+						lv_procSide_10_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleProtectUnitID
+entryRuleProtectUnitID returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getProtectUnitIDRule()); }
+	iv_ruleProtectUnitID=ruleProtectUnitID
+	{ $current=$iv_ruleProtectUnitID.current; }
+	EOF;
+
+// Rule ProtectUnitID
+ruleProtectUnitID returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='protect'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getProtectUnitIDAccess().getProtectKeyword_0());
+		}
+		otherlv_1='unit'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getProtectUnitIDAccess().getUnitKeyword_1());
+		}
+		otherlv_2='value'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getProtectUnitIDAccess().getValueKeyword_2());
+		}
+		otherlv_3='is'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getProtectUnitIDAccess().getIsKeyword_3());
+		}
+		(
+			(
+				lv_locationValue_4_0=RULE_INT
+				{
+					newLeafNode(lv_locationValue_4_0, grammarAccess.getProtectUnitIDAccess().getLocationValueINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectUnitIDRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"locationValue",
+						lv_locationValue_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5='radius'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getProtectUnitIDAccess().getRadiusKeyword_5());
+		}
+		otherlv_6='is'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getProtectUnitIDAccess().getIsKeyword_6());
+		}
+		(
+			(
+				lv_protectionRadius_7_0=RULE_INT
+				{
+					newLeafNode(lv_protectionRadius_7_0, grammarAccess.getProtectUnitIDAccess().getProtectionRadiusINTTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectUnitIDRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"protectionRadius",
+						lv_protectionRadius_7_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_8='side'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getProtectUnitIDAccess().getSideKeyword_8());
+		}
+		otherlv_9='is'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getProtectUnitIDAccess().getIsKeyword_9());
+		}
+		(
+			(
+				lv_procSide_10_0=RULE_INT
+				{
+					newLeafNode(lv_procSide_10_0, grammarAccess.getProtectUnitIDAccess().getProcSideINTTerminalRuleCall_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectUnitIDRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"procSide",
+						lv_procSide_10_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_11='ID'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getProtectUnitIDAccess().getIDKeyword_11());
+		}
+		otherlv_12='is'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getProtectUnitIDAccess().getIsKeyword_12());
+		}
+		(
+			(
+				lv_procID_13_0=RULE_STRING
+				{
+					newLeafNode(lv_procID_13_0, grammarAccess.getProtectUnitIDAccess().getProcIDSTRINGTerminalRuleCall_13_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectUnitIDRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"procID",
+						lv_procID_13_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleProtectUnitType
+entryRuleProtectUnitType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getProtectUnitTypeRule()); }
+	iv_ruleProtectUnitType=ruleProtectUnitType
+	{ $current=$iv_ruleProtectUnitType.current; }
+	EOF;
+
+// Rule ProtectUnitType
+ruleProtectUnitType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='protect'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getProtectUnitTypeAccess().getProtectKeyword_0());
+		}
+		otherlv_1='unit'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getProtectUnitTypeAccess().getUnitKeyword_1());
+		}
+		otherlv_2='value'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getProtectUnitTypeAccess().getValueKeyword_2());
+		}
+		otherlv_3='is'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getProtectUnitTypeAccess().getIsKeyword_3());
+		}
+		(
+			(
+				lv_locationValue_4_0=RULE_INT
+				{
+					newLeafNode(lv_locationValue_4_0, grammarAccess.getProtectUnitTypeAccess().getLocationValueINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectUnitTypeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"locationValue",
+						lv_locationValue_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5='radius'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getProtectUnitTypeAccess().getRadiusKeyword_5());
+		}
+		otherlv_6='is'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getProtectUnitTypeAccess().getIsKeyword_6());
+		}
+		(
+			(
+				lv_protectionRadius_7_0=RULE_INT
+				{
+					newLeafNode(lv_protectionRadius_7_0, grammarAccess.getProtectUnitTypeAccess().getProtectionRadiusINTTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectUnitTypeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"protectionRadius",
+						lv_protectionRadius_7_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_8='side'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getProtectUnitTypeAccess().getSideKeyword_8());
+		}
+		otherlv_9='is'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getProtectUnitTypeAccess().getIsKeyword_9());
+		}
+		(
+			(
+				lv_procSide_10_0=RULE_INT
+				{
+					newLeafNode(lv_procSide_10_0, grammarAccess.getProtectUnitTypeAccess().getProcSideINTTerminalRuleCall_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectUnitTypeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"procSide",
+						lv_procSide_10_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_11='Type'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getProtectUnitTypeAccess().getTypeKeyword_11());
+		}
+		otherlv_12='is'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getProtectUnitTypeAccess().getIsKeyword_12());
+		}
+		(
+			(
+				lv_procType_13_0=RULE_STRING
+				{
+					newLeafNode(lv_procType_13_0, grammarAccess.getProtectUnitTypeAccess().getProcTypeSTRINGTerminalRuleCall_13_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectUnitTypeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"procType",
+						lv_procType_13_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleProtectLocation
+entryRuleProtectLocation returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getProtectLocationRule()); }
+	iv_ruleProtectLocation=ruleProtectLocation
+	{ $current=$iv_ruleProtectLocation.current; }
+	EOF;
+
+// Rule ProtectLocation
+ruleProtectLocation returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='protect'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getProtectLocationAccess().getProtectKeyword_0());
+		}
+		otherlv_1='x'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getProtectLocationAccess().getXKeyword_1());
+		}
+		(
+			(
+				lv_XAxis_2_0=RULE_INT
+				{
+					newLeafNode(lv_XAxis_2_0, grammarAccess.getProtectLocationAccess().getXAxisINTTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectLocationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"XAxis",
+						lv_XAxis_2_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_3='y'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getProtectLocationAccess().getYKeyword_3());
+		}
+		(
+			(
+				lv_YAxis_4_0=RULE_INT
+				{
+					newLeafNode(lv_YAxis_4_0, grammarAccess.getProtectLocationAccess().getYAxisINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectLocationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"YAxis",
+						lv_YAxis_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5='value'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getProtectLocationAccess().getValueKeyword_5());
+		}
+		otherlv_6='is'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getProtectLocationAccess().getIsKeyword_6());
+		}
+		(
+			(
+				lv_locValue_7_0=RULE_INT
+				{
+					newLeafNode(lv_locValue_7_0, grammarAccess.getProtectLocationAccess().getLocValueINTTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectLocationRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"locValue",
-						lv_locValue_5_0,
+						lv_locValue_7_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_8='radius'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getProtectLocationAccess().getRadiusKeyword_8());
+		}
+		otherlv_9='is'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getProtectLocationAccess().getIsKeyword_9());
+		}
+		(
+			(
+				lv_procRad_10_0=RULE_INT
+				{
+					newLeafNode(lv_procRad_10_0, grammarAccess.getProtectLocationAccess().getProcRadINTTerminalRuleCall_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getProtectLocationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"procRad",
+						lv_procRad_10_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -616,15 +1114,19 @@ ruleGoaLocation returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='x'
+		otherlv_0='attack'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getGoaLocationAccess().getXKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getGoaLocationAccess().getAttackKeyword_0());
+		}
+		otherlv_1='x'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGoaLocationAccess().getXKeyword_1());
 		}
 		(
 			(
-				lv_XAxis_1_0=RULE_INT
+				lv_XAxis_2_0=RULE_INT
 				{
-					newLeafNode(lv_XAxis_1_0, grammarAccess.getGoaLocationAccess().getXAxisINTTerminalRuleCall_1_0());
+					newLeafNode(lv_XAxis_2_0, grammarAccess.getGoaLocationAccess().getXAxisINTTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -633,20 +1135,20 @@ ruleGoaLocation returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"XAxis",
-						lv_XAxis_1_0,
+						lv_XAxis_2_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_2='y'
+		otherlv_3='y'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getGoaLocationAccess().getYKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getGoaLocationAccess().getYKeyword_3());
 		}
 		(
 			(
-				lv_YAxis_3_0=RULE_INT
+				lv_YAxis_4_0=RULE_INT
 				{
-					newLeafNode(lv_YAxis_3_0, grammarAccess.getGoaLocationAccess().getYAxisINTTerminalRuleCall_3_0());
+					newLeafNode(lv_YAxis_4_0, grammarAccess.getGoaLocationAccess().getYAxisINTTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -655,7 +1157,33 @@ ruleGoaLocation returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"YAxis",
-						lv_YAxis_3_0,
+						lv_YAxis_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5='value'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getGoaLocationAccess().getValueKeyword_5());
+		}
+		otherlv_6='is'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getGoaLocationAccess().getIsKeyword_6());
+		}
+		(
+			(
+				lv_locValue_7_0=RULE_INT
+				{
+					newLeafNode(lv_locValue_7_0, grammarAccess.getGoaLocationAccess().getLocValueINTTerminalRuleCall_7_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getGoaLocationRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"locValue",
+						lv_locValue_7_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.wesnoth.wail.GoaLocation#getXAxis <em>XAxis</em>}</li>
  *   <li>{@link org.xtext.wesnoth.wail.GoaLocation#getYAxis <em>YAxis</em>}</li>
+ *   <li>{@link org.xtext.wesnoth.wail.GoaLocation#getLocValue <em>Loc Value</em>}</li>
  * </ul>
  *
  * @see org.xtext.wesnoth.wail.WailPackage#getGoaLocation()
@@ -67,5 +68,27 @@ public interface GoaLocation extends EObject
    * @generated
    */
   void setYAxis(int value);
+
+  /**
+   * Returns the value of the '<em><b>Loc Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Loc Value</em>' attribute.
+   * @see #setLocValue(int)
+   * @see org.xtext.wesnoth.wail.WailPackage#getGoaLocation_LocValue()
+   * @model
+   * @generated
+   */
+  int getLocValue();
+
+  /**
+   * Sets the value of the '{@link org.xtext.wesnoth.wail.GoaLocation#getLocValue <em>Loc Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Loc Value</em>' attribute.
+   * @see #getLocValue()
+   * @generated
+   */
+  void setLocValue(int value);
 
 } // GoaLocation

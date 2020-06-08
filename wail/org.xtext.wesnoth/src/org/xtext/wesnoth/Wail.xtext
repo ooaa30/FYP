@@ -50,11 +50,28 @@ UnitEquals:
 ;
 
 Goal:
-	'goal' 'is' goal= GoaLocation 'value' 'is' locValue=INT
+	'goal' 'is' goal= GoaLocation|ProtectLocation|ProtectLeader|ProtectUnitID|ProtectUnitType
+;
+
+ProtectLeader:
+	'protect' 'leader' 'value' 'is' locationValue=INT 'radius' 'is' protectionRadius=INT 'side' 'is' procSide=INT
+;
+
+ProtectUnitID:
+	'protect' 'unit' 'value' 'is' locationValue=INT 'radius' 'is' protectionRadius=INT 'side' 'is' procSide=INT 'ID' 'is' procID=STRING
+;
+
+ProtectUnitType:
+	'protect' 'unit' 'value' 'is' locationValue=INT 'radius' 'is' protectionRadius=INT 'side' 'is' procSide=INT 'Type' 'is' procType=STRING
+;
+
+ProtectLocation:
+	'protect' 'x' XAxis=INT 'y' YAxis=INT 'value' 'is' locValue=INT 'radius' 'is' procRad=INT
+	
 ;
 
 GoaLocation:
-	'x' XAxis=INT 'y' YAxis=INT
+	'attack' 'x' XAxis=INT 'y' YAxis=INT 'value' 'is' locValue=INT 
 ;
 
 New_CA:

@@ -17,6 +17,8 @@ import org.xtext.wesnoth.wail.UnitEquals
 import org.xtext.wesnoth.wail.Baseline
 import org.xtext.wesnoth.wail.Goal
 import org.xtext.wesnoth.wail.GoaLocation
+import org.xtext.wesnoth.wail.ProtectLocation
+import org.xtext.wesnoth.wail.ProtectLeader
 
 /**
  * Generates code from your model files on save.
@@ -271,15 +273,33 @@ class WailGenerator extends AbstractGenerator {
 			action = add
 			path=goal[]
 			[goal] 
-				«x.goal.compile»
-				value=«x.locValue»
+				«x.goal.resolve»
 			[/goal]
 		[/modify_ai]
 		'''
-		def compile(GoaLocation x)'''
+		def dispatch resolve(GoaLocation x)'''
 		name=target_location
 		[criteria]
 			x,y=«x.XAxis»,«x.YAxis»
-		[/criteria]		
+		[/criteria]
+		value=«x.locValue»
 		'''
+		def dispatch resolve(ProtectLocation x)'''
+		name=protect_location
+		[criteria]
+			x,y=«x.XAxis»,«x.YAxis»
+		[/criteria]
+		protect_radius=«x.procRad»
+		value=«x.locValue»
+		'''
+		def dispatch resolve(ProtectLeader x)'''
+		name=protect_location
+		[criteria]
+			side=«x.procSide»
+			canrecruit=yes
+		[/criteria]
+		protect_radius=«x.protectionRadius»
+		value=«x.locationValue»
+		'''
+		
 }

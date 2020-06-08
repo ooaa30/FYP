@@ -287,81 +287,413 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class GoalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.Goal");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cGoalKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cGoalAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cGoalGoaLocationParserRuleCall_2_0 = (RuleCall)cGoalAssignment_2.eContents().get(0);
-		private final Keyword cValueKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cIsKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cLocValueAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cLocValueINTTerminalRuleCall_5_0 = (RuleCall)cLocValueAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cGoalKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Keyword cIsKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cGoalAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cGoalGoaLocationParserRuleCall_0_2_0 = (RuleCall)cGoalAssignment_0_2.eContents().get(0);
+		private final RuleCall cProtectLocationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cProtectLeaderParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cProtectUnitIDParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cProtectUnitTypeParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Goal:
-		//	'goal' 'is' goal=GoaLocation 'value' 'is' locValue=INT;
+		//	'goal' 'is' goal=GoaLocation | ProtectLocation | ProtectLeader | ProtectUnitID | ProtectUnitType;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'goal' 'is' goal=GoaLocation 'value' 'is' locValue=INT
-		public Group getGroup() { return cGroup; }
+		//'goal' 'is' goal=GoaLocation | ProtectLocation | ProtectLeader | ProtectUnitID | ProtectUnitType
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'goal' 'is' goal=GoaLocation
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//'goal'
-		public Keyword getGoalKeyword_0() { return cGoalKeyword_0; }
+		public Keyword getGoalKeyword_0_0() { return cGoalKeyword_0_0; }
 		
 		//'is'
-		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
+		public Keyword getIsKeyword_0_1() { return cIsKeyword_0_1; }
 		
 		//goal=GoaLocation
-		public Assignment getGoalAssignment_2() { return cGoalAssignment_2; }
+		public Assignment getGoalAssignment_0_2() { return cGoalAssignment_0_2; }
 		
 		//GoaLocation
-		public RuleCall getGoalGoaLocationParserRuleCall_2_0() { return cGoalGoaLocationParserRuleCall_2_0; }
+		public RuleCall getGoalGoaLocationParserRuleCall_0_2_0() { return cGoalGoaLocationParserRuleCall_0_2_0; }
+		
+		//ProtectLocation
+		public RuleCall getProtectLocationParserRuleCall_1() { return cProtectLocationParserRuleCall_1; }
+		
+		//ProtectLeader
+		public RuleCall getProtectLeaderParserRuleCall_2() { return cProtectLeaderParserRuleCall_2; }
+		
+		//ProtectUnitID
+		public RuleCall getProtectUnitIDParserRuleCall_3() { return cProtectUnitIDParserRuleCall_3; }
+		
+		//ProtectUnitType
+		public RuleCall getProtectUnitTypeParserRuleCall_4() { return cProtectUnitTypeParserRuleCall_4; }
+	}
+	public class ProtectLeaderElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.ProtectLeader");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cProtectKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeaderKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cValueKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cIsKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cLocationValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLocationValueINTTerminalRuleCall_4_0 = (RuleCall)cLocationValueAssignment_4.eContents().get(0);
+		private final Keyword cRadiusKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cIsKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cProtectionRadiusAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cProtectionRadiusINTTerminalRuleCall_7_0 = (RuleCall)cProtectionRadiusAssignment_7.eContents().get(0);
+		private final Keyword cSideKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cIsKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cProcSideAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cProcSideINTTerminalRuleCall_10_0 = (RuleCall)cProcSideAssignment_10.eContents().get(0);
+		
+		//ProtectLeader:
+		//	'protect' 'leader' 'value' 'is' locationValue=INT 'radius' 'is' protectionRadius=INT 'side' 'is' procSide=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'protect' 'leader' 'value' 'is' locationValue=INT 'radius' 'is' protectionRadius=INT 'side' 'is' procSide=INT
+		public Group getGroup() { return cGroup; }
+		
+		//'protect'
+		public Keyword getProtectKeyword_0() { return cProtectKeyword_0; }
+		
+		//'leader'
+		public Keyword getLeaderKeyword_1() { return cLeaderKeyword_1; }
 		
 		//'value'
-		public Keyword getValueKeyword_3() { return cValueKeyword_3; }
+		public Keyword getValueKeyword_2() { return cValueKeyword_2; }
 		
 		//'is'
-		public Keyword getIsKeyword_4() { return cIsKeyword_4; }
+		public Keyword getIsKeyword_3() { return cIsKeyword_3; }
 		
-		//locValue=INT
-		public Assignment getLocValueAssignment_5() { return cLocValueAssignment_5; }
+		//locationValue=INT
+		public Assignment getLocationValueAssignment_4() { return cLocationValueAssignment_4; }
 		
 		//INT
-		public RuleCall getLocValueINTTerminalRuleCall_5_0() { return cLocValueINTTerminalRuleCall_5_0; }
+		public RuleCall getLocationValueINTTerminalRuleCall_4_0() { return cLocationValueINTTerminalRuleCall_4_0; }
+		
+		//'radius'
+		public Keyword getRadiusKeyword_5() { return cRadiusKeyword_5; }
+		
+		//'is'
+		public Keyword getIsKeyword_6() { return cIsKeyword_6; }
+		
+		//protectionRadius=INT
+		public Assignment getProtectionRadiusAssignment_7() { return cProtectionRadiusAssignment_7; }
+		
+		//INT
+		public RuleCall getProtectionRadiusINTTerminalRuleCall_7_0() { return cProtectionRadiusINTTerminalRuleCall_7_0; }
+		
+		//'side'
+		public Keyword getSideKeyword_8() { return cSideKeyword_8; }
+		
+		//'is'
+		public Keyword getIsKeyword_9() { return cIsKeyword_9; }
+		
+		//procSide=INT
+		public Assignment getProcSideAssignment_10() { return cProcSideAssignment_10; }
+		
+		//INT
+		public RuleCall getProcSideINTTerminalRuleCall_10_0() { return cProcSideINTTerminalRuleCall_10_0; }
+	}
+	public class ProtectUnitIDElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.ProtectUnitID");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cProtectKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cUnitKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cValueKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cIsKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cLocationValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLocationValueINTTerminalRuleCall_4_0 = (RuleCall)cLocationValueAssignment_4.eContents().get(0);
+		private final Keyword cRadiusKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cIsKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cProtectionRadiusAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cProtectionRadiusINTTerminalRuleCall_7_0 = (RuleCall)cProtectionRadiusAssignment_7.eContents().get(0);
+		private final Keyword cSideKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cIsKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cProcSideAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cProcSideINTTerminalRuleCall_10_0 = (RuleCall)cProcSideAssignment_10.eContents().get(0);
+		private final Keyword cIDKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cIsKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cProcIDAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cProcIDSTRINGTerminalRuleCall_13_0 = (RuleCall)cProcIDAssignment_13.eContents().get(0);
+		
+		//ProtectUnitID:
+		//	'protect' 'unit' 'value' 'is' locationValue=INT 'radius' 'is' protectionRadius=INT 'side' 'is' procSide=INT 'ID' 'is'
+		//	procID=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'protect' 'unit' 'value' 'is' locationValue=INT 'radius' 'is' protectionRadius=INT 'side' 'is' procSide=INT 'ID' 'is'
+		//procID=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'protect'
+		public Keyword getProtectKeyword_0() { return cProtectKeyword_0; }
+		
+		//'unit'
+		public Keyword getUnitKeyword_1() { return cUnitKeyword_1; }
+		
+		//'value'
+		public Keyword getValueKeyword_2() { return cValueKeyword_2; }
+		
+		//'is'
+		public Keyword getIsKeyword_3() { return cIsKeyword_3; }
+		
+		//locationValue=INT
+		public Assignment getLocationValueAssignment_4() { return cLocationValueAssignment_4; }
+		
+		//INT
+		public RuleCall getLocationValueINTTerminalRuleCall_4_0() { return cLocationValueINTTerminalRuleCall_4_0; }
+		
+		//'radius'
+		public Keyword getRadiusKeyword_5() { return cRadiusKeyword_5; }
+		
+		//'is'
+		public Keyword getIsKeyword_6() { return cIsKeyword_6; }
+		
+		//protectionRadius=INT
+		public Assignment getProtectionRadiusAssignment_7() { return cProtectionRadiusAssignment_7; }
+		
+		//INT
+		public RuleCall getProtectionRadiusINTTerminalRuleCall_7_0() { return cProtectionRadiusINTTerminalRuleCall_7_0; }
+		
+		//'side'
+		public Keyword getSideKeyword_8() { return cSideKeyword_8; }
+		
+		//'is'
+		public Keyword getIsKeyword_9() { return cIsKeyword_9; }
+		
+		//procSide=INT
+		public Assignment getProcSideAssignment_10() { return cProcSideAssignment_10; }
+		
+		//INT
+		public RuleCall getProcSideINTTerminalRuleCall_10_0() { return cProcSideINTTerminalRuleCall_10_0; }
+		
+		//'ID'
+		public Keyword getIDKeyword_11() { return cIDKeyword_11; }
+		
+		//'is'
+		public Keyword getIsKeyword_12() { return cIsKeyword_12; }
+		
+		//procID=STRING
+		public Assignment getProcIDAssignment_13() { return cProcIDAssignment_13; }
+		
+		//STRING
+		public RuleCall getProcIDSTRINGTerminalRuleCall_13_0() { return cProcIDSTRINGTerminalRuleCall_13_0; }
+	}
+	public class ProtectUnitTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.ProtectUnitType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cProtectKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cUnitKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cValueKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cIsKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cLocationValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLocationValueINTTerminalRuleCall_4_0 = (RuleCall)cLocationValueAssignment_4.eContents().get(0);
+		private final Keyword cRadiusKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cIsKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cProtectionRadiusAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cProtectionRadiusINTTerminalRuleCall_7_0 = (RuleCall)cProtectionRadiusAssignment_7.eContents().get(0);
+		private final Keyword cSideKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cIsKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cProcSideAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cProcSideINTTerminalRuleCall_10_0 = (RuleCall)cProcSideAssignment_10.eContents().get(0);
+		private final Keyword cTypeKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cIsKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cProcTypeAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cProcTypeSTRINGTerminalRuleCall_13_0 = (RuleCall)cProcTypeAssignment_13.eContents().get(0);
+		
+		//ProtectUnitType:
+		//	'protect' 'unit' 'value' 'is' locationValue=INT 'radius' 'is' protectionRadius=INT 'side' 'is' procSide=INT 'Type'
+		//	'is' procType=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'protect' 'unit' 'value' 'is' locationValue=INT 'radius' 'is' protectionRadius=INT 'side' 'is' procSide=INT 'Type' 'is'
+		//procType=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'protect'
+		public Keyword getProtectKeyword_0() { return cProtectKeyword_0; }
+		
+		//'unit'
+		public Keyword getUnitKeyword_1() { return cUnitKeyword_1; }
+		
+		//'value'
+		public Keyword getValueKeyword_2() { return cValueKeyword_2; }
+		
+		//'is'
+		public Keyword getIsKeyword_3() { return cIsKeyword_3; }
+		
+		//locationValue=INT
+		public Assignment getLocationValueAssignment_4() { return cLocationValueAssignment_4; }
+		
+		//INT
+		public RuleCall getLocationValueINTTerminalRuleCall_4_0() { return cLocationValueINTTerminalRuleCall_4_0; }
+		
+		//'radius'
+		public Keyword getRadiusKeyword_5() { return cRadiusKeyword_5; }
+		
+		//'is'
+		public Keyword getIsKeyword_6() { return cIsKeyword_6; }
+		
+		//protectionRadius=INT
+		public Assignment getProtectionRadiusAssignment_7() { return cProtectionRadiusAssignment_7; }
+		
+		//INT
+		public RuleCall getProtectionRadiusINTTerminalRuleCall_7_0() { return cProtectionRadiusINTTerminalRuleCall_7_0; }
+		
+		//'side'
+		public Keyword getSideKeyword_8() { return cSideKeyword_8; }
+		
+		//'is'
+		public Keyword getIsKeyword_9() { return cIsKeyword_9; }
+		
+		//procSide=INT
+		public Assignment getProcSideAssignment_10() { return cProcSideAssignment_10; }
+		
+		//INT
+		public RuleCall getProcSideINTTerminalRuleCall_10_0() { return cProcSideINTTerminalRuleCall_10_0; }
+		
+		//'Type'
+		public Keyword getTypeKeyword_11() { return cTypeKeyword_11; }
+		
+		//'is'
+		public Keyword getIsKeyword_12() { return cIsKeyword_12; }
+		
+		//procType=STRING
+		public Assignment getProcTypeAssignment_13() { return cProcTypeAssignment_13; }
+		
+		//STRING
+		public RuleCall getProcTypeSTRINGTerminalRuleCall_13_0() { return cProcTypeSTRINGTerminalRuleCall_13_0; }
+	}
+	public class ProtectLocationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.ProtectLocation");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cProtectKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cXKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cXAxisAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cXAxisINTTerminalRuleCall_2_0 = (RuleCall)cXAxisAssignment_2.eContents().get(0);
+		private final Keyword cYKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cYAxisAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cYAxisINTTerminalRuleCall_4_0 = (RuleCall)cYAxisAssignment_4.eContents().get(0);
+		private final Keyword cValueKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cIsKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cLocValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cLocValueINTTerminalRuleCall_7_0 = (RuleCall)cLocValueAssignment_7.eContents().get(0);
+		private final Keyword cRadiusKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cIsKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cProcRadAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cProcRadINTTerminalRuleCall_10_0 = (RuleCall)cProcRadAssignment_10.eContents().get(0);
+		
+		//ProtectLocation:
+		//	'protect' 'x' XAxis=INT 'y' YAxis=INT 'value' 'is' locValue=INT 'radius' 'is' procRad=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'protect' 'x' XAxis=INT 'y' YAxis=INT 'value' 'is' locValue=INT 'radius' 'is' procRad=INT
+		public Group getGroup() { return cGroup; }
+		
+		//'protect'
+		public Keyword getProtectKeyword_0() { return cProtectKeyword_0; }
+		
+		//'x'
+		public Keyword getXKeyword_1() { return cXKeyword_1; }
+		
+		//XAxis=INT
+		public Assignment getXAxisAssignment_2() { return cXAxisAssignment_2; }
+		
+		//INT
+		public RuleCall getXAxisINTTerminalRuleCall_2_0() { return cXAxisINTTerminalRuleCall_2_0; }
+		
+		//'y'
+		public Keyword getYKeyword_3() { return cYKeyword_3; }
+		
+		//YAxis=INT
+		public Assignment getYAxisAssignment_4() { return cYAxisAssignment_4; }
+		
+		//INT
+		public RuleCall getYAxisINTTerminalRuleCall_4_0() { return cYAxisINTTerminalRuleCall_4_0; }
+		
+		//'value'
+		public Keyword getValueKeyword_5() { return cValueKeyword_5; }
+		
+		//'is'
+		public Keyword getIsKeyword_6() { return cIsKeyword_6; }
+		
+		//locValue=INT
+		public Assignment getLocValueAssignment_7() { return cLocValueAssignment_7; }
+		
+		//INT
+		public RuleCall getLocValueINTTerminalRuleCall_7_0() { return cLocValueINTTerminalRuleCall_7_0; }
+		
+		//'radius'
+		public Keyword getRadiusKeyword_8() { return cRadiusKeyword_8; }
+		
+		//'is'
+		public Keyword getIsKeyword_9() { return cIsKeyword_9; }
+		
+		//procRad=INT
+		public Assignment getProcRadAssignment_10() { return cProcRadAssignment_10; }
+		
+		//INT
+		public RuleCall getProcRadINTTerminalRuleCall_10_0() { return cProcRadINTTerminalRuleCall_10_0; }
 	}
 	public class GoaLocationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.GoaLocation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cXKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cXAxisAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cXAxisINTTerminalRuleCall_1_0 = (RuleCall)cXAxisAssignment_1.eContents().get(0);
-		private final Keyword cYKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cYAxisAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cYAxisINTTerminalRuleCall_3_0 = (RuleCall)cYAxisAssignment_3.eContents().get(0);
+		private final Keyword cAttackKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cXKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cXAxisAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cXAxisINTTerminalRuleCall_2_0 = (RuleCall)cXAxisAssignment_2.eContents().get(0);
+		private final Keyword cYKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cYAxisAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cYAxisINTTerminalRuleCall_4_0 = (RuleCall)cYAxisAssignment_4.eContents().get(0);
+		private final Keyword cValueKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cIsKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cLocValueAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cLocValueINTTerminalRuleCall_7_0 = (RuleCall)cLocValueAssignment_7.eContents().get(0);
 		
 		//GoaLocation:
-		//	'x' XAxis=INT 'y' YAxis=INT;
+		//	'attack' 'x' XAxis=INT 'y' YAxis=INT 'value' 'is' locValue=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'x' XAxis=INT 'y' YAxis=INT
+		//'attack' 'x' XAxis=INT 'y' YAxis=INT 'value' 'is' locValue=INT
 		public Group getGroup() { return cGroup; }
 		
+		//'attack'
+		public Keyword getAttackKeyword_0() { return cAttackKeyword_0; }
+		
 		//'x'
-		public Keyword getXKeyword_0() { return cXKeyword_0; }
+		public Keyword getXKeyword_1() { return cXKeyword_1; }
 		
 		//XAxis=INT
-		public Assignment getXAxisAssignment_1() { return cXAxisAssignment_1; }
+		public Assignment getXAxisAssignment_2() { return cXAxisAssignment_2; }
 		
 		//INT
-		public RuleCall getXAxisINTTerminalRuleCall_1_0() { return cXAxisINTTerminalRuleCall_1_0; }
+		public RuleCall getXAxisINTTerminalRuleCall_2_0() { return cXAxisINTTerminalRuleCall_2_0; }
 		
 		//'y'
-		public Keyword getYKeyword_2() { return cYKeyword_2; }
+		public Keyword getYKeyword_3() { return cYKeyword_3; }
 		
 		//YAxis=INT
-		public Assignment getYAxisAssignment_3() { return cYAxisAssignment_3; }
+		public Assignment getYAxisAssignment_4() { return cYAxisAssignment_4; }
 		
 		//INT
-		public RuleCall getYAxisINTTerminalRuleCall_3_0() { return cYAxisINTTerminalRuleCall_3_0; }
+		public RuleCall getYAxisINTTerminalRuleCall_4_0() { return cYAxisINTTerminalRuleCall_4_0; }
+		
+		//'value'
+		public Keyword getValueKeyword_5() { return cValueKeyword_5; }
+		
+		//'is'
+		public Keyword getIsKeyword_6() { return cIsKeyword_6; }
+		
+		//locValue=INT
+		public Assignment getLocValueAssignment_7() { return cLocValueAssignment_7; }
+		
+		//INT
+		public RuleCall getLocValueINTTerminalRuleCall_7_0() { return cLocValueINTTerminalRuleCall_7_0; }
 	}
 	public class New_CAElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.New_CA");
@@ -457,6 +789,10 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	private final AtLocationElements pAtLocation;
 	private final UnitEqualsElements pUnitEquals;
 	private final GoalElements pGoal;
+	private final ProtectLeaderElements pProtectLeader;
+	private final ProtectUnitIDElements pProtectUnitID;
+	private final ProtectUnitTypeElements pProtectUnitType;
+	private final ProtectLocationElements pProtectLocation;
 	private final GoaLocationElements pGoaLocation;
 	private final New_CAElements pNew_CA;
 	private final Defualt_CAElements pDefualt_CA;
@@ -480,6 +816,10 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		this.pAtLocation = new AtLocationElements();
 		this.pUnitEquals = new UnitEqualsElements();
 		this.pGoal = new GoalElements();
+		this.pProtectLeader = new ProtectLeaderElements();
+		this.pProtectUnitID = new ProtectUnitIDElements();
+		this.pProtectUnitType = new ProtectUnitTypeElements();
+		this.pProtectLocation = new ProtectLocationElements();
 		this.pGoaLocation = new GoaLocationElements();
 		this.pNew_CA = new New_CAElements();
 		this.pDefualt_CA = new Defualt_CAElements();
@@ -615,7 +955,7 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Goal:
-	//	'goal' 'is' goal=GoaLocation 'value' 'is' locValue=INT;
+	//	'goal' 'is' goal=GoaLocation | ProtectLocation | ProtectLeader | ProtectUnitID | ProtectUnitType;
 	public GoalElements getGoalAccess() {
 		return pGoal;
 	}
@@ -624,8 +964,50 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		return getGoalAccess().getRule();
 	}
 	
+	//ProtectLeader:
+	//	'protect' 'leader' 'value' 'is' locationValue=INT 'radius' 'is' protectionRadius=INT 'side' 'is' procSide=INT;
+	public ProtectLeaderElements getProtectLeaderAccess() {
+		return pProtectLeader;
+	}
+	
+	public ParserRule getProtectLeaderRule() {
+		return getProtectLeaderAccess().getRule();
+	}
+	
+	//ProtectUnitID:
+	//	'protect' 'unit' 'value' 'is' locationValue=INT 'radius' 'is' protectionRadius=INT 'side' 'is' procSide=INT 'ID' 'is'
+	//	procID=STRING;
+	public ProtectUnitIDElements getProtectUnitIDAccess() {
+		return pProtectUnitID;
+	}
+	
+	public ParserRule getProtectUnitIDRule() {
+		return getProtectUnitIDAccess().getRule();
+	}
+	
+	//ProtectUnitType:
+	//	'protect' 'unit' 'value' 'is' locationValue=INT 'radius' 'is' protectionRadius=INT 'side' 'is' procSide=INT 'Type'
+	//	'is' procType=STRING;
+	public ProtectUnitTypeElements getProtectUnitTypeAccess() {
+		return pProtectUnitType;
+	}
+	
+	public ParserRule getProtectUnitTypeRule() {
+		return getProtectUnitTypeAccess().getRule();
+	}
+	
+	//ProtectLocation:
+	//	'protect' 'x' XAxis=INT 'y' YAxis=INT 'value' 'is' locValue=INT 'radius' 'is' procRad=INT;
+	public ProtectLocationElements getProtectLocationAccess() {
+		return pProtectLocation;
+	}
+	
+	public ParserRule getProtectLocationRule() {
+		return getProtectLocationAccess().getRule();
+	}
+	
 	//GoaLocation:
-	//	'x' XAxis=INT 'y' YAxis=INT;
+	//	'attack' 'x' XAxis=INT 'y' YAxis=INT 'value' 'is' locValue=INT;
 	public GoaLocationElements getGoaLocationAccess() {
 		return pGoaLocation;
 	}

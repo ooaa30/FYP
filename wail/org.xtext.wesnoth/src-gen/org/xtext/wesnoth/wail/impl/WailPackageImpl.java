@@ -19,6 +19,10 @@ import org.xtext.wesnoth.wail.Fragment;
 import org.xtext.wesnoth.wail.GoaLocation;
 import org.xtext.wesnoth.wail.Goal;
 import org.xtext.wesnoth.wail.Model;
+import org.xtext.wesnoth.wail.ProtectLeader;
+import org.xtext.wesnoth.wail.ProtectLocation;
+import org.xtext.wesnoth.wail.ProtectUnitID;
+import org.xtext.wesnoth.wail.ProtectUnitType;
 import org.xtext.wesnoth.wail.Rule;
 import org.xtext.wesnoth.wail.UnitEquals;
 import org.xtext.wesnoth.wail.WailFactory;
@@ -102,6 +106,34 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
    * @generated
    */
   private EClass goalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass protectLeaderEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass protectUnitIDEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass protectUnitTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass protectLocationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -439,9 +471,207 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
    * @generated
    */
   @Override
-  public EAttribute getGoal_LocValue()
+  public EClass getProtectLeader()
   {
-    return (EAttribute)goalEClass.getEStructuralFeatures().get(1);
+    return protectLeaderEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectLeader_LocationValue()
+  {
+    return (EAttribute)protectLeaderEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectLeader_ProtectionRadius()
+  {
+    return (EAttribute)protectLeaderEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectLeader_ProcSide()
+  {
+    return (EAttribute)protectLeaderEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getProtectUnitID()
+  {
+    return protectUnitIDEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectUnitID_LocationValue()
+  {
+    return (EAttribute)protectUnitIDEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectUnitID_ProtectionRadius()
+  {
+    return (EAttribute)protectUnitIDEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectUnitID_ProcSide()
+  {
+    return (EAttribute)protectUnitIDEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectUnitID_ProcID()
+  {
+    return (EAttribute)protectUnitIDEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getProtectUnitType()
+  {
+    return protectUnitTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectUnitType_LocationValue()
+  {
+    return (EAttribute)protectUnitTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectUnitType_ProtectionRadius()
+  {
+    return (EAttribute)protectUnitTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectUnitType_ProcSide()
+  {
+    return (EAttribute)protectUnitTypeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectUnitType_ProcType()
+  {
+    return (EAttribute)protectUnitTypeEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getProtectLocation()
+  {
+    return protectLocationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectLocation_XAxis()
+  {
+    return (EAttribute)protectLocationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectLocation_YAxis()
+  {
+    return (EAttribute)protectLocationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectLocation_LocValue()
+  {
+    return (EAttribute)protectLocationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getProtectLocation_ProcRad()
+  {
+    return (EAttribute)protectLocationEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -475,6 +705,17 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
   public EAttribute getGoaLocation_YAxis()
   {
     return (EAttribute)goaLocationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGoaLocation_LocValue()
+  {
+    return (EAttribute)goaLocationEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -573,11 +814,34 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
 
     goalEClass = createEClass(GOAL);
     createEReference(goalEClass, GOAL__GOAL);
-    createEAttribute(goalEClass, GOAL__LOC_VALUE);
+
+    protectLeaderEClass = createEClass(PROTECT_LEADER);
+    createEAttribute(protectLeaderEClass, PROTECT_LEADER__LOCATION_VALUE);
+    createEAttribute(protectLeaderEClass, PROTECT_LEADER__PROTECTION_RADIUS);
+    createEAttribute(protectLeaderEClass, PROTECT_LEADER__PROC_SIDE);
+
+    protectUnitIDEClass = createEClass(PROTECT_UNIT_ID);
+    createEAttribute(protectUnitIDEClass, PROTECT_UNIT_ID__LOCATION_VALUE);
+    createEAttribute(protectUnitIDEClass, PROTECT_UNIT_ID__PROTECTION_RADIUS);
+    createEAttribute(protectUnitIDEClass, PROTECT_UNIT_ID__PROC_SIDE);
+    createEAttribute(protectUnitIDEClass, PROTECT_UNIT_ID__PROC_ID);
+
+    protectUnitTypeEClass = createEClass(PROTECT_UNIT_TYPE);
+    createEAttribute(protectUnitTypeEClass, PROTECT_UNIT_TYPE__LOCATION_VALUE);
+    createEAttribute(protectUnitTypeEClass, PROTECT_UNIT_TYPE__PROTECTION_RADIUS);
+    createEAttribute(protectUnitTypeEClass, PROTECT_UNIT_TYPE__PROC_SIDE);
+    createEAttribute(protectUnitTypeEClass, PROTECT_UNIT_TYPE__PROC_TYPE);
+
+    protectLocationEClass = createEClass(PROTECT_LOCATION);
+    createEAttribute(protectLocationEClass, PROTECT_LOCATION__XAXIS);
+    createEAttribute(protectLocationEClass, PROTECT_LOCATION__YAXIS);
+    createEAttribute(protectLocationEClass, PROTECT_LOCATION__LOC_VALUE);
+    createEAttribute(protectLocationEClass, PROTECT_LOCATION__PROC_RAD);
 
     goaLocationEClass = createEClass(GOA_LOCATION);
     createEAttribute(goaLocationEClass, GOA_LOCATION__XAXIS);
     createEAttribute(goaLocationEClass, GOA_LOCATION__YAXIS);
+    createEAttribute(goaLocationEClass, GOA_LOCATION__LOC_VALUE);
 
     defualt_CAEClass = createEClass(DEFUALT_CA);
     createEAttribute(defualt_CAEClass, DEFUALT_CA__CA_TYPE);
@@ -617,6 +881,10 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
     damageEClass.getESuperTypes().add(this.getwhenRules());
     atLocationEClass.getESuperTypes().add(this.getwhenRules());
     unitEqualsEClass.getESuperTypes().add(this.getwhenRules());
+    protectLeaderEClass.getESuperTypes().add(this.getGoal());
+    protectUnitIDEClass.getESuperTypes().add(this.getGoal());
+    protectUnitTypeEClass.getESuperTypes().add(this.getGoal());
+    protectLocationEClass.getESuperTypes().add(this.getGoal());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -651,11 +919,34 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
 
     initEClass(goalEClass, Goal.class, "Goal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getGoal_Goal(), this.getGoaLocation(), null, "goal", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGoal_LocValue(), ecorePackage.getEInt(), "locValue", null, 0, 1, Goal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(protectLeaderEClass, ProtectLeader.class, "ProtectLeader", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProtectLeader_LocationValue(), ecorePackage.getEInt(), "locationValue", null, 0, 1, ProtectLeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProtectLeader_ProtectionRadius(), ecorePackage.getEInt(), "protectionRadius", null, 0, 1, ProtectLeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProtectLeader_ProcSide(), ecorePackage.getEInt(), "procSide", null, 0, 1, ProtectLeader.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(protectUnitIDEClass, ProtectUnitID.class, "ProtectUnitID", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProtectUnitID_LocationValue(), ecorePackage.getEInt(), "locationValue", null, 0, 1, ProtectUnitID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProtectUnitID_ProtectionRadius(), ecorePackage.getEInt(), "protectionRadius", null, 0, 1, ProtectUnitID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProtectUnitID_ProcSide(), ecorePackage.getEInt(), "procSide", null, 0, 1, ProtectUnitID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProtectUnitID_ProcID(), ecorePackage.getEString(), "procID", null, 0, 1, ProtectUnitID.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(protectUnitTypeEClass, ProtectUnitType.class, "ProtectUnitType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProtectUnitType_LocationValue(), ecorePackage.getEInt(), "locationValue", null, 0, 1, ProtectUnitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProtectUnitType_ProtectionRadius(), ecorePackage.getEInt(), "protectionRadius", null, 0, 1, ProtectUnitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProtectUnitType_ProcSide(), ecorePackage.getEInt(), "procSide", null, 0, 1, ProtectUnitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProtectUnitType_ProcType(), ecorePackage.getEString(), "procType", null, 0, 1, ProtectUnitType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(protectLocationEClass, ProtectLocation.class, "ProtectLocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProtectLocation_XAxis(), ecorePackage.getEInt(), "XAxis", null, 0, 1, ProtectLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProtectLocation_YAxis(), ecorePackage.getEInt(), "YAxis", null, 0, 1, ProtectLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProtectLocation_LocValue(), ecorePackage.getEInt(), "locValue", null, 0, 1, ProtectLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getProtectLocation_ProcRad(), ecorePackage.getEInt(), "procRad", null, 0, 1, ProtectLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(goaLocationEClass, GoaLocation.class, "GoaLocation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGoaLocation_XAxis(), ecorePackage.getEInt(), "XAxis", null, 0, 1, GoaLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoaLocation_YAxis(), ecorePackage.getEInt(), "YAxis", null, 0, 1, GoaLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getGoaLocation_LocValue(), ecorePackage.getEInt(), "locValue", null, 0, 1, GoaLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(defualt_CAEClass, Defualt_CA.class, "Defualt_CA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefualt_CA_CaType(), ecorePackage.getEString(), "caType", null, 0, 1, Defualt_CA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

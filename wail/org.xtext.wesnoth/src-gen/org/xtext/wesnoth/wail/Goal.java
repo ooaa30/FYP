@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.wesnoth.wail.Goal#getGoal <em>Goal</em>}</li>
- *   <li>{@link org.xtext.wesnoth.wail.Goal#getLocValue <em>Loc Value</em>}</li>
  * </ul>
  *
  * @see org.xtext.wesnoth.wail.WailPackage#getGoal()
@@ -45,27 +44,5 @@ public interface Goal extends EObject
    * @generated
    */
   void setGoal(GoaLocation value);
-
-  /**
-   * Returns the value of the '<em><b>Loc Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Loc Value</em>' attribute.
-   * @see #setLocValue(int)
-   * @see org.xtext.wesnoth.wail.WailPackage#getGoal_LocValue()
-   * @model
-   * @generated
-   */
-  int getLocValue();
-
-  /**
-   * Sets the value of the '{@link org.xtext.wesnoth.wail.Goal#getLocValue <em>Loc Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Loc Value</em>' attribute.
-   * @see #getLocValue()
-   * @generated
-   */
-  void setLocValue(int value);
 
 } // Goal

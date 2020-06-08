@@ -8,27 +8,27 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.wesnoth.wail.GoaLocation;
+import org.xtext.wesnoth.wail.ProtectLocation;
 import org.xtext.wesnoth.wail.WailPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Goa Location</b></em>'.
+ * An implementation of the model object '<em><b>Protect Location</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.wesnoth.wail.impl.GoaLocationImpl#getXAxis <em>XAxis</em>}</li>
- *   <li>{@link org.xtext.wesnoth.wail.impl.GoaLocationImpl#getYAxis <em>YAxis</em>}</li>
- *   <li>{@link org.xtext.wesnoth.wail.impl.GoaLocationImpl#getLocValue <em>Loc Value</em>}</li>
+ *   <li>{@link org.xtext.wesnoth.wail.impl.ProtectLocationImpl#getXAxis <em>XAxis</em>}</li>
+ *   <li>{@link org.xtext.wesnoth.wail.impl.ProtectLocationImpl#getYAxis <em>YAxis</em>}</li>
+ *   <li>{@link org.xtext.wesnoth.wail.impl.ProtectLocationImpl#getLocValue <em>Loc Value</em>}</li>
+ *   <li>{@link org.xtext.wesnoth.wail.impl.ProtectLocationImpl#getProcRad <em>Proc Rad</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GoaLocationImpl extends MinimalEObjectImpl.Container implements GoaLocation
+public class ProtectLocationImpl extends GoalImpl implements ProtectLocation
 {
   /**
    * The default value of the '{@link #getXAxis() <em>XAxis</em>}' attribute.
@@ -91,11 +91,31 @@ public class GoaLocationImpl extends MinimalEObjectImpl.Container implements Goa
   protected int locValue = LOC_VALUE_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getProcRad() <em>Proc Rad</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProcRad()
+   * @generated
+   * @ordered
+   */
+  protected static final int PROC_RAD_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getProcRad() <em>Proc Rad</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProcRad()
+   * @generated
+   * @ordered
+   */
+  protected int procRad = PROC_RAD_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GoaLocationImpl()
+  protected ProtectLocationImpl()
   {
     super();
   }
@@ -108,7 +128,7 @@ public class GoaLocationImpl extends MinimalEObjectImpl.Container implements Goa
   @Override
   protected EClass eStaticClass()
   {
-    return WailPackage.Literals.GOA_LOCATION;
+    return WailPackage.Literals.PROTECT_LOCATION;
   }
 
   /**
@@ -133,7 +153,7 @@ public class GoaLocationImpl extends MinimalEObjectImpl.Container implements Goa
     int oldXAxis = xAxis;
     xAxis = newXAxis;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WailPackage.GOA_LOCATION__XAXIS, oldXAxis, xAxis));
+      eNotify(new ENotificationImpl(this, Notification.SET, WailPackage.PROTECT_LOCATION__XAXIS, oldXAxis, xAxis));
   }
 
   /**
@@ -158,7 +178,7 @@ public class GoaLocationImpl extends MinimalEObjectImpl.Container implements Goa
     int oldYAxis = yAxis;
     yAxis = newYAxis;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WailPackage.GOA_LOCATION__YAXIS, oldYAxis, yAxis));
+      eNotify(new ENotificationImpl(this, Notification.SET, WailPackage.PROTECT_LOCATION__YAXIS, oldYAxis, yAxis));
   }
 
   /**
@@ -183,7 +203,32 @@ public class GoaLocationImpl extends MinimalEObjectImpl.Container implements Goa
     int oldLocValue = locValue;
     locValue = newLocValue;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WailPackage.GOA_LOCATION__LOC_VALUE, oldLocValue, locValue));
+      eNotify(new ENotificationImpl(this, Notification.SET, WailPackage.PROTECT_LOCATION__LOC_VALUE, oldLocValue, locValue));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public int getProcRad()
+  {
+    return procRad;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setProcRad(int newProcRad)
+  {
+    int oldProcRad = procRad;
+    procRad = newProcRad;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, WailPackage.PROTECT_LOCATION__PROC_RAD, oldProcRad, procRad));
   }
 
   /**
@@ -196,12 +241,14 @@ public class GoaLocationImpl extends MinimalEObjectImpl.Container implements Goa
   {
     switch (featureID)
     {
-      case WailPackage.GOA_LOCATION__XAXIS:
+      case WailPackage.PROTECT_LOCATION__XAXIS:
         return getXAxis();
-      case WailPackage.GOA_LOCATION__YAXIS:
+      case WailPackage.PROTECT_LOCATION__YAXIS:
         return getYAxis();
-      case WailPackage.GOA_LOCATION__LOC_VALUE:
+      case WailPackage.PROTECT_LOCATION__LOC_VALUE:
         return getLocValue();
+      case WailPackage.PROTECT_LOCATION__PROC_RAD:
+        return getProcRad();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -216,14 +263,17 @@ public class GoaLocationImpl extends MinimalEObjectImpl.Container implements Goa
   {
     switch (featureID)
     {
-      case WailPackage.GOA_LOCATION__XAXIS:
+      case WailPackage.PROTECT_LOCATION__XAXIS:
         setXAxis((Integer)newValue);
         return;
-      case WailPackage.GOA_LOCATION__YAXIS:
+      case WailPackage.PROTECT_LOCATION__YAXIS:
         setYAxis((Integer)newValue);
         return;
-      case WailPackage.GOA_LOCATION__LOC_VALUE:
+      case WailPackage.PROTECT_LOCATION__LOC_VALUE:
         setLocValue((Integer)newValue);
+        return;
+      case WailPackage.PROTECT_LOCATION__PROC_RAD:
+        setProcRad((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -239,14 +289,17 @@ public class GoaLocationImpl extends MinimalEObjectImpl.Container implements Goa
   {
     switch (featureID)
     {
-      case WailPackage.GOA_LOCATION__XAXIS:
+      case WailPackage.PROTECT_LOCATION__XAXIS:
         setXAxis(XAXIS_EDEFAULT);
         return;
-      case WailPackage.GOA_LOCATION__YAXIS:
+      case WailPackage.PROTECT_LOCATION__YAXIS:
         setYAxis(YAXIS_EDEFAULT);
         return;
-      case WailPackage.GOA_LOCATION__LOC_VALUE:
+      case WailPackage.PROTECT_LOCATION__LOC_VALUE:
         setLocValue(LOC_VALUE_EDEFAULT);
+        return;
+      case WailPackage.PROTECT_LOCATION__PROC_RAD:
+        setProcRad(PROC_RAD_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -262,12 +315,14 @@ public class GoaLocationImpl extends MinimalEObjectImpl.Container implements Goa
   {
     switch (featureID)
     {
-      case WailPackage.GOA_LOCATION__XAXIS:
+      case WailPackage.PROTECT_LOCATION__XAXIS:
         return xAxis != XAXIS_EDEFAULT;
-      case WailPackage.GOA_LOCATION__YAXIS:
+      case WailPackage.PROTECT_LOCATION__YAXIS:
         return yAxis != YAXIS_EDEFAULT;
-      case WailPackage.GOA_LOCATION__LOC_VALUE:
+      case WailPackage.PROTECT_LOCATION__LOC_VALUE:
         return locValue != LOC_VALUE_EDEFAULT;
+      case WailPackage.PROTECT_LOCATION__PROC_RAD:
+        return procRad != PROC_RAD_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -289,8 +344,10 @@ public class GoaLocationImpl extends MinimalEObjectImpl.Container implements Goa
     result.append(yAxis);
     result.append(", locValue: ");
     result.append(locValue);
+    result.append(", procRad: ");
+    result.append(procRad);
     result.append(')');
     return result.toString();
   }
 
-} //GoaLocationImpl
+} //ProtectLocationImpl

@@ -22,9 +22,10 @@ import org.xtext.wesnoth.wail.Defualt_CA;
 import org.xtext.wesnoth.wail.Fragment;
 import org.xtext.wesnoth.wail.GoaLocation;
 import org.xtext.wesnoth.wail.Goal;
+import org.xtext.wesnoth.wail.ProtectLeader;
+import org.xtext.wesnoth.wail.ProtectLocation;
 import org.xtext.wesnoth.wail.Rule;
 import org.xtext.wesnoth.wail.UnitEquals;
-import org.xtext.wesnoth.wail.whenRules;
 
 /**
  * Generates code from your model files on save.
@@ -670,13 +671,8 @@ public class WailGenerator extends AbstractGenerator {
     _builder.append("[goal] ");
     _builder.newLine();
     _builder.append("\t\t");
-    CharSequence _compile = this.compile(x.getGoal());
-    _builder.append(_compile, "\t\t");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t");
-    _builder.append("value=");
-    int _locValue = x.getLocValue();
-    _builder.append(_locValue, "\t\t");
+    CharSequence _resolve = this.resolve(x.getGoal());
+    _builder.append(_resolve, "\t\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("[/goal]");
@@ -686,7 +682,7 @@ public class WailGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  public CharSequence compile(final GoaLocation x) {
+  protected CharSequence _resolve(final GoaLocation x) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("name=target_location");
     _builder.newLine();
@@ -700,20 +696,84 @@ public class WailGenerator extends AbstractGenerator {
     int _yAxis = x.getYAxis();
     _builder.append(_yAxis, "\t");
     _builder.newLineIfNotEmpty();
-    _builder.append("[/criteria]\t\t");
+    _builder.append("[/criteria]");
     _builder.newLine();
+    _builder.append("value=");
+    int _locValue = x.getLocValue();
+    _builder.append(_locValue);
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  public CharSequence resolve(final whenRules x) {
+  protected CharSequence _resolve(final ProtectLocation x) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("name=protect_location");
+    _builder.newLine();
+    _builder.append("[criteria]");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("x,y=");
+    int _xAxis = x.getXAxis();
+    _builder.append(_xAxis, "\t");
+    _builder.append(",");
+    int _yAxis = x.getYAxis();
+    _builder.append(_yAxis, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("[/criteria]");
+    _builder.newLine();
+    _builder.append("protect_radius=");
+    int _procRad = x.getProcRad();
+    _builder.append(_procRad);
+    _builder.newLineIfNotEmpty();
+    _builder.append("value=");
+    int _locValue = x.getLocValue();
+    _builder.append(_locValue);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _resolve(final ProtectLeader x) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("name=protect_location");
+    _builder.newLine();
+    _builder.append("[criteria]");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("side=");
+    int _procSide = x.getProcSide();
+    _builder.append(_procSide, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("canrecruit=yes");
+    _builder.newLine();
+    _builder.append("[/criteria]");
+    _builder.newLine();
+    _builder.append("protect_radius=");
+    int _protectionRadius = x.getProtectionRadius();
+    _builder.append(_protectionRadius);
+    _builder.newLineIfNotEmpty();
+    _builder.append("value=");
+    int _locationValue = x.getLocationValue();
+    _builder.append(_locationValue);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence resolve(final EObject x) {
     if (x instanceof AtLocation) {
       return _resolve((AtLocation)x);
     } else if (x instanceof Baseline) {
       return _resolve((Baseline)x);
     } else if (x instanceof Damage) {
       return _resolve((Damage)x);
+    } else if (x instanceof ProtectLeader) {
+      return _resolve((ProtectLeader)x);
+    } else if (x instanceof ProtectLocation) {
+      return _resolve((ProtectLocation)x);
     } else if (x instanceof UnitEquals) {
       return _resolve((UnitEquals)x);
+    } else if (x instanceof GoaLocation) {
+      return _resolve((GoaLocation)x);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(x).toString());

@@ -37,11 +37,34 @@
     </genClasses>
     <genClasses ecoreClass="Wail.ecore#//Goal">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wail.ecore#//Goal/goal"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//Goal/locValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Wail.ecore#//ProtectLeader">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectLeader/locationValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectLeader/protectionRadius"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectLeader/procSide"/>
+    </genClasses>
+    <genClasses ecoreClass="Wail.ecore#//ProtectUnitID">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectUnitID/locationValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectUnitID/protectionRadius"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectUnitID/procSide"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectUnitID/procID"/>
+    </genClasses>
+    <genClasses ecoreClass="Wail.ecore#//ProtectUnitType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectUnitType/locationValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectUnitType/protectionRadius"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectUnitType/procSide"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectUnitType/procType"/>
+    </genClasses>
+    <genClasses ecoreClass="Wail.ecore#//ProtectLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectLocation/XAxis"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectLocation/YAxis"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectLocation/locValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//ProtectLocation/procRad"/>
     </genClasses>
     <genClasses ecoreClass="Wail.ecore#//GoaLocation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//GoaLocation/XAxis"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//GoaLocation/YAxis"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//GoaLocation/locValue"/>
     </genClasses>
     <genClasses ecoreClass="Wail.ecore#//Defualt_CA">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//Defualt_CA/caType"/>
