@@ -19,6 +19,7 @@ import org.xtext.wesnoth.wail.Goal
 import org.xtext.wesnoth.wail.GoaLocation
 import org.xtext.wesnoth.wail.ProtectLocation
 import org.xtext.wesnoth.wail.ProtectLeader
+import java.io.File
 
 /**
  * Generates code from your model files on save.
@@ -176,7 +177,7 @@ class WailGenerator extends AbstractGenerator {
 			«ELSE»
 			max_score=192000
 			«ENDIF»
-			location="ai/lua/retreat.lua"
+			location="ai«File.separator»lua«File.separator»retreat.lua"
 		«ELSEIF ca.caType == "combat"»
 			id=combat
 			engine=cpp
@@ -203,7 +204,7 @@ class WailGenerator extends AbstractGenerator {
 			id=high_xp_attack
 			engine=lua
 			name=ai_default_rca::high_xp_attack
-			location="ai/lua/ca_high_xp_attack.lua"
+			location="ai«File.separator»lua«File.separator»ca_high_xp_attack.lua"
 			«IF ca.cost != 0»
 			max_score=«ca.cost»
 			«ELSE»

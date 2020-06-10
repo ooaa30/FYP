@@ -5,6 +5,7 @@ package org.xtext.wesnoth.generator;
 
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
+import java.io.File;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -404,8 +405,12 @@ public class WailGenerator extends AbstractGenerator {
               _builder.newLine();
             }
           }
-          _builder.append("location=\"ai/lua/retreat.lua\"");
-          _builder.newLine();
+          _builder.append("location=\"ai");
+          _builder.append(File.separator);
+          _builder.append("lua");
+          _builder.append(File.separator);
+          _builder.append("retreat.lua\"");
+          _builder.newLineIfNotEmpty();
         } else {
           String _caType_2 = ca.getCaType();
           boolean _equals_2 = Objects.equal(_caType_2, "combat");
@@ -474,8 +479,12 @@ public class WailGenerator extends AbstractGenerator {
                 _builder.newLine();
                 _builder.append("name=ai_default_rca::high_xp_attack");
                 _builder.newLine();
-                _builder.append("location=\"ai/lua/ca_high_xp_attack.lua\"");
-                _builder.newLine();
+                _builder.append("location=\"ai");
+                _builder.append(File.separator);
+                _builder.append("lua");
+                _builder.append(File.separator);
+                _builder.append("ca_high_xp_attack.lua\"");
+                _builder.newLineIfNotEmpty();
                 {
                   int _cost_11 = ca.getCost();
                   boolean _notEquals_4 = (_cost_11 != 0);
