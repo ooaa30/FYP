@@ -3,6 +3,8 @@
  */
 package org.xtext.wesnoth.wail;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,25 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface Conditional extends EObject
 {
   /**
-   * Returns the value of the '<em><b>X</b></em>' containment reference.
+   * Returns the value of the '<em><b>X</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.wesnoth.wail.whenRules}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>X</em>' containment reference.
-   * @see #setX(whenRules)
+   * @return the value of the '<em>X</em>' containment reference list.
    * @see org.xtext.wesnoth.wail.WailPackage#getConditional_X()
    * @model containment="true"
    * @generated
    */
-  whenRules getX();
-
-  /**
-   * Sets the value of the '{@link org.xtext.wesnoth.wail.Conditional#getX <em>X</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>X</em>' containment reference.
-   * @see #getX()
-   * @generated
-   */
-  void setX(whenRules value);
+  EList<whenRules> getX();
 
 } // Conditional

@@ -179,7 +179,7 @@ public interface WailPackage extends EPackage
   int CONDITIONAL = 3;
 
   /**
-   * The feature id for the '<em><b>X</b></em>' containment reference.
+   * The feature id for the '<em><b>X</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -830,10 +830,10 @@ public interface WailPackage extends EPackage
   EClass getConditional();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.wesnoth.wail.Conditional#getX <em>X</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.wesnoth.wail.Conditional#getX <em>X</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>X</em>'.
+   * @return the meta object for the containment reference list '<em>X</em>'.
    * @see org.xtext.wesnoth.wail.Conditional#getX()
    * @see #getConditional()
    * @generated
@@ -1379,7 +1379,7 @@ public interface WailPackage extends EPackage
     EClass CONDITIONAL = eINSTANCE.getConditional();
 
     /**
-     * The meta object literal for the '<em><b>X</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>X</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

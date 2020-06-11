@@ -146,16 +146,10 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Conditional returns Conditional
 	 *
 	 * Constraint:
-	 *     x=whenRules
+	 *     x+=whenRules
 	 */
 	protected void sequence_Conditional(ISerializationContext context, Conditional semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.CONDITIONAL__X) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.CONDITIONAL__X));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConditionalAccess().getXWhenRulesParserRuleCall_1_0(), semanticObject.getX());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

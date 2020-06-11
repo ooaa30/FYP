@@ -684,7 +684,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
             					if (current==null) {
             						current = createModelElementForParent(grammarAccess.getConditionalRule());
             					}
-            					set(
+            					add(
             						current,
             						"x",
             						lv_x_1_0,

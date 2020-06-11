@@ -139,6 +139,8 @@ class WailGenerator extends AbstractGenerator {
 			«frag.compile»
 			«ENDFOR»
 			
+			
+			
 			«FOR goal:rule.goals»
 			«goal.compile»
 			«ENDFOR»
@@ -248,12 +250,12 @@ class WailGenerator extends AbstractGenerator {
 			«ENDIF»
 		«ENDIF»
 		'''
-		def compile(Conditional con)'''
-		«IF !(con.x instanceof org.xtext.wesnoth.wail.Baseline)»		
+		def compile(Conditional con)'''	
 		[filter_own]
-			«con.x.resolve»
+			«FOR conFrag : con.x»
+			«conFrag.resolve»
+			«ENDFOR»
 		[/filter_own] 
-		«ENDIF»
 		'''
 
 		def dispatch resolve(AtLocation x)'''

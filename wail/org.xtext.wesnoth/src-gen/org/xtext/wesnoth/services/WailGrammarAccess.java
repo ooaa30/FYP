@@ -133,22 +133,17 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cXAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cXWhenRulesParserRuleCall_1_0 = (RuleCall)cXAssignment_1.eContents().get(0);
 		
-		//// filters don't seem to work in the [AI} tag, may need to make the code generation subtractive rather than additive
-		//// could use [Modify_AI] tag to do this, need investigation
-		//// might be worth deleting all existing candidate actions then adding them back in via the use of macros
-		//// can use filter own for unit types 100%, may be able to filter other things too
-		//// will need to add them in from scratch with wml, no extra code but need to refferenc them again
 		//Conditional:
-		//	'when:' x=whenRules;
+		//	'when:' x+=whenRules;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'when:' x=whenRules
+		//'when:' x+=whenRules
 		public Group getGroup() { return cGroup; }
 		
 		//'when:'
 		public Keyword getWhenKeyword_0() { return cWhenKeyword_0; }
 		
-		//x=whenRules
+		//x+=whenRules
 		public Assignment getXAssignment_1() { return cXAssignment_1; }
 		
 		//whenRules
@@ -726,17 +721,6 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getLocValueINTTerminalRuleCall_7_0() { return cLocValueINTTerminalRuleCall_7_0; }
 	}
-	public class New_CAElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.New_CA");
-		private final Keyword cNewCAKeyword = (Keyword)rule.eContents().get(1);
-		
-		//New_CA:
-		//	'newCA';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'newCA'
-		public Keyword getNewCAKeyword() { return cNewCAKeyword; }
-	}
 	public class Defualt_CAElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.Defualt_CA");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -826,7 +810,6 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	private final ProtectUnitTypeElements pProtectUnitType;
 	private final ProtectLocationElements pProtectLocation;
 	private final GoaLocationElements pGoaLocation;
-	private final New_CAElements pNew_CA;
 	private final Defualt_CAElements pDefualt_CA;
 	
 	private final Grammar grammar;
@@ -854,7 +837,6 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		this.pProtectUnitType = new ProtectUnitTypeElements();
 		this.pProtectLocation = new ProtectLocationElements();
 		this.pGoaLocation = new GoaLocationElements();
-		this.pNew_CA = new New_CAElements();
 		this.pDefualt_CA = new Defualt_CAElements();
 	}
 	
@@ -922,13 +904,8 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		return getFragmentAccess().getRule();
 	}
 	
-	//// filters don't seem to work in the [AI} tag, may need to make the code generation subtractive rather than additive
-	//// could use [Modify_AI] tag to do this, need investigation
-	//// might be worth deleting all existing candidate actions then adding them back in via the use of macros
-	//// can use filter own for unit types 100%, may be able to filter other things too
-	//// will need to add them in from scratch with wml, no extra code but need to refferenc them again
 	//Conditional:
-	//	'when:' x=whenRules;
+	//	'when:' x+=whenRules;
 	public ConditionalElements getConditionalAccess() {
 		return pConditional;
 	}
@@ -1057,16 +1034,6 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getGoaLocationRule() {
 		return getGoaLocationAccess().getRule();
-	}
-	
-	//New_CA:
-	//	'newCA';
-	public New_CAElements getNew_CAAccess() {
-		return pNew_CA;
-	}
-	
-	public ParserRule getNew_CARule() {
-		return getNew_CAAccess().getRule();
 	}
 	
 	//Defualt_CA:

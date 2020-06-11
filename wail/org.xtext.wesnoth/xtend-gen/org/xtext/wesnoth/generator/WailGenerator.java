@@ -307,6 +307,8 @@ public class WailGenerator extends AbstractGenerator {
       }
     }
     _builder.newLine();
+    _builder.newLine();
+    _builder.newLine();
     {
       EList<Goal> _goals = rule.getGoals();
       for(final Goal goal : _goals) {
@@ -603,20 +605,19 @@ public class WailGenerator extends AbstractGenerator {
   
   public CharSequence compile(final Conditional con) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("[filter_own]");
+    _builder.newLine();
     {
-      whenRules _x = con.getX();
-      boolean _not = (!(_x instanceof Baseline));
-      if (_not) {
-        _builder.append("[filter_own]");
-        _builder.newLine();
+      EList<whenRules> _x = con.getX();
+      for(final whenRules conFrag : _x) {
         _builder.append("\t");
-        CharSequence _resolve = this.resolve(con.getX());
+        CharSequence _resolve = this.resolve(conFrag);
         _builder.append(_resolve, "\t");
         _builder.newLineIfNotEmpty();
-        _builder.append("[/filter_own] ");
-        _builder.newLine();
       }
     }
+    _builder.append("[/filter_own] ");
+    _builder.newLine();
     return _builder;
   }
   

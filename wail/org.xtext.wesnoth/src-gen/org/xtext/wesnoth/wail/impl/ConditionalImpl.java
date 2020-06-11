@@ -3,14 +3,19 @@
  */
 package org.xtext.wesnoth.wail.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.wesnoth.wail.Conditional;
 import org.xtext.wesnoth.wail.WailPackage;
@@ -32,14 +37,14 @@ import org.xtext.wesnoth.wail.whenRules;
 public class ConditionalImpl extends MinimalEObjectImpl.Container implements Conditional
 {
   /**
-   * The cached value of the '{@link #getX() <em>X</em>}' containment reference.
+   * The cached value of the '{@link #getX() <em>X</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getX()
    * @generated
    * @ordered
    */
-  protected whenRules x;
+  protected EList<whenRules> x;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,48 +73,13 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
    * @generated
    */
   @Override
-  public whenRules getX()
+  public EList<whenRules> getX()
   {
+    if (x == null)
+    {
+      x = new EObjectContainmentEList<whenRules>(whenRules.class, this, WailPackage.CONDITIONAL__X);
+    }
     return x;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetX(whenRules newX, NotificationChain msgs)
-  {
-    whenRules oldX = x;
-    x = newX;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WailPackage.CONDITIONAL__X, oldX, newX);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setX(whenRules newX)
-  {
-    if (newX != x)
-    {
-      NotificationChain msgs = null;
-      if (x != null)
-        msgs = ((InternalEObject)x).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WailPackage.CONDITIONAL__X, null, msgs);
-      if (newX != null)
-        msgs = ((InternalEObject)newX).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WailPackage.CONDITIONAL__X, null, msgs);
-      msgs = basicSetX(newX, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, WailPackage.CONDITIONAL__X, newX, newX));
   }
 
   /**
@@ -123,7 +93,7 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
     switch (featureID)
     {
       case WailPackage.CONDITIONAL__X:
-        return basicSetX(null, msgs);
+        return ((InternalEList<?>)getX()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -149,13 +119,15 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case WailPackage.CONDITIONAL__X:
-        setX((whenRules)newValue);
+        getX().clear();
+        getX().addAll((Collection<? extends whenRules>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -172,7 +144,7 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
     switch (featureID)
     {
       case WailPackage.CONDITIONAL__X:
-        setX((whenRules)null);
+        getX().clear();
         return;
     }
     super.eUnset(featureID);
@@ -189,7 +161,7 @@ public class ConditionalImpl extends MinimalEObjectImpl.Container implements Con
     switch (featureID)
     {
       case WailPackage.CONDITIONAL__X:
-        return x != null;
+        return x != null && !x.isEmpty();
     }
     return super.eIsSet(featureID);
   }
