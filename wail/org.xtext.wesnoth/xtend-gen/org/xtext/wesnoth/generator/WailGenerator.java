@@ -30,6 +30,7 @@ import org.xtext.wesnoth.wail.ProtectUnitID;
 import org.xtext.wesnoth.wail.ProtectUnitType;
 import org.xtext.wesnoth.wail.Rule;
 import org.xtext.wesnoth.wail.UnitEquals;
+import org.xtext.wesnoth.wail.whenRules;
 
 /**
  * Generates code from your model files on save.
@@ -602,14 +603,20 @@ public class WailGenerator extends AbstractGenerator {
   
   public CharSequence compile(final Conditional con) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("[filter_own]");
-    _builder.newLine();
-    _builder.append("\t");
-    CharSequence _resolve = this.resolve(con.getX());
-    _builder.append(_resolve, "\t");
-    _builder.newLineIfNotEmpty();
-    _builder.append("[/filter_own] ");
-    _builder.newLine();
+    {
+      whenRules _x = con.getX();
+      boolean _not = (!(_x instanceof Baseline));
+      if (_not) {
+        _builder.append("[filter_own]");
+        _builder.newLine();
+        _builder.append("\t");
+        CharSequence _resolve = this.resolve(con.getX());
+        _builder.append(_resolve, "\t");
+        _builder.newLineIfNotEmpty();
+        _builder.append("[/filter_own] ");
+        _builder.newLine();
+      }
+    }
     return _builder;
   }
   

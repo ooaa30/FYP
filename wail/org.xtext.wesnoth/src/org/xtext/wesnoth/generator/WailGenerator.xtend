@@ -249,9 +249,11 @@ class WailGenerator extends AbstractGenerator {
 		«ENDIF»
 		'''
 		def compile(Conditional con)'''
+		«IF !(con.x instanceof org.xtext.wesnoth.wail.Baseline)»		
 		[filter_own]
 			«con.x.resolve»
 		[/filter_own] 
+		«ENDIF»
 		'''
 
 		def dispatch resolve(AtLocation x)'''
