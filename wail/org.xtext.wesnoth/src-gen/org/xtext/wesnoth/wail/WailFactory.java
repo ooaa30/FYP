@@ -69,6 +69,15 @@ public interface WailFactory extends EFactory
   whenRules createwhenRules();
 
   /**
+   * Returns a new object of class '<em>ID Equals</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>ID Equals</em>'.
+   * @generated
+   */
+  IDEquals createIDEquals();
+
+  /**
    * Returns a new object of class '<em>Baseline</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

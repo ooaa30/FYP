@@ -216,6 +216,34 @@ public interface WailPackage extends EPackage
   int WHEN_RULES_FEATURE_COUNT = 0;
 
   /**
+   * The meta object id for the '{@link org.xtext.wesnoth.wail.impl.IDEqualsImpl <em>ID Equals</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.wesnoth.wail.impl.IDEqualsImpl
+   * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getIDEquals()
+   * @generated
+   */
+  int ID_EQUALS = 5;
+
+  /**
+   * The feature id for the '<em><b>Unit ID</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ID_EQUALS__UNIT_ID = WHEN_RULES_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>ID Equals</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ID_EQUALS_FEATURE_COUNT = WHEN_RULES_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.wesnoth.wail.impl.BaselineImpl <em>Baseline</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -223,7 +251,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getBaseline()
    * @generated
    */
-  int BASELINE = 5;
+  int BASELINE = 6;
 
   /**
    * The feature id for the '<em><b>Always</b></em>' attribute.
@@ -251,7 +279,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getDamage()
    * @generated
    */
-  int DAMAGE = 6;
+  int DAMAGE = 7;
 
   /**
    * The feature id for the '<em><b>Health</b></em>' attribute.
@@ -279,7 +307,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getAtLocation()
    * @generated
    */
-  int AT_LOCATION = 7;
+  int AT_LOCATION = 8;
 
   /**
    * The feature id for the '<em><b>XAxis</b></em>' attribute.
@@ -316,7 +344,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getUnitEquals()
    * @generated
    */
-  int UNIT_EQUALS = 8;
+  int UNIT_EQUALS = 9;
 
   /**
    * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -344,7 +372,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getGoal()
    * @generated
    */
-  int GOAL = 9;
+  int GOAL = 10;
 
   /**
    * The feature id for the '<em><b>Goal</b></em>' containment reference.
@@ -372,7 +400,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectLeader()
    * @generated
    */
-  int PROTECT_LEADER = 10;
+  int PROTECT_LEADER = 11;
 
   /**
    * The feature id for the '<em><b>Goal</b></em>' containment reference.
@@ -427,7 +455,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectUnitID()
    * @generated
    */
-  int PROTECT_UNIT_ID = 11;
+  int PROTECT_UNIT_ID = 12;
 
   /**
    * The feature id for the '<em><b>Goal</b></em>' containment reference.
@@ -491,7 +519,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectUnitType()
    * @generated
    */
-  int PROTECT_UNIT_TYPE = 12;
+  int PROTECT_UNIT_TYPE = 13;
 
   /**
    * The feature id for the '<em><b>Goal</b></em>' containment reference.
@@ -555,7 +583,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectLocation()
    * @generated
    */
-  int PROTECT_LOCATION = 13;
+  int PROTECT_LOCATION = 14;
 
   /**
    * The feature id for the '<em><b>Goal</b></em>' containment reference.
@@ -619,7 +647,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getGoaLocation()
    * @generated
    */
-  int GOA_LOCATION = 14;
+  int GOA_LOCATION = 15;
 
   /**
    * The feature id for the '<em><b>XAxis</b></em>' attribute.
@@ -665,7 +693,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getDefualt_CA()
    * @generated
    */
-  int DEFUALT_CA = 15;
+  int DEFUALT_CA = 16;
 
   /**
    * The feature id for the '<em><b>Ca Type</b></em>' attribute.
@@ -821,6 +849,27 @@ public interface WailPackage extends EPackage
    * @generated
    */
   EClass getwhenRules();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.wesnoth.wail.IDEquals <em>ID Equals</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>ID Equals</em>'.
+   * @see org.xtext.wesnoth.wail.IDEquals
+   * @generated
+   */
+  EClass getIDEquals();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.IDEquals#getUnitID <em>Unit ID</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unit ID</em>'.
+   * @see org.xtext.wesnoth.wail.IDEquals#getUnitID()
+   * @see #getIDEquals()
+   * @generated
+   */
+  EAttribute getIDEquals_UnitID();
 
   /**
    * Returns the meta object for class '{@link org.xtext.wesnoth.wail.Baseline <em>Baseline</em>}'.
@@ -1346,6 +1395,24 @@ public interface WailPackage extends EPackage
      * @generated
      */
     EClass WHEN_RULES = eINSTANCE.getwhenRules();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.wesnoth.wail.impl.IDEqualsImpl <em>ID Equals</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.wesnoth.wail.impl.IDEqualsImpl
+     * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getIDEquals()
+     * @generated
+     */
+    EClass ID_EQUALS = eINSTANCE.getIDEquals();
+
+    /**
+     * The meta object literal for the '<em><b>Unit ID</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ID_EQUALS__UNIT_ID = eINSTANCE.getIDEquals_UnitID();
 
     /**
      * The meta object literal for the '{@link org.xtext.wesnoth.wail.impl.BaselineImpl <em>Baseline</em>}' class.

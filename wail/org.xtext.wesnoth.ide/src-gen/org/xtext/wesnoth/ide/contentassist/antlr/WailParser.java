@@ -37,6 +37,7 @@ public class WailParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
 			builder.put(grammarAccess.getFragmentAccess().getGroup(), "rule__Fragment__Group__0");
 			builder.put(grammarAccess.getConditionalAccess().getGroup(), "rule__Conditional__Group__0");
+			builder.put(grammarAccess.getIDEqualsAccess().getGroup(), "rule__IDEquals__Group__0");
 			builder.put(grammarAccess.getDamageAccess().getGroup(), "rule__Damage__Group__0");
 			builder.put(grammarAccess.getAtLocationAccess().getGroup(), "rule__AtLocation__Group__0");
 			builder.put(grammarAccess.getUnitEqualsAccess().getGroup(), "rule__UnitEquals__Group__0");
@@ -55,6 +56,7 @@ public class WailParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFragmentAccess().getConditionAssignment_0(), "rule__Fragment__ConditionAssignment_0");
 			builder.put(grammarAccess.getFragmentAccess().getDefualt_casAssignment_2(), "rule__Fragment__Defualt_casAssignment_2");
 			builder.put(grammarAccess.getConditionalAccess().getXAssignment_1(), "rule__Conditional__XAssignment_1");
+			builder.put(grammarAccess.getIDEqualsAccess().getUnitIDAssignment_2(), "rule__IDEquals__UnitIDAssignment_2");
 			builder.put(grammarAccess.getBaselineAccess().getAlwaysAssignment(), "rule__Baseline__AlwaysAssignment");
 			builder.put(grammarAccess.getDamageAccess().getHealthAssignment_2(), "rule__Damage__HealthAssignment_2");
 			builder.put(grammarAccess.getAtLocationAccess().getXAxisAssignment_1(), "rule__AtLocation__XAxisAssignment_1");

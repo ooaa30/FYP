@@ -22,6 +22,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wail.ecore#//Conditional/x"/>
     </genClasses>
     <genClasses ecoreClass="Wail.ecore#//whenRules"/>
+    <genClasses ecoreClass="Wail.ecore#//IDEquals">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//IDEquals/unitID"/>
+    </genClasses>
     <genClasses ecoreClass="Wail.ecore#//Baseline">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//Baseline/always"/>
     </genClasses>

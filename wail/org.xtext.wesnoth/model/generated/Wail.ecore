@@ -23,6 +23,9 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="whenRules"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IDEquals" eSuperTypes="#//whenRules">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unitID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Baseline" eSuperTypes="#//whenRules">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="always" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

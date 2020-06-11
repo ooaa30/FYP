@@ -161,12 +161,13 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAtLocationParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cDamageParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cBaselineParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cIDEqualsParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//whenRules:
-		//	UnitEquals | AtLocation | Damage | Baseline;
+		//	UnitEquals | AtLocation | Damage | Baseline | IDEquals;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//UnitEquals | AtLocation | Damage | Baseline
+		//UnitEquals | AtLocation | Damage | Baseline | IDEquals
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//UnitEquals
@@ -180,6 +181,36 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Baseline
 		public RuleCall getBaselineParserRuleCall_3() { return cBaselineParserRuleCall_3; }
+		
+		//IDEquals
+		public RuleCall getIDEqualsParserRuleCall_4() { return cIDEqualsParserRuleCall_4; }
+	}
+	public class IDEqualsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.IDEquals");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cIDKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cUnitIDAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cUnitIDSTRINGTerminalRuleCall_2_0 = (RuleCall)cUnitIDAssignment_2.eContents().get(0);
+		
+		//IDEquals:
+		//	'ID' 'is' unitID=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'ID' 'is' unitID=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//'ID'
+		public Keyword getIDKeyword_0() { return cIDKeyword_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
+		
+		//unitID=STRING
+		public Assignment getUnitIDAssignment_2() { return cUnitIDAssignment_2; }
+		
+		//STRING
+		public RuleCall getUnitIDSTRINGTerminalRuleCall_2_0() { return cUnitIDSTRINGTerminalRuleCall_2_0; }
 	}
 	public class BaselineElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.Baseline");
@@ -784,6 +815,7 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	private final FragmentElements pFragment;
 	private final ConditionalElements pConditional;
 	private final WhenRulesElements pWhenRules;
+	private final IDEqualsElements pIDEquals;
 	private final BaselineElements pBaseline;
 	private final DamageElements pDamage;
 	private final AtLocationElements pAtLocation;
@@ -811,6 +843,7 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		this.pFragment = new FragmentElements();
 		this.pConditional = new ConditionalElements();
 		this.pWhenRules = new WhenRulesElements();
+		this.pIDEquals = new IDEqualsElements();
 		this.pBaseline = new BaselineElements();
 		this.pDamage = new DamageElements();
 		this.pAtLocation = new AtLocationElements();
@@ -905,13 +938,23 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//whenRules:
-	//	UnitEquals | AtLocation | Damage | Baseline;
+	//	UnitEquals | AtLocation | Damage | Baseline | IDEquals;
 	public WhenRulesElements getWhenRulesAccess() {
 		return pWhenRules;
 	}
 	
 	public ParserRule getWhenRulesRule() {
 		return getWhenRulesAccess().getRule();
+	}
+	
+	//IDEquals:
+	//	'ID' 'is' unitID=STRING;
+	public IDEqualsElements getIDEqualsAccess() {
+		return pIDEquals;
+	}
+	
+	public ParserRule getIDEqualsRule() {
+		return getIDEqualsAccess().getRule();
 	}
 	
 	//Baseline:

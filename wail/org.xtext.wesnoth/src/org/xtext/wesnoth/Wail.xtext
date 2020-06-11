@@ -30,7 +30,11 @@ Conditional:
 ;
 
 whenRules:
-	UnitEquals|AtLocation|Damage|Baseline
+	UnitEquals|AtLocation|Damage|Baseline|IDEquals
+;
+
+IDEquals:
+	'ID' 'is' unitID=STRING
 ;
 
 Baseline:
@@ -74,9 +78,6 @@ GoaLocation:
 	'attack' 'x' XAxis=INT 'y' YAxis=INT 'value' 'is' locValue=INT 
 ;
 
-New_CA:
-	'newCA' 
-;
 
 Defualt_CA:
 	caType = ("movement" |"heal"| "retreat" | "combat" | "recruit" | "combat_value_targets" | "capture_villages"|"leader_to_keep")

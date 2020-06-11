@@ -341,6 +341,60 @@ rulewhenRules returns [EObject current=null]
 			$current = $this_Baseline_3.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getWhenRulesAccess().getIDEqualsParserRuleCall_4());
+		}
+		this_IDEquals_4=ruleIDEquals
+		{
+			$current = $this_IDEquals_4.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleIDEquals
+entryRuleIDEquals returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getIDEqualsRule()); }
+	iv_ruleIDEquals=ruleIDEquals
+	{ $current=$iv_ruleIDEquals.current; }
+	EOF;
+
+// Rule IDEquals
+ruleIDEquals returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='ID'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getIDEqualsAccess().getIDKeyword_0());
+		}
+		otherlv_1='is'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getIDEqualsAccess().getIsKeyword_1());
+		}
+		(
+			(
+				lv_unitID_2_0=RULE_STRING
+				{
+					newLeafNode(lv_unitID_2_0, grammarAccess.getIDEqualsAccess().getUnitIDSTRINGTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getIDEqualsRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"unitID",
+						lv_unitID_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 	)
 ;
 

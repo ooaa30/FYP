@@ -23,6 +23,7 @@ import org.xtext.wesnoth.wail.Defualt_CA;
 import org.xtext.wesnoth.wail.Fragment;
 import org.xtext.wesnoth.wail.GoaLocation;
 import org.xtext.wesnoth.wail.Goal;
+import org.xtext.wesnoth.wail.IDEquals;
 import org.xtext.wesnoth.wail.Model;
 import org.xtext.wesnoth.wail.ProtectLeader;
 import org.xtext.wesnoth.wail.ProtectLocation;
@@ -69,6 +70,9 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case WailPackage.GOAL:
 				sequence_Goal(context, (Goal) semanticObject); 
+				return; 
+			case WailPackage.ID_EQUALS:
+				sequence_IDEquals(context, (IDEquals) semanticObject); 
 				return; 
 			case WailPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -248,6 +252,25 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getGoalAccess().getGoalGoaLocationParserRuleCall_0_2_0(), semanticObject.getGoal());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     whenRules returns IDEquals
+	 *     IDEquals returns IDEquals
+	 *
+	 * Constraint:
+	 *     unitID=STRING
+	 */
+	protected void sequence_IDEquals(ISerializationContext context, IDEquals semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.ID_EQUALS__UNIT_ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.ID_EQUALS__UNIT_ID));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getIDEqualsAccess().getUnitIDSTRINGTerminalRuleCall_2_0(), semanticObject.getUnitID());
 		feeder.finish();
 	}
 	

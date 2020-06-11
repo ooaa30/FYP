@@ -18,6 +18,7 @@ import org.xtext.wesnoth.wail.Defualt_CA;
 import org.xtext.wesnoth.wail.Fragment;
 import org.xtext.wesnoth.wail.GoaLocation;
 import org.xtext.wesnoth.wail.Goal;
+import org.xtext.wesnoth.wail.IDEquals;
 import org.xtext.wesnoth.wail.Model;
 import org.xtext.wesnoth.wail.ProtectLeader;
 import org.xtext.wesnoth.wail.ProtectLocation;
@@ -71,6 +72,13 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
    * @generated
    */
   private EClass whenRulesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass idEqualsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -342,6 +350,28 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
   public EClass getwhenRules()
   {
     return whenRulesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getIDEquals()
+  {
+    return idEqualsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getIDEquals_UnitID()
+  {
+    return (EAttribute)idEqualsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -799,6 +829,9 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
 
     whenRulesEClass = createEClass(WHEN_RULES);
 
+    idEqualsEClass = createEClass(ID_EQUALS);
+    createEAttribute(idEqualsEClass, ID_EQUALS__UNIT_ID);
+
     baselineEClass = createEClass(BASELINE);
     createEAttribute(baselineEClass, BASELINE__ALWAYS);
 
@@ -877,6 +910,7 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    idEqualsEClass.getESuperTypes().add(this.getwhenRules());
     baselineEClass.getESuperTypes().add(this.getwhenRules());
     damageEClass.getESuperTypes().add(this.getwhenRules());
     atLocationEClass.getESuperTypes().add(this.getwhenRules());
@@ -903,6 +937,9 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
     initEReference(getConditional_X(), this.getwhenRules(), null, "x", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whenRulesEClass, whenRules.class, "whenRules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(idEqualsEClass, IDEquals.class, "IDEquals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIDEquals_UnitID(), ecorePackage.getEString(), "unitID", null, 0, 1, IDEquals.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(baselineEClass, Baseline.class, "Baseline", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBaseline_Always(), ecorePackage.getEString(), "always", null, 0, 1, Baseline.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

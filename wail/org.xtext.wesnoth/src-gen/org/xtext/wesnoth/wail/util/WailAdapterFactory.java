@@ -101,6 +101,11 @@ public class WailAdapterFactory extends AdapterFactoryImpl
         return createwhenRulesAdapter();
       }
       @Override
+      public Adapter caseIDEquals(IDEquals object)
+      {
+        return createIDEqualsAdapter();
+      }
+      @Override
       public Adapter caseBaseline(Baseline object)
       {
         return createBaselineAdapter();
@@ -248,6 +253,21 @@ public class WailAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createwhenRulesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.wesnoth.wail.IDEquals <em>ID Equals</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.wesnoth.wail.IDEquals
+   * @generated
+   */
+  public Adapter createIDEqualsAdapter()
   {
     return null;
   }

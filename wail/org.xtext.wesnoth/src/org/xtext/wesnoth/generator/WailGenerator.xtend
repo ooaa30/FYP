@@ -22,6 +22,7 @@ import org.xtext.wesnoth.wail.ProtectLeader
 import java.io.File
 import org.xtext.wesnoth.wail.ProtectUnitID
 import org.xtext.wesnoth.wail.ProtectUnitType
+import org.xtext.wesnoth.wail.IDEquals
 
 /**
  * Generates code from your model files on save.
@@ -248,25 +249,24 @@ class WailGenerator extends AbstractGenerator {
 		«ENDIF»
 		'''
 		def compile(Conditional con)'''
-		«con.x.resolve» 
+		[filter_own]
+			«con.x.resolve»
+		[/filter_own] 
 		'''
 
 		def dispatch resolve(AtLocation x)'''
-		[filter_own]
 			x,y=«x.XAxis»,«x.YAxis»
-		[/filter_own}]
 		'''
 		def dispatch resolve(Damage x)'''
-		[filter_own]
 			[filter_wml]
 				hitpoints=<($this_unit.max_hitpoints-«x.health»)
 			[/filter_wml]
-		[/filter_own]
 		'''
 		def dispatch resolve(UnitEquals x)'''
-		[filter_own]
 			type = «x.unit»
-		[/filter_own]
+		'''
+		def dispatch resolve(IDEquals x)'''
+			id = «x.unitID»
 		'''
 		def dispatch resolve(Baseline x)'''
 		'''

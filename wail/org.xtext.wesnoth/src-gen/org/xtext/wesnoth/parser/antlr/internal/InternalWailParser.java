@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalWailParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'rule'", "'{'", "'}'", "'when:'", "'always'", "'health'", "'-'", "'x:'", "'y:'", "'unit'", "'is'", "'goal'", "'protect'", "'leader'", "'value'", "'radius'", "'side'", "'ID'", "'Type'", "'x'", "'y'", "'attack'", "'movement'", "'heal'", "'retreat'", "'combat'", "'recruit'", "'combat_value_targets'", "'capture_villages'", "'leader_to_keep'", "'cost'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_INT", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'rule'", "'{'", "'}'", "'when:'", "'ID'", "'is'", "'always'", "'health'", "'-'", "'x:'", "'y:'", "'unit'", "'goal'", "'protect'", "'leader'", "'value'", "'radius'", "'side'", "'Type'", "'x'", "'y'", "'attack'", "'movement'", "'heal'", "'retreat'", "'combat'", "'recruit'", "'combat_value_targets'", "'capture_villages'", "'leader_to_keep'", "'cost'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -370,7 +370,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( ((LA3_0>=22 && LA3_0<=23)) ) {
+                if ( ((LA3_0>=23 && LA3_0<=24)) ) {
                     alt3=1;
                 }
 
@@ -756,7 +756,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulewhenRules"
-    // InternalWail.g:301:1: rulewhenRules returns [EObject current=null] : (this_UnitEquals_0= ruleUnitEquals | this_AtLocation_1= ruleAtLocation | this_Damage_2= ruleDamage | this_Baseline_3= ruleBaseline ) ;
+    // InternalWail.g:301:1: rulewhenRules returns [EObject current=null] : (this_UnitEquals_0= ruleUnitEquals | this_AtLocation_1= ruleAtLocation | this_Damage_2= ruleDamage | this_Baseline_3= ruleBaseline | this_IDEquals_4= ruleIDEquals ) ;
     public final EObject rulewhenRules() throws RecognitionException {
         EObject current = null;
 
@@ -768,35 +768,42 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
         EObject this_Baseline_3 = null;
 
+        EObject this_IDEquals_4 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalWail.g:307:2: ( (this_UnitEquals_0= ruleUnitEquals | this_AtLocation_1= ruleAtLocation | this_Damage_2= ruleDamage | this_Baseline_3= ruleBaseline ) )
-            // InternalWail.g:308:2: (this_UnitEquals_0= ruleUnitEquals | this_AtLocation_1= ruleAtLocation | this_Damage_2= ruleDamage | this_Baseline_3= ruleBaseline )
+            // InternalWail.g:307:2: ( (this_UnitEquals_0= ruleUnitEquals | this_AtLocation_1= ruleAtLocation | this_Damage_2= ruleDamage | this_Baseline_3= ruleBaseline | this_IDEquals_4= ruleIDEquals ) )
+            // InternalWail.g:308:2: (this_UnitEquals_0= ruleUnitEquals | this_AtLocation_1= ruleAtLocation | this_Damage_2= ruleDamage | this_Baseline_3= ruleBaseline | this_IDEquals_4= ruleIDEquals )
             {
-            // InternalWail.g:308:2: (this_UnitEquals_0= ruleUnitEquals | this_AtLocation_1= ruleAtLocation | this_Damage_2= ruleDamage | this_Baseline_3= ruleBaseline )
-            int alt5=4;
+            // InternalWail.g:308:2: (this_UnitEquals_0= ruleUnitEquals | this_AtLocation_1= ruleAtLocation | this_Damage_2= ruleDamage | this_Baseline_3= ruleBaseline | this_IDEquals_4= ruleIDEquals )
+            int alt5=5;
             switch ( input.LA(1) ) {
-            case 20:
+            case 22:
                 {
                 alt5=1;
                 }
                 break;
-            case 18:
+            case 20:
                 {
                 alt5=2;
                 }
                 break;
-            case 16:
+            case 18:
                 {
                 alt5=3;
                 }
                 break;
-            case 15:
+            case 17:
                 {
                 alt5=4;
+                }
+                break;
+            case 15:
+                {
+                alt5=5;
                 }
                 break;
             default:
@@ -879,6 +886,24 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 5 :
+                    // InternalWail.g:345:3: this_IDEquals_4= ruleIDEquals
+                    {
+
+                    			newCompositeNode(grammarAccess.getWhenRulesAccess().getIDEqualsParserRuleCall_4());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_IDEquals_4=ruleIDEquals();
+
+                    state._fsp--;
+
+
+                    			current = this_IDEquals_4;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
 
             }
 
@@ -901,8 +926,119 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
     // $ANTLR end "rulewhenRules"
 
 
+    // $ANTLR start "entryRuleIDEquals"
+    // InternalWail.g:357:1: entryRuleIDEquals returns [EObject current=null] : iv_ruleIDEquals= ruleIDEquals EOF ;
+    public final EObject entryRuleIDEquals() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleIDEquals = null;
+
+
+        try {
+            // InternalWail.g:357:49: (iv_ruleIDEquals= ruleIDEquals EOF )
+            // InternalWail.g:358:2: iv_ruleIDEquals= ruleIDEquals EOF
+            {
+             newCompositeNode(grammarAccess.getIDEqualsRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleIDEquals=ruleIDEquals();
+
+            state._fsp--;
+
+             current =iv_ruleIDEquals; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleIDEquals"
+
+
+    // $ANTLR start "ruleIDEquals"
+    // InternalWail.g:364:1: ruleIDEquals returns [EObject current=null] : (otherlv_0= 'ID' otherlv_1= 'is' ( (lv_unitID_2_0= RULE_STRING ) ) ) ;
+    public final EObject ruleIDEquals() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token lv_unitID_2_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalWail.g:370:2: ( (otherlv_0= 'ID' otherlv_1= 'is' ( (lv_unitID_2_0= RULE_STRING ) ) ) )
+            // InternalWail.g:371:2: (otherlv_0= 'ID' otherlv_1= 'is' ( (lv_unitID_2_0= RULE_STRING ) ) )
+            {
+            // InternalWail.g:371:2: (otherlv_0= 'ID' otherlv_1= 'is' ( (lv_unitID_2_0= RULE_STRING ) ) )
+            // InternalWail.g:372:3: otherlv_0= 'ID' otherlv_1= 'is' ( (lv_unitID_2_0= RULE_STRING ) )
+            {
+            otherlv_0=(Token)match(input,15,FOLLOW_10); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getIDEqualsAccess().getIDKeyword_0());
+            		
+            otherlv_1=(Token)match(input,16,FOLLOW_4); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getIDEqualsAccess().getIsKeyword_1());
+            		
+            // InternalWail.g:380:3: ( (lv_unitID_2_0= RULE_STRING ) )
+            // InternalWail.g:381:4: (lv_unitID_2_0= RULE_STRING )
+            {
+            // InternalWail.g:381:4: (lv_unitID_2_0= RULE_STRING )
+            // InternalWail.g:382:5: lv_unitID_2_0= RULE_STRING
+            {
+            lv_unitID_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+
+            					newLeafNode(lv_unitID_2_0, grammarAccess.getIDEqualsAccess().getUnitIDSTRINGTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getIDEqualsRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"unitID",
+            						lv_unitID_2_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleIDEquals"
+
+
     // $ANTLR start "entryRuleBaseline"
-    // InternalWail.g:348:1: entryRuleBaseline returns [EObject current=null] : iv_ruleBaseline= ruleBaseline EOF ;
+    // InternalWail.g:402:1: entryRuleBaseline returns [EObject current=null] : iv_ruleBaseline= ruleBaseline EOF ;
     public final EObject entryRuleBaseline() throws RecognitionException {
         EObject current = null;
 
@@ -910,8 +1046,8 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWail.g:348:49: (iv_ruleBaseline= ruleBaseline EOF )
-            // InternalWail.g:349:2: iv_ruleBaseline= ruleBaseline EOF
+            // InternalWail.g:402:49: (iv_ruleBaseline= ruleBaseline EOF )
+            // InternalWail.g:403:2: iv_ruleBaseline= ruleBaseline EOF
             {
              newCompositeNode(grammarAccess.getBaselineRule()); 
             pushFollow(FOLLOW_1);
@@ -938,7 +1074,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBaseline"
-    // InternalWail.g:355:1: ruleBaseline returns [EObject current=null] : ( (lv_always_0_0= 'always' ) ) ;
+    // InternalWail.g:409:1: ruleBaseline returns [EObject current=null] : ( (lv_always_0_0= 'always' ) ) ;
     public final EObject ruleBaseline() throws RecognitionException {
         EObject current = null;
 
@@ -948,16 +1084,16 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWail.g:361:2: ( ( (lv_always_0_0= 'always' ) ) )
-            // InternalWail.g:362:2: ( (lv_always_0_0= 'always' ) )
+            // InternalWail.g:415:2: ( ( (lv_always_0_0= 'always' ) ) )
+            // InternalWail.g:416:2: ( (lv_always_0_0= 'always' ) )
             {
-            // InternalWail.g:362:2: ( (lv_always_0_0= 'always' ) )
-            // InternalWail.g:363:3: (lv_always_0_0= 'always' )
+            // InternalWail.g:416:2: ( (lv_always_0_0= 'always' ) )
+            // InternalWail.g:417:3: (lv_always_0_0= 'always' )
             {
-            // InternalWail.g:363:3: (lv_always_0_0= 'always' )
-            // InternalWail.g:364:4: lv_always_0_0= 'always'
+            // InternalWail.g:417:3: (lv_always_0_0= 'always' )
+            // InternalWail.g:418:4: lv_always_0_0= 'always'
             {
-            lv_always_0_0=(Token)match(input,15,FOLLOW_2); 
+            lv_always_0_0=(Token)match(input,17,FOLLOW_2); 
 
             				newLeafNode(lv_always_0_0, grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0());
             			
@@ -993,7 +1129,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDamage"
-    // InternalWail.g:379:1: entryRuleDamage returns [EObject current=null] : iv_ruleDamage= ruleDamage EOF ;
+    // InternalWail.g:433:1: entryRuleDamage returns [EObject current=null] : iv_ruleDamage= ruleDamage EOF ;
     public final EObject entryRuleDamage() throws RecognitionException {
         EObject current = null;
 
@@ -1001,8 +1137,8 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWail.g:379:47: (iv_ruleDamage= ruleDamage EOF )
-            // InternalWail.g:380:2: iv_ruleDamage= ruleDamage EOF
+            // InternalWail.g:433:47: (iv_ruleDamage= ruleDamage EOF )
+            // InternalWail.g:434:2: iv_ruleDamage= ruleDamage EOF
             {
              newCompositeNode(grammarAccess.getDamageRule()); 
             pushFollow(FOLLOW_1);
@@ -1029,7 +1165,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDamage"
-    // InternalWail.g:386:1: ruleDamage returns [EObject current=null] : (otherlv_0= 'health' otherlv_1= '-' ( (lv_health_2_0= RULE_INT ) ) ) ;
+    // InternalWail.g:440:1: ruleDamage returns [EObject current=null] : (otherlv_0= 'health' otherlv_1= '-' ( (lv_health_2_0= RULE_INT ) ) ) ;
     public final EObject ruleDamage() throws RecognitionException {
         EObject current = null;
 
@@ -1041,25 +1177,25 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWail.g:392:2: ( (otherlv_0= 'health' otherlv_1= '-' ( (lv_health_2_0= RULE_INT ) ) ) )
-            // InternalWail.g:393:2: (otherlv_0= 'health' otherlv_1= '-' ( (lv_health_2_0= RULE_INT ) ) )
+            // InternalWail.g:446:2: ( (otherlv_0= 'health' otherlv_1= '-' ( (lv_health_2_0= RULE_INT ) ) ) )
+            // InternalWail.g:447:2: (otherlv_0= 'health' otherlv_1= '-' ( (lv_health_2_0= RULE_INT ) ) )
             {
-            // InternalWail.g:393:2: (otherlv_0= 'health' otherlv_1= '-' ( (lv_health_2_0= RULE_INT ) ) )
-            // InternalWail.g:394:3: otherlv_0= 'health' otherlv_1= '-' ( (lv_health_2_0= RULE_INT ) )
+            // InternalWail.g:447:2: (otherlv_0= 'health' otherlv_1= '-' ( (lv_health_2_0= RULE_INT ) ) )
+            // InternalWail.g:448:3: otherlv_0= 'health' otherlv_1= '-' ( (lv_health_2_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,16,FOLLOW_10); 
+            otherlv_0=(Token)match(input,18,FOLLOW_11); 
 
             			newLeafNode(otherlv_0, grammarAccess.getDamageAccess().getHealthKeyword_0());
             		
-            otherlv_1=(Token)match(input,17,FOLLOW_11); 
+            otherlv_1=(Token)match(input,19,FOLLOW_12); 
 
             			newLeafNode(otherlv_1, grammarAccess.getDamageAccess().getHyphenMinusKeyword_1());
             		
-            // InternalWail.g:402:3: ( (lv_health_2_0= RULE_INT ) )
-            // InternalWail.g:403:4: (lv_health_2_0= RULE_INT )
+            // InternalWail.g:456:3: ( (lv_health_2_0= RULE_INT ) )
+            // InternalWail.g:457:4: (lv_health_2_0= RULE_INT )
             {
-            // InternalWail.g:403:4: (lv_health_2_0= RULE_INT )
-            // InternalWail.g:404:5: lv_health_2_0= RULE_INT
+            // InternalWail.g:457:4: (lv_health_2_0= RULE_INT )
+            // InternalWail.g:458:5: lv_health_2_0= RULE_INT
             {
             lv_health_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -1104,7 +1240,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAtLocation"
-    // InternalWail.g:424:1: entryRuleAtLocation returns [EObject current=null] : iv_ruleAtLocation= ruleAtLocation EOF ;
+    // InternalWail.g:478:1: entryRuleAtLocation returns [EObject current=null] : iv_ruleAtLocation= ruleAtLocation EOF ;
     public final EObject entryRuleAtLocation() throws RecognitionException {
         EObject current = null;
 
@@ -1112,8 +1248,8 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWail.g:424:51: (iv_ruleAtLocation= ruleAtLocation EOF )
-            // InternalWail.g:425:2: iv_ruleAtLocation= ruleAtLocation EOF
+            // InternalWail.g:478:51: (iv_ruleAtLocation= ruleAtLocation EOF )
+            // InternalWail.g:479:2: iv_ruleAtLocation= ruleAtLocation EOF
             {
              newCompositeNode(grammarAccess.getAtLocationRule()); 
             pushFollow(FOLLOW_1);
@@ -1140,7 +1276,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAtLocation"
-    // InternalWail.g:431:1: ruleAtLocation returns [EObject current=null] : (otherlv_0= 'x:' ( (lv_XAxis_1_0= RULE_INT ) ) otherlv_2= 'y:' ( (lv_YAxis_3_0= RULE_INT ) ) ) ;
+    // InternalWail.g:485:1: ruleAtLocation returns [EObject current=null] : (otherlv_0= 'x:' ( (lv_XAxis_1_0= RULE_INT ) ) otherlv_2= 'y:' ( (lv_YAxis_3_0= RULE_INT ) ) ) ;
     public final EObject ruleAtLocation() throws RecognitionException {
         EObject current = null;
 
@@ -1153,23 +1289,23 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWail.g:437:2: ( (otherlv_0= 'x:' ( (lv_XAxis_1_0= RULE_INT ) ) otherlv_2= 'y:' ( (lv_YAxis_3_0= RULE_INT ) ) ) )
-            // InternalWail.g:438:2: (otherlv_0= 'x:' ( (lv_XAxis_1_0= RULE_INT ) ) otherlv_2= 'y:' ( (lv_YAxis_3_0= RULE_INT ) ) )
+            // InternalWail.g:491:2: ( (otherlv_0= 'x:' ( (lv_XAxis_1_0= RULE_INT ) ) otherlv_2= 'y:' ( (lv_YAxis_3_0= RULE_INT ) ) ) )
+            // InternalWail.g:492:2: (otherlv_0= 'x:' ( (lv_XAxis_1_0= RULE_INT ) ) otherlv_2= 'y:' ( (lv_YAxis_3_0= RULE_INT ) ) )
             {
-            // InternalWail.g:438:2: (otherlv_0= 'x:' ( (lv_XAxis_1_0= RULE_INT ) ) otherlv_2= 'y:' ( (lv_YAxis_3_0= RULE_INT ) ) )
-            // InternalWail.g:439:3: otherlv_0= 'x:' ( (lv_XAxis_1_0= RULE_INT ) ) otherlv_2= 'y:' ( (lv_YAxis_3_0= RULE_INT ) )
+            // InternalWail.g:492:2: (otherlv_0= 'x:' ( (lv_XAxis_1_0= RULE_INT ) ) otherlv_2= 'y:' ( (lv_YAxis_3_0= RULE_INT ) ) )
+            // InternalWail.g:493:3: otherlv_0= 'x:' ( (lv_XAxis_1_0= RULE_INT ) ) otherlv_2= 'y:' ( (lv_YAxis_3_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_11); 
+            otherlv_0=(Token)match(input,20,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAtLocationAccess().getXKeyword_0());
             		
-            // InternalWail.g:443:3: ( (lv_XAxis_1_0= RULE_INT ) )
-            // InternalWail.g:444:4: (lv_XAxis_1_0= RULE_INT )
+            // InternalWail.g:497:3: ( (lv_XAxis_1_0= RULE_INT ) )
+            // InternalWail.g:498:4: (lv_XAxis_1_0= RULE_INT )
             {
-            // InternalWail.g:444:4: (lv_XAxis_1_0= RULE_INT )
-            // InternalWail.g:445:5: lv_XAxis_1_0= RULE_INT
+            // InternalWail.g:498:4: (lv_XAxis_1_0= RULE_INT )
+            // InternalWail.g:499:5: lv_XAxis_1_0= RULE_INT
             {
-            lv_XAxis_1_0=(Token)match(input,RULE_INT,FOLLOW_12); 
+            lv_XAxis_1_0=(Token)match(input,RULE_INT,FOLLOW_13); 
 
             					newLeafNode(lv_XAxis_1_0, grammarAccess.getAtLocationAccess().getXAxisINTTerminalRuleCall_1_0());
             				
@@ -1189,15 +1325,15 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,19,FOLLOW_11); 
+            otherlv_2=(Token)match(input,21,FOLLOW_12); 
 
             			newLeafNode(otherlv_2, grammarAccess.getAtLocationAccess().getYKeyword_2());
             		
-            // InternalWail.g:465:3: ( (lv_YAxis_3_0= RULE_INT ) )
-            // InternalWail.g:466:4: (lv_YAxis_3_0= RULE_INT )
+            // InternalWail.g:519:3: ( (lv_YAxis_3_0= RULE_INT ) )
+            // InternalWail.g:520:4: (lv_YAxis_3_0= RULE_INT )
             {
-            // InternalWail.g:466:4: (lv_YAxis_3_0= RULE_INT )
-            // InternalWail.g:467:5: lv_YAxis_3_0= RULE_INT
+            // InternalWail.g:520:4: (lv_YAxis_3_0= RULE_INT )
+            // InternalWail.g:521:5: lv_YAxis_3_0= RULE_INT
             {
             lv_YAxis_3_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -1242,7 +1378,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnitEquals"
-    // InternalWail.g:487:1: entryRuleUnitEquals returns [EObject current=null] : iv_ruleUnitEquals= ruleUnitEquals EOF ;
+    // InternalWail.g:541:1: entryRuleUnitEquals returns [EObject current=null] : iv_ruleUnitEquals= ruleUnitEquals EOF ;
     public final EObject entryRuleUnitEquals() throws RecognitionException {
         EObject current = null;
 
@@ -1250,8 +1386,8 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWail.g:487:51: (iv_ruleUnitEquals= ruleUnitEquals EOF )
-            // InternalWail.g:488:2: iv_ruleUnitEquals= ruleUnitEquals EOF
+            // InternalWail.g:541:51: (iv_ruleUnitEquals= ruleUnitEquals EOF )
+            // InternalWail.g:542:2: iv_ruleUnitEquals= ruleUnitEquals EOF
             {
              newCompositeNode(grammarAccess.getUnitEqualsRule()); 
             pushFollow(FOLLOW_1);
@@ -1278,7 +1414,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnitEquals"
-    // InternalWail.g:494:1: ruleUnitEquals returns [EObject current=null] : (otherlv_0= 'unit' otherlv_1= 'is' ( (lv_unit_2_0= RULE_STRING ) ) ) ;
+    // InternalWail.g:548:1: ruleUnitEquals returns [EObject current=null] : (otherlv_0= 'unit' otherlv_1= 'is' ( (lv_unit_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleUnitEquals() throws RecognitionException {
         EObject current = null;
 
@@ -1290,25 +1426,25 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWail.g:500:2: ( (otherlv_0= 'unit' otherlv_1= 'is' ( (lv_unit_2_0= RULE_STRING ) ) ) )
-            // InternalWail.g:501:2: (otherlv_0= 'unit' otherlv_1= 'is' ( (lv_unit_2_0= RULE_STRING ) ) )
+            // InternalWail.g:554:2: ( (otherlv_0= 'unit' otherlv_1= 'is' ( (lv_unit_2_0= RULE_STRING ) ) ) )
+            // InternalWail.g:555:2: (otherlv_0= 'unit' otherlv_1= 'is' ( (lv_unit_2_0= RULE_STRING ) ) )
             {
-            // InternalWail.g:501:2: (otherlv_0= 'unit' otherlv_1= 'is' ( (lv_unit_2_0= RULE_STRING ) ) )
-            // InternalWail.g:502:3: otherlv_0= 'unit' otherlv_1= 'is' ( (lv_unit_2_0= RULE_STRING ) )
+            // InternalWail.g:555:2: (otherlv_0= 'unit' otherlv_1= 'is' ( (lv_unit_2_0= RULE_STRING ) ) )
+            // InternalWail.g:556:3: otherlv_0= 'unit' otherlv_1= 'is' ( (lv_unit_2_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_13); 
+            otherlv_0=(Token)match(input,22,FOLLOW_10); 
 
             			newLeafNode(otherlv_0, grammarAccess.getUnitEqualsAccess().getUnitKeyword_0());
             		
-            otherlv_1=(Token)match(input,21,FOLLOW_4); 
+            otherlv_1=(Token)match(input,16,FOLLOW_4); 
 
             			newLeafNode(otherlv_1, grammarAccess.getUnitEqualsAccess().getIsKeyword_1());
             		
-            // InternalWail.g:510:3: ( (lv_unit_2_0= RULE_STRING ) )
-            // InternalWail.g:511:4: (lv_unit_2_0= RULE_STRING )
+            // InternalWail.g:564:3: ( (lv_unit_2_0= RULE_STRING ) )
+            // InternalWail.g:565:4: (lv_unit_2_0= RULE_STRING )
             {
-            // InternalWail.g:511:4: (lv_unit_2_0= RULE_STRING )
-            // InternalWail.g:512:5: lv_unit_2_0= RULE_STRING
+            // InternalWail.g:565:4: (lv_unit_2_0= RULE_STRING )
+            // InternalWail.g:566:5: lv_unit_2_0= RULE_STRING
             {
             lv_unit_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1353,7 +1489,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGoal"
-    // InternalWail.g:532:1: entryRuleGoal returns [EObject current=null] : iv_ruleGoal= ruleGoal EOF ;
+    // InternalWail.g:586:1: entryRuleGoal returns [EObject current=null] : iv_ruleGoal= ruleGoal EOF ;
     public final EObject entryRuleGoal() throws RecognitionException {
         EObject current = null;
 
@@ -1361,8 +1497,8 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWail.g:532:45: (iv_ruleGoal= ruleGoal EOF )
-            // InternalWail.g:533:2: iv_ruleGoal= ruleGoal EOF
+            // InternalWail.g:586:45: (iv_ruleGoal= ruleGoal EOF )
+            // InternalWail.g:587:2: iv_ruleGoal= ruleGoal EOF
             {
              newCompositeNode(grammarAccess.getGoalRule()); 
             pushFollow(FOLLOW_1);
@@ -1389,7 +1525,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGoal"
-    // InternalWail.g:539:1: ruleGoal returns [EObject current=null] : ( (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) ) | this_ProtectLocation_3= ruleProtectLocation | this_ProtectLeader_4= ruleProtectLeader | this_ProtectUnitID_5= ruleProtectUnitID | this_ProtectUnitType_6= ruleProtectUnitType ) ;
+    // InternalWail.g:593:1: ruleGoal returns [EObject current=null] : ( (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) ) | this_ProtectLocation_3= ruleProtectLocation | this_ProtectLeader_4= ruleProtectLeader | this_ProtectUnitID_5= ruleProtectUnitID | this_ProtectUnitType_6= ruleProtectUnitType ) ;
     public final EObject ruleGoal() throws RecognitionException {
         EObject current = null;
 
@@ -1410,32 +1546,32 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWail.g:545:2: ( ( (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) ) | this_ProtectLocation_3= ruleProtectLocation | this_ProtectLeader_4= ruleProtectLeader | this_ProtectUnitID_5= ruleProtectUnitID | this_ProtectUnitType_6= ruleProtectUnitType ) )
-            // InternalWail.g:546:2: ( (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) ) | this_ProtectLocation_3= ruleProtectLocation | this_ProtectLeader_4= ruleProtectLeader | this_ProtectUnitID_5= ruleProtectUnitID | this_ProtectUnitType_6= ruleProtectUnitType )
+            // InternalWail.g:599:2: ( ( (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) ) | this_ProtectLocation_3= ruleProtectLocation | this_ProtectLeader_4= ruleProtectLeader | this_ProtectUnitID_5= ruleProtectUnitID | this_ProtectUnitType_6= ruleProtectUnitType ) )
+            // InternalWail.g:600:2: ( (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) ) | this_ProtectLocation_3= ruleProtectLocation | this_ProtectLeader_4= ruleProtectLeader | this_ProtectUnitID_5= ruleProtectUnitID | this_ProtectUnitType_6= ruleProtectUnitType )
             {
-            // InternalWail.g:546:2: ( (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) ) | this_ProtectLocation_3= ruleProtectLocation | this_ProtectLeader_4= ruleProtectLeader | this_ProtectUnitID_5= ruleProtectUnitID | this_ProtectUnitType_6= ruleProtectUnitType )
+            // InternalWail.g:600:2: ( (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) ) | this_ProtectLocation_3= ruleProtectLocation | this_ProtectLeader_4= ruleProtectLeader | this_ProtectUnitID_5= ruleProtectUnitID | this_ProtectUnitType_6= ruleProtectUnitType )
             int alt6=5;
             alt6 = dfa6.predict(input);
             switch (alt6) {
                 case 1 :
-                    // InternalWail.g:547:3: (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) )
+                    // InternalWail.g:601:3: (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) )
                     {
-                    // InternalWail.g:547:3: (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) )
-                    // InternalWail.g:548:4: otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) )
+                    // InternalWail.g:601:3: (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) )
+                    // InternalWail.g:602:4: otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) )
                     {
-                    otherlv_0=(Token)match(input,22,FOLLOW_13); 
+                    otherlv_0=(Token)match(input,23,FOLLOW_10); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getGoalAccess().getGoalKeyword_0_0());
                     			
-                    otherlv_1=(Token)match(input,21,FOLLOW_14); 
+                    otherlv_1=(Token)match(input,16,FOLLOW_14); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getGoalAccess().getIsKeyword_0_1());
                     			
-                    // InternalWail.g:556:4: ( (lv_goal_2_0= ruleGoaLocation ) )
-                    // InternalWail.g:557:5: (lv_goal_2_0= ruleGoaLocation )
+                    // InternalWail.g:610:4: ( (lv_goal_2_0= ruleGoaLocation ) )
+                    // InternalWail.g:611:5: (lv_goal_2_0= ruleGoaLocation )
                     {
-                    // InternalWail.g:557:5: (lv_goal_2_0= ruleGoaLocation )
-                    // InternalWail.g:558:6: lv_goal_2_0= ruleGoaLocation
+                    // InternalWail.g:611:5: (lv_goal_2_0= ruleGoaLocation )
+                    // InternalWail.g:612:6: lv_goal_2_0= ruleGoaLocation
                     {
 
                     						newCompositeNode(grammarAccess.getGoalAccess().getGoalGoaLocationParserRuleCall_0_2_0());
@@ -1469,7 +1605,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalWail.g:577:3: this_ProtectLocation_3= ruleProtectLocation
+                    // InternalWail.g:631:3: this_ProtectLocation_3= ruleProtectLocation
                     {
 
                     			newCompositeNode(grammarAccess.getGoalAccess().getProtectLocationParserRuleCall_1());
@@ -1487,7 +1623,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalWail.g:586:3: this_ProtectLeader_4= ruleProtectLeader
+                    // InternalWail.g:640:3: this_ProtectLeader_4= ruleProtectLeader
                     {
 
                     			newCompositeNode(grammarAccess.getGoalAccess().getProtectLeaderParserRuleCall_2());
@@ -1505,7 +1641,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalWail.g:595:3: this_ProtectUnitID_5= ruleProtectUnitID
+                    // InternalWail.g:649:3: this_ProtectUnitID_5= ruleProtectUnitID
                     {
 
                     			newCompositeNode(grammarAccess.getGoalAccess().getProtectUnitIDParserRuleCall_3());
@@ -1523,7 +1659,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalWail.g:604:3: this_ProtectUnitType_6= ruleProtectUnitType
+                    // InternalWail.g:658:3: this_ProtectUnitType_6= ruleProtectUnitType
                     {
 
                     			newCompositeNode(grammarAccess.getGoalAccess().getProtectUnitTypeParserRuleCall_4());
@@ -1563,7 +1699,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProtectLeader"
-    // InternalWail.g:616:1: entryRuleProtectLeader returns [EObject current=null] : iv_ruleProtectLeader= ruleProtectLeader EOF ;
+    // InternalWail.g:670:1: entryRuleProtectLeader returns [EObject current=null] : iv_ruleProtectLeader= ruleProtectLeader EOF ;
     public final EObject entryRuleProtectLeader() throws RecognitionException {
         EObject current = null;
 
@@ -1571,8 +1707,8 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWail.g:616:54: (iv_ruleProtectLeader= ruleProtectLeader EOF )
-            // InternalWail.g:617:2: iv_ruleProtectLeader= ruleProtectLeader EOF
+            // InternalWail.g:670:54: (iv_ruleProtectLeader= ruleProtectLeader EOF )
+            // InternalWail.g:671:2: iv_ruleProtectLeader= ruleProtectLeader EOF
             {
              newCompositeNode(grammarAccess.getProtectLeaderRule()); 
             pushFollow(FOLLOW_1);
@@ -1599,7 +1735,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProtectLeader"
-    // InternalWail.g:623:1: ruleProtectLeader returns [EObject current=null] : (otherlv_0= 'protect' otherlv_1= 'leader' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) ) ;
+    // InternalWail.g:677:1: ruleProtectLeader returns [EObject current=null] : (otherlv_0= 'protect' otherlv_1= 'leader' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) ) ;
     public final EObject ruleProtectLeader() throws RecognitionException {
         EObject current = null;
 
@@ -1619,33 +1755,33 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWail.g:629:2: ( (otherlv_0= 'protect' otherlv_1= 'leader' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) ) )
-            // InternalWail.g:630:2: (otherlv_0= 'protect' otherlv_1= 'leader' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) )
+            // InternalWail.g:683:2: ( (otherlv_0= 'protect' otherlv_1= 'leader' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) ) )
+            // InternalWail.g:684:2: (otherlv_0= 'protect' otherlv_1= 'leader' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) )
             {
-            // InternalWail.g:630:2: (otherlv_0= 'protect' otherlv_1= 'leader' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) )
-            // InternalWail.g:631:3: otherlv_0= 'protect' otherlv_1= 'leader' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) )
+            // InternalWail.g:684:2: (otherlv_0= 'protect' otherlv_1= 'leader' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) )
+            // InternalWail.g:685:3: otherlv_0= 'protect' otherlv_1= 'leader' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_15); 
+            otherlv_0=(Token)match(input,24,FOLLOW_15); 
 
             			newLeafNode(otherlv_0, grammarAccess.getProtectLeaderAccess().getProtectKeyword_0());
             		
-            otherlv_1=(Token)match(input,24,FOLLOW_16); 
+            otherlv_1=(Token)match(input,25,FOLLOW_16); 
 
             			newLeafNode(otherlv_1, grammarAccess.getProtectLeaderAccess().getLeaderKeyword_1());
             		
-            otherlv_2=(Token)match(input,25,FOLLOW_13); 
+            otherlv_2=(Token)match(input,26,FOLLOW_10); 
 
             			newLeafNode(otherlv_2, grammarAccess.getProtectLeaderAccess().getValueKeyword_2());
             		
-            otherlv_3=(Token)match(input,21,FOLLOW_11); 
+            otherlv_3=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getProtectLeaderAccess().getIsKeyword_3());
             		
-            // InternalWail.g:647:3: ( (lv_locationValue_4_0= RULE_INT ) )
-            // InternalWail.g:648:4: (lv_locationValue_4_0= RULE_INT )
+            // InternalWail.g:701:3: ( (lv_locationValue_4_0= RULE_INT ) )
+            // InternalWail.g:702:4: (lv_locationValue_4_0= RULE_INT )
             {
-            // InternalWail.g:648:4: (lv_locationValue_4_0= RULE_INT )
-            // InternalWail.g:649:5: lv_locationValue_4_0= RULE_INT
+            // InternalWail.g:702:4: (lv_locationValue_4_0= RULE_INT )
+            // InternalWail.g:703:5: lv_locationValue_4_0= RULE_INT
             {
             lv_locationValue_4_0=(Token)match(input,RULE_INT,FOLLOW_17); 
 
@@ -1667,19 +1803,19 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,26,FOLLOW_13); 
+            otherlv_5=(Token)match(input,27,FOLLOW_10); 
 
             			newLeafNode(otherlv_5, grammarAccess.getProtectLeaderAccess().getRadiusKeyword_5());
             		
-            otherlv_6=(Token)match(input,21,FOLLOW_11); 
+            otherlv_6=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_6, grammarAccess.getProtectLeaderAccess().getIsKeyword_6());
             		
-            // InternalWail.g:673:3: ( (lv_protectionRadius_7_0= RULE_INT ) )
-            // InternalWail.g:674:4: (lv_protectionRadius_7_0= RULE_INT )
+            // InternalWail.g:727:3: ( (lv_protectionRadius_7_0= RULE_INT ) )
+            // InternalWail.g:728:4: (lv_protectionRadius_7_0= RULE_INT )
             {
-            // InternalWail.g:674:4: (lv_protectionRadius_7_0= RULE_INT )
-            // InternalWail.g:675:5: lv_protectionRadius_7_0= RULE_INT
+            // InternalWail.g:728:4: (lv_protectionRadius_7_0= RULE_INT )
+            // InternalWail.g:729:5: lv_protectionRadius_7_0= RULE_INT
             {
             lv_protectionRadius_7_0=(Token)match(input,RULE_INT,FOLLOW_18); 
 
@@ -1701,19 +1837,19 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,27,FOLLOW_13); 
+            otherlv_8=(Token)match(input,28,FOLLOW_10); 
 
             			newLeafNode(otherlv_8, grammarAccess.getProtectLeaderAccess().getSideKeyword_8());
             		
-            otherlv_9=(Token)match(input,21,FOLLOW_11); 
+            otherlv_9=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_9, grammarAccess.getProtectLeaderAccess().getIsKeyword_9());
             		
-            // InternalWail.g:699:3: ( (lv_procSide_10_0= RULE_INT ) )
-            // InternalWail.g:700:4: (lv_procSide_10_0= RULE_INT )
+            // InternalWail.g:753:3: ( (lv_procSide_10_0= RULE_INT ) )
+            // InternalWail.g:754:4: (lv_procSide_10_0= RULE_INT )
             {
-            // InternalWail.g:700:4: (lv_procSide_10_0= RULE_INT )
-            // InternalWail.g:701:5: lv_procSide_10_0= RULE_INT
+            // InternalWail.g:754:4: (lv_procSide_10_0= RULE_INT )
+            // InternalWail.g:755:5: lv_procSide_10_0= RULE_INT
             {
             lv_procSide_10_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -1758,7 +1894,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProtectUnitID"
-    // InternalWail.g:721:1: entryRuleProtectUnitID returns [EObject current=null] : iv_ruleProtectUnitID= ruleProtectUnitID EOF ;
+    // InternalWail.g:775:1: entryRuleProtectUnitID returns [EObject current=null] : iv_ruleProtectUnitID= ruleProtectUnitID EOF ;
     public final EObject entryRuleProtectUnitID() throws RecognitionException {
         EObject current = null;
 
@@ -1766,8 +1902,8 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWail.g:721:54: (iv_ruleProtectUnitID= ruleProtectUnitID EOF )
-            // InternalWail.g:722:2: iv_ruleProtectUnitID= ruleProtectUnitID EOF
+            // InternalWail.g:775:54: (iv_ruleProtectUnitID= ruleProtectUnitID EOF )
+            // InternalWail.g:776:2: iv_ruleProtectUnitID= ruleProtectUnitID EOF
             {
              newCompositeNode(grammarAccess.getProtectUnitIDRule()); 
             pushFollow(FOLLOW_1);
@@ -1794,7 +1930,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProtectUnitID"
-    // InternalWail.g:728:1: ruleProtectUnitID returns [EObject current=null] : (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'ID' otherlv_12= 'is' ( (lv_procID_13_0= RULE_STRING ) ) ) ;
+    // InternalWail.g:782:1: ruleProtectUnitID returns [EObject current=null] : (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'ID' otherlv_12= 'is' ( (lv_procID_13_0= RULE_STRING ) ) ) ;
     public final EObject ruleProtectUnitID() throws RecognitionException {
         EObject current = null;
 
@@ -1817,33 +1953,33 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWail.g:734:2: ( (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'ID' otherlv_12= 'is' ( (lv_procID_13_0= RULE_STRING ) ) ) )
-            // InternalWail.g:735:2: (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'ID' otherlv_12= 'is' ( (lv_procID_13_0= RULE_STRING ) ) )
+            // InternalWail.g:788:2: ( (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'ID' otherlv_12= 'is' ( (lv_procID_13_0= RULE_STRING ) ) ) )
+            // InternalWail.g:789:2: (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'ID' otherlv_12= 'is' ( (lv_procID_13_0= RULE_STRING ) ) )
             {
-            // InternalWail.g:735:2: (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'ID' otherlv_12= 'is' ( (lv_procID_13_0= RULE_STRING ) ) )
-            // InternalWail.g:736:3: otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'ID' otherlv_12= 'is' ( (lv_procID_13_0= RULE_STRING ) )
+            // InternalWail.g:789:2: (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'ID' otherlv_12= 'is' ( (lv_procID_13_0= RULE_STRING ) ) )
+            // InternalWail.g:790:3: otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'ID' otherlv_12= 'is' ( (lv_procID_13_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_19); 
+            otherlv_0=(Token)match(input,24,FOLLOW_19); 
 
             			newLeafNode(otherlv_0, grammarAccess.getProtectUnitIDAccess().getProtectKeyword_0());
             		
-            otherlv_1=(Token)match(input,20,FOLLOW_16); 
+            otherlv_1=(Token)match(input,22,FOLLOW_16); 
 
             			newLeafNode(otherlv_1, grammarAccess.getProtectUnitIDAccess().getUnitKeyword_1());
             		
-            otherlv_2=(Token)match(input,25,FOLLOW_13); 
+            otherlv_2=(Token)match(input,26,FOLLOW_10); 
 
             			newLeafNode(otherlv_2, grammarAccess.getProtectUnitIDAccess().getValueKeyword_2());
             		
-            otherlv_3=(Token)match(input,21,FOLLOW_11); 
+            otherlv_3=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getProtectUnitIDAccess().getIsKeyword_3());
             		
-            // InternalWail.g:752:3: ( (lv_locationValue_4_0= RULE_INT ) )
-            // InternalWail.g:753:4: (lv_locationValue_4_0= RULE_INT )
+            // InternalWail.g:806:3: ( (lv_locationValue_4_0= RULE_INT ) )
+            // InternalWail.g:807:4: (lv_locationValue_4_0= RULE_INT )
             {
-            // InternalWail.g:753:4: (lv_locationValue_4_0= RULE_INT )
-            // InternalWail.g:754:5: lv_locationValue_4_0= RULE_INT
+            // InternalWail.g:807:4: (lv_locationValue_4_0= RULE_INT )
+            // InternalWail.g:808:5: lv_locationValue_4_0= RULE_INT
             {
             lv_locationValue_4_0=(Token)match(input,RULE_INT,FOLLOW_17); 
 
@@ -1865,19 +2001,19 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,26,FOLLOW_13); 
+            otherlv_5=(Token)match(input,27,FOLLOW_10); 
 
             			newLeafNode(otherlv_5, grammarAccess.getProtectUnitIDAccess().getRadiusKeyword_5());
             		
-            otherlv_6=(Token)match(input,21,FOLLOW_11); 
+            otherlv_6=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_6, grammarAccess.getProtectUnitIDAccess().getIsKeyword_6());
             		
-            // InternalWail.g:778:3: ( (lv_protectionRadius_7_0= RULE_INT ) )
-            // InternalWail.g:779:4: (lv_protectionRadius_7_0= RULE_INT )
+            // InternalWail.g:832:3: ( (lv_protectionRadius_7_0= RULE_INT ) )
+            // InternalWail.g:833:4: (lv_protectionRadius_7_0= RULE_INT )
             {
-            // InternalWail.g:779:4: (lv_protectionRadius_7_0= RULE_INT )
-            // InternalWail.g:780:5: lv_protectionRadius_7_0= RULE_INT
+            // InternalWail.g:833:4: (lv_protectionRadius_7_0= RULE_INT )
+            // InternalWail.g:834:5: lv_protectionRadius_7_0= RULE_INT
             {
             lv_protectionRadius_7_0=(Token)match(input,RULE_INT,FOLLOW_18); 
 
@@ -1899,19 +2035,19 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,27,FOLLOW_13); 
+            otherlv_8=(Token)match(input,28,FOLLOW_10); 
 
             			newLeafNode(otherlv_8, grammarAccess.getProtectUnitIDAccess().getSideKeyword_8());
             		
-            otherlv_9=(Token)match(input,21,FOLLOW_11); 
+            otherlv_9=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_9, grammarAccess.getProtectUnitIDAccess().getIsKeyword_9());
             		
-            // InternalWail.g:804:3: ( (lv_procSide_10_0= RULE_INT ) )
-            // InternalWail.g:805:4: (lv_procSide_10_0= RULE_INT )
+            // InternalWail.g:858:3: ( (lv_procSide_10_0= RULE_INT ) )
+            // InternalWail.g:859:4: (lv_procSide_10_0= RULE_INT )
             {
-            // InternalWail.g:805:4: (lv_procSide_10_0= RULE_INT )
-            // InternalWail.g:806:5: lv_procSide_10_0= RULE_INT
+            // InternalWail.g:859:4: (lv_procSide_10_0= RULE_INT )
+            // InternalWail.g:860:5: lv_procSide_10_0= RULE_INT
             {
             lv_procSide_10_0=(Token)match(input,RULE_INT,FOLLOW_20); 
 
@@ -1933,19 +2069,19 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,28,FOLLOW_13); 
+            otherlv_11=(Token)match(input,15,FOLLOW_10); 
 
             			newLeafNode(otherlv_11, grammarAccess.getProtectUnitIDAccess().getIDKeyword_11());
             		
-            otherlv_12=(Token)match(input,21,FOLLOW_4); 
+            otherlv_12=(Token)match(input,16,FOLLOW_4); 
 
             			newLeafNode(otherlv_12, grammarAccess.getProtectUnitIDAccess().getIsKeyword_12());
             		
-            // InternalWail.g:830:3: ( (lv_procID_13_0= RULE_STRING ) )
-            // InternalWail.g:831:4: (lv_procID_13_0= RULE_STRING )
+            // InternalWail.g:884:3: ( (lv_procID_13_0= RULE_STRING ) )
+            // InternalWail.g:885:4: (lv_procID_13_0= RULE_STRING )
             {
-            // InternalWail.g:831:4: (lv_procID_13_0= RULE_STRING )
-            // InternalWail.g:832:5: lv_procID_13_0= RULE_STRING
+            // InternalWail.g:885:4: (lv_procID_13_0= RULE_STRING )
+            // InternalWail.g:886:5: lv_procID_13_0= RULE_STRING
             {
             lv_procID_13_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1990,7 +2126,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProtectUnitType"
-    // InternalWail.g:852:1: entryRuleProtectUnitType returns [EObject current=null] : iv_ruleProtectUnitType= ruleProtectUnitType EOF ;
+    // InternalWail.g:906:1: entryRuleProtectUnitType returns [EObject current=null] : iv_ruleProtectUnitType= ruleProtectUnitType EOF ;
     public final EObject entryRuleProtectUnitType() throws RecognitionException {
         EObject current = null;
 
@@ -1998,8 +2134,8 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWail.g:852:56: (iv_ruleProtectUnitType= ruleProtectUnitType EOF )
-            // InternalWail.g:853:2: iv_ruleProtectUnitType= ruleProtectUnitType EOF
+            // InternalWail.g:906:56: (iv_ruleProtectUnitType= ruleProtectUnitType EOF )
+            // InternalWail.g:907:2: iv_ruleProtectUnitType= ruleProtectUnitType EOF
             {
              newCompositeNode(grammarAccess.getProtectUnitTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -2026,7 +2162,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProtectUnitType"
-    // InternalWail.g:859:1: ruleProtectUnitType returns [EObject current=null] : (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'Type' otherlv_12= 'is' ( (lv_procType_13_0= RULE_STRING ) ) ) ;
+    // InternalWail.g:913:1: ruleProtectUnitType returns [EObject current=null] : (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'Type' otherlv_12= 'is' ( (lv_procType_13_0= RULE_STRING ) ) ) ;
     public final EObject ruleProtectUnitType() throws RecognitionException {
         EObject current = null;
 
@@ -2049,33 +2185,33 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWail.g:865:2: ( (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'Type' otherlv_12= 'is' ( (lv_procType_13_0= RULE_STRING ) ) ) )
-            // InternalWail.g:866:2: (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'Type' otherlv_12= 'is' ( (lv_procType_13_0= RULE_STRING ) ) )
+            // InternalWail.g:919:2: ( (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'Type' otherlv_12= 'is' ( (lv_procType_13_0= RULE_STRING ) ) ) )
+            // InternalWail.g:920:2: (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'Type' otherlv_12= 'is' ( (lv_procType_13_0= RULE_STRING ) ) )
             {
-            // InternalWail.g:866:2: (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'Type' otherlv_12= 'is' ( (lv_procType_13_0= RULE_STRING ) ) )
-            // InternalWail.g:867:3: otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'Type' otherlv_12= 'is' ( (lv_procType_13_0= RULE_STRING ) )
+            // InternalWail.g:920:2: (otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'Type' otherlv_12= 'is' ( (lv_procType_13_0= RULE_STRING ) ) )
+            // InternalWail.g:921:3: otherlv_0= 'protect' otherlv_1= 'unit' otherlv_2= 'value' otherlv_3= 'is' ( (lv_locationValue_4_0= RULE_INT ) ) otherlv_5= 'radius' otherlv_6= 'is' ( (lv_protectionRadius_7_0= RULE_INT ) ) otherlv_8= 'side' otherlv_9= 'is' ( (lv_procSide_10_0= RULE_INT ) ) otherlv_11= 'Type' otherlv_12= 'is' ( (lv_procType_13_0= RULE_STRING ) )
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_19); 
+            otherlv_0=(Token)match(input,24,FOLLOW_19); 
 
             			newLeafNode(otherlv_0, grammarAccess.getProtectUnitTypeAccess().getProtectKeyword_0());
             		
-            otherlv_1=(Token)match(input,20,FOLLOW_16); 
+            otherlv_1=(Token)match(input,22,FOLLOW_16); 
 
             			newLeafNode(otherlv_1, grammarAccess.getProtectUnitTypeAccess().getUnitKeyword_1());
             		
-            otherlv_2=(Token)match(input,25,FOLLOW_13); 
+            otherlv_2=(Token)match(input,26,FOLLOW_10); 
 
             			newLeafNode(otherlv_2, grammarAccess.getProtectUnitTypeAccess().getValueKeyword_2());
             		
-            otherlv_3=(Token)match(input,21,FOLLOW_11); 
+            otherlv_3=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getProtectUnitTypeAccess().getIsKeyword_3());
             		
-            // InternalWail.g:883:3: ( (lv_locationValue_4_0= RULE_INT ) )
-            // InternalWail.g:884:4: (lv_locationValue_4_0= RULE_INT )
+            // InternalWail.g:937:3: ( (lv_locationValue_4_0= RULE_INT ) )
+            // InternalWail.g:938:4: (lv_locationValue_4_0= RULE_INT )
             {
-            // InternalWail.g:884:4: (lv_locationValue_4_0= RULE_INT )
-            // InternalWail.g:885:5: lv_locationValue_4_0= RULE_INT
+            // InternalWail.g:938:4: (lv_locationValue_4_0= RULE_INT )
+            // InternalWail.g:939:5: lv_locationValue_4_0= RULE_INT
             {
             lv_locationValue_4_0=(Token)match(input,RULE_INT,FOLLOW_17); 
 
@@ -2097,19 +2233,19 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,26,FOLLOW_13); 
+            otherlv_5=(Token)match(input,27,FOLLOW_10); 
 
             			newLeafNode(otherlv_5, grammarAccess.getProtectUnitTypeAccess().getRadiusKeyword_5());
             		
-            otherlv_6=(Token)match(input,21,FOLLOW_11); 
+            otherlv_6=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_6, grammarAccess.getProtectUnitTypeAccess().getIsKeyword_6());
             		
-            // InternalWail.g:909:3: ( (lv_protectionRadius_7_0= RULE_INT ) )
-            // InternalWail.g:910:4: (lv_protectionRadius_7_0= RULE_INT )
+            // InternalWail.g:963:3: ( (lv_protectionRadius_7_0= RULE_INT ) )
+            // InternalWail.g:964:4: (lv_protectionRadius_7_0= RULE_INT )
             {
-            // InternalWail.g:910:4: (lv_protectionRadius_7_0= RULE_INT )
-            // InternalWail.g:911:5: lv_protectionRadius_7_0= RULE_INT
+            // InternalWail.g:964:4: (lv_protectionRadius_7_0= RULE_INT )
+            // InternalWail.g:965:5: lv_protectionRadius_7_0= RULE_INT
             {
             lv_protectionRadius_7_0=(Token)match(input,RULE_INT,FOLLOW_18); 
 
@@ -2131,19 +2267,19 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,27,FOLLOW_13); 
+            otherlv_8=(Token)match(input,28,FOLLOW_10); 
 
             			newLeafNode(otherlv_8, grammarAccess.getProtectUnitTypeAccess().getSideKeyword_8());
             		
-            otherlv_9=(Token)match(input,21,FOLLOW_11); 
+            otherlv_9=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_9, grammarAccess.getProtectUnitTypeAccess().getIsKeyword_9());
             		
-            // InternalWail.g:935:3: ( (lv_procSide_10_0= RULE_INT ) )
-            // InternalWail.g:936:4: (lv_procSide_10_0= RULE_INT )
+            // InternalWail.g:989:3: ( (lv_procSide_10_0= RULE_INT ) )
+            // InternalWail.g:990:4: (lv_procSide_10_0= RULE_INT )
             {
-            // InternalWail.g:936:4: (lv_procSide_10_0= RULE_INT )
-            // InternalWail.g:937:5: lv_procSide_10_0= RULE_INT
+            // InternalWail.g:990:4: (lv_procSide_10_0= RULE_INT )
+            // InternalWail.g:991:5: lv_procSide_10_0= RULE_INT
             {
             lv_procSide_10_0=(Token)match(input,RULE_INT,FOLLOW_21); 
 
@@ -2165,19 +2301,19 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,29,FOLLOW_13); 
+            otherlv_11=(Token)match(input,29,FOLLOW_10); 
 
             			newLeafNode(otherlv_11, grammarAccess.getProtectUnitTypeAccess().getTypeKeyword_11());
             		
-            otherlv_12=(Token)match(input,21,FOLLOW_4); 
+            otherlv_12=(Token)match(input,16,FOLLOW_4); 
 
             			newLeafNode(otherlv_12, grammarAccess.getProtectUnitTypeAccess().getIsKeyword_12());
             		
-            // InternalWail.g:961:3: ( (lv_procType_13_0= RULE_STRING ) )
-            // InternalWail.g:962:4: (lv_procType_13_0= RULE_STRING )
+            // InternalWail.g:1015:3: ( (lv_procType_13_0= RULE_STRING ) )
+            // InternalWail.g:1016:4: (lv_procType_13_0= RULE_STRING )
             {
-            // InternalWail.g:962:4: (lv_procType_13_0= RULE_STRING )
-            // InternalWail.g:963:5: lv_procType_13_0= RULE_STRING
+            // InternalWail.g:1016:4: (lv_procType_13_0= RULE_STRING )
+            // InternalWail.g:1017:5: lv_procType_13_0= RULE_STRING
             {
             lv_procType_13_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -2222,7 +2358,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProtectLocation"
-    // InternalWail.g:983:1: entryRuleProtectLocation returns [EObject current=null] : iv_ruleProtectLocation= ruleProtectLocation EOF ;
+    // InternalWail.g:1037:1: entryRuleProtectLocation returns [EObject current=null] : iv_ruleProtectLocation= ruleProtectLocation EOF ;
     public final EObject entryRuleProtectLocation() throws RecognitionException {
         EObject current = null;
 
@@ -2230,8 +2366,8 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWail.g:983:56: (iv_ruleProtectLocation= ruleProtectLocation EOF )
-            // InternalWail.g:984:2: iv_ruleProtectLocation= ruleProtectLocation EOF
+            // InternalWail.g:1037:56: (iv_ruleProtectLocation= ruleProtectLocation EOF )
+            // InternalWail.g:1038:2: iv_ruleProtectLocation= ruleProtectLocation EOF
             {
              newCompositeNode(grammarAccess.getProtectLocationRule()); 
             pushFollow(FOLLOW_1);
@@ -2258,7 +2394,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProtectLocation"
-    // InternalWail.g:990:1: ruleProtectLocation returns [EObject current=null] : (otherlv_0= 'protect' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) otherlv_8= 'radius' otherlv_9= 'is' ( (lv_procRad_10_0= RULE_INT ) ) ) ;
+    // InternalWail.g:1044:1: ruleProtectLocation returns [EObject current=null] : (otherlv_0= 'protect' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) otherlv_8= 'radius' otherlv_9= 'is' ( (lv_procRad_10_0= RULE_INT ) ) ) ;
     public final EObject ruleProtectLocation() throws RecognitionException {
         EObject current = null;
 
@@ -2278,25 +2414,25 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWail.g:996:2: ( (otherlv_0= 'protect' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) otherlv_8= 'radius' otherlv_9= 'is' ( (lv_procRad_10_0= RULE_INT ) ) ) )
-            // InternalWail.g:997:2: (otherlv_0= 'protect' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) otherlv_8= 'radius' otherlv_9= 'is' ( (lv_procRad_10_0= RULE_INT ) ) )
+            // InternalWail.g:1050:2: ( (otherlv_0= 'protect' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) otherlv_8= 'radius' otherlv_9= 'is' ( (lv_procRad_10_0= RULE_INT ) ) ) )
+            // InternalWail.g:1051:2: (otherlv_0= 'protect' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) otherlv_8= 'radius' otherlv_9= 'is' ( (lv_procRad_10_0= RULE_INT ) ) )
             {
-            // InternalWail.g:997:2: (otherlv_0= 'protect' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) otherlv_8= 'radius' otherlv_9= 'is' ( (lv_procRad_10_0= RULE_INT ) ) )
-            // InternalWail.g:998:3: otherlv_0= 'protect' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) otherlv_8= 'radius' otherlv_9= 'is' ( (lv_procRad_10_0= RULE_INT ) )
+            // InternalWail.g:1051:2: (otherlv_0= 'protect' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) otherlv_8= 'radius' otherlv_9= 'is' ( (lv_procRad_10_0= RULE_INT ) ) )
+            // InternalWail.g:1052:3: otherlv_0= 'protect' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) otherlv_8= 'radius' otherlv_9= 'is' ( (lv_procRad_10_0= RULE_INT ) )
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_22); 
+            otherlv_0=(Token)match(input,24,FOLLOW_22); 
 
             			newLeafNode(otherlv_0, grammarAccess.getProtectLocationAccess().getProtectKeyword_0());
             		
-            otherlv_1=(Token)match(input,30,FOLLOW_11); 
+            otherlv_1=(Token)match(input,30,FOLLOW_12); 
 
             			newLeafNode(otherlv_1, grammarAccess.getProtectLocationAccess().getXKeyword_1());
             		
-            // InternalWail.g:1006:3: ( (lv_XAxis_2_0= RULE_INT ) )
-            // InternalWail.g:1007:4: (lv_XAxis_2_0= RULE_INT )
+            // InternalWail.g:1060:3: ( (lv_XAxis_2_0= RULE_INT ) )
+            // InternalWail.g:1061:4: (lv_XAxis_2_0= RULE_INT )
             {
-            // InternalWail.g:1007:4: (lv_XAxis_2_0= RULE_INT )
-            // InternalWail.g:1008:5: lv_XAxis_2_0= RULE_INT
+            // InternalWail.g:1061:4: (lv_XAxis_2_0= RULE_INT )
+            // InternalWail.g:1062:5: lv_XAxis_2_0= RULE_INT
             {
             lv_XAxis_2_0=(Token)match(input,RULE_INT,FOLLOW_23); 
 
@@ -2318,15 +2454,15 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,31,FOLLOW_11); 
+            otherlv_3=(Token)match(input,31,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getProtectLocationAccess().getYKeyword_3());
             		
-            // InternalWail.g:1028:3: ( (lv_YAxis_4_0= RULE_INT ) )
-            // InternalWail.g:1029:4: (lv_YAxis_4_0= RULE_INT )
+            // InternalWail.g:1082:3: ( (lv_YAxis_4_0= RULE_INT ) )
+            // InternalWail.g:1083:4: (lv_YAxis_4_0= RULE_INT )
             {
-            // InternalWail.g:1029:4: (lv_YAxis_4_0= RULE_INT )
-            // InternalWail.g:1030:5: lv_YAxis_4_0= RULE_INT
+            // InternalWail.g:1083:4: (lv_YAxis_4_0= RULE_INT )
+            // InternalWail.g:1084:5: lv_YAxis_4_0= RULE_INT
             {
             lv_YAxis_4_0=(Token)match(input,RULE_INT,FOLLOW_16); 
 
@@ -2348,19 +2484,19 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,25,FOLLOW_13); 
+            otherlv_5=(Token)match(input,26,FOLLOW_10); 
 
             			newLeafNode(otherlv_5, grammarAccess.getProtectLocationAccess().getValueKeyword_5());
             		
-            otherlv_6=(Token)match(input,21,FOLLOW_11); 
+            otherlv_6=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_6, grammarAccess.getProtectLocationAccess().getIsKeyword_6());
             		
-            // InternalWail.g:1054:3: ( (lv_locValue_7_0= RULE_INT ) )
-            // InternalWail.g:1055:4: (lv_locValue_7_0= RULE_INT )
+            // InternalWail.g:1108:3: ( (lv_locValue_7_0= RULE_INT ) )
+            // InternalWail.g:1109:4: (lv_locValue_7_0= RULE_INT )
             {
-            // InternalWail.g:1055:4: (lv_locValue_7_0= RULE_INT )
-            // InternalWail.g:1056:5: lv_locValue_7_0= RULE_INT
+            // InternalWail.g:1109:4: (lv_locValue_7_0= RULE_INT )
+            // InternalWail.g:1110:5: lv_locValue_7_0= RULE_INT
             {
             lv_locValue_7_0=(Token)match(input,RULE_INT,FOLLOW_17); 
 
@@ -2382,19 +2518,19 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,26,FOLLOW_13); 
+            otherlv_8=(Token)match(input,27,FOLLOW_10); 
 
             			newLeafNode(otherlv_8, grammarAccess.getProtectLocationAccess().getRadiusKeyword_8());
             		
-            otherlv_9=(Token)match(input,21,FOLLOW_11); 
+            otherlv_9=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_9, grammarAccess.getProtectLocationAccess().getIsKeyword_9());
             		
-            // InternalWail.g:1080:3: ( (lv_procRad_10_0= RULE_INT ) )
-            // InternalWail.g:1081:4: (lv_procRad_10_0= RULE_INT )
+            // InternalWail.g:1134:3: ( (lv_procRad_10_0= RULE_INT ) )
+            // InternalWail.g:1135:4: (lv_procRad_10_0= RULE_INT )
             {
-            // InternalWail.g:1081:4: (lv_procRad_10_0= RULE_INT )
-            // InternalWail.g:1082:5: lv_procRad_10_0= RULE_INT
+            // InternalWail.g:1135:4: (lv_procRad_10_0= RULE_INT )
+            // InternalWail.g:1136:5: lv_procRad_10_0= RULE_INT
             {
             lv_procRad_10_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2439,7 +2575,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGoaLocation"
-    // InternalWail.g:1102:1: entryRuleGoaLocation returns [EObject current=null] : iv_ruleGoaLocation= ruleGoaLocation EOF ;
+    // InternalWail.g:1156:1: entryRuleGoaLocation returns [EObject current=null] : iv_ruleGoaLocation= ruleGoaLocation EOF ;
     public final EObject entryRuleGoaLocation() throws RecognitionException {
         EObject current = null;
 
@@ -2447,8 +2583,8 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWail.g:1102:52: (iv_ruleGoaLocation= ruleGoaLocation EOF )
-            // InternalWail.g:1103:2: iv_ruleGoaLocation= ruleGoaLocation EOF
+            // InternalWail.g:1156:52: (iv_ruleGoaLocation= ruleGoaLocation EOF )
+            // InternalWail.g:1157:2: iv_ruleGoaLocation= ruleGoaLocation EOF
             {
              newCompositeNode(grammarAccess.getGoaLocationRule()); 
             pushFollow(FOLLOW_1);
@@ -2475,7 +2611,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGoaLocation"
-    // InternalWail.g:1109:1: ruleGoaLocation returns [EObject current=null] : (otherlv_0= 'attack' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) ) ;
+    // InternalWail.g:1163:1: ruleGoaLocation returns [EObject current=null] : (otherlv_0= 'attack' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) ) ;
     public final EObject ruleGoaLocation() throws RecognitionException {
         EObject current = null;
 
@@ -2492,25 +2628,25 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWail.g:1115:2: ( (otherlv_0= 'attack' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) ) )
-            // InternalWail.g:1116:2: (otherlv_0= 'attack' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) )
+            // InternalWail.g:1169:2: ( (otherlv_0= 'attack' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) ) )
+            // InternalWail.g:1170:2: (otherlv_0= 'attack' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) )
             {
-            // InternalWail.g:1116:2: (otherlv_0= 'attack' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) )
-            // InternalWail.g:1117:3: otherlv_0= 'attack' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) )
+            // InternalWail.g:1170:2: (otherlv_0= 'attack' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) ) )
+            // InternalWail.g:1171:3: otherlv_0= 'attack' otherlv_1= 'x' ( (lv_XAxis_2_0= RULE_INT ) ) otherlv_3= 'y' ( (lv_YAxis_4_0= RULE_INT ) ) otherlv_5= 'value' otherlv_6= 'is' ( (lv_locValue_7_0= RULE_INT ) )
             {
             otherlv_0=(Token)match(input,32,FOLLOW_22); 
 
             			newLeafNode(otherlv_0, grammarAccess.getGoaLocationAccess().getAttackKeyword_0());
             		
-            otherlv_1=(Token)match(input,30,FOLLOW_11); 
+            otherlv_1=(Token)match(input,30,FOLLOW_12); 
 
             			newLeafNode(otherlv_1, grammarAccess.getGoaLocationAccess().getXKeyword_1());
             		
-            // InternalWail.g:1125:3: ( (lv_XAxis_2_0= RULE_INT ) )
-            // InternalWail.g:1126:4: (lv_XAxis_2_0= RULE_INT )
+            // InternalWail.g:1179:3: ( (lv_XAxis_2_0= RULE_INT ) )
+            // InternalWail.g:1180:4: (lv_XAxis_2_0= RULE_INT )
             {
-            // InternalWail.g:1126:4: (lv_XAxis_2_0= RULE_INT )
-            // InternalWail.g:1127:5: lv_XAxis_2_0= RULE_INT
+            // InternalWail.g:1180:4: (lv_XAxis_2_0= RULE_INT )
+            // InternalWail.g:1181:5: lv_XAxis_2_0= RULE_INT
             {
             lv_XAxis_2_0=(Token)match(input,RULE_INT,FOLLOW_23); 
 
@@ -2532,15 +2668,15 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,31,FOLLOW_11); 
+            otherlv_3=(Token)match(input,31,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getGoaLocationAccess().getYKeyword_3());
             		
-            // InternalWail.g:1147:3: ( (lv_YAxis_4_0= RULE_INT ) )
-            // InternalWail.g:1148:4: (lv_YAxis_4_0= RULE_INT )
+            // InternalWail.g:1201:3: ( (lv_YAxis_4_0= RULE_INT ) )
+            // InternalWail.g:1202:4: (lv_YAxis_4_0= RULE_INT )
             {
-            // InternalWail.g:1148:4: (lv_YAxis_4_0= RULE_INT )
-            // InternalWail.g:1149:5: lv_YAxis_4_0= RULE_INT
+            // InternalWail.g:1202:4: (lv_YAxis_4_0= RULE_INT )
+            // InternalWail.g:1203:5: lv_YAxis_4_0= RULE_INT
             {
             lv_YAxis_4_0=(Token)match(input,RULE_INT,FOLLOW_16); 
 
@@ -2562,19 +2698,19 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,25,FOLLOW_13); 
+            otherlv_5=(Token)match(input,26,FOLLOW_10); 
 
             			newLeafNode(otherlv_5, grammarAccess.getGoaLocationAccess().getValueKeyword_5());
             		
-            otherlv_6=(Token)match(input,21,FOLLOW_11); 
+            otherlv_6=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_6, grammarAccess.getGoaLocationAccess().getIsKeyword_6());
             		
-            // InternalWail.g:1173:3: ( (lv_locValue_7_0= RULE_INT ) )
-            // InternalWail.g:1174:4: (lv_locValue_7_0= RULE_INT )
+            // InternalWail.g:1227:3: ( (lv_locValue_7_0= RULE_INT ) )
+            // InternalWail.g:1228:4: (lv_locValue_7_0= RULE_INT )
             {
-            // InternalWail.g:1174:4: (lv_locValue_7_0= RULE_INT )
-            // InternalWail.g:1175:5: lv_locValue_7_0= RULE_INT
+            // InternalWail.g:1228:4: (lv_locValue_7_0= RULE_INT )
+            // InternalWail.g:1229:5: lv_locValue_7_0= RULE_INT
             {
             lv_locValue_7_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2619,7 +2755,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDefualt_CA"
-    // InternalWail.g:1195:1: entryRuleDefualt_CA returns [EObject current=null] : iv_ruleDefualt_CA= ruleDefualt_CA EOF ;
+    // InternalWail.g:1249:1: entryRuleDefualt_CA returns [EObject current=null] : iv_ruleDefualt_CA= ruleDefualt_CA EOF ;
     public final EObject entryRuleDefualt_CA() throws RecognitionException {
         EObject current = null;
 
@@ -2627,8 +2763,8 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalWail.g:1195:51: (iv_ruleDefualt_CA= ruleDefualt_CA EOF )
-            // InternalWail.g:1196:2: iv_ruleDefualt_CA= ruleDefualt_CA EOF
+            // InternalWail.g:1249:51: (iv_ruleDefualt_CA= ruleDefualt_CA EOF )
+            // InternalWail.g:1250:2: iv_ruleDefualt_CA= ruleDefualt_CA EOF
             {
              newCompositeNode(grammarAccess.getDefualt_CARule()); 
             pushFollow(FOLLOW_1);
@@ -2655,7 +2791,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDefualt_CA"
-    // InternalWail.g:1202:1: ruleDefualt_CA returns [EObject current=null] : ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? ) ;
+    // InternalWail.g:1256:1: ruleDefualt_CA returns [EObject current=null] : ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? ) ;
     public final EObject ruleDefualt_CA() throws RecognitionException {
         EObject current = null;
 
@@ -2674,19 +2810,19 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalWail.g:1208:2: ( ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? ) )
-            // InternalWail.g:1209:2: ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? )
+            // InternalWail.g:1262:2: ( ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? ) )
+            // InternalWail.g:1263:2: ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? )
             {
-            // InternalWail.g:1209:2: ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? )
-            // InternalWail.g:1210:3: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )?
+            // InternalWail.g:1263:2: ( ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )? )
+            // InternalWail.g:1264:3: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) ) (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )?
             {
-            // InternalWail.g:1210:3: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) )
-            // InternalWail.g:1211:4: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) )
+            // InternalWail.g:1264:3: ( ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) ) )
+            // InternalWail.g:1265:4: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) )
             {
-            // InternalWail.g:1211:4: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) )
-            // InternalWail.g:1212:5: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' )
+            // InternalWail.g:1265:4: ( (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' ) )
+            // InternalWail.g:1266:5: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' )
             {
-            // InternalWail.g:1212:5: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' )
+            // InternalWail.g:1266:5: (lv_caType_0_1= 'movement' | lv_caType_0_2= 'heal' | lv_caType_0_3= 'retreat' | lv_caType_0_4= 'combat' | lv_caType_0_5= 'recruit' | lv_caType_0_6= 'combat_value_targets' | lv_caType_0_7= 'capture_villages' | lv_caType_0_8= 'leader_to_keep' )
             int alt7=8;
             switch ( input.LA(1) ) {
             case 33:
@@ -2738,7 +2874,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             switch (alt7) {
                 case 1 :
-                    // InternalWail.g:1213:6: lv_caType_0_1= 'movement'
+                    // InternalWail.g:1267:6: lv_caType_0_1= 'movement'
                     {
                     lv_caType_0_1=(Token)match(input,33,FOLLOW_24); 
 
@@ -2754,7 +2890,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalWail.g:1224:6: lv_caType_0_2= 'heal'
+                    // InternalWail.g:1278:6: lv_caType_0_2= 'heal'
                     {
                     lv_caType_0_2=(Token)match(input,34,FOLLOW_24); 
 
@@ -2770,7 +2906,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalWail.g:1235:6: lv_caType_0_3= 'retreat'
+                    // InternalWail.g:1289:6: lv_caType_0_3= 'retreat'
                     {
                     lv_caType_0_3=(Token)match(input,35,FOLLOW_24); 
 
@@ -2786,7 +2922,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalWail.g:1246:6: lv_caType_0_4= 'combat'
+                    // InternalWail.g:1300:6: lv_caType_0_4= 'combat'
                     {
                     lv_caType_0_4=(Token)match(input,36,FOLLOW_24); 
 
@@ -2802,7 +2938,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalWail.g:1257:6: lv_caType_0_5= 'recruit'
+                    // InternalWail.g:1311:6: lv_caType_0_5= 'recruit'
                     {
                     lv_caType_0_5=(Token)match(input,37,FOLLOW_24); 
 
@@ -2818,7 +2954,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalWail.g:1268:6: lv_caType_0_6= 'combat_value_targets'
+                    // InternalWail.g:1322:6: lv_caType_0_6= 'combat_value_targets'
                     {
                     lv_caType_0_6=(Token)match(input,38,FOLLOW_24); 
 
@@ -2834,7 +2970,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalWail.g:1279:6: lv_caType_0_7= 'capture_villages'
+                    // InternalWail.g:1333:6: lv_caType_0_7= 'capture_villages'
                     {
                     lv_caType_0_7=(Token)match(input,39,FOLLOW_24); 
 
@@ -2850,7 +2986,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalWail.g:1290:6: lv_caType_0_8= 'leader_to_keep'
+                    // InternalWail.g:1344:6: lv_caType_0_8= 'leader_to_keep'
                     {
                     lv_caType_0_8=(Token)match(input,40,FOLLOW_24); 
 
@@ -2874,7 +3010,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalWail.g:1303:3: (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )?
+            // InternalWail.g:1357:3: (otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) ) )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -2883,17 +3019,17 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalWail.g:1304:4: otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) )
+                    // InternalWail.g:1358:4: otherlv_1= 'cost' ( (lv_cost_2_0= RULE_INT ) )
                     {
-                    otherlv_1=(Token)match(input,41,FOLLOW_11); 
+                    otherlv_1=(Token)match(input,41,FOLLOW_12); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getDefualt_CAAccess().getCostKeyword_1_0());
                     			
-                    // InternalWail.g:1308:4: ( (lv_cost_2_0= RULE_INT ) )
-                    // InternalWail.g:1309:5: (lv_cost_2_0= RULE_INT )
+                    // InternalWail.g:1362:4: ( (lv_cost_2_0= RULE_INT ) )
+                    // InternalWail.g:1363:5: (lv_cost_2_0= RULE_INT )
                     {
-                    // InternalWail.g:1309:5: (lv_cost_2_0= RULE_INT )
-                    // InternalWail.g:1310:6: lv_cost_2_0= RULE_INT
+                    // InternalWail.g:1363:5: (lv_cost_2_0= RULE_INT )
+                    // InternalWail.g:1364:6: lv_cost_2_0= RULE_INT
                     {
                     lv_cost_2_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -2947,16 +3083,16 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
 
     protected DFA6 dfa6 = new DFA6(this);
     static final String dfa_1s = "\21\uffff";
-    static final String dfa_2s = "\1\26\1\uffff\1\24\1\uffff\1\31\1\uffff\1\25\1\5\1\32\1\25\1\5\1\33\1\25\1\5\1\34\2\uffff";
-    static final String dfa_3s = "\1\27\1\uffff\1\36\1\uffff\1\31\1\uffff\1\25\1\5\1\32\1\25\1\5\1\33\1\25\1\5\1\35\2\uffff";
-    static final String dfa_4s = "\1\uffff\1\1\1\uffff\1\2\1\uffff\1\3\11\uffff\1\5\1\4";
+    static final String dfa_2s = "\1\27\1\uffff\1\26\1\32\2\uffff\1\20\1\5\1\33\1\20\1\5\1\34\1\20\1\5\1\17\2\uffff";
+    static final String dfa_3s = "\1\30\1\uffff\1\36\1\32\2\uffff\1\20\1\5\1\33\1\20\1\5\1\34\1\20\1\5\1\35\2\uffff";
+    static final String dfa_4s = "\1\uffff\1\1\2\uffff\1\3\1\2\11\uffff\1\5\1\4";
     static final String dfa_5s = "\21\uffff}>";
     static final String[] dfa_6s = {
             "\1\1\1\2",
             "",
-            "\1\4\3\uffff\1\5\5\uffff\1\3",
-            "",
+            "\1\3\2\uffff\1\4\4\uffff\1\5",
             "\1\6",
+            "",
             "",
             "\1\7",
             "\1\10",
@@ -2966,7 +3102,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
             "\1\14",
             "\1\15",
             "\1\16",
-            "\1\20\1\17",
+            "\1\20\15\uffff\1\17",
             "",
             ""
     };
@@ -2992,7 +3128,7 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
             this.transition = dfa_6;
         }
         public String getDescription() {
-            return "546:2: ( (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) ) | this_ProtectLocation_3= ruleProtectLocation | this_ProtectLeader_4= ruleProtectLeader | this_ProtectUnitID_5= ruleProtectUnitID | this_ProtectUnitType_6= ruleProtectUnitType )";
+            return "600:2: ( (otherlv_0= 'goal' otherlv_1= 'is' ( (lv_goal_2_0= ruleGoaLocation ) ) ) | this_ProtectLocation_3= ruleProtectLocation | this_ProtectLeader_4= ruleProtectLeader | this_ProtectUnitID_5= ruleProtectUnitID | this_ProtectUnitType_6= ruleProtectUnitType )";
         }
     }
  
@@ -3002,21 +3138,21 @@ public class InternalWailParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000C06000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000C02000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000001806000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000001802000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000001FE00002000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000158000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000568000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000040000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000080000000L});

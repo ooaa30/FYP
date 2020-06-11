@@ -70,6 +70,7 @@ public class WailFactoryImpl extends EFactoryImpl implements WailFactory
       case WailPackage.FRAGMENT: return createFragment();
       case WailPackage.CONDITIONAL: return createConditional();
       case WailPackage.WHEN_RULES: return createwhenRules();
+      case WailPackage.ID_EQUALS: return createIDEquals();
       case WailPackage.BASELINE: return createBaseline();
       case WailPackage.DAMAGE: return createDamage();
       case WailPackage.AT_LOCATION: return createAtLocation();
@@ -144,6 +145,18 @@ public class WailFactoryImpl extends EFactoryImpl implements WailFactory
   {
     whenRulesImpl whenRules = new whenRulesImpl();
     return whenRules;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public IDEquals createIDEquals()
+  {
+    IDEqualsImpl idEquals = new IDEqualsImpl();
+    return idEquals;
   }
 
   /**

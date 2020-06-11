@@ -108,6 +108,14 @@ public class WailSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case WailPackage.ID_EQUALS:
+      {
+        IDEquals idEquals = (IDEquals)theEObject;
+        T result = caseIDEquals(idEquals);
+        if (result == null) result = casewhenRules(idEquals);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case WailPackage.BASELINE:
       {
         Baseline baseline = (Baseline)theEObject;
@@ -273,6 +281,22 @@ public class WailSwitch<T> extends Switch<T>
    * @generated
    */
   public T casewhenRules(whenRules object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>ID Equals</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>ID Equals</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIDEquals(IDEquals object)
   {
     return null;
   }

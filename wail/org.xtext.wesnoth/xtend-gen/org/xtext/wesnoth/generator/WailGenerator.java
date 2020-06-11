@@ -23,6 +23,7 @@ import org.xtext.wesnoth.wail.Defualt_CA;
 import org.xtext.wesnoth.wail.Fragment;
 import org.xtext.wesnoth.wail.GoaLocation;
 import org.xtext.wesnoth.wail.Goal;
+import org.xtext.wesnoth.wail.IDEquals;
 import org.xtext.wesnoth.wail.ProtectLeader;
 import org.xtext.wesnoth.wail.ProtectLocation;
 import org.xtext.wesnoth.wail.ProtectUnitID;
@@ -601,62 +602,59 @@ public class WailGenerator extends AbstractGenerator {
   
   public CharSequence compile(final Conditional con) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("[filter_own]");
+    _builder.newLine();
+    _builder.append("\t");
     CharSequence _resolve = this.resolve(con.getX());
-    _builder.append(_resolve);
-    _builder.append(" ");
+    _builder.append(_resolve, "\t");
     _builder.newLineIfNotEmpty();
+    _builder.append("[/filter_own] ");
+    _builder.newLine();
     return _builder;
   }
   
   protected CharSequence _resolve(final AtLocation x) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("[filter_own]");
-    _builder.newLine();
-    _builder.append("\t");
     _builder.append("x,y=");
     int _xAxis = x.getXAxis();
-    _builder.append(_xAxis, "\t");
+    _builder.append(_xAxis);
     _builder.append(",");
     int _yAxis = x.getYAxis();
-    _builder.append(_yAxis, "\t");
+    _builder.append(_yAxis);
     _builder.newLineIfNotEmpty();
-    _builder.append("[/filter_own}]");
-    _builder.newLine();
     return _builder;
   }
   
   protected CharSequence _resolve(final Damage x) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("[filter_own]");
-    _builder.newLine();
-    _builder.append("\t");
     _builder.append("[filter_wml]");
     _builder.newLine();
-    _builder.append("\t\t");
+    _builder.append("\t");
     _builder.append("hitpoints=<($this_unit.max_hitpoints-");
     int _health = x.getHealth();
-    _builder.append(_health, "\t\t");
+    _builder.append(_health, "\t");
     _builder.append(")");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
     _builder.append("[/filter_wml]");
-    _builder.newLine();
-    _builder.append("[/filter_own]");
     _builder.newLine();
     return _builder;
   }
   
   protected CharSequence _resolve(final UnitEquals x) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("[filter_own]");
-    _builder.newLine();
-    _builder.append("\t");
     _builder.append("type = ");
     String _unit = x.getUnit();
-    _builder.append(_unit, "\t");
+    _builder.append(_unit);
     _builder.newLineIfNotEmpty();
-    _builder.append("[/filter_own]");
-    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _resolve(final IDEquals x) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("id = ");
+    String _unitID = x.getUnitID();
+    _builder.append(_unitID);
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
@@ -835,6 +833,8 @@ public class WailGenerator extends AbstractGenerator {
       return _resolve((Baseline)x);
     } else if (x instanceof Damage) {
       return _resolve((Damage)x);
+    } else if (x instanceof IDEquals) {
+      return _resolve((IDEquals)x);
     } else if (x instanceof ProtectLeader) {
       return _resolve((ProtectLeader)x);
     } else if (x instanceof ProtectLocation) {
