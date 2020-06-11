@@ -20,6 +20,8 @@ import org.xtext.wesnoth.wail.GoaLocation
 import org.xtext.wesnoth.wail.ProtectLocation
 import org.xtext.wesnoth.wail.ProtectLeader
 import java.io.File
+import org.xtext.wesnoth.wail.ProtectUnitID
+import org.xtext.wesnoth.wail.ProtectUnitType
 
 /**
  * Generates code from your model files on save.
@@ -302,5 +304,22 @@ class WailGenerator extends AbstractGenerator {
 		protect_radius=«x.protectionRadius»
 		value=«x.locationValue»
 		'''
-		
+		def dispatch resolve(ProtectUnitID x)'''
+		name=protect_location
+		[criteria]
+			side=«x.procSide»
+			id=«x.procID»
+		[/criteria]
+		protect_radius=«x.protectionRadius»
+		value=«x.locationValue»
+		'''
+		def dispatch resolve(ProtectUnitType x)'''
+		name=protect_location
+		[criteria]
+			side=«x.procSide»
+			type=«x.procType»
+		[/criteria]
+		protect_radius=«x.protectionRadius»
+		value=«x.locationValue»
+		'''
 }

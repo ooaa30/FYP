@@ -25,6 +25,8 @@ import org.xtext.wesnoth.wail.GoaLocation;
 import org.xtext.wesnoth.wail.Goal;
 import org.xtext.wesnoth.wail.ProtectLeader;
 import org.xtext.wesnoth.wail.ProtectLocation;
+import org.xtext.wesnoth.wail.ProtectUnitID;
+import org.xtext.wesnoth.wail.ProtectUnitType;
 import org.xtext.wesnoth.wail.Rule;
 import org.xtext.wesnoth.wail.UnitEquals;
 
@@ -768,6 +770,64 @@ public class WailGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  protected CharSequence _resolve(final ProtectUnitID x) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("name=protect_location");
+    _builder.newLine();
+    _builder.append("[criteria]");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("side=");
+    int _procSide = x.getProcSide();
+    _builder.append(_procSide, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("id=");
+    String _procID = x.getProcID();
+    _builder.append(_procID, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("[/criteria]");
+    _builder.newLine();
+    _builder.append("protect_radius=");
+    int _protectionRadius = x.getProtectionRadius();
+    _builder.append(_protectionRadius);
+    _builder.newLineIfNotEmpty();
+    _builder.append("value=");
+    int _locationValue = x.getLocationValue();
+    _builder.append(_locationValue);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _resolve(final ProtectUnitType x) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("name=protect_location");
+    _builder.newLine();
+    _builder.append("[criteria]");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("side=");
+    int _procSide = x.getProcSide();
+    _builder.append(_procSide, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("type=");
+    String _procType = x.getProcType();
+    _builder.append(_procType, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("[/criteria]");
+    _builder.newLine();
+    _builder.append("protect_radius=");
+    int _protectionRadius = x.getProtectionRadius();
+    _builder.append(_protectionRadius);
+    _builder.newLineIfNotEmpty();
+    _builder.append("value=");
+    int _locationValue = x.getLocationValue();
+    _builder.append(_locationValue);
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
   public CharSequence resolve(final EObject x) {
     if (x instanceof AtLocation) {
       return _resolve((AtLocation)x);
@@ -779,6 +839,10 @@ public class WailGenerator extends AbstractGenerator {
       return _resolve((ProtectLeader)x);
     } else if (x instanceof ProtectLocation) {
       return _resolve((ProtectLocation)x);
+    } else if (x instanceof ProtectUnitID) {
+      return _resolve((ProtectUnitID)x);
+    } else if (x instanceof ProtectUnitType) {
+      return _resolve((ProtectUnitType)x);
     } else if (x instanceof UnitEquals) {
       return _resolve((UnitEquals)x);
     } else if (x instanceof GoaLocation) {
