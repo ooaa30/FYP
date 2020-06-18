@@ -28,8 +28,6 @@ whenRules:
 	UnitEquals|AtLocation|Damage|Baseline|IDEquals
 ;
 
-
-
 IDEquals:
 	'ID' 'is' unitID=STRING
 ;

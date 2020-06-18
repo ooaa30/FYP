@@ -250,6 +250,7 @@ class WailGenerator extends AbstractGenerator {
 			«ENDIF»
 		«ENDIF»
 		'''
+		
 		def compile(Conditional con)'''	
 		[filter_own]
 			«FOR conFrag : con.x»
