@@ -11,7 +11,15 @@ Rule:
 	'{'
 		fragments+=Fragment*
 		goals+=Goal*
+		aggressionval=Aggression
+		cautionval=Caution
+		GroupingVal=Grouping
+		('avoids' avoids+=AtLocation*)?
 		'}'
+;
+
+Grouping:
+	'Grouping' 'is' groupingVal=("offensive"|"defensive"|"none")
 ;
 
 Fragment:
@@ -71,6 +79,13 @@ ProtectLocation:
 
 GoaLocation:
 	'attack' 'x' XAxis=INT 'y' YAxis=INT 'value' 'is' locValue=INT 
+;
+
+Aggression:
+	'aggression' 'is' aggressionVal=INT
+;
+Caution:
+	'Caution' 'is' cautionval=INT
 ;
 
 
