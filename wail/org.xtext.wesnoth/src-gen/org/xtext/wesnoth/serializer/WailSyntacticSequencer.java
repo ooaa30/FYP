@@ -10,6 +10,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.xtext.wesnoth.services.WailGrammarAccess;
@@ -18,10 +20,12 @@ import org.xtext.wesnoth.services.WailGrammarAccess;
 public class WailSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected WailGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Rule_AvoidsKeyword_8_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (WailGrammarAccess) access;
+		match_Rule_AvoidsKeyword_8_0_q = new TokenAlias(false, true, grammarAccess.getRuleAccess().getAvoidsKeyword_8_0());
 	}
 	
 	@Override
@@ -36,8 +40,21 @@ public class WailSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_Rule_AvoidsKeyword_8_0_q.equals(syntax))
+				emit_Rule_AvoidsKeyword_8_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'avoids'?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     GroupingVal=Grouping (ambiguity) '}' (rule end)
+	 */
+	protected void emit_Rule_AvoidsKeyword_8_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

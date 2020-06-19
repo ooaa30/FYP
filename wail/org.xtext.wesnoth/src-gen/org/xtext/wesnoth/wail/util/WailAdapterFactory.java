@@ -86,6 +86,11 @@ public class WailAdapterFactory extends AdapterFactoryImpl
         return createRuleAdapter();
       }
       @Override
+      public Adapter caseGrouping(Grouping object)
+      {
+        return createGroupingAdapter();
+      }
+      @Override
       public Adapter caseFragment(Fragment object)
       {
         return createFragmentAdapter();
@@ -156,6 +161,16 @@ public class WailAdapterFactory extends AdapterFactoryImpl
         return createGoaLocationAdapter();
       }
       @Override
+      public Adapter caseAggression(Aggression object)
+      {
+        return createAggressionAdapter();
+      }
+      @Override
+      public Adapter caseCaution(Caution object)
+      {
+        return createCautionAdapter();
+      }
+      @Override
       public Adapter caseDefualt_CA(Defualt_CA object)
       {
         return createDefualt_CAAdapter();
@@ -208,6 +223,21 @@ public class WailAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.wesnoth.wail.Grouping <em>Grouping</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.wesnoth.wail.Grouping
+   * @generated
+   */
+  public Adapter createGroupingAdapter()
   {
     return null;
   }
@@ -418,6 +448,36 @@ public class WailAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGoaLocationAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.wesnoth.wail.Aggression <em>Aggression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.wesnoth.wail.Aggression
+   * @generated
+   */
+  public Adapter createAggressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.wesnoth.wail.Caution <em>Caution</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.wesnoth.wail.Caution
+   * @generated
+   */
+  public Adapter createCautionAdapter()
   {
     return null;
   }

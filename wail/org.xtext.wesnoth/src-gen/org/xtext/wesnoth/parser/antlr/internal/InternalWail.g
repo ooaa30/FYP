@@ -176,10 +176,157 @@ ruleRule returns [EObject current=null]
 				}
 			)
 		)*
-		otherlv_5='}'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRuleAccess().getAggressionvalAggressionParserRuleCall_5_0());
+				}
+				lv_aggressionval_5_0=ruleAggression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRuleRule());
+					}
+					set(
+						$current,
+						"aggressionval",
+						lv_aggressionval_5_0,
+						"org.xtext.wesnoth.Wail.Aggression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRuleAccess().getCautionvalCautionParserRuleCall_6_0());
+				}
+				lv_cautionval_6_0=ruleCaution
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRuleRule());
+					}
+					set(
+						$current,
+						"cautionval",
+						lv_cautionval_6_0,
+						"org.xtext.wesnoth.Wail.Caution");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRuleAccess().getGroupingValGroupingParserRuleCall_7_0());
+				}
+				lv_GroupingVal_7_0=ruleGrouping
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRuleRule());
+					}
+					set(
+						$current,
+						"GroupingVal",
+						lv_GroupingVal_7_0,
+						"org.xtext.wesnoth.Wail.Grouping");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_8='avoids'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getRuleAccess().getAvoidsKeyword_8_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getRuleAccess().getAvoidsAtLocationParserRuleCall_8_1_0());
+					}
+					lv_avoids_9_0=ruleAtLocation
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getRuleRule());
+						}
+						add(
+							$current,
+							"avoids",
+							lv_avoids_9_0,
+							"org.xtext.wesnoth.Wail.AtLocation");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+		)?
+		otherlv_10='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_10, grammarAccess.getRuleAccess().getRightCurlyBracketKeyword_9());
 		}
+	)
+;
+
+// Entry rule entryRuleGrouping
+entryRuleGrouping returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getGroupingRule()); }
+	iv_ruleGrouping=ruleGrouping
+	{ $current=$iv_ruleGrouping.current; }
+	EOF;
+
+// Rule Grouping
+ruleGrouping returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Grouping'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getGroupingAccess().getGroupingKeyword_0());
+		}
+		otherlv_1='is'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getGroupingAccess().getIsKeyword_1());
+		}
+		(
+			(
+				(
+					lv_groupingVal_2_1='offensive'
+					{
+						newLeafNode(lv_groupingVal_2_1, grammarAccess.getGroupingAccess().getGroupingValOffensiveKeyword_2_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getGroupingRule());
+						}
+						setWithLastConsumed($current, "groupingVal", lv_groupingVal_2_1, null);
+					}
+					    |
+					lv_groupingVal_2_2='defensive'
+					{
+						newLeafNode(lv_groupingVal_2_2, grammarAccess.getGroupingAccess().getGroupingValDefensiveKeyword_2_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getGroupingRule());
+						}
+						setWithLastConsumed($current, "groupingVal", lv_groupingVal_2_2, null);
+					}
+					    |
+					lv_groupingVal_2_3='none'
+					{
+						newLeafNode(lv_groupingVal_2_3, grammarAccess.getGroupingAccess().getGroupingValNoneKeyword_2_0_2());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getGroupingRule());
+						}
+						setWithLastConsumed($current, "groupingVal", lv_groupingVal_2_3, null);
+					}
+				)
+			)
+		)
 	)
 ;
 
@@ -1238,6 +1385,96 @@ ruleGoaLocation returns [EObject current=null]
 						$current,
 						"locValue",
 						lv_locValue_7_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleAggression
+entryRuleAggression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAggressionRule()); }
+	iv_ruleAggression=ruleAggression
+	{ $current=$iv_ruleAggression.current; }
+	EOF;
+
+// Rule Aggression
+ruleAggression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='aggression'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getAggressionAccess().getAggressionKeyword_0());
+		}
+		otherlv_1='is'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getAggressionAccess().getIsKeyword_1());
+		}
+		(
+			(
+				lv_aggressionVal_2_0=RULE_INT
+				{
+					newLeafNode(lv_aggressionVal_2_0, grammarAccess.getAggressionAccess().getAggressionValINTTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAggressionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"aggressionVal",
+						lv_aggressionVal_2_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleCaution
+entryRuleCaution returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCautionRule()); }
+	iv_ruleCaution=ruleCaution
+	{ $current=$iv_ruleCaution.current; }
+	EOF;
+
+// Rule Caution
+ruleCaution returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='Caution'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getCautionAccess().getCautionKeyword_0());
+		}
+		otherlv_1='is'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCautionAccess().getIsKeyword_1());
+		}
+		(
+			(
+				lv_cautionval_2_0=RULE_INT
+				{
+					newLeafNode(lv_cautionval_2_0, grammarAccess.getCautionAccess().getCautionvalINTTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCautionRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"cautionval",
+						lv_cautionval_2_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)

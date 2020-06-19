@@ -10,14 +10,17 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xtext.wesnoth.wail.Aggression;
 import org.xtext.wesnoth.wail.AtLocation;
 import org.xtext.wesnoth.wail.Baseline;
+import org.xtext.wesnoth.wail.Caution;
 import org.xtext.wesnoth.wail.Conditional;
 import org.xtext.wesnoth.wail.Damage;
 import org.xtext.wesnoth.wail.Defualt_CA;
 import org.xtext.wesnoth.wail.Fragment;
 import org.xtext.wesnoth.wail.GoaLocation;
 import org.xtext.wesnoth.wail.Goal;
+import org.xtext.wesnoth.wail.Grouping;
 import org.xtext.wesnoth.wail.IDEquals;
 import org.xtext.wesnoth.wail.Model;
 import org.xtext.wesnoth.wail.ProtectLeader;
@@ -51,6 +54,13 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
    * @generated
    */
   private EClass ruleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass groupingEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -149,6 +159,20 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
    * @generated
    */
   private EClass goaLocationEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass aggressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass cautionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -284,6 +308,72 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
   public EReference getRule_Goals()
   {
     return (EReference)ruleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRule_Aggressionval()
+  {
+    return (EReference)ruleEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRule_Cautionval()
+  {
+    return (EReference)ruleEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRule_GroupingVal()
+  {
+    return (EReference)ruleEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRule_Avoids()
+  {
+    return (EReference)ruleEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGrouping()
+  {
+    return groupingEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getGrouping_GroupingVal()
+  {
+    return (EAttribute)groupingEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -754,6 +844,50 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
    * @generated
    */
   @Override
+  public EClass getAggression()
+  {
+    return aggressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAggression_AggressionVal()
+  {
+    return (EAttribute)aggressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCaution()
+  {
+    return cautionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCaution_Cautionval()
+  {
+    return (EAttribute)cautionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getDefualt_CA()
   {
     return defualt_CAEClass;
@@ -819,6 +953,13 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
     createEAttribute(ruleEClass, RULE__NAME);
     createEReference(ruleEClass, RULE__FRAGMENTS);
     createEReference(ruleEClass, RULE__GOALS);
+    createEReference(ruleEClass, RULE__AGGRESSIONVAL);
+    createEReference(ruleEClass, RULE__CAUTIONVAL);
+    createEReference(ruleEClass, RULE__GROUPING_VAL);
+    createEReference(ruleEClass, RULE__AVOIDS);
+
+    groupingEClass = createEClass(GROUPING);
+    createEAttribute(groupingEClass, GROUPING__GROUPING_VAL);
 
     fragmentEClass = createEClass(FRAGMENT);
     createEReference(fragmentEClass, FRAGMENT__CONDITION);
@@ -876,6 +1017,12 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
     createEAttribute(goaLocationEClass, GOA_LOCATION__YAXIS);
     createEAttribute(goaLocationEClass, GOA_LOCATION__LOC_VALUE);
 
+    aggressionEClass = createEClass(AGGRESSION);
+    createEAttribute(aggressionEClass, AGGRESSION__AGGRESSION_VAL);
+
+    cautionEClass = createEClass(CAUTION);
+    createEAttribute(cautionEClass, CAUTION__CAUTIONVAL);
+
     defualt_CAEClass = createEClass(DEFUALT_CA);
     createEAttribute(defualt_CAEClass, DEFUALT_CA__CA_TYPE);
     createEAttribute(defualt_CAEClass, DEFUALT_CA__COST);
@@ -928,6 +1075,13 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
     initEAttribute(getRule_Name(), ecorePackage.getEString(), "name", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_Fragments(), this.getFragment(), null, "fragments", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_Goals(), this.getGoal(), null, "goals", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_Aggressionval(), this.getAggression(), null, "aggressionval", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_Cautionval(), this.getCaution(), null, "cautionval", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_GroupingVal(), this.getGrouping(), null, "GroupingVal", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_Avoids(), this.getAtLocation(), null, "avoids", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(groupingEClass, Grouping.class, "Grouping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGrouping_GroupingVal(), ecorePackage.getEString(), "groupingVal", null, 0, 1, Grouping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fragmentEClass, Fragment.class, "Fragment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getFragment_Condition(), this.getConditional(), null, "condition", null, 0, 1, Fragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -984,6 +1138,12 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
     initEAttribute(getGoaLocation_XAxis(), ecorePackage.getEInt(), "XAxis", null, 0, 1, GoaLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoaLocation_YAxis(), ecorePackage.getEInt(), "YAxis", null, 0, 1, GoaLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getGoaLocation_LocValue(), ecorePackage.getEInt(), "locValue", null, 0, 1, GoaLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(aggressionEClass, Aggression.class, "Aggression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAggression_AggressionVal(), ecorePackage.getEInt(), "aggressionVal", null, 0, 1, Aggression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(cautionEClass, Caution.class, "Caution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCaution_Cautionval(), ecorePackage.getEInt(), "cautionval", null, 0, 1, Caution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(defualt_CAEClass, Defualt_CA.class, "Defualt_CA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefualt_CA_CaType(), ecorePackage.getEString(), "caType", null, 0, 1, Defualt_CA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

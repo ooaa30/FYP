@@ -67,6 +67,7 @@ public class WailFactoryImpl extends EFactoryImpl implements WailFactory
     {
       case WailPackage.MODEL: return createModel();
       case WailPackage.RULE: return createRule();
+      case WailPackage.GROUPING: return createGrouping();
       case WailPackage.FRAGMENT: return createFragment();
       case WailPackage.CONDITIONAL: return createConditional();
       case WailPackage.WHEN_RULES: return createwhenRules();
@@ -81,6 +82,8 @@ public class WailFactoryImpl extends EFactoryImpl implements WailFactory
       case WailPackage.PROTECT_UNIT_TYPE: return createProtectUnitType();
       case WailPackage.PROTECT_LOCATION: return createProtectLocation();
       case WailPackage.GOA_LOCATION: return createGoaLocation();
+      case WailPackage.AGGRESSION: return createAggression();
+      case WailPackage.CAUTION: return createCaution();
       case WailPackage.DEFUALT_CA: return createDefualt_CA();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -109,6 +112,18 @@ public class WailFactoryImpl extends EFactoryImpl implements WailFactory
   {
     RuleImpl rule = new RuleImpl();
     return rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Grouping createGrouping()
+  {
+    GroupingImpl grouping = new GroupingImpl();
+    return grouping;
   }
 
   /**
@@ -277,6 +292,30 @@ public class WailFactoryImpl extends EFactoryImpl implements WailFactory
   {
     GoaLocationImpl goaLocation = new GoaLocationImpl();
     return goaLocation;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Aggression createAggression()
+  {
+    AggressionImpl aggression = new AggressionImpl();
+    return aggression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Caution createCaution()
+  {
+    CautionImpl caution = new CautionImpl();
+    return caution;
   }
 
   /**

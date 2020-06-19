@@ -15,14 +15,17 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.wesnoth.services.WailGrammarAccess;
+import org.xtext.wesnoth.wail.Aggression;
 import org.xtext.wesnoth.wail.AtLocation;
 import org.xtext.wesnoth.wail.Baseline;
+import org.xtext.wesnoth.wail.Caution;
 import org.xtext.wesnoth.wail.Conditional;
 import org.xtext.wesnoth.wail.Damage;
 import org.xtext.wesnoth.wail.Defualt_CA;
 import org.xtext.wesnoth.wail.Fragment;
 import org.xtext.wesnoth.wail.GoaLocation;
 import org.xtext.wesnoth.wail.Goal;
+import org.xtext.wesnoth.wail.Grouping;
 import org.xtext.wesnoth.wail.IDEquals;
 import org.xtext.wesnoth.wail.Model;
 import org.xtext.wesnoth.wail.ProtectLeader;
@@ -47,11 +50,17 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == WailPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case WailPackage.AGGRESSION:
+				sequence_Aggression(context, (Aggression) semanticObject); 
+				return; 
 			case WailPackage.AT_LOCATION:
 				sequence_AtLocation(context, (AtLocation) semanticObject); 
 				return; 
 			case WailPackage.BASELINE:
 				sequence_Baseline(context, (Baseline) semanticObject); 
+				return; 
+			case WailPackage.CAUTION:
+				sequence_Caution(context, (Caution) semanticObject); 
 				return; 
 			case WailPackage.CONDITIONAL:
 				sequence_Conditional(context, (Conditional) semanticObject); 
@@ -70,6 +79,9 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				return; 
 			case WailPackage.GOAL:
 				sequence_Goal(context, (Goal) semanticObject); 
+				return; 
+			case WailPackage.GROUPING:
+				sequence_Grouping(context, (Grouping) semanticObject); 
 				return; 
 			case WailPackage.ID_EQUALS:
 				sequence_IDEquals(context, (IDEquals) semanticObject); 
@@ -99,6 +111,24 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Aggression returns Aggression
+	 *
+	 * Constraint:
+	 *     aggressionVal=INT
+	 */
+	protected void sequence_Aggression(ISerializationContext context, Aggression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.AGGRESSION__AGGRESSION_VAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.AGGRESSION__AGGRESSION_VAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAggressionAccess().getAggressionValINTTerminalRuleCall_2_0(), semanticObject.getAggressionVal());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -137,6 +167,24 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getBaselineAccess().getAlwaysAlwaysKeyword_0(), semanticObject.getAlways());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Caution returns Caution
+	 *
+	 * Constraint:
+	 *     cautionval=INT
+	 */
+	protected void sequence_Caution(ISerializationContext context, Caution semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WailPackage.Literals.CAUTION__CAUTIONVAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.CAUTION__CAUTIONVAL));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCautionAccess().getCautionvalINTTerminalRuleCall_2_0(), semanticObject.getCautionval());
 		feeder.finish();
 	}
 	
@@ -247,6 +295,18 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getGoalAccess().getGoalGoaLocationParserRuleCall_0_2_0(), semanticObject.getGoal());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Grouping returns Grouping
+	 *
+	 * Constraint:
+	 *     (groupingVal='offensive' | groupingVal='defensive' | groupingVal='none')
+	 */
+	protected void sequence_Grouping(ISerializationContext context, Grouping semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -395,7 +455,15 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     (name=STRING fragments+=Fragment* goals+=Goal*)
+	 *     (
+	 *         name=STRING 
+	 *         fragments+=Fragment* 
+	 *         goals+=Goal* 
+	 *         aggressionval=Aggression 
+	 *         cautionval=Caution 
+	 *         GroupingVal=Grouping 
+	 *         avoids+=AtLocation*
+	 *     )
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

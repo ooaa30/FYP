@@ -42,6 +42,15 @@ public interface WailFactory extends EFactory
   Rule createRule();
 
   /**
+   * Returns a new object of class '<em>Grouping</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Grouping</em>'.
+   * @generated
+   */
+  Grouping createGrouping();
+
+  /**
    * Returns a new object of class '<em>Fragment</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -166,6 +175,24 @@ public interface WailFactory extends EFactory
    * @generated
    */
   GoaLocation createGoaLocation();
+
+  /**
+   * Returns a new object of class '<em>Aggression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Aggression</em>'.
+   * @generated
+   */
+  Aggression createAggression();
+
+  /**
+   * Returns a new object of class '<em>Caution</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Caution</em>'.
+   * @generated
+   */
+  Caution createCaution();
 
   /**
    * Returns a new object of class '<em>Defualt CA</em>'.

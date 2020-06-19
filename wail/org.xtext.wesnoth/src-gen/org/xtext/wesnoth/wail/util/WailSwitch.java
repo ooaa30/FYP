@@ -87,6 +87,13 @@ public class WailSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case WailPackage.GROUPING:
+      {
+        Grouping grouping = (Grouping)theEObject;
+        T result = caseGrouping(grouping);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case WailPackage.FRAGMENT:
       {
         Fragment fragment = (Fragment)theEObject;
@@ -194,6 +201,20 @@ public class WailSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case WailPackage.AGGRESSION:
+      {
+        Aggression aggression = (Aggression)theEObject;
+        T result = caseAggression(aggression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case WailPackage.CAUTION:
+      {
+        Caution caution = (Caution)theEObject;
+        T result = caseCaution(caution);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case WailPackage.DEFUALT_CA:
       {
         Defualt_CA defualt_CA = (Defualt_CA)theEObject;
@@ -233,6 +254,22 @@ public class WailSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRule(Rule object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Grouping</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Grouping</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGrouping(Grouping object)
   {
     return null;
   }
@@ -457,6 +494,38 @@ public class WailSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGoaLocation(GoaLocation object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Aggression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Aggression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAggression(Aggression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Caution</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Caution</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCaution(Caution object)
   {
     return null;
   }

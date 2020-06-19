@@ -48,17 +48,31 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFragmentsFragmentParserRuleCall_3_0 = (RuleCall)cFragmentsAssignment_3.eContents().get(0);
 		private final Assignment cGoalsAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cGoalsGoalParserRuleCall_4_0 = (RuleCall)cGoalsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cAggressionvalAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cAggressionvalAggressionParserRuleCall_5_0 = (RuleCall)cAggressionvalAssignment_5.eContents().get(0);
+		private final Assignment cCautionvalAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cCautionvalCautionParserRuleCall_6_0 = (RuleCall)cCautionvalAssignment_6.eContents().get(0);
+		private final Assignment cGroupingValAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cGroupingValGroupingParserRuleCall_7_0 = (RuleCall)cGroupingValAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cAvoidsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cAvoidsAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cAvoidsAtLocationParserRuleCall_8_1_0 = (RuleCall)cAvoidsAssignment_8_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Rule:
 		//	'rule' name=STRING
 		//	'{'
 		//	fragments+=Fragment*
 		//	goals+=Goal*
+		//	aggressionval=Aggression
+		//	cautionval=Caution
+		//	GroupingVal=Grouping ('avoids' avoids+=AtLocation*)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'rule' name=STRING '{' fragments+=Fragment* goals+=Goal* '}'
+		//'rule' name=STRING '{' fragments+=Fragment* goals+=Goal* aggressionval=Aggression cautionval=Caution
+		//GroupingVal=Grouping ('avoids' avoids+=AtLocation*)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'rule'
@@ -85,8 +99,77 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		//Goal
 		public RuleCall getGoalsGoalParserRuleCall_4_0() { return cGoalsGoalParserRuleCall_4_0; }
 		
+		//aggressionval=Aggression
+		public Assignment getAggressionvalAssignment_5() { return cAggressionvalAssignment_5; }
+		
+		//Aggression
+		public RuleCall getAggressionvalAggressionParserRuleCall_5_0() { return cAggressionvalAggressionParserRuleCall_5_0; }
+		
+		//cautionval=Caution
+		public Assignment getCautionvalAssignment_6() { return cCautionvalAssignment_6; }
+		
+		//Caution
+		public RuleCall getCautionvalCautionParserRuleCall_6_0() { return cCautionvalCautionParserRuleCall_6_0; }
+		
+		//GroupingVal=Grouping
+		public Assignment getGroupingValAssignment_7() { return cGroupingValAssignment_7; }
+		
+		//Grouping
+		public RuleCall getGroupingValGroupingParserRuleCall_7_0() { return cGroupingValGroupingParserRuleCall_7_0; }
+		
+		//('avoids' avoids+=AtLocation*)?
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//'avoids'
+		public Keyword getAvoidsKeyword_8_0() { return cAvoidsKeyword_8_0; }
+		
+		//avoids+=AtLocation*
+		public Assignment getAvoidsAssignment_8_1() { return cAvoidsAssignment_8_1; }
+		
+		//AtLocation
+		public RuleCall getAvoidsAtLocationParserRuleCall_8_1_0() { return cAvoidsAtLocationParserRuleCall_8_1_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+	}
+	public class GroupingElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.Grouping");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cGroupingKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cGroupingValAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Alternatives cGroupingValAlternatives_2_0 = (Alternatives)cGroupingValAssignment_2.eContents().get(0);
+		private final Keyword cGroupingValOffensiveKeyword_2_0_0 = (Keyword)cGroupingValAlternatives_2_0.eContents().get(0);
+		private final Keyword cGroupingValDefensiveKeyword_2_0_1 = (Keyword)cGroupingValAlternatives_2_0.eContents().get(1);
+		private final Keyword cGroupingValNoneKeyword_2_0_2 = (Keyword)cGroupingValAlternatives_2_0.eContents().get(2);
+		
+		//Grouping:
+		//	'Grouping' 'is' groupingVal=("offensive" | "defensive" | "none");
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Grouping' 'is' groupingVal=("offensive" | "defensive" | "none")
+		public Group getGroup() { return cGroup; }
+		
+		//'Grouping'
+		public Keyword getGroupingKeyword_0() { return cGroupingKeyword_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
+		
+		//groupingVal=("offensive" | "defensive" | "none")
+		public Assignment getGroupingValAssignment_2() { return cGroupingValAssignment_2; }
+		
+		//("offensive" | "defensive" | "none")
+		public Alternatives getGroupingValAlternatives_2_0() { return cGroupingValAlternatives_2_0; }
+		
+		//"offensive"
+		public Keyword getGroupingValOffensiveKeyword_2_0_0() { return cGroupingValOffensiveKeyword_2_0_0; }
+		
+		//"defensive"
+		public Keyword getGroupingValDefensiveKeyword_2_0_1() { return cGroupingValDefensiveKeyword_2_0_1; }
+		
+		//"none"
+		public Keyword getGroupingValNoneKeyword_2_0_2() { return cGroupingValNoneKeyword_2_0_2; }
 	}
 	public class FragmentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.Fragment");
@@ -721,6 +804,60 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getLocValueINTTerminalRuleCall_7_0() { return cLocValueINTTerminalRuleCall_7_0; }
 	}
+	public class AggressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.Aggression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAggressionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cAggressionValAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAggressionValINTTerminalRuleCall_2_0 = (RuleCall)cAggressionValAssignment_2.eContents().get(0);
+		
+		//Aggression:
+		//	'aggression' 'is' aggressionVal=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'aggression' 'is' aggressionVal=INT
+		public Group getGroup() { return cGroup; }
+		
+		//'aggression'
+		public Keyword getAggressionKeyword_0() { return cAggressionKeyword_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
+		
+		//aggressionVal=INT
+		public Assignment getAggressionValAssignment_2() { return cAggressionValAssignment_2; }
+		
+		//INT
+		public RuleCall getAggressionValINTTerminalRuleCall_2_0() { return cAggressionValINTTerminalRuleCall_2_0; }
+	}
+	public class CautionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.Caution");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCautionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cCautionvalAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCautionvalINTTerminalRuleCall_2_0 = (RuleCall)cCautionvalAssignment_2.eContents().get(0);
+		
+		//Caution:
+		//	'Caution' 'is' cautionval=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Caution' 'is' cautionval=INT
+		public Group getGroup() { return cGroup; }
+		
+		//'Caution'
+		public Keyword getCautionKeyword_0() { return cCautionKeyword_0; }
+		
+		//'is'
+		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
+		
+		//cautionval=INT
+		public Assignment getCautionvalAssignment_2() { return cCautionvalAssignment_2; }
+		
+		//INT
+		public RuleCall getCautionvalINTTerminalRuleCall_2_0() { return cCautionvalINTTerminalRuleCall_2_0; }
+	}
 	public class Defualt_CAElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.Defualt_CA");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -796,6 +933,7 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final ModelElements pModel;
 	private final RuleElements pRule;
+	private final GroupingElements pGrouping;
 	private final FragmentElements pFragment;
 	private final ConditionalElements pConditional;
 	private final WhenRulesElements pWhenRules;
@@ -810,6 +948,8 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	private final ProtectUnitTypeElements pProtectUnitType;
 	private final ProtectLocationElements pProtectLocation;
 	private final GoaLocationElements pGoaLocation;
+	private final AggressionElements pAggression;
+	private final CautionElements pCaution;
 	private final Defualt_CAElements pDefualt_CA;
 	
 	private final Grammar grammar;
@@ -823,6 +963,7 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pRule = new RuleElements();
+		this.pGrouping = new GroupingElements();
 		this.pFragment = new FragmentElements();
 		this.pConditional = new ConditionalElements();
 		this.pWhenRules = new WhenRulesElements();
@@ -837,6 +978,8 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		this.pProtectUnitType = new ProtectUnitTypeElements();
 		this.pProtectLocation = new ProtectLocationElements();
 		this.pGoaLocation = new GoaLocationElements();
+		this.pAggression = new AggressionElements();
+		this.pCaution = new CautionElements();
 		this.pDefualt_CA = new Defualt_CAElements();
 	}
 	
@@ -882,6 +1025,9 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	//	'{'
 	//	fragments+=Fragment*
 	//	goals+=Goal*
+	//	aggressionval=Aggression
+	//	cautionval=Caution
+	//	GroupingVal=Grouping ('avoids' avoids+=AtLocation*)?
 	//	'}';
 	public RuleElements getRuleAccess() {
 		return pRule;
@@ -889,6 +1035,16 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getRuleRule() {
 		return getRuleAccess().getRule();
+	}
+	
+	//Grouping:
+	//	'Grouping' 'is' groupingVal=("offensive" | "defensive" | "none");
+	public GroupingElements getGroupingAccess() {
+		return pGrouping;
+	}
+	
+	public ParserRule getGroupingRule() {
+		return getGroupingAccess().getRule();
 	}
 	
 	//Fragment:
@@ -1034,6 +1190,26 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getGoaLocationRule() {
 		return getGoaLocationAccess().getRule();
+	}
+	
+	//Aggression:
+	//	'aggression' 'is' aggressionVal=INT;
+	public AggressionElements getAggressionAccess() {
+		return pAggression;
+	}
+	
+	public ParserRule getAggressionRule() {
+		return getAggressionAccess().getRule();
+	}
+	
+	//Caution:
+	//	'Caution' 'is' cautionval=INT;
+	public CautionElements getCautionAccess() {
+		return pCaution;
+	}
+	
+	public ParserRule getCautionRule() {
+		return getCautionAccess().getRule();
 	}
 	
 	//Defualt_CA:
