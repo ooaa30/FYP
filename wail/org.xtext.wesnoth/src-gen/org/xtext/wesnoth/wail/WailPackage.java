@@ -150,13 +150,13 @@ public interface WailPackage extends EPackage
   int RULE__GROUPING_VAL = 5;
 
   /**
-   * The feature id for the '<em><b>Avoids</b></em>' containment reference list.
+   * The feature id for the '<em><b>Units</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RULE__AVOIDS = 6;
+  int RULE__UNITS = 6;
 
   /**
    * The number of structural features of the '<em>Rule</em>' class.
@@ -261,6 +261,61 @@ public interface WailPackage extends EPackage
   int CONDITIONAL_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.xtext.wesnoth.wail.impl.RecruitmentImpl <em>Recruitment</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.wesnoth.wail.impl.RecruitmentImpl
+   * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getRecruitment()
+   * @generated
+   */
+  int RECRUITMENT = 5;
+
+  /**
+   * The feature id for the '<em><b>Unitslist</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECRUITMENT__UNITSLIST = 0;
+
+  /**
+   * The feature id for the '<em><b>Turns</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECRUITMENT__TURNS = 1;
+
+  /**
+   * The feature id for the '<em><b>Importance</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECRUITMENT__IMPORTANCE = 2;
+
+  /**
+   * The feature id for the '<em><b>Number</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECRUITMENT__NUMBER = 3;
+
+  /**
+   * The number of structural features of the '<em>Recruitment</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RECRUITMENT_FEATURE_COUNT = 4;
+
+  /**
    * The meta object id for the '{@link org.xtext.wesnoth.wail.impl.whenRulesImpl <em>when Rules</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -268,7 +323,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getwhenRules()
    * @generated
    */
-  int WHEN_RULES = 5;
+  int WHEN_RULES = 6;
 
   /**
    * The number of structural features of the '<em>when Rules</em>' class.
@@ -287,7 +342,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getIDEquals()
    * @generated
    */
-  int ID_EQUALS = 6;
+  int ID_EQUALS = 7;
 
   /**
    * The feature id for the '<em><b>Unit ID</b></em>' attribute.
@@ -315,7 +370,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getBaseline()
    * @generated
    */
-  int BASELINE = 7;
+  int BASELINE = 8;
 
   /**
    * The feature id for the '<em><b>Always</b></em>' attribute.
@@ -343,7 +398,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getDamage()
    * @generated
    */
-  int DAMAGE = 8;
+  int DAMAGE = 9;
 
   /**
    * The feature id for the '<em><b>Health</b></em>' attribute.
@@ -371,7 +426,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getAtLocation()
    * @generated
    */
-  int AT_LOCATION = 9;
+  int AT_LOCATION = 10;
 
   /**
    * The feature id for the '<em><b>XAxis</b></em>' attribute.
@@ -408,7 +463,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getUnitEquals()
    * @generated
    */
-  int UNIT_EQUALS = 10;
+  int UNIT_EQUALS = 11;
 
   /**
    * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -436,7 +491,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getGoal()
    * @generated
    */
-  int GOAL = 11;
+  int GOAL = 12;
 
   /**
    * The feature id for the '<em><b>Goal</b></em>' containment reference.
@@ -464,7 +519,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectLeader()
    * @generated
    */
-  int PROTECT_LEADER = 12;
+  int PROTECT_LEADER = 13;
 
   /**
    * The feature id for the '<em><b>Goal</b></em>' containment reference.
@@ -519,7 +574,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectUnitID()
    * @generated
    */
-  int PROTECT_UNIT_ID = 13;
+  int PROTECT_UNIT_ID = 14;
 
   /**
    * The feature id for the '<em><b>Goal</b></em>' containment reference.
@@ -583,7 +638,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectUnitType()
    * @generated
    */
-  int PROTECT_UNIT_TYPE = 14;
+  int PROTECT_UNIT_TYPE = 15;
 
   /**
    * The feature id for the '<em><b>Goal</b></em>' containment reference.
@@ -647,7 +702,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getProtectLocation()
    * @generated
    */
-  int PROTECT_LOCATION = 15;
+  int PROTECT_LOCATION = 16;
 
   /**
    * The feature id for the '<em><b>Goal</b></em>' containment reference.
@@ -711,7 +766,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getGoaLocation()
    * @generated
    */
-  int GOA_LOCATION = 16;
+  int GOA_LOCATION = 17;
 
   /**
    * The feature id for the '<em><b>XAxis</b></em>' attribute.
@@ -757,7 +812,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getAggression()
    * @generated
    */
-  int AGGRESSION = 17;
+  int AGGRESSION = 18;
 
   /**
    * The feature id for the '<em><b>Aggression Val</b></em>' attribute.
@@ -785,7 +840,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getCaution()
    * @generated
    */
-  int CAUTION = 18;
+  int CAUTION = 19;
 
   /**
    * The feature id for the '<em><b>Cautionval</b></em>' attribute.
@@ -813,7 +868,7 @@ public interface WailPackage extends EPackage
    * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getDefualt_CA()
    * @generated
    */
-  int DEFUALT_CA = 19;
+  int DEFUALT_CA = 20;
 
   /**
    * The feature id for the '<em><b>Ca Type</b></em>' attribute.
@@ -941,15 +996,15 @@ public interface WailPackage extends EPackage
   EReference getRule_GroupingVal();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.wesnoth.wail.Rule#getAvoids <em>Avoids</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.wesnoth.wail.Rule#getUnits <em>Units</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Avoids</em>'.
-   * @see org.xtext.wesnoth.wail.Rule#getAvoids()
+   * @return the meta object for the containment reference list '<em>Units</em>'.
+   * @see org.xtext.wesnoth.wail.Rule#getUnits()
    * @see #getRule()
    * @generated
    */
-  EReference getRule_Avoids();
+  EReference getRule_Units();
 
   /**
    * Returns the meta object for class '{@link org.xtext.wesnoth.wail.Grouping <em>Grouping</em>}'.
@@ -1024,6 +1079,60 @@ public interface WailPackage extends EPackage
    * @generated
    */
   EReference getConditional_X();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.wesnoth.wail.Recruitment <em>Recruitment</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Recruitment</em>'.
+   * @see org.xtext.wesnoth.wail.Recruitment
+   * @generated
+   */
+  EClass getRecruitment();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.Recruitment#getUnitslist <em>Unitslist</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Unitslist</em>'.
+   * @see org.xtext.wesnoth.wail.Recruitment#getUnitslist()
+   * @see #getRecruitment()
+   * @generated
+   */
+  EAttribute getRecruitment_Unitslist();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.Recruitment#getTurns <em>Turns</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Turns</em>'.
+   * @see org.xtext.wesnoth.wail.Recruitment#getTurns()
+   * @see #getRecruitment()
+   * @generated
+   */
+  EAttribute getRecruitment_Turns();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.Recruitment#getImportance <em>Importance</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Importance</em>'.
+   * @see org.xtext.wesnoth.wail.Recruitment#getImportance()
+   * @see #getRecruitment()
+   * @generated
+   */
+  EAttribute getRecruitment_Importance();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.wesnoth.wail.Recruitment#getNumber <em>Number</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Number</em>'.
+   * @see org.xtext.wesnoth.wail.Recruitment#getNumber()
+   * @see #getRecruitment()
+   * @generated
+   */
+  EAttribute getRecruitment_Number();
 
   /**
    * Returns the meta object for class '{@link org.xtext.wesnoth.wail.whenRules <em>when Rules</em>}'.
@@ -1594,12 +1703,12 @@ public interface WailPackage extends EPackage
     EReference RULE__GROUPING_VAL = eINSTANCE.getRule_GroupingVal();
 
     /**
-     * The meta object literal for the '<em><b>Avoids</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Units</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RULE__AVOIDS = eINSTANCE.getRule_Avoids();
+    EReference RULE__UNITS = eINSTANCE.getRule_Units();
 
     /**
      * The meta object literal for the '{@link org.xtext.wesnoth.wail.impl.GroupingImpl <em>Grouping</em>}' class.
@@ -1662,6 +1771,48 @@ public interface WailPackage extends EPackage
      * @generated
      */
     EReference CONDITIONAL__X = eINSTANCE.getConditional_X();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.wesnoth.wail.impl.RecruitmentImpl <em>Recruitment</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.wesnoth.wail.impl.RecruitmentImpl
+     * @see org.xtext.wesnoth.wail.impl.WailPackageImpl#getRecruitment()
+     * @generated
+     */
+    EClass RECRUITMENT = eINSTANCE.getRecruitment();
+
+    /**
+     * The meta object literal for the '<em><b>Unitslist</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RECRUITMENT__UNITSLIST = eINSTANCE.getRecruitment_Unitslist();
+
+    /**
+     * The meta object literal for the '<em><b>Turns</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RECRUITMENT__TURNS = eINSTANCE.getRecruitment_Turns();
+
+    /**
+     * The meta object literal for the '<em><b>Importance</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RECRUITMENT__IMPORTANCE = eINSTANCE.getRecruitment_Importance();
+
+    /**
+     * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RECRUITMENT__NUMBER = eINSTANCE.getRecruitment_Number();
 
     /**
      * The meta object literal for the '{@link org.xtext.wesnoth.wail.impl.whenRulesImpl <em>when Rules</em>}' class.

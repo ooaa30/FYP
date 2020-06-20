@@ -70,6 +70,7 @@ public class WailFactoryImpl extends EFactoryImpl implements WailFactory
       case WailPackage.GROUPING: return createGrouping();
       case WailPackage.FRAGMENT: return createFragment();
       case WailPackage.CONDITIONAL: return createConditional();
+      case WailPackage.RECRUITMENT: return createRecruitment();
       case WailPackage.WHEN_RULES: return createwhenRules();
       case WailPackage.ID_EQUALS: return createIDEquals();
       case WailPackage.BASELINE: return createBaseline();
@@ -148,6 +149,18 @@ public class WailFactoryImpl extends EFactoryImpl implements WailFactory
   {
     ConditionalImpl conditional = new ConditionalImpl();
     return conditional;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Recruitment createRecruitment()
+  {
+    RecruitmentImpl recruitment = new RecruitmentImpl();
+    return recruitment;
   }
 
   /**

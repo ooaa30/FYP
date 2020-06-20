@@ -16,7 +16,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wail.ecore#//Rule/aggressionval"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wail.ecore#//Rule/cautionval"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wail.ecore#//Rule/GroupingVal"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wail.ecore#//Rule/avoids"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wail.ecore#//Rule/units"/>
     </genClasses>
     <genClasses ecoreClass="Wail.ecore#//Grouping">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//Grouping/groupingVal"/>
@@ -27,6 +27,12 @@
     </genClasses>
     <genClasses ecoreClass="Wail.ecore#//Conditional">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Wail.ecore#//Conditional/x"/>
+    </genClasses>
+    <genClasses ecoreClass="Wail.ecore#//Recruitment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//Recruitment/unitslist"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//Recruitment/turns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//Recruitment/importance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Wail.ecore#//Recruitment/number"/>
     </genClasses>
     <genClasses ecoreClass="Wail.ecore#//whenRules"/>
     <genClasses ecoreClass="Wail.ecore#//IDEquals">

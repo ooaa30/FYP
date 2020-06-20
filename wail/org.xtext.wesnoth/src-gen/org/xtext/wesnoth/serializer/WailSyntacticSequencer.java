@@ -20,12 +20,12 @@ import org.xtext.wesnoth.services.WailGrammarAccess;
 public class WailSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected WailGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Rule_AvoidsKeyword_8_0_q;
+	protected AbstractElementAlias match_Rule_RecruitKeyword_8_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (WailGrammarAccess) access;
-		match_Rule_AvoidsKeyword_8_0_q = new TokenAlias(false, true, grammarAccess.getRuleAccess().getAvoidsKeyword_8_0());
+		match_Rule_RecruitKeyword_8_0_q = new TokenAlias(false, true, grammarAccess.getRuleAccess().getRecruitKeyword_8_0());
 	}
 	
 	@Override
@@ -40,20 +40,20 @@ public class WailSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Rule_AvoidsKeyword_8_0_q.equals(syntax))
-				emit_Rule_AvoidsKeyword_8_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_Rule_RecruitKeyword_8_0_q.equals(syntax))
+				emit_Rule_RecruitKeyword_8_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
 	/**
 	 * Ambiguous syntax:
-	 *     'avoids'?
+	 *     'recruit'?
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     GroupingVal=Grouping (ambiguity) '}' (rule end)
 	 */
-	protected void emit_Rule_AvoidsKeyword_8_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Rule_RecruitKeyword_8_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

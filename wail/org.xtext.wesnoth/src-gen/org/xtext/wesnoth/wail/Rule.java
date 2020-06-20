@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.wesnoth.wail.Rule#getAggressionval <em>Aggressionval</em>}</li>
  *   <li>{@link org.xtext.wesnoth.wail.Rule#getCautionval <em>Cautionval</em>}</li>
  *   <li>{@link org.xtext.wesnoth.wail.Rule#getGroupingVal <em>Grouping Val</em>}</li>
- *   <li>{@link org.xtext.wesnoth.wail.Rule#getAvoids <em>Avoids</em>}</li>
+ *   <li>{@link org.xtext.wesnoth.wail.Rule#getUnits <em>Units</em>}</li>
  * </ul>
  *
  * @see org.xtext.wesnoth.wail.WailPackage#getRule()
@@ -144,15 +144,15 @@ public interface Rule extends EObject
   void setGroupingVal(Grouping value);
 
   /**
-   * Returns the value of the '<em><b>Avoids</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.wesnoth.wail.AtLocation}.
+   * Returns the value of the '<em><b>Units</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.wesnoth.wail.Recruitment}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Avoids</em>' containment reference list.
-   * @see org.xtext.wesnoth.wail.WailPackage#getRule_Avoids()
+   * @return the value of the '<em>Units</em>' containment reference list.
+   * @see org.xtext.wesnoth.wail.WailPackage#getRule_Units()
    * @model containment="true"
    * @generated
    */
-  EList<AtLocation> getAvoids();
+  EList<Recruitment> getUnits();
 
 } // Rule

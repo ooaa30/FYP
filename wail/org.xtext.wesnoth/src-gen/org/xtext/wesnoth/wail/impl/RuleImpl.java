@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.wesnoth.wail.Aggression;
-import org.xtext.wesnoth.wail.AtLocation;
 import org.xtext.wesnoth.wail.Caution;
 import org.xtext.wesnoth.wail.Fragment;
 import org.xtext.wesnoth.wail.Goal;
 import org.xtext.wesnoth.wail.Grouping;
+import org.xtext.wesnoth.wail.Recruitment;
 import org.xtext.wesnoth.wail.Rule;
 import org.xtext.wesnoth.wail.WailPackage;
 
@@ -42,7 +42,7 @@ import org.xtext.wesnoth.wail.WailPackage;
  *   <li>{@link org.xtext.wesnoth.wail.impl.RuleImpl#getAggressionval <em>Aggressionval</em>}</li>
  *   <li>{@link org.xtext.wesnoth.wail.impl.RuleImpl#getCautionval <em>Cautionval</em>}</li>
  *   <li>{@link org.xtext.wesnoth.wail.impl.RuleImpl#getGroupingVal <em>Grouping Val</em>}</li>
- *   <li>{@link org.xtext.wesnoth.wail.impl.RuleImpl#getAvoids <em>Avoids</em>}</li>
+ *   <li>{@link org.xtext.wesnoth.wail.impl.RuleImpl#getUnits <em>Units</em>}</li>
  * </ul>
  *
  * @generated
@@ -120,14 +120,14 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   protected Grouping groupingVal;
 
   /**
-   * The cached value of the '{@link #getAvoids() <em>Avoids</em>}' containment reference list.
+   * The cached value of the '{@link #getUnits() <em>Units</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAvoids()
+   * @see #getUnits()
    * @generated
    * @ordered
    */
-  protected EList<AtLocation> avoids;
+  protected EList<Recruitment> units;
 
   /**
    * <!-- begin-user-doc -->
@@ -361,13 +361,13 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
    * @generated
    */
   @Override
-  public EList<AtLocation> getAvoids()
+  public EList<Recruitment> getUnits()
   {
-    if (avoids == null)
+    if (units == null)
     {
-      avoids = new EObjectContainmentEList<AtLocation>(AtLocation.class, this, WailPackage.RULE__AVOIDS);
+      units = new EObjectContainmentEList<Recruitment>(Recruitment.class, this, WailPackage.RULE__UNITS);
     }
-    return avoids;
+    return units;
   }
 
   /**
@@ -390,8 +390,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
         return basicSetCautionval(null, msgs);
       case WailPackage.RULE__GROUPING_VAL:
         return basicSetGroupingVal(null, msgs);
-      case WailPackage.RULE__AVOIDS:
-        return ((InternalEList<?>)getAvoids()).basicRemove(otherEnd, msgs);
+      case WailPackage.RULE__UNITS:
+        return ((InternalEList<?>)getUnits()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -418,8 +418,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
         return getCautionval();
       case WailPackage.RULE__GROUPING_VAL:
         return getGroupingVal();
-      case WailPackage.RULE__AVOIDS:
-        return getAvoids();
+      case WailPackage.RULE__UNITS:
+        return getUnits();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -455,9 +455,9 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
       case WailPackage.RULE__GROUPING_VAL:
         setGroupingVal((Grouping)newValue);
         return;
-      case WailPackage.RULE__AVOIDS:
-        getAvoids().clear();
-        getAvoids().addAll((Collection<? extends AtLocation>)newValue);
+      case WailPackage.RULE__UNITS:
+        getUnits().clear();
+        getUnits().addAll((Collection<? extends Recruitment>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -491,8 +491,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
       case WailPackage.RULE__GROUPING_VAL:
         setGroupingVal((Grouping)null);
         return;
-      case WailPackage.RULE__AVOIDS:
-        getAvoids().clear();
+      case WailPackage.RULE__UNITS:
+        getUnits().clear();
         return;
     }
     super.eUnset(featureID);
@@ -520,8 +520,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
         return cautionval != null;
       case WailPackage.RULE__GROUPING_VAL:
         return groupingVal != null;
-      case WailPackage.RULE__AVOIDS:
-        return avoids != null && !avoids.isEmpty();
+      case WailPackage.RULE__UNITS:
+        return units != null && !units.isEmpty();
     }
     return super.eIsSet(featureID);
   }

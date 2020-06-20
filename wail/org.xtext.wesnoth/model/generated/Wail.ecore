@@ -17,8 +17,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="GroupingVal" eType="#//Grouping"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="avoids" upperBound="-1"
-        eType="#//AtLocation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="units" upperBound="-1"
+        eType="#//Recruitment" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Grouping">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="groupingVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -32,6 +32,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="Conditional">
     <eStructuralFeatures xsi:type="ecore:EReference" name="x" upperBound="-1" eType="#//whenRules"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Recruitment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unitslist" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="turns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="whenRules"/>
   <eClassifiers xsi:type="ecore:EClass" name="IDEquals" eSuperTypes="#//whenRules">
@@ -83,10 +89,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="locValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Aggression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggressionVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggressionVal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Caution">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cautionval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cautionval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Defualt_CA">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="caType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

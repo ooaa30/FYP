@@ -32,6 +32,7 @@ import org.xtext.wesnoth.wail.ProtectLeader;
 import org.xtext.wesnoth.wail.ProtectLocation;
 import org.xtext.wesnoth.wail.ProtectUnitID;
 import org.xtext.wesnoth.wail.ProtectUnitType;
+import org.xtext.wesnoth.wail.Recruitment;
 import org.xtext.wesnoth.wail.Rule;
 import org.xtext.wesnoth.wail.UnitEquals;
 import org.xtext.wesnoth.wail.WailPackage;
@@ -101,6 +102,9 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 			case WailPackage.PROTECT_UNIT_TYPE:
 				sequence_ProtectUnitType(context, (ProtectUnitType) semanticObject); 
 				return; 
+			case WailPackage.RECRUITMENT:
+				sequence_Recruitment(context, (Recruitment) semanticObject); 
+				return; 
 			case WailPackage.RULE:
 				sequence_Rule(context, (Rule) semanticObject); 
 				return; 
@@ -117,7 +121,7 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Aggression returns Aggression
 	 *
 	 * Constraint:
-	 *     aggressionVal=INT
+	 *     aggressionVal=DECIMAL
 	 */
 	protected void sequence_Aggression(ISerializationContext context, Aggression semanticObject) {
 		if (errorAcceptor != null) {
@@ -125,7 +129,7 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.AGGRESSION__AGGRESSION_VAL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAggressionAccess().getAggressionValINTTerminalRuleCall_2_0(), semanticObject.getAggressionVal());
+		feeder.accept(grammarAccess.getAggressionAccess().getAggressionValDECIMALParserRuleCall_2_0(), semanticObject.getAggressionVal());
 		feeder.finish();
 	}
 	
@@ -176,7 +180,7 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Caution returns Caution
 	 *
 	 * Constraint:
-	 *     cautionval=INT
+	 *     cautionval=DECIMAL
 	 */
 	protected void sequence_Caution(ISerializationContext context, Caution semanticObject) {
 		if (errorAcceptor != null) {
@@ -184,7 +188,7 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WailPackage.Literals.CAUTION__CAUTIONVAL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCautionAccess().getCautionvalINTTerminalRuleCall_2_0(), semanticObject.getCautionval());
+		feeder.accept(grammarAccess.getCautionAccess().getCautionvalDECIMALParserRuleCall_2_0(), semanticObject.getCautionval());
 		feeder.finish();
 	}
 	
@@ -452,6 +456,18 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
+	 *     Recruitment returns Recruitment
+	 *
+	 * Constraint:
+	 *     (unitslist=UNITLIST turns=COMMAINT? importance=INT? number=INT?)
+	 */
+	protected void sequence_Recruitment(ISerializationContext context, Recruitment semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
@@ -462,7 +478,7 @@ public class WailSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         aggressionval=Aggression 
 	 *         cautionval=Caution 
 	 *         GroupingVal=Grouping 
-	 *         avoids+=AtLocation*
+	 *         units+=Recruitment*
 	 *     )
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {

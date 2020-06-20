@@ -234,25 +234,25 @@ ruleRule returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_8='avoids'
+			otherlv_8='recruit'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getRuleAccess().getAvoidsKeyword_8_0());
+				newLeafNode(otherlv_8, grammarAccess.getRuleAccess().getRecruitKeyword_8_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRuleAccess().getAvoidsAtLocationParserRuleCall_8_1_0());
+						newCompositeNode(grammarAccess.getRuleAccess().getUnitsRecruitmentParserRuleCall_8_1_0());
 					}
-					lv_avoids_9_0=ruleAtLocation
+					lv_units_9_0=ruleRecruitment
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getRuleRule());
 						}
 						add(
 							$current,
-							"avoids",
-							lv_avoids_9_0,
-							"org.xtext.wesnoth.Wail.AtLocation");
+							"units",
+							lv_units_9_0,
+							"org.xtext.wesnoth.Wail.Recruitment");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -434,6 +434,121 @@ ruleConditional returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleRecruitment
+entryRuleRecruitment returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRecruitmentRule()); }
+	iv_ruleRecruitment=ruleRecruitment
+	{ $current=$iv_ruleRecruitment.current; }
+	EOF;
+
+// Rule Recruitment
+ruleRecruitment returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='units'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getRecruitmentAccess().getUnitsKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRecruitmentAccess().getUnitslistUNITLISTParserRuleCall_1_0());
+				}
+				lv_unitslist_1_0=ruleUNITLIST
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRecruitmentRule());
+					}
+					set(
+						$current,
+						"unitslist",
+						lv_unitslist_1_0,
+						"org.xtext.wesnoth.Wail.UNITLIST");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_2='turns'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getRecruitmentAccess().getTurnsKeyword_2_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getRecruitmentAccess().getTurnsCOMMAINTParserRuleCall_2_1_0());
+					}
+					lv_turns_3_0=ruleCOMMAINT
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getRecruitmentRule());
+						}
+						set(
+							$current,
+							"turns",
+							lv_turns_3_0,
+							"org.xtext.wesnoth.Wail.COMMAINT");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		(
+			otherlv_4='importance'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getRecruitmentAccess().getImportanceKeyword_3_0());
+			}
+			(
+				(
+					lv_importance_5_0=RULE_INT
+					{
+						newLeafNode(lv_importance_5_0, grammarAccess.getRecruitmentAccess().getImportanceINTTerminalRuleCall_3_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRecruitmentRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"importance",
+							lv_importance_5_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+		)?
+		(
+			otherlv_6='number'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getRecruitmentAccess().getNumberKeyword_4_0());
+			}
+			(
+				(
+					lv_number_7_0=RULE_INT
+					{
+						newLeafNode(lv_number_7_0, grammarAccess.getRecruitmentAccess().getNumberINTTerminalRuleCall_4_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRecruitmentRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"number",
+							lv_number_7_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+		)?
 	)
 ;
 
@@ -1418,19 +1533,20 @@ ruleAggression returns [EObject current=null]
 		}
 		(
 			(
-				lv_aggressionVal_2_0=RULE_INT
 				{
-					newLeafNode(lv_aggressionVal_2_0, grammarAccess.getAggressionAccess().getAggressionValINTTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getAggressionAccess().getAggressionValDECIMALParserRuleCall_2_0());
 				}
+				lv_aggressionVal_2_0=ruleDECIMAL
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAggressionRule());
+						$current = createModelElementForParent(grammarAccess.getAggressionRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"aggressionVal",
 						lv_aggressionVal_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"org.xtext.wesnoth.Wail.DECIMAL");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -1463,22 +1579,141 @@ ruleCaution returns [EObject current=null]
 		}
 		(
 			(
-				lv_cautionval_2_0=RULE_INT
 				{
-					newLeafNode(lv_cautionval_2_0, grammarAccess.getCautionAccess().getCautionvalINTTerminalRuleCall_2_0());
+					newCompositeNode(grammarAccess.getCautionAccess().getCautionvalDECIMALParserRuleCall_2_0());
 				}
+				lv_cautionval_2_0=ruleDECIMAL
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getCautionRule());
+						$current = createModelElementForParent(grammarAccess.getCautionRule());
 					}
-					setWithLastConsumed(
+					set(
 						$current,
 						"cautionval",
 						lv_cautionval_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"org.xtext.wesnoth.Wail.DECIMAL");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleUNITLIST
+entryRuleUNITLIST returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getUNITLISTRule()); }
+	iv_ruleUNITLIST=ruleUNITLIST
+	{ $current=$iv_ruleUNITLIST.current.getText(); }
+	EOF;
+
+// Rule UNITLIST
+ruleUNITLIST returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			this_ID_0=RULE_ID
+			{
+				$current.merge(this_ID_0);
+			}
+			{
+				newLeafNode(this_ID_0, grammarAccess.getUNITLISTAccess().getIDTerminalRuleCall_0_0());
+			}
+			kw=','
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getUNITLISTAccess().getCommaKeyword_0_1());
+			}
+		)*
+		this_ID_2=RULE_ID
+		{
+			$current.merge(this_ID_2);
+		}
+		{
+			newLeafNode(this_ID_2, grammarAccess.getUNITLISTAccess().getIDTerminalRuleCall_1());
+		}
+	)
+;
+
+// Entry rule entryRuleDECIMAL
+entryRuleDECIMAL returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getDECIMALRule()); }
+	iv_ruleDECIMAL=ruleDECIMAL
+	{ $current=$iv_ruleDECIMAL.current.getText(); }
+	EOF;
+
+// Rule DECIMAL
+ruleDECIMAL returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		this_INT_0=RULE_INT
+		{
+			$current.merge(this_INT_0);
+		}
+		{
+			newLeafNode(this_INT_0, grammarAccess.getDECIMALAccess().getINTTerminalRuleCall_0());
+		}
+		kw='.'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getDECIMALAccess().getFullStopKeyword_1());
+		}
+		this_INT_2=RULE_INT
+		{
+			$current.merge(this_INT_2);
+		}
+		{
+			newLeafNode(this_INT_2, grammarAccess.getDECIMALAccess().getINTTerminalRuleCall_2());
+		}
+	)
+;
+
+// Entry rule entryRuleCOMMAINT
+entryRuleCOMMAINT returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getCOMMAINTRule()); }
+	iv_ruleCOMMAINT=ruleCOMMAINT
+	{ $current=$iv_ruleCOMMAINT.current.getText(); }
+	EOF;
+
+// Rule COMMAINT
+ruleCOMMAINT returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			this_INT_0=RULE_INT
+			{
+				$current.merge(this_INT_0);
+			}
+			{
+				newLeafNode(this_INT_0, grammarAccess.getCOMMAINTAccess().getINTTerminalRuleCall_0_0());
+			}
+			kw=','
+			{
+				$current.merge(kw);
+				newLeafNode(kw, grammarAccess.getCOMMAINTAccess().getCommaKeyword_0_1());
+			}
+		)*
+		this_INT_2=RULE_INT
+		{
+			$current.merge(this_INT_2);
+		}
+		{
+			newLeafNode(this_INT_2, grammarAccess.getCOMMAINTAccess().getINTTerminalRuleCall_1());
+		}
 	)
 ;
 

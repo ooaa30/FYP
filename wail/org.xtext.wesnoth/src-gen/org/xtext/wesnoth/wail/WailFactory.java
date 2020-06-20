@@ -69,6 +69,15 @@ public interface WailFactory extends EFactory
   Conditional createConditional();
 
   /**
+   * Returns a new object of class '<em>Recruitment</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Recruitment</em>'.
+   * @generated
+   */
+  Recruitment createRecruitment();
+
+  /**
    * Returns a new object of class '<em>when Rules</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

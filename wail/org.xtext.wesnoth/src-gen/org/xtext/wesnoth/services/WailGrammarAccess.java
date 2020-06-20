@@ -55,9 +55,9 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cGroupingValAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cGroupingValGroupingParserRuleCall_7_0 = (RuleCall)cGroupingValAssignment_7.eContents().get(0);
 		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
-		private final Keyword cAvoidsKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
-		private final Assignment cAvoidsAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final RuleCall cAvoidsAtLocationParserRuleCall_8_1_0 = (RuleCall)cAvoidsAssignment_8_1.eContents().get(0);
+		private final Keyword cRecruitKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cUnitsAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cUnitsRecruitmentParserRuleCall_8_1_0 = (RuleCall)cUnitsAssignment_8_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Rule:
@@ -67,12 +67,12 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		//	goals+=Goal*
 		//	aggressionval=Aggression
 		//	cautionval=Caution
-		//	GroupingVal=Grouping ('avoids' avoids+=AtLocation*)?
+		//	GroupingVal=Grouping ('recruit' units+=Recruitment*)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'rule' name=STRING '{' fragments+=Fragment* goals+=Goal* aggressionval=Aggression cautionval=Caution
-		//GroupingVal=Grouping ('avoids' avoids+=AtLocation*)? '}'
+		//GroupingVal=Grouping ('recruit' units+=Recruitment*)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'rule'
@@ -117,17 +117,17 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		//Grouping
 		public RuleCall getGroupingValGroupingParserRuleCall_7_0() { return cGroupingValGroupingParserRuleCall_7_0; }
 		
-		//('avoids' avoids+=AtLocation*)?
+		//('recruit' units+=Recruitment*)?
 		public Group getGroup_8() { return cGroup_8; }
 		
-		//'avoids'
-		public Keyword getAvoidsKeyword_8_0() { return cAvoidsKeyword_8_0; }
+		//'recruit'
+		public Keyword getRecruitKeyword_8_0() { return cRecruitKeyword_8_0; }
 		
-		//avoids+=AtLocation*
-		public Assignment getAvoidsAssignment_8_1() { return cAvoidsAssignment_8_1; }
+		//units+=Recruitment*
+		public Assignment getUnitsAssignment_8_1() { return cUnitsAssignment_8_1; }
 		
-		//AtLocation
-		public RuleCall getAvoidsAtLocationParserRuleCall_8_1_0() { return cAvoidsAtLocationParserRuleCall_8_1_0; }
+		//Recruitment
+		public RuleCall getUnitsRecruitmentParserRuleCall_8_1_0() { return cUnitsRecruitmentParserRuleCall_8_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
@@ -231,6 +231,77 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//whenRules
 		public RuleCall getXWhenRulesParserRuleCall_1_0() { return cXWhenRulesParserRuleCall_1_0; }
+	}
+	public class RecruitmentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.Recruitment");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cUnitsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cUnitslistAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cUnitslistUNITLISTParserRuleCall_1_0 = (RuleCall)cUnitslistAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cTurnsKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cTurnsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cTurnsCOMMAINTParserRuleCall_2_1_0 = (RuleCall)cTurnsAssignment_2_1.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cImportanceKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cImportanceAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cImportanceINTTerminalRuleCall_3_1_0 = (RuleCall)cImportanceAssignment_3_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cNumberKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cNumberAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cNumberINTTerminalRuleCall_4_1_0 = (RuleCall)cNumberAssignment_4_1.eContents().get(0);
+		
+		//Recruitment:
+		//	'units' unitslist=UNITLIST ('turns' turns=COMMAINT)? ('importance' importance=INT)? ('number' number=INT)?;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'units' unitslist=UNITLIST ('turns' turns=COMMAINT)? ('importance' importance=INT)? ('number' number=INT)?
+		public Group getGroup() { return cGroup; }
+		
+		//'units'
+		public Keyword getUnitsKeyword_0() { return cUnitsKeyword_0; }
+		
+		//unitslist=UNITLIST
+		public Assignment getUnitslistAssignment_1() { return cUnitslistAssignment_1; }
+		
+		//UNITLIST
+		public RuleCall getUnitslistUNITLISTParserRuleCall_1_0() { return cUnitslistUNITLISTParserRuleCall_1_0; }
+		
+		//('turns' turns=COMMAINT)?
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//'turns'
+		public Keyword getTurnsKeyword_2_0() { return cTurnsKeyword_2_0; }
+		
+		//turns=COMMAINT
+		public Assignment getTurnsAssignment_2_1() { return cTurnsAssignment_2_1; }
+		
+		//COMMAINT
+		public RuleCall getTurnsCOMMAINTParserRuleCall_2_1_0() { return cTurnsCOMMAINTParserRuleCall_2_1_0; }
+		
+		//('importance' importance=INT)?
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//'importance'
+		public Keyword getImportanceKeyword_3_0() { return cImportanceKeyword_3_0; }
+		
+		//importance=INT
+		public Assignment getImportanceAssignment_3_1() { return cImportanceAssignment_3_1; }
+		
+		//INT
+		public RuleCall getImportanceINTTerminalRuleCall_3_1_0() { return cImportanceINTTerminalRuleCall_3_1_0; }
+		
+		//('number' number=INT)?
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//'number'
+		public Keyword getNumberKeyword_4_0() { return cNumberKeyword_4_0; }
+		
+		//number=INT
+		public Assignment getNumberAssignment_4_1() { return cNumberAssignment_4_1; }
+		
+		//INT
+		public RuleCall getNumberINTTerminalRuleCall_4_1_0() { return cNumberINTTerminalRuleCall_4_1_0; }
 	}
 	public class WhenRulesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.whenRules");
@@ -810,13 +881,13 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAggressionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cAggressionValAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cAggressionValINTTerminalRuleCall_2_0 = (RuleCall)cAggressionValAssignment_2.eContents().get(0);
+		private final RuleCall cAggressionValDECIMALParserRuleCall_2_0 = (RuleCall)cAggressionValAssignment_2.eContents().get(0);
 		
 		//Aggression:
-		//	'aggression' 'is' aggressionVal=INT;
+		//	'aggression' 'is' aggressionVal=DECIMAL;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'aggression' 'is' aggressionVal=INT
+		//'aggression' 'is' aggressionVal=DECIMAL
 		public Group getGroup() { return cGroup; }
 		
 		//'aggression'
@@ -825,11 +896,11 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		//'is'
 		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
 		
-		//aggressionVal=INT
+		//aggressionVal=DECIMAL
 		public Assignment getAggressionValAssignment_2() { return cAggressionValAssignment_2; }
 		
-		//INT
-		public RuleCall getAggressionValINTTerminalRuleCall_2_0() { return cAggressionValINTTerminalRuleCall_2_0; }
+		//DECIMAL
+		public RuleCall getAggressionValDECIMALParserRuleCall_2_0() { return cAggressionValDECIMALParserRuleCall_2_0; }
 	}
 	public class CautionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.Caution");
@@ -837,13 +908,13 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCautionKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cIsKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cCautionvalAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCautionvalINTTerminalRuleCall_2_0 = (RuleCall)cCautionvalAssignment_2.eContents().get(0);
+		private final RuleCall cCautionvalDECIMALParserRuleCall_2_0 = (RuleCall)cCautionvalAssignment_2.eContents().get(0);
 		
 		//Caution:
-		//	'Caution' 'is' cautionval=INT;
+		//	'Caution' 'is' cautionval=DECIMAL;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Caution' 'is' cautionval=INT
+		//'Caution' 'is' cautionval=DECIMAL
 		public Group getGroup() { return cGroup; }
 		
 		//'Caution'
@@ -852,11 +923,88 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		//'is'
 		public Keyword getIsKeyword_1() { return cIsKeyword_1; }
 		
-		//cautionval=INT
+		//cautionval=DECIMAL
 		public Assignment getCautionvalAssignment_2() { return cCautionvalAssignment_2; }
 		
+		//DECIMAL
+		public RuleCall getCautionvalDECIMALParserRuleCall_2_0() { return cCautionvalDECIMALParserRuleCall_2_0; }
+	}
+	public class UNITLISTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.UNITLIST");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final Keyword cCommaKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//UNITLIST:
+		//	(ID ',')* ID;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//(ID ',')* ID
+		public Group getGroup() { return cGroup; }
+		
+		//(ID ',')*
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_0_0() { return cIDTerminalRuleCall_0_0; }
+		
+		//','
+		public Keyword getCommaKeyword_0_1() { return cCommaKeyword_0_1; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
+	}
+	public class DECIMALElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.DECIMAL");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Keyword cFullStopKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		
+		//DECIMAL:
+		//	INT '.' INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//INT '.' INT
+		public Group getGroup() { return cGroup; }
+		
 		//INT
-		public RuleCall getCautionvalINTTerminalRuleCall_2_0() { return cCautionvalINTTerminalRuleCall_2_0; }
+		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
+		
+		//'.'
+		public Keyword getFullStopKeyword_1() { return cFullStopKeyword_1; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_2() { return cINTTerminalRuleCall_2; }
+	}
+	public class COMMAINTElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.COMMAINT");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
+		private final RuleCall cINTTerminalRuleCall_0_0 = (RuleCall)cGroup_0.eContents().get(0);
+		private final Keyword cCommaKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
+		
+		//COMMAINT:
+		//	(INT ',')* INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//(INT ',')* INT
+		public Group getGroup() { return cGroup; }
+		
+		//(INT ',')*
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_0_0() { return cINTTerminalRuleCall_0_0; }
+		
+		//','
+		public Keyword getCommaKeyword_0_1() { return cCommaKeyword_0_1; }
+		
+		//INT
+		public RuleCall getINTTerminalRuleCall_1() { return cINTTerminalRuleCall_1; }
 	}
 	public class Defualt_CAElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.wesnoth.Wail.Defualt_CA");
@@ -936,6 +1084,7 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	private final GroupingElements pGrouping;
 	private final FragmentElements pFragment;
 	private final ConditionalElements pConditional;
+	private final RecruitmentElements pRecruitment;
 	private final WhenRulesElements pWhenRules;
 	private final IDEqualsElements pIDEquals;
 	private final BaselineElements pBaseline;
@@ -950,6 +1099,9 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	private final GoaLocationElements pGoaLocation;
 	private final AggressionElements pAggression;
 	private final CautionElements pCaution;
+	private final UNITLISTElements pUNITLIST;
+	private final DECIMALElements pDECIMAL;
+	private final COMMAINTElements pCOMMAINT;
 	private final Defualt_CAElements pDefualt_CA;
 	
 	private final Grammar grammar;
@@ -966,6 +1118,7 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		this.pGrouping = new GroupingElements();
 		this.pFragment = new FragmentElements();
 		this.pConditional = new ConditionalElements();
+		this.pRecruitment = new RecruitmentElements();
 		this.pWhenRules = new WhenRulesElements();
 		this.pIDEquals = new IDEqualsElements();
 		this.pBaseline = new BaselineElements();
@@ -980,6 +1133,9 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 		this.pGoaLocation = new GoaLocationElements();
 		this.pAggression = new AggressionElements();
 		this.pCaution = new CautionElements();
+		this.pUNITLIST = new UNITLISTElements();
+		this.pDECIMAL = new DECIMALElements();
+		this.pCOMMAINT = new COMMAINTElements();
 		this.pDefualt_CA = new Defualt_CAElements();
 	}
 	
@@ -1027,7 +1183,7 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	//	goals+=Goal*
 	//	aggressionval=Aggression
 	//	cautionval=Caution
-	//	GroupingVal=Grouping ('avoids' avoids+=AtLocation*)?
+	//	GroupingVal=Grouping ('recruit' units+=Recruitment*)?
 	//	'}';
 	public RuleElements getRuleAccess() {
 		return pRule;
@@ -1068,6 +1224,16 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getConditionalRule() {
 		return getConditionalAccess().getRule();
+	}
+	
+	//Recruitment:
+	//	'units' unitslist=UNITLIST ('turns' turns=COMMAINT)? ('importance' importance=INT)? ('number' number=INT)?;
+	public RecruitmentElements getRecruitmentAccess() {
+		return pRecruitment;
+	}
+	
+	public ParserRule getRecruitmentRule() {
+		return getRecruitmentAccess().getRule();
 	}
 	
 	//whenRules:
@@ -1193,7 +1359,7 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Aggression:
-	//	'aggression' 'is' aggressionVal=INT;
+	//	'aggression' 'is' aggressionVal=DECIMAL;
 	public AggressionElements getAggressionAccess() {
 		return pAggression;
 	}
@@ -1203,13 +1369,43 @@ public class WailGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Caution:
-	//	'Caution' 'is' cautionval=INT;
+	//	'Caution' 'is' cautionval=DECIMAL;
 	public CautionElements getCautionAccess() {
 		return pCaution;
 	}
 	
 	public ParserRule getCautionRule() {
 		return getCautionAccess().getRule();
+	}
+	
+	//UNITLIST:
+	//	(ID ',')* ID;
+	public UNITLISTElements getUNITLISTAccess() {
+		return pUNITLIST;
+	}
+	
+	public ParserRule getUNITLISTRule() {
+		return getUNITLISTAccess().getRule();
+	}
+	
+	//DECIMAL:
+	//	INT '.' INT;
+	public DECIMALElements getDECIMALAccess() {
+		return pDECIMAL;
+	}
+	
+	public ParserRule getDECIMALRule() {
+		return getDECIMALAccess().getRule();
+	}
+	
+	//COMMAINT:
+	//	(INT ',')* INT;
+	public COMMAINTElements getCOMMAINTAccess() {
+		return pCOMMAINT;
+	}
+	
+	public ParserRule getCOMMAINTRule() {
+		return getCOMMAINTAccess().getRule();
 	}
 	
 	//Defualt_CA:

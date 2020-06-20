@@ -27,6 +27,7 @@ import org.xtext.wesnoth.wail.ProtectLeader;
 import org.xtext.wesnoth.wail.ProtectLocation;
 import org.xtext.wesnoth.wail.ProtectUnitID;
 import org.xtext.wesnoth.wail.ProtectUnitType;
+import org.xtext.wesnoth.wail.Recruitment;
 import org.xtext.wesnoth.wail.Rule;
 import org.xtext.wesnoth.wail.UnitEquals;
 import org.xtext.wesnoth.wail.WailFactory;
@@ -75,6 +76,13 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
    * @generated
    */
   private EClass conditionalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass recruitmentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -349,7 +357,7 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
    * @generated
    */
   @Override
-  public EReference getRule_Avoids()
+  public EReference getRule_Units()
   {
     return (EReference)ruleEClass.getEStructuralFeatures().get(6);
   }
@@ -429,6 +437,61 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
   public EReference getConditional_X()
   {
     return (EReference)conditionalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRecruitment()
+  {
+    return recruitmentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRecruitment_Unitslist()
+  {
+    return (EAttribute)recruitmentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRecruitment_Turns()
+  {
+    return (EAttribute)recruitmentEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRecruitment_Importance()
+  {
+    return (EAttribute)recruitmentEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRecruitment_Number()
+  {
+    return (EAttribute)recruitmentEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -956,7 +1019,7 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
     createEReference(ruleEClass, RULE__AGGRESSIONVAL);
     createEReference(ruleEClass, RULE__CAUTIONVAL);
     createEReference(ruleEClass, RULE__GROUPING_VAL);
-    createEReference(ruleEClass, RULE__AVOIDS);
+    createEReference(ruleEClass, RULE__UNITS);
 
     groupingEClass = createEClass(GROUPING);
     createEAttribute(groupingEClass, GROUPING__GROUPING_VAL);
@@ -967,6 +1030,12 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
 
     conditionalEClass = createEClass(CONDITIONAL);
     createEReference(conditionalEClass, CONDITIONAL__X);
+
+    recruitmentEClass = createEClass(RECRUITMENT);
+    createEAttribute(recruitmentEClass, RECRUITMENT__UNITSLIST);
+    createEAttribute(recruitmentEClass, RECRUITMENT__TURNS);
+    createEAttribute(recruitmentEClass, RECRUITMENT__IMPORTANCE);
+    createEAttribute(recruitmentEClass, RECRUITMENT__NUMBER);
 
     whenRulesEClass = createEClass(WHEN_RULES);
 
@@ -1078,7 +1147,7 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
     initEReference(getRule_Aggressionval(), this.getAggression(), null, "aggressionval", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_Cautionval(), this.getCaution(), null, "cautionval", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_GroupingVal(), this.getGrouping(), null, "GroupingVal", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRule_Avoids(), this.getAtLocation(), null, "avoids", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_Units(), this.getRecruitment(), null, "units", null, 0, -1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(groupingEClass, Grouping.class, "Grouping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getGrouping_GroupingVal(), ecorePackage.getEString(), "groupingVal", null, 0, 1, Grouping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1089,6 +1158,12 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
 
     initEClass(conditionalEClass, Conditional.class, "Conditional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getConditional_X(), this.getwhenRules(), null, "x", null, 0, -1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(recruitmentEClass, Recruitment.class, "Recruitment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRecruitment_Unitslist(), ecorePackage.getEString(), "unitslist", null, 0, 1, Recruitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRecruitment_Turns(), ecorePackage.getEString(), "turns", null, 0, 1, Recruitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRecruitment_Importance(), ecorePackage.getEInt(), "importance", null, 0, 1, Recruitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRecruitment_Number(), ecorePackage.getEInt(), "number", null, 0, 1, Recruitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(whenRulesEClass, whenRules.class, "whenRules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1140,10 +1215,10 @@ public class WailPackageImpl extends EPackageImpl implements WailPackage
     initEAttribute(getGoaLocation_LocValue(), ecorePackage.getEInt(), "locValue", null, 0, 1, GoaLocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(aggressionEClass, Aggression.class, "Aggression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAggression_AggressionVal(), ecorePackage.getEInt(), "aggressionVal", null, 0, 1, Aggression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAggression_AggressionVal(), ecorePackage.getEString(), "aggressionVal", null, 0, 1, Aggression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(cautionEClass, Caution.class, "Caution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCaution_Cautionval(), ecorePackage.getEInt(), "cautionval", null, 0, 1, Caution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCaution_Cautionval(), ecorePackage.getEString(), "cautionval", null, 0, 1, Caution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(defualt_CAEClass, Defualt_CA.class, "Defualt_CA", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getDefualt_CA_CaType(), ecorePackage.getEString(), "caType", null, 0, 1, Defualt_CA.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -14,7 +14,7 @@ Rule:
 		aggressionval=Aggression
 		cautionval=Caution
 		GroupingVal=Grouping
-		('avoids' avoids+=AtLocation*)?
+		('recruit' units+=Recruitment*)?
 		'}'
 ;
 
@@ -30,6 +30,10 @@ Fragment:
 ;
 Conditional:
 	'when:' x+=whenRules
+;
+
+Recruitment:
+	'units' unitslist=UNITLIST ('turns' turns=COMMAINT)? ('importance' importance=INT)? ('number' number=INT)?
 ;
 
 whenRules:
@@ -82,12 +86,17 @@ GoaLocation:
 ;
 
 Aggression:
-	'aggression' 'is' aggressionVal=INT
+	'aggression' 'is' aggressionVal=DECIMAL
 ;
 Caution:
-	'Caution' 'is' cautionval=INT
+	'Caution' 'is' cautionval=DECIMAL
 ;
 
+UNITLIST:(ID',')*ID;
+
+DECIMAL:INT'.'INT;
+
+COMMAINT:(INT',')*INT;
 
 Defualt_CA:
 	caType = ("movement" |"heal"| "retreat" | "combat" | "recruit" | "combat_value_targets" | "capture_villages"|"leader_to_keep")

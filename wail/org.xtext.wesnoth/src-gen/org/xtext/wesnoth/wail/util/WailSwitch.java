@@ -108,6 +108,13 @@ public class WailSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case WailPackage.RECRUITMENT:
+      {
+        Recruitment recruitment = (Recruitment)theEObject;
+        T result = caseRecruitment(recruitment);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case WailPackage.WHEN_RULES:
       {
         whenRules whenRules = (whenRules)theEObject;
@@ -302,6 +309,22 @@ public class WailSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConditional(Conditional object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Recruitment</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Recruitment</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRecruitment(Recruitment object)
   {
     return null;
   }

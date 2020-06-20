@@ -36,7 +36,7 @@ public class CautionImpl extends MinimalEObjectImpl.Container implements Caution
    * @generated
    * @ordered
    */
-  protected static final int CAUTIONVAL_EDEFAULT = 0;
+  protected static final String CAUTIONVAL_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getCautionval() <em>Cautionval</em>}' attribute.
@@ -46,7 +46,7 @@ public class CautionImpl extends MinimalEObjectImpl.Container implements Caution
    * @generated
    * @ordered
    */
-  protected int cautionval = CAUTIONVAL_EDEFAULT;
+  protected String cautionval = CAUTIONVAL_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,7 +75,7 @@ public class CautionImpl extends MinimalEObjectImpl.Container implements Caution
    * @generated
    */
   @Override
-  public int getCautionval()
+  public String getCautionval()
   {
     return cautionval;
   }
@@ -86,9 +86,9 @@ public class CautionImpl extends MinimalEObjectImpl.Container implements Caution
    * @generated
    */
   @Override
-  public void setCautionval(int newCautionval)
+  public void setCautionval(String newCautionval)
   {
-    int oldCautionval = cautionval;
+    String oldCautionval = cautionval;
     cautionval = newCautionval;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, WailPackage.CAUTION__CAUTIONVAL, oldCautionval, cautionval));
@@ -121,7 +121,7 @@ public class CautionImpl extends MinimalEObjectImpl.Container implements Caution
     switch (featureID)
     {
       case WailPackage.CAUTION__CAUTIONVAL:
-        setCautionval((Integer)newValue);
+        setCautionval((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -155,7 +155,7 @@ public class CautionImpl extends MinimalEObjectImpl.Container implements Caution
     switch (featureID)
     {
       case WailPackage.CAUTION__CAUTIONVAL:
-        return cautionval != CAUTIONVAL_EDEFAULT;
+        return CAUTIONVAL_EDEFAULT == null ? cautionval != null : !CAUTIONVAL_EDEFAULT.equals(cautionval);
     }
     return super.eIsSet(featureID);
   }

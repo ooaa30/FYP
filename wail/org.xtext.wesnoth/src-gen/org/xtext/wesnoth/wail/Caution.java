@@ -28,12 +28,12 @@ public interface Caution extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Cautionval</em>' attribute.
-   * @see #setCautionval(int)
+   * @see #setCautionval(String)
    * @see org.xtext.wesnoth.wail.WailPackage#getCaution_Cautionval()
    * @model
    * @generated
    */
-  int getCautionval();
+  String getCautionval();
 
   /**
    * Sets the value of the '{@link org.xtext.wesnoth.wail.Caution#getCautionval <em>Cautionval</em>}' attribute.
@@ -43,6 +43,6 @@ public interface Caution extends EObject
    * @see #getCautionval()
    * @generated
    */
-  void setCautionval(int value);
+  void setCautionval(String value);
 
 } // Caution

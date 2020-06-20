@@ -36,7 +36,7 @@ public class AggressionImpl extends MinimalEObjectImpl.Container implements Aggr
    * @generated
    * @ordered
    */
-  protected static final int AGGRESSION_VAL_EDEFAULT = 0;
+  protected static final String AGGRESSION_VAL_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getAggressionVal() <em>Aggression Val</em>}' attribute.
@@ -46,7 +46,7 @@ public class AggressionImpl extends MinimalEObjectImpl.Container implements Aggr
    * @generated
    * @ordered
    */
-  protected int aggressionVal = AGGRESSION_VAL_EDEFAULT;
+  protected String aggressionVal = AGGRESSION_VAL_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,7 +75,7 @@ public class AggressionImpl extends MinimalEObjectImpl.Container implements Aggr
    * @generated
    */
   @Override
-  public int getAggressionVal()
+  public String getAggressionVal()
   {
     return aggressionVal;
   }
@@ -86,9 +86,9 @@ public class AggressionImpl extends MinimalEObjectImpl.Container implements Aggr
    * @generated
    */
   @Override
-  public void setAggressionVal(int newAggressionVal)
+  public void setAggressionVal(String newAggressionVal)
   {
-    int oldAggressionVal = aggressionVal;
+    String oldAggressionVal = aggressionVal;
     aggressionVal = newAggressionVal;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, WailPackage.AGGRESSION__AGGRESSION_VAL, oldAggressionVal, aggressionVal));
@@ -121,7 +121,7 @@ public class AggressionImpl extends MinimalEObjectImpl.Container implements Aggr
     switch (featureID)
     {
       case WailPackage.AGGRESSION__AGGRESSION_VAL:
-        setAggressionVal((Integer)newValue);
+        setAggressionVal((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -155,7 +155,7 @@ public class AggressionImpl extends MinimalEObjectImpl.Container implements Aggr
     switch (featureID)
     {
       case WailPackage.AGGRESSION__AGGRESSION_VAL:
-        return aggressionVal != AGGRESSION_VAL_EDEFAULT;
+        return AGGRESSION_VAL_EDEFAULT == null ? aggressionVal != null : !AGGRESSION_VAL_EDEFAULT.equals(aggressionVal);
     }
     return super.eIsSet(featureID);
   }

@@ -28,12 +28,12 @@ public interface Aggression extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Aggression Val</em>' attribute.
-   * @see #setAggressionVal(int)
+   * @see #setAggressionVal(String)
    * @see org.xtext.wesnoth.wail.WailPackage#getAggression_AggressionVal()
    * @model
    * @generated
    */
-  int getAggressionVal();
+  String getAggressionVal();
 
   /**
    * Sets the value of the '{@link org.xtext.wesnoth.wail.Aggression#getAggressionVal <em>Aggression Val</em>}' attribute.
@@ -43,6 +43,6 @@ public interface Aggression extends EObject
    * @see #getAggressionVal()
    * @generated
    */
-  void setAggressionVal(int value);
+  void setAggressionVal(String value);
 
 } // Aggression

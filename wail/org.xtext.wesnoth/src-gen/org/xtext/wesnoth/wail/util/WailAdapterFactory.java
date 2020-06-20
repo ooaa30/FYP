@@ -101,6 +101,11 @@ public class WailAdapterFactory extends AdapterFactoryImpl
         return createConditionalAdapter();
       }
       @Override
+      public Adapter caseRecruitment(Recruitment object)
+      {
+        return createRecruitmentAdapter();
+      }
+      @Override
       public Adapter casewhenRules(whenRules object)
       {
         return createwhenRulesAdapter();
@@ -268,6 +273,21 @@ public class WailAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConditionalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.wesnoth.wail.Recruitment <em>Recruitment</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.wesnoth.wail.Recruitment
+   * @generated
+   */
+  public Adapter createRecruitmentAdapter()
   {
     return null;
   }
