@@ -23,6 +23,7 @@ import java.io.File
 import org.xtext.wesnoth.wail.ProtectUnitID
 import org.xtext.wesnoth.wail.ProtectUnitType
 import org.xtext.wesnoth.wail.IDEquals
+import org.xtext.wesnoth.wail.Aggression
 
 /**
  * Generates code from your model files on save.
@@ -38,7 +39,7 @@ class WailGenerator extends AbstractGenerator {
 	}
 		
 		def compile(Rule rule)'''
-			
+		[ai]
 			[modify_ai]
 			    side=1
 			    action=delete
@@ -144,7 +145,14 @@ class WailGenerator extends AbstractGenerator {
 			«FOR goal:rule.goals»
 			«goal.compile»
 			«ENDFOR»
+			
+			aggression=«rule.aggressionval.aggressionVal»
+			caution=«rule.cautionval.cautionval»
+			grouping=«rule.groupingVal.groupingVal»
+		[/ai]
 		'''
+		
+
 		
 		def compile(Fragment frag)'''
 		«FOR cas:frag.defualt_cas»
